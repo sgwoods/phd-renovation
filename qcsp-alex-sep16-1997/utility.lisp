@@ -771,7 +771,8 @@ Return node consistent rejection if it exists for ts1 assigned s1.
 			      *RECALL-adv-sort-time* 
 			      *sort-const* 
 			      *adv-sort-const*
-			      (if *node-type-consis* 
+			      nil ;; ReprKey -- placeholder for missing arg
+			      (if *node-type-consis*
 				  *node-type-consistency-checks* nil)
 			      *dfa-rearr-cost*
 			      )

@@ -6,7 +6,7 @@
 (setq *mpr-setup-loaded* 'nil)
 ;; **********************************************************************
 ;; All situation options
-(defconstant *situations*
+(defparameter *situations*
       (list
        '( "test-1"
 	     ( sit1-1  (45 50)  ARI   Adv n co)
@@ -73,7 +73,7 @@
 ;; note that undefined orientation not supported at this time.
 ;;   
 
-(defconstant *distributions*
+(defparameter *distributions*
       '(
 	( "ddist" 
 	  ( (ARM 1) (AIHQ 1) (ARI 1) (ART 1) (* 1) )
@@ -105,7 +105,7 @@
 
 ;; (slot type activity orientation abs-loc size)
 
-(defconstant *template-object-list* 
+(defparameter *template-object-list* 
       (list 
        '( "test1-w"
 	  (

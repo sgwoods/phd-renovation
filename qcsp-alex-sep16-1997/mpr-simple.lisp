@@ -1153,9 +1153,6 @@ In objlist, return the templ-slot object indicated by ident.
 
 ;; Constraints
 ;;
-(defun get-templ-constraints (template)
-  (third template))
-
 (defun get-related-constraints (template tslot1-id tslot2-id)
 "
 "
