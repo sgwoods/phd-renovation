@@ -1,0 +1,30 @@
+1. Modify the forloop control flow.
+
+	I decided to write a C/C++ program to preprocess the analyzed result, 
+to reorder the for loop stuff. It looks more complicated to do it inside
+the gen++ analyzer.  
+
+2. Plan representation, data-dependency and guaranteed-data-dependency 
+
+3. Add guaranteed-data-dependency checking function 
+
+4. Produce node type distribution
+
+5. Experiment
+
+(1) program size
+    1 copy, 6 copies, 12 copies, 18 copies, 24 copies 
+(2) algorithms: w/ forward-checking and dynamic-rearrangement 
+
+(3) result data
+    node distribution 
+    number of constraint checks
+    time of constraint checking
+
+
+In addition, I think there are two things I haven't dealt with is
+structure and switch. In this sample program, we don't have them,
+thus, we are dealing with 100% of the program. 
+
+
+ 

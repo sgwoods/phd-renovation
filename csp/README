@@ -1,0 +1,88 @@
+
+MOTORS CSP SYSTEM v1.2
+(c) Defence Research Establishment Valcartier
+    Steven Woods, Defence Scientist
+
+This software is currently under development.  This released version may be
+thought of as Version 0.5.  It has been distributed by the author with the
+understanding that the source is only to be used for research purposes within
+Defence Research Establishment Valcartier, and that this copyright notice
+should remain with the source code.  Neither the code nor the concepts
+embedded within should be shared outside DREV.  
+
+An internal technical paper describing this work is also in development.  A
+brief paper describing some of the aspects of this work has been approved for
+release outside DREV.  This work is unclassified.
+
+Steven Woods
+Aug 4, 1993  Release V0.5
+
+
+Corrections 
+	1. Constraint propagation (AC-3) algorithm in error for MPR as a
+	result of incorrect handling of the variable lists.
+		Corrected, July 20, 1993 sgw	in v0.5
+
+	2. Believe it or not, #1 was fixed incorrectly.  Repaired and
+	double checked - it should work now.
+		Corrected, Aug 19, 1993	sgw	in v0.6
+
+	3. Added ability for MPR one line output for compiling test results
+	   Made explicit reference to variable ordering and contraint appl
+	    ordering in the form of control flags
+		Changes verified Aug 25, 1993 sgw  in v0.7
+
+	4. Added Denis McGonigal source code
+	   Currently not tied into MOTORS, but available as separate 
+	    functions for experimentation
+		ac4.lisp  ** currently not functioning, see ac4.problems
+		acq.lisp  ** partial arc consistency algs indep tested OK
+		Changes verified Aug 25, 1993 sgw  in v0.8
+
+	5. Added Ch11 from TechReport as UserManual.  Note this is already 
+	out of data with respect to control for random var inst and 
+	constraint order application.
+		Aug 28/93 sgw in v1.01
+
+	6. Add Ch1 and Index from TechReport as background and sales pitch for
+	other work.
+		Aug 28/93 sgw in v1.01
+
+	7. Repairs to work with Allegro Common Lisp completed.	
+	   This is now V1.20 but not saved as such.
+
+		Nov 3/94 sgw no new version yet.
+	   New Source code in C++ under way.  Observed that lisp code
+	   constitutes about 4600 lines of code without comments, 	
+	   5300 lines of code with comments.  Old examples on new SPARC
+	   server function about with about 4-5 times less CPU seconds,
+	   making even complex situations solvable in reasonable time.
+
+
+To Repair ::
+
+0. 	Nothing known faulty Nov/94.
+
+To Enhance ::
+
+1.	   Note there NEEDS to be a randomization option for domain value
+	   selection as one-solution-only is EASY since it gets the initial
+	   solution first as that is how the situation domains are constructed
+           - I have commented this in the code both in bt.lisp and in 
+           utility.lisp where the situation construction occurs.  Of course
+	   it should go in others as well.
+
+Current Users ::
+0. Steve Woods, UWaterloo  up-to-date++ 
+
+Past Users ::
+0. Luc Lamontagne, DREV	v0.7	*sent v1.01  	
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+
+These results are discussed in DREV memorandum, Aug/93.
+
+Basically the result for default cases with the following circumstances:
+
+We varied the amount of noise from 100 to 1000 by 100
+10 test cases (different random seeds) for each of the noise values
+Random variable instantiation ordering and constraint ordering
+
+Case
+1	BT with Forward Checking and Dyn Rearrangement
+2	BT only
+3	BackJumping
+4	BackMarking
+
+AC-3 applied before search, almost no search required for all
+5	(as above, however little if any search)
+6
+7
+8

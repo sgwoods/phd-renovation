@@ -1,0 +1,18 @@
+#!/bin/sh
+
+echo Drawing figure for $1 ...
+
+echo Copy hidden type descriptions to common files ...
+cp .$1.g .green
+cp .$1.p .purple
+cp .$1.r .red
+cp .$1.y .yellow
+echo done
+
+echo Running gnuplot for creation of figure ...
+gnuplot < .gnuplot.draw-tex
+echo done 
+
+echo Copying figure to $1.ps
+cp .maprep $1.ps
+echo done

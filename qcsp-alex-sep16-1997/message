@@ -1,0 +1,34 @@
+  ;; Advance constraint sorting (do before AC !!)
+  ;;  actually updates *current-template* directly destructively
+  (if adv-sort-const
+      (progn
+    (setq *constraints* (adv-sort-constr
+                 (get-templ-constraints *current-template*)
+                 adv-sort-const))
+ 
+    ;; check for completeness sacrifice ???
+    ;(if (constraint-exists-p 'close-to-p)
+    ;    (progn
+    ;      (comment
+    ;      ">> WARNING: CLOSE-TO constraint may sacrifice completeness<<")
+    ;      ))
+ 
+    (setf (nth 2 *current-template*) *constraints*)))
+ 
+
+;; **************************************************
+;;
+(defun adv-sort-constr (constraint-list adv-sort-const)
+"Heuristically or randomly sort constraint set.  Currently random only."
+(if (eq adv-sort-const 'random)
+    (random-order constraint-list)
+  (if (eq adv-sort-const 'quilici)
+      (quilici-advance-constr-sort constraint-list)
+    constraint-list )))
+ 
+(defun quilici-advance-constr-sort (cset)
+" Quilici constraint ordering as required "
+  (comment "Warning, quilici-advance-constr sort currently INACTIVE.")
+ 
+  cset)
+

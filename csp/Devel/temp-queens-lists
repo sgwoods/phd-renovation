@@ -1,0 +1,62 @@
+;;This file contains test calls to ACq functions
+;;***************************************************************************
+
+(setq temp15out '( ((row 1) 1)  ((row 2) 2) ((row 3) 3) ((row 4) 1 2 3 4) ))
+
+(setq temp15in '( ((row 1) 1 2 3 4)  ((row 2) 1 2 3 4) ((row 3) 1 2 3 4) ((row 4) 4) ))
+
+(setq temp14in '( ((row 1) 1)  ((row 2) 1 2 3 4) ((row 3) 1 2 3 4) ((row 4) 1 2 3 4) ))
+
+(setq temp14out '( ((row 1) 1 2 3 4)  ((row 2) 2) ((row 3) 3) ((row 4) 4) ))
+
+(setq temp13in '(((row 1) 4) ((row 2) 1 2 3 4) ((row 3) 1 2 3 4) ((row 4) 1 2 3 4)))
+
+(setq temp13out '(((row 1) 1 2 3 4) ((row 2) 1 2 3 4) ((row 3) 1 2 3 4) ((row 4) 4)))
+
+(setq temp12 '(((row 1) 1) ((row 2) 1 2 3 4) ((row 3) 1 2 3 4) ((row 4) 4)))
+
+(setq temp12 '(((row 1) 3) ((row 2) 1 2 3 4) ((row 3) 1 2 3 4) ((row 4) 4)))
+
+
+(setq nildom '( ((row 1) 1)  ((row 2) 2) ((row 3) 3) ((row 4) ) ))
+
+(setq fulldom '( ((row 1) 1 2 3 4)  ((row 2) 1 2 3 4) ((row 3) 1 2 3 4) ((row 4) 1 2 3 4) ))
+
+
+( setqtemp-13 temp13)
+
+;;***************************************************************************
+
+
+(ac-fifth-in '(row 4) temp15in 'consistent-p nil)
+
+(ac-fifth-out '(row 4) temp15out 'consistent-p nil)
+
+(ac-quarter-out '(row 1) temp14out 'consistent-p nil)
+
+(ac-quarter-in '(row 1) temp14in 'consistent-p nil)
+
+(ac-third-out '(row 1) temp13out 'consistent-p nil)
+
+(ac-third-in '(row 1) temp13in 'consistent-p nil)
+
+(ac-half '(row 1) temp12 'consistent-p nil)
+
+
+;;***************************************************************************
+
+RESULTS
+
+(replace-domain SOURCE VARLIST DOMAIN)
+
+(replace-domain '(ROW 4) TEMP-13 '(4))
+
+(replace-domain '(ROW 4) TEMP-13 '(1 2 3 4))
+
+(replace-domain SOURCE VARLIST DOMAIN)
+
+;;****************************************************************************
+
+(revise '(row 1) '(1 2 3 4) '(row 4) '(4) 'consistent-p nil)
+
+(rrevise '(row 1) temp15in '(row 2) '(row 4) 'consistent-p nil)

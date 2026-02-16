@@ -1,0 +1,208 @@
+Allegro CL 4.2 [SPARC; R1] (2/1/95 11:34)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;   Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;     Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): New Test Run: 0100, q-i2, FCDR, Dist3
+"New Test Run: 0100, q-i2, FCDR, Dist3"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): ; Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+Warning: GETVAL, :OPERATOR was defined in
+         /fsys4/u/sgwoods/qcsp/quilici-search.lisp and is now being defined in
+         /fsys4/u/sgwoods/qcsp/gsat.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;   Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+T
+USER(5): USER(5): **** Noise 0100 ****
+"**** Noise 0100 ****"
+USER(6): 
+NIL
+USER(7): 
+NIL
+USER(8): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-default-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-default-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 520 msec user, 100 msec system
+; cpu time (gc)     0 msec user, 0 msec system
+; cpu time (total)  520 msec user, 100 msec system
+; real time  1,081 msec
+; space allocation:
+ 14,261 cons cells,;  145 symbols, 171,824 other bytes
+(((Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-I ADTQ2-I) (Q1-H ADTQ2-H)
+  (Q1-B ADTQ2-B) (Q1-F ADTQ2-F) (Q1-A ADTQ2-A) (Q1-G ADTQ2-G))
+ ((Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I) (Q1-H ADTQ1-H)
+  (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A) (Q1-G ADTQ1-G)))
+USER(9): USER(9): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-1783960706-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-1783960706-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 530 msec user, 20 msec system
+; cpu time (gc)     120 msec user, 0 msec system
+; cpu time (total)  650 msec user, 20 msec system
+; real time  911 msec
+; space allocation:
+ 12,525 cons cells,;  159 symbols, 170,240 other bytes
+(((Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-I ADTQ2-I)
+  (Q1-B ADTQ2-B) (Q1-G ADTQ2-G) (Q1-F ADTQ2-F) (Q1-A ADTQ2-A))
+ ((Q1-H ADTQ1-H) (Q1-B ADTQ1-B) (Q1-A ADTQ1-A) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D)
+  (Q1-G ADTQ1-G) (Q1-F ADTQ1-F) (Q1-C ADTQ1-C) (Q1-E ADTQ1-E)))
+USER(10): USER(10): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-6148712495-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-6148712495-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 540 msec user, 30 msec system
+; cpu time (gc)     0 msec user, 0 msec system
+; cpu time (total)  540 msec user, 30 msec system
+; real time  616 msec
+; space allocation:
+ 13,450 cons cells,;  160 symbols, 174,192 other bytes
+(((Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-I ADTQ2-I)
+  (Q1-B ADTQ2-B) (Q1-G ADTQ2-G) (Q1-F ADTQ2-F) (Q1-A ADTQ2-A))
+ ((Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E) (Q1-B ADTQ1-B)
+  (Q1-A ADTQ1-A) (Q1-I ADTQ1-I) (Q1-F ADTQ1-F) (Q1-G ADTQ1-G)))
+USER(11): USER(11): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-8261581571-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-8261581571-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 530 msec user, 30 msec system
+; cpu time (gc)     120 msec user, 0 msec system
+; cpu time (total)  650 msec user, 30 msec system
+; real time  1,128 msec
+; space allocation:
+ 12,469 cons cells,;  162 symbols, 183,288 other bytes
+(((Q1-B ADTQ2-B) (Q1-H ADTQ2-H) (Q1-I ADTQ2-I) (Q1-G ADTQ2-G) (Q1-E ADTQ2-E)
+  (Q1-A ADTQ2-A) (Q1-F ADTQ2-F) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D))
+ ((Q1-B ADTQ1-B) (Q1-A ADTQ1-A) (Q1-I ADTQ1-I) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F)
+  (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(12): USER(12): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-4705297406-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-4705297406-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 510 msec user, 10 msec system
+; cpu time (gc)     0 msec user, 0 msec system
+; cpu time (total)  510 msec user, 10 msec system
+; real time  1,126 msec
+; space allocation:
+ 14,102 cons cells,;  140 symbols, 165,328 other bytes
+(((Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-H ADTQ2-H) (Q1-I ADTQ2-I)
+  (Q1-B ADTQ2-B) (Q1-F ADTQ2-F) (Q1-G ADTQ2-G) (Q1-A ADTQ2-A))
+ ((Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-B ADTQ1-B)
+  (Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-I ADTQ1-I) (Q1-G ADTQ1-G)))
+USER(13): USER(13): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-6724813580-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-6724813580-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 540 msec user, 10 msec system
+; cpu time (gc)     120 msec user, 0 msec system
+; cpu time (total)  660 msec user, 10 msec system
+; real time  1,207 msec
+; space allocation:
+ 12,468 cons cells,;  159 symbols, 161,952 other bytes
+(((Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-I ADTQ2-I)
+  (Q1-B ADTQ2-B) (Q1-G ADTQ2-G) (Q1-F ADTQ2-F) (Q1-A ADTQ2-A))
+ ((Q1-H ADTQ1-H) (Q1-B ADTQ1-B) (Q1-A ADTQ1-A) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D)
+  (Q1-G ADTQ1-G) (Q1-F ADTQ1-F) (Q1-C ADTQ1-C) (Q1-E ADTQ1-E)))
+USER(14): USER(14): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-8798969000-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-8798969000-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 490 msec user, 40 msec system
+; cpu time (gc)     0 msec user, 0 msec system
+; cpu time (total)  490 msec user, 40 msec system
+; real time  1,173 msec
+; space allocation:
+ 11,184 cons cells,;  159 symbols, 154,408 other bytes
+(((Q1-I ADTQ2-I) (Q1-B ADTQ2-B) (Q1-G ADTQ2-G) (Q1-A ADTQ2-A) (Q1-F ADTQ2-F)
+  (Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-I ADTQ1-I) (Q1-B ADTQ1-B) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A)
+  (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(15): USER(15): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-0805098560-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-0805098560-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 490 msec user, 20 msec system
+; cpu time (gc)     140 msec user, 20 msec system
+; cpu time (total)  630 msec user, 40 msec system
+; real time  1,120 msec
+; space allocation:
+ 12,452 cons cells,;  150 symbols, 160,656 other bytes
+(((Q1-A ADTQ2-A) (Q1-G ADTQ2-G) (Q1-B ADTQ2-B) (Q1-F ADTQ2-F) (Q1-I ADTQ2-I)
+  (Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-C ADTQ2-C) (Q1-H ADTQ2-H))
+ ((Q1-A ADTQ1-A) (Q1-G ADTQ1-G) (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-I ADTQ1-I)
+  (Q1-D ADTQ1-D) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-E ADTQ1-E)))
+USER(16): USER(16): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-4767135635-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-4767135635-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 610 msec user, 10 msec system
+; cpu time (gc)     0 msec user, 0 msec system
+; cpu time (total)  610 msec user, 10 msec system
+; real time  1,249 msec
+; space allocation:
+ 17,387 cons cells,;  154 symbols, 207,760 other bytes
+(((Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F)
+  (Q1-B ADTQ2-B) (Q1-I ADTQ2-I) (Q1-A ADTQ2-A) (Q1-G ADTQ2-G))
+ ((Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I) (Q1-H ADTQ1-H)
+  (Q1-B ADTQ1-B) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A)))
+USER(17): USER(17): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-7685437293-100 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-7685437293-100" pos 0> > 
+> Opening output file/stream for :  < New-Batch/fcdr-dist3-0100.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 500 msec user, 30 msec system
+; cpu time (gc)     80 msec user, 10 msec system
+; cpu time (total)  580 msec user, 40 msec system
+; real time  1,059 msec
+; space allocation:
+ 12,380 cons cells,;  150 symbols, 170,544 other bytes
+(((Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E) (Q1-F ADTQ2-F)
+  (Q1-B ADTQ2-B) (Q1-I ADTQ2-I) (Q1-A ADTQ2-A) (Q1-G ADTQ2-G))
+ ((Q1-C ADTQ1-C) (Q1-H ADTQ1-H) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)
+  (Q1-F ADTQ1-F) (Q1-B ADTQ1-B) (Q1-A ADTQ1-A) (Q1-G ADTQ1-G)))
+USER(18): ; Exiting Lisp

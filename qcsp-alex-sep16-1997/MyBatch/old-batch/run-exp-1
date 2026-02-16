@@ -1,0 +1,32 @@
+#!/bin/csh
+cd /users/yjzhang/thesis/CSP/qcsp-alex/
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/exp-1-batch-90.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/1-90.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/exp-1-batch-102.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/1-102.msg
+ 
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/exp-1-batch-114.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/1-114.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/exp-3-batch-90.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/3-90.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/exp-3-batch-102.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/3-102.msg
+ 
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/exp-3-batch-114.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/3-114.msg
+ 
+ 
+ 
+

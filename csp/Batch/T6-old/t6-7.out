@@ -1,0 +1,1001 @@
+;;; Sun Common Lisp, Development Environment 4.0.1, 6 July 1990
+;;; Sun-4 Version for SunOS 4.0.x and sunOS 4.1 
+;;;
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Sun Microsystems, Inc.,  All Rights Reserved
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Lucid, Inc., All Rights Reserved
+;;; This software product contains confidential and trade secret
+;;; information belonging to Sun Microsystems, Inc.  It may not be copied
+;;; for any reason other than for archival and backup purposes.
+;;;
+;;; Sun, Sun-4, and Sun Common Lisp are trademarks of Sun Microsystems Inc.
+
+> Test 6 : Aug 19, 1993 using Aug 5 version v0.5 MOTOR
+"Test 6 : Aug 19, 1993 using Aug 5 version v0.5 MOTOR"
+> 
+NIL
+> 
+NIL
+> ;;; Loading source file "load.lisp"
+;;; Warning: File "load.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "/cc/users/woods/ideas/csp/bm.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/bt.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/ct.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/utility.sbin"
+;;; Loading source file "/cc/users/woods/ideas/csp/compile.lisp"
+;;; Warning: File "/cc/users/woods/ideas/csp/compile.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "queens.sbin"
+;;; Loading binary file "mpr-simple.sbin"
+;;; Warning: Redefining Function NODE-CONSISTENT-VARIABLES which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function ARC-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function CONSISTENT-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function GET-CONSTRAINT-MAX-LEVEL which used to be defined in "queens.lisp"
+;;; Loading binary file "mpr-setup.sbin"
+#P"/home/users/woods/Steve/csp/load.lisp"
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 6.80 seconds
+Total Run Time    = 1.27 seconds
+User Run Time     = 1.15 seconds
+System Run Time   = 0.12 seconds
+Process Page Faults    =        151
+Dynamic Bytes Consed   =     22,144
+Ephemeral Bytes Consed =  1,409,552
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 3.45 seconds
+Total Run Time    = 0.94 seconds
+User Run Time     = 0.93 seconds
+System Run Time   = 0.01 seconds
+Process Page Faults    =         19
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,387,560
+There were 2 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 4.34 seconds
+Total Run Time    = 1.04 seconds
+User Run Time     = 1.02 seconds
+System Run Time   = 0.02 seconds
+Process Page Faults    =         66
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,411,688
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 4.08 seconds
+Total Run Time    = 1.03 seconds
+User Run Time     = 1.01 seconds
+System Run Time   = 0.02 seconds
+Process Page Faults    =         59
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,442,904
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 3.96 seconds
+Total Run Time    = 1.03 seconds
+User Run Time     = 0.97 seconds
+System Run Time   = 0.06 seconds
+Process Page Faults    =         62
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,398,920
+There were 2 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 4.05 seconds
+Total Run Time    = 1.02 seconds
+User Run Time     = 0.99 seconds
+System Run Time   = 0.03 seconds
+Process Page Faults    =         67
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,398,528
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 4.19 seconds
+Total Run Time    = 1.06 seconds
+User Run Time     = 1.01 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =         65
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,455,432
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 4.07 seconds
+Total Run Time    = 1.06 seconds
+User Run Time     = 1.02 seconds
+System Run Time   = 0.04 seconds
+Process Page Faults    =         60
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,406,256
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 4.32 seconds
+Total Run Time    = 1.01 seconds
+User Run Time     = 0.99 seconds
+System Run Time   = 0.02 seconds
+Process Page Faults    =         51
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,436,792
+There were 2 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 4.10 seconds
+Total Run Time    = 1.08 seconds
+User Run Time     = 1.04 seconds
+System Run Time   = 0.04 seconds
+Process Page Faults    =         54
+Dynamic Bytes Consed   =     43,776
+Ephemeral Bytes Consed =  1,416,264
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 12.51 seconds
+Total Run Time    = 3.12 seconds
+User Run Time     = 3.11 seconds
+System Run Time   = 0.01 seconds
+Process Page Faults    =         56
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,869,376
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 11.31 seconds
+Total Run Time    = 2.83 seconds
+User Run Time     = 2.77 seconds
+System Run Time   = 0.06 seconds
+Process Page Faults    =         31
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,741,224
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 12.93 seconds
+Total Run Time    = 3.09 seconds
+User Run Time     = 3.05 seconds
+System Run Time   = 0.04 seconds
+Process Page Faults    =         78
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,837,608
+There were 10 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 13.33 seconds
+Total Run Time    = 3.19 seconds
+User Run Time     = 3.16 seconds
+System Run Time   = 0.03 seconds
+Process Page Faults    =         13
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,921,240
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 11.46 seconds
+Total Run Time    = 3.00 seconds
+User Run Time     = 2.99 seconds
+System Run Time   = 0.01 seconds
+Process Page Faults    =         20
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,811,888
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 13.73 seconds
+Total Run Time    = 3.15 seconds
+User Run Time     = 3.08 seconds
+System Run Time   = 0.07 seconds
+Process Page Faults    =         83
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,828,744
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 13.23 seconds
+Total Run Time    = 3.48 seconds
+User Run Time     = 3.45 seconds
+System Run Time   = 0.03 seconds
+Process Page Faults    =         57
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  5,138,888
+There were 10 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 11.83 seconds
+Total Run Time    = 3.07 seconds
+User Run Time     = 3.03 seconds
+System Run Time   = 0.04 seconds
+Process Page Faults    =         17
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,787,936
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 15.31 seconds
+Total Run Time    = 3.26 seconds
+User Run Time     = 3.21 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =         73
+Dynamic Bytes Consed   =     87,600
+Ephemeral Bytes Consed =  4,840,272
+There were 10 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 10.81 seconds
+Total Run Time    = 3.14 seconds
+User Run Time     = 3.11 seconds
+System Run Time   = 0.03 seconds
+Process Page Faults    =         61
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,866,480
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 28.46 seconds
+Total Run Time    = 7.10 seconds
+User Run Time     = 7.03 seconds
+System Run Time   = 0.07 seconds
+Process Page Faults    =        123
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,579,720
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 24.81 seconds
+Total Run Time    = 6.15 seconds
+User Run Time     = 6.08 seconds
+System Run Time   = 0.07 seconds
+Process Page Faults    =         59
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,151,456
+There were 19 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 32.03 seconds
+Total Run Time    = 6.54 seconds
+User Run Time     = 6.45 seconds
+System Run Time   = 0.09 seconds
+Process Page Faults    =         83
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,291,264
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 27.39 seconds
+Total Run Time    = 7.14 seconds
+User Run Time     = 7.01 seconds
+System Run Time   = 0.13 seconds
+Process Page Faults    =         77
+Dynamic Bytes Consed   =    175,488
+Ephemeral Bytes Consed = 10,523,784
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 27.26 seconds
+Total Run Time    = 6.65 seconds
+User Run Time     = 6.59 seconds
+System Run Time   = 0.06 seconds
+Process Page Faults    =        108
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,370,376
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 28.73 seconds
+Total Run Time    = 6.98 seconds
+User Run Time     = 6.93 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =         59
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,672,264
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 30.93 seconds
+Total Run Time    = 7.57 seconds
+User Run Time     = 7.51 seconds
+System Run Time   = 0.06 seconds
+Process Page Faults    =         59
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,957,288
+There were 21 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 26.95 seconds
+Total Run Time    = 6.64 seconds
+User Run Time     = 6.59 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =         70
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,466,192
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 26.26 seconds
+Total Run Time    = 6.60 seconds
+User Run Time     = 6.54 seconds
+System Run Time   = 0.06 seconds
+Process Page Faults    =         68
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,254,512
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 28.01 seconds
+Total Run Time    = 7.09 seconds
+User Run Time     = 7.07 seconds
+System Run Time   = 0.02 seconds
+Process Page Faults    =         50
+Dynamic Bytes Consed   =    175,296
+Ephemeral Bytes Consed = 10,664,456
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 56.41 seconds
+Total Run Time    = 12.93 seconds
+User Run Time     = 12.83 seconds
+System Run Time   = 0.10 seconds
+Process Page Faults    =         83
+Dynamic Bytes Consed   =    120,104
+Ephemeral Bytes Consed = 18,678,944
+There were 36 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 44.19 seconds
+Total Run Time    = 10.85 seconds
+User Run Time     = 10.82 seconds
+System Run Time   = 0.03 seconds
+Process Page Faults    =         96
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,636,080
+There were 33 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 46.10 seconds
+Total Run Time    = 11.47 seconds
+User Run Time     = 11.43 seconds
+System Run Time   = 0.04 seconds
+Process Page Faults    =         75
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,888,992
+There were 35 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 55.71 seconds
+Total Run Time    = 13.18 seconds
+User Run Time     = 13.08 seconds
+System Run Time   = 0.10 seconds
+Process Page Faults    =        113
+Dynamic Bytes Consed   =    194,088
+Ephemeral Bytes Consed = 18,818,296
+There were 35 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 47.12 seconds
+Total Run Time    = 11.59 seconds
+User Run Time     = 11.56 seconds
+System Run Time   = 0.03 seconds
+Process Page Faults    =         73
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 18,203,248
+There were 35 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 55.89 seconds
+Total Run Time    = 13.24 seconds
+User Run Time     = 13.19 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =         69
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 19,472,712
+There were 37 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 56.92 seconds
+Total Run Time    = 13.64 seconds
+User Run Time     = 13.62 seconds
+System Run Time   = 0.02 seconds
+Process Page Faults    =         98
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 19,320,936
+There were 37 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 51.36 seconds
+Total Run Time    = 12.45 seconds
+User Run Time     = 12.40 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =        105
+Dynamic Bytes Consed   =    111,256
+Ephemeral Bytes Consed = 18,613,200
+There were 36 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 46.45 seconds
+Total Run Time    = 11.47 seconds
+User Run Time     = 11.42 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =         71
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,808,912
+There were 34 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 54.23 seconds
+Total Run Time    = 13.31 seconds
+User Run Time     = 13.25 seconds
+System Run Time   = 0.06 seconds
+Process Page Faults    =         65
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 18,664,136
+There were 35 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 98.38 seconds (1 minute, 38.38 seconds)
+Total Run Time    = 22.63 seconds
+User Run Time     = 22.49 seconds
+System Run Time   = 0.14 seconds
+Process Page Faults    =        113
+Dynamic Bytes Consed   =    202,456
+Ephemeral Bytes Consed = 30,198,328
+There were 58 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 70.37 seconds (1 minute, 10.37 seconds)
+Total Run Time    = 17.81 seconds
+User Run Time     = 17.76 seconds
+System Run Time   = 0.05 seconds
+Process Page Faults    =         68
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 27,533,144
+There were 52 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 74.92 seconds (1 minute, 14.92 seconds)
+Total Run Time    = 18.54 seconds
+User Run Time     = 18.41 seconds
+System Run Time   = 0.13 seconds
+Process Page Faults    =        155
+Dynamic Bytes Consed   =    245,728
+Ephemeral Bytes Consed = 27,852,512
+There were 53 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 92.33 seconds (1 minute, 32.33 seconds)
+Total Run Time    = 21.72 seconds
+User Run Time     = 21.68 seconds
+System Run Time   = 0.04 seconds
+Process Page Faults    =         87
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 30,574,752
+There were 58 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 73.61 seconds (1 minute, 13.61 seconds)
+Total Run Time    = 18.87 seconds
+User Run Time     = 18.80 seconds
+System Run Time   = 0.07 seconds
+Process Page Faults    =        167
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 28,224,576
+There were 54 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; Expanding Dynamic Memory
+ File Closed. 
+
+Elapsed Real Time = 95.99 seconds (1 minute, 35.99 seconds)
+Total Run Time    = 22.69 seconds
+User Run Time     = 22.42 seconds
+System Run Time   = 0.27 seconds
+Process Page Faults    =        397
+Dynamic Bytes Consed   =    479,568
+Ephemeral Bytes Consed = 31,182,552
+There were 59 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 125.96 seconds (2 minutes, 5.96 seconds)
+Total Run Time    = 25.16 seconds
+User Run Time     = 25.02 seconds
+System Run Time   = 0.14 seconds
+Process Page Faults    =        181
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 32,993,752
+There were 63 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 82.68 seconds (1 minute, 22.68 seconds)
+Total Run Time    = 20.43 seconds
+User Run Time     = 20.12 seconds
+System Run Time   = 0.31 seconds
+Process Page Faults    =        373
+Dynamic Bytes Consed   =    189,016
+Ephemeral Bytes Consed = 29,250,856
+There were 56 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 94.67 seconds (1 minute, 34.67 seconds)
+Total Run Time    = 18.91 seconds
+User Run Time     = 18.67 seconds
+System Run Time   = 0.24 seconds
+Process Page Faults    =        346
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 27,936,344
+There were 53 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 129020 words [516080 bytes] of dynamic storage in use.
+;;; 526338 words [2105352 bytes] of free storage available before a GC.
+;;; 1181696 words [4726784 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+Elapsed Real Time = 98.63 seconds (1 minute, 38.63 seconds)
+Total Run Time    = 21.87 seconds
+User Run Time     = 21.40 seconds
+System Run Time   = 0.47 seconds
+Process Page Faults    =        767
+Dynamic Bytes Consed   =    237,632
+Ephemeral Bytes Consed = 29,423,416
+There was 1 dynamic GC
+There were 57 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 129.15 seconds (2 minutes, 9.15 seconds)
+Total Run Time    = 32.32 seconds
+User Run Time     = 32.19 seconds
+System Run Time   = 0.13 seconds
+Process Page Faults    =        141
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 44,743,848
+There were 85 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 104.09 seconds (1 minute, 44.09 seconds)
+Total Run Time    = 25.93 seconds
+User Run Time     = 25.84 seconds
+System Run Time   = 0.09 seconds
+Process Page Faults    =        245
+Dynamic Bytes Consed   =    215,840
+Ephemeral Bytes Consed = 39,298,336
+There were 75 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 105.49 seconds (1 minute, 45.49 seconds)
+Total Run Time    = 27.24 seconds
+User Run Time     = 27.11 seconds
+System Run Time   = 0.13 seconds
+Process Page Faults    =        177
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 40,488,552
+There were 77 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 143.65 seconds (2 minutes, 23.65 seconds)
+Total Run Time    = 32.57 seconds
+User Run Time     = 32.29 seconds
+System Run Time   = 0.28 seconds
+Process Page Faults    =        397
+Dynamic Bytes Consed   =    203,984
+Ephemeral Bytes Consed = 43,809,936
+There were 84 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 156.17 seconds (2 minutes, 36.17 seconds)
+Total Run Time    = 29.78 seconds
+User Run Time     = 29.14 seconds
+System Run Time   = 0.64 seconds
+Process Page Faults    =      1,004
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 40,683,400
+There were 77 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 172.79 seconds (2 minutes, 52.79 seconds)
+Total Run Time    = 35.77 seconds
+User Run Time     = 35.25 seconds
+System Run Time   = 0.52 seconds
+Process Page Faults    =        968
+Dynamic Bytes Consed   =    169,520
+Ephemeral Bytes Consed = 45,386,384
+There were 87 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 166.17 seconds (2 minutes, 46.17 seconds)
+Total Run Time    = 39.81 seconds
+User Run Time     = 39.40 seconds
+System Run Time   = 0.41 seconds
+Process Page Faults    =        739
+Dynamic Bytes Consed   =    367,536
+Ephemeral Bytes Consed = 52,514,480
+There were 100 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 115.25 seconds (1 minute, 55.25 seconds)
+Total Run Time    = 29.23 seconds
+User Run Time     = 29.07 seconds
+System Run Time   = 0.16 seconds
+Process Page Faults    =        240
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 41,563,352
+There were 79 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 107.59 seconds (1 minute, 47.59 seconds)
+Total Run Time    = 27.72 seconds
+User Run Time     = 27.50 seconds
+System Run Time   = 0.22 seconds
+Process Page Faults    =        291
+Dynamic Bytes Consed   =    273,080
+Ephemeral Bytes Consed = 40,564,176
+There were 78 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+ File Closed. 
+
+Elapsed Real Time = 124.33 seconds (2 minutes, 4.33 seconds)
+Total Run Time    = 31.97 seconds
+User Run Time     = 31.76 seconds
+System Run Time   = 0.21 seconds
+Process Page Faults    =        370
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 43,382,840
+There were 83 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+
+Clearing input from *debug-io*
+>>Error: Cannot open file "Batch/T6/t6-results/t6-7.out700" - Too many open files
+
+OPEN:
+   Required arg 0 (PATHNAME): "Batch/T6/t6-results/t6-7.out700"
+   Keyword arg 1 (DIRECTION): :OUTPUT
+   Keyword arg 2 (ELEMENT-TYPE): STRING-CHAR
+   Keyword arg 3 (IF-EXISTS): :APPEND
+   Keyword arg 4 (IF-DOES-NOT-EXIST): :CREATE
+   Keyword arg 5 (ATTRIBUTES): NIL
+:C  0: Use a new pathname
+:A  1: Abort to Lisp Top Level
+
+-> 
+Clearing input from *debug-io*
+>>Error: The symbol EARRANGEMENT has no global value
+
+SYMBOL-VALUE:
+   Required arg 0 (S): EARRANGEMENT
+:C  0: Try evaluating EARRANGEMENT again
+:A  1: Abort to Debugger Level 1
+    2: Use a new pathname
+    3: Abort to Lisp Top Level
+
+->-> 
+:OUTPUT-FILE
+->-> 
+"Batch/T6/t6-results/t6-7.out700"
+->-> 
+;;; Warning: Ignoring an unmatched right parenthesis
+
+;;; Warning: Ignoring an unmatched right parenthesis
+;;; Loading binary file "mpr-setup.sbin"
+
+Clearing input from *debug-io*
+>>Error: Cannot open file "mpr-setup.sbin" - Too many open files
+
+OPEN:
+   Required arg 0 (PATHNAME): #P"/home/users/woods/Steve/csp/mpr-setup.sbin"
+   Keyword arg 1 (DIRECTION): :INPUT
+   Keyword arg 2 (ELEMENT-TYPE): (UNSIGNED-BYTE 8)
+   Keyword arg 3 (IF-EXISTS): NIL
+   Keyword arg 4 (IF-DOES-NOT-EXIST): :ERROR
+   Keyword arg 5 (ATTRIBUTES): NIL
+:C  0: Use a new pathname
+    1: Try loading "mpr-setup" again
+:A  2: Abort to Debugger Level 2
+    3: Try evaluating EARRANGEMENT again
+    4: Abort to Debugger Level 1
+    5: Use a new pathname
+    6: Abort to Lisp Top Level
+
+->->-> 
+Clearing input from *debug-io*
+>>Error: The symbol E has no global value
+
+SYMBOL-VALUE:
+   Required arg 0 (S): E
+:C  0: Try evaluating E again
+:A  1: Abort to Debugger Level 3
+    2: Use a new pathname
+    3: Try loading "mpr-setup" again
+    4: Abort to Debugger Level 2
+    5: Try evaluating EARRANGEMENT again
+    6: Abort to Debugger Level 1
+    7: Use a new pathname
+    8: Abort to Lisp Top Level
+
+->->->-> 
+Clearing input from *debug-io*
+>>Error: The symbol TS/T6-7.OUT800 has no global value
+
+SYMBOL-VALUE:
+   Required arg 0 (S): TS/T6-7.OUT800
+:C  0: Try evaluating TS/T6-7.OUT800 again
+:A  1: Abort to Debugger Level 4
+    2: Try evaluating E again
+    3: Abort to Debugger Level 3
+    4: Use a new pathname
+    5: Try loading "mpr-setup" again
+    6: Abort to Debugger Level 2
+    7: Try evaluating EARRANGEMENT again
+    8: Abort to Debugger Level 1
+    9: Use a new pathname
+   10: Abort to Lisp Top Level
+
+->->->->-> 
+Try evaluating TS/T6-7.OUT800 again
+
+Clearing input from *debug-io*
+>>Error: The symbol TS/T6-7.OUT800 has no global value
+
+SYMBOL-VALUE:
+   Required arg 0 (S): TS/T6-7.OUT800
+:C  0: Try evaluating TS/T6-7.OUT800 again
+:A  1: Abort to Debugger Level 4
+    2: Try evaluating E again
+    3: Abort to Debugger Level 3
+    4: Use a new pathname
+    5: Try loading "mpr-setup" again
+    6: Abort to Debugger Level 2
+    7: Try evaluating EARRANGEMENT again
+    8: Abort to Debugger Level 1
+    9: Use a new pathname
+   10: Abort to Lisp Top Level
+
+->->->->-> 
+Clearing input from *debug-io*
+>>Error: The symbol PR has no global value
+
+SYMBOL-VALUE:
+   Required arg 0 (S): PR
+:C  0: Try evaluating PR again
+:A  1: Abort to Debugger Level 5
+    2: Try evaluating TS/T6-7.OUT800 again
+    3: Abort to Debugger Level 4
+    4: Try evaluating E again
+    5: Abort to Debugger Level 3
+    6: Use a new pathname
+    7: Try loading "mpr-setup" again
+    8: Abort to Debugger Level 2
+    9: Try evaluating EARRANGEMENT again
+   10: Abort to Debugger Level 1
+   11: Use a new pathname
+   12: Abort to Lisp Top Level
+
+->->->->->-> 
+Clearing input from *debug-io*
+>>Error: The symbol ST-1 has no global value
+
+SYMBOL-VALUE:
+   Required arg 0 (S): ST-1
+:C  0: Try evaluating ST-1 again
+:A  1: Abort to Debugger Level 6
+    2: Try evaluating PR again
+    3: Abort to Debugger Level 5
+    4: Try evaluating TS/T6-7.OUT800 again
+    5: Abort to Debugger Level 4
+    6: Try evaluating E again
+    7: Abort to Debugger Level 3
+    8: Use a new pathname
+    9: Try loading "mpr-setup" again
+   10: Abort to Debugger Level 2
+   11: Try evaluating EARRANGEMENT again
+   12: Abort to Debugger Level 1
+   13: Use a new pathname
+   14: Abort to Lisp Top Level
+
+->->->->->->-> 
+:SIT-NOISE
+->->->->->->-> 
+1000
+->->->->->->-> 
+:TEMPLATE-ID
+->->->->->->-> 
+"test1-w"
+->->->->->->-> 
+:RANDOM-IDENT
+->->->->->->-> 
+"2028154060"
+->->->->->->-> 
+:SEARCH-MODE
+->->->->->->-> 
+"bj"
+->->->->->->-> 
+:ARC-CONSIS
+->->->->->->-> 
+BEFORE
+->->->->->->-> 
+:DYNAMIC-REARRANGEMENT
+->->->->->->-> 
+NIL
+->->->->->->-> 
+:OUTPUT-FILE
+->->->->->->-> 
+"Batch/T6/t6-results/t6-7.out1000"
+->->->->->->-> 
+;;; Warning: Ignoring an unmatched right parenthesis
+
+;;; Warning: Ignoring an unmatched right parenthesis
+;;; Loading binary file "mpr-setup.sbin"
+
+Clearing input from *debug-io*
+>>Error: Cannot open file "mpr-setup.sbin" - Too many open files
+
+OPEN:
+   Required arg 0 (PATHNAME): #P"/home/users/woods/Steve/csp/mpr-setup.sbin"
+   Keyword arg 1 (DIRECTION): :INPUT
+   Keyword arg 2 (ELEMENT-TYPE): (UNSIGNED-BYTE 8)
+   Keyword arg 3 (IF-EXISTS): NIL
+   Keyword arg 4 (IF-DOES-NOT-EXIST): :ERROR
+   Keyword arg 5 (ATTRIBUTES): NIL
+:C  0: Use a new pathname
+    1: Try loading "mpr-setup" again
+:A  2: Abort to Debugger Level 7
+    3: Try evaluating ST-1 again
+    4: Abort to Debugger Level 6
+    5: Try evaluating PR again
+    6: Abort to Debugger Level 5
+    7: Try evaluating TS/T6-7.OUT800 again
+    8: Abort to Debugger Level 4
+    9: Try evaluating E again
+   10: Abort to Debugger Level 3
+   11: Use a new pathname
+   12: Try loading "mpr-setup" again
+   13: Abort to Debugger Level 2
+   14: Try evaluating EARRANGEMENT again
+   15: Abort to Debugger Level 1
+   16: Use a new pathname
+   17: Abort to Lisp Top Level
+
+->->->->->->->-> 
+Clearing input from *debug-io*
+>>Error: The symbol ISE has no global value
+
+SYMBOL-VALUE:
+   Required arg 0 (S): ISE
+:C  0: Try evaluating ISE again
+:A  1: Abort to Debugger Level 8
+    2: Use a new pathname
+    3: Try loading "mpr-setup" again
+    4: Abort to Debugger Level 7
+    5: Try evaluating ST-1 again
+    6: Abort to Debugger Level 6
+    7: Try evaluating PR again
+    8: Abort to Debugger Level 5
+    9: Try evaluating TS/T6-7.OUT800 again
+   10: Abort to Debugger Level 4
+   11: Try evaluating E again
+   12: Abort to Debugger Level 3
+   13: Use a new pathname
+   14: Try loading "mpr-setup" again
+   15: Abort to Debugger Level 2
+   16: Try evaluating EARRANGEMENT again
+   17: Abort to Debugger Level 1
+   18: Use a new pathname
+   19: Abort to Lisp Top Level
+
+->->->->->->->->-> 

@@ -1,0 +1,1317 @@
+Allegro CL 4.2 [SPARC; R1] (2/1/95 11:34)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;   Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;     Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): Journal Testing (2 Phased)
+"Journal Testing (2 Phased)"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): ; Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;   Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+T
+USER(5): USER(5): **** Noise 300 ****
+"**** Noise 300 ****"
+USER(6): 
+NIL
+USER(7): 
+NIL
+USER(8): > Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-default-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-default-300" pos 22363> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.1 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 30,390 msec user, 640 msec system
+; cpu time (gc)     500 msec user, 30 msec system
+; cpu time (total)  30,890 msec user, 670 msec system
+; real time  32,276 msec
+; space allocation:
+ 437,003 cons cells,;  536 symbols, 1,442,328 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A ADTQ1-A)
+   (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(9): USER(9): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-1783960706-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-1783960706-300" pos 21880> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.2 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 29,400 msec user, 490 msec system
+; cpu time (gc)     390 msec user, 0 msec system
+; cpu time (total)  29,790 msec user, 490 msec system
+; real time  33,568 msec
+; space allocation:
+ 410,749 cons cells,;  513 symbols, 2,353,976 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A ADTQ1-A)
+   (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(10): USER(10): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6148712495-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6148712495-300" pos 21454> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.3 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 12,130 msec user, 210 msec system
+; cpu time (gc)     200 msec user, 0 msec system
+; cpu time (total)  12,330 msec user, 210 msec system
+; real time  12,954 msec
+; space allocation:
+ 178,922 cons cells,;  494 symbols, 1,501,776 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-B ADTQ1-B)
+   (Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(11): USER(11): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8261581571-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8261581571-300" pos 22599> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.4 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 19,490 msec user, 260 msec system
+; cpu time (gc)     220 msec user, 0 msec system
+; cpu time (total)  19,710 msec user, 260 msec system
+; real time  21,070 msec
+; space allocation:
+ 296,707 cons cells,;  507 symbols, 1,784,480 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A ADTQ1-A)
+   (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(12): USER(12): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4705297406-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4705297406-300" pos 23799> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.5 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 33,090 msec user, 540 msec system
+; cpu time (gc)     320 msec user, 10 msec system
+; cpu time (total)  33,410 msec user, 550 msec system
+; real time  36,170 msec
+; space allocation:
+ 442,574 cons cells,;  563 symbols, 2,280,592 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-B ADTQ1-B)
+   (Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(13): USER(13): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-6724813580-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-6724813580-300" pos 22939> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.6 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 29,460 msec user, 510 msec system
+; cpu time (gc)     370 msec user, 20 msec system
+; cpu time (total)  29,830 msec user, 530 msec system
+; real time  32,380 msec
+; space allocation:
+ 409,546 cons cells,;  513 symbols, 2,356,776 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A ADTQ1-A)
+   (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(14): USER(14): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-8798969000-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-8798969000-300" pos 23051> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.7 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 30,760 msec user, 610 msec system
+; cpu time (gc)     370 msec user, 10 msec system
+; cpu time (total)  31,130 msec user, 620 msec system
+; real time  34,180 msec
+; space allocation:
+ 411,330 cons cells,;  548 symbols, 2,176,664 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-B ADTQ1-B)
+   (Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(15): USER(15): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-0805098560-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-0805098560-300" pos 23486> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.8 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 20,600 msec user, 330 msec system
+; cpu time (gc)     220 msec user, 0 msec system
+; cpu time (total)  20,820 msec user, 330 msec system
+; real time  23,149 msec
+; space allocation:
+ 287,479 cons cells,;  529 symbols, 1,723,896 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-B ADTQ1-B)
+   (Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(16): USER(16): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-4767135635-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-4767135635-300" pos 23615> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.9 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 15,330 msec user, 120 msec system
+; cpu time (gc)     200 msec user, 0 msec system
+; cpu time (total)  15,530 msec user, 120 msec system
+; real time  16,626 msec
+; space allocation:
+ 215,510 cons cells,;  539 symbols, 1,461,400 other bytes
+((((Q1-C ADTQ1-C) (Q1-H ADTQ1-H) (Q1-E ADTQ1-E) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A)
+   (Q1-B ADTQ1-B) (Q1-G ADTQ1-G) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(17): USER(17): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Reload situation from existing file.  < ADT-Situation/Sit-quilici-i1-dist1-7685437293-300 > 
+> Opened situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                              #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 0> > 
+> Closing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                               #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-quilici-i1-dist1-7685437293-300" pos 23297> > 
+> >> WARNING: CLOSE-TO constraint may sacrifice completeness<< 
+ 
+> Memory-Key opened file/stream  < Q-Batch/ij3/ij3-300.99 > 
+ File/stream closed (at Memory-Key). 
+
+; cpu time (non-gc) 22,360 msec user, 300 msec system
+; cpu time (gc)     310 msec user, 0 msec system
+; cpu time (total)  22,670 msec user, 300 msec system
+; real time  25,139 msec
+; space allocation:
+ 310,649 cons cells,;  559 symbols, 1,679,920 other bytes
+((((Q1-C ADTQ1-C) (Q1-E ADTQ1-E) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A ADTQ1-A)
+   (Q1-B ADTQ1-B) (Q1-F ADTQ1-F) (Q1-D ADTQ1-D) (Q1-I ADTQ1-I))))
+USER(18): USER(18): USER(18): ; Exiting Lisp

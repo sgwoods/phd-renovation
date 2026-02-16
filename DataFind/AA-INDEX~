@@ -1,0 +1,56 @@
+Experimental Index
+---------------------------------------------------------------------------
+
+Method Comparative : Dist 1 (Standard) only
+--------------------------------------------
+				Size - Median	Comment
+
+newbt-noadv			590  - 400000	Simple BackTracking, Single solution q-i1
+newbt-adv			1501 - 227000	BackTracking w adv, Single solution q-i1
+new-memory-fcdrA-fcdrA		1501 - 48113	Quilici 2 Phase, Single solution  q-i1
+new-ac3-fcdr-adv		1501 - 41762    AC3 + FCDR adv, Single solution q-i1
+new-fcdr-adv			1501 - 5274	FCDR adv, Single solution q-i1
+newfig4-lg			X 6000, Y 300000
+newfig4				X 6000, Y 100000
+newfig4-sm			X 2000, Y 50000
+newfig4-tiny			X 1000, Y 25000
+
+new-fcdr-adv-2-1-soln		Compare FCDR/Srt for 1 and 2 solutions for t1 template
+
+
+Distribution Comparative : Dist 1, 2, 3 : Standard, Equal, Skewed
+-----------------------------------------------------------------
+
+Label	Strategy	Adv/Order	Templ	Instance	Dist	Size - Median	Num-Soln
+
+f1	FCDR		Rnd		t1	2, qi-2		1	2965 - 93263	1
+f2	FCDR		Rnd		t1	2, qi-2		2	2965 - 164644	1
+f3	FCDR		Rnd		t1	2, qi-2		3	2965 - 58421	1
+
+ff1	FCDR		Srt		t1	2, qi-2		1	5920 - 83748	1	
+ff2	FCDR		Srt		t1	2, qi-2		2	7090 - 70369	1
+ff3	FCDR		Srt		t1	2, qi-2		3	6550 = 111834	1
+
+g1	FCDR		Srt		t1-ndx	2, qi-2		1	2965 - 131015	max 59 - 107
+g2	FCDR		Srt		t1-ndx	2, qi-2		2	1312 - 494403	max 35 - 48
+g3	FCDR		Srt		t1-ndx	2, qi-2		3	5220 - 122689	max 98 - 152
+
+h1	FCDR		Srt		t1-lg	1, hi-2		1	4438 - 120386	max 22-35
+h2	FCDR		Srt		t1-lg	1, hi-2		2	5304 - 87865	max 17-25
+h3	FCDR		Srt		t1-lg	1, hi-2		3	5209 - 99566	max 4-9
+
+
+f?-ci		CI for each FCDR/Rnd, dist
+f-all		Range of dist for FCDR/Rnd
+
+ff?-ci		CI for each FCDR/Srt, dist
+ffall		Range of dist for FCDR/Srt
+
+g?-ci		CI for each FCDR/Srt, dist INDEX
+gall		Range of dist for FCDR/Srt INDEX
+
+h?-ci		CI for each FCDR/Srt, dist LARGE
+hall		Range of dist for FCDR/Srt LARGE
+
+ff-time-cc	Graphs constraint checks against CPU seconds for ff data FCDR/Srt (average over dist)
+

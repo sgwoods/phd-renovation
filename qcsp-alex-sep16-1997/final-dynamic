@@ -1,0 +1,3152 @@
+Script started on Sun Feb  2 13:20:00 1997
+[r[m[2J[H[?7h[?1;3;4;6l> :ld [K[K[Kcl
+:cl: Command not found.
+> cl
+Note: the Allegro CL shared library moved to 0xef231000 because the previous
+      address of 0xf2222000 was not available.  Will perform relocation.
+      See the Allegro CL Release Notes for details.
+Allegro CL 4.2 [SPARC; R1] (9/6/94 11:02)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): :ld load
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/load.lisp.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/bm.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/bt.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/ct.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/gsat.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/utility.fasl.
+;   Loading /users/yjzhang/thesis/CSP/qcsp-alex/compile.lisp.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in
+         /users/yjzhang/thesis/CSP/qcsp-alex/gsat.lisp and is now being
+         defined in /users/yjzhang/thesis/CSP/qcsp-alex/quilici-search.lisp
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-simple.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-setup.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/memory-csp.fasl.
+USER(2): :ld yj-load
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/yj-load.lisp.
+USER(3): (,y^H^H
+
+Error: Comma not inside a backquote.
+  [condition type: READER-ERROR]
+[1] USER(4): (my-fasl)
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-template.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-dep.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/general-exp.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-template.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-dep.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/random-templ-exp.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/static-order-exp.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/static-order-exp.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/cpu-xy.fasl.
+T
+[1] USER(5): :ld final-test.lisp
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/final-test.lisp.
+Warning: ignoring extra right parenthesis
+[1] USER(6): (start-test-d)
+
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+***** Initial Selection State Description ***** 
+
+ Node id: ROOT 
+ Partial solution: NIL 
+ Symbol: E2 
+ Symbol value: NIL 
+ Domain: (DMAXC_24 DMAXC_50) 
+ Variables left: ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                   DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                   DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                   DMAXC_93)) 
+ Arc Cost: 0 
+ Depth: 1 
+ Max fail level: 0 
+ Prev Node id: NONE 
+ Parent id: NIL 
+
+***** Visit State Description ***** 
+
+ Node id: 1 
+ Partial solution: NIL 
+ Symbol: E2 
+ Symbol value: DMAXC_24 
+ Domain: (DMAXC_50) 
+ Variables left: ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                   DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                   DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                   DMAXC_93)) 
+ Arc Cost: 0 
+ Depth: 1 
+ Max fail level: 0 
+ Prev Node id: NONE 
+ Parent id: NIL 
+
+
+> >>>>>> Node   < 1 > 
+> Current: symbol, value, partial  < E2, DMAXC_24, NIL > 
+> Satisfy-p <symbol, value, partial>  < E2, DMAXC_24, NIL > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 1 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                       (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                        DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                        DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                        DMAXC_93)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E2, DMAXC_24, ((E2
+                                                                                 DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_2, E2, DMAXC_24 > 
+>    < 1 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_2 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E2, DMAXC_24, ((E2
+                                                                                 DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_3, E2, DMAXC_24 > 
+>    < 2 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_3 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E2, DMAXC_24, ((E2
+                                                                                 DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_8, E2, DMAXC_24 > 
+>    < 3 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_8 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_17, E2, DMAXC_24 > 
+>    < 4 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_17 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_19, E2, DMAXC_24 > 
+>    < 5 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_19 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_23, E2, DMAXC_24 > 
+>    < 6 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_28, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_28, E2, DMAXC_24 > 
+>    < 7 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_28 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_42, E2, DMAXC_24 > 
+>    < 8 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_42 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_49, E2, DMAXC_24 > 
+>    < 9 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_49 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_56, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_56, E2, DMAXC_24 > 
+>    < 10 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_56 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_62, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_62, E2, DMAXC_24 > 
+>    < 11 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_62 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_66, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_66, E2, DMAXC_24 > 
+>    < 12 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_66 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_70, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_70, E2, DMAXC_24 > 
+>    < 13 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_70 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_74, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_74, E2, DMAXC_24 > 
+>    < 14 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_74 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_77, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_77, E2, DMAXC_24 > 
+>    < 15 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_77 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_83, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_83, E2, DMAXC_24 > 
+>    < 16 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_83 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_89, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_89, E2, DMAXC_24 > 
+>    < 17 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_89 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_91, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_91, E2, DMAXC_24 > 
+>    < 18 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_91 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_93, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_93, E2, DMAXC_24 > 
+>    < 19 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_93 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+> FC varleft out  < ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19
+                      DMAXC_23)) > 
+> DR varleft input  < ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                       (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19
+                        DMAXC_23)) > 
+> DR varleft out  < ((E5 DMAXC_25 DMAXC_51) (E3 DMAXC_21 DMAXC_47)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) > 
+> Next Symbol, domain  < E5, (DMAXC_25 DMAXC_51) > 
+***** Visit State Description ***** 
+
+ Node id: 2 
+ Partial solution: ((E2 DMAXC_24)) 
+ Symbol: E5 
+ Symbol value: DMAXC_25 
+ Domain: (DMAXC_51) 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: 0 
+ Prev Node id: 1 
+ Parent id: #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 0 NIL) 
+
+
+> >>>>>> Node   < 2 > 
+> Current: symbol, value, partial  < E5, DMAXC_25, ((E2 DMAXC_24)) > 
+> Satisfy-p <symbol, value, partial>  < E5, DMAXC_25, ((E2 DMAXC_24)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 2 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_21 DMAXC_47)
+                       (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+                        DMAXC_92)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_12, E5, DMAXC_25 > 
+>    < 20 > 
+> possible-data-dependency fail for  < DMAXC_12, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E5, DMAXC_25 > 
+>    < 21 > 
+> possible-data-dependency succeed for  < DMAXC_26, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E5, DMAXC_25 > 
+>    < 22 > 
+> possible-data-dependency succeed for  < DMAXC_27, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E5, DMAXC_25 > 
+>    < 23 > 
+> possible-data-dependency succeed for  < DMAXC_29, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E5, DMAXC_25 > 
+>    < 24 > 
+> possible-data-dependency succeed for  < DMAXC_31, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E5, DMAXC_25 > 
+>    < 25 > 
+> possible-data-dependency succeed for  < DMAXC_32, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E5, DMAXC_25 > 
+>    < 26 > 
+> possible-data-dependency fail for  < DMAXC_52, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E5, DMAXC_25 > 
+>    < 27 > 
+> possible-data-dependency fail for  < DMAXC_53, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E5, DMAXC_25 > 
+>    < 28 > 
+> possible-data-dependency fail for  < DMAXC_57, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_90, E5, DMAXC_25 > 
+>    < 29 > 
+> possible-data-dependency fail for  < DMAXC_90, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_92, E5, DMAXC_25 > 
+>    < 30 > 
+> possible-data-dependency fail for  < DMAXC_92, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E5, DMAXC_25, ((E2
+                                                                                 DMAXC_24)
+                                                                                (E5
+                                                                                 DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_2, E5, DMAXC_25 > 
+>    < 31 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_2 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E5, DMAXC_25, ((E2
+                                                                                 DMAXC_24)
+                                                                                (E5
+                                                                                 DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_3, E5, DMAXC_25 > 
+>    < 32 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_3 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_25, ((E2
+                                                                                 DMAXC_24)
+                                                                                (E5
+                                                                                 DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_8, E5, DMAXC_25 > 
+>    < 33 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_8 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_17, E5, DMAXC_25 > 
+>    < 34 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_17 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_19, E5, DMAXC_25 > 
+>    < 35 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_19 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_23, E5, DMAXC_25 > 
+>    < 36 > 
+> possible-data-dependency succeed for  < DMAXC_25, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E5, DMAXC_25 > 
+>    < 37 > 
+> possible-data-dependency succeed for  < DMAXC_21, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E5, DMAXC_25 > 
+>    < 38 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_25 > 
+> FC varleft out  < ((E3 DMAXC_21) (E1 DMAXC_23)
+                     (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft input  < ((E3 DMAXC_21) (E1 DMAXC_23)
+                       (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft out  < ((E1 DMAXC_23) (E3 DMAXC_21)
+                     (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> Next Symbol, domain  < E1, (DMAXC_23) > 
+***** Visit State Description ***** 
+
+ Node id: 3 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25)) 
+ Symbol: E1 
+ Symbol value: DMAXC_23 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21)
+                  (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) 
+ Arc Cost: 0 
+ Depth: 3 
+ Max fail level: 0 
+ Prev Node id: 2 
+ Parent id: #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+              ((E3 DMAXC_21 DMAXC_47)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+              0 2 0
+              #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                 (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                  DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                  DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                  DMAXC_93))
+                0 1 -1 NIL)) 
+
+
+> >>>>>> Node   < 3 > 
+> Current: symbol, value, partial  < E1, DMAXC_23, ((E2 DMAXC_24)
+                                                    (E5 DMAXC_25)) > 
+> Satisfy-p <symbol, value, partial>  < E1, DMAXC_23, ((E2 DMAXC_24)
+                                                       (E5 DMAXC_25)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_23, E2, DMAXC_24 > 
+>    < 39 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_23 > 
+>     inst-var-ck call  < (E5 DMAXC_25) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_23, E5, DMAXC_25 > 
+>    < 40 > 
+> possible-data-dependency succeed for  < DMAXC_25, DMAXC_23 > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 3 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_21)
+                       (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E1, DMAXC_23 > 
+>    < 41 > 
+> possible-data-dependency succeed for  < DMAXC_26, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E1, DMAXC_23 > 
+>    < 42 > 
+> possible-data-dependency succeed for  < DMAXC_27, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E1, DMAXC_23 > 
+>    < 43 > 
+> possible-data-dependency succeed for  < DMAXC_29, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E1, DMAXC_23 > 
+>    < 44 > 
+> possible-data-dependency succeed for  < DMAXC_31, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E1, DMAXC_23 > 
+>    < 45 > 
+> possible-data-dependency succeed for  < DMAXC_32, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_23 > 
+>    < 46 > 
+> possible-data-dependency succeed for  < DMAXC_21, DMAXC_23 > 
+> FC varleft out  < ((E3 DMAXC_21)
+                     (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft input  < ((E3 DMAXC_21)
+                       (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft out  < ((E3 DMAXC_21)
+                     (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> Next Symbol, domain  < E3, (DMAXC_21) > 
+***** Visit State Description ***** 
+
+ Node id: 4 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23)) 
+ Symbol: E3 
+ Symbol value: DMAXC_21 
+ Domain: NIL 
+ Variables left: ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) 
+ Arc Cost: 0 
+ Depth: 4 
+ Max fail level: 0 
+ Prev Node id: 3 
+ Parent id: #(BT-STATE 3 2 ((E2 DMAXC_24) (E5 DMAXC_25)) E1 DMAXC_23 NIL
+              ((E3 DMAXC_21)
+               (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+              0 3 0
+              #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+                ((E3 DMAXC_21 DMAXC_47)
+                 (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                0 2 -1
+                #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                  ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                    DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                    DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                    DMAXC_93))
+                  0 1 -1 NIL))) 
+
+
+> >>>>>> Node   < 4 > 
+> Current: symbol, value, partial  < E3, DMAXC_21, ((E2 DMAXC_24)
+                                                    (E5 DMAXC_25)
+                                                    (E1 DMAXC_23)) > 
+> Satisfy-p <symbol, value, partial>  < E3, DMAXC_21, ((E2 DMAXC_24)
+                                                       (E5 DMAXC_25)
+                                                       (E1 DMAXC_23)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_25) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E5, DMAXC_25 > 
+>    < 47 > 
+> possible-data-dependency succeed for  < DMAXC_21, DMAXC_25 > 
+>     inst-var-ck call  < (E1 DMAXC_23) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_23 > 
+>    < 48 > 
+> possible-data-dependency succeed for  < DMAXC_21, DMAXC_23 > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 4 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+> FC varleft out  < ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft input  < ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft out  < ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> Next Symbol, domain  < E4, (DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32) > 
+***** Visit State Description ***** 
+
+ Node id: 5 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21)) 
+ Symbol: E4 
+ Symbol value: DMAXC_26 
+ Domain: (DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32) 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 4 
+ Parent id: #(BT-STATE 4 3 ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23)) E3
+              DMAXC_21 NIL ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+              0 4 0
+              #(BT-STATE 3 2 ((E2 DMAXC_24) (E5 DMAXC_25)) E1 DMAXC_23 NIL
+                ((E3 DMAXC_21)
+                 (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+                0 3 -1
+                #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 5 > 
+> Current: symbol, value, partial  < E4, DMAXC_26, ((E2 DMAXC_24)
+                                                    (E5 DMAXC_25)
+                                                    (E1 DMAXC_23)
+                                                    (E3 DMAXC_21)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_26, ((E2 DMAXC_24)
+                                                       (E5 DMAXC_25)
+                                                       (E1 DMAXC_23)
+                                                       (E3 DMAXC_21)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_25) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E5, DMAXC_25 > 
+>    < 49 > 
+> possible-data-dependency succeed for  < DMAXC_26, DMAXC_25 > 
+>     inst-var-ck call  < (E1 DMAXC_23) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E1, DMAXC_23 > 
+>    < 50 > 
+> possible-data-dependency succeed for  < DMAXC_26, DMAXC_23 > 
+>     inst-var-ck call  < (E3 DMAXC_21) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 5 > 
+> -------------------------- 
+ 
+***** Visit State Description ***** 
+
+ Node id: 6 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21)) 
+ Symbol: E4 
+ Symbol value: DMAXC_27 
+ Domain: (DMAXC_29 DMAXC_31 DMAXC_32) 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 4 
+ Parent id: #(BT-STATE 4 3 ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23)) E3
+              DMAXC_21 NIL ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+              0 4 -1
+              #(BT-STATE 3 2 ((E2 DMAXC_24) (E5 DMAXC_25)) E1 DMAXC_23 NIL
+                ((E3 DMAXC_21)
+                 (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+                0 3 -1
+                #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 6 > 
+> Current: symbol, value, partial  < E4, DMAXC_27, ((E2 DMAXC_24)
+                                                    (E5 DMAXC_25)
+                                                    (E1 DMAXC_23)
+                                                    (E3 DMAXC_21)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_27, ((E2 DMAXC_24)
+                                                       (E5 DMAXC_25)
+                                                       (E1 DMAXC_23)
+                                                       (E3 DMAXC_21)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_25) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E5, DMAXC_25 > 
+>    < 51 > 
+> possible-data-dependency succeed for  < DMAXC_27, DMAXC_25 > 
+>     inst-var-ck call  < (E1 DMAXC_23) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E1, DMAXC_23 > 
+>    < 52 > 
+> possible-data-dependency succeed for  < DMAXC_27, DMAXC_23 > 
+>     inst-var-ck call  < (E3 DMAXC_21) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 6 > 
+> -------------------------- 
+ 
+***** Visit State Description ***** 
+
+ Node id: 7 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21)) 
+ Symbol: E4 
+ Symbol value: DMAXC_29 
+ Domain: (DMAXC_31 DMAXC_32) 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 4 
+ Parent id: #(BT-STATE 4 3 ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23)) E3
+              DMAXC_21 NIL ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+              0 4 -1
+              #(BT-STATE 3 2 ((E2 DMAXC_24) (E5 DMAXC_25)) E1 DMAXC_23 NIL
+                ((E3 DMAXC_21)
+                 (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+                0 3 -1
+                #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 7 > 
+> Current: symbol, value, partial  < E4, DMAXC_29, ((E2 DMAXC_24)
+                                                    (E5 DMAXC_25)
+                                                    (E1 DMAXC_23)
+                                                    (E3 DMAXC_21)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_29, ((E2 DMAXC_24)
+                                                       (E5 DMAXC_25)
+                                                       (E1 DMAXC_23)
+                                                       (E3 DMAXC_21)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_25) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E5, DMAXC_25 > 
+>    < 53 > 
+> possible-data-dependency succeed for  < DMAXC_29, DMAXC_25 > 
+>     inst-var-ck call  < (E1 DMAXC_23) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E1, DMAXC_23 > 
+>    < 54 > 
+> possible-data-dependency succeed for  < DMAXC_29, DMAXC_23 > 
+>     inst-var-ck call  < (E3 DMAXC_21) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 7 > 
+> -------------------------- 
+ 
+***** Visit State Description ***** 
+
+ Node id: 8 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21)) 
+ Symbol: E4 
+ Symbol value: DMAXC_31 
+ Domain: (DMAXC_32) 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 4 
+ Parent id: #(BT-STATE 4 3 ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23)) E3
+              DMAXC_21 NIL ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+              0 4 -1
+              #(BT-STATE 3 2 ((E2 DMAXC_24) (E5 DMAXC_25)) E1 DMAXC_23 NIL
+                ((E3 DMAXC_21)
+                 (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+                0 3 -1
+                #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 8 > 
+> Current: symbol, value, partial  < E4, DMAXC_31, ((E2 DMAXC_24)
+                                                    (E5 DMAXC_25)
+                                                    (E1 DMAXC_23)
+                                                    (E3 DMAXC_21)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_31, ((E2 DMAXC_24)
+                                                       (E5 DMAXC_25)
+                                                       (E1 DMAXC_23)
+                                                       (E3 DMAXC_21)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_25) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E5, DMAXC_25 > 
+>    < 55 > 
+> possible-data-dependency succeed for  < DMAXC_31, DMAXC_25 > 
+>     inst-var-ck call  < (E1 DMAXC_23) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E1, DMAXC_23 > 
+>    < 56 > 
+> possible-data-dependency succeed for  < DMAXC_31, DMAXC_23 > 
+>     inst-var-ck call  < (E3 DMAXC_21) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 8 > 
+> -------------------------- 
+ 
+***** Visit State Description ***** 
+
+ Node id: 9 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21)) 
+ Symbol: E4 
+ Symbol value: DMAXC_32 
+ Domain: NIL 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 4 
+ Parent id: #(BT-STATE 4 3 ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23)) E3
+              DMAXC_21 NIL ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+              0 4 -1
+              #(BT-STATE 3 2 ((E2 DMAXC_24) (E5 DMAXC_25)) E1 DMAXC_23 NIL
+                ((E3 DMAXC_21)
+                 (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+                0 3 -1
+                #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 9 > 
+> Current: symbol, value, partial  < E4, DMAXC_32, ((E2 DMAXC_24)
+                                                    (E5 DMAXC_25)
+                                                    (E1 DMAXC_23)
+                                                    (E3 DMAXC_21)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_32, ((E2 DMAXC_24)
+                                                       (E5 DMAXC_25)
+                                                       (E1 DMAXC_23)
+                                                       (E3 DMAXC_21)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_25) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E5, DMAXC_25 > 
+>    < 57 > 
+> possible-data-dependency succeed for  < DMAXC_32, DMAXC_25 > 
+>     inst-var-ck call  < (E1 DMAXC_23) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E1, DMAXC_23, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E1, DMAXC_23 > 
+>    < 58 > 
+> possible-data-dependency succeed for  < DMAXC_32, DMAXC_23 > 
+>     inst-var-ck call  < (E3 DMAXC_21) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E3, DMAXC_21, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_25)
+                                                                                 (E1
+                                                                                  DMAXC_23)
+                                                                                 (E3
+                                                                                  DMAXC_21)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 9 > 
+> -------------------------- 
+ 
+> Domain exhausted for  < E4 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 4 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23)) 
+ Symbol: E3 
+ Symbol value: DMAXC_21 
+ Domain: NIL 
+ Variables left: ((E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) 
+ Arc Cost: 0 
+ Depth: 4 
+ Max fail level: -1 
+ Prev Node id: 3 
+ Parent id: #(BT-STATE 3 2 ((E2 DMAXC_24) (E5 DMAXC_25)) E1 DMAXC_23 NIL
+              ((E3 DMAXC_21)
+               (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32))
+              0 3 -1
+              #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+                ((E3 DMAXC_21 DMAXC_47)
+                 (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                0 2 -1
+                #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                  ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                    DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                    DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                    DMAXC_93))
+                  0 1 -1 NIL))) 
+
+> Domain exhausted for  < E3 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 3 
+ Partial solution: ((E2 DMAXC_24) (E5 DMAXC_25)) 
+ Symbol: E1 
+ Symbol value: DMAXC_23 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21)
+                  (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) 
+ Arc Cost: 0 
+ Depth: 3 
+ Max fail level: -1 
+ Prev Node id: 2 
+ Parent id: #(BT-STATE 2 1 ((E2 DMAXC_24)) E5 DMAXC_25 (DMAXC_51)
+              ((E3 DMAXC_21 DMAXC_47)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+              0 2 -1
+              #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+                ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                 (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                  DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                  DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                  DMAXC_93))
+                0 1 -1 NIL)) 
+
+> Domain exhausted for  < E1 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 2 
+ Partial solution: ((E2 DMAXC_24)) 
+ Symbol: E5 
+ Symbol value: DMAXC_25 
+ Domain: (DMAXC_51) 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: -1 
+ Prev Node id: 1 
+ Parent id: #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 -1 NIL) 
+
+***** Visit State Description ***** 
+
+ Node id: 10 
+ Partial solution: ((E2 DMAXC_24)) 
+ Symbol: E5 
+ Symbol value: DMAXC_51 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: 0 
+ Prev Node id: 1 
+ Parent id: #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 -1 NIL) 
+
+
+> >>>>>> Node   < 10 > 
+> Current: symbol, value, partial  < E5, DMAXC_51, ((E2 DMAXC_24)) > 
+> Satisfy-p <symbol, value, partial>  < E5, DMAXC_51, ((E2 DMAXC_24)) > 
+>     inst-var-ck call  < (E2 DMAXC_24) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_24, ((E2
+                                                                                  DMAXC_24)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 10 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_21 DMAXC_47)
+                       (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+                        DMAXC_92)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_12, E5, DMAXC_51 > 
+>    < 59 > 
+> possible-data-dependency fail for  < DMAXC_12, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E5, DMAXC_51 > 
+>    < 60 > 
+> possible-data-dependency fail for  < DMAXC_26, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E5, DMAXC_51 > 
+>    < 61 > 
+> possible-data-dependency fail for  < DMAXC_27, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E5, DMAXC_51 > 
+>    < 62 > 
+> possible-data-dependency fail for  < DMAXC_29, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E5, DMAXC_51 > 
+>    < 63 > 
+> possible-data-dependency fail for  < DMAXC_31, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E5, DMAXC_51 > 
+>    < 64 > 
+> possible-data-dependency fail for  < DMAXC_32, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E5, DMAXC_51 > 
+>    < 65 > 
+> possible-data-dependency succeed for  < DMAXC_52, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E5, DMAXC_51 > 
+>    < 66 > 
+> possible-data-dependency succeed for  < DMAXC_53, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E5, DMAXC_51 > 
+>    < 67 > 
+> possible-data-dependency succeed for  < DMAXC_57, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_90, E5, DMAXC_51 > 
+>    < 68 > 
+> possible-data-dependency fail for  < DMAXC_90, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_92, E5, DMAXC_51 > 
+>    < 69 > 
+> possible-data-dependency fail for  < DMAXC_92, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E5, DMAXC_51, ((E2
+                                                                                 DMAXC_24)
+                                                                                (E5
+                                                                                 DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_2, E5, DMAXC_51 > 
+>    < 70 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_2 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E5, DMAXC_51, ((E2
+                                                                                 DMAXC_24)
+                                                                                (E5
+                                                                                 DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_3, E5, DMAXC_51 > 
+>    < 71 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_3 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_51, ((E2
+                                                                                 DMAXC_24)
+                                                                                (E5
+                                                                                 DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_8, E5, DMAXC_51 > 
+>    < 72 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_8 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_17, E5, DMAXC_51 > 
+>    < 73 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_17 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_19, E5, DMAXC_51 > 
+>    < 74 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_19 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_23, E5, DMAXC_51 > 
+>    < 75 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E5, DMAXC_51 > 
+>    < 76 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_24)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E5, DMAXC_51 > 
+>    < 77 > 
+> possible-data-dependency succeed for  < DMAXC_47, DMAXC_51 > 
+> FC varleft out  < ((E3 DMAXC_47) (E1) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft input  < ((E3 DMAXC_47) (E1) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft out  < ((E1) (E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> Next Symbol, domain  < E1, NIL > 
+> Domain exhausted for  < E1 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 10 
+ Partial solution: ((E2 DMAXC_24)) 
+ Symbol: E5 
+ Symbol value: DMAXC_51 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: 0 
+ Prev Node id: 1 
+ Parent id: #(BT-STATE 1 NIL NIL E2 DMAXC_24 (DMAXC_50)
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 -1 NIL) 
+
+> Domain exhausted for  < E5 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 1 
+ Partial solution: NIL 
+ Symbol: E2 
+ Symbol value: DMAXC_24 
+ Domain: (DMAXC_50) 
+ Variables left: ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                   DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                   DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                   DMAXC_93)) 
+ Arc Cost: 0 
+ Depth: 1 
+ Max fail level: -1 
+ Prev Node id: NONE 
+ Parent id: NIL 
+
+***** Visit State Description ***** 
+
+ Node id: 11 
+ Partial solution: NIL 
+ Symbol: E2 
+ Symbol value: DMAXC_50 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                   DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                   DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                   DMAXC_93)) 
+ Arc Cost: 0 
+ Depth: 1 
+ Max fail level: 0 
+ Prev Node id: NONE 
+ Parent id: NIL 
+
+
+> >>>>>> Node   < 11 > 
+> Current: symbol, value, partial  < E2, DMAXC_50, NIL > 
+> Satisfy-p <symbol, value, partial>  < E2, DMAXC_50, NIL > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 11 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                       (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                        DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                        DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                        DMAXC_93)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E2, DMAXC_50, ((E2
+                                                                                 DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_2, E2, DMAXC_50 > 
+>    < 78 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_2 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E2, DMAXC_50, ((E2
+                                                                                 DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_3, E2, DMAXC_50 > 
+>    < 79 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_3 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E2, DMAXC_50, ((E2
+                                                                                 DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_8, E2, DMAXC_50 > 
+>    < 80 > 
+> control-data-dependency succeed for  < DMAXC_50, DMAXC_8 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_17, E2, DMAXC_50 > 
+>    < 81 > 
+> control-data-dependency succeed for  < DMAXC_50, DMAXC_17 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_19, E2, DMAXC_50 > 
+>    < 82 > 
+> control-data-dependency succeed for  < DMAXC_50, DMAXC_19 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_23, E2, DMAXC_50 > 
+>    < 83 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_23 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_28, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_28, E2, DMAXC_50 > 
+>    < 84 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_28 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_42, E2, DMAXC_50 > 
+>    < 85 > 
+> control-data-dependency succeed for  < DMAXC_50, DMAXC_42 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_49, E2, DMAXC_50 > 
+>    < 86 > 
+> control-data-dependency succeed for  < DMAXC_50, DMAXC_49 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_56, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_56, E2, DMAXC_50 > 
+>    < 87 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_56 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_62, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_62, E2, DMAXC_50 > 
+>    < 88 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_62 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_66, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_66, E2, DMAXC_50 > 
+>    < 89 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_66 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_70, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_70, E2, DMAXC_50 > 
+>    < 90 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_70 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_74, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_74, E2, DMAXC_50 > 
+>    < 91 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_74 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_77, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_77, E2, DMAXC_50 > 
+>    < 92 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_77 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_83, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_83, E2, DMAXC_50 > 
+>    < 93 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_83 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_89, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_89, E2, DMAXC_50 > 
+>    < 94 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_89 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_91, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_91, E2, DMAXC_50 > 
+>    < 95 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_91 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_93, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_93, E2, DMAXC_50 > 
+>    < 96 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_93 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+> FC varleft out  < ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)) > 
+> DR varleft input  < ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                       (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)) > 
+> DR varleft out  < ((E5 DMAXC_25 DMAXC_51) (E3 DMAXC_21 DMAXC_47)
+                     (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) > 
+> Next Symbol, domain  < E5, (DMAXC_25 DMAXC_51) > 
+***** Visit State Description ***** 
+
+ Node id: 12 
+ Partial solution: ((E2 DMAXC_50)) 
+ Symbol: E5 
+ Symbol value: DMAXC_25 
+ Domain: (DMAXC_51) 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: 0 
+ Prev Node id: 11 
+ Parent id: #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 0 NIL) 
+
+
+> >>>>>> Node   < 12 > 
+> Current: symbol, value, partial  < E5, DMAXC_25, ((E2 DMAXC_50)) > 
+> Satisfy-p <symbol, value, partial>  < E5, DMAXC_25, ((E2 DMAXC_50)) > 
+>     inst-var-ck call  < (E2 DMAXC_50) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 12 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_21 DMAXC_47)
+                       (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+                        DMAXC_92)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_12, E5, DMAXC_25 > 
+>    < 97 > 
+> possible-data-dependency fail for  < DMAXC_12, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E5, DMAXC_25 > 
+>    < 98 > 
+> possible-data-dependency succeed for  < DMAXC_26, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E5, DMAXC_25 > 
+>    < 99 > 
+> possible-data-dependency succeed for  < DMAXC_27, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E5, DMAXC_25 > 
+>    < 100 > 
+> possible-data-dependency succeed for  < DMAXC_29, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E5, DMAXC_25 > 
+>    < 101 > 
+> possible-data-dependency succeed for  < DMAXC_31, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E5, DMAXC_25 > 
+>    < 102 > 
+> possible-data-dependency succeed for  < DMAXC_32, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E5, DMAXC_25 > 
+>    < 103 > 
+> possible-data-dependency fail for  < DMAXC_52, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E5, DMAXC_25 > 
+>    < 104 > 
+> possible-data-dependency fail for  < DMAXC_53, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E5, DMAXC_25 > 
+>    < 105 > 
+> possible-data-dependency fail for  < DMAXC_57, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_90, E5, DMAXC_25 > 
+>    < 106 > 
+> possible-data-dependency fail for  < DMAXC_90, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_92, E5, DMAXC_25 > 
+>    < 107 > 
+> possible-data-dependency fail for  < DMAXC_92, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_25, ((E2
+                                                                                 DMAXC_50)
+                                                                                (E5
+                                                                                 DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_8, E5, DMAXC_25 > 
+>    < 108 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_8 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_17, E5, DMAXC_25 > 
+>    < 109 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_17 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_19, E5, DMAXC_25 > 
+>    < 110 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_19 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_42, E5, DMAXC_25 > 
+>    < 111 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_42 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_49, E5, DMAXC_25 > 
+>    < 112 > 
+> possible-data-dependency fail for  < DMAXC_25, DMAXC_49 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E5, DMAXC_25 > 
+>    < 113 > 
+> possible-data-dependency succeed for  < DMAXC_21, DMAXC_25 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_25, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_25)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E5, DMAXC_25 > 
+>    < 114 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_25 > 
+> FC varleft out  < ((E3 DMAXC_21) (E1)
+                     (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft input  < ((E3 DMAXC_21) (E1)
+                       (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> DR varleft out  < ((E1) (E3 DMAXC_21)
+                     (E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32)) > 
+> Next Symbol, domain  < E1, NIL > 
+> Domain exhausted for  < E1 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 12 
+ Partial solution: ((E2 DMAXC_50)) 
+ Symbol: E5 
+ Symbol value: DMAXC_25 
+ Domain: (DMAXC_51) 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: 0 
+ Prev Node id: 11 
+ Parent id: #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 -1 NIL) 
+
+***** Visit State Description ***** 
+
+ Node id: 13 
+ Partial solution: ((E2 DMAXC_50)) 
+ Symbol: E5 
+ Symbol value: DMAXC_51 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: 0 
+ Prev Node id: 11 
+ Parent id: #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 -1 NIL) 
+
+
+> >>>>>> Node   < 13 > 
+> Current: symbol, value, partial  < E5, DMAXC_51, ((E2 DMAXC_50)) > 
+> Satisfy-p <symbol, value, partial>  < E5, DMAXC_51, ((E2 DMAXC_50)) > 
+>     inst-var-ck call  < (E2 DMAXC_50) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 13 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_21 DMAXC_47)
+                       (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                       (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+                        DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+                        DMAXC_92)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_12, E5, DMAXC_51 > 
+>    < 115 > 
+> possible-data-dependency fail for  < DMAXC_12, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E5, DMAXC_51 > 
+>    < 116 > 
+> possible-data-dependency fail for  < DMAXC_26, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E5, DMAXC_51 > 
+>    < 117 > 
+> possible-data-dependency fail for  < DMAXC_27, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E5, DMAXC_51 > 
+>    < 118 > 
+> possible-data-dependency fail for  < DMAXC_29, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E5, DMAXC_51 > 
+>    < 119 > 
+> possible-data-dependency fail for  < DMAXC_31, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E5, DMAXC_51 > 
+>    < 120 > 
+> possible-data-dependency fail for  < DMAXC_32, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E5, DMAXC_51 > 
+>    < 121 > 
+> possible-data-dependency succeed for  < DMAXC_52, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E5, DMAXC_51 > 
+>    < 122 > 
+> possible-data-dependency succeed for  < DMAXC_53, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E5, DMAXC_51 > 
+>    < 123 > 
+> possible-data-dependency succeed for  < DMAXC_57, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_90, E5, DMAXC_51 > 
+>    < 124 > 
+> possible-data-dependency fail for  < DMAXC_90, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_92, E5, DMAXC_51 > 
+>    < 125 > 
+> possible-data-dependency fail for  < DMAXC_92, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_51, ((E2
+                                                                                 DMAXC_50)
+                                                                                (E5
+                                                                                 DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_8, E5, DMAXC_51 > 
+>    < 126 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_8 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_17, E5, DMAXC_51 > 
+>    < 127 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_17 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_19, E5, DMAXC_51 > 
+>    < 128 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_19 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_42, E5, DMAXC_51 > 
+>    < 129 > 
+> possible-data-dependency fail for  < DMAXC_51, DMAXC_42 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_49, E5, DMAXC_51 > 
+>    < 130 > 
+> possible-data-dependency succeed for  < DMAXC_51, DMAXC_49 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E5, DMAXC_51 > 
+>    < 131 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_51 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E5, DMAXC_51 > 
+>    < 132 > 
+> possible-data-dependency succeed for  < DMAXC_47, DMAXC_51 > 
+> FC varleft out  < ((E3 DMAXC_47) (E1 DMAXC_49)
+                     (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft input  < ((E3 DMAXC_47) (E1 DMAXC_49)
+                       (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft out  < ((E1 DMAXC_49) (E3 DMAXC_47)
+                     (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> Next Symbol, domain  < E1, (DMAXC_49) > 
+***** Visit State Description ***** 
+
+ Node id: 14 
+ Partial solution: ((E2 DMAXC_50) (E5 DMAXC_51)) 
+ Symbol: E1 
+ Symbol value: DMAXC_49 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) 
+ Arc Cost: 0 
+ Depth: 3 
+ Max fail level: 0 
+ Prev Node id: 13 
+ Parent id: #(BT-STATE 13 11 ((E2 DMAXC_50)) E5 DMAXC_51 NIL
+              ((E3 DMAXC_21 DMAXC_47)
+               (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+              0 2 0
+              #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+                ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                 (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                  DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                  DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                  DMAXC_93))
+                0 1 -1 NIL)) 
+
+
+> >>>>>> Node   < 14 > 
+> Current: symbol, value, partial  < E1, DMAXC_49, ((E2 DMAXC_50)
+                                                    (E5 DMAXC_51)) > 
+> Satisfy-p <symbol, value, partial>  < E1, DMAXC_49, ((E2 DMAXC_50)
+                                                       (E5 DMAXC_51)) > 
+>     inst-var-ck call  < (E2 DMAXC_50) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_49, E2, DMAXC_50 > 
+>    < 133 > 
+> control-data-dependency succeed for  < DMAXC_50, DMAXC_49 > 
+>     inst-var-ck call  < (E5 DMAXC_51) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E1, DMAXC_49, E5, DMAXC_51 > 
+>    < 134 > 
+> possible-data-dependency succeed for  < DMAXC_51, DMAXC_49 > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 14 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E1, DMAXC_49 > 
+>    < 135 > 
+> possible-data-dependency succeed for  < DMAXC_52, DMAXC_49 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E1, DMAXC_49 > 
+>    < 136 > 
+> possible-data-dependency succeed for  < DMAXC_53, DMAXC_49 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E1, DMAXC_49 > 
+>    < 137 > 
+> possible-data-dependency succeed for  < DMAXC_57, DMAXC_49 > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_49 > 
+>    < 138 > 
+> possible-data-dependency succeed for  < DMAXC_47, DMAXC_49 > 
+> FC varleft out  < ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft input  < ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft out  < ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> Next Symbol, domain  < E3, (DMAXC_47) > 
+***** Visit State Description ***** 
+
+ Node id: 15 
+ Partial solution: ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49)) 
+ Symbol: E3 
+ Symbol value: DMAXC_47 
+ Domain: NIL 
+ Variables left: ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) 
+ Arc Cost: 0 
+ Depth: 4 
+ Max fail level: 0 
+ Prev Node id: 14 
+ Parent id: #(BT-STATE 14 13 ((E2 DMAXC_50) (E5 DMAXC_51)) E1 DMAXC_49 NIL
+              ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 3 0
+              #(BT-STATE 13 11 ((E2 DMAXC_50)) E5 DMAXC_51 NIL
+                ((E3 DMAXC_21 DMAXC_47)
+                 (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                0 2 -1
+                #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+                  ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                    DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                    DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                    DMAXC_93))
+                  0 1 -1 NIL))) 
+
+
+> >>>>>> Node   < 15 > 
+> Current: symbol, value, partial  < E3, DMAXC_47, ((E2 DMAXC_50)
+                                                    (E5 DMAXC_51)
+                                                    (E1 DMAXC_49)) > 
+> Satisfy-p <symbol, value, partial>  < E3, DMAXC_47, ((E2 DMAXC_50)
+                                                       (E5 DMAXC_51)
+                                                       (E1 DMAXC_49)) > 
+>     inst-var-ck call  < (E2 DMAXC_50) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_51) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E5, DMAXC_51 > 
+>    < 139 > 
+> possible-data-dependency succeed for  < DMAXC_47, DMAXC_51 > 
+>     inst-var-ck call  < (E1 DMAXC_49) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_49 > 
+>    < 140 > 
+> possible-data-dependency succeed for  < DMAXC_47, DMAXC_49 > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> ------------------- 
+ 
+> > BACKTRACK POINT <  < 15 > 
+> ------------------- 
+ 
+> FC varleft input  < ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E3, DMAXC_47, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E3, DMAXC_47, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E3, DMAXC_47, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+> FC varleft out  < ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft input  < ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> DR varleft out  < ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) > 
+> Next Symbol, domain  < E4, (DMAXC_52 DMAXC_53 DMAXC_57) > 
+***** Visit State Description ***** 
+
+ Node id: 16 
+ Partial solution: ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49) (E3 DMAXC_47)) 
+ Symbol: E4 
+ Symbol value: DMAXC_52 
+ Domain: (DMAXC_53 DMAXC_57) 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 15 
+ Parent id: #(BT-STATE 15 14 ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49)) E3
+              DMAXC_47 NIL ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 4 0
+              #(BT-STATE 14 13 ((E2 DMAXC_50) (E5 DMAXC_51)) E1 DMAXC_49 NIL
+                ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 3 -1
+                #(BT-STATE 13 11 ((E2 DMAXC_50)) E5 DMAXC_51 NIL
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 16 > 
+> Current: symbol, value, partial  < E4, DMAXC_52, ((E2 DMAXC_50)
+                                                    (E5 DMAXC_51)
+                                                    (E1 DMAXC_49)
+                                                    (E3 DMAXC_47)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_52, ((E2 DMAXC_50)
+                                                       (E5 DMAXC_51)
+                                                       (E1 DMAXC_49)
+                                                       (E3 DMAXC_47)) > 
+>     inst-var-ck call  < (E2 DMAXC_50) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_51) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E5, DMAXC_51 > 
+>    < 141 > 
+> possible-data-dependency succeed for  < DMAXC_52, DMAXC_51 > 
+>     inst-var-ck call  < (E1 DMAXC_49) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E1, DMAXC_49 > 
+>    < 142 > 
+> possible-data-dependency succeed for  < DMAXC_52, DMAXC_49 > 
+>     inst-var-ck call  < (E3 DMAXC_47) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E3, DMAXC_47, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 16 > 
+> -------------------------- 
+ 
+***** Visit State Description ***** 
+
+ Node id: 17 
+ Partial solution: ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49) (E3 DMAXC_47)) 
+ Symbol: E4 
+ Symbol value: DMAXC_53 
+ Domain: (DMAXC_57) 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 15 
+ Parent id: #(BT-STATE 15 14 ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49)) E3
+              DMAXC_47 NIL ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 4 -1
+              #(BT-STATE 14 13 ((E2 DMAXC_50) (E5 DMAXC_51)) E1 DMAXC_49 NIL
+                ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 3 -1
+                #(BT-STATE 13 11 ((E2 DMAXC_50)) E5 DMAXC_51 NIL
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 17 > 
+> Current: symbol, value, partial  < E4, DMAXC_53, ((E2 DMAXC_50)
+                                                    (E5 DMAXC_51)
+                                                    (E1 DMAXC_49)
+                                                    (E3 DMAXC_47)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_53, ((E2 DMAXC_50)
+                                                       (E5 DMAXC_51)
+                                                       (E1 DMAXC_49)
+                                                       (E3 DMAXC_47)) > 
+>     inst-var-ck call  < (E2 DMAXC_50) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_51) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E5, DMAXC_51 > 
+>    < 143 > 
+> possible-data-dependency succeed for  < DMAXC_53, DMAXC_51 > 
+>     inst-var-ck call  < (E1 DMAXC_49) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E1, DMAXC_49 > 
+>    < 144 > 
+> possible-data-dependency succeed for  < DMAXC_53, DMAXC_49 > 
+>     inst-var-ck call  < (E3 DMAXC_47) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E3, DMAXC_47, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 17 > 
+> -------------------------- 
+ 
+***** Visit State Description ***** 
+
+ Node id: 18 
+ Partial solution: ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49) (E3 DMAXC_47)) 
+ Symbol: E4 
+ Symbol value: DMAXC_57 
+ Domain: NIL 
+ Variables left: NIL 
+ Arc Cost: 0 
+ Depth: 5 
+ Max fail level: 0 
+ Prev Node id: 15 
+ Parent id: #(BT-STATE 15 14 ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49)) E3
+              DMAXC_47 NIL ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 4 -1
+              #(BT-STATE 14 13 ((E2 DMAXC_50) (E5 DMAXC_51)) E1 DMAXC_49 NIL
+                ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 3 -1
+                #(BT-STATE 13 11 ((E2 DMAXC_50)) E5 DMAXC_51 NIL
+                  ((E3 DMAXC_21 DMAXC_47)
+                   (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                  0 2 -1
+                  #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+                    ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                     (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                      DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                     (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                      DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                      DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                      DMAXC_93))
+                    0 1 -1 NIL)))) 
+
+
+> >>>>>> Node   < 18 > 
+> Current: symbol, value, partial  < E4, DMAXC_57, ((E2 DMAXC_50)
+                                                    (E5 DMAXC_51)
+                                                    (E1 DMAXC_49)
+                                                    (E3 DMAXC_47)) > 
+> Satisfy-p <symbol, value, partial>  < E4, DMAXC_57, ((E2 DMAXC_50)
+                                                       (E5 DMAXC_51)
+                                                       (E1 DMAXC_49)
+                                                       (E3 DMAXC_47)) > 
+>     inst-var-ck call  < (E2 DMAXC_50) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E2, DMAXC_50, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+>     inst-var-ck call  < (E5 DMAXC_51) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_51, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E5, DMAXC_51 > 
+>    < 145 > 
+> possible-data-dependency succeed for  < DMAXC_57, DMAXC_51 > 
+>     inst-var-ck call  < (E1 DMAXC_49) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E1, DMAXC_49, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E1, DMAXC_49 > 
+>    < 146 > 
+> possible-data-dependency succeed for  < DMAXC_57, DMAXC_49 > 
+>     inst-var-ck call  < (E3 DMAXC_47) > 
+
+> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E3, DMAXC_47, ((E2
+                                                                                  DMAXC_50)
+                                                                                 (E5
+                                                                                  DMAXC_51)
+                                                                                 (E1
+                                                                                  DMAXC_49)
+                                                                                 (E3
+                                                                                  DMAXC_47)) > 
+> No arc constraints  < T > 
+> SP results s-p, sp-fail-level  < T, 0 > 
+> -------------------------- 
+ 
+> Solution found  < 18 > 
+> -------------------------- 
+ 
+> Domain exhausted for  < E4 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 15 
+ Partial solution: ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49)) 
+ Symbol: E3 
+ Symbol value: DMAXC_47 
+ Domain: NIL 
+ Variables left: ((E4 DMAXC_52 DMAXC_53 DMAXC_57)) 
+ Arc Cost: 0 
+ Depth: 4 
+ Max fail level: -1 
+ Prev Node id: 14 
+ Parent id: #(BT-STATE 14 13 ((E2 DMAXC_50) (E5 DMAXC_51)) E1 DMAXC_49 NIL
+              ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) 0 3 -1
+              #(BT-STATE 13 11 ((E2 DMAXC_50)) E5 DMAXC_51 NIL
+                ((E3 DMAXC_21 DMAXC_47)
+                 (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+                0 2 -1
+                #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+                  ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                   (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                    DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                   (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                    DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                    DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                    DMAXC_93))
+                  0 1 -1 NIL))) 
+
+> Domain exhausted for  < E3 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 14 
+ Partial solution: ((E2 DMAXC_50) (E5 DMAXC_51)) 
+ Symbol: E1 
+ Symbol value: DMAXC_49 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_47) (E4 DMAXC_52 DMAXC_53 DMAXC_57)) 
+ Arc Cost: 0 
+ Depth: 3 
+ Max fail level: -1 
+ Prev Node id: 13 
+ Parent id: #(BT-STATE 13 11 ((E2 DMAXC_50)) E5 DMAXC_51 NIL
+              ((E3 DMAXC_21 DMAXC_47)
+               (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92))
+              0 2 -1
+              #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+                ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                 (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                  DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                 (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                  DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                  DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                  DMAXC_93))
+                0 1 -1 NIL)) 
+
+> Domain exhausted for  < E1 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 13 
+ Partial solution: ((E2 DMAXC_50)) 
+ Symbol: E5 
+ Symbol value: DMAXC_51 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21 DMAXC_47)
+                  (E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)) 
+ Arc Cost: 0 
+ Depth: 2 
+ Max fail level: -1 
+ Prev Node id: 11 
+ Parent id: #(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+              ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+               (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+               (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+                DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+                DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93))
+              0 1 -1 NIL) 
+
+> Domain exhausted for  < E5 > 
+***** BACKTRACK TO THIS NODE State Description ***** 
+
+ Node id: 11 
+ Partial solution: NIL 
+ Symbol: E2 
+ Symbol value: DMAXC_50 
+ Domain: NIL 
+ Variables left: ((E3 DMAXC_21 DMAXC_47) (E5 DMAXC_25 DMAXC_51)
+                  (E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+                   DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92)
+                  (E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+                   DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+                   DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+                   DMAXC_93)) 
+ Arc Cost: 0 
+ Depth: 1 
+ Max fail level: -1 
+ Prev Node id: NONE 
+ Parent id: NIL 
+
+> Domain exhausted for  < E2 > 
+> Done: BT Node w/o parent  < 11 > 
+0        bt/ T/ NIL/ T/ T    DEFAULT     7.2     475     146     10 / 18    0.05    3.417   3.467    8       0    0/0       160        16       T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 67  Unsuccessful constraint checks 79 
+(((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49) (E3 DMAXC_47) (E4 DMAXC_57))
+ ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49) (E3 DMAXC_47) (E4 DMAXC_53))
+ ((E2 DMAXC_50) (E5 DMAXC_51) (E1 DMAXC_49) (E3 DMAXC_47) (E4 DMAXC_52))
+ ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21) (E4 DMAXC_32))
+ ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21) (E4 DMAXC_31))
+ ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21) (E4 DMAXC_29))
+ ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21) (E4 DMAXC_27))
+ ((E2 DMAXC_24) (E5 DMAXC_25) (E1 DMAXC_23) (E3 DMAXC_21) (E4 DMAXC_26)))
+[1] USER(7): :exit
+; Exiting Lisp
+> exit
+exit
+
+script done on Sun Feb  2 13:22:16 1997
+
+script done on Sun Feb  2 13:22:16 1997

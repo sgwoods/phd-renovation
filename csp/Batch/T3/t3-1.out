@@ -1,0 +1,855 @@
+;;; Sun Common Lisp, Development Environment 4.0.1, 6 July 1990
+;;; Sun-4 Version for SunOS 4.0.x and sunOS 4.1 
+;;;
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Sun Microsystems, Inc.,  All Rights Reserved
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Lucid, Inc., All Rights Reserved
+;;; This software product contains confidential and trade secret
+;;; information belonging to Sun Microsystems, Inc.  It may not be copied
+;;; for any reason other than for archival and backup purposes.
+;;;
+;;; Sun, Sun-4, and Sun Common Lisp are trademarks of Sun Microsystems Inc.
+
+> Test Aug 12, 1993 using Aug 5 version v0.5 MOTOR
+"Test Aug 12, 1993 using Aug 5 version v0.5 MOTOR"
+> 
+NIL
+> 
+NIL
+> ;;; Loading source file "load.lisp"
+;;; Warning: File "load.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "/cc/users/woods/ideas/csp/bm.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/bt.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/ct.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/utility.sbin"
+;;; Loading source file "/cc/users/woods/ideas/csp/compile.lisp"
+;;; Warning: File "/cc/users/woods/ideas/csp/compile.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "queens.sbin"
+;;; Loading binary file "mpr-simple.sbin"
+;;; Warning: Redefining Function NODE-CONSISTENT-VARIABLES which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function ARC-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function CONSISTENT-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function GET-CONSTRAINT-MAX-LEVEL which used to be defined in "queens.lisp"
+;;; Loading binary file "mpr-setup.sbin"
+#P"/home/users/woods/Steve/csp/load.lisp"
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 2.80 seconds
+Total Run Time    = 1.51 seconds
+User Run Time     = 1.36 seconds
+System Run Time   = 0.15 seconds
+Process Page Faults    =        413
+Dynamic Bytes Consed   =        304
+Ephemeral Bytes Consed =  1,464,584
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.75 seconds
+Total Run Time    = 1.27 seconds
+User Run Time     = 1.09 seconds
+System Run Time   = 0.18 seconds
+Process Page Faults    =        336
+Dynamic Bytes Consed   =     21,840
+Ephemeral Bytes Consed =  1,426,616
+There were 2 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.72 seconds
+Total Run Time    = 1.28 seconds
+User Run Time     = 1.12 seconds
+System Run Time   = 0.16 seconds
+Process Page Faults    =        334
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,426,408
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.72 seconds
+Total Run Time    = 1.25 seconds
+User Run Time     = 1.08 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        335
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,414,824
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.83 seconds
+Total Run Time    = 1.25 seconds
+User Run Time     = 1.13 seconds
+System Run Time   = 0.12 seconds
+Process Page Faults    =        336
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,432,816
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.80 seconds
+Total Run Time    = 1.29 seconds
+User Run Time     = 1.13 seconds
+System Run Time   = 0.16 seconds
+Process Page Faults    =        349
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,445,488
+There were 2 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 2.25 seconds
+Total Run Time    = 1.32 seconds
+User Run Time     = 1.16 seconds
+System Run Time   = 0.16 seconds
+Process Page Faults    =        347
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,435,648
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.68 seconds
+Total Run Time    = 1.29 seconds
+User Run Time     = 1.14 seconds
+System Run Time   = 0.15 seconds
+Process Page Faults    =        345
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,424,592
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.67 seconds
+Total Run Time    = 1.22 seconds
+User Run Time     = 1.07 seconds
+System Run Time   = 0.15 seconds
+Process Page Faults    =        347
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  1,419,912
+There were 3 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 1.85 seconds
+Total Run Time    = 1.27 seconds
+User Run Time     = 1.12 seconds
+System Run Time   = 0.15 seconds
+Process Page Faults    =        348
+Dynamic Bytes Consed   =     43,776
+Ephemeral Bytes Consed =  1,435,408
+There were 2 ephemeral GCs
+COMPLETE
+> **** Noise 200 ****
+"**** Noise 200 ****"
+> 
+NIL
+> 
+NIL
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.75 seconds
+Total Run Time    = 3.20 seconds
+User Run Time     = 3.05 seconds
+System Run Time   = 0.15 seconds
+Process Page Faults    =        350
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,747,616
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.70 seconds
+Total Run Time    = 3.21 seconds
+User Run Time     = 3.04 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        350
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,767,816
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.90 seconds
+Total Run Time    = 3.34 seconds
+User Run Time     = 3.18 seconds
+System Run Time   = 0.16 seconds
+Process Page Faults    =        349
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,828,096
+There were 10 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 4.55 seconds
+Total Run Time    = 3.26 seconds
+User Run Time     = 3.15 seconds
+System Run Time   = 0.11 seconds
+Process Page Faults    =        349
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,752,680
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.75 seconds
+Total Run Time    = 3.21 seconds
+User Run Time     = 3.04 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        349
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,768,936
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.83 seconds
+Total Run Time    = 3.25 seconds
+User Run Time     = 3.09 seconds
+System Run Time   = 0.16 seconds
+Process Page Faults    =        348
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,785,568
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.65 seconds
+Total Run Time    = 3.18 seconds
+User Run Time     = 3.01 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        346
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,734,000
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.75 seconds
+Total Run Time    = 3.24 seconds
+User Run Time     = 3.07 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        348
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,750,936
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.92 seconds
+Total Run Time    = 3.38 seconds
+User Run Time     = 3.24 seconds
+System Run Time   = 0.14 seconds
+Process Page Faults    =        347
+Dynamic Bytes Consed   =     87,600
+Ephemeral Bytes Consed =  4,800,264
+There were 9 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 3.63 seconds
+Total Run Time    = 3.21 seconds
+User Run Time     = 3.01 seconds
+System Run Time   = 0.20 seconds
+Process Page Faults    =        347
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed =  4,752,264
+There were 9 ephemeral GCs
+COMPLETE
+> **** Noise 300 ****
+"**** Noise 300 ****"
+> 
+NIL
+> 
+NIL
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.23 seconds
+Total Run Time    = 6.64 seconds
+User Run Time     = 6.46 seconds
+System Run Time   = 0.18 seconds
+Process Page Faults    =        346
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,242,984
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.97 seconds
+Total Run Time    = 7.08 seconds
+User Run Time     = 6.86 seconds
+System Run Time   = 0.22 seconds
+Process Page Faults    =        347
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,168,720
+There were 19 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.32 seconds
+Total Run Time    = 6.59 seconds
+User Run Time     = 6.46 seconds
+System Run Time   = 0.13 seconds
+Process Page Faults    =        365
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,105,256
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.83 seconds
+Total Run Time    = 7.02 seconds
+User Run Time     = 6.76 seconds
+System Run Time   = 0.26 seconds
+Process Page Faults    =        369
+Dynamic Bytes Consed   =    173,904
+Ephemeral Bytes Consed = 10,138,432
+There were 19 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 9.26 seconds
+Total Run Time    = 7.26 seconds
+User Run Time     = 7.00 seconds
+System Run Time   = 0.26 seconds
+Process Page Faults    =        371
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,164,928
+There were 19 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.10 seconds
+Total Run Time    = 6.54 seconds
+User Run Time     = 6.35 seconds
+System Run Time   = 0.19 seconds
+Process Page Faults    =        370
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,112,416
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.00 seconds
+Total Run Time    = 6.53 seconds
+User Run Time     = 6.34 seconds
+System Run Time   = 0.19 seconds
+Process Page Faults    =        370
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,156,728
+There were 19 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 6.92 seconds
+Total Run Time    = 6.42 seconds
+User Run Time     = 6.25 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        374
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,125,312
+There were 19 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.32 seconds
+Total Run Time    = 6.46 seconds
+User Run Time     = 6.27 seconds
+System Run Time   = 0.19 seconds
+Process Page Faults    =        376
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 10,092,312
+There were 20 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 7.12 seconds
+Total Run Time    = 6.47 seconds
+User Run Time     = 6.27 seconds
+System Run Time   = 0.20 seconds
+Process Page Faults    =        372
+Dynamic Bytes Consed   =    175,296
+Ephemeral Bytes Consed = 10,091,256
+There were 19 ephemeral GCs
+COMPLETE
+> **** Noise  400 ****
+"**** Noise  400 ****"
+> 
+NIL
+> 
+NIL
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 12.45 seconds
+Total Run Time    = 11.68 seconds
+User Run Time     = 11.50 seconds
+System Run Time   = 0.18 seconds
+Process Page Faults    =        373
+Dynamic Bytes Consed   =    155,504
+Ephemeral Bytes Consed = 17,541,384
+There were 33 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 13.20 seconds
+Total Run Time    = 11.94 seconds
+User Run Time     = 11.75 seconds
+System Run Time   = 0.19 seconds
+Process Page Faults    =        386
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,598,584
+There were 34 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 14.61 seconds
+Total Run Time    = 11.67 seconds
+User Run Time     = 11.43 seconds
+System Run Time   = 0.24 seconds
+Process Page Faults    =        461
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,497,136
+There were 33 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 14.47 seconds
+Total Run Time    = 11.79 seconds
+User Run Time     = 11.57 seconds
+System Run Time   = 0.22 seconds
+Process Page Faults    =        422
+Dynamic Bytes Consed   =    220,240
+Ephemeral Bytes Consed = 17,609,616
+There were 34 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 19.74 seconds
+Total Run Time    = 12.04 seconds
+User Run Time     = 11.74 seconds
+System Run Time   = 0.30 seconds
+Process Page Faults    =        444
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,632,784
+There were 34 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 37.73 seconds
+Total Run Time    = 12.36 seconds
+User Run Time     = 11.86 seconds
+System Run Time   = 0.50 seconds
+Process Page Faults    =        429
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,455,656
+There were 33 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 20.52 seconds
+Total Run Time    = 11.13 seconds
+User Run Time     = 10.87 seconds
+System Run Time   = 0.26 seconds
+Process Page Faults    =        485
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,458,376
+There were 33 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 13.50 seconds
+Total Run Time    = 10.91 seconds
+User Run Time     = 10.71 seconds
+System Run Time   = 0.20 seconds
+Process Page Faults    =        469
+Dynamic Bytes Consed   =    195,136
+Ephemeral Bytes Consed = 17,468,400
+There were 34 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 20.77 seconds
+Total Run Time    = 12.86 seconds
+User Run Time     = 12.69 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        407
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,841,688
+There were 34 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 17.13 seconds
+Total Run Time    = 11.77 seconds
+User Run Time     = 11.60 seconds
+System Run Time   = 0.17 seconds
+Process Page Faults    =        388
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 17,474,456
+There were 33 ephemeral GCs
+COMPLETE
+> **** Noise 500 ****
+"**** Noise 500 ****"
+> 
+NIL
+> 
+NIL
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 21.80 seconds
+Total Run Time    = 17.41 seconds
+User Run Time     = 17.21 seconds
+System Run Time   = 0.20 seconds
+Process Page Faults    =        461
+Dynamic Bytes Consed   =    233,152
+Ephemeral Bytes Consed = 26,948,408
+There were 51 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 18.05 seconds
+Total Run Time    = 17.05 seconds
+User Run Time     = 16.85 seconds
+System Run Time   = 0.20 seconds
+Process Page Faults    =        395
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 27,030,920
+There were 52 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 18.23 seconds
+Total Run Time    = 17.72 seconds
+User Run Time     = 17.56 seconds
+System Run Time   = 0.16 seconds
+Process Page Faults    =        385
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 27,379,008
+There were 52 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; Expanding Dynamic Memory
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 18.48 seconds
+Total Run Time    = 16.44 seconds
+User Run Time     = 16.17 seconds
+System Run Time   = 0.27 seconds
+Process Page Faults    =        446
+Dynamic Bytes Consed   =    103,048
+Ephemeral Bytes Consed = 26,849,232
+There were 51 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 17.50 seconds
+Total Run Time    = 16.72 seconds
+User Run Time     = 16.53 seconds
+System Run Time   = 0.19 seconds
+Process Page Faults    =        398
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 26,939,536
+There were 52 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 18.76 seconds
+Total Run Time    = 16.97 seconds
+User Run Time     = 16.72 seconds
+System Run Time   = 0.25 seconds
+Process Page Faults    =        452
+Dynamic Bytes Consed   =    570,872
+Ephemeral Bytes Consed = 26,885,184
+There were 51 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 17.48 seconds
+Total Run Time    = 16.68 seconds
+User Run Time     = 16.50 seconds
+System Run Time   = 0.18 seconds
+Process Page Faults    =        399
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 26,996,912
+There were 52 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+;;; GC: 132790 words [531160 bytes] of dynamic storage in use.
+;;; 522568 words [2090272 bytes] of free storage available before a GC.
+;;; 1177926 words [4711704 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+Elapsed Real Time = 21.97 seconds
+Total Run Time    = 18.37 seconds
+User Run Time     = 17.85 seconds
+System Run Time   = 0.52 seconds
+Process Page Faults    =        871
+Dynamic Bytes Consed   =    269,864
+Ephemeral Bytes Consed = 26,993,336
+There was 1 dynamic GC
+There were 51 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 18.40 seconds
+Total Run Time    = 17.16 seconds
+User Run Time     = 16.97 seconds
+System Run Time   = 0.19 seconds
+Process Page Faults    =        408
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 27,041,408
+There were 52 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 17.42 seconds
+Total Run Time    = 16.60 seconds
+User Run Time     = 16.35 seconds
+System Run Time   = 0.25 seconds
+Process Page Faults    =        407
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 26,903,408
+There were 51 ephemeral GCs
+COMPLETE
+> **** Noise 600 ****
+"**** Noise 600 ****"
+> 
+NIL
+> 
+NIL
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 24.81 seconds
+Total Run Time    = 23.70 seconds
+User Run Time     = 23.47 seconds
+System Run Time   = 0.23 seconds
+Process Page Faults    =        397
+Dynamic Bytes Consed   =    226,408
+Ephemeral Bytes Consed = 38,391,104
+There were 73 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 27.10 seconds
+Total Run Time    = 24.56 seconds
+User Run Time     = 24.32 seconds
+System Run Time   = 0.24 seconds
+Process Page Faults    =        451
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 38,245,192
+There were 73 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 29.43 seconds
+Total Run Time    = 24.95 seconds
+User Run Time     = 24.67 seconds
+System Run Time   = 0.28 seconds
+Process Page Faults    =        444
+Dynamic Bytes Consed   =    113,936
+Ephemeral Bytes Consed = 38,340,984
+There were 73 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 31.15 seconds
+Total Run Time    = 26.66 seconds
+User Run Time     = 26.41 seconds
+System Run Time   = 0.25 seconds
+Process Page Faults    =        563
+Dynamic Bytes Consed   =    306,584
+Ephemeral Bytes Consed = 38,741,832
+There were 74 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 27.15 seconds
+Total Run Time    = 24.38 seconds
+User Run Time     = 24.10 seconds
+System Run Time   = 0.28 seconds
+Process Page Faults    =        460
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 38,303,328
+There were 73 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 31.13 seconds
+Total Run Time    = 26.32 seconds
+User Run Time     = 25.99 seconds
+System Run Time   = 0.33 seconds
+Process Page Faults    =        472
+Dynamic Bytes Consed   =    293,680
+Ephemeral Bytes Consed = 38,686,336
+There were 74 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 28.02 seconds
+Total Run Time    = 26.21 seconds
+User Run Time     = 26.01 seconds
+System Run Time   = 0.20 seconds
+Process Page Faults    =        412
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 38,921,856
+There were 74 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 27.12 seconds
+Total Run Time    = 25.95 seconds
+User Run Time     = 25.66 seconds
+System Run Time   = 0.29 seconds
+Process Page Faults    =        419
+Dynamic Bytes Consed   =    239,496
+Ephemeral Bytes Consed = 38,670,072
+There were 74 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 27.20 seconds
+Total Run Time    = 25.72 seconds
+User Run Time     = 25.50 seconds
+System Run Time   = 0.22 seconds
+Process Page Faults    =        448
+Dynamic Bytes Consed   =          0
+Ephemeral Bytes Consed = 38,531,560
+There were 74 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 131868 words [527472 bytes] of dynamic storage in use.
+;;; 523490 words [2093960 bytes] of free storage available before a GC.
+;;; 1178848 words [4715392 bytes] of free storage available if GC is disabled.
+Warning! AC and SCH not supported yet in BackMark
+ File Closed. 
+
+Elapsed Real Time = 29.78 seconds
+Total Run Time    = 25.99 seconds
+User Run Time     = 25.56 seconds
+System Run Time   = 0.43 seconds
+Process Page Faults    =      1,118
+Dynamic Bytes Consed   =    139,832
+Ephemeral Bytes Consed = 38,358,648
+There was 1 dynamic GC
+There were 73 ephemeral GCs
+COMPLETE
+> 

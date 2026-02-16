@@ -1,0 +1,10 @@
+yacc -dv gram.y
+cc -O  -target sun4 -c -o gram.o y.tab.c
+rm -f y.tab.c
+rm -f scan.c
+lex  -t scan.l > scan.c
+cc -O  -target sun4 -c -o scan.o scan.c
+rm -f scan.c
+cc -O  -target sun4 -c  main.c
+cc -O gram.o scan.o main.o -o ./ansi_c
+

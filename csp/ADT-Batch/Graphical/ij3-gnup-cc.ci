@@ -1,0 +1,16 @@
+# AC3 + BT constraint checks, ij3 data showing confidence interval
+
+set xlabel "Program statements"
+set xrange [0:1049]
+set xtics 0,50
+set ylabel "Constraint checks"
+set yrange [0:600000]
+set ytics 0,50000
+
+set key 
+set term postscript landscape monochrome "Times-Roman" 14
+set output "ij3-acbt--cc-ci.ps"
+plot "ij3-plot-cc.ci" title "AC3+BT" with lines, "ij3-plot-cc.ci" title "AC3+BT 95% CI" with errorbars
+
+
+

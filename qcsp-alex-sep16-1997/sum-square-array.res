@@ -1,0 +1,296 @@
+Do files: (testdata/dmaxc.component testdata/dmaxc.control
+           testdata/dmaxc.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     8.111111 855    279     17 / 18    0.084   0.233   0.317    1       0    0/0       478        71       T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 103  Unsuccessful constraint checks 176 
+
+Template (sum-square-array-9-16
+          ((E1 (ASSIGN ID1-1 ID1-2)) (E2 (ASSIGN ID2-1 ID2-2)) (E3 (LOOP))
+           (E4 (LESS ID4-1 ID4-2 ID4-3)) (E5 (INDEX ID5-1 ID5-2 ID5-3))
+           (E6 (INDEX ID6-1 ID6-2 ID6-3)) (E7 (MULT ID7-1 ID7-2 ID7-3))
+           (E8 (PLUSASSIGN ID8-1 ID8-2)) (E9 (PREINC ID9-1)))
+          ((POSSIBLE-DATA-DEPENDENCY (E5 E2) ID5-2)
+           (POSSIBLE-DATA-DEPENDENCY (E4 E9) ID4-1)
+           (GUARANTEED-DATA-DEPENDENCY (E7 E5) ID7-2)
+           (CONTROL-DATA-DEPENDENCY (E3 E1))
+           (POSSIBLE-DATA-DEPENDENCY (E6 E2) ID6-2)
+           (POSSIBLE-DATA-DEPENDENCY (E5 E9) ID5-2)
+           (POSSIBLE-DATA-DEPENDENCY (E9 E2) ID9-1)
+           (POSSIBLE-DATA-DEPENDENCY (E8 E8) ID8-1)
+           (POSSIBLE-DATA-DEPENDENCY (E4 E2) ID4-1)
+           (POSSIBLE-DATA-DEPENDENCY (E9 E9) ID9-1)
+           (CONTROL-DATA-DEPENDENCY (E3 E2))
+           (POSSIBLE-DATA-DEPENDENCY (E8 E1) ID8-1)
+           (GUARANTEED-DATA-DEPENDENCY (E7 E6) ID7-1)
+           (SAME-VARIABLE (E6 E5) (ID6-1 ID5-1))
+           (POSSIBLE-DATA-DEPENDENCY (E6 E9) ID6-2)
+           (GUARANTEED-DATA-DEPENDENCY (E8 E7) ID8-2))),
+Result length is 1!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax3c.component testdata/dmax3c.control
+           testdata/dmax3c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     24.333334 2529  3446    78 / 81    0.616   1.684   2.3      3       0    0/0       6830       362      T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 552  Unsuccessful constraint checks 2894 
+
+Result length is 3!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax6c.component testdata/dmax6c.control
+           testdata/dmax6c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     48.666668 5040  22485   220 / 226  2.333   8.817   11.15    6       0    0/0       38488      1097     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 1752  Unsuccessful constraint checks 20733 
+
+Result length is 6!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax9c.component testdata/dmax9c.control
+           testdata/dmax9c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     73.0    7551    70221   425 / 434  5.334   26.383  31.717   9       0    0/0       112260     2209     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 3494  Unsuccessful constraint checks 66727 
+
+Result length is 9!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax12c.component testdata/dmax12c.control
+           testdata/dmax12c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     97.333336 10062 27213   534 / 546  9.483   23.85   33.333   12      0    0/0       211564     2964     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 1602  Unsuccessful constraint checks 25611 
+
+Result length is 12!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax15c.component testdata/dmax15c.control
+           testdata/dmax15c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     121.666664 12573 42582  678 / 693  15.133  40.65   55.783   15      0    0/0       333298     3768     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 2034  Unsuccessful constraint checks 40548 
+
+Result length is 15!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax18c.component testdata/dmax18c.control
+           testdata/dmax18c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     146.0   15084   61371   822 / 840  22.117  56.9    79.017   18      0    0/0       482446     4572     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 2466  Unsuccessful constraint checks 58905 
+
+Result length is 18!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax21c.component testdata/dmax21c.control
+           testdata/dmax21c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     170.33333 17595 83580   966 / 987  30.067  79.917  109.984  21      0    0/0       659008     5376     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 2898  Unsuccessful constraint checks 80682 
+
+Result length is 21!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax24c.component testdata/dmax24c.control
+           testdata/dmax24c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+5239176 bytes have been tenured, next gc will be global.
+See the documentation for variable *GLOBAL-GC-BEHAVIOR* for more information.
+0        bt/ T/ NIL/ T/ T    DEFAULT     194.66667 20106 109209  1110 / 1134 39.233 112.617 151.85   24      0    0/0       862984     6180     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 3330  Unsuccessful constraint checks 105879 
+
+Result length is 24!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax27c.component testdata/dmax27c.control
+           testdata/dmax27c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     219.0   22617   138258  1254 / 1281 48.484 142.45  190.95   27      0    0/0       1094374    6984     T/0.016     RANDOM   RANDOM
+
+Successful constraint checks: 3762  Unsuccessful constraint checks 134496 
+
+Result length is 27!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax30c.component testdata/dmax30c.control
+           testdata/dmax30c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     243.33333 25128 170727  1398 / 1428 60.35  179.9   240.25   30      0    0/0       1353178    7788     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 4194  Unsuccessful constraint checks 166533 
+
+Result length is 30!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax33c.component testdata/dmax33c.control
+           testdata/dmax33c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+5177416 bytes have been tenured, next gc will be global.
+See the documentation for variable *GLOBAL-GC-BEHAVIOR* for more information.
+0        bt/ T/ NIL/ T/ T    DEFAULT     267.66666 27639 206616  1542 / 1575 73.733 229.117 302.85   33      0    0/0       1639396    8592     T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 4626  Unsuccessful constraint checks 201990 
+
+Result length is 33!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax36c.component testdata/dmax36c.control
+           testdata/dmax36c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     292.0   30150   245925  1686 / 1722 86.867 273.417 360.3    36      0    0/0       1953028    9396     T/0.016     RANDOM   RANDOM
+
+Successful constraint checks: 5058  Unsuccessful constraint checks 240867 
+
+Result length is 36!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax39c.component testdata/dmax39c.control
+           testdata/dmax39c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+5010176 bytes have been tenured, next gc will be global.
+See the documentation for variable *GLOBAL-GC-BEHAVIOR* for more information.
+0        bt/ T/ NIL/ T/ T    DEFAULT     316.33334 32661 288654  1830 / 1869 101.25 338.234 439.484  39      0    0/0       2294074    10200    T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 5490  Unsuccessful constraint checks 283164 
+
+Result length is 39!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax42c.component testdata/dmax42c.control
+           testdata/dmax42c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     340.66666 35172 334803  1974 / 2016 118.9  402.15  521.05   42      0    0/0       2662534    11004    T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 5922  Unsuccessful constraint checks 328881 
+
+Result length is 42!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax45c.component testdata/dmax45c.control
+           testdata/dmax45c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+5002568 bytes have been tenured, next gc will be global.
+See the documentation for variable *GLOBAL-GC-BEHAVIOR* for more information.
+0        bt/ T/ NIL/ T/ T    DEFAULT     365.0   37683   384372  2118 / 2163 135.483 482.967 618.45  45      0    0/0       3058408    11808    T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 6354  Unsuccessful constraint checks 378018 
+
+Result length is 45!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax48c.component testdata/dmax48c.control
+           testdata/dmax48c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       bt/ T/ NIL/ T/ T    DEFAULT     389.33334 40194 437361  2262 / 2310 153.5  559.35  712.85   48      0    0/0       3481696    12612    T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 6786  Unsuccessful constraint checks 430575 
+
+Result length is 48!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax51c.component testdata/dmax51c.control
+           testdata/dmax51c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+6498184 bytes have been tenured, next gc will be global.
+See the documentation for variable *GLOBAL-GC-BEHAVIOR* for more information.
+0        bt/ T/ NIL/ T/ T    DEFAULT     413.66666 42705 493770  2406 / 2457 183.966 642.684 826.65  51      0    0/0       3932398    13416    T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 7218  Unsuccessful constraint checks 486552 
+
+Result length is 51!
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+
+Do files: (testdata/dmax54c.component testdata/dmax54c.control
+           testdata/dmax54c.stats)!
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+5008808 bytes have been tenured, next gc will be global.
+See the documentation for variable *GLOBAL-GC-BEHAVIOR* for more information.
+> Checkpoint ...  < 900 > 
+0        bt/ T/ NIL/ T/ T    DEFAULT     438.0   45216   532598  2451 / 2503 195.934 704.316 900.25  52      0    0/0       4238941    13666    T/0.0       RANDOM   RANDOM
+0        bt/ T/ NIL/ T/ T    DEFAULT     438.0   45216   553599  2550 / 2604 195.934 732.266 928.2   54      0    0/0       4410514    14220    T/0.0       RANDOM   RANDOM
+
+Successful constraint checks: 7650  Unsuccessful constraint checks 545949 
+
+Result length is 54!
+NIL
+[2c] USER(7): :exit
+; Exiting Lisp
+> exit
+
+exit
+
+script done on Tue Nov 12 11:06:26 1996
+
+script done on Tue Nov 12 11:06:26 1996

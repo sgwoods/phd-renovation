@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo Making new version for release MOTORS.v$1.tar.Z verbosely ...
+tar -cvf MOTORS.v$1.tar Doc/* COPYRIGHT* EXAMPLES prt-it bck *.lisp Batch/Sample/* Random/RANDOM-KEYS-LIVE-HERE Situation/draw Situation/showit Situation/.draw-tex Situation/.gnuplot.draw-tex Devel/* Save-Results/*
+echo done
+
+echo Now compressing version tar file
+compress MOTORS.v$1.tar
+echo done
+
+echo Removing write permission from version compressed file ...
+chmod ugo-w MOTORS.v$1.tar.Z
+echo done 
+
+
+
+

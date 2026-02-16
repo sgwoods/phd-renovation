@@ -1,0 +1,184 @@
+;; ***************************************************************************
+;;
+;; Domain Value B3 test hierarchy
+;;
+;; ***************************************************************************
+
+(defun b3 () (load 
+ 	     "Macintosh HD:Languages:Allegro Common Lisp:qcsp:hier-b3.lisp"))
+
+(setq B3  (make-DomVal))
+(setq R3a (make-DomVal))
+(setq S5a (make-DomVal))
+(setq S6a (make-DomVal))
+(setq R4a (make-DomVal))
+(setq S7a (make-DomVal))
+(setq S8a (make-DomVal))
+(setq T3a (make-DomVal))
+(setq U5a (make-DomVal))
+(setq U6a (make-DomVal))
+(setq T4a (make-DomVal))
+(setq U7a (make-DomVal))
+(setq U8a (make-DomVal))
+
+;; B3 ok
+
+(setf (DomVal-Name            B3)  'B3)
+(setf (DomVal-LeftParent      B3)  R3a)
+(setf (DomVal-LeftParentType  B3)  'or)
+(setf (DomVal-RightParent     B3)  R4a)
+(setf (DomVal-RightParentType B3)  'or)
+(setf (DomVal-LeftChild       B3)  T3a)
+(setf (DomVal-LeftChildType   B3)  'or)
+(setf (DomVal-RightChild      B3)  T4a)
+(setf (DomVal-RightChildType  B3)  'or)
+
+;; R3a ok
+
+(setf (DomVal-Name            R3a)  'R3a)
+(setf (DomVal-LeftParent      R3a)  S5a)
+(setf (DomVal-LeftParentType  R3a)  'or)
+(setf (DomVal-RightParent     R3a)  S6a)
+(setf (DomVal-RightParentType R3a)  'or)
+(setf (DomVal-LeftChild       R3a)  nil)
+(setf (DomVal-LeftChildType   R3a)  nil)
+(setf (DomVal-RightChild      R3a)  A)
+(setf (DomVal-RightChildType  R3a)  'or)
+
+;; S5a ok
+
+(setf (DomVal-Name            S5a)  'S5a)
+(setf (DomVal-LeftParent      S5a)  nil)
+(setf (DomVal-LeftParentType  S5a)  nil)
+(setf (DomVal-RightParent     S5a)  nil)
+(setf (DomVal-RightParentType S5a)  nil)
+(setf (DomVal-LeftChild       S5a)  nil)
+(setf (DomVal-LeftChildType   S5a)  nil)
+(setf (DomVal-RightChild      S5a)  R3a)
+(setf (DomVal-RightChildType  S5a)  'or)
+
+;; S6a ok
+
+(setf (DomVal-Name            S6a)  'S6a)
+(setf (DomVal-LeftParent      S6a)  nil)
+(setf (DomVal-LeftParentType  S6a)  nil)
+(setf (DomVal-RightParent     S6a)  nil)
+(setf (DomVal-RightParentType S6a)  nil)
+(setf (DomVal-LeftChild       S6a)  R3a)
+(setf (DomVal-LeftChildType   S6a)  'or)
+(setf (DomVal-RightChild      S6a)  nil)
+(setf (DomVal-RightChildType  S6a)  nil)
+
+;; R4a ok
+
+(setf (DomVal-Name            R4a)  'R4a)
+(setf (DomVal-LeftParent      R4a)  S7a)
+(setf (DomVal-LeftParentMark  R4a)  2)
+(setf (DomVal-LeftParentType  R4a)  'or)
+(setf (DomVal-RightParent     R4a)  S8a)
+(setf (DomVal-RightParentMark R4a)  2)
+(setf (DomVal-RightParentType R4a)  'or)
+(setf (DomVal-LeftChild       R4a)  B3)
+(setf (DomVal-LeftChildType   R4a)  'or)
+(setf (DomVal-RightChild      R4a)  nil)
+(setf (DomVal-RightChildType  R4a)  nil)
+
+;; S7a
+
+(setf (DomVal-Name            S7a)  'S7a)
+(setf (DomVal-LeftParent      S7a)  nil)
+(setf (DomVal-LeftParentType  S7a)  nil)
+(setf (DomVal-RightParent     S7a)  nil)
+(setf (DomVal-RightParentType S7a)  nil)
+(setf (DomVal-LeftChild       S7a)  nil)
+(setf (DomVal-LeftChildType   S7a)  nil)
+(setf (DomVal-RightChild      S7a)  R4a)
+(setf (DomVal-RightChildType  S7a)  'or)
+
+
+;; S8a
+
+(setf (DomVal-Name            S8a)  'S8a)
+(setf (DomVal-LeftParent      S8a)  nil)
+(setf (DomVal-LeftParentType  S8a)  nil)
+(setf (DomVal-RightParent     S8a)  nil)
+(setf (DomVal-RightParentType S8a)  nil)
+(setf (DomVal-LeftChild       S8a)  R4a)
+(setf (DomVal-LeftChildType   S8a)  'or)
+(setf (DomVal-RightChild      S8a)  nil)
+(setf (DomVal-RightChildType  S8a)  nil)
+
+;; T3a
+
+(setf (DomVal-Name            T3a)  'T3a)
+(setf (DomVal-LeftParent      T3a)  nil)
+(setf (DomVal-LeftParentType  T3a)  nil)
+(setf (DomVal-RightParent     T3a)  B3)
+(setf (DomVal-RightParentMark T3a)  2)
+(setf (DomVal-RightParentType T3a)  'or)
+(setf (DomVal-LeftChild       T3a)  U5a)
+(setf (DomVal-LeftChildType   T3a)  'or)
+(setf (DomVal-RightChild      T3a)  U6a)
+(setf (DomVal-RightChildType  T3a)  'or)
+
+;; U5a
+
+(setf (DomVal-Name            U5a)  'U5a)
+(setf (DomVal-LeftParent      U5a)  nil)
+(setf (DomVal-LeftParentType  U5a)  nil)
+(setf (DomVal-RightParent     U5a)  T3a)
+(setf (DomVal-RightParentType U5a)  'or)
+(setf (DomVal-LeftChild       U5a)  nil)
+(setf (DomVal-LeftChildType   U5a)  nil)
+(setf (DomVal-RightChild      U5a)  nil)
+(setf (DomVal-RightChildType  U5a)  nil)
+
+;; U6a
+
+(setf (DomVal-Name            U6a)  'U6a)
+(setf (DomVal-LeftParent      U6a)  T3a)
+(setf (DomVal-LeftParentType  U6a)  'or)
+(setf (DomVal-RightParent     U6a)  nil)
+(setf (DomVal-RightParentType U6a)  nil)
+(setf (DomVal-LeftChild       U6a)  nil)
+(setf (DomVal-LeftChildType   U6a)  nil)
+(setf (DomVal-RightChild      U6a)  nil)
+(setf (DomVal-RightChildType  U6a)  nil)
+
+;; T4a
+
+(setf (DomVal-Name            T4a)  'T4a)
+(setf (DomVal-LeftParent      T4a)  B3)
+(setf (DomVal-LeftParentType  T4a)  'or)
+(setf (DomVal-RightParent     T4a)  nil)
+(setf (DomVal-RightParentType T4a)  nil)
+(setf (DomVal-LeftChild       T4a)  U7a)
+(setf (DomVal-LeftChildType   T4a)  'or)
+(setf (DomVal-RightChild      T4a)  U8a)
+(setf (DomVal-RightChildType  T4a)  'or)
+
+;; U7a
+
+(setf (DomVal-Name            U7a)  'U5a)
+(setf (DomVal-LeftParent      U7a)  nil)
+(setf (DomVal-LeftParentType  U7a)  nil)
+(setf (DomVal-RightParent     U7a)  T4a)
+(setf (DomVal-RightParentType U7a)  'or)
+(setf (DomVal-LeftChild       U7a)  nil)
+(setf (DomVal-LeftChildType   U7a)  nil)
+(setf (DomVal-RightChild      U7a)  nil)
+(setf (DomVal-RightChildType  U7a)  nil)
+
+;; U8a
+
+(setf (DomVal-Name            U8a)  'U8a)
+(setf (DomVal-LeftParent      U8a)  T4a)
+(setf (DomVal-LeftParentType  U8a)  'or)
+(setf (DomVal-RightParent     U8a)  nil)
+(setf (DomVal-RightParentType U8a)  nil)
+(setf (DomVal-LeftChild       U8a)  nil)
+(setf (DomVal-LeftChildType   U8a)  nil)
+(setf (DomVal-RightChild      U8a)  nil)
+(setf (DomVal-RightChildType  U8a)  nil)
+
+

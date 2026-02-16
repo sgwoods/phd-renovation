@@ -1,0 +1,25 @@
+
+(time (adt :situation-id "q-i1"
+	   :sit-noise    100
+	   :template-id  "quilici-t1"
+	   :single-line-override nil
+	   :random-ident "default"
+	   :output-file "New-Batch/ij1/ij1-100.1b"
+	   ))
+
+s.math:sgwoods[~/qcsp] cat at1.sh
+cat: cannot open at1.sh
+logos.math:sgwoods[~/qcsp] cd New-Batch
+logos.math:sgwoods[~/qcsp/New-Batch] cat at1.sh
+at -f /u/sgwoods/qcsp/New-Batch/ij1.sh 0225 
+logos.math:sgwoods[~/qcsp/New-Batch] date
+Mon May 27 02:30:37 EDT 1996
+logos.math:sgwoods[~/qcsp/New-Batch] at -f /u/sgwoods/qcsp/New-Batch/ij1.sh 0231 
+warning: commands will be executed using /xhbin/tcsh
+job 833178660.a at Mon May 27 02:31:00 1996
+logos.math:sgwoods[~/qcsp/New-Batch] ls
+Graph/                    ij2-400.lisp              ij3-400.lisp
+Graph0/                   ij2-450.lisp              ij3-450.lisp
+at1.sh                    ij2-500.lisp              ij3-500.lisp
+at2.sh                    ij2-550.lisp              ij3-550.lisp
+at3.sh                    ij2-600.lisp              ij3-600.lis

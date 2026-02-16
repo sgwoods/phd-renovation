@@ -1,0 +1,42 @@
+#!/bin/csh
+cd /users/yjzhang/thesis/CSP/qcsp-alex/
+
+\cp leap-year-data.lisp this-exp-data.lisp
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-0.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/0.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+		/users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-1.lisp >\
+		/users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/1.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+        /users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-2.lisp >\
+        /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/2.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+        /users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-3.lisp >\
+        /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/3.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+        /users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-4.lisp >\
+        /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/4.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+        /users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-5.lisp >\
+        /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/5.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+        /users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-6.lisp >\
+        /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/6.msg
+ 
+nice time /extra/acl4.2/bin/cl <\
+        /users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-7.lisp >\
+        /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/7.msg
+ 
+mkdir /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/bexp-y2k
+\cp   /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/* \
+     /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/bexp-y2k
+
+

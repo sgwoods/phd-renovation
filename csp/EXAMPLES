@@ -1,0 +1,441 @@
+
+This file includes examples of using MOTOR.
+
+Main Function Summary 
+
+Specific functions ...
+(queens N ..... )  run either confused or N-queens. See queens.lisp
+(queens-variables N)  creates initial problem structure for queens or confused queens.
+
+(mpr .... )        run model pattern recognizer. See mpr-simple.lisp, mpr-setup.lisp
+(mpr-variables)    creates initial problem structure for mpr.
+
+Problem-specific functions ...
+(consistent-p Sym1 Var1 Sym2 Var2 ...) determines whether arc constraints in problem
+					allow this assignment pair or not. 
+(arc-p  Sym1 Sym2) determines whether an arc exists in problem between these symbols
+
+Generic functions ...
+(show-solution)    repeats output of either queens or mpr function with more detail.
+
+---------------------------------------------------------------------------
+Running Confused N-Queens problem.  Refer to queens.lisp for more detail.
+---------------------------------------------------------------------------
+
+hydra:woods[/cc/users/mcconiga/lisp-csp] ./lisp
+;;; Sun Common Lisp, Development Environment 4.0.1, 6 July 1990
+;;; Sun-4 Version for SunOS 4.0.x and sunOS 4.1 
+;;;
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Sun Microsystems, Inc.,  All Rights Reserved
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Lucid, Inc., All Rights Reserved
+;;; This software product contains confidential and trade secret
+;;; information belonging to Sun Microsystems, Inc.  It may not be copied
+;;; for any reason other than for archival and backup purposes.
+;;;
+;;; Sun, Sun-4, and Sun Common Lisp are trademarks of Sun Microsystems Inc.
+
+> (load "load")
+;;; Loading source file "load.lisp"
+;;; Warning: File "load.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "/cc/users/mcconiga/lisp-csp/bm.sbin"
+;;; Loading binary file "/cc/users/mcconiga/lisp-csp/bt.sbin"
+;;; Loading binary file "/cc/users/mcconiga/lisp-csp/ct.sbin"
+;;; Loading binary file "/cc/users/mcconiga/lisp-csp/utility.sbin"
+;;; Loading source file "/cc/users/mcconiga/lisp-csp/compile.lisp"
+;;; Warning: File "/cc/users/mcconiga/lisp-csp/compile.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "queens.sbin"
+;;; Loading binary file "mpr-simple.sbin"
+;;; Warning: Redefining Function NODE-CONSISTENT-VARIABLES which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function ARC-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function CONSISTENT-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function GET-CONSTRAINT-MAX-LEVEL which used to be defined in "queens.lisp"
+;;; Loading binary file "mpr-setup.sbin"
+#P"/home/users/mcconiga/lisp-csp/load.lisp"
+> (queens 3)
+;;; Loading binary file "queens.sbin"
+;;; Warning: Redefining Function NODE-CONSISTENT-VARIABLES which used to be defined in "mpr-simple.lisp"
+;;; Warning: Redefining Function ARC-P which used to be defined in "mpr-simple.lisp"
+;;; Warning: Redefining Function CONSISTENT-P which used to be defined in "mpr-simple.lisp"
+;;; Warning: Redefining Function GET-CONSTRAINT-MAX-LEVEL which used to be defined in "mpr-simple.lisp"
+***** OPTIONS for CSP ( (confused 3) ) ***** 
+
+ Search Mode          : bt 
+ Node Consis Mode     : NIL 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : NIL 
+ Dynamic Rearrangement: NIL 
+ Advance sort option  : NIL 
+ Backjump option      : NIL 
+ One Solution Only    : NIL 
+ CPU Seconds limit    : 300 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 9 
+ Ttl constr chks  : 41 
+ BT nodes created : 10 
+ Nodes visited    : 33 
+
+Advance Processing CPU Seconds: 0.0 
+Search             CPU Seconds: 0.01 
+Total              CPU Seconds: 0.01 
+
+COMPLETE
+> (show-solution)
+***** BACKTRACK Information ***** 
+
+ Exit Location    : REPEAT 
+ No. Solutions    : 9 
+ Solutions... 
+(((ROW 3) 3) ((ROW 1) 3) ((ROW 2) 3)) 
+(((ROW 3) 3) ((ROW 1) 3) ((ROW 2) 2)) 
+(((ROW 3) 1) ((ROW 1) 3) ((ROW 2) 2)) 
+(((ROW 3) 2) ((ROW 1) 2) ((ROW 2) 3)) 
+(((ROW 3) 2) ((ROW 1) 2) ((ROW 2) 2)) 
+(((ROW 3) 2) ((ROW 1) 2) ((ROW 2) 1)) 
+(((ROW 3) 3) ((ROW 1) 1) ((ROW 2) 2)) 
+(((ROW 3) 1) ((ROW 1) 1) ((ROW 2) 2)) 
+(((ROW 3) 1) ((ROW 1) 1) ((ROW 2) 1)) 
+ Satisfy-p calls  : 33 
+ Satisfy-p cost   : 41 
+ Consistent calls : 41 
+ Ttl constr chks  : 41 
+ BT nodes created : 10 
+ Nodes visited    : 33 
+
+Advance Processing CPU Seconds: 0.0 
+Search             CPU Seconds: 0.01 
+Total              CPU Seconds: 0.01 
+
+NIL
+> *solution-set*
+((((ROW 3) 3) ((ROW 1) 3) ((ROW 2) 3)) (((ROW 3) 3) ((ROW 1) 3) ((ROW 2) 2)) (((ROW 3) 1) ((ROW 1) 3) ((ROW 2) 2)) (((ROW 3) 2) ((ROW 1) 2) ((ROW 2) 3)) (((ROW 3) 2) ((ROW 1) 2) ((ROW 2) 2)) (((ROW 3) 2) ((ROW 1) 2) ((ROW 2) 1)) (((ROW 3) 3) ((ROW 1) 1) ((ROW 2) 2)) (((ROW 3) 1) ((ROW 1) 1) ((ROW 2) 2)) (((ROW 3) 1) ((ROW 1) 1) ((ROW 2) 1)))
+> (queens 4 :search-mode "bm")
+***** OPTIONS for CSP ( (confused 4) ) ***** 
+
+ Search Mode          : bm 
+ Node Consis Mode     : NIL 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : NIL 
+ Dynamic Rearrangement: NIL 
+ Advance sort option  : NIL 
+ Backjump option      : NIL 
+ One Solution Only    : NIL 
+ CPU Seconds limit    : 300 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+***** BACKMARK Information ***** 
+
+ Exit Location    : DONE-BACKMARK 
+ No. Solutions    : 6 
+ Ttl constr chks  : 90 
+ BT nodes created : 28 
+ Nodes visited    : 116 
+ BM Type-A Savings : 42 
+ BM Type-B Savings : 22 
+
+Advance Processing CPU Seconds: 0.0 
+Search             CPU Seconds: 0.07 
+Total              CPU Seconds: 0.07 
+
+COMPLETE
+> (queens 4 :search-mode "bj")
+***** OPTIONS for CSP ( (confused 4) ) ***** 
+
+ Search Mode          : bj 
+ Node Consis Mode     : NIL 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : NIL 
+ Dynamic Rearrangement: NIL 
+ Advance sort option  : NIL 
+ Backjump option      : T 
+ One Solution Only    : NIL 
+ CPU Seconds limit    : 300 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+***** BACKJUMP Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 6 
+ Ttl constr chks  : 139 
+ BT nodes created : 26 
+ Nodes visited    : 100 
+ Backjumps        : 4 
+
+Advance Processing CPU Seconds: 0.0 
+Search             CPU Seconds: 0.03 
+Total              CPU Seconds: 0.03 
+
+COMPLETE
+
+---------------------------------------------------------------------------
+Running N-Queens problem.  Refer to queens.lisp for more detail.
+---------------------------------------------------------------------------
+
+> (queens 4 :dom "queens")
+***** OPTIONS for CSP ( (queens 4) ) ***** 
+
+ Search Mode          : bt 
+ Node Consis Mode     : NIL 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : NIL 
+ Dynamic Rearrangement: NIL 
+ Advance sort option  : NIL 
+ Backjump option      : NIL 
+ One Solution Only    : NIL 
+ CPU Seconds limit    : 300 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 2 
+ Ttl constr chks  : 84 
+ BT nodes created : 14 
+ Nodes visited    : 60 
+
+Advance Processing CPU Seconds: 0.0 
+Search             CPU Seconds: 0.01 
+Total              CPU Seconds: 0.01 
+
+COMPLETE
+> (show-solution)
+***** BACKTRACK Information ***** 
+
+ Exit Location    : REPEAT 
+ No. Solutions    : 2 
+ Solutions... 
+(((ROW 4) 2) ((ROW 1) 3) ((ROW 2) 1) ((ROW 3) 4)) 
+(((ROW 4) 3) ((ROW 1) 2) ((ROW 2) 4) ((ROW 3) 1)) 
+ Satisfy-p calls  : 60 
+ Satisfy-p cost   : 84 
+ Consistent calls : 84 
+ Ttl constr chks  : 84 
+ BT nodes created : 14 
+ Nodes visited    : 60 
+
+Advance Processing CPU Seconds: 0.0 
+Search             CPU Seconds: 0.01 
+Total              CPU Seconds: 0.01 
+
+NIL
+> 
+
+---------------------------------------------------------------------------
+Running MPR problem.  Refer to mpr-simple.lisp and mpr-setup.lisp for more detail.
+---------------------------------------------------------------------------
+
+> (mpr)
+;;; Loading binary file "mpr-setup.sbin"
+;;; Loading binary file "mpr-simple.sbin"
+;;; Warning: Redefining Function NODE-CONSISTENT-VARIABLES which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function ARC-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function CONSISTENT-P which used to be defined in "queens.lisp"
+;;; Warning: Redefining Function GET-CONSTRAINT-MAX-LEVEL which used to be defined in "queens.lisp"
+;;; Loading binary file "mpr-setup.sbin"
+***** OPTIONS for CSP ( (MPR d3 demo1a) ) ***** 
+
+ Situation id         :   d3 
+ Situation noise add  :   0 
+ Situation Size       :   10 
+ Template id          :   demo1a 
+ Template Size        :   5 
+ Num of constraints   :   11 
+
+ Search Mode          : bt 
+ Node Consis Mode     : T 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : NIL 
+ Forward Checking     : NIL 
+ Dynamic Rearrangement: NIL 
+ Advance sort option  : NIL 
+ Backjump option      : NIL 
+ One Solution Only    : NIL 
+ CPU Seconds limit    : 600 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+ Random Ident         : default 
+
+Domain size ( INITIAL ) statistics ... 
+Max[(TS1 10)]  Min[(TS1 10)]  Avg[10.0] 
+
+Domain size ( NODE ) statistics ... 
+Max[(TS1 4)]  Min[(TS2 2)]  Avg[2.8] 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 2 
+ Node Consis. cks   : 92 
+ Ttl constr chks  : 38 
+ BT nodes created : 10 
+ Nodes visited    : 28 
+
+Advance Processing CPU Seconds: 0.01 
+Search             CPU Seconds: 0.03 
+Total              CPU Seconds: 0.04 
+
+COMPLETE
+
+> (mpr :search-mode "bj" :arc-consis 'before :random-ident nil)   
+;;; Loading binary file "mpr-setup.sbin"
+***** OPTIONS for CSP ( (MPR d3 demo1a) ) ***** 
+
+ Situation id         :   d3 
+ Situation noise add  :   0 
+ Situation Size       :   10 
+ Template id          :   demo1a 
+ Template Size        :   5 
+ Num of constraints   :   11 
+
+ Search Mode          : bj 
+ Node Consis Mode     : T 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : BEFORE 
+ Forward Checking     : NIL 
+ Dynamic Rearrangement: NIL 
+ Advance sort option  : NIL 
+ Backjump option      : T 
+ One Solution Only    : NIL 
+ CPU Seconds limit    : 600 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+ Random Ident         : 9352122850 
+
+Domain size ( INITIAL ) statistics ... 
+Max[(TS1 10)]  Min[(TS1 10)]  Avg[10.0] 
+
+Domain size ( AC3-NODE ) statistics ... 
+Max[(TS1 4)]  Min[(TS2 2)]  Avg[2.8] 
+
+***** BACKJUMP Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 2 
+ Node Consis. cks   : 92 
+ Ttl constr chks  : 80 
+ BT nodes created : 10 
+ Nodes visited    : 28 
+ Backjumps        : 0 
+
+Advance Processing CPU Seconds: 0.03 
+Search             CPU Seconds: 0.02 
+Total              CPU Seconds: 0.05 
+
+COMPLETE
+
+> (mpr :sit-noise 500 :search-mode "bj" :arc-consis 'before :random-ident "9352122850")
+;;; Loading binary file "mpr-setup.sbin"
+***** OPTIONS for CSP ( (MPR d3 demo1a) ) ***** 
+
+ Situation id         :   d3 
+ Situation noise add  :   500 
+ Situation Size       :   510 
+ Template id          :   demo1a 
+ Template Size        :   5 
+ Num of constraints   :   11 
+
+ Search Mode          : bj 
+ Node Consis Mode     : T 
+ Node Force all       : NIL 
+ Arc  Consis Mode     : BEFORE 
+ Forward Checking     : NIL 
+ Dynamic Rearrangement: NIL 
+ Advance sort option  : NIL 
+ Backjump option      : T 
+ One Solution Only    : NIL 
+ CPU Seconds limit    : 600 
+ CK Point interval    : 150 
+ Debug                : NIL 
+ Debug CSP            : NIL 
+
+ Random Ident         : 9352122850 
+
+Domain size ( INITIAL ) statistics ... 
+Max[(TS1 510)]  Min[(TS1 510)]  Avg[510.0] 
+
+Domain size ( AC3-NODE ) statistics ... 
+Max[(TS2 23)]  Min[(TS4 17)]  Avg[21.0] 
+
+***** BACKJUMP Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 2 
+ Node Consis. cks   : 3711 
+ Ttl constr chks  : 966 
+ BT nodes created : 30 
+ Nodes visited    : 689 
+ Backjumps        : 0 
+
+Advance Processing CPU Seconds: 12.96 
+Search             CPU Seconds: 3.68 
+Total              CPU Seconds: 16.64 
+
+COMPLETE
+
+> (show-solution)
+***** BACKJUMP Information ***** 
+
+ Exit Location    : REPEAT 
+ No. Solutions    : 2 
+ Solutions... 
+((TS5 SIT3) (TS1 SIT2) (TS2 SIT6) (TS3 SIT8) (TS4 SIT4)) 
+((TS5 SIT14) (TS1 SIT7) (TS2 SIT1) (TS3 SIT5) (TS4 SIT10)) 
+ Node Consis. cks   : 3711 
+   >Matches-type       : 2550 
+   >Matches-orient     : 528 
+   >Matches-activity   : 528 
+   >Matches-abs-loc    : 105 
+ Satisfy-p calls  : 689 
+ Satisfy-p cost   : 776 
+ Consistent calls : 1032 
+     >Consistent nulls : 87 
+     >Unique restricts : 7 
+ Ttl constr chks  : 966 
+    >Separation cks   : 706 
+    >Positional cks   : 24 
+    >Medial cks       : 0 
+    >Echelon cks      : 96 
+    >Same type cks    : 0 
+    >Same orient cks  : 140 
+    >Same activity cks: 0 
+ BT nodes created : 30 
+ Nodes visited    : 689 
+ Backjumps        : 0 
+
+Advance Processing CPU Seconds: 12.96 
+Search             CPU Seconds: 3.68 
+Total              CPU Seconds: 16.64 
+
+NIL
+
+
+
+
+
+
+
+
+
+
+

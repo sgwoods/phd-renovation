@@ -1,0 +1,6947 @@
+%!PS-Adobe-1.0
+%%Title: final-dynamic
+%%Creator: nenscript v1.13++ (US version) 24-November-1992
+%%For: yjzhang
+%%CreationDate: Sun Feb  2 13:23:22 1997
+%%DocumentFonts: Times-Roman Times-Bold Helvetica-Bold Courier Courier-Bold 
+%%Pages: (atend)
+%%EndComments
+/newcodes	% foreign character encodings
+[
+160/space 161/exclamdown 162/cent 163/sterling 164/currency
+165/yen 166/brokenbar 167/section  168/dieresis 169/copyright
+170/ordfeminine 171/guillemotleft 172/logicalnot 173/hyphen 174/registered
+175/macron 176/degree 177/plusminus 178/twosuperior 179/threesuperior
+180/acute 181/mu 182/paragraph  183/periodcentered 184/cedilla
+185/onesuperior 186/ordmasculine 187/guillemotright 188/onequarter
+189/onehalf 190/threequarters 191/questiondown 192/Agrave 193/Aacute
+194/Acircumflex 195/Atilde 196/Adieresis 197/Aring 198/AE 199/Ccedilla
+200/Egrave 201/Eacute 202/Ecircumflex 203/Edieresis 204/Igrave  205/Iacute
+206/Icircumflex 207/Idieresis 208/Eth 209/Ntilde 210/Ograve 211/Oacute
+212/Ocircumflex 213/Otilde  214/Odieresis 215/multiply 216/Oslash
+217/Ugrave 218/Uacute 219/Ucircumflex 220/Udieresis 221/Yacute 222/Thorn
+223/germandbls 224/agrave 225/aacute 226/acircumflex 227/atilde
+228/adieresis 229/aring 230/ae 231/ccedilla  232/egrave 233/eacute
+234/ecircumflex 235/edieresis 236/igrave 237/iacute 238/icircumflex
+239/idieresis 240/eth 241/ntilde 242/ograve 243/oacute 244/ocircumflex
+245/otilde 246/odieresis 247/divide 248/oslash 249/ugrave  250/uacute
+251/ucircumflex 252/udieresis 253/yacute 254/thorn 255/ydieresis
+] def
+
+/reencdict 12 dict def
+
+
+
+    % change fonts using ISO Latin1 characters
+/ChgFnt		% size psname natname  =>  font
+{
+    dup FontDirectory exch known	% is re-encoded name known?
+    { exch pop }			% yes, get rid of long name
+    { dup 3 1 roll ReEncode } ifelse	% no, re-encode it
+    findfont exch scalefont setfont
+} def
+
+/ReEncode	%
+{
+    reencdict begin
+	/newname exch def
+	/basename exch def
+	/basedict basename findfont def
+	/newfont basedict maxlength dict def
+	basedict
+	{ exch dup /FID ne
+	    { dup /Encoding eq
+		{ exch dup length array copy newfont 3 1 roll put }
+		{ exch newfont 3 1 roll put } ifelse
+	    }
+	    { pop pop } ifelse
+	} forall
+	newfont /FontName newname put
+	newcodes aload pop newcodes length 2 idiv
+	{ newfont /Encoding get 3 1 roll put } repeat
+	newname newfont definefont pop
+    end
+} def
+
+1 100 div dup scale
+/#copies 1 def
+90 rotate 0 -61200 translate
+/BodyF { 700 /Courier /Courier-Latin1 ChgFnt } def
+/CW BodyF ( ) stringwidth pop def
+/Titlef {  1000 /Courier-Bold /Courier-Bold-Latin1 ChgFnt } def
+/Gpnf {  3600 /Helvetica-Bold /Helvetica-Bold-Latin1 ChgFnt } def
+/Gdatef { 1200 /Times-Bold /Times-Bold-Latin1 ChgFnt } def
+/Gtitlef { 1400 /Times-Roman /Times-Roman-Latin1 ChgFnt } def
+/K         { -2 CW mul add exch moveto (+) show } def
+/L         { CW mul add exch moveto show } def
+/T         { exch moveto show } def
+/M         { CW mul 0 rmoveto } def
+/Centre    { dup stringwidth pop 2 div neg 0 rmoveto } def
+/Gb        { newpath moveto 7200 0 rlineto 0 3600 rlineto -7200 0 rlineto fill } def
+/Gr        { newpath moveto 58700 0 rlineto 0 1800 rlineto -58700 0 rlineto fill } def
+/G         { 0.7 setgray 3600 55100 Gb 69500 55100 Gb 0.95 setgray 10800 55100 Gr } def
+/StartPage { /SavedPage save def
+  G
+  Gtitlef 40150 55730 moveto Centre 0 setgray show
+  Gpnf    73100 55640 moveto Centre 1 setgray show
+  Gdatef  7200 55700 moveto (13:23:22) Centre 0 setgray show
+                  7200 57380 moveto (Feb 02 97) Centre show
+  BodyF 0 setgray } def
+/EndPage   { 40150 53700 moveto 0 -51200 rlineto stroke showpage SavedPage restore } def
+%%EndProlog
+%%Page: 1 1
+(1) (final-dynamic) StartPage
+(Script started on Sun Feb  2 13:20:00 1997) 53700 3600 T
+([r[m[2J[H[?7h[?1;3;4;6l
+> :ld [K[K[Kcl
+
+) 52930 3600 T
+(:cl: Command not found.
+) 52160 3600 T
+(> cl
+
+) 51390 3600 T
+(Note: the Allegro CL shared library moved to 0xef231000 because the previous
+) 50620 3600 T
+(address of 0xf2222000 was not available.  Will perform relocation.
+) 49850 3600 6 L
+(See the Allegro CL Release Notes for details.
+) 49080 3600 6 L
+(Allegro CL 4.2 [SPARC; R1] \(9/6/94 11:02\)
+) 48310 3600 T
+(Copyright \(C\) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+) 47540 3600 T
+(;; Optimization settings: safety 1, space 1, speed 1, debug 2
+) 46770 3600 T
+(;; For a complete description of all compiler switches given the current
+) 46000 3600 T
+(;; optimization settings evaluate \(EXPLAIN-COMPILER-SETTINGS\).
+) 45230 3600 T
+(USER\(1\): :ld load
+) 44460 3600 T
+(; Loading /users/yjzhang/thesis/CSP/qcsp-alex/load.lisp.
+) 43690 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/bm.fasl.
+) 42920 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/bt.fasl.
+) 42150 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/ct.fasl.
+) 41380 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/gsat.fasl.
+) 40610 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/utility.fasl.
+) 39840 3600 T
+(;   Loading /users/yjzhang/thesis/CSP/qcsp-alex/compile.lisp.
+) 39070 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/quilici-search.fasl.
+) 38300 3600 T
+(Warning: GETVAL, :OPERATOR was defined in
+) 37530 3600 T
+(/users/yjzhang/thesis/CSP/qcsp-alex/gsat.lisp and is now being
+) 36760 3600 9 L
+(defined in /users/yjzhang/thesis/CSP/qcsp-alex/quilici-search.lisp
+) 35990 3600 9 L
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-simple.fasl.
+) 35220 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-setup.fasl.
+) 34450 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/memory-csp.fasl.
+) 33680 3600 T
+(USER\(2\): :ld yj-load
+) 32910 3600 T
+(; Loading /users/yjzhang/thesis/CSP/qcsp-alex/yj-load.lisp.
+) 32140 3600 T
+(USER\(3\): \(,y^H^H
+) 31370 3600 T
+(
+) 30600 3600 T
+(Error: Comma not inside a backquote.
+) 29830 3600 T
+([condition type: READER-ERROR]
+) 29060 3600 2 L
+([1] USER\(4\): \(my-fasl\)
+) 28290 3600 T
+(; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-template.fasl.
+) 27520 3600 T
+(; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+) 26750 3600 T
+(; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-dep.fasl.
+) 25980 3600 T
+(; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/general-exp.fasl.
+) 25210 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-template.fasl.
+) 24440 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-dep.fasl.
+) 23670 3600 T
+(; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/random-templ-exp.fasl.
+) 22900 3600 T
+(;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/static-order-exp.fasl.
+) 22130 3600 T
+(; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/static-order-exp.fasl.
+) 21360 3600 T
+(; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/cpu-xy.fasl.
+) 20590 3600 T
+(T
+) 19820 3600 T
+([1] USER\(5\): :ld final-test.lisp
+) 19050 3600 T
+(; Loading /users/yjzhang/thesis/CSP/qcsp-alex/final-test.lisp.
+) 18280 3600 T
+(Warning: ignoring extra right parenthesis
+) 17510 3600 T
+([1] USER\(6\): \(start-test-d\)
+) 16740 3600 T
+(
+) 15970 3600 T
+(Processing DMAX now!
+) 15200 3600 T
+(Computing dependency in  DMAX now!
+) 14430 3600 T
+(Modifying dependency in  DMAX now!
+) 13660 3600 T
+(> Initializing a new case 
+) 12890 3600 T
+(
+) 12120 3600 1 L
+(***** Initial Selection State Description ***** 
+) 11350 3600 T
+(
+) 10580 3600 T
+(Node id: ROOT 
+) 9810 3600 1 L
+(Partial solution: NIL 
+) 9040 3600 1 L
+(Symbol: E2 
+) 8270 3600 1 L
+(Symbol value: NIL 
+) 7500 3600 1 L
+(Domain: \(DMAXC_24 DMAXC_50\) 
+) 6730 3600 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 5960 3600 1 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 5190 3600 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 4420 3600 19 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 3650 3600 18 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 2880 3600 19 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 53700 41950 19 L
+(DMAXC_93\)\) 
+) 52930 41950 19 L
+(Arc Cost: 0 
+) 52160 41950 1 L
+(Depth: 1 
+) 51390 41950 1 L
+(Max fail level: 0 
+) 50620 41950 1 L
+(Prev Node id: NONE 
+) 49850 41950 1 L
+(Parent id: NIL 
+) 49080 41950 1 L
+(
+) 48310 41950 T
+(***** Visit State Description ***** 
+) 47540 41950 T
+(
+) 46770 41950 T
+(Node id: 1 
+) 46000 41950 1 L
+(Partial solution: NIL 
+) 45230 41950 1 L
+(Symbol: E2 
+) 44460 41950 1 L
+(Symbol value: DMAXC_24 
+) 43690 41950 1 L
+(Domain: \(DMAXC_50\) 
+) 42920 41950 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 42150 41950 1 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 41380 41950 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 40610 41950 19 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 39840 41950 18 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 39070 41950 19 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 38300 41950 19 L
+(DMAXC_93\)\) 
+) 37530 41950 19 L
+(Arc Cost: 0 
+) 36760 41950 1 L
+(Depth: 1 
+) 35990 41950 1 L
+(Max fail level: 0 
+) 35220 41950 1 L
+(Prev Node id: NONE 
+) 34450 41950 1 L
+(Parent id: NIL 
+) 33680 41950 1 L
+(
+) 32910 41950 T
+(
+) 32140 41950 T
+(> >>>>>> Node   < 1 > 
+) 31370 41950 T
+(> Current: symbol, value, partial  < E2, DMAXC_24, NIL > 
+) 30600 41950 T
+(> Satisfy-p <symbol, value, partial>  < E2, DMAXC_24, NIL > 
+) 29830 41950 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 29060 41950 T
+(> ------------------- 
+) 28290 41950 T
+(
+) 27520 41950 1 L
+(> > BACKTRACK POINT <  < 1 > 
+) 26750 41950 T
+(> ------------------- 
+) 25980 41950 T
+(
+) 25210 41950 1 L
+(> FC varleft input  < \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 24440 41950 T
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 23670 41950 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 22900 41950 24 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 22130 41950 23 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 21360 41950 24 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 20590 41950 24 L
+(DMAXC_93\)\) > 
+) 19820 41950 24 L
+(
+) 19050 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E2, DMAXC_24, \(\(E) 18280 41950 T
+17510 41950 K (2
+) 17510 41950 T
+(D) 16740 41950 81 L
+15970 41950 K (MAXC_24\)\) > 
+) 15970 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 15200 41950 T
+(
+) 14430 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_2, E2, DMAXC_24 > 
+) 13660 41950 T
+(>    < 1 > 
+) 12890 41950 T
+(> control-data-dependency succeed for  < DMAXC_24, DMAXC_2 > 
+) 12120 41950 T
+(
+) 11350 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E2, DMAXC_24, \(\(E) 10580 41950 T
+9810 41950 K (2
+) 9810 41950 T
+(D) 9040 41950 81 L
+8270 41950 K (MAXC_24\)\) > 
+) 8270 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 7500 41950 T
+(
+) 6730 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_3, E2, DMAXC_24 > 
+) 5960 41950 T
+(>    < 2 > 
+) 5190 41950 T
+(> control-data-dependency succeed for  < DMAXC_24, DMAXC_3 > 
+) 4420 41950 T
+(
+) 3650 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E2, DMAXC_24, \(\(E) 2880 41950 T
+EndPage
+%%Page: 2 2
+(2) (final-dynamic) StartPage
+53700 3600 K (2
+) 53700 3600 T
+(D) 52930 3600 81 L
+52160 3600 K (MAXC_24\)\) > 
+) 52160 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 51390 3600 T
+(
+) 50620 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_8, E2, DMAXC_24 > 
+) 49850 3600 T
+(>    < 3 > 
+) 49080 3600 T
+(> control-data-dependency succeed for  < DMAXC_24, DMAXC_8 > 
+) 48310 3600 T
+(
+) 47540 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E2, DMAXC_24, \(\() 46770 3600 T
+46000 3600 K (E2
+) 46000 3600 T
+44460 3600 K (DMAXC_24\)\) > 
+) 44460 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 43690 3600 T
+(
+) 42920 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_17, E2, DMAXC_24 > 
+) 42150 3600 T
+(>    < 4 > 
+) 41380 3600 T
+(> control-data-dependency succeed for  < DMAXC_24, DMAXC_17 > 
+) 40610 3600 T
+(
+) 39840 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E2, DMAXC_24, \(\() 39070 3600 T
+38300 3600 K (E2
+) 38300 3600 T
+36760 3600 K (DMAXC_24\)\) > 
+) 36760 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 35990 3600 T
+(
+) 35220 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_19, E2, DMAXC_24 > 
+) 34450 3600 T
+(>    < 5 > 
+) 33680 3600 T
+(> control-data-dependency succeed for  < DMAXC_24, DMAXC_19 > 
+) 32910 3600 T
+(
+) 32140 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E2, DMAXC_24, \(\() 31370 3600 T
+30600 3600 K (E2
+) 30600 3600 T
+29060 3600 K (DMAXC_24\)\) > 
+) 29060 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 28290 3600 T
+(
+) 27520 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_23, E2, DMAXC_24 > 
+) 26750 3600 T
+(>    < 6 > 
+) 25980 3600 T
+(> control-data-dependency succeed for  < DMAXC_24, DMAXC_23 > 
+) 25210 3600 T
+(
+) 24440 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_28, E2, DMAXC_24, \(\() 23670 3600 T
+22900 3600 K (E2
+) 22900 3600 T
+21360 3600 K (DMAXC_24\)\) > 
+) 21360 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 20590 3600 T
+(
+) 19820 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_28, E2, DMAXC_24 > 
+) 19050 3600 T
+(>    < 7 > 
+) 18280 3600 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_28 > 
+) 17510 3600 T
+(
+) 16740 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E2, DMAXC_24, \(\() 15970 3600 T
+15200 3600 K (E2
+) 15200 3600 T
+13660 3600 K (DMAXC_24\)\) > 
+) 13660 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 12890 3600 T
+(
+) 12120 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_42, E2, DMAXC_24 > 
+) 11350 3600 T
+(>    < 8 > 
+) 10580 3600 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_42 > 
+) 9810 3600 T
+(
+) 9040 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E2, DMAXC_24, \(\() 8270 3600 T
+7500 3600 K (E2
+) 7500 3600 T
+5960 3600 K (DMAXC_24\)\) > 
+) 5960 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 5190 3600 T
+(
+) 4420 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_49, E2, DMAXC_24 > 
+) 3650 3600 T
+(>    < 9 > 
+) 2880 3600 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_49 > 
+) 53700 41950 T
+(
+) 52930 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_56, E2, DMAXC_24, \(\() 52160 41950 T
+51390 41950 K (E2
+) 51390 41950 T
+49850 41950 K (DMAXC_24\)\) > 
+) 49850 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 49080 41950 T
+(
+) 48310 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_56, E2, DMAXC_24 > 
+) 47540 41950 T
+(>    < 10 > 
+) 46770 41950 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_56 > 
+) 46000 41950 T
+(
+) 45230 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_62, E2, DMAXC_24, \(\() 44460 41950 T
+43690 41950 K (E2
+) 43690 41950 T
+42150 41950 K (DMAXC_24\)\) > 
+) 42150 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 41380 41950 T
+(
+) 40610 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_62, E2, DMAXC_24 > 
+) 39840 41950 T
+(>    < 11 > 
+) 39070 41950 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_62 > 
+) 38300 41950 T
+(
+) 37530 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_66, E2, DMAXC_24, \(\() 36760 41950 T
+35990 41950 K (E2
+) 35990 41950 T
+34450 41950 K (DMAXC_24\)\) > 
+) 34450 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 33680 41950 T
+(
+) 32910 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_66, E2, DMAXC_24 > 
+) 32140 41950 T
+(>    < 12 > 
+) 31370 41950 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_66 > 
+) 30600 41950 T
+(
+) 29830 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_70, E2, DMAXC_24, \(\() 29060 41950 T
+28290 41950 K (E2
+) 28290 41950 T
+26750 41950 K (DMAXC_24\)\) > 
+) 26750 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 25980 41950 T
+(
+) 25210 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_70, E2, DMAXC_24 > 
+) 24440 41950 T
+(>    < 13 > 
+) 23670 41950 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_70 > 
+) 22900 41950 T
+(
+) 22130 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_74, E2, DMAXC_24, \(\() 21360 41950 T
+20590 41950 K (E2
+) 20590 41950 T
+19050 41950 K (DMAXC_24\)\) > 
+) 19050 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 18280 41950 T
+(
+) 17510 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_74, E2, DMAXC_24 > 
+) 16740 41950 T
+(>    < 14 > 
+) 15970 41950 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_74 > 
+) 15200 41950 T
+(
+) 14430 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_77, E2, DMAXC_24, \(\() 13660 41950 T
+12890 41950 K (E2
+) 12890 41950 T
+11350 41950 K (DMAXC_24\)\) > 
+) 11350 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 10580 41950 T
+(
+) 9810 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_77, E2, DMAXC_24 > 
+) 9040 41950 T
+(>    < 15 > 
+) 8270 41950 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_77 > 
+) 7500 41950 T
+(
+) 6730 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_83, E2, DMAXC_24, \(\() 5960 41950 T
+5190 41950 K (E2
+) 5190 41950 T
+3650 41950 K (DMAXC_24\)\) > 
+) 3650 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 2880 41950 T
+EndPage
+%%Page: 3 3
+(3) (final-dynamic) StartPage
+(
+) 53700 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_83, E2, DMAXC_24 > 
+) 52930 3600 T
+(>    < 16 > 
+) 52160 3600 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_83 > 
+) 51390 3600 T
+(
+) 50620 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_89, E2, DMAXC_24, \(\() 49850 3600 T
+49080 3600 K (E2
+) 49080 3600 T
+47540 3600 K (DMAXC_24\)\) > 
+) 47540 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 46770 3600 T
+(
+) 46000 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_89, E2, DMAXC_24 > 
+) 45230 3600 T
+(>    < 17 > 
+) 44460 3600 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_89 > 
+) 43690 3600 T
+(
+) 42920 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_91, E2, DMAXC_24, \(\() 42150 3600 T
+41380 3600 K (E2
+) 41380 3600 T
+39840 3600 K (DMAXC_24\)\) > 
+) 39840 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 39070 3600 T
+(
+) 38300 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_91, E2, DMAXC_24 > 
+) 37530 3600 T
+(>    < 18 > 
+) 36760 3600 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_91 > 
+) 35990 3600 T
+(
+) 35220 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_93, E2, DMAXC_24, \(\() 34450 3600 T
+33680 3600 K (E2
+) 33680 3600 T
+32140 3600 K (DMAXC_24\)\) > 
+) 32140 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 31370 3600 T
+(
+) 30600 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_93, E2, DMAXC_24 > 
+) 29830 3600 T
+(>    < 19 > 
+) 29060 3600 T
+(> control-data-dependency fail for  < DMAXC_24, DMAXC_93 > 
+) 28290 3600 T
+(
+) 27520 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E2, DMAXC_24, \(\() 26750 3600 T
+25980 3600 K (E2
+) 25980 3600 T
+24440 3600 K (DMAXC_24\)\) > 
+) 24440 3600 T
+(> No arc constraints  < T > 
+) 23670 3600 T
+(
+) 22900 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E2, DMAXC_24, \(\() 22130 3600 T
+21360 3600 K (E2
+) 21360 3600 T
+19820 3600 K (DMAXC_24\)\) > 
+) 19820 3600 T
+(> No arc constraints  < T > 
+) 19050 3600 T
+(
+) 18280 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E2, DMAXC_24, \(\() 17510 3600 T
+16740 3600 K (E2
+) 16740 3600 T
+15200 3600 K (DMAXC_24\)\) > 
+) 15200 3600 T
+(> No arc constraints  < T > 
+) 14430 3600 T
+(
+) 13660 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E2, DMAXC_24, \(\() 12890 3600 T
+12120 3600 K (E2
+) 12120 3600 T
+10580 3600 K (DMAXC_24\)\) > 
+) 10580 3600 T
+(> No arc constraints  < T > 
+) 9810 3600 T
+(
+) 9040 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E2, DMAXC_24, \(\() 8270 3600 T
+7500 3600 K (E2
+) 7500 3600 T
+5960 3600 K (DMAXC_24\)\) > 
+) 5960 3600 T
+(> No arc constraints  < T > 
+) 5190 3600 T
+(
+) 4420 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E2, DMAXC_24, \(\() 3650 3600 T
+2880 3600 K (E2
+) 2880 3600 T
+52930 41950 K (DMAXC_24\)\) > 
+) 52930 41950 T
+(> No arc constraints  < T > 
+) 52160 41950 T
+(
+) 51390 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E2, DMAXC_24, \(\() 50620 41950 T
+49850 41950 K (E2
+) 49850 41950 T
+48310 41950 K (DMAXC_24\)\) > 
+) 48310 41950 T
+(> No arc constraints  < T > 
+) 47540 41950 T
+(
+) 46770 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E2, DMAXC_24, \(\() 46000 41950 T
+45230 41950 K (E2
+) 45230 41950 T
+43690 41950 K (DMAXC_24\)\) > 
+) 43690 41950 T
+(> No arc constraints  < T > 
+) 42920 41950 T
+(
+) 42150 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E2, DMAXC_24, \(\() 41380 41950 T
+40610 41950 K (E2
+) 40610 41950 T
+39070 41950 K (DMAXC_24\)\) > 
+) 39070 41950 T
+(> No arc constraints  < T > 
+) 38300 41950 T
+(
+) 37530 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E2, DMAXC_24, \(\() 36760 41950 T
+35990 41950 K (E2
+) 35990 41950 T
+34450 41950 K (DMAXC_24\)\) > 
+) 34450 41950 T
+(> No arc constraints  < T > 
+) 33680 41950 T
+(
+) 32910 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E2, DMAXC_24, \(\() 32140 41950 T
+31370 41950 K (E2
+) 31370 41950 T
+29830 41950 K (DMAXC_24\)\) > 
+) 29830 41950 T
+(> No arc constraints  < T > 
+) 29060 41950 T
+(
+) 28290 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_24, \(\() 27520 41950 T
+26750 41950 K (E2
+) 26750 41950 T
+25210 41950 K (DMAXC_24\)\) > 
+) 25210 41950 T
+(> No arc constraints  < T > 
+) 24440 41950 T
+(
+) 23670 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_24, \(\() 22900 41950 T
+22130 41950 K (E2
+) 22130 41950 T
+20590 41950 K (DMAXC_24\)\) > 
+) 20590 41950 T
+(> No arc constraints  < T > 
+) 19820 41950 T
+(
+) 19050 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E2, DMAXC_24, \(\() 18280 41950 T
+17510 41950 K (E2
+) 17510 41950 T
+15970 41950 K (DMAXC_24\)\) > 
+) 15970 41950 T
+(> No arc constraints  < T > 
+) 15200 41950 T
+(
+) 14430 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E2, DMAXC_24, \(\() 13660 41950 T
+12890 41950 K (E2
+) 12890 41950 T
+11350 41950 K (DMAXC_24\)\) > 
+) 11350 41950 T
+(> No arc constraints  < T > 
+) 10580 41950 T
+(> FC varleft out  < \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 9810 41950 T
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 9040 41950 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 8270 41950 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19
+) 7500 41950 21 L
+(DMAXC_23\)\) > 
+) 6730 41950 22 L
+(> DR varleft input  < \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 5960 41950 T
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 5190 41950 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 4420 41950 24 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19
+) 3650 41950 23 L
+(DMAXC_23\)\) > 
+) 2880 41950 24 L
+EndPage
+%%Page: 4 4
+(4) (final-dynamic) StartPage
+(> DR varleft out  < \(\(E5 DMAXC_25 DMAXC_51\) \(E3 DMAXC_21 DMAXC_47\)
+) 53700 3600 T
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 52930 3600 21 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 52160 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) > 
+) 51390 3600 22 L
+(> Next Symbol, domain  < E5, \(DMAXC_25 DMAXC_51\) > 
+) 50620 3600 T
+(***** Visit State Description ***** 
+) 49850 3600 T
+(
+) 49080 3600 T
+(Node id: 2 
+) 48310 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\)\) 
+) 47540 3600 1 L
+(Symbol: E5 
+) 46770 3600 1 L
+(Symbol value: DMAXC_25 
+) 46000 3600 1 L
+(Domain: \(DMAXC_51\) 
+) 45230 3600 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 44460 3600 1 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 43690 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 42920 3600 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 42150 3600 19 L
+(Arc Cost: 0 
+) 41380 3600 1 L
+(Depth: 2 
+) 40610 3600 1 L
+(Max fail level: 0 
+) 39840 3600 1 L
+(Prev Node id: 1 
+) 39070 3600 1 L
+(Parent id: #\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 38300 3600 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 37530 3600 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 36760 3600 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 35990 3600 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 35220 3600 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 34450 3600 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 33680 3600 16 L
+(0 1 0 NIL\) 
+) 32910 3600 14 L
+(
+) 32140 3600 T
+(
+) 31370 3600 T
+(> >>>>>> Node   < 2 > 
+) 30600 3600 T
+(> Current: symbol, value, partial  < E5, DMAXC_25, \(\(E2 DMAXC_24\)\) > 
+) 29830 3600 T
+(> Satisfy-p <symbol, value, partial>  < E5, DMAXC_25, \(\(E2 DMAXC_24\)\) > 
+) 29060 3600 T
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 28290 3600 T
+(
+) 27520 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_24, \(\() 26750 3600 T
+25980 3600 K (E2
+) 25980 3600 T
+24440 3600 K (DMAXC_24\)\) > 
+) 24440 3600 T
+(> No arc constraints  < T > 
+) 23670 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 22900 3600 T
+(> ------------------- 
+) 22130 3600 T
+(
+) 21360 3600 1 L
+(> > BACKTRACK POINT <  < 2 > 
+) 20590 3600 T
+(> ------------------- 
+) 19820 3600 T
+(
+) 19050 3600 1 L
+(> FC varleft input  < \(\(E3 DMAXC_21 DMAXC_47\)
+) 18280 3600 T
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 17510 3600 23 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 16740 3600 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+) 15970 3600 24 L
+(DMAXC_92\)\) > 
+) 15200 3600 24 L
+(
+) 14430 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_25, \(\() 13660 3600 T
+12890 3600 K (E2
+) 12890 3600 T
+11350 3600 K (DMAXC_24\)
+) 11350 3600 T
+(\() 10580 3600 81 L
+9810 3600 K (E5
+) 9810 3600 T
+8270 3600 K (DMAXC_25\)\) > 
+) 8270 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 7500 3600 T
+(
+) 6730 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_12, E5, DMAXC_25 > 
+) 5960 3600 T
+(>    < 20 > 
+) 5190 3600 T
+(> possible-data-dependency fail for  < DMAXC_12, DMAXC_25 > 
+) 4420 3600 T
+(
+) 3650 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_25, \(\() 2880 3600 T
+53700 41950 K (E2
+) 53700 41950 T
+52160 41950 K (DMAXC_24\)
+) 52160 41950 T
+(\() 51390 41950 81 L
+50620 41950 K (E5
+) 50620 41950 T
+49080 41950 K (DMAXC_25\)\) > 
+) 49080 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 48310 41950 T
+(
+) 47540 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_26, E5, DMAXC_25 > 
+) 46770 41950 T
+(>    < 21 > 
+) 46000 41950 T
+(> possible-data-dependency succeed for  < DMAXC_26, DMAXC_25 > 
+) 45230 41950 T
+(
+) 44460 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_25, \(\() 43690 41950 T
+42920 41950 K (E2
+) 42920 41950 T
+41380 41950 K (DMAXC_24\)
+) 41380 41950 T
+(\() 40610 41950 81 L
+39840 41950 K (E5
+) 39840 41950 T
+38300 41950 K (DMAXC_25\)\) > 
+) 38300 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 37530 41950 T
+(
+) 36760 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_27, E5, DMAXC_25 > 
+) 35990 41950 T
+(>    < 22 > 
+) 35220 41950 T
+(> possible-data-dependency succeed for  < DMAXC_27, DMAXC_25 > 
+) 34450 41950 T
+(
+) 33680 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_25, \(\() 32910 41950 T
+32140 41950 K (E2
+) 32140 41950 T
+30600 41950 K (DMAXC_24\)
+) 30600 41950 T
+(\() 29830 41950 81 L
+29060 41950 K (E5
+) 29060 41950 T
+27520 41950 K (DMAXC_25\)\) > 
+) 27520 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 26750 41950 T
+(
+) 25980 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_29, E5, DMAXC_25 > 
+) 25210 41950 T
+(>    < 23 > 
+) 24440 41950 T
+(> possible-data-dependency succeed for  < DMAXC_29, DMAXC_25 > 
+) 23670 41950 T
+(
+) 22900 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_25, \(\() 22130 41950 T
+21360 41950 K (E2
+) 21360 41950 T
+19820 41950 K (DMAXC_24\)
+) 19820 41950 T
+(\() 19050 41950 81 L
+18280 41950 K (E5
+) 18280 41950 T
+16740 41950 K (DMAXC_25\)\) > 
+) 16740 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 15970 41950 T
+(
+) 15200 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_31, E5, DMAXC_25 > 
+) 14430 41950 T
+(>    < 24 > 
+) 13660 41950 T
+(> possible-data-dependency succeed for  < DMAXC_31, DMAXC_25 > 
+) 12890 41950 T
+(
+) 12120 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_25, \(\() 11350 41950 T
+10580 41950 K (E2
+) 10580 41950 T
+9040 41950 K (DMAXC_24\)
+) 9040 41950 T
+(\() 8270 41950 81 L
+7500 41950 K (E5
+) 7500 41950 T
+5960 41950 K (DMAXC_25\)\) > 
+) 5960 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 5190 41950 T
+(
+) 4420 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_32, E5, DMAXC_25 > 
+) 3650 41950 T
+(>    < 25 > 
+) 2880 41950 T
+EndPage
+%%Page: 5 5
+(5) (final-dynamic) StartPage
+(> possible-data-dependency succeed for  < DMAXC_32, DMAXC_25 > 
+) 53700 3600 T
+(
+) 52930 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_25, \(\() 52160 3600 T
+51390 3600 K (E2
+) 51390 3600 T
+49850 3600 K (DMAXC_24\)
+) 49850 3600 T
+(\() 49080 3600 81 L
+48310 3600 K (E5
+) 48310 3600 T
+46770 3600 K (DMAXC_25\)\) > 
+) 46770 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 46000 3600 T
+(
+) 45230 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_52, E5, DMAXC_25 > 
+) 44460 3600 T
+(>    < 26 > 
+) 43690 3600 T
+(> possible-data-dependency fail for  < DMAXC_52, DMAXC_25 > 
+) 42920 3600 T
+(
+) 42150 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_25, \(\() 41380 3600 T
+40610 3600 K (E2
+) 40610 3600 T
+39070 3600 K (DMAXC_24\)
+) 39070 3600 T
+(\() 38300 3600 81 L
+37530 3600 K (E5
+) 37530 3600 T
+35990 3600 K (DMAXC_25\)\) > 
+) 35990 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 35220 3600 T
+(
+) 34450 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_53, E5, DMAXC_25 > 
+) 33680 3600 T
+(>    < 27 > 
+) 32910 3600 T
+(> possible-data-dependency fail for  < DMAXC_53, DMAXC_25 > 
+) 32140 3600 T
+(
+) 31370 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_25, \(\() 30600 3600 T
+29830 3600 K (E2
+) 29830 3600 T
+28290 3600 K (DMAXC_24\)
+) 28290 3600 T
+(\() 27520 3600 81 L
+26750 3600 K (E5
+) 26750 3600 T
+25210 3600 K (DMAXC_25\)\) > 
+) 25210 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 24440 3600 T
+(
+) 23670 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_57, E5, DMAXC_25 > 
+) 22900 3600 T
+(>    < 28 > 
+) 22130 3600 T
+(> possible-data-dependency fail for  < DMAXC_57, DMAXC_25 > 
+) 21360 3600 T
+(
+) 20590 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_25, \(\() 19820 3600 T
+19050 3600 K (E2
+) 19050 3600 T
+17510 3600 K (DMAXC_24\)
+) 17510 3600 T
+(\() 16740 3600 81 L
+15970 3600 K (E5
+) 15970 3600 T
+14430 3600 K (DMAXC_25\)\) > 
+) 14430 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 13660 3600 T
+(
+) 12890 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_90, E5, DMAXC_25 > 
+) 12120 3600 T
+(>    < 29 > 
+) 11350 3600 T
+(> possible-data-dependency fail for  < DMAXC_90, DMAXC_25 > 
+) 10580 3600 T
+(
+) 9810 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_25, \(\() 9040 3600 T
+8270 3600 K (E2
+) 8270 3600 T
+6730 3600 K (DMAXC_24\)
+) 6730 3600 T
+(\() 5960 3600 81 L
+5190 3600 K (E5
+) 5190 3600 T
+3650 3600 K (DMAXC_25\)\) > 
+) 3650 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 2880 3600 T
+(
+) 53700 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_92, E5, DMAXC_25 > 
+) 52930 41950 T
+(>    < 30 > 
+) 52160 41950 T
+(> possible-data-dependency fail for  < DMAXC_92, DMAXC_25 > 
+) 51390 41950 T
+(
+) 50620 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E5, DMAXC_25, \(\(E) 49850 41950 T
+49080 41950 K (2
+) 49080 41950 T
+(D) 48310 41950 81 L
+47540 41950 K (MAXC_24\)
+) 47540 41950 T
+(\(E) 46770 41950 80 L
+46000 41950 K (5
+) 46000 41950 T
+(D) 45230 41950 81 L
+44460 41950 K (MAXC_25\)\) > 
+) 44460 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 43690 41950 T
+(
+) 42920 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_2, E5, DMAXC_25 > 
+) 42150 41950 T
+(>    < 31 > 
+) 41380 41950 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_2 > 
+) 40610 41950 T
+(
+) 39840 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E5, DMAXC_25, \(\(E) 39070 41950 T
+38300 41950 K (2
+) 38300 41950 T
+(D) 37530 41950 81 L
+36760 41950 K (MAXC_24\)
+) 36760 41950 T
+(\(E) 35990 41950 80 L
+35220 41950 K (5
+) 35220 41950 T
+(D) 34450 41950 81 L
+33680 41950 K (MAXC_25\)\) > 
+) 33680 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 32910 41950 T
+(
+) 32140 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_3, E5, DMAXC_25 > 
+) 31370 41950 T
+(>    < 32 > 
+) 30600 41950 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_3 > 
+) 29830 41950 T
+(
+) 29060 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_25, \(\(E) 28290 41950 T
+27520 41950 K (2
+) 27520 41950 T
+(D) 26750 41950 81 L
+25980 41950 K (MAXC_24\)
+) 25980 41950 T
+(\(E) 25210 41950 80 L
+24440 41950 K (5
+) 24440 41950 T
+(D) 23670 41950 81 L
+22900 41950 K (MAXC_25\)\) > 
+) 22900 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 22130 41950 T
+(
+) 21360 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_8, E5, DMAXC_25 > 
+) 20590 41950 T
+(>    < 33 > 
+) 19820 41950 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_8 > 
+) 19050 41950 T
+(
+) 18280 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_25, \(\() 17510 41950 T
+16740 41950 K (E2
+) 16740 41950 T
+15200 41950 K (DMAXC_24\)
+) 15200 41950 T
+(\() 14430 41950 81 L
+13660 41950 K (E5
+) 13660 41950 T
+12120 41950 K (DMAXC_25\)\) > 
+) 12120 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 11350 41950 T
+(
+) 10580 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_17, E5, DMAXC_25 > 
+) 9810 41950 T
+(>    < 34 > 
+) 9040 41950 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_17 > 
+) 8270 41950 T
+(
+) 7500 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_25, \(\() 6730 41950 T
+5960 41950 K (E2
+) 5960 41950 T
+4420 41950 K (DMAXC_24\)
+) 4420 41950 T
+(\() 3650 41950 81 L
+2880 41950 K (E5
+) 2880 41950 T
+EndPage
+%%Page: 6 6
+(6) (final-dynamic) StartPage
+52930 3600 K (DMAXC_25\)\) > 
+) 52930 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 52160 3600 T
+(
+) 51390 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_19, E5, DMAXC_25 > 
+) 50620 3600 T
+(>    < 35 > 
+) 49850 3600 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_19 > 
+) 49080 3600 T
+(
+) 48310 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E5, DMAXC_25, \(\() 47540 3600 T
+46770 3600 K (E2
+) 46770 3600 T
+45230 3600 K (DMAXC_24\)
+) 45230 3600 T
+(\() 44460 3600 81 L
+43690 3600 K (E5
+) 43690 3600 T
+42150 3600 K (DMAXC_25\)\) > 
+) 42150 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 41380 3600 T
+(
+) 40610 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_23, E5, DMAXC_25 > 
+) 39840 3600 T
+(>    < 36 > 
+) 39070 3600 T
+(> possible-data-dependency succeed for  < DMAXC_25, DMAXC_23 > 
+) 38300 3600 T
+(
+) 37530 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_25, \(\() 36760 3600 T
+35990 3600 K (E2
+) 35990 3600 T
+34450 3600 K (DMAXC_24\)
+) 34450 3600 T
+(\() 33680 3600 81 L
+32910 3600 K (E5
+) 32910 3600 T
+31370 3600 K (DMAXC_25\)\) > 
+) 31370 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 30600 3600 T
+(
+) 29830 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_21, E5, DMAXC_25 > 
+) 29060 3600 T
+(>    < 37 > 
+) 28290 3600 T
+(> possible-data-dependency succeed for  < DMAXC_21, DMAXC_25 > 
+) 27520 3600 T
+(
+) 26750 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_25, \(\() 25980 3600 T
+25210 3600 K (E2
+) 25210 3600 T
+23670 3600 K (DMAXC_24\)
+) 23670 3600 T
+(\() 22900 3600 81 L
+22130 3600 K (E5
+) 22130 3600 T
+20590 3600 K (DMAXC_25\)\) > 
+) 20590 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 19820 3600 T
+(
+) 19050 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_47, E5, DMAXC_25 > 
+) 18280 3600 T
+(>    < 38 > 
+) 17510 3600 T
+(> possible-data-dependency fail for  < DMAXC_47, DMAXC_25 > 
+) 16740 3600 T
+(> FC varleft out  < \(\(E3 DMAXC_21\) \(E1 DMAXC_23\)
+) 15970 3600 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 15200 3600 21 L
+(> DR varleft input  < \(\(E3 DMAXC_21\) \(E1 DMAXC_23\)
+) 14430 3600 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 13660 3600 23 L
+(> DR varleft out  < \(\(E1 DMAXC_23\) \(E3 DMAXC_21\)
+) 12890 3600 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 12120 3600 21 L
+(> Next Symbol, domain  < E1, \(DMAXC_23\) > 
+) 11350 3600 T
+(***** Visit State Description ***** 
+) 10580 3600 T
+(
+) 9810 3600 T
+(Node id: 3 
+) 9040 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) 
+) 8270 3600 1 L
+(Symbol: E1 
+) 7500 3600 1 L
+(Symbol value: DMAXC_23 
+) 6730 3600 1 L
+(Domain: NIL 
+) 5960 3600 1 L
+(Variables left: \(\(E3 DMAXC_21\)
+) 5190 3600 1 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) 
+) 4420 3600 18 L
+(Arc Cost: 0 
+) 3650 3600 1 L
+(Depth: 3 
+) 2880 3600 1 L
+(Max fail level: 0 
+) 53700 41950 1 L
+(Prev Node id: 2 
+) 52930 41950 1 L
+(Parent id: #\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 52160 41950 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 51390 41950 14 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 50620 41950 15 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 49850 41950 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 49080 41950 16 L
+(0 2 0
+) 48310 41950 14 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 47540 41950 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 46770 41950 16 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 46000 41950 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 45230 41950 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 44460 41950 17 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 43690 41950 18 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 42920 41950 18 L
+(DMAXC_93\)\)
+) 42150 41950 18 L
+(0 1 -1 NIL\)\) 
+) 41380 41950 16 L
+(
+) 40610 41950 T
+(
+) 39840 41950 T
+(> >>>>>> Node   < 3 > 
+) 39070 41950 T
+(> Current: symbol, value, partial  < E1, DMAXC_23, \(\(E2 DMAXC_24\)
+) 38300 41950 T
+(\(E5 DMAXC_25\)\) > 
+) 37530 41950 52 L
+(> Satisfy-p <symbol, value, partial>  < E1, DMAXC_23, \(\(E2 DMAXC_24\)
+) 36760 41950 T
+(\(E5 DMAXC_25\)\) > 
+) 35990 41950 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 35220 41950 T
+(
+) 34450 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E2, DMAXC_24, \(\() 33680 41950 T
+32910 41950 K (E2
+) 32910 41950 T
+31370 41950 K (DMAXC_24\)
+) 31370 41950 T
+(\() 30600 41950 81 L
+29830 41950 K (E5
+) 29830 41950 T
+28290 41950 K (DMAXC_25\)\) > 
+) 28290 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 27520 41950 T
+(
+) 26750 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_23, E2, DMAXC_24 > 
+) 25980 41950 T
+(>    < 39 > 
+) 25210 41950 T
+(> control-data-dependency succeed for  < DMAXC_24, DMAXC_23 > 
+) 24440 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_25\) > 
+) 23670 41950 T
+(
+) 22900 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E5, DMAXC_25, \(\() 22130 41950 T
+21360 41950 K (E2
+) 21360 41950 T
+19820 41950 K (DMAXC_24\)
+) 19820 41950 T
+(\() 19050 41950 81 L
+18280 41950 K (E5
+) 18280 41950 T
+16740 41950 K (DMAXC_25\)\) > 
+) 16740 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 15970 41950 T
+(
+) 15200 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_23, E5, DMAXC_25 > 
+) 14430 41950 T
+(>    < 40 > 
+) 13660 41950 T
+(> possible-data-dependency succeed for  < DMAXC_25, DMAXC_23 > 
+) 12890 41950 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 12120 41950 T
+(> ------------------- 
+) 11350 41950 T
+(
+) 10580 41950 1 L
+(> > BACKTRACK POINT <  < 3 > 
+) 9810 41950 T
+(> ------------------- 
+) 9040 41950 T
+(
+) 8270 41950 1 L
+(> FC varleft input  < \(\(E3 DMAXC_21\)
+) 7500 41950 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 6730 41950 23 L
+(
+) 5960 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E1, DMAXC_23, \(\() 5190 41950 T
+4420 41950 K (E2
+) 4420 41950 T
+2880 41950 K (DMAXC_24\)
+) 2880 41950 T
+EndPage
+%%Page: 7 7
+(7) (final-dynamic) StartPage
+(\() 53700 3600 81 L
+52930 3600 K (E5
+) 52930 3600 T
+51390 3600 K (DMAXC_25\)
+) 51390 3600 T
+(\() 50620 3600 81 L
+49850 3600 K (E1
+) 49850 3600 T
+48310 3600 K (DMAXC_23\)\) > 
+) 48310 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 47540 3600 T
+(
+) 46770 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_26, E1, DMAXC_23 > 
+) 46000 3600 T
+(>    < 41 > 
+) 45230 3600 T
+(> possible-data-dependency succeed for  < DMAXC_26, DMAXC_23 > 
+) 44460 3600 T
+(
+) 43690 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E1, DMAXC_23, \(\() 42920 3600 T
+42150 3600 K (E2
+) 42150 3600 T
+40610 3600 K (DMAXC_24\)
+) 40610 3600 T
+(\() 39840 3600 81 L
+39070 3600 K (E5
+) 39070 3600 T
+37530 3600 K (DMAXC_25\)
+) 37530 3600 T
+(\() 36760 3600 81 L
+35990 3600 K (E1
+) 35990 3600 T
+34450 3600 K (DMAXC_23\)\) > 
+) 34450 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 33680 3600 T
+(
+) 32910 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_27, E1, DMAXC_23 > 
+) 32140 3600 T
+(>    < 42 > 
+) 31370 3600 T
+(> possible-data-dependency succeed for  < DMAXC_27, DMAXC_23 > 
+) 30600 3600 T
+(
+) 29830 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E1, DMAXC_23, \(\() 29060 3600 T
+28290 3600 K (E2
+) 28290 3600 T
+26750 3600 K (DMAXC_24\)
+) 26750 3600 T
+(\() 25980 3600 81 L
+25210 3600 K (E5
+) 25210 3600 T
+23670 3600 K (DMAXC_25\)
+) 23670 3600 T
+(\() 22900 3600 81 L
+22130 3600 K (E1
+) 22130 3600 T
+20590 3600 K (DMAXC_23\)\) > 
+) 20590 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 19820 3600 T
+(
+) 19050 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_29, E1, DMAXC_23 > 
+) 18280 3600 T
+(>    < 43 > 
+) 17510 3600 T
+(> possible-data-dependency succeed for  < DMAXC_29, DMAXC_23 > 
+) 16740 3600 T
+(
+) 15970 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E1, DMAXC_23, \(\() 15200 3600 T
+14430 3600 K (E2
+) 14430 3600 T
+12890 3600 K (DMAXC_24\)
+) 12890 3600 T
+(\() 12120 3600 81 L
+11350 3600 K (E5
+) 11350 3600 T
+9810 3600 K (DMAXC_25\)
+) 9810 3600 T
+(\() 9040 3600 81 L
+8270 3600 K (E1
+) 8270 3600 T
+6730 3600 K (DMAXC_23\)\) > 
+) 6730 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 5960 3600 T
+(
+) 5190 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_31, E1, DMAXC_23 > 
+) 4420 3600 T
+(>    < 44 > 
+) 3650 3600 T
+(> possible-data-dependency succeed for  < DMAXC_31, DMAXC_23 > 
+) 2880 3600 T
+(
+) 53700 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E1, DMAXC_23, \(\() 52930 41950 T
+52160 41950 K (E2
+) 52160 41950 T
+50620 41950 K (DMAXC_24\)
+) 50620 41950 T
+(\() 49850 41950 81 L
+49080 41950 K (E5
+) 49080 41950 T
+47540 41950 K (DMAXC_25\)
+) 47540 41950 T
+(\() 46770 41950 81 L
+46000 41950 K (E1
+) 46000 41950 T
+44460 41950 K (DMAXC_23\)\) > 
+) 44460 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 43690 41950 T
+(
+) 42920 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_32, E1, DMAXC_23 > 
+) 42150 41950 T
+(>    < 45 > 
+) 41380 41950 T
+(> possible-data-dependency succeed for  < DMAXC_32, DMAXC_23 > 
+) 40610 41950 T
+(
+) 39840 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E1, DMAXC_23, \(\() 39070 41950 T
+38300 41950 K (E2
+) 38300 41950 T
+36760 41950 K (DMAXC_24\)
+) 36760 41950 T
+(\() 35990 41950 81 L
+35220 41950 K (E5
+) 35220 41950 T
+33680 41950 K (DMAXC_25\)
+) 33680 41950 T
+(\() 32910 41950 81 L
+32140 41950 K (E1
+) 32140 41950 T
+30600 41950 K (DMAXC_23\)\) > 
+) 30600 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E1\) ID3-1\) > 
+) 29830 41950 T
+(
+) 29060 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_21, E1, DMAXC_23 > 
+) 28290 41950 T
+(>    < 46 > 
+) 27520 41950 T
+(> possible-data-dependency succeed for  < DMAXC_21, DMAXC_23 > 
+) 26750 41950 T
+(> FC varleft out  < \(\(E3 DMAXC_21\)
+) 25980 41950 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 25210 41950 21 L
+(> DR varleft input  < \(\(E3 DMAXC_21\)
+) 24440 41950 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 23670 41950 23 L
+(> DR varleft out  < \(\(E3 DMAXC_21\)
+) 22900 41950 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 22130 41950 21 L
+(> Next Symbol, domain  < E3, \(DMAXC_21\) > 
+) 21360 41950 T
+(***** Visit State Description ***** 
+) 20590 41950 T
+(
+) 19820 41950 T
+(Node id: 4 
+) 19050 41950 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\)\) 
+) 18280 41950 1 L
+(Symbol: E3 
+) 17510 41950 1 L
+(Symbol value: DMAXC_21 
+) 16740 41950 1 L
+(Domain: NIL 
+) 15970 41950 1 L
+(Variables left: \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) 
+) 15200 41950 1 L
+(Arc Cost: 0 
+) 14430 41950 1 L
+(Depth: 4 
+) 13660 41950 1 L
+(Max fail level: 0 
+) 12890 41950 1 L
+(Prev Node id: 3 
+) 12120 41950 1 L
+(Parent id: #\(BT-STATE 3 2 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) E1 DMAXC_23 NIL
+) 11350 41950 1 L
+(\(\(E3 DMAXC_21\)
+) 10580 41950 14 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 9810 41950 15 L
+(0 3 0
+) 9040 41950 14 L
+(#\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 8270 41950 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 7500 41950 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 6730 41950 17 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 5960 41950 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 5190 41950 18 L
+(0 2 -1
+) 4420 41950 16 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 3650 41950 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 2880 41950 18 L
+EndPage
+%%Page: 8 8
+(8) (final-dynamic) StartPage
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 53700 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 52930 3600 20 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 52160 3600 19 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 51390 3600 20 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 50620 3600 20 L
+(DMAXC_93\)\)
+) 49850 3600 20 L
+(0 1 -1 NIL\)\)\) 
+) 49080 3600 18 L
+(
+) 48310 3600 T
+(
+) 47540 3600 T
+(> >>>>>> Node   < 4 > 
+) 46770 3600 T
+(> Current: symbol, value, partial  < E3, DMAXC_21, \(\(E2 DMAXC_24\)
+) 46000 3600 T
+(\(E5 DMAXC_25\)
+) 45230 3600 52 L
+(\(E1 DMAXC_23\)\) > 
+) 44460 3600 52 L
+(> Satisfy-p <symbol, value, partial>  < E3, DMAXC_21, \(\(E2 DMAXC_24\)
+) 43690 3600 T
+(\(E5 DMAXC_25\)
+) 42920 3600 55 L
+(\(E1 DMAXC_23\)\) > 
+) 42150 3600 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 41380 3600 T
+(
+) 40610 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E2, DMAXC_24, \(\() 39840 3600 T
+39070 3600 K (E2
+) 39070 3600 T
+37530 3600 K (DMAXC_24\)
+) 37530 3600 T
+(\() 36760 3600 81 L
+35990 3600 K (E5
+) 35990 3600 T
+34450 3600 K (DMAXC_25\)
+) 34450 3600 T
+(\() 33680 3600 81 L
+32910 3600 K (E1
+) 32910 3600 T
+31370 3600 K (DMAXC_23\)\) > 
+) 31370 3600 T
+(> No arc constraints  < T > 
+) 30600 3600 T
+(>     inst-var-ck call  < \(E5 DMAXC_25\) > 
+) 29830 3600 T
+(
+) 29060 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_25, \(\() 28290 3600 T
+27520 3600 K (E2
+) 27520 3600 T
+25980 3600 K (DMAXC_24\)
+) 25980 3600 T
+(\() 25210 3600 81 L
+24440 3600 K (E5
+) 24440 3600 T
+22900 3600 K (DMAXC_25\)
+) 22900 3600 T
+(\() 22130 3600 81 L
+21360 3600 K (E1
+) 21360 3600 T
+19820 3600 K (DMAXC_23\)\) > 
+) 19820 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 19050 3600 T
+(
+) 18280 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_21, E5, DMAXC_25 > 
+) 17510 3600 T
+(>    < 47 > 
+) 16740 3600 T
+(> possible-data-dependency succeed for  < DMAXC_21, DMAXC_25 > 
+) 15970 3600 T
+(>     inst-var-ck call  < \(E1 DMAXC_23\) > 
+) 15200 3600 T
+(
+) 14430 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E1, DMAXC_23, \(\() 13660 3600 T
+12890 3600 K (E2
+) 12890 3600 T
+11350 3600 K (DMAXC_24\)
+) 11350 3600 T
+(\() 10580 3600 81 L
+9810 3600 K (E5
+) 9810 3600 T
+8270 3600 K (DMAXC_25\)
+) 8270 3600 T
+(\() 7500 3600 81 L
+6730 3600 K (E1
+) 6730 3600 T
+5190 3600 K (DMAXC_23\)\) > 
+) 5190 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E1\) ID3-1\) > 
+) 4420 3600 T
+(
+) 3650 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_21, E1, DMAXC_23 > 
+) 2880 3600 T
+(>    < 48 > 
+) 53700 41950 T
+(> possible-data-dependency succeed for  < DMAXC_21, DMAXC_23 > 
+) 52930 41950 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 52160 41950 T
+(> ------------------- 
+) 51390 41950 T
+(
+) 50620 41950 1 L
+(> > BACKTRACK POINT <  < 4 > 
+) 49850 41950 T
+(> ------------------- 
+) 49080 41950 T
+(
+) 48310 41950 1 L
+(> FC varleft input  < \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 47540 41950 T
+(
+) 46770 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E3, DMAXC_21, \(\() 46000 41950 T
+45230 41950 K (E2
+) 45230 41950 T
+43690 41950 K (DMAXC_24\)
+) 43690 41950 T
+(\() 42920 41950 81 L
+42150 41950 K (E5
+) 42150 41950 T
+40610 41950 K (DMAXC_25\)
+) 40610 41950 T
+(\() 39840 41950 81 L
+39070 41950 K (E1
+) 39070 41950 T
+37530 41950 K (DMAXC_23\)
+) 37530 41950 T
+(\() 36760 41950 81 L
+35990 41950 K (E3
+) 35990 41950 T
+34450 41950 K (DMAXC_21\)\) > 
+) 34450 41950 T
+(> No arc constraints  < T > 
+) 33680 41950 T
+(
+) 32910 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E3, DMAXC_21, \(\() 32140 41950 T
+31370 41950 K (E2
+) 31370 41950 T
+29830 41950 K (DMAXC_24\)
+) 29830 41950 T
+(\() 29060 41950 81 L
+28290 41950 K (E5
+) 28290 41950 T
+26750 41950 K (DMAXC_25\)
+) 26750 41950 T
+(\() 25980 41950 81 L
+25210 41950 K (E1
+) 25210 41950 T
+23670 41950 K (DMAXC_23\)
+) 23670 41950 T
+(\() 22900 41950 81 L
+22130 41950 K (E3
+) 22130 41950 T
+20590 41950 K (DMAXC_21\)\) > 
+) 20590 41950 T
+(> No arc constraints  < T > 
+) 19820 41950 T
+(
+) 19050 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E3, DMAXC_21, \(\() 18280 41950 T
+17510 41950 K (E2
+) 17510 41950 T
+15970 41950 K (DMAXC_24\)
+) 15970 41950 T
+(\() 15200 41950 81 L
+14430 41950 K (E5
+) 14430 41950 T
+12890 41950 K (DMAXC_25\)
+) 12890 41950 T
+(\() 12120 41950 81 L
+11350 41950 K (E1
+) 11350 41950 T
+9810 41950 K (DMAXC_23\)
+) 9810 41950 T
+(\() 9040 41950 81 L
+8270 41950 K (E3
+) 8270 41950 T
+6730 41950 K (DMAXC_21\)\) > 
+) 6730 41950 T
+(> No arc constraints  < T > 
+) 5960 41950 T
+(
+) 5190 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E3, DMAXC_21, \(\() 4420 41950 T
+3650 41950 K (E2
+) 3650 41950 T
+EndPage
+%%Page: 9 9
+(9) (final-dynamic) StartPage
+53700 3600 K (DMAXC_24\)
+) 53700 3600 T
+(\() 52930 3600 81 L
+52160 3600 K (E5
+) 52160 3600 T
+50620 3600 K (DMAXC_25\)
+) 50620 3600 T
+(\() 49850 3600 81 L
+49080 3600 K (E1
+) 49080 3600 T
+47540 3600 K (DMAXC_23\)
+) 47540 3600 T
+(\() 46770 3600 81 L
+46000 3600 K (E3
+) 46000 3600 T
+44460 3600 K (DMAXC_21\)\) > 
+) 44460 3600 T
+(> No arc constraints  < T > 
+) 43690 3600 T
+(
+) 42920 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E3, DMAXC_21, \(\() 42150 3600 T
+41380 3600 K (E2
+) 41380 3600 T
+39840 3600 K (DMAXC_24\)
+) 39840 3600 T
+(\() 39070 3600 81 L
+38300 3600 K (E5
+) 38300 3600 T
+36760 3600 K (DMAXC_25\)
+) 36760 3600 T
+(\() 35990 3600 81 L
+35220 3600 K (E1
+) 35220 3600 T
+33680 3600 K (DMAXC_23\)
+) 33680 3600 T
+(\() 32910 3600 81 L
+32140 3600 K (E3
+) 32140 3600 T
+30600 3600 K (DMAXC_21\)\) > 
+) 30600 3600 T
+(> No arc constraints  < T > 
+) 29830 3600 T
+(> FC varleft out  < \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 29060 3600 T
+(> DR varleft input  < \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 28290 3600 T
+(> DR varleft out  < \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 27520 3600 T
+(> Next Symbol, domain  < E4, \(DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\) > 
+) 26750 3600 T
+(***** Visit State Description ***** 
+) 25980 3600 T
+(
+) 25210 3600 T
+(Node id: 5 
+) 24440 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\)\) 
+) 23670 3600 1 L
+(Symbol: E4 
+) 22900 3600 1 L
+(Symbol value: DMAXC_26 
+) 22130 3600 1 L
+(Domain: \(DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\) 
+) 21360 3600 1 L
+(Variables left: NIL 
+) 20590 3600 1 L
+(Arc Cost: 0 
+) 19820 3600 1 L
+(Depth: 5 
+) 19050 3600 1 L
+(Max fail level: 0 
+) 18280 3600 1 L
+(Prev Node id: 4 
+) 17510 3600 1 L
+(Parent id: #\(BT-STATE 4 3 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\)\) E3
+) 16740 3600 1 L
+(DMAXC_21 NIL \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 15970 3600 14 L
+(0 4 0
+) 15200 3600 14 L
+(#\(BT-STATE 3 2 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) E1 DMAXC_23 NIL
+) 14430 3600 14 L
+(\(\(E3 DMAXC_21\)
+) 13660 3600 16 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 12890 3600 17 L
+(0 3 -1
+) 12120 3600 16 L
+(#\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 11350 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 10580 3600 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 9810 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 9040 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 8270 3600 20 L
+(0 2 -1
+) 7500 3600 18 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 6730 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 5960 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 5190 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 4420 3600 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 3650 3600 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 2880 3600 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 53700 41950 22 L
+(DMAXC_93\)\)
+) 52930 41950 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 52160 41950 20 L
+(
+) 51390 41950 T
+(
+) 50620 41950 T
+(> >>>>>> Node   < 5 > 
+) 49850 41950 T
+(> Current: symbol, value, partial  < E4, DMAXC_26, \(\(E2 DMAXC_24\)
+) 49080 41950 T
+(\(E5 DMAXC_25\)
+) 48310 41950 52 L
+(\(E1 DMAXC_23\)
+) 47540 41950 52 L
+(\(E3 DMAXC_21\)\) > 
+) 46770 41950 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_26, \(\(E2 DMAXC_24\)
+) 46000 41950 T
+(\(E5 DMAXC_25\)
+) 45230 41950 55 L
+(\(E1 DMAXC_23\)
+) 44460 41950 55 L
+(\(E3 DMAXC_21\)\) > 
+) 43690 41950 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 42920 41950 T
+(
+) 42150 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E2, DMAXC_24, \(\() 41380 41950 T
+40610 41950 K (E2
+) 40610 41950 T
+39070 41950 K (DMAXC_24\)
+) 39070 41950 T
+(\() 38300 41950 81 L
+37530 41950 K (E5
+) 37530 41950 T
+35990 41950 K (DMAXC_25\)
+) 35990 41950 T
+(\() 35220 41950 81 L
+34450 41950 K (E1
+) 34450 41950 T
+32910 41950 K (DMAXC_23\)
+) 32910 41950 T
+(\() 32140 41950 81 L
+31370 41950 K (E3
+) 31370 41950 T
+29830 41950 K (DMAXC_21\)\) > 
+) 29830 41950 T
+(> No arc constraints  < T > 
+) 29060 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_25\) > 
+) 28290 41950 T
+(
+) 27520 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_25, \(\() 26750 41950 T
+25980 41950 K (E2
+) 25980 41950 T
+24440 41950 K (DMAXC_24\)
+) 24440 41950 T
+(\() 23670 41950 81 L
+22900 41950 K (E5
+) 22900 41950 T
+21360 41950 K (DMAXC_25\)
+) 21360 41950 T
+(\() 20590 41950 81 L
+19820 41950 K (E1
+) 19820 41950 T
+18280 41950 K (DMAXC_23\)
+) 18280 41950 T
+(\() 17510 41950 81 L
+16740 41950 K (E3
+) 16740 41950 T
+15200 41950 K (DMAXC_21\)\) > 
+) 15200 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 14430 41950 T
+(
+) 13660 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_26, E5, DMAXC_25 > 
+) 12890 41950 T
+(>    < 49 > 
+) 12120 41950 T
+(> possible-data-dependency succeed for  < DMAXC_26, DMAXC_25 > 
+) 11350 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_23\) > 
+) 10580 41950 T
+(
+) 9810 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E1, DMAXC_23, \(\() 9040 41950 T
+8270 41950 K (E2
+) 8270 41950 T
+6730 41950 K (DMAXC_24\)
+) 6730 41950 T
+(\() 5960 41950 81 L
+5190 41950 K (E5
+) 5190 41950 T
+3650 41950 K (DMAXC_25\)
+) 3650 41950 T
+(\() 2880 41950 81 L
+EndPage
+%%Page: 10 10
+(10) (final-dynamic) StartPage
+53700 3600 K (E1
+) 53700 3600 T
+52160 3600 K (DMAXC_23\)
+) 52160 3600 T
+(\() 51390 3600 81 L
+50620 3600 K (E3
+) 50620 3600 T
+49080 3600 K (DMAXC_21\)\) > 
+) 49080 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 48310 3600 T
+(
+) 47540 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_26, E1, DMAXC_23 > 
+) 46770 3600 T
+(>    < 50 > 
+) 46000 3600 T
+(> possible-data-dependency succeed for  < DMAXC_26, DMAXC_23 > 
+) 45230 3600 T
+(>     inst-var-ck call  < \(E3 DMAXC_21\) > 
+) 44460 3600 T
+(
+) 43690 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E3, DMAXC_21, \(\() 42920 3600 T
+42150 3600 K (E2
+) 42150 3600 T
+40610 3600 K (DMAXC_24\)
+) 40610 3600 T
+(\() 39840 3600 81 L
+39070 3600 K (E5
+) 39070 3600 T
+37530 3600 K (DMAXC_25\)
+) 37530 3600 T
+(\() 36760 3600 81 L
+35990 3600 K (E1
+) 35990 3600 T
+34450 3600 K (DMAXC_23\)
+) 34450 3600 T
+(\() 33680 3600 81 L
+32910 3600 K (E3
+) 32910 3600 T
+31370 3600 K (DMAXC_21\)\) > 
+) 31370 3600 T
+(> No arc constraints  < T > 
+) 30600 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 29830 3600 T
+(> -------------------------- 
+) 29060 3600 T
+(
+) 28290 3600 1 L
+(> Solution found  < 5 > 
+) 27520 3600 T
+(> -------------------------- 
+) 26750 3600 T
+(
+) 25980 3600 1 L
+(***** Visit State Description ***** 
+) 25210 3600 T
+(
+) 24440 3600 T
+(Node id: 6 
+) 23670 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\)\) 
+) 22900 3600 1 L
+(Symbol: E4 
+) 22130 3600 1 L
+(Symbol value: DMAXC_27 
+) 21360 3600 1 L
+(Domain: \(DMAXC_29 DMAXC_31 DMAXC_32\) 
+) 20590 3600 1 L
+(Variables left: NIL 
+) 19820 3600 1 L
+(Arc Cost: 0 
+) 19050 3600 1 L
+(Depth: 5 
+) 18280 3600 1 L
+(Max fail level: 0 
+) 17510 3600 1 L
+(Prev Node id: 4 
+) 16740 3600 1 L
+(Parent id: #\(BT-STATE 4 3 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\)\) E3
+) 15970 3600 1 L
+(DMAXC_21 NIL \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 15200 3600 14 L
+(0 4 -1
+) 14430 3600 14 L
+(#\(BT-STATE 3 2 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) E1 DMAXC_23 NIL
+) 13660 3600 14 L
+(\(\(E3 DMAXC_21\)
+) 12890 3600 16 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 12120 3600 17 L
+(0 3 -1
+) 11350 3600 16 L
+(#\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 10580 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 9810 3600 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 9040 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 8270 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 7500 3600 20 L
+(0 2 -1
+) 6730 3600 18 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 5960 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 5190 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 4420 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 3650 3600 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 2880 3600 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 53700 41950 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 52930 41950 22 L
+(DMAXC_93\)\)
+) 52160 41950 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 51390 41950 20 L
+(
+) 50620 41950 T
+(
+) 49850 41950 T
+(> >>>>>> Node   < 6 > 
+) 49080 41950 T
+(> Current: symbol, value, partial  < E4, DMAXC_27, \(\(E2 DMAXC_24\)
+) 48310 41950 T
+(\(E5 DMAXC_25\)
+) 47540 41950 52 L
+(\(E1 DMAXC_23\)
+) 46770 41950 52 L
+(\(E3 DMAXC_21\)\) > 
+) 46000 41950 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_27, \(\(E2 DMAXC_24\)
+) 45230 41950 T
+(\(E5 DMAXC_25\)
+) 44460 41950 55 L
+(\(E1 DMAXC_23\)
+) 43690 41950 55 L
+(\(E3 DMAXC_21\)\) > 
+) 42920 41950 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 42150 41950 T
+(
+) 41380 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E2, DMAXC_24, \(\() 40610 41950 T
+39840 41950 K (E2
+) 39840 41950 T
+38300 41950 K (DMAXC_24\)
+) 38300 41950 T
+(\() 37530 41950 81 L
+36760 41950 K (E5
+) 36760 41950 T
+35220 41950 K (DMAXC_25\)
+) 35220 41950 T
+(\() 34450 41950 81 L
+33680 41950 K (E1
+) 33680 41950 T
+32140 41950 K (DMAXC_23\)
+) 32140 41950 T
+(\() 31370 41950 81 L
+30600 41950 K (E3
+) 30600 41950 T
+29060 41950 K (DMAXC_21\)\) > 
+) 29060 41950 T
+(> No arc constraints  < T > 
+) 28290 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_25\) > 
+) 27520 41950 T
+(
+) 26750 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_25, \(\() 25980 41950 T
+25210 41950 K (E2
+) 25210 41950 T
+23670 41950 K (DMAXC_24\)
+) 23670 41950 T
+(\() 22900 41950 81 L
+22130 41950 K (E5
+) 22130 41950 T
+20590 41950 K (DMAXC_25\)
+) 20590 41950 T
+(\() 19820 41950 81 L
+19050 41950 K (E1
+) 19050 41950 T
+17510 41950 K (DMAXC_23\)
+) 17510 41950 T
+(\() 16740 41950 81 L
+15970 41950 K (E3
+) 15970 41950 T
+14430 41950 K (DMAXC_21\)\) > 
+) 14430 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 13660 41950 T
+(
+) 12890 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_27, E5, DMAXC_25 > 
+) 12120 41950 T
+(>    < 51 > 
+) 11350 41950 T
+(> possible-data-dependency succeed for  < DMAXC_27, DMAXC_25 > 
+) 10580 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_23\) > 
+) 9810 41950 T
+(
+) 9040 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E1, DMAXC_23, \(\() 8270 41950 T
+7500 41950 K (E2
+) 7500 41950 T
+5960 41950 K (DMAXC_24\)
+) 5960 41950 T
+(\() 5190 41950 81 L
+4420 41950 K (E5
+) 4420 41950 T
+2880 41950 K (DMAXC_25\)
+) 2880 41950 T
+EndPage
+%%Page: 11 11
+(11) (final-dynamic) StartPage
+(\() 53700 3600 81 L
+52930 3600 K (E1
+) 52930 3600 T
+51390 3600 K (DMAXC_23\)
+) 51390 3600 T
+(\() 50620 3600 81 L
+49850 3600 K (E3
+) 49850 3600 T
+48310 3600 K (DMAXC_21\)\) > 
+) 48310 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 47540 3600 T
+(
+) 46770 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_27, E1, DMAXC_23 > 
+) 46000 3600 T
+(>    < 52 > 
+) 45230 3600 T
+(> possible-data-dependency succeed for  < DMAXC_27, DMAXC_23 > 
+) 44460 3600 T
+(>     inst-var-ck call  < \(E3 DMAXC_21\) > 
+) 43690 3600 T
+(
+) 42920 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E3, DMAXC_21, \(\() 42150 3600 T
+41380 3600 K (E2
+) 41380 3600 T
+39840 3600 K (DMAXC_24\)
+) 39840 3600 T
+(\() 39070 3600 81 L
+38300 3600 K (E5
+) 38300 3600 T
+36760 3600 K (DMAXC_25\)
+) 36760 3600 T
+(\() 35990 3600 81 L
+35220 3600 K (E1
+) 35220 3600 T
+33680 3600 K (DMAXC_23\)
+) 33680 3600 T
+(\() 32910 3600 81 L
+32140 3600 K (E3
+) 32140 3600 T
+30600 3600 K (DMAXC_21\)\) > 
+) 30600 3600 T
+(> No arc constraints  < T > 
+) 29830 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 29060 3600 T
+(> -------------------------- 
+) 28290 3600 T
+(
+) 27520 3600 1 L
+(> Solution found  < 6 > 
+) 26750 3600 T
+(> -------------------------- 
+) 25980 3600 T
+(
+) 25210 3600 1 L
+(***** Visit State Description ***** 
+) 24440 3600 T
+(
+) 23670 3600 T
+(Node id: 7 
+) 22900 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\)\) 
+) 22130 3600 1 L
+(Symbol: E4 
+) 21360 3600 1 L
+(Symbol value: DMAXC_29 
+) 20590 3600 1 L
+(Domain: \(DMAXC_31 DMAXC_32\) 
+) 19820 3600 1 L
+(Variables left: NIL 
+) 19050 3600 1 L
+(Arc Cost: 0 
+) 18280 3600 1 L
+(Depth: 5 
+) 17510 3600 1 L
+(Max fail level: 0 
+) 16740 3600 1 L
+(Prev Node id: 4 
+) 15970 3600 1 L
+(Parent id: #\(BT-STATE 4 3 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\)\) E3
+) 15200 3600 1 L
+(DMAXC_21 NIL \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 14430 3600 14 L
+(0 4 -1
+) 13660 3600 14 L
+(#\(BT-STATE 3 2 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) E1 DMAXC_23 NIL
+) 12890 3600 14 L
+(\(\(E3 DMAXC_21\)
+) 12120 3600 16 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 11350 3600 17 L
+(0 3 -1
+) 10580 3600 16 L
+(#\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 9810 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 9040 3600 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 8270 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 7500 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 6730 3600 20 L
+(0 2 -1
+) 5960 3600 18 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 5190 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 4420 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 3650 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 2880 3600 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 53700 41950 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 52930 41950 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 52160 41950 22 L
+(DMAXC_93\)\)
+) 51390 41950 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 50620 41950 20 L
+(
+) 49850 41950 T
+(
+) 49080 41950 T
+(> >>>>>> Node   < 7 > 
+) 48310 41950 T
+(> Current: symbol, value, partial  < E4, DMAXC_29, \(\(E2 DMAXC_24\)
+) 47540 41950 T
+(\(E5 DMAXC_25\)
+) 46770 41950 52 L
+(\(E1 DMAXC_23\)
+) 46000 41950 52 L
+(\(E3 DMAXC_21\)\) > 
+) 45230 41950 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_29, \(\(E2 DMAXC_24\)
+) 44460 41950 T
+(\(E5 DMAXC_25\)
+) 43690 41950 55 L
+(\(E1 DMAXC_23\)
+) 42920 41950 55 L
+(\(E3 DMAXC_21\)\) > 
+) 42150 41950 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 41380 41950 T
+(
+) 40610 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E2, DMAXC_24, \(\() 39840 41950 T
+39070 41950 K (E2
+) 39070 41950 T
+37530 41950 K (DMAXC_24\)
+) 37530 41950 T
+(\() 36760 41950 81 L
+35990 41950 K (E5
+) 35990 41950 T
+34450 41950 K (DMAXC_25\)
+) 34450 41950 T
+(\() 33680 41950 81 L
+32910 41950 K (E1
+) 32910 41950 T
+31370 41950 K (DMAXC_23\)
+) 31370 41950 T
+(\() 30600 41950 81 L
+29830 41950 K (E3
+) 29830 41950 T
+28290 41950 K (DMAXC_21\)\) > 
+) 28290 41950 T
+(> No arc constraints  < T > 
+) 27520 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_25\) > 
+) 26750 41950 T
+(
+) 25980 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_25, \(\() 25210 41950 T
+24440 41950 K (E2
+) 24440 41950 T
+22900 41950 K (DMAXC_24\)
+) 22900 41950 T
+(\() 22130 41950 81 L
+21360 41950 K (E5
+) 21360 41950 T
+19820 41950 K (DMAXC_25\)
+) 19820 41950 T
+(\() 19050 41950 81 L
+18280 41950 K (E1
+) 18280 41950 T
+16740 41950 K (DMAXC_23\)
+) 16740 41950 T
+(\() 15970 41950 81 L
+15200 41950 K (E3
+) 15200 41950 T
+13660 41950 K (DMAXC_21\)\) > 
+) 13660 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 12890 41950 T
+(
+) 12120 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_29, E5, DMAXC_25 > 
+) 11350 41950 T
+(>    < 53 > 
+) 10580 41950 T
+(> possible-data-dependency succeed for  < DMAXC_29, DMAXC_25 > 
+) 9810 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_23\) > 
+) 9040 41950 T
+(
+) 8270 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E1, DMAXC_23, \(\() 7500 41950 T
+6730 41950 K (E2
+) 6730 41950 T
+5190 41950 K (DMAXC_24\)
+) 5190 41950 T
+(\() 4420 41950 81 L
+3650 41950 K (E5
+) 3650 41950 T
+EndPage
+%%Page: 12 12
+(12) (final-dynamic) StartPage
+53700 3600 K (DMAXC_25\)
+) 53700 3600 T
+(\() 52930 3600 81 L
+52160 3600 K (E1
+) 52160 3600 T
+50620 3600 K (DMAXC_23\)
+) 50620 3600 T
+(\() 49850 3600 81 L
+49080 3600 K (E3
+) 49080 3600 T
+47540 3600 K (DMAXC_21\)\) > 
+) 47540 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 46770 3600 T
+(
+) 46000 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_29, E1, DMAXC_23 > 
+) 45230 3600 T
+(>    < 54 > 
+) 44460 3600 T
+(> possible-data-dependency succeed for  < DMAXC_29, DMAXC_23 > 
+) 43690 3600 T
+(>     inst-var-ck call  < \(E3 DMAXC_21\) > 
+) 42920 3600 T
+(
+) 42150 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E3, DMAXC_21, \(\() 41380 3600 T
+40610 3600 K (E2
+) 40610 3600 T
+39070 3600 K (DMAXC_24\)
+) 39070 3600 T
+(\() 38300 3600 81 L
+37530 3600 K (E5
+) 37530 3600 T
+35990 3600 K (DMAXC_25\)
+) 35990 3600 T
+(\() 35220 3600 81 L
+34450 3600 K (E1
+) 34450 3600 T
+32910 3600 K (DMAXC_23\)
+) 32910 3600 T
+(\() 32140 3600 81 L
+31370 3600 K (E3
+) 31370 3600 T
+29830 3600 K (DMAXC_21\)\) > 
+) 29830 3600 T
+(> No arc constraints  < T > 
+) 29060 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 28290 3600 T
+(> -------------------------- 
+) 27520 3600 T
+(
+) 26750 3600 1 L
+(> Solution found  < 7 > 
+) 25980 3600 T
+(> -------------------------- 
+) 25210 3600 T
+(
+) 24440 3600 1 L
+(***** Visit State Description ***** 
+) 23670 3600 T
+(
+) 22900 3600 T
+(Node id: 8 
+) 22130 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\)\) 
+) 21360 3600 1 L
+(Symbol: E4 
+) 20590 3600 1 L
+(Symbol value: DMAXC_31 
+) 19820 3600 1 L
+(Domain: \(DMAXC_32\) 
+) 19050 3600 1 L
+(Variables left: NIL 
+) 18280 3600 1 L
+(Arc Cost: 0 
+) 17510 3600 1 L
+(Depth: 5 
+) 16740 3600 1 L
+(Max fail level: 0 
+) 15970 3600 1 L
+(Prev Node id: 4 
+) 15200 3600 1 L
+(Parent id: #\(BT-STATE 4 3 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\)\) E3
+) 14430 3600 1 L
+(DMAXC_21 NIL \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 13660 3600 14 L
+(0 4 -1
+) 12890 3600 14 L
+(#\(BT-STATE 3 2 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) E1 DMAXC_23 NIL
+) 12120 3600 14 L
+(\(\(E3 DMAXC_21\)
+) 11350 3600 16 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 10580 3600 17 L
+(0 3 -1
+) 9810 3600 16 L
+(#\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 9040 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 8270 3600 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 7500 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 6730 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 5960 3600 20 L
+(0 2 -1
+) 5190 3600 18 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 4420 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 3650 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 2880 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 53700 41950 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 52930 41950 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 52160 41950 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 51390 41950 22 L
+(DMAXC_93\)\)
+) 50620 41950 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 49850 41950 20 L
+(
+) 49080 41950 T
+(
+) 48310 41950 T
+(> >>>>>> Node   < 8 > 
+) 47540 41950 T
+(> Current: symbol, value, partial  < E4, DMAXC_31, \(\(E2 DMAXC_24\)
+) 46770 41950 T
+(\(E5 DMAXC_25\)
+) 46000 41950 52 L
+(\(E1 DMAXC_23\)
+) 45230 41950 52 L
+(\(E3 DMAXC_21\)\) > 
+) 44460 41950 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_31, \(\(E2 DMAXC_24\)
+) 43690 41950 T
+(\(E5 DMAXC_25\)
+) 42920 41950 55 L
+(\(E1 DMAXC_23\)
+) 42150 41950 55 L
+(\(E3 DMAXC_21\)\) > 
+) 41380 41950 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 40610 41950 T
+(
+) 39840 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E2, DMAXC_24, \(\() 39070 41950 T
+38300 41950 K (E2
+) 38300 41950 T
+36760 41950 K (DMAXC_24\)
+) 36760 41950 T
+(\() 35990 41950 81 L
+35220 41950 K (E5
+) 35220 41950 T
+33680 41950 K (DMAXC_25\)
+) 33680 41950 T
+(\() 32910 41950 81 L
+32140 41950 K (E1
+) 32140 41950 T
+30600 41950 K (DMAXC_23\)
+) 30600 41950 T
+(\() 29830 41950 81 L
+29060 41950 K (E3
+) 29060 41950 T
+27520 41950 K (DMAXC_21\)\) > 
+) 27520 41950 T
+(> No arc constraints  < T > 
+) 26750 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_25\) > 
+) 25980 41950 T
+(
+) 25210 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_25, \(\() 24440 41950 T
+23670 41950 K (E2
+) 23670 41950 T
+22130 41950 K (DMAXC_24\)
+) 22130 41950 T
+(\() 21360 41950 81 L
+20590 41950 K (E5
+) 20590 41950 T
+19050 41950 K (DMAXC_25\)
+) 19050 41950 T
+(\() 18280 41950 81 L
+17510 41950 K (E1
+) 17510 41950 T
+15970 41950 K (DMAXC_23\)
+) 15970 41950 T
+(\() 15200 41950 81 L
+14430 41950 K (E3
+) 14430 41950 T
+12890 41950 K (DMAXC_21\)\) > 
+) 12890 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 12120 41950 T
+(
+) 11350 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_31, E5, DMAXC_25 > 
+) 10580 41950 T
+(>    < 55 > 
+) 9810 41950 T
+(> possible-data-dependency succeed for  < DMAXC_31, DMAXC_25 > 
+) 9040 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_23\) > 
+) 8270 41950 T
+(
+) 7500 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E1, DMAXC_23, \(\() 6730 41950 T
+5960 41950 K (E2
+) 5960 41950 T
+4420 41950 K (DMAXC_24\)
+) 4420 41950 T
+(\() 3650 41950 81 L
+2880 41950 K (E5
+) 2880 41950 T
+EndPage
+%%Page: 13 13
+(13) (final-dynamic) StartPage
+52930 3600 K (DMAXC_25\)
+) 52930 3600 T
+(\() 52160 3600 81 L
+51390 3600 K (E1
+) 51390 3600 T
+49850 3600 K (DMAXC_23\)
+) 49850 3600 T
+(\() 49080 3600 81 L
+48310 3600 K (E3
+) 48310 3600 T
+46770 3600 K (DMAXC_21\)\) > 
+) 46770 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 46000 3600 T
+(
+) 45230 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_31, E1, DMAXC_23 > 
+) 44460 3600 T
+(>    < 56 > 
+) 43690 3600 T
+(> possible-data-dependency succeed for  < DMAXC_31, DMAXC_23 > 
+) 42920 3600 T
+(>     inst-var-ck call  < \(E3 DMAXC_21\) > 
+) 42150 3600 T
+(
+) 41380 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E3, DMAXC_21, \(\() 40610 3600 T
+39840 3600 K (E2
+) 39840 3600 T
+38300 3600 K (DMAXC_24\)
+) 38300 3600 T
+(\() 37530 3600 81 L
+36760 3600 K (E5
+) 36760 3600 T
+35220 3600 K (DMAXC_25\)
+) 35220 3600 T
+(\() 34450 3600 81 L
+33680 3600 K (E1
+) 33680 3600 T
+32140 3600 K (DMAXC_23\)
+) 32140 3600 T
+(\() 31370 3600 81 L
+30600 3600 K (E3
+) 30600 3600 T
+29060 3600 K (DMAXC_21\)\) > 
+) 29060 3600 T
+(> No arc constraints  < T > 
+) 28290 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 27520 3600 T
+(> -------------------------- 
+) 26750 3600 T
+(
+) 25980 3600 1 L
+(> Solution found  < 8 > 
+) 25210 3600 T
+(> -------------------------- 
+) 24440 3600 T
+(
+) 23670 3600 1 L
+(***** Visit State Description ***** 
+) 22900 3600 T
+(
+) 22130 3600 T
+(Node id: 9 
+) 21360 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\)\) 
+) 20590 3600 1 L
+(Symbol: E4 
+) 19820 3600 1 L
+(Symbol value: DMAXC_32 
+) 19050 3600 1 L
+(Domain: NIL 
+) 18280 3600 1 L
+(Variables left: NIL 
+) 17510 3600 1 L
+(Arc Cost: 0 
+) 16740 3600 1 L
+(Depth: 5 
+) 15970 3600 1 L
+(Max fail level: 0 
+) 15200 3600 1 L
+(Prev Node id: 4 
+) 14430 3600 1 L
+(Parent id: #\(BT-STATE 4 3 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\)\) E3
+) 13660 3600 1 L
+(DMAXC_21 NIL \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 12890 3600 14 L
+(0 4 -1
+) 12120 3600 14 L
+(#\(BT-STATE 3 2 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) E1 DMAXC_23 NIL
+) 11350 3600 14 L
+(\(\(E3 DMAXC_21\)
+) 10580 3600 16 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 9810 3600 17 L
+(0 3 -1
+) 9040 3600 16 L
+(#\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 8270 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 7500 3600 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 6730 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 5960 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 5190 3600 20 L
+(0 2 -1
+) 4420 3600 18 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 3650 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 2880 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 53700 41950 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 52930 41950 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 52160 41950 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 51390 41950 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 50620 41950 22 L
+(DMAXC_93\)\)
+) 49850 41950 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 49080 41950 20 L
+(
+) 48310 41950 T
+(
+) 47540 41950 T
+(> >>>>>> Node   < 9 > 
+) 46770 41950 T
+(> Current: symbol, value, partial  < E4, DMAXC_32, \(\(E2 DMAXC_24\)
+) 46000 41950 T
+(\(E5 DMAXC_25\)
+) 45230 41950 52 L
+(\(E1 DMAXC_23\)
+) 44460 41950 52 L
+(\(E3 DMAXC_21\)\) > 
+) 43690 41950 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_32, \(\(E2 DMAXC_24\)
+) 42920 41950 T
+(\(E5 DMAXC_25\)
+) 42150 41950 55 L
+(\(E1 DMAXC_23\)
+) 41380 41950 55 L
+(\(E3 DMAXC_21\)\) > 
+) 40610 41950 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 39840 41950 T
+(
+) 39070 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E2, DMAXC_24, \(\() 38300 41950 T
+37530 41950 K (E2
+) 37530 41950 T
+35990 41950 K (DMAXC_24\)
+) 35990 41950 T
+(\() 35220 41950 81 L
+34450 41950 K (E5
+) 34450 41950 T
+32910 41950 K (DMAXC_25\)
+) 32910 41950 T
+(\() 32140 41950 81 L
+31370 41950 K (E1
+) 31370 41950 T
+29830 41950 K (DMAXC_23\)
+) 29830 41950 T
+(\() 29060 41950 81 L
+28290 41950 K (E3
+) 28290 41950 T
+26750 41950 K (DMAXC_21\)\) > 
+) 26750 41950 T
+(> No arc constraints  < T > 
+) 25980 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_25\) > 
+) 25210 41950 T
+(
+) 24440 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_25, \(\() 23670 41950 T
+22900 41950 K (E2
+) 22900 41950 T
+21360 41950 K (DMAXC_24\)
+) 21360 41950 T
+(\() 20590 41950 81 L
+19820 41950 K (E5
+) 19820 41950 T
+18280 41950 K (DMAXC_25\)
+) 18280 41950 T
+(\() 17510 41950 81 L
+16740 41950 K (E1
+) 16740 41950 T
+15200 41950 K (DMAXC_23\)
+) 15200 41950 T
+(\() 14430 41950 81 L
+13660 41950 K (E3
+) 13660 41950 T
+12120 41950 K (DMAXC_21\)\) > 
+) 12120 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 11350 41950 T
+(
+) 10580 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_32, E5, DMAXC_25 > 
+) 9810 41950 T
+(>    < 57 > 
+) 9040 41950 T
+(> possible-data-dependency succeed for  < DMAXC_32, DMAXC_25 > 
+) 8270 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_23\) > 
+) 7500 41950 T
+(
+) 6730 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E1, DMAXC_23, \(\() 5960 41950 T
+5190 41950 K (E2
+) 5190 41950 T
+3650 41950 K (DMAXC_24\)
+) 3650 41950 T
+(\() 2880 41950 81 L
+EndPage
+%%Page: 14 14
+(14) (final-dynamic) StartPage
+53700 3600 K (E5
+) 53700 3600 T
+52160 3600 K (DMAXC_25\)
+) 52160 3600 T
+(\() 51390 3600 81 L
+50620 3600 K (E1
+) 50620 3600 T
+49080 3600 K (DMAXC_23\)
+) 49080 3600 T
+(\() 48310 3600 81 L
+47540 3600 K (E3
+) 47540 3600 T
+46000 3600 K (DMAXC_21\)\) > 
+) 46000 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 45230 3600 T
+(
+) 44460 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_32, E1, DMAXC_23 > 
+) 43690 3600 T
+(>    < 58 > 
+) 42920 3600 T
+(> possible-data-dependency succeed for  < DMAXC_32, DMAXC_23 > 
+) 42150 3600 T
+(>     inst-var-ck call  < \(E3 DMAXC_21\) > 
+) 41380 3600 T
+(
+) 40610 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E3, DMAXC_21, \(\() 39840 3600 T
+39070 3600 K (E2
+) 39070 3600 T
+37530 3600 K (DMAXC_24\)
+) 37530 3600 T
+(\() 36760 3600 81 L
+35990 3600 K (E5
+) 35990 3600 T
+34450 3600 K (DMAXC_25\)
+) 34450 3600 T
+(\() 33680 3600 81 L
+32910 3600 K (E1
+) 32910 3600 T
+31370 3600 K (DMAXC_23\)
+) 31370 3600 T
+(\() 30600 3600 81 L
+29830 3600 K (E3
+) 29830 3600 T
+28290 3600 K (DMAXC_21\)\) > 
+) 28290 3600 T
+(> No arc constraints  < T > 
+) 27520 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 26750 3600 T
+(> -------------------------- 
+) 25980 3600 T
+(
+) 25210 3600 1 L
+(> Solution found  < 9 > 
+) 24440 3600 T
+(> -------------------------- 
+) 23670 3600 T
+(
+) 22900 3600 1 L
+(> Domain exhausted for  < E4 > 
+) 22130 3600 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 21360 3600 T
+(
+) 20590 3600 T
+(Node id: 4 
+) 19820 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\)\) 
+) 19050 3600 1 L
+(Symbol: E3 
+) 18280 3600 1 L
+(Symbol value: DMAXC_21 
+) 17510 3600 1 L
+(Domain: NIL 
+) 16740 3600 1 L
+(Variables left: \(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) 
+) 15970 3600 1 L
+(Arc Cost: 0 
+) 15200 3600 1 L
+(Depth: 4 
+) 14430 3600 1 L
+(Max fail level: -1 
+) 13660 3600 1 L
+(Prev Node id: 3 
+) 12890 3600 1 L
+(Parent id: #\(BT-STATE 3 2 \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) E1 DMAXC_23 NIL
+) 12120 3600 1 L
+(\(\(E3 DMAXC_21\)
+) 11350 3600 14 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\)
+) 10580 3600 15 L
+(0 3 -1
+) 9810 3600 14 L
+(#\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 9040 3600 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 8270 3600 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 7500 3600 17 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 6730 3600 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 5960 3600 18 L
+(0 2 -1
+) 5190 3600 16 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 4420 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 3650 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 2880 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 53700 41950 20 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 52930 41950 19 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 52160 41950 20 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 51390 41950 20 L
+(DMAXC_93\)\)
+) 50620 41950 20 L
+(0 1 -1 NIL\)\)\) 
+) 49850 41950 18 L
+(
+) 49080 41950 T
+(> Domain exhausted for  < E3 > 
+) 48310 41950 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 47540 41950 T
+(
+) 46770 41950 T
+(Node id: 3 
+) 46000 41950 1 L
+(Partial solution: \(\(E2 DMAXC_24\) \(E5 DMAXC_25\)\) 
+) 45230 41950 1 L
+(Symbol: E1 
+) 44460 41950 1 L
+(Symbol value: DMAXC_23 
+) 43690 41950 1 L
+(Domain: NIL 
+) 42920 41950 1 L
+(Variables left: \(\(E3 DMAXC_21\)
+) 42150 41950 1 L
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) 
+) 41380 41950 18 L
+(Arc Cost: 0 
+) 40610 41950 1 L
+(Depth: 3 
+) 39840 41950 1 L
+(Max fail level: -1 
+) 39070 41950 1 L
+(Prev Node id: 2 
+) 38300 41950 1 L
+(Parent id: #\(BT-STATE 2 1 \(\(E2 DMAXC_24\)\) E5 DMAXC_25 \(DMAXC_51\)
+) 37530 41950 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 36760 41950 14 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 35990 41950 15 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 35220 41950 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 34450 41950 16 L
+(0 2 -1
+) 33680 41950 14 L
+(#\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 32910 41950 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 32140 41950 16 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 31370 41950 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 30600 41950 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 29830 41950 17 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 29060 41950 18 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 28290 41950 18 L
+(DMAXC_93\)\)
+) 27520 41950 18 L
+(0 1 -1 NIL\)\) 
+) 26750 41950 16 L
+(
+) 25980 41950 T
+(> Domain exhausted for  < E1 > 
+) 25210 41950 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 24440 41950 T
+(
+) 23670 41950 T
+(Node id: 2 
+) 22900 41950 1 L
+(Partial solution: \(\(E2 DMAXC_24\)\) 
+) 22130 41950 1 L
+(Symbol: E5 
+) 21360 41950 1 L
+(Symbol value: DMAXC_25 
+) 20590 41950 1 L
+(Domain: \(DMAXC_51\) 
+) 19820 41950 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 19050 41950 1 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 18280 41950 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 17510 41950 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 16740 41950 19 L
+(Arc Cost: 0 
+) 15970 41950 1 L
+(Depth: 2 
+) 15200 41950 1 L
+(Max fail level: -1 
+) 14430 41950 1 L
+(Prev Node id: 1 
+) 13660 41950 1 L
+(Parent id: #\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 12890 41950 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 12120 41950 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 11350 41950 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 10580 41950 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 9810 41950 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 9040 41950 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 8270 41950 16 L
+(0 1 -1 NIL\) 
+) 7500 41950 14 L
+(
+) 6730 41950 T
+(***** Visit State Description ***** 
+) 5960 41950 T
+(
+) 5190 41950 T
+(Node id: 10 
+) 4420 41950 1 L
+(Partial solution: \(\(E2 DMAXC_24\)\) 
+) 3650 41950 1 L
+(Symbol: E5 
+) 2880 41950 1 L
+EndPage
+%%Page: 15 15
+(15) (final-dynamic) StartPage
+(Symbol value: DMAXC_51 
+) 53700 3600 1 L
+(Domain: NIL 
+) 52930 3600 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 52160 3600 1 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 51390 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 50620 3600 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 49850 3600 19 L
+(Arc Cost: 0 
+) 49080 3600 1 L
+(Depth: 2 
+) 48310 3600 1 L
+(Max fail level: 0 
+) 47540 3600 1 L
+(Prev Node id: 1 
+) 46770 3600 1 L
+(Parent id: #\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 46000 3600 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 45230 3600 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 44460 3600 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 43690 3600 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 42920 3600 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 42150 3600 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 41380 3600 16 L
+(0 1 -1 NIL\) 
+) 40610 3600 14 L
+(
+) 39840 3600 T
+(
+) 39070 3600 T
+(> >>>>>> Node   < 10 > 
+) 38300 3600 T
+(> Current: symbol, value, partial  < E5, DMAXC_51, \(\(E2 DMAXC_24\)\) > 
+) 37530 3600 T
+(> Satisfy-p <symbol, value, partial>  < E5, DMAXC_51, \(\(E2 DMAXC_24\)\) > 
+) 36760 3600 T
+(>     inst-var-ck call  < \(E2 DMAXC_24\) > 
+) 35990 3600 T
+(
+) 35220 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_24, \(\() 34450 3600 T
+33680 3600 K (E2
+) 33680 3600 T
+32140 3600 K (DMAXC_24\)\) > 
+) 32140 3600 T
+(> No arc constraints  < T > 
+) 31370 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 30600 3600 T
+(> ------------------- 
+) 29830 3600 T
+(
+) 29060 3600 1 L
+(> > BACKTRACK POINT <  < 10 > 
+) 28290 3600 T
+(> ------------------- 
+) 27520 3600 T
+(
+) 26750 3600 1 L
+(> FC varleft input  < \(\(E3 DMAXC_21 DMAXC_47\)
+) 25980 3600 T
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 25210 3600 23 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 24440 3600 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+) 23670 3600 24 L
+(DMAXC_92\)\) > 
+) 22900 3600 24 L
+(
+) 22130 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_51, \(\() 21360 3600 T
+20590 3600 K (E2
+) 20590 3600 T
+19050 3600 K (DMAXC_24\)
+) 19050 3600 T
+(\() 18280 3600 81 L
+17510 3600 K (E5
+) 17510 3600 T
+15970 3600 K (DMAXC_51\)\) > 
+) 15970 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 15200 3600 T
+(
+) 14430 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_12, E5, DMAXC_51 > 
+) 13660 3600 T
+(>    < 59 > 
+) 12890 3600 T
+(> possible-data-dependency fail for  < DMAXC_12, DMAXC_51 > 
+) 12120 3600 T
+(
+) 11350 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_51, \(\() 10580 3600 T
+9810 3600 K (E2
+) 9810 3600 T
+8270 3600 K (DMAXC_24\)
+) 8270 3600 T
+(\() 7500 3600 81 L
+6730 3600 K (E5
+) 6730 3600 T
+5190 3600 K (DMAXC_51\)\) > 
+) 5190 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 4420 3600 T
+(
+) 3650 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_26, E5, DMAXC_51 > 
+) 2880 3600 T
+(>    < 60 > 
+) 53700 41950 T
+(> possible-data-dependency fail for  < DMAXC_26, DMAXC_51 > 
+) 52930 41950 T
+(
+) 52160 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_51, \(\() 51390 41950 T
+50620 41950 K (E2
+) 50620 41950 T
+49080 41950 K (DMAXC_24\)
+) 49080 41950 T
+(\() 48310 41950 81 L
+47540 41950 K (E5
+) 47540 41950 T
+46000 41950 K (DMAXC_51\)\) > 
+) 46000 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 45230 41950 T
+(
+) 44460 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_27, E5, DMAXC_51 > 
+) 43690 41950 T
+(>    < 61 > 
+) 42920 41950 T
+(> possible-data-dependency fail for  < DMAXC_27, DMAXC_51 > 
+) 42150 41950 T
+(
+) 41380 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_51, \(\() 40610 41950 T
+39840 41950 K (E2
+) 39840 41950 T
+38300 41950 K (DMAXC_24\)
+) 38300 41950 T
+(\() 37530 41950 81 L
+36760 41950 K (E5
+) 36760 41950 T
+35220 41950 K (DMAXC_51\)\) > 
+) 35220 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 34450 41950 T
+(
+) 33680 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_29, E5, DMAXC_51 > 
+) 32910 41950 T
+(>    < 62 > 
+) 32140 41950 T
+(> possible-data-dependency fail for  < DMAXC_29, DMAXC_51 > 
+) 31370 41950 T
+(
+) 30600 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_51, \(\() 29830 41950 T
+29060 41950 K (E2
+) 29060 41950 T
+27520 41950 K (DMAXC_24\)
+) 27520 41950 T
+(\() 26750 41950 81 L
+25980 41950 K (E5
+) 25980 41950 T
+24440 41950 K (DMAXC_51\)\) > 
+) 24440 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 23670 41950 T
+(
+) 22900 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_31, E5, DMAXC_51 > 
+) 22130 41950 T
+(>    < 63 > 
+) 21360 41950 T
+(> possible-data-dependency fail for  < DMAXC_31, DMAXC_51 > 
+) 20590 41950 T
+(
+) 19820 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_51, \(\() 19050 41950 T
+18280 41950 K (E2
+) 18280 41950 T
+16740 41950 K (DMAXC_24\)
+) 16740 41950 T
+(\() 15970 41950 81 L
+15200 41950 K (E5
+) 15200 41950 T
+13660 41950 K (DMAXC_51\)\) > 
+) 13660 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 12890 41950 T
+(
+) 12120 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_32, E5, DMAXC_51 > 
+) 11350 41950 T
+(>    < 64 > 
+) 10580 41950 T
+(> possible-data-dependency fail for  < DMAXC_32, DMAXC_51 > 
+) 9810 41950 T
+(
+) 9040 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_51, \(\() 8270 41950 T
+7500 41950 K (E2
+) 7500 41950 T
+5960 41950 K (DMAXC_24\)
+) 5960 41950 T
+(\() 5190 41950 81 L
+4420 41950 K (E5
+) 4420 41950 T
+2880 41950 K (DMAXC_51\)\) > 
+) 2880 41950 T
+EndPage
+%%Page: 16 16
+(16) (final-dynamic) StartPage
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 53700 3600 T
+(
+) 52930 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_52, E5, DMAXC_51 > 
+) 52160 3600 T
+(>    < 65 > 
+) 51390 3600 T
+(> possible-data-dependency succeed for  < DMAXC_52, DMAXC_51 > 
+) 50620 3600 T
+(
+) 49850 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_51, \(\() 49080 3600 T
+48310 3600 K (E2
+) 48310 3600 T
+46770 3600 K (DMAXC_24\)
+) 46770 3600 T
+(\() 46000 3600 81 L
+45230 3600 K (E5
+) 45230 3600 T
+43690 3600 K (DMAXC_51\)\) > 
+) 43690 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 42920 3600 T
+(
+) 42150 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_53, E5, DMAXC_51 > 
+) 41380 3600 T
+(>    < 66 > 
+) 40610 3600 T
+(> possible-data-dependency succeed for  < DMAXC_53, DMAXC_51 > 
+) 39840 3600 T
+(
+) 39070 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_51, \(\() 38300 3600 T
+37530 3600 K (E2
+) 37530 3600 T
+35990 3600 K (DMAXC_24\)
+) 35990 3600 T
+(\() 35220 3600 81 L
+34450 3600 K (E5
+) 34450 3600 T
+32910 3600 K (DMAXC_51\)\) > 
+) 32910 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 32140 3600 T
+(
+) 31370 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_57, E5, DMAXC_51 > 
+) 30600 3600 T
+(>    < 67 > 
+) 29830 3600 T
+(> possible-data-dependency succeed for  < DMAXC_57, DMAXC_51 > 
+) 29060 3600 T
+(
+) 28290 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_51, \(\() 27520 3600 T
+26750 3600 K (E2
+) 26750 3600 T
+25210 3600 K (DMAXC_24\)
+) 25210 3600 T
+(\() 24440 3600 81 L
+23670 3600 K (E5
+) 23670 3600 T
+22130 3600 K (DMAXC_51\)\) > 
+) 22130 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 21360 3600 T
+(
+) 20590 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_90, E5, DMAXC_51 > 
+) 19820 3600 T
+(>    < 68 > 
+) 19050 3600 T
+(> possible-data-dependency fail for  < DMAXC_90, DMAXC_51 > 
+) 18280 3600 T
+(
+) 17510 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_51, \(\() 16740 3600 T
+15970 3600 K (E2
+) 15970 3600 T
+14430 3600 K (DMAXC_24\)
+) 14430 3600 T
+(\() 13660 3600 81 L
+12890 3600 K (E5
+) 12890 3600 T
+11350 3600 K (DMAXC_51\)\) > 
+) 11350 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 10580 3600 T
+(
+) 9810 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_92, E5, DMAXC_51 > 
+) 9040 3600 T
+(>    < 69 > 
+) 8270 3600 T
+(> possible-data-dependency fail for  < DMAXC_92, DMAXC_51 > 
+) 7500 3600 T
+(
+) 6730 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E5, DMAXC_51, \(\(E) 5960 3600 T
+5190 3600 K (2
+) 5190 3600 T
+(D) 4420 3600 81 L
+3650 3600 K (MAXC_24\)
+) 3650 3600 T
+(\(E) 2880 3600 80 L
+53700 41950 K (5
+) 53700 41950 T
+(D) 52930 41950 81 L
+52160 41950 K (MAXC_51\)\) > 
+) 52160 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 51390 41950 T
+(
+) 50620 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_2, E5, DMAXC_51 > 
+) 49850 41950 T
+(>    < 70 > 
+) 49080 41950 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_2 > 
+) 48310 41950 T
+(
+) 47540 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E5, DMAXC_51, \(\(E) 46770 41950 T
+46000 41950 K (2
+) 46000 41950 T
+(D) 45230 41950 81 L
+44460 41950 K (MAXC_24\)
+) 44460 41950 T
+(\(E) 43690 41950 80 L
+42920 41950 K (5
+) 42920 41950 T
+(D) 42150 41950 81 L
+41380 41950 K (MAXC_51\)\) > 
+) 41380 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 40610 41950 T
+(
+) 39840 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_3, E5, DMAXC_51 > 
+) 39070 41950 T
+(>    < 71 > 
+) 38300 41950 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_3 > 
+) 37530 41950 T
+(
+) 36760 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_51, \(\(E) 35990 41950 T
+35220 41950 K (2
+) 35220 41950 T
+(D) 34450 41950 81 L
+33680 41950 K (MAXC_24\)
+) 33680 41950 T
+(\(E) 32910 41950 80 L
+32140 41950 K (5
+) 32140 41950 T
+(D) 31370 41950 81 L
+30600 41950 K (MAXC_51\)\) > 
+) 30600 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 29830 41950 T
+(
+) 29060 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_8, E5, DMAXC_51 > 
+) 28290 41950 T
+(>    < 72 > 
+) 27520 41950 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_8 > 
+) 26750 41950 T
+(
+) 25980 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_51, \(\() 25210 41950 T
+24440 41950 K (E2
+) 24440 41950 T
+22900 41950 K (DMAXC_24\)
+) 22900 41950 T
+(\() 22130 41950 81 L
+21360 41950 K (E5
+) 21360 41950 T
+19820 41950 K (DMAXC_51\)\) > 
+) 19820 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 19050 41950 T
+(
+) 18280 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_17, E5, DMAXC_51 > 
+) 17510 41950 T
+(>    < 73 > 
+) 16740 41950 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_17 > 
+) 15970 41950 T
+(
+) 15200 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_51, \(\() 14430 41950 T
+13660 41950 K (E2
+) 13660 41950 T
+12120 41950 K (DMAXC_24\)
+) 12120 41950 T
+(\() 11350 41950 81 L
+10580 41950 K (E5
+) 10580 41950 T
+9040 41950 K (DMAXC_51\)\) > 
+) 9040 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 8270 41950 T
+(
+) 7500 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_19, E5, DMAXC_51 > 
+) 6730 41950 T
+(>    < 74 > 
+) 5960 41950 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_19 > 
+) 5190 41950 T
+(
+) 4420 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E5, DMAXC_51, \(\() 3650 41950 T
+2880 41950 K (E2
+) 2880 41950 T
+EndPage
+%%Page: 17 17
+(17) (final-dynamic) StartPage
+52930 3600 K (DMAXC_24\)
+) 52930 3600 T
+(\() 52160 3600 81 L
+51390 3600 K (E5
+) 51390 3600 T
+49850 3600 K (DMAXC_51\)\) > 
+) 49850 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 49080 3600 T
+(
+) 48310 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_23, E5, DMAXC_51 > 
+) 47540 3600 T
+(>    < 75 > 
+) 46770 3600 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_23 > 
+) 46000 3600 T
+(
+) 45230 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_51, \(\() 44460 3600 T
+43690 3600 K (E2
+) 43690 3600 T
+42150 3600 K (DMAXC_24\)
+) 42150 3600 T
+(\() 41380 3600 81 L
+40610 3600 K (E5
+) 40610 3600 T
+39070 3600 K (DMAXC_51\)\) > 
+) 39070 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 38300 3600 T
+(
+) 37530 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_21, E5, DMAXC_51 > 
+) 36760 3600 T
+(>    < 76 > 
+) 35990 3600 T
+(> possible-data-dependency fail for  < DMAXC_21, DMAXC_51 > 
+) 35220 3600 T
+(
+) 34450 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_51, \(\() 33680 3600 T
+32910 3600 K (E2
+) 32910 3600 T
+31370 3600 K (DMAXC_24\)
+) 31370 3600 T
+(\() 30600 3600 81 L
+29830 3600 K (E5
+) 29830 3600 T
+28290 3600 K (DMAXC_51\)\) > 
+) 28290 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 27520 3600 T
+(
+) 26750 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_47, E5, DMAXC_51 > 
+) 25980 3600 T
+(>    < 77 > 
+) 25210 3600 T
+(> possible-data-dependency succeed for  < DMAXC_47, DMAXC_51 > 
+) 24440 3600 T
+(> FC varleft out  < \(\(E3 DMAXC_47\) \(E1\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 23670 3600 T
+(> DR varleft input  < \(\(E3 DMAXC_47\) \(E1\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 22900 3600 T
+(> DR varleft out  < \(\(E1\) \(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 22130 3600 T
+(> Next Symbol, domain  < E1, NIL > 
+) 21360 3600 T
+(> Domain exhausted for  < E1 > 
+) 20590 3600 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 19820 3600 T
+(
+) 19050 3600 T
+(Node id: 10 
+) 18280 3600 1 L
+(Partial solution: \(\(E2 DMAXC_24\)\) 
+) 17510 3600 1 L
+(Symbol: E5 
+) 16740 3600 1 L
+(Symbol value: DMAXC_51 
+) 15970 3600 1 L
+(Domain: NIL 
+) 15200 3600 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 14430 3600 1 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23\)
+) 13660 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 12890 3600 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 12120 3600 19 L
+(Arc Cost: 0 
+) 11350 3600 1 L
+(Depth: 2 
+) 10580 3600 1 L
+(Max fail level: 0 
+) 9810 3600 1 L
+(Prev Node id: 1 
+) 9040 3600 1 L
+(Parent id: #\(BT-STATE 1 NIL NIL E2 DMAXC_24 \(DMAXC_50\)
+) 8270 3600 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 7500 3600 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 6730 3600 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 5960 3600 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 5190 3600 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 4420 3600 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 3650 3600 16 L
+(0 1 -1 NIL\) 
+) 2880 3600 14 L
+(
+) 53700 41950 T
+(> Domain exhausted for  < E5 > 
+) 52930 41950 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 52160 41950 T
+(
+) 51390 41950 T
+(Node id: 1 
+) 50620 41950 1 L
+(Partial solution: NIL 
+) 49850 41950 1 L
+(Symbol: E2 
+) 49080 41950 1 L
+(Symbol value: DMAXC_24 
+) 48310 41950 1 L
+(Domain: \(DMAXC_50\) 
+) 47540 41950 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 46770 41950 1 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 46000 41950 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 45230 41950 19 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 44460 41950 18 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 43690 41950 19 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 42920 41950 19 L
+(DMAXC_93\)\) 
+) 42150 41950 19 L
+(Arc Cost: 0 
+) 41380 41950 1 L
+(Depth: 1 
+) 40610 41950 1 L
+(Max fail level: -1 
+) 39840 41950 1 L
+(Prev Node id: NONE 
+) 39070 41950 1 L
+(Parent id: NIL 
+) 38300 41950 1 L
+(
+) 37530 41950 T
+(***** Visit State Description ***** 
+) 36760 41950 T
+(
+) 35990 41950 T
+(Node id: 11 
+) 35220 41950 1 L
+(Partial solution: NIL 
+) 34450 41950 1 L
+(Symbol: E2 
+) 33680 41950 1 L
+(Symbol value: DMAXC_50 
+) 32910 41950 1 L
+(Domain: NIL 
+) 32140 41950 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 31370 41950 1 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 30600 41950 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 29830 41950 19 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 29060 41950 18 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 28290 41950 19 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 27520 41950 19 L
+(DMAXC_93\)\) 
+) 26750 41950 19 L
+(Arc Cost: 0 
+) 25980 41950 1 L
+(Depth: 1 
+) 25210 41950 1 L
+(Max fail level: 0 
+) 24440 41950 1 L
+(Prev Node id: NONE 
+) 23670 41950 1 L
+(Parent id: NIL 
+) 22900 41950 1 L
+(
+) 22130 41950 T
+(
+) 21360 41950 T
+(> >>>>>> Node   < 11 > 
+) 20590 41950 T
+(> Current: symbol, value, partial  < E2, DMAXC_50, NIL > 
+) 19820 41950 T
+(> Satisfy-p <symbol, value, partial>  < E2, DMAXC_50, NIL > 
+) 19050 41950 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 18280 41950 T
+(> ------------------- 
+) 17510 41950 T
+(
+) 16740 41950 1 L
+(> > BACKTRACK POINT <  < 11 > 
+) 15970 41950 T
+(> ------------------- 
+) 15200 41950 T
+(
+) 14430 41950 1 L
+(> FC varleft input  < \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 13660 41950 T
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 12890 41950 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 12120 41950 24 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 11350 41950 23 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 10580 41950 24 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 9810 41950 24 L
+(DMAXC_93\)\) > 
+) 9040 41950 24 L
+(
+) 8270 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_2, E2, DMAXC_50, \(\(E) 7500 41950 T
+6730 41950 K (2
+) 6730 41950 T
+(D) 5960 41950 81 L
+5190 41950 K (MAXC_50\)\) > 
+) 5190 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 4420 41950 T
+(
+) 3650 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_2, E2, DMAXC_50 > 
+) 2880 41950 T
+EndPage
+%%Page: 18 18
+(18) (final-dynamic) StartPage
+(>    < 78 > 
+) 53700 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_2 > 
+) 52930 3600 T
+(
+) 52160 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_3, E2, DMAXC_50, \(\(E) 51390 3600 T
+50620 3600 K (2
+) 50620 3600 T
+(D) 49850 3600 81 L
+49080 3600 K (MAXC_50\)\) > 
+) 49080 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 48310 3600 T
+(
+) 47540 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_3, E2, DMAXC_50 > 
+) 46770 3600 T
+(>    < 79 > 
+) 46000 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_3 > 
+) 45230 3600 T
+(
+) 44460 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E2, DMAXC_50, \(\(E) 43690 3600 T
+42920 3600 K (2
+) 42920 3600 T
+(D) 42150 3600 81 L
+41380 3600 K (MAXC_50\)\) > 
+) 41380 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 40610 3600 T
+(
+) 39840 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_8, E2, DMAXC_50 > 
+) 39070 3600 T
+(>    < 80 > 
+) 38300 3600 T
+(> control-data-dependency succeed for  < DMAXC_50, DMAXC_8 > 
+) 37530 3600 T
+(
+) 36760 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E2, DMAXC_50, \(\() 35990 3600 T
+35220 3600 K (E2
+) 35220 3600 T
+33680 3600 K (DMAXC_50\)\) > 
+) 33680 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 32910 3600 T
+(
+) 32140 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_17, E2, DMAXC_50 > 
+) 31370 3600 T
+(>    < 81 > 
+) 30600 3600 T
+(> control-data-dependency succeed for  < DMAXC_50, DMAXC_17 > 
+) 29830 3600 T
+(
+) 29060 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E2, DMAXC_50, \(\() 28290 3600 T
+27520 3600 K (E2
+) 27520 3600 T
+25980 3600 K (DMAXC_50\)\) > 
+) 25980 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 25210 3600 T
+(
+) 24440 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_19, E2, DMAXC_50 > 
+) 23670 3600 T
+(>    < 82 > 
+) 22900 3600 T
+(> control-data-dependency succeed for  < DMAXC_50, DMAXC_19 > 
+) 22130 3600 T
+(
+) 21360 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_23, E2, DMAXC_50, \(\() 20590 3600 T
+19820 3600 K (E2
+) 19820 3600 T
+18280 3600 K (DMAXC_50\)\) > 
+) 18280 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 17510 3600 T
+(
+) 16740 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_23, E2, DMAXC_50 > 
+) 15970 3600 T
+(>    < 83 > 
+) 15200 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_23 > 
+) 14430 3600 T
+(
+) 13660 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_28, E2, DMAXC_50, \(\() 12890 3600 T
+12120 3600 K (E2
+) 12120 3600 T
+10580 3600 K (DMAXC_50\)\) > 
+) 10580 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 9810 3600 T
+(
+) 9040 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_28, E2, DMAXC_50 > 
+) 8270 3600 T
+(>    < 84 > 
+) 7500 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_28 > 
+) 6730 3600 T
+(
+) 5960 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E2, DMAXC_50, \(\() 5190 3600 T
+4420 3600 K (E2
+) 4420 3600 T
+2880 3600 K (DMAXC_50\)\) > 
+) 2880 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 53700 41950 T
+(
+) 52930 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_42, E2, DMAXC_50 > 
+) 52160 41950 T
+(>    < 85 > 
+) 51390 41950 T
+(> control-data-dependency succeed for  < DMAXC_50, DMAXC_42 > 
+) 50620 41950 T
+(
+) 49850 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E2, DMAXC_50, \(\() 49080 41950 T
+48310 41950 K (E2
+) 48310 41950 T
+46770 41950 K (DMAXC_50\)\) > 
+) 46770 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 46000 41950 T
+(
+) 45230 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_49, E2, DMAXC_50 > 
+) 44460 41950 T
+(>    < 86 > 
+) 43690 41950 T
+(> control-data-dependency succeed for  < DMAXC_50, DMAXC_49 > 
+) 42920 41950 T
+(
+) 42150 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_56, E2, DMAXC_50, \(\() 41380 41950 T
+40610 41950 K (E2
+) 40610 41950 T
+39070 41950 K (DMAXC_50\)\) > 
+) 39070 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 38300 41950 T
+(
+) 37530 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_56, E2, DMAXC_50 > 
+) 36760 41950 T
+(>    < 87 > 
+) 35990 41950 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_56 > 
+) 35220 41950 T
+(
+) 34450 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_62, E2, DMAXC_50, \(\() 33680 41950 T
+32910 41950 K (E2
+) 32910 41950 T
+31370 41950 K (DMAXC_50\)\) > 
+) 31370 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 30600 41950 T
+(
+) 29830 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_62, E2, DMAXC_50 > 
+) 29060 41950 T
+(>    < 88 > 
+) 28290 41950 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_62 > 
+) 27520 41950 T
+(
+) 26750 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_66, E2, DMAXC_50, \(\() 25980 41950 T
+25210 41950 K (E2
+) 25210 41950 T
+23670 41950 K (DMAXC_50\)\) > 
+) 23670 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 22900 41950 T
+(
+) 22130 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_66, E2, DMAXC_50 > 
+) 21360 41950 T
+(>    < 89 > 
+) 20590 41950 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_66 > 
+) 19820 41950 T
+(
+) 19050 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_70, E2, DMAXC_50, \(\() 18280 41950 T
+17510 41950 K (E2
+) 17510 41950 T
+15970 41950 K (DMAXC_50\)\) > 
+) 15970 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 15200 41950 T
+(
+) 14430 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_70, E2, DMAXC_50 > 
+) 13660 41950 T
+(>    < 90 > 
+) 12890 41950 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_70 > 
+) 12120 41950 T
+(
+) 11350 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_74, E2, DMAXC_50, \(\() 10580 41950 T
+9810 41950 K (E2
+) 9810 41950 T
+8270 41950 K (DMAXC_50\)\) > 
+) 8270 41950 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 7500 41950 T
+(
+) 6730 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_74, E2, DMAXC_50 > 
+) 5960 41950 T
+(>    < 91 > 
+) 5190 41950 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_74 > 
+) 4420 41950 T
+(
+) 3650 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_77, E2, DMAXC_50, \(\() 2880 41950 T
+EndPage
+%%Page: 19 19
+(19) (final-dynamic) StartPage
+53700 3600 K (E2
+) 53700 3600 T
+52160 3600 K (DMAXC_50\)\) > 
+) 52160 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 51390 3600 T
+(
+) 50620 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_77, E2, DMAXC_50 > 
+) 49850 3600 T
+(>    < 92 > 
+) 49080 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_77 > 
+) 48310 3600 T
+(
+) 47540 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_83, E2, DMAXC_50, \(\() 46770 3600 T
+46000 3600 K (E2
+) 46000 3600 T
+44460 3600 K (DMAXC_50\)\) > 
+) 44460 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 43690 3600 T
+(
+) 42920 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_83, E2, DMAXC_50 > 
+) 42150 3600 T
+(>    < 93 > 
+) 41380 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_83 > 
+) 40610 3600 T
+(
+) 39840 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_89, E2, DMAXC_50, \(\() 39070 3600 T
+38300 3600 K (E2
+) 38300 3600 T
+36760 3600 K (DMAXC_50\)\) > 
+) 36760 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 35990 3600 T
+(
+) 35220 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_89, E2, DMAXC_50 > 
+) 34450 3600 T
+(>    < 94 > 
+) 33680 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_89 > 
+) 32910 3600 T
+(
+) 32140 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_91, E2, DMAXC_50, \(\() 31370 3600 T
+30600 3600 K (E2
+) 30600 3600 T
+29060 3600 K (DMAXC_50\)\) > 
+) 29060 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 28290 3600 T
+(
+) 27520 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_91, E2, DMAXC_50 > 
+) 26750 3600 T
+(>    < 95 > 
+) 25980 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_91 > 
+) 25210 3600 T
+(
+) 24440 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_93, E2, DMAXC_50, \(\() 23670 3600 T
+22900 3600 K (E2
+) 22900 3600 T
+21360 3600 K (DMAXC_50\)\) > 
+) 21360 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 20590 3600 T
+(
+) 19820 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_93, E2, DMAXC_50 > 
+) 19050 3600 T
+(>    < 96 > 
+) 18280 3600 T
+(> control-data-dependency fail for  < DMAXC_50, DMAXC_93 > 
+) 17510 3600 T
+(
+) 16740 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E2, DMAXC_50, \(\() 15970 3600 T
+15200 3600 K (E2
+) 15200 3600 T
+13660 3600 K (DMAXC_50\)\) > 
+) 13660 3600 T
+(> No arc constraints  < T > 
+) 12890 3600 T
+(
+) 12120 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E2, DMAXC_50, \(\() 11350 3600 T
+10580 3600 K (E2
+) 10580 3600 T
+9040 3600 K (DMAXC_50\)\) > 
+) 9040 3600 T
+(> No arc constraints  < T > 
+) 8270 3600 T
+(
+) 7500 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E2, DMAXC_50, \(\() 6730 3600 T
+5960 3600 K (E2
+) 5960 3600 T
+4420 3600 K (DMAXC_50\)\) > 
+) 4420 3600 T
+(> No arc constraints  < T > 
+) 3650 3600 T
+(
+) 2880 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E2, DMAXC_50, \(\() 53700 41950 T
+52930 41950 K (E2
+) 52930 41950 T
+51390 41950 K (DMAXC_50\)\) > 
+) 51390 41950 T
+(> No arc constraints  < T > 
+) 50620 41950 T
+(
+) 49850 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E2, DMAXC_50, \(\() 49080 41950 T
+48310 41950 K (E2
+) 48310 41950 T
+46770 41950 K (DMAXC_50\)\) > 
+) 46770 41950 T
+(> No arc constraints  < T > 
+) 46000 41950 T
+(
+) 45230 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E2, DMAXC_50, \(\() 44460 41950 T
+43690 41950 K (E2
+) 43690 41950 T
+42150 41950 K (DMAXC_50\)\) > 
+) 42150 41950 T
+(> No arc constraints  < T > 
+) 41380 41950 T
+(
+) 40610 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E2, DMAXC_50, \(\() 39840 41950 T
+39070 41950 K (E2
+) 39070 41950 T
+37530 41950 K (DMAXC_50\)\) > 
+) 37530 41950 T
+(> No arc constraints  < T > 
+) 36760 41950 T
+(
+) 35990 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E2, DMAXC_50, \(\() 35220 41950 T
+34450 41950 K (E2
+) 34450 41950 T
+32910 41950 K (DMAXC_50\)\) > 
+) 32910 41950 T
+(> No arc constraints  < T > 
+) 32140 41950 T
+(
+) 31370 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E2, DMAXC_50, \(\() 30600 41950 T
+29830 41950 K (E2
+) 29830 41950 T
+28290 41950 K (DMAXC_50\)\) > 
+) 28290 41950 T
+(> No arc constraints  < T > 
+) 27520 41950 T
+(
+) 26750 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E2, DMAXC_50, \(\() 25980 41950 T
+25210 41950 K (E2
+) 25210 41950 T
+23670 41950 K (DMAXC_50\)\) > 
+) 23670 41950 T
+(> No arc constraints  < T > 
+) 22900 41950 T
+(
+) 22130 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E2, DMAXC_50, \(\() 21360 41950 T
+20590 41950 K (E2
+) 20590 41950 T
+19050 41950 K (DMAXC_50\)\) > 
+) 19050 41950 T
+(> No arc constraints  < T > 
+) 18280 41950 T
+(
+) 17510 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_50, \(\() 16740 41950 T
+15970 41950 K (E2
+) 15970 41950 T
+14430 41950 K (DMAXC_50\)\) > 
+) 14430 41950 T
+(> No arc constraints  < T > 
+) 13660 41950 T
+(
+) 12890 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_50, \(\() 12120 41950 T
+11350 41950 K (E2
+) 11350 41950 T
+9810 41950 K (DMAXC_50\)\) > 
+) 9810 41950 T
+(> No arc constraints  < T > 
+) 9040 41950 T
+(
+) 8270 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E2, DMAXC_50, \(\() 7500 41950 T
+6730 41950 K (E2
+) 6730 41950 T
+5190 41950 K (DMAXC_50\)\) > 
+) 5190 41950 T
+(> No arc constraints  < T > 
+) 4420 41950 T
+(
+) 3650 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E2, DMAXC_50, \(\() 2880 41950 T
+EndPage
+%%Page: 20 20
+(20) (final-dynamic) StartPage
+53700 3600 K (E2
+) 53700 3600 T
+52160 3600 K (DMAXC_50\)\) > 
+) 52160 3600 T
+(> No arc constraints  < T > 
+) 51390 3600 T
+(> FC varleft out  < \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 50620 3600 T
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 49850 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 49080 3600 22 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)\) > 
+) 48310 3600 21 L
+(> DR varleft input  < \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 47540 3600 T
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 46770 3600 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 46000 3600 24 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)\) > 
+) 45230 3600 23 L
+(> DR varleft out  < \(\(E5 DMAXC_25 DMAXC_51\) \(E3 DMAXC_21 DMAXC_47\)
+) 44460 3600 T
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 43690 3600 21 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 42920 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) > 
+) 42150 3600 22 L
+(> Next Symbol, domain  < E5, \(DMAXC_25 DMAXC_51\) > 
+) 41380 3600 T
+(***** Visit State Description ***** 
+) 40610 3600 T
+(
+) 39840 3600 T
+(Node id: 12 
+) 39070 3600 1 L
+(Partial solution: \(\(E2 DMAXC_50\)\) 
+) 38300 3600 1 L
+(Symbol: E5 
+) 37530 3600 1 L
+(Symbol value: DMAXC_25 
+) 36760 3600 1 L
+(Domain: \(DMAXC_51\) 
+) 35990 3600 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 35220 3600 1 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 34450 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 33680 3600 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 32910 3600 19 L
+(Arc Cost: 0 
+) 32140 3600 1 L
+(Depth: 2 
+) 31370 3600 1 L
+(Max fail level: 0 
+) 30600 3600 1 L
+(Prev Node id: 11 
+) 29830 3600 1 L
+(Parent id: #\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 29060 3600 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 28290 3600 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 27520 3600 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 26750 3600 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 25980 3600 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 25210 3600 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 24440 3600 16 L
+(0 1 0 NIL\) 
+) 23670 3600 14 L
+(
+) 22900 3600 T
+(
+) 22130 3600 T
+(> >>>>>> Node   < 12 > 
+) 21360 3600 T
+(> Current: symbol, value, partial  < E5, DMAXC_25, \(\(E2 DMAXC_50\)\) > 
+) 20590 3600 T
+(> Satisfy-p <symbol, value, partial>  < E5, DMAXC_25, \(\(E2 DMAXC_50\)\) > 
+) 19820 3600 T
+(>     inst-var-ck call  < \(E2 DMAXC_50\) > 
+) 19050 3600 T
+(
+) 18280 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_25, E2, DMAXC_50, \(\() 17510 3600 T
+16740 3600 K (E2
+) 16740 3600 T
+15200 3600 K (DMAXC_50\)\) > 
+) 15200 3600 T
+(> No arc constraints  < T > 
+) 14430 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 13660 3600 T
+(> ------------------- 
+) 12890 3600 T
+(
+) 12120 3600 1 L
+(> > BACKTRACK POINT <  < 12 > 
+) 11350 3600 T
+(> ------------------- 
+) 10580 3600 T
+(
+) 9810 3600 1 L
+(> FC varleft input  < \(\(E3 DMAXC_21 DMAXC_47\)
+) 9040 3600 T
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 8270 3600 23 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 7500 3600 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+) 6730 3600 24 L
+(DMAXC_92\)\) > 
+) 5960 3600 24 L
+(
+) 5190 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_25, \(\() 4420 3600 T
+3650 3600 K (E2
+) 3650 3600 T
+53700 41950 K (DMAXC_50\)
+) 53700 41950 T
+(\() 52930 41950 81 L
+52160 41950 K (E5
+) 52160 41950 T
+50620 41950 K (DMAXC_25\)\) > 
+) 50620 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 49850 41950 T
+(
+) 49080 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_12, E5, DMAXC_25 > 
+) 48310 41950 T
+(>    < 97 > 
+) 47540 41950 T
+(> possible-data-dependency fail for  < DMAXC_12, DMAXC_25 > 
+) 46770 41950 T
+(
+) 46000 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_25, \(\() 45230 41950 T
+44460 41950 K (E2
+) 44460 41950 T
+42920 41950 K (DMAXC_50\)
+) 42920 41950 T
+(\() 42150 41950 81 L
+41380 41950 K (E5
+) 41380 41950 T
+39840 41950 K (DMAXC_25\)\) > 
+) 39840 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 39070 41950 T
+(
+) 38300 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_26, E5, DMAXC_25 > 
+) 37530 41950 T
+(>    < 98 > 
+) 36760 41950 T
+(> possible-data-dependency succeed for  < DMAXC_26, DMAXC_25 > 
+) 35990 41950 T
+(
+) 35220 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_25, \(\() 34450 41950 T
+33680 41950 K (E2
+) 33680 41950 T
+32140 41950 K (DMAXC_50\)
+) 32140 41950 T
+(\() 31370 41950 81 L
+30600 41950 K (E5
+) 30600 41950 T
+29060 41950 K (DMAXC_25\)\) > 
+) 29060 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 28290 41950 T
+(
+) 27520 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_27, E5, DMAXC_25 > 
+) 26750 41950 T
+(>    < 99 > 
+) 25980 41950 T
+(> possible-data-dependency succeed for  < DMAXC_27, DMAXC_25 > 
+) 25210 41950 T
+(
+) 24440 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_25, \(\() 23670 41950 T
+22900 41950 K (E2
+) 22900 41950 T
+21360 41950 K (DMAXC_50\)
+) 21360 41950 T
+(\() 20590 41950 81 L
+19820 41950 K (E5
+) 19820 41950 T
+18280 41950 K (DMAXC_25\)\) > 
+) 18280 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 17510 41950 T
+(
+) 16740 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_29, E5, DMAXC_25 > 
+) 15970 41950 T
+(>    < 100 > 
+) 15200 41950 T
+(> possible-data-dependency succeed for  < DMAXC_29, DMAXC_25 > 
+) 14430 41950 T
+(
+) 13660 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_25, \(\() 12890 41950 T
+12120 41950 K (E2
+) 12120 41950 T
+10580 41950 K (DMAXC_50\)
+) 10580 41950 T
+(\() 9810 41950 81 L
+9040 41950 K (E5
+) 9040 41950 T
+7500 41950 K (DMAXC_25\)\) > 
+) 7500 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 6730 41950 T
+(
+) 5960 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_31, E5, DMAXC_25 > 
+) 5190 41950 T
+(>    < 101 > 
+) 4420 41950 T
+(> possible-data-dependency succeed for  < DMAXC_31, DMAXC_25 > 
+) 3650 41950 T
+(
+) 2880 41950 T
+EndPage
+%%Page: 21 21
+(21) (final-dynamic) StartPage
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_25, \(\() 53700 3600 T
+52930 3600 K (E2
+) 52930 3600 T
+51390 3600 K (DMAXC_50\)
+) 51390 3600 T
+(\() 50620 3600 81 L
+49850 3600 K (E5
+) 49850 3600 T
+48310 3600 K (DMAXC_25\)\) > 
+) 48310 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 47540 3600 T
+(
+) 46770 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_32, E5, DMAXC_25 > 
+) 46000 3600 T
+(>    < 102 > 
+) 45230 3600 T
+(> possible-data-dependency succeed for  < DMAXC_32, DMAXC_25 > 
+) 44460 3600 T
+(
+) 43690 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_25, \(\() 42920 3600 T
+42150 3600 K (E2
+) 42150 3600 T
+40610 3600 K (DMAXC_50\)
+) 40610 3600 T
+(\() 39840 3600 81 L
+39070 3600 K (E5
+) 39070 3600 T
+37530 3600 K (DMAXC_25\)\) > 
+) 37530 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 36760 3600 T
+(
+) 35990 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_52, E5, DMAXC_25 > 
+) 35220 3600 T
+(>    < 103 > 
+) 34450 3600 T
+(> possible-data-dependency fail for  < DMAXC_52, DMAXC_25 > 
+) 33680 3600 T
+(
+) 32910 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_25, \(\() 32140 3600 T
+31370 3600 K (E2
+) 31370 3600 T
+29830 3600 K (DMAXC_50\)
+) 29830 3600 T
+(\() 29060 3600 81 L
+28290 3600 K (E5
+) 28290 3600 T
+26750 3600 K (DMAXC_25\)\) > 
+) 26750 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 25980 3600 T
+(
+) 25210 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_53, E5, DMAXC_25 > 
+) 24440 3600 T
+(>    < 104 > 
+) 23670 3600 T
+(> possible-data-dependency fail for  < DMAXC_53, DMAXC_25 > 
+) 22900 3600 T
+(
+) 22130 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_25, \(\() 21360 3600 T
+20590 3600 K (E2
+) 20590 3600 T
+19050 3600 K (DMAXC_50\)
+) 19050 3600 T
+(\() 18280 3600 81 L
+17510 3600 K (E5
+) 17510 3600 T
+15970 3600 K (DMAXC_25\)\) > 
+) 15970 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 15200 3600 T
+(
+) 14430 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_57, E5, DMAXC_25 > 
+) 13660 3600 T
+(>    < 105 > 
+) 12890 3600 T
+(> possible-data-dependency fail for  < DMAXC_57, DMAXC_25 > 
+) 12120 3600 T
+(
+) 11350 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_25, \(\() 10580 3600 T
+9810 3600 K (E2
+) 9810 3600 T
+8270 3600 K (DMAXC_50\)
+) 8270 3600 T
+(\() 7500 3600 81 L
+6730 3600 K (E5
+) 6730 3600 T
+5190 3600 K (DMAXC_25\)\) > 
+) 5190 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 4420 3600 T
+(
+) 3650 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_90, E5, DMAXC_25 > 
+) 2880 3600 T
+(>    < 106 > 
+) 53700 41950 T
+(> possible-data-dependency fail for  < DMAXC_90, DMAXC_25 > 
+) 52930 41950 T
+(
+) 52160 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_25, \(\() 51390 41950 T
+50620 41950 K (E2
+) 50620 41950 T
+49080 41950 K (DMAXC_50\)
+) 49080 41950 T
+(\() 48310 41950 81 L
+47540 41950 K (E5
+) 47540 41950 T
+46000 41950 K (DMAXC_25\)\) > 
+) 46000 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 45230 41950 T
+(
+) 44460 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_92, E5, DMAXC_25 > 
+) 43690 41950 T
+(>    < 107 > 
+) 42920 41950 T
+(> possible-data-dependency fail for  < DMAXC_92, DMAXC_25 > 
+) 42150 41950 T
+(
+) 41380 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_25, \(\(E) 40610 41950 T
+39840 41950 K (2
+) 39840 41950 T
+(D) 39070 41950 81 L
+38300 41950 K (MAXC_50\)
+) 38300 41950 T
+(\(E) 37530 41950 80 L
+36760 41950 K (5
+) 36760 41950 T
+(D) 35990 41950 81 L
+35220 41950 K (MAXC_25\)\) > 
+) 35220 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 34450 41950 T
+(
+) 33680 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_8, E5, DMAXC_25 > 
+) 32910 41950 T
+(>    < 108 > 
+) 32140 41950 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_8 > 
+) 31370 41950 T
+(
+) 30600 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_25, \(\() 29830 41950 T
+29060 41950 K (E2
+) 29060 41950 T
+27520 41950 K (DMAXC_50\)
+) 27520 41950 T
+(\() 26750 41950 81 L
+25980 41950 K (E5
+) 25980 41950 T
+24440 41950 K (DMAXC_25\)\) > 
+) 24440 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 23670 41950 T
+(
+) 22900 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_17, E5, DMAXC_25 > 
+) 22130 41950 T
+(>    < 109 > 
+) 21360 41950 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_17 > 
+) 20590 41950 T
+(
+) 19820 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_25, \(\() 19050 41950 T
+18280 41950 K (E2
+) 18280 41950 T
+16740 41950 K (DMAXC_50\)
+) 16740 41950 T
+(\() 15970 41950 81 L
+15200 41950 K (E5
+) 15200 41950 T
+13660 41950 K (DMAXC_25\)\) > 
+) 13660 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 12890 41950 T
+(
+) 12120 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_19, E5, DMAXC_25 > 
+) 11350 41950 T
+(>    < 110 > 
+) 10580 41950 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_19 > 
+) 9810 41950 T
+(
+) 9040 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E5, DMAXC_25, \(\() 8270 41950 T
+7500 41950 K (E2
+) 7500 41950 T
+5960 41950 K (DMAXC_50\)
+) 5960 41950 T
+(\() 5190 41950 81 L
+4420 41950 K (E5
+) 4420 41950 T
+2880 41950 K (DMAXC_25\)\) > 
+) 2880 41950 T
+EndPage
+%%Page: 22 22
+(22) (final-dynamic) StartPage
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 53700 3600 T
+(
+) 52930 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_42, E5, DMAXC_25 > 
+) 52160 3600 T
+(>    < 111 > 
+) 51390 3600 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_42 > 
+) 50620 3600 T
+(
+) 49850 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E5, DMAXC_25, \(\() 49080 3600 T
+48310 3600 K (E2
+) 48310 3600 T
+46770 3600 K (DMAXC_50\)
+) 46770 3600 T
+(\() 46000 3600 81 L
+45230 3600 K (E5
+) 45230 3600 T
+43690 3600 K (DMAXC_25\)\) > 
+) 43690 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 42920 3600 T
+(
+) 42150 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_49, E5, DMAXC_25 > 
+) 41380 3600 T
+(>    < 112 > 
+) 40610 3600 T
+(> possible-data-dependency fail for  < DMAXC_25, DMAXC_49 > 
+) 39840 3600 T
+(
+) 39070 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_25, \(\() 38300 3600 T
+37530 3600 K (E2
+) 37530 3600 T
+35990 3600 K (DMAXC_50\)
+) 35990 3600 T
+(\() 35220 3600 81 L
+34450 3600 K (E5
+) 34450 3600 T
+32910 3600 K (DMAXC_25\)\) > 
+) 32910 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 32140 3600 T
+(
+) 31370 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_21, E5, DMAXC_25 > 
+) 30600 3600 T
+(>    < 113 > 
+) 29830 3600 T
+(> possible-data-dependency succeed for  < DMAXC_21, DMAXC_25 > 
+) 29060 3600 T
+(
+) 28290 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_25, \(\() 27520 3600 T
+26750 3600 K (E2
+) 26750 3600 T
+25210 3600 K (DMAXC_50\)
+) 25210 3600 T
+(\() 24440 3600 81 L
+23670 3600 K (E5
+) 23670 3600 T
+22130 3600 K (DMAXC_25\)\) > 
+) 22130 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 21360 3600 T
+(
+) 20590 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_47, E5, DMAXC_25 > 
+) 19820 3600 T
+(>    < 114 > 
+) 19050 3600 T
+(> possible-data-dependency fail for  < DMAXC_47, DMAXC_25 > 
+) 18280 3600 T
+(> FC varleft out  < \(\(E3 DMAXC_21\) \(E1\)
+) 17510 3600 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 16740 3600 21 L
+(> DR varleft input  < \(\(E3 DMAXC_21\) \(E1\)
+) 15970 3600 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 15200 3600 23 L
+(> DR varleft out  < \(\(E1\) \(E3 DMAXC_21\)
+) 14430 3600 T
+(\(E4 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32\)\) > 
+) 13660 3600 21 L
+(> Next Symbol, domain  < E1, NIL > 
+) 12890 3600 T
+(> Domain exhausted for  < E1 > 
+) 12120 3600 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 11350 3600 T
+(
+) 10580 3600 T
+(Node id: 12 
+) 9810 3600 1 L
+(Partial solution: \(\(E2 DMAXC_50\)\) 
+) 9040 3600 1 L
+(Symbol: E5 
+) 8270 3600 1 L
+(Symbol value: DMAXC_25 
+) 7500 3600 1 L
+(Domain: \(DMAXC_51\) 
+) 6730 3600 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 5960 3600 1 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 5190 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 4420 3600 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 3650 3600 19 L
+(Arc Cost: 0 
+) 2880 3600 1 L
+(Depth: 2 
+) 53700 41950 1 L
+(Max fail level: 0 
+) 52930 41950 1 L
+(Prev Node id: 11 
+) 52160 41950 1 L
+(Parent id: #\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 51390 41950 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 50620 41950 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 49850 41950 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 49080 41950 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 48310 41950 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 47540 41950 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 46770 41950 16 L
+(0 1 -1 NIL\) 
+) 46000 41950 14 L
+(
+) 45230 41950 T
+(***** Visit State Description ***** 
+) 44460 41950 T
+(
+) 43690 41950 T
+(Node id: 13 
+) 42920 41950 1 L
+(Partial solution: \(\(E2 DMAXC_50\)\) 
+) 42150 41950 1 L
+(Symbol: E5 
+) 41380 41950 1 L
+(Symbol value: DMAXC_51 
+) 40610 41950 1 L
+(Domain: NIL 
+) 39840 41950 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 39070 41950 1 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 38300 41950 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 37530 41950 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 36760 41950 19 L
+(Arc Cost: 0 
+) 35990 41950 1 L
+(Depth: 2 
+) 35220 41950 1 L
+(Max fail level: 0 
+) 34450 41950 1 L
+(Prev Node id: 11 
+) 33680 41950 1 L
+(Parent id: #\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 32910 41950 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 32140 41950 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 31370 41950 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 30600 41950 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 29830 41950 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 29060 41950 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 28290 41950 16 L
+(0 1 -1 NIL\) 
+) 27520 41950 14 L
+(
+) 26750 41950 T
+(
+) 25980 41950 T
+(> >>>>>> Node   < 13 > 
+) 25210 41950 T
+(> Current: symbol, value, partial  < E5, DMAXC_51, \(\(E2 DMAXC_50\)\) > 
+) 24440 41950 T
+(> Satisfy-p <symbol, value, partial>  < E5, DMAXC_51, \(\(E2 DMAXC_50\)\) > 
+) 23670 41950 T
+(>     inst-var-ck call  < \(E2 DMAXC_50\) > 
+) 22900 41950 T
+(
+) 22130 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E5, DMAXC_51, E2, DMAXC_50, \(\() 21360 41950 T
+20590 41950 K (E2
+) 20590 41950 T
+19050 41950 K (DMAXC_50\)\) > 
+) 19050 41950 T
+(> No arc constraints  < T > 
+) 18280 41950 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 17510 41950 T
+(> ------------------- 
+) 16740 41950 T
+(
+) 15970 41950 1 L
+(> > BACKTRACK POINT <  < 13 > 
+) 15200 41950 T
+(> ------------------- 
+) 14430 41950 T
+(
+) 13660 41950 1 L
+(> FC varleft input  < \(\(E3 DMAXC_21 DMAXC_47\)
+) 12890 41950 T
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 12120 41950 23 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31
+) 11350 41950 23 L
+(DMAXC_32 DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90
+) 10580 41950 24 L
+(DMAXC_92\)\) > 
+) 9810 41950 24 L
+(
+) 9040 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_12, E5, DMAXC_51, \(\() 8270 41950 T
+7500 41950 K (E2
+) 7500 41950 T
+5960 41950 K (DMAXC_50\)
+) 5960 41950 T
+(\() 5190 41950 81 L
+4420 41950 K (E5
+) 4420 41950 T
+2880 41950 K (DMAXC_51\)\) > 
+) 2880 41950 T
+EndPage
+%%Page: 23 23
+(23) (final-dynamic) StartPage
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 53700 3600 T
+(
+) 52930 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_12, E5, DMAXC_51 > 
+) 52160 3600 T
+(>    < 115 > 
+) 51390 3600 T
+(> possible-data-dependency fail for  < DMAXC_12, DMAXC_51 > 
+) 50620 3600 T
+(
+) 49850 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_26, E5, DMAXC_51, \(\() 49080 3600 T
+48310 3600 K (E2
+) 48310 3600 T
+46770 3600 K (DMAXC_50\)
+) 46770 3600 T
+(\() 46000 3600 81 L
+45230 3600 K (E5
+) 45230 3600 T
+43690 3600 K (DMAXC_51\)\) > 
+) 43690 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 42920 3600 T
+(
+) 42150 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_26, E5, DMAXC_51 > 
+) 41380 3600 T
+(>    < 116 > 
+) 40610 3600 T
+(> possible-data-dependency fail for  < DMAXC_26, DMAXC_51 > 
+) 39840 3600 T
+(
+) 39070 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_27, E5, DMAXC_51, \(\() 38300 3600 T
+37530 3600 K (E2
+) 37530 3600 T
+35990 3600 K (DMAXC_50\)
+) 35990 3600 T
+(\() 35220 3600 81 L
+34450 3600 K (E5
+) 34450 3600 T
+32910 3600 K (DMAXC_51\)\) > 
+) 32910 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 32140 3600 T
+(
+) 31370 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_27, E5, DMAXC_51 > 
+) 30600 3600 T
+(>    < 117 > 
+) 29830 3600 T
+(> possible-data-dependency fail for  < DMAXC_27, DMAXC_51 > 
+) 29060 3600 T
+(
+) 28290 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_29, E5, DMAXC_51, \(\() 27520 3600 T
+26750 3600 K (E2
+) 26750 3600 T
+25210 3600 K (DMAXC_50\)
+) 25210 3600 T
+(\() 24440 3600 81 L
+23670 3600 K (E5
+) 23670 3600 T
+22130 3600 K (DMAXC_51\)\) > 
+) 22130 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 21360 3600 T
+(
+) 20590 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_29, E5, DMAXC_51 > 
+) 19820 3600 T
+(>    < 118 > 
+) 19050 3600 T
+(> possible-data-dependency fail for  < DMAXC_29, DMAXC_51 > 
+) 18280 3600 T
+(
+) 17510 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_31, E5, DMAXC_51, \(\() 16740 3600 T
+15970 3600 K (E2
+) 15970 3600 T
+14430 3600 K (DMAXC_50\)
+) 14430 3600 T
+(\() 13660 3600 81 L
+12890 3600 K (E5
+) 12890 3600 T
+11350 3600 K (DMAXC_51\)\) > 
+) 11350 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 10580 3600 T
+(
+) 9810 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_31, E5, DMAXC_51 > 
+) 9040 3600 T
+(>    < 119 > 
+) 8270 3600 T
+(> possible-data-dependency fail for  < DMAXC_31, DMAXC_51 > 
+) 7500 3600 T
+(
+) 6730 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_32, E5, DMAXC_51, \(\() 5960 3600 T
+5190 3600 K (E2
+) 5190 3600 T
+3650 3600 K (DMAXC_50\)
+) 3650 3600 T
+(\() 2880 3600 81 L
+53700 41950 K (E5
+) 53700 41950 T
+52160 41950 K (DMAXC_51\)\) > 
+) 52160 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 51390 41950 T
+(
+) 50620 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_32, E5, DMAXC_51 > 
+) 49850 41950 T
+(>    < 120 > 
+) 49080 41950 T
+(> possible-data-dependency fail for  < DMAXC_32, DMAXC_51 > 
+) 48310 41950 T
+(
+) 47540 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_51, \(\() 46770 41950 T
+46000 41950 K (E2
+) 46000 41950 T
+44460 41950 K (DMAXC_50\)
+) 44460 41950 T
+(\() 43690 41950 81 L
+42920 41950 K (E5
+) 42920 41950 T
+41380 41950 K (DMAXC_51\)\) > 
+) 41380 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 40610 41950 T
+(
+) 39840 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_52, E5, DMAXC_51 > 
+) 39070 41950 T
+(>    < 121 > 
+) 38300 41950 T
+(> possible-data-dependency succeed for  < DMAXC_52, DMAXC_51 > 
+) 37530 41950 T
+(
+) 36760 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_51, \(\() 35990 41950 T
+35220 41950 K (E2
+) 35220 41950 T
+33680 41950 K (DMAXC_50\)
+) 33680 41950 T
+(\() 32910 41950 81 L
+32140 41950 K (E5
+) 32140 41950 T
+30600 41950 K (DMAXC_51\)\) > 
+) 30600 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 29830 41950 T
+(
+) 29060 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_53, E5, DMAXC_51 > 
+) 28290 41950 T
+(>    < 122 > 
+) 27520 41950 T
+(> possible-data-dependency succeed for  < DMAXC_53, DMAXC_51 > 
+) 26750 41950 T
+(
+) 25980 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_51, \(\() 25210 41950 T
+24440 41950 K (E2
+) 24440 41950 T
+22900 41950 K (DMAXC_50\)
+) 22900 41950 T
+(\() 22130 41950 81 L
+21360 41950 K (E5
+) 21360 41950 T
+19820 41950 K (DMAXC_51\)\) > 
+) 19820 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 19050 41950 T
+(
+) 18280 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_57, E5, DMAXC_51 > 
+) 17510 41950 T
+(>    < 123 > 
+) 16740 41950 T
+(> possible-data-dependency succeed for  < DMAXC_57, DMAXC_51 > 
+) 15970 41950 T
+(
+) 15200 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_90, E5, DMAXC_51, \(\() 14430 41950 T
+13660 41950 K (E2
+) 13660 41950 T
+12120 41950 K (DMAXC_50\)
+) 12120 41950 T
+(\() 11350 41950 81 L
+10580 41950 K (E5
+) 10580 41950 T
+9040 41950 K (DMAXC_51\)\) > 
+) 9040 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 8270 41950 T
+(
+) 7500 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_90, E5, DMAXC_51 > 
+) 6730 41950 T
+(>    < 124 > 
+) 5960 41950 T
+(> possible-data-dependency fail for  < DMAXC_90, DMAXC_51 > 
+) 5190 41950 T
+(
+) 4420 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_92, E5, DMAXC_51, \(\() 3650 41950 T
+2880 41950 K (E2
+) 2880 41950 T
+EndPage
+%%Page: 24 24
+(24) (final-dynamic) StartPage
+52930 3600 K (DMAXC_50\)
+) 52930 3600 T
+(\() 52160 3600 81 L
+51390 3600 K (E5
+) 51390 3600 T
+49850 3600 K (DMAXC_51\)\) > 
+) 49850 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 49080 3600 T
+(
+) 48310 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_92, E5, DMAXC_51 > 
+) 47540 3600 T
+(>    < 125 > 
+) 46770 3600 T
+(> possible-data-dependency fail for  < DMAXC_92, DMAXC_51 > 
+) 46000 3600 T
+(
+) 45230 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_8, E5, DMAXC_51, \(\(E) 44460 3600 T
+43690 3600 K (2
+) 43690 3600 T
+(D) 42920 3600 81 L
+42150 3600 K (MAXC_50\)
+) 42150 3600 T
+(\(E) 41380 3600 80 L
+40610 3600 K (5
+) 40610 3600 T
+(D) 39840 3600 81 L
+39070 3600 K (MAXC_51\)\) > 
+) 39070 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 38300 3600 T
+(
+) 37530 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_8, E5, DMAXC_51 > 
+) 36760 3600 T
+(>    < 126 > 
+) 35990 3600 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_8 > 
+) 35220 3600 T
+(
+) 34450 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_17, E5, DMAXC_51, \(\() 33680 3600 T
+32910 3600 K (E2
+) 32910 3600 T
+31370 3600 K (DMAXC_50\)
+) 31370 3600 T
+(\() 30600 3600 81 L
+29830 3600 K (E5
+) 29830 3600 T
+28290 3600 K (DMAXC_51\)\) > 
+) 28290 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 27520 3600 T
+(
+) 26750 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_17, E5, DMAXC_51 > 
+) 25980 3600 T
+(>    < 127 > 
+) 25210 3600 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_17 > 
+) 24440 3600 T
+(
+) 23670 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_19, E5, DMAXC_51, \(\() 22900 3600 T
+22130 3600 K (E2
+) 22130 3600 T
+20590 3600 K (DMAXC_50\)
+) 20590 3600 T
+(\() 19820 3600 81 L
+19050 3600 K (E5
+) 19050 3600 T
+17510 3600 K (DMAXC_51\)\) > 
+) 17510 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 16740 3600 T
+(
+) 15970 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_19, E5, DMAXC_51 > 
+) 15200 3600 T
+(>    < 128 > 
+) 14430 3600 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_19 > 
+) 13660 3600 T
+(
+) 12890 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_42, E5, DMAXC_51, \(\() 12120 3600 T
+11350 3600 K (E2
+) 11350 3600 T
+9810 3600 K (DMAXC_50\)
+) 9810 3600 T
+(\() 9040 3600 81 L
+8270 3600 K (E5
+) 8270 3600 T
+6730 3600 K (DMAXC_51\)\) > 
+) 6730 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 5960 3600 T
+(
+) 5190 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_42, E5, DMAXC_51 > 
+) 4420 3600 T
+(>    < 129 > 
+) 3650 3600 T
+(> possible-data-dependency fail for  < DMAXC_51, DMAXC_42 > 
+) 2880 3600 T
+(
+) 53700 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E5, DMAXC_51, \(\() 52930 41950 T
+52160 41950 K (E2
+) 52160 41950 T
+50620 41950 K (DMAXC_50\)
+) 50620 41950 T
+(\() 49850 41950 81 L
+49080 41950 K (E5
+) 49080 41950 T
+47540 41950 K (DMAXC_51\)\) > 
+) 47540 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 46770 41950 T
+(
+) 46000 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_49, E5, DMAXC_51 > 
+) 45230 41950 T
+(>    < 130 > 
+) 44460 41950 T
+(> possible-data-dependency succeed for  < DMAXC_51, DMAXC_49 > 
+) 43690 41950 T
+(
+) 42920 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_21, E5, DMAXC_51, \(\() 42150 41950 T
+41380 41950 K (E2
+) 41380 41950 T
+39840 41950 K (DMAXC_50\)
+) 39840 41950 T
+(\() 39070 41950 81 L
+38300 41950 K (E5
+) 38300 41950 T
+36760 41950 K (DMAXC_51\)\) > 
+) 36760 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 35990 41950 T
+(
+) 35220 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_21, E5, DMAXC_51 > 
+) 34450 41950 T
+(>    < 131 > 
+) 33680 41950 T
+(> possible-data-dependency fail for  < DMAXC_21, DMAXC_51 > 
+) 32910 41950 T
+(
+) 32140 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_51, \(\() 31370 41950 T
+30600 41950 K (E2
+) 30600 41950 T
+29060 41950 K (DMAXC_50\)
+) 29060 41950 T
+(\() 28290 41950 81 L
+27520 41950 K (E5
+) 27520 41950 T
+25980 41950 K (DMAXC_51\)\) > 
+) 25980 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 25210 41950 T
+(
+) 24440 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_47, E5, DMAXC_51 > 
+) 23670 41950 T
+(>    < 132 > 
+) 22900 41950 T
+(> possible-data-dependency succeed for  < DMAXC_47, DMAXC_51 > 
+) 22130 41950 T
+(> FC varleft out  < \(\(E3 DMAXC_47\) \(E1 DMAXC_49\)
+) 21360 41950 T
+(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 20590 41950 21 L
+(> DR varleft input  < \(\(E3 DMAXC_47\) \(E1 DMAXC_49\)
+) 19820 41950 T
+(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 19050 41950 23 L
+(> DR varleft out  < \(\(E1 DMAXC_49\) \(E3 DMAXC_47\)
+) 18280 41950 T
+(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 17510 41950 21 L
+(> Next Symbol, domain  < E1, \(DMAXC_49\) > 
+) 16740 41950 T
+(***** Visit State Description ***** 
+) 15970 41950 T
+(
+) 15200 41950 T
+(Node id: 14 
+) 14430 41950 1 L
+(Partial solution: \(\(E2 DMAXC_50\) \(E5 DMAXC_51\)\) 
+) 13660 41950 1 L
+(Symbol: E1 
+) 12890 41950 1 L
+(Symbol value: DMAXC_49 
+) 12120 41950 1 L
+(Domain: NIL 
+) 11350 41950 1 L
+(Variables left: \(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 
+) 10580 41950 1 L
+(Arc Cost: 0 
+) 9810 41950 1 L
+(Depth: 3 
+) 9040 41950 1 L
+(Max fail level: 0 
+) 8270 41950 1 L
+(Prev Node id: 13 
+) 7500 41950 1 L
+(Parent id: #\(BT-STATE 13 11 \(\(E2 DMAXC_50\)\) E5 DMAXC_51 NIL
+) 6730 41950 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 5960 41950 14 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 5190 41950 15 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 4420 41950 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 3650 41950 16 L
+(0 2 0
+) 2880 41950 14 L
+EndPage
+%%Page: 25 25
+(25) (final-dynamic) StartPage
+(#\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 53700 3600 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 52930 3600 16 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 52160 3600 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 51390 3600 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 50620 3600 17 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 49850 3600 18 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 49080 3600 18 L
+(DMAXC_93\)\)
+) 48310 3600 18 L
+(0 1 -1 NIL\)\) 
+) 47540 3600 16 L
+(
+) 46770 3600 T
+(
+) 46000 3600 T
+(> >>>>>> Node   < 14 > 
+) 45230 3600 T
+(> Current: symbol, value, partial  < E1, DMAXC_49, \(\(E2 DMAXC_50\)
+) 44460 3600 T
+(\(E5 DMAXC_51\)\) > 
+) 43690 3600 52 L
+(> Satisfy-p <symbol, value, partial>  < E1, DMAXC_49, \(\(E2 DMAXC_50\)
+) 42920 3600 T
+(\(E5 DMAXC_51\)\) > 
+) 42150 3600 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_50\) > 
+) 41380 3600 T
+(
+) 40610 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E2, DMAXC_50, \(\() 39840 3600 T
+39070 3600 K (E2
+) 39070 3600 T
+37530 3600 K (DMAXC_50\)
+) 37530 3600 T
+(\() 36760 3600 81 L
+35990 3600 K (E5
+) 35990 3600 T
+34450 3600 K (DMAXC_51\)\) > 
+) 34450 3600 T
+(>   Constraint :  < \(CONTROL-DATA-DEPENDENCY \(E2 E1\)\) > 
+) 33680 3600 T
+(
+) 32910 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_49, E2, DMAXC_50 > 
+) 32140 3600 T
+(>    < 133 > 
+) 31370 3600 T
+(> control-data-dependency succeed for  < DMAXC_50, DMAXC_49 > 
+) 30600 3600 T
+(>     inst-var-ck call  < \(E5 DMAXC_51\) > 
+) 29830 3600 T
+(
+) 29060 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E1, DMAXC_49, E5, DMAXC_51, \(\() 28290 3600 T
+27520 3600 K (E2
+) 27520 3600 T
+25980 3600 K (DMAXC_50\)
+) 25980 3600 T
+(\() 25210 3600 81 L
+24440 3600 K (E5
+) 24440 3600 T
+22900 3600 K (DMAXC_51\)\) > 
+) 22900 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E5 E1\) ID5-1\) > 
+) 22130 3600 T
+(
+) 21360 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E1, DMAXC_49, E5, DMAXC_51 > 
+) 20590 3600 T
+(>    < 134 > 
+) 19820 3600 T
+(> possible-data-dependency succeed for  < DMAXC_51, DMAXC_49 > 
+) 19050 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 18280 3600 T
+(> ------------------- 
+) 17510 3600 T
+(
+) 16740 3600 1 L
+(> > BACKTRACK POINT <  < 14 > 
+) 15970 3600 T
+(> ------------------- 
+) 15200 3600 T
+(
+) 14430 3600 1 L
+(> FC varleft input  < \(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 13660 3600 T
+(
+) 12890 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E1, DMAXC_49, \(\() 12120 3600 T
+11350 3600 K (E2
+) 11350 3600 T
+9810 3600 K (DMAXC_50\)
+) 9810 3600 T
+(\() 9040 3600 81 L
+8270 3600 K (E5
+) 8270 3600 T
+6730 3600 K (DMAXC_51\)
+) 6730 3600 T
+(\() 5960 3600 81 L
+5190 3600 K (E1
+) 5190 3600 T
+3650 3600 K (DMAXC_49\)\) > 
+) 3650 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 2880 3600 T
+(
+) 53700 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_52, E1, DMAXC_49 > 
+) 52930 41950 T
+(>    < 135 > 
+) 52160 41950 T
+(> possible-data-dependency succeed for  < DMAXC_52, DMAXC_49 > 
+) 51390 41950 T
+(
+) 50620 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E1, DMAXC_49, \(\() 49850 41950 T
+49080 41950 K (E2
+) 49080 41950 T
+47540 41950 K (DMAXC_50\)
+) 47540 41950 T
+(\() 46770 41950 81 L
+46000 41950 K (E5
+) 46000 41950 T
+44460 41950 K (DMAXC_51\)
+) 44460 41950 T
+(\() 43690 41950 81 L
+42920 41950 K (E1
+) 42920 41950 T
+41380 41950 K (DMAXC_49\)\) > 
+) 41380 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 40610 41950 T
+(
+) 39840 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_53, E1, DMAXC_49 > 
+) 39070 41950 T
+(>    < 136 > 
+) 38300 41950 T
+(> possible-data-dependency succeed for  < DMAXC_53, DMAXC_49 > 
+) 37530 41950 T
+(
+) 36760 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E1, DMAXC_49, \(\() 35990 41950 T
+35220 41950 K (E2
+) 35220 41950 T
+33680 41950 K (DMAXC_50\)
+) 33680 41950 T
+(\() 32910 41950 81 L
+32140 41950 K (E5
+) 32140 41950 T
+30600 41950 K (DMAXC_51\)
+) 30600 41950 T
+(\() 29830 41950 81 L
+29060 41950 K (E1
+) 29060 41950 T
+27520 41950 K (DMAXC_49\)\) > 
+) 27520 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 26750 41950 T
+(
+) 25980 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_57, E1, DMAXC_49 > 
+) 25210 41950 T
+(>    < 137 > 
+) 24440 41950 T
+(> possible-data-dependency succeed for  < DMAXC_57, DMAXC_49 > 
+) 23670 41950 T
+(
+) 22900 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E1, DMAXC_49, \(\() 22130 41950 T
+21360 41950 K (E2
+) 21360 41950 T
+19820 41950 K (DMAXC_50\)
+) 19820 41950 T
+(\() 19050 41950 81 L
+18280 41950 K (E5
+) 18280 41950 T
+16740 41950 K (DMAXC_51\)
+) 16740 41950 T
+(\() 15970 41950 81 L
+15200 41950 K (E1
+) 15200 41950 T
+13660 41950 K (DMAXC_49\)\) > 
+) 13660 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E1\) ID3-1\) > 
+) 12890 41950 T
+(
+) 12120 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_47, E1, DMAXC_49 > 
+) 11350 41950 T
+(>    < 138 > 
+) 10580 41950 T
+(> possible-data-dependency succeed for  < DMAXC_47, DMAXC_49 > 
+) 9810 41950 T
+(> FC varleft out  < \(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 9040 41950 T
+(> DR varleft input  < \(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 8270 41950 T
+(> DR varleft out  < \(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 7500 41950 T
+(> Next Symbol, domain  < E3, \(DMAXC_47\) > 
+) 6730 41950 T
+(***** Visit State Description ***** 
+) 5960 41950 T
+(
+) 5190 41950 T
+(Node id: 15 
+) 4420 41950 1 L
+(Partial solution: \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\)\) 
+) 3650 41950 1 L
+(Symbol: E3 
+) 2880 41950 1 L
+EndPage
+%%Page: 26 26
+(26) (final-dynamic) StartPage
+(Symbol value: DMAXC_47 
+) 53700 3600 1 L
+(Domain: NIL 
+) 52930 3600 1 L
+(Variables left: \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 
+) 52160 3600 1 L
+(Arc Cost: 0 
+) 51390 3600 1 L
+(Depth: 4 
+) 50620 3600 1 L
+(Max fail level: 0 
+) 49850 3600 1 L
+(Prev Node id: 14 
+) 49080 3600 1 L
+(Parent id: #\(BT-STATE 14 13 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\)\) E1 DMAXC_49 NIL
+) 48310 3600 1 L
+(\(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 3 0
+) 47540 3600 14 L
+(#\(BT-STATE 13 11 \(\(E2 DMAXC_50\)\) E5 DMAXC_51 NIL
+) 46770 3600 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 46000 3600 16 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 45230 3600 17 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 44460 3600 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 43690 3600 18 L
+(0 2 -1
+) 42920 3600 16 L
+(#\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 42150 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 41380 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 40610 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 39840 3600 20 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 39070 3600 19 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 38300 3600 20 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 37530 3600 20 L
+(DMAXC_93\)\)
+) 36760 3600 20 L
+(0 1 -1 NIL\)\)\) 
+) 35990 3600 18 L
+(
+) 35220 3600 T
+(
+) 34450 3600 T
+(> >>>>>> Node   < 15 > 
+) 33680 3600 T
+(> Current: symbol, value, partial  < E3, DMAXC_47, \(\(E2 DMAXC_50\)
+) 32910 3600 T
+(\(E5 DMAXC_51\)
+) 32140 3600 52 L
+(\(E1 DMAXC_49\)\) > 
+) 31370 3600 52 L
+(> Satisfy-p <symbol, value, partial>  < E3, DMAXC_47, \(\(E2 DMAXC_50\)
+) 30600 3600 T
+(\(E5 DMAXC_51\)
+) 29830 3600 55 L
+(\(E1 DMAXC_49\)\) > 
+) 29060 3600 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_50\) > 
+) 28290 3600 T
+(
+) 27520 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E2, DMAXC_50, \(\() 26750 3600 T
+25980 3600 K (E2
+) 25980 3600 T
+24440 3600 K (DMAXC_50\)
+) 24440 3600 T
+(\() 23670 3600 81 L
+22900 3600 K (E5
+) 22900 3600 T
+21360 3600 K (DMAXC_51\)
+) 21360 3600 T
+(\() 20590 3600 81 L
+19820 3600 K (E1
+) 19820 3600 T
+18280 3600 K (DMAXC_49\)\) > 
+) 18280 3600 T
+(> No arc constraints  < T > 
+) 17510 3600 T
+(>     inst-var-ck call  < \(E5 DMAXC_51\) > 
+) 16740 3600 T
+(
+) 15970 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E5, DMAXC_51, \(\() 15200 3600 T
+14430 3600 K (E2
+) 14430 3600 T
+12890 3600 K (DMAXC_50\)
+) 12890 3600 T
+(\() 12120 3600 81 L
+11350 3600 K (E5
+) 11350 3600 T
+9810 3600 K (DMAXC_51\)
+) 9810 3600 T
+(\() 9040 3600 81 L
+8270 3600 K (E1
+) 8270 3600 T
+6730 3600 K (DMAXC_49\)\) > 
+) 6730 3600 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E5\) ID3-1\) > 
+) 5960 3600 T
+(
+) 5190 3600 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_47, E5, DMAXC_51 > 
+) 4420 3600 T
+(>    < 139 > 
+) 3650 3600 T
+(> possible-data-dependency succeed for  < DMAXC_47, DMAXC_51 > 
+) 2880 3600 T
+(>     inst-var-ck call  < \(E1 DMAXC_49\) > 
+) 53700 41950 T
+(
+) 52930 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E3, DMAXC_47, E1, DMAXC_49, \(\() 52160 41950 T
+51390 41950 K (E2
+) 51390 41950 T
+49850 41950 K (DMAXC_50\)
+) 49850 41950 T
+(\() 49080 41950 81 L
+48310 41950 K (E5
+) 48310 41950 T
+46770 41950 K (DMAXC_51\)
+) 46770 41950 T
+(\() 46000 41950 81 L
+45230 41950 K (E1
+) 45230 41950 T
+43690 41950 K (DMAXC_49\)\) > 
+) 43690 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E3 E1\) ID3-1\) > 
+) 42920 41950 T
+(
+) 42150 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E3, DMAXC_47, E1, DMAXC_49 > 
+) 41380 41950 T
+(>    < 140 > 
+) 40610 41950 T
+(> possible-data-dependency succeed for  < DMAXC_47, DMAXC_49 > 
+) 39840 41950 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 39070 41950 T
+(> ------------------- 
+) 38300 41950 T
+(
+) 37530 41950 1 L
+(> > BACKTRACK POINT <  < 15 > 
+) 36760 41950 T
+(> ------------------- 
+) 35990 41950 T
+(
+) 35220 41950 1 L
+(> FC varleft input  < \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 34450 41950 T
+(
+) 33680 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E3, DMAXC_47, \(\() 32910 41950 T
+32140 41950 K (E2
+) 32140 41950 T
+30600 41950 K (DMAXC_50\)
+) 30600 41950 T
+(\() 29830 41950 81 L
+29060 41950 K (E5
+) 29060 41950 T
+27520 41950 K (DMAXC_51\)
+) 27520 41950 T
+(\() 26750 41950 81 L
+25980 41950 K (E1
+) 25980 41950 T
+24440 41950 K (DMAXC_49\)
+) 24440 41950 T
+(\() 23670 41950 81 L
+22900 41950 K (E3
+) 22900 41950 T
+21360 41950 K (DMAXC_47\)\) > 
+) 21360 41950 T
+(> No arc constraints  < T > 
+) 20590 41950 T
+(
+) 19820 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E3, DMAXC_47, \(\() 19050 41950 T
+18280 41950 K (E2
+) 18280 41950 T
+16740 41950 K (DMAXC_50\)
+) 16740 41950 T
+(\() 15970 41950 81 L
+15200 41950 K (E5
+) 15200 41950 T
+13660 41950 K (DMAXC_51\)
+) 13660 41950 T
+(\() 12890 41950 81 L
+12120 41950 K (E1
+) 12120 41950 T
+10580 41950 K (DMAXC_49\)
+) 10580 41950 T
+(\() 9810 41950 81 L
+9040 41950 K (E3
+) 9040 41950 T
+7500 41950 K (DMAXC_47\)\) > 
+) 7500 41950 T
+(> No arc constraints  < T > 
+) 6730 41950 T
+(
+) 5960 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E3, DMAXC_47, \(\() 5190 41950 T
+4420 41950 K (E2
+) 4420 41950 T
+2880 41950 K (DMAXC_50\)
+) 2880 41950 T
+EndPage
+%%Page: 27 27
+(27) (final-dynamic) StartPage
+(\() 53700 3600 81 L
+52930 3600 K (E5
+) 52930 3600 T
+51390 3600 K (DMAXC_51\)
+) 51390 3600 T
+(\() 50620 3600 81 L
+49850 3600 K (E1
+) 49850 3600 T
+48310 3600 K (DMAXC_49\)
+) 48310 3600 T
+(\() 47540 3600 81 L
+46770 3600 K (E3
+) 46770 3600 T
+45230 3600 K (DMAXC_47\)\) > 
+) 45230 3600 T
+(> No arc constraints  < T > 
+) 44460 3600 T
+(> FC varleft out  < \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 43690 3600 T
+(> DR varleft input  < \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 42920 3600 T
+(> DR varleft out  < \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) > 
+) 42150 3600 T
+(> Next Symbol, domain  < E4, \(DMAXC_52 DMAXC_53 DMAXC_57\) > 
+) 41380 3600 T
+(***** Visit State Description ***** 
+) 40610 3600 T
+(
+) 39840 3600 T
+(Node id: 16 
+) 39070 3600 1 L
+(Partial solution: \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\) \(E3 DMAXC_47\)\) 
+) 38300 3600 1 L
+(Symbol: E4 
+) 37530 3600 1 L
+(Symbol value: DMAXC_52 
+) 36760 3600 1 L
+(Domain: \(DMAXC_53 DMAXC_57\) 
+) 35990 3600 1 L
+(Variables left: NIL 
+) 35220 3600 1 L
+(Arc Cost: 0 
+) 34450 3600 1 L
+(Depth: 5 
+) 33680 3600 1 L
+(Max fail level: 0 
+) 32910 3600 1 L
+(Prev Node id: 15 
+) 32140 3600 1 L
+(Parent id: #\(BT-STATE 15 14 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\)\) E3
+) 31370 3600 1 L
+(DMAXC_47 NIL \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 4 0
+) 30600 3600 14 L
+(#\(BT-STATE 14 13 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\)\) E1 DMAXC_49 NIL
+) 29830 3600 14 L
+(\(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 3 -1
+) 29060 3600 16 L
+(#\(BT-STATE 13 11 \(\(E2 DMAXC_50\)\) E5 DMAXC_51 NIL
+) 28290 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 27520 3600 18 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 26750 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 25980 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 25210 3600 20 L
+(0 2 -1
+) 24440 3600 18 L
+(#\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 23670 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 22900 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 22130 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 21360 3600 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 20590 3600 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 19820 3600 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 19050 3600 22 L
+(DMAXC_93\)\)
+) 18280 3600 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 17510 3600 20 L
+(
+) 16740 3600 T
+(
+) 15970 3600 T
+(> >>>>>> Node   < 16 > 
+) 15200 3600 T
+(> Current: symbol, value, partial  < E4, DMAXC_52, \(\(E2 DMAXC_50\)
+) 14430 3600 T
+(\(E5 DMAXC_51\)
+) 13660 3600 52 L
+(\(E1 DMAXC_49\)
+) 12890 3600 52 L
+(\(E3 DMAXC_47\)\) > 
+) 12120 3600 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_52, \(\(E2 DMAXC_50\)
+) 11350 3600 T
+(\(E5 DMAXC_51\)
+) 10580 3600 55 L
+(\(E1 DMAXC_49\)
+) 9810 3600 55 L
+(\(E3 DMAXC_47\)\) > 
+) 9040 3600 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_50\) > 
+) 8270 3600 T
+(
+) 7500 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E2, DMAXC_50, \(\() 6730 3600 T
+5960 3600 K (E2
+) 5960 3600 T
+4420 3600 K (DMAXC_50\)
+) 4420 3600 T
+(\() 3650 3600 81 L
+2880 3600 K (E5
+) 2880 3600 T
+52930 41950 K (DMAXC_51\)
+) 52930 41950 T
+(\() 52160 41950 81 L
+51390 41950 K (E1
+) 51390 41950 T
+49850 41950 K (DMAXC_49\)
+) 49850 41950 T
+(\() 49080 41950 81 L
+48310 41950 K (E3
+) 48310 41950 T
+46770 41950 K (DMAXC_47\)\) > 
+) 46770 41950 T
+(> No arc constraints  < T > 
+) 46000 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_51\) > 
+) 45230 41950 T
+(
+) 44460 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E5, DMAXC_51, \(\() 43690 41950 T
+42920 41950 K (E2
+) 42920 41950 T
+41380 41950 K (DMAXC_50\)
+) 41380 41950 T
+(\() 40610 41950 81 L
+39840 41950 K (E5
+) 39840 41950 T
+38300 41950 K (DMAXC_51\)
+) 38300 41950 T
+(\() 37530 41950 81 L
+36760 41950 K (E1
+) 36760 41950 T
+35220 41950 K (DMAXC_49\)
+) 35220 41950 T
+(\() 34450 41950 81 L
+33680 41950 K (E3
+) 33680 41950 T
+32140 41950 K (DMAXC_47\)\) > 
+) 32140 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 31370 41950 T
+(
+) 30600 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_52, E5, DMAXC_51 > 
+) 29830 41950 T
+(>    < 141 > 
+) 29060 41950 T
+(> possible-data-dependency succeed for  < DMAXC_52, DMAXC_51 > 
+) 28290 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_49\) > 
+) 27520 41950 T
+(
+) 26750 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E1, DMAXC_49, \(\() 25980 41950 T
+25210 41950 K (E2
+) 25210 41950 T
+23670 41950 K (DMAXC_50\)
+) 23670 41950 T
+(\() 22900 41950 81 L
+22130 41950 K (E5
+) 22130 41950 T
+20590 41950 K (DMAXC_51\)
+) 20590 41950 T
+(\() 19820 41950 81 L
+19050 41950 K (E1
+) 19050 41950 T
+17510 41950 K (DMAXC_49\)
+) 17510 41950 T
+(\() 16740 41950 81 L
+15970 41950 K (E3
+) 15970 41950 T
+14430 41950 K (DMAXC_47\)\) > 
+) 14430 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 13660 41950 T
+(
+) 12890 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_52, E1, DMAXC_49 > 
+) 12120 41950 T
+(>    < 142 > 
+) 11350 41950 T
+(> possible-data-dependency succeed for  < DMAXC_52, DMAXC_49 > 
+) 10580 41950 T
+(>     inst-var-ck call  < \(E3 DMAXC_47\) > 
+) 9810 41950 T
+(
+) 9040 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_52, E3, DMAXC_47, \(\() 8270 41950 T
+7500 41950 K (E2
+) 7500 41950 T
+5960 41950 K (DMAXC_50\)
+) 5960 41950 T
+(\() 5190 41950 81 L
+4420 41950 K (E5
+) 4420 41950 T
+2880 41950 K (DMAXC_51\)
+) 2880 41950 T
+EndPage
+%%Page: 28 28
+(28) (final-dynamic) StartPage
+(\() 53700 3600 81 L
+52930 3600 K (E1
+) 52930 3600 T
+51390 3600 K (DMAXC_49\)
+) 51390 3600 T
+(\() 50620 3600 81 L
+49850 3600 K (E3
+) 49850 3600 T
+48310 3600 K (DMAXC_47\)\) > 
+) 48310 3600 T
+(> No arc constraints  < T > 
+) 47540 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 46770 3600 T
+(> -------------------------- 
+) 46000 3600 T
+(
+) 45230 3600 1 L
+(> Solution found  < 16 > 
+) 44460 3600 T
+(> -------------------------- 
+) 43690 3600 T
+(
+) 42920 3600 1 L
+(***** Visit State Description ***** 
+) 42150 3600 T
+(
+) 41380 3600 T
+(Node id: 17 
+) 40610 3600 1 L
+(Partial solution: \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\) \(E3 DMAXC_47\)\) 
+) 39840 3600 1 L
+(Symbol: E4 
+) 39070 3600 1 L
+(Symbol value: DMAXC_53 
+) 38300 3600 1 L
+(Domain: \(DMAXC_57\) 
+) 37530 3600 1 L
+(Variables left: NIL 
+) 36760 3600 1 L
+(Arc Cost: 0 
+) 35990 3600 1 L
+(Depth: 5 
+) 35220 3600 1 L
+(Max fail level: 0 
+) 34450 3600 1 L
+(Prev Node id: 15 
+) 33680 3600 1 L
+(Parent id: #\(BT-STATE 15 14 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\)\) E3
+) 32910 3600 1 L
+(DMAXC_47 NIL \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 4 -1
+) 32140 3600 14 L
+(#\(BT-STATE 14 13 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\)\) E1 DMAXC_49 NIL
+) 31370 3600 14 L
+(\(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 3 -1
+) 30600 3600 16 L
+(#\(BT-STATE 13 11 \(\(E2 DMAXC_50\)\) E5 DMAXC_51 NIL
+) 29830 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 29060 3600 18 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 28290 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 27520 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 26750 3600 20 L
+(0 2 -1
+) 25980 3600 18 L
+(#\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 25210 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 24440 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 23670 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 22900 3600 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 22130 3600 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 21360 3600 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 20590 3600 22 L
+(DMAXC_93\)\)
+) 19820 3600 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 19050 3600 20 L
+(
+) 18280 3600 T
+(
+) 17510 3600 T
+(> >>>>>> Node   < 17 > 
+) 16740 3600 T
+(> Current: symbol, value, partial  < E4, DMAXC_53, \(\(E2 DMAXC_50\)
+) 15970 3600 T
+(\(E5 DMAXC_51\)
+) 15200 3600 52 L
+(\(E1 DMAXC_49\)
+) 14430 3600 52 L
+(\(E3 DMAXC_47\)\) > 
+) 13660 3600 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_53, \(\(E2 DMAXC_50\)
+) 12890 3600 T
+(\(E5 DMAXC_51\)
+) 12120 3600 55 L
+(\(E1 DMAXC_49\)
+) 11350 3600 55 L
+(\(E3 DMAXC_47\)\) > 
+) 10580 3600 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_50\) > 
+) 9810 3600 T
+(
+) 9040 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E2, DMAXC_50, \(\() 8270 3600 T
+7500 3600 K (E2
+) 7500 3600 T
+5960 3600 K (DMAXC_50\)
+) 5960 3600 T
+(\() 5190 3600 81 L
+4420 3600 K (E5
+) 4420 3600 T
+2880 3600 K (DMAXC_51\)
+) 2880 3600 T
+(\() 53700 41950 81 L
+52930 41950 K (E1
+) 52930 41950 T
+51390 41950 K (DMAXC_49\)
+) 51390 41950 T
+(\() 50620 41950 81 L
+49850 41950 K (E3
+) 49850 41950 T
+48310 41950 K (DMAXC_47\)\) > 
+) 48310 41950 T
+(> No arc constraints  < T > 
+) 47540 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_51\) > 
+) 46770 41950 T
+(
+) 46000 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E5, DMAXC_51, \(\() 45230 41950 T
+44460 41950 K (E2
+) 44460 41950 T
+42920 41950 K (DMAXC_50\)
+) 42920 41950 T
+(\() 42150 41950 81 L
+41380 41950 K (E5
+) 41380 41950 T
+39840 41950 K (DMAXC_51\)
+) 39840 41950 T
+(\() 39070 41950 81 L
+38300 41950 K (E1
+) 38300 41950 T
+36760 41950 K (DMAXC_49\)
+) 36760 41950 T
+(\() 35990 41950 81 L
+35220 41950 K (E3
+) 35220 41950 T
+33680 41950 K (DMAXC_47\)\) > 
+) 33680 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 32910 41950 T
+(
+) 32140 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_53, E5, DMAXC_51 > 
+) 31370 41950 T
+(>    < 143 > 
+) 30600 41950 T
+(> possible-data-dependency succeed for  < DMAXC_53, DMAXC_51 > 
+) 29830 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_49\) > 
+) 29060 41950 T
+(
+) 28290 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E1, DMAXC_49, \(\() 27520 41950 T
+26750 41950 K (E2
+) 26750 41950 T
+25210 41950 K (DMAXC_50\)
+) 25210 41950 T
+(\() 24440 41950 81 L
+23670 41950 K (E5
+) 23670 41950 T
+22130 41950 K (DMAXC_51\)
+) 22130 41950 T
+(\() 21360 41950 81 L
+20590 41950 K (E1
+) 20590 41950 T
+19050 41950 K (DMAXC_49\)
+) 19050 41950 T
+(\() 18280 41950 81 L
+17510 41950 K (E3
+) 17510 41950 T
+15970 41950 K (DMAXC_47\)\) > 
+) 15970 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 15200 41950 T
+(
+) 14430 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_53, E1, DMAXC_49 > 
+) 13660 41950 T
+(>    < 144 > 
+) 12890 41950 T
+(> possible-data-dependency succeed for  < DMAXC_53, DMAXC_49 > 
+) 12120 41950 T
+(>     inst-var-ck call  < \(E3 DMAXC_47\) > 
+) 11350 41950 T
+(
+) 10580 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_53, E3, DMAXC_47, \(\() 9810 41950 T
+9040 41950 K (E2
+) 9040 41950 T
+7500 41950 K (DMAXC_50\)
+) 7500 41950 T
+(\() 6730 41950 81 L
+5960 41950 K (E5
+) 5960 41950 T
+4420 41950 K (DMAXC_51\)
+) 4420 41950 T
+(\() 3650 41950 81 L
+2880 41950 K (E1
+) 2880 41950 T
+EndPage
+%%Page: 29 29
+(29) (final-dynamic) StartPage
+52930 3600 K (DMAXC_49\)
+) 52930 3600 T
+(\() 52160 3600 81 L
+51390 3600 K (E3
+) 51390 3600 T
+49850 3600 K (DMAXC_47\)\) > 
+) 49850 3600 T
+(> No arc constraints  < T > 
+) 49080 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 48310 3600 T
+(> -------------------------- 
+) 47540 3600 T
+(
+) 46770 3600 1 L
+(> Solution found  < 17 > 
+) 46000 3600 T
+(> -------------------------- 
+) 45230 3600 T
+(
+) 44460 3600 1 L
+(***** Visit State Description ***** 
+) 43690 3600 T
+(
+) 42920 3600 T
+(Node id: 18 
+) 42150 3600 1 L
+(Partial solution: \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\) \(E3 DMAXC_47\)\) 
+) 41380 3600 1 L
+(Symbol: E4 
+) 40610 3600 1 L
+(Symbol value: DMAXC_57 
+) 39840 3600 1 L
+(Domain: NIL 
+) 39070 3600 1 L
+(Variables left: NIL 
+) 38300 3600 1 L
+(Arc Cost: 0 
+) 37530 3600 1 L
+(Depth: 5 
+) 36760 3600 1 L
+(Max fail level: 0 
+) 35990 3600 1 L
+(Prev Node id: 15 
+) 35220 3600 1 L
+(Parent id: #\(BT-STATE 15 14 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\)\) E3
+) 34450 3600 1 L
+(DMAXC_47 NIL \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 4 -1
+) 33680 3600 14 L
+(#\(BT-STATE 14 13 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\)\) E1 DMAXC_49 NIL
+) 32910 3600 14 L
+(\(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 3 -1
+) 32140 3600 16 L
+(#\(BT-STATE 13 11 \(\(E2 DMAXC_50\)\) E5 DMAXC_51 NIL
+) 31370 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 30600 3600 18 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 29830 3600 19 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 29060 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 28290 3600 20 L
+(0 2 -1
+) 27520 3600 18 L
+(#\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 26750 3600 18 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 25980 3600 20 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 25210 3600 21 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 24440 3600 22 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 23670 3600 21 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 22900 3600 22 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 22130 3600 22 L
+(DMAXC_93\)\)
+) 21360 3600 22 L
+(0 1 -1 NIL\)\)\)\) 
+) 20590 3600 20 L
+(
+) 19820 3600 T
+(
+) 19050 3600 T
+(> >>>>>> Node   < 18 > 
+) 18280 3600 T
+(> Current: symbol, value, partial  < E4, DMAXC_57, \(\(E2 DMAXC_50\)
+) 17510 3600 T
+(\(E5 DMAXC_51\)
+) 16740 3600 52 L
+(\(E1 DMAXC_49\)
+) 15970 3600 52 L
+(\(E3 DMAXC_47\)\) > 
+) 15200 3600 52 L
+(> Satisfy-p <symbol, value, partial>  < E4, DMAXC_57, \(\(E2 DMAXC_50\)
+) 14430 3600 T
+(\(E5 DMAXC_51\)
+) 13660 3600 55 L
+(\(E1 DMAXC_49\)
+) 12890 3600 55 L
+(\(E3 DMAXC_47\)\) > 
+) 12120 3600 55 L
+(>     inst-var-ck call  < \(E2 DMAXC_50\) > 
+) 11350 3600 T
+(
+) 10580 3600 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E2, DMAXC_50, \(\() 9810 3600 T
+9040 3600 K (E2
+) 9040 3600 T
+7500 3600 K (DMAXC_50\)
+) 7500 3600 T
+(\() 6730 3600 81 L
+5960 3600 K (E5
+) 5960 3600 T
+4420 3600 K (DMAXC_51\)
+) 4420 3600 T
+(\() 3650 3600 81 L
+2880 3600 K (E1
+) 2880 3600 T
+52930 41950 K (DMAXC_49\)
+) 52930 41950 T
+(\() 52160 41950 81 L
+51390 41950 K (E3
+) 51390 41950 T
+49850 41950 K (DMAXC_47\)\) > 
+) 49850 41950 T
+(> No arc constraints  < T > 
+) 49080 41950 T
+(>     inst-var-ck call  < \(E5 DMAXC_51\) > 
+) 48310 41950 T
+(
+) 47540 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E5, DMAXC_51, \(\() 46770 41950 T
+46000 41950 K (E2
+) 46000 41950 T
+44460 41950 K (DMAXC_50\)
+) 44460 41950 T
+(\() 43690 41950 81 L
+42920 41950 K (E5
+) 42920 41950 T
+41380 41950 K (DMAXC_51\)
+) 41380 41950 T
+(\() 40610 41950 81 L
+39840 41950 K (E1
+) 39840 41950 T
+38300 41950 K (DMAXC_49\)
+) 38300 41950 T
+(\() 37530 41950 81 L
+36760 41950 K (E3
+) 36760 41950 T
+35220 41950 K (DMAXC_47\)\) > 
+) 35220 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E5\) ID4-2\) > 
+) 34450 41950 T
+(
+) 33680 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_57, E5, DMAXC_51 > 
+) 32910 41950 T
+(>    < 145 > 
+) 32140 41950 T
+(> possible-data-dependency succeed for  < DMAXC_57, DMAXC_51 > 
+) 31370 41950 T
+(>     inst-var-ck call  < \(E1 DMAXC_49\) > 
+) 30600 41950 T
+(
+) 29830 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E1, DMAXC_49, \(\() 29060 41950 T
+28290 41950 K (E2
+) 28290 41950 T
+26750 41950 K (DMAXC_50\)
+) 26750 41950 T
+(\() 25980 41950 81 L
+25210 41950 K (E5
+) 25210 41950 T
+23670 41950 K (DMAXC_51\)
+) 23670 41950 T
+(\() 22900 41950 81 L
+22130 41950 K (E1
+) 22130 41950 T
+20590 41950 K (DMAXC_49\)
+) 20590 41950 T
+(\() 19820 41950 81 L
+19050 41950 K (E3
+) 19050 41950 T
+17510 41950 K (DMAXC_47\)\) > 
+) 17510 41950 T
+(>   Constraint :  < \(POSSIBLE-DATA-DEPENDENCY \(E4 E1\) ID4-2\) > 
+) 16740 41950 T
+(
+) 15970 41950 T
+(>   \(TS1 S1\) \(TS2 S2\)  < E4, DMAXC_57, E1, DMAXC_49 > 
+) 15200 41950 T
+(>    < 146 > 
+) 14430 41950 T
+(> possible-data-dependency succeed for  < DMAXC_57, DMAXC_49 > 
+) 13660 41950 T
+(>     inst-var-ck call  < \(E3 DMAXC_47\) > 
+) 12890 41950 T
+(
+) 12120 41950 T
+(> Consistent-p <ts1 sit1 ts2 sit2 partial-sol> ?  < E4, DMAXC_57, E3, DMAXC_47, \(\() 11350 41950 T
+10580 41950 K (E2
+) 10580 41950 T
+9040 41950 K (DMAXC_50\)
+) 9040 41950 T
+(\() 8270 41950 81 L
+7500 41950 K (E5
+) 7500 41950 T
+5960 41950 K (DMAXC_51\)
+) 5960 41950 T
+(\() 5190 41950 81 L
+4420 41950 K (E1
+) 4420 41950 T
+2880 41950 K (DMAXC_49\)
+) 2880 41950 T
+EndPage
+%%Page: 30 30
+(30) (final-dynamic) StartPage
+(\() 53700 3600 81 L
+52930 3600 K (E3
+) 52930 3600 T
+51390 3600 K (DMAXC_47\)\) > 
+) 51390 3600 T
+(> No arc constraints  < T > 
+) 50620 3600 T
+(> SP results s-p, sp-fail-level  < T, 0 > 
+) 49850 3600 T
+(> -------------------------- 
+) 49080 3600 T
+(
+) 48310 3600 1 L
+(> Solution found  < 18 > 
+) 47540 3600 T
+(> -------------------------- 
+) 46770 3600 T
+(
+) 46000 3600 1 L
+(> Domain exhausted for  < E4 > 
+) 45230 3600 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 44460 3600 T
+(
+) 43690 3600 T
+(Node id: 15 
+) 42920 3600 1 L
+(Partial solution: \(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\)\) 
+) 42150 3600 1 L
+(Symbol: E3 
+) 41380 3600 1 L
+(Symbol value: DMAXC_47 
+) 40610 3600 1 L
+(Domain: NIL 
+) 39840 3600 1 L
+(Variables left: \(\(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 
+) 39070 3600 1 L
+(Arc Cost: 0 
+) 38300 3600 1 L
+(Depth: 4 
+) 37530 3600 1 L
+(Max fail level: -1 
+) 36760 3600 1 L
+(Prev Node id: 14 
+) 35990 3600 1 L
+(Parent id: #\(BT-STATE 14 13 \(\(E2 DMAXC_50\) \(E5 DMAXC_51\)\) E1 DMAXC_49 NIL
+) 35220 3600 1 L
+(\(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 0 3 -1
+) 34450 3600 14 L
+(#\(BT-STATE 13 11 \(\(E2 DMAXC_50\)\) E5 DMAXC_51 NIL
+) 33680 3600 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 32910 3600 16 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 32140 3600 17 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 31370 3600 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 30600 3600 18 L
+(0 2 -1
+) 29830 3600 16 L
+(#\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 29060 3600 16 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 28290 3600 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 27520 3600 19 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 26750 3600 20 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 25980 3600 19 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 25210 3600 20 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 24440 3600 20 L
+(DMAXC_93\)\)
+) 23670 3600 20 L
+(0 1 -1 NIL\)\)\) 
+) 22900 3600 18 L
+(
+) 22130 3600 T
+(> Domain exhausted for  < E3 > 
+) 21360 3600 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 20590 3600 T
+(
+) 19820 3600 T
+(Node id: 14 
+) 19050 3600 1 L
+(Partial solution: \(\(E2 DMAXC_50\) \(E5 DMAXC_51\)\) 
+) 18280 3600 1 L
+(Symbol: E1 
+) 17510 3600 1 L
+(Symbol value: DMAXC_49 
+) 16740 3600 1 L
+(Domain: NIL 
+) 15970 3600 1 L
+(Variables left: \(\(E3 DMAXC_47\) \(E4 DMAXC_52 DMAXC_53 DMAXC_57\)\) 
+) 15200 3600 1 L
+(Arc Cost: 0 
+) 14430 3600 1 L
+(Depth: 3 
+) 13660 3600 1 L
+(Max fail level: -1 
+) 12890 3600 1 L
+(Prev Node id: 13 
+) 12120 3600 1 L
+(Parent id: #\(BT-STATE 13 11 \(\(E2 DMAXC_50\)\) E5 DMAXC_51 NIL
+) 11350 3600 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\)
+) 10580 3600 14 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 9810 3600 15 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 9040 3600 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\)
+) 8270 3600 16 L
+(0 2 -1
+) 7500 3600 14 L
+(#\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 6730 3600 14 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 5960 3600 16 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 5190 3600 17 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 4420 3600 18 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 3650 3600 17 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 2880 3600 18 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 53700 41950 18 L
+(DMAXC_93\)\)
+) 52930 41950 18 L
+(0 1 -1 NIL\)\) 
+) 52160 41950 16 L
+(
+) 51390 41950 T
+(> Domain exhausted for  < E1 > 
+) 50620 41950 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 49850 41950 T
+(
+) 49080 41950 T
+(Node id: 13 
+) 48310 41950 1 L
+(Partial solution: \(\(E2 DMAXC_50\)\) 
+) 47540 41950 1 L
+(Symbol: E5 
+) 46770 41950 1 L
+(Symbol value: DMAXC_51 
+) 46000 41950 1 L
+(Domain: NIL 
+) 45230 41950 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\)
+) 44460 41950 1 L
+(\(E1 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_42 DMAXC_49\)
+) 43690 41950 18 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 42920 41950 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)\) 
+) 42150 41950 19 L
+(Arc Cost: 0 
+) 41380 41950 1 L
+(Depth: 2 
+) 40610 41950 1 L
+(Max fail level: -1 
+) 39840 41950 1 L
+(Prev Node id: 11 
+) 39070 41950 1 L
+(Parent id: #\(BT-STATE 11 NIL NIL E2 DMAXC_50 NIL
+) 38300 41950 1 L
+(\(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 37530 41950 14 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 36760 41950 15 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 35990 41950 16 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23 DMAXC_28
+) 35220 41950 15 L
+(DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66 DMAXC_70 DMAXC_74
+) 34450 41950 16 L
+(DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91 DMAXC_93\)\)
+) 33680 41950 16 L
+(0 1 -1 NIL\) 
+) 32910 41950 14 L
+(
+) 32140 41950 T
+(> Domain exhausted for  < E5 > 
+) 31370 41950 T
+(***** BACKTRACK TO THIS NODE State Description ***** 
+) 30600 41950 T
+(
+) 29830 41950 T
+(Node id: 11 
+) 29060 41950 1 L
+(Partial solution: NIL 
+) 28290 41950 1 L
+(Symbol: E2 
+) 27520 41950 1 L
+(Symbol value: DMAXC_50 
+) 26750 41950 1 L
+(Domain: NIL 
+) 25980 41950 1 L
+(Variables left: \(\(E3 DMAXC_21 DMAXC_47\) \(E5 DMAXC_25 DMAXC_51\)
+) 25210 41950 1 L
+(\(E4 DMAXC_12 DMAXC_26 DMAXC_27 DMAXC_29 DMAXC_31 DMAXC_32
+) 24440 41950 18 L
+(DMAXC_52 DMAXC_53 DMAXC_57 DMAXC_90 DMAXC_92\)
+) 23670 41950 19 L
+(\(E1 DMAXC_2 DMAXC_3 DMAXC_8 DMAXC_17 DMAXC_19 DMAXC_23
+) 22900 41950 18 L
+(DMAXC_28 DMAXC_42 DMAXC_49 DMAXC_56 DMAXC_62 DMAXC_66
+) 22130 41950 19 L
+(DMAXC_70 DMAXC_74 DMAXC_77 DMAXC_83 DMAXC_89 DMAXC_91
+) 21360 41950 19 L
+(DMAXC_93\)\) 
+) 20590 41950 19 L
+(Arc Cost: 0 
+) 19820 41950 1 L
+(Depth: 1 
+) 19050 41950 1 L
+(Max fail level: -1 
+) 18280 41950 1 L
+(Prev Node id: NONE 
+) 17510 41950 1 L
+(Parent id: NIL 
+) 16740 41950 1 L
+(
+) 15970 41950 T
+(> Domain exhausted for  < E2 > 
+) 15200 41950 T
+(> Done: BT Node w/o parent  < 11 > 
+) 14430 41950 T
+(0        bt/ T/ NIL/ T/ T    DEFAULT     7.2     475     146     10 / 18    0.05  ) 13660 41950 T
+12890 41950 K (3.417   3.467    8       0    0/0       160        16       T/0.0       RANDOM  ) 12890 41950 2 L
+12120 41950 K (RANDOM
+) 12120 41950 1 L
+(
+) 11350 41950 T
+(Successful constraint checks: 67  Unsuccessful constraint checks 79 
+) 10580 41950 T
+(\(\(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\) \(E3 DMAXC_47\) \(E4 DMAXC_57\)\)
+) 9810 41950 T
+(\(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\) \(E3 DMAXC_47\) \(E4 DMAXC_53\)\)
+) 9040 41950 1 L
+(\(\(E2 DMAXC_50\) \(E5 DMAXC_51\) \(E1 DMAXC_49\) \(E3 DMAXC_47\) \(E4 DMAXC_52\)\)
+) 8270 41950 1 L
+(\(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\) \(E4 DMAXC_32\)\)
+) 7500 41950 1 L
+(\(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\) \(E4 DMAXC_31\)\)
+) 6730 41950 1 L
+(\(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\) \(E4 DMAXC_29\)\)
+) 5960 41950 1 L
+(\(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\) \(E4 DMAXC_27\)\)
+) 5190 41950 1 L
+(\(\(E2 DMAXC_24\) \(E5 DMAXC_25\) \(E1 DMAXC_23\) \(E3 DMAXC_21\) \(E4 DMAXC_26\)\)\)
+) 4420 41950 1 L
+([1] USER\(7\): :exit
+) 3650 41950 T
+(; Exiting Lisp
+) 2880 41950 T
+EndPage
+%%Page: 31 31
+(31) (final-dynamic) StartPage
+(> exit
+
+) 53700 3600 T
+(exit
+) 52930 3600 T
+(script done on Sun Feb  2 13:22:16 1997) 51390 3600 T
+(script done on Sun Feb  2 13:22:16 1997) 49850 3600 T
+EndPage
+%%Trailer
+%%Pages: 31

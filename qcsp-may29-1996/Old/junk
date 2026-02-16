@@ -1,0 +1,5 @@
+(defun mbr (thing group)
+ (member (car thing) group
+       :test #'(lambda (a b) (equal a (car b)))))
+
+(memory-search "quilici-t1-index" "quilici-t1" :sit-noise 50)	

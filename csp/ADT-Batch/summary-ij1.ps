@@ -1,0 +1,396 @@
+%!PS-Adobe-1.0
+%%Title:  summary-ij1
+%%Creator: /cc/software/tools/bin/pps ($Header: pps.sh,v 0.0 88/06/22 05:22:29 on Rel $)
+%%CreationDate: Thu Dec 15 00:52:39 EST 1994
+%%For: woods@jupiter
+%%EndComments
+%%$Header: pps.pro,v 0.0 88/06/22 05:22:26 on Rel $
+
+% General macros ( should be builtins :-)
+
+/inch { 72 mul } def
+/min { 2 copy gt { exch } if pop } def
+/max { 2 copy lt { exch } if pop } def
+/curx { currentpoint pop } def
+/cury { currentpoint exch pop } def
+
+% Show a string, right justified, and move to its beginning.
+/rshow {	% string
+	dup stringwidth pop neg		% string width, negative
+	dup 0 rmoveto
+	exch show
+	0 rmoveto			% to beginning of string
+} def
+
+% Commands
+
+/fname {	% string fname -
+	/filename exch def
+	/pageno 0 def
+	/lineno 1 def
+	1 f
+} def
+
+/fdate {	% string fdate -
+	/date exch def
+} def
+
+/funct {	% string funct -
+	gsave
+	C titlesize scalefont setfont
+
+	fbase
+	dontstep ( ) stringwidth pop sub cury min
+	moveto
+	90 rotate
+	rshow
+	/dontstep curx ( ) stringwidth pop sub def	% Yech!
+
+	grestore
+} def
+
+/t {	% ntabs t -
+	{ 
+		curx 1 add
+		tabwidth div ceiling
+		tabwidth mul
+		dup rlimit gt {
+			pop
+			lcont marshow
+			1 nl
+		} {
+			cury moveto
+		} ifelse
+	} repeat
+} def
+
+/nl {	% nlines nl -	(internal use)
+	{
+		cury dy add
+		dup
+		highth neg le {
+			pop
+			1 f
+		} {
+			0 exch
+			moveto
+		} ifelse
+	} repeat
+} def
+
+% Show a string in margins, if there is enough room.
+/marshow {	% string marshow -	(internal)
+	cury dight add dontstep lt {
+		gsave
+
+		C setfont
+		width cury moveto
+		rshow
+		/dontstep cury def
+
+		grestore
+	} if
+} def
+
+/n {	% nlines n -
+	dup lineno add
+	/lineno exch def
+
+	nl
+	% Bug: does not number blank lines!
+	lineres 0 gt {
+		lineno lineres mod 0 eq {
+			lineno maxline cvs marshow
+		} if
+	} if
+} def
+
+/np {	% npages np -	(internal)
+	totalpage 0 gt {
+		showpage
+	} if
+	/totalpage totalpage 1 add def
+	margin ury translate
+	0 0 moveto
+} def
+
+/f {	% npages f -
+	{
+		np
+		/pageno pageno 1 add def
+		titleput
+		pageno 1 gt {
+			lineno maxline cvs marshow
+		} if
+	} repeat
+} def
+	
+/s {	% string font s -
+	setfont
+
+	dup stringwidth pop
+	curx add
+	rlimit gt {
+		lcont marshow
+		1 nl
+	} if
+	show
+} def
+
+% This is a halfhearted attempt.
+% The ultimate thing is a printf() like specification from argv[].
+/titleput { % - titleput -
+	0 dy 3 mul rmoveto	% space for title
+
+	C setfont
+	date show
+
+	C titlesize scalefont setfont
+
+	width cury moveto
+	pageno maxpage cvs rshow
+
+	curx (  ) stringwidth pop sub rlimit min
+	cury moveto
+	currentdict /header known {
+		header
+	} {
+		filename
+	} ifelse rshow
+
+	/dontstep cury def
+	0 cury dy 2 mul add moveto
+} def
+
+% Init macro - must be called after definitions are changed.
+
+/ppsinit { % - ppsinit -
+	gsave
+
+	/dy	 1 inch lpi div neg def
+	fonts {
+		findfont dy neg progsize mul scalefont def
+	} forall
+
+	% Paper limits
+	initclip clippath pathbbox
+	/ury exch def
+	/urx exch 5 sub def	% margin may be set wrong
+	/lly exch def
+	/llx exch def
+
+	% Line numbers are right justified to width.
+	% We force a newline when rlimit is exceeded by text.
+	/highth ury lly sub dy add def
+	/margin llx 1 inch add def
+	/width urx margin sub def
+
+	% UnderlinePosition or FontBBox may be missing...
+	% Measure sizes of things we print in margins.
+	C setfont
+	/rlimit width maxline stringwidth pop sub def	% right limit
+
+	newpath 0 0 moveto
+	(670) true charpath flattenpath pathbbox
+	/dight exch def					% digit ht
+	pop pop pop
+
+	C titlesize scalefont setfont
+	newpath 0 0 moveto
+	(qypfgj\(\),_) true charpath flattenpath pathbbox
+	pop pop exch pop width add
+	/fbase exch def					% function base
+
+	I setfont
+	/tabwidth (n) stringwidth pop tabstop mul def
+
+	/totalpage 0 def
+
+	grestore
+} def
+
+/ppsdone {
+	showpage
+} def
+
+% Page style -- may be modified.
+
+/tabstop 8 def  	% Charcters per tabstop
+/lineres 10 def		% Line numbering resolution
+/maxline (9999) def	% Maximum lines / file
+/maxpage (999) def	% Maximum pages / file
+
+/lpi 7 def		% Lines per inch
+/progsize 70 72 div def	% Program point size / line spacing
+/titlesize 1.2 def	% Title point size / program point size
+
+% Default fonts -- need not be fixed pitch.
+/fonts 4 dict def
+fonts begin
+	/C /NewCenturySchlbk-Roman def	% Comments
+	/K /Courier-Bold def		% Keywords
+	/S /Courier-Oblique def		% Strings
+	/I /Courier def			% The rest
+end
+
+/lcont (\274) def	% Line continuation char (ellipsis)
+%%EndProlog
+/lpi 14 def ppsinit
+(Dec 15 00:51 1994) fdate
+(summary-ij1) fname
+(Size) I s 1 t	(Mo/NC /AC /FC /DR   Ident) I s 1 t	(Dsize) I s 1 t	(NCC) I s 1 t	(TCC) I s 1 t	(BT/V) I s 1 t	(    AP      S) I s 1 t	(     Total    NumS    BJ   TypA/B    FCcost    DRcost    ASort/AStime ConsSort) I s 2 n
+(50       bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    10.8    450     512     25/325     0.04    0.31    0.35     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 7685437293 10.8    475     682     55/636     0.05    0.51    0.56     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 1783960706 8.4     400     754     61/702     0.03    0.59    0.62     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 6148712495 12.6    475     404     19/260     0.02    0.33    0.35     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 8261581571 13.2    495     758     45/626     0.05    0.59    0.64     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 4705297406 11.4    455     1478    62/1151    0.07    0.95    1.02     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 6724813580 8.4     400     754     61/702     0.04    0.57    0.61     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 8798969000 13.0    485     1344    124/1161   0.05    0.82    0.87     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 0805098560 11.6    480     3022    154/1798   0.04    1.65    1.69     4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(50       bt/ T/ NIL/ NIL/ NIL 4767135635 8.0     390     264     23/197     0.03    0.17    0.2      3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    19.8    855     1779    98/1381    0.13    1.28    1.41     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 7685437293 21.2    910     4035    116/3051   0.14    3.1     3.24     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 1783960706 19.0    845     9335    428/7464   0.12    6.97    7.09     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 6148712495 20.6    870     9892    449/8051   0.14    8.23    8.37     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 8261581571 22.0    905     2722    508/2700   0.18    2.31    2.49     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 4705297406 22.2    920     13971   460/8960   0.15    10.2    10.35    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 6724813580 19.0    845     9335    428/7464   0.13    6.81    6.94     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 8798969000 20.8    855     8052    462/7744   0.13    7.06    7.19     6       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 0805098560 18.8    850     1171    62/980     0.14    0.89    1.03     5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(100      bt/ T/ NIL/ NIL/ NIL 4767135635 17.6    810     3204    168/2688   0.12    2.51    2.63     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    28.4    1220    10987   143/7773   0.25    8.61    8.86     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 7685437293 29.0    1295    3470    150/2875   0.28    3.15    3.43     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 1783960706 26.6    1210    104543  1793/101718 0.26   101.61  101.87   3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 6148712495 29.0    1240    4186    730/4095   0.26    3.87    4.13     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 8261581571 27.2    1230    11111   273/9537   0.25    9.89    10.14    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 4705297406 35.6    1410    87641   3678/83716 0.34    76.6    76.94    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 6724813580 26.6    1210    104543  1793/101718 0.25   100.56  100.81   3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 8798969000 28.2    1235    24917   410/24560  0.26    26.31   26.57    6       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 0805098560 31.4    1340    1118    34/942     0.31    0.95    1.26     6       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(150      bt/ T/ NIL/ NIL/ NIL 4767135635 28.8    1255    4867    835/4899   0.26    4.67    4.94     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    36.4    1610    90384   1090/89855 0.43    113.32  113.76   3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 7685437293 36.2    1660    99382   919/75851  0.47    97.34   97.81    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 1783960706 33.4    1590    14857   596/13535  0.5     16.4    16.9     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 6148712495 34.6    1585    37029   1276/33350 0.43    37.88   38.31    4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 8261581571 35.2    1615    6903    153/5574   0.44    7.09    7.53     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 4705297406 42.4    1770    16651   1792/15404 0.53    17.85   18.38    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 6724813580 33.4    1590    14857   596/13535  0.43    16.17   16.6     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 8798969000 38.0    1640    387643  4430/297207 0.46   389.54  390.0    7       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 0805098560 40.8    1750    114557  3718/107956 0.51   103.09  103.6    6       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(200      bt/ T/ NIL/ NIL/ NIL 4767135635 36.6    1625    7091    165/6276   0.45    7.95    8.41     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    44.0    1975    36165   1169/31398 0.78    36.74   37.52    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 7685437293 44.2    2045    32276   848/27535  0.7     38.7    39.4     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 1783960706 39.2    1945    44033   822/43796  0.64    56.46   57.1     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 6148712495 41.8    1955    23970   504/19335  0.65    27.24   27.89    4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250*     bt/ T/ NIL/ NIL/ NIL 8261581571 41.6    1990    524143  4036/399044 0.7    599.31  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 4705297406 53.2    2215    10511   134/9356   0.82    13.73   14.56    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 6724813580 39.2    1945    44033   822/43796  0.65    55.95   56.6     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 8798969000 45.8    2035    11791   208/9745   0.7     13.62   14.32    7       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 0805098560 50.8    2190    56463   1290/54086 0.81    62.21   63.02    6       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(250      bt/ T/ NIL/ NIL/ NIL 4767135635 43.8    1990    15035   392/12652  0.67    13.8    14.47    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300*     bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    53.0    2395    366944  1990/248622 0.97   599.04  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 7685437293 54.2    2485    1366    16/960     2.71    2.59    5.3      3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 1783960706 45.8    2290    23212   292/17758  2.21    38.82   41.03    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 6148712495 52.4    2380    39582   518/30821  2.42    97.16   99.65    4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 8261581571 52.0    2425    33052   303/23751  2.48    60.13   62.61    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 4705297406 60.2    2580    57102   672/42364  2.83    140.64  143.47   3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 6724813580 45.8    2290    23212   292/17758  2.29    39.31   41.6     3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 8798969000 52.8    2405    133369  2615/110222 2.44   285.79  288.23   8       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 0805098560 60.0    2600    175090  1201/173991 2.9    557.61  560.52   7       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(300      bt/ T/ NIL/ NIL/ NIL 4767135635 52.4    2405    8196    111/5814   2.5     18.79   21.29    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350*     bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    59.8    2775    336340  2070/225006 3.32   596.69  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 7685437293 59.2    2820    10864   279/10401  3.58    31.97   35.55    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 1783960706 56.4    2735    10845   122/9424   3.2     30.89   34.09    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 6148712495 61.8    2785    11087   116/8114   3.33    30.92   34.26    4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 8261581571 60.6    2810    12999   261/11934  3.36    28.75   32.11    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 4705297406 67.4    2960    51290   795/40653  3.75    156.69  160.44   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 6724813580 56.4    2735    10845   122/9424   3.32    30.84   34.16    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 8798969000 62.2    2815    170153  3858/158382 3.72   435.6   439.32   8       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(350*     bt/ T/ NIL/ NIL/ NIL 0805098560 65.2    2935    242323  2901/202620 3.68   596.33  600.01   7       0    0/0       0          0        RANDOM/0.0  RANDOM > Time) I s 1 n
+(350      bt/ T/ NIL/ NIL/ NIL 4767135635 59.8    2760    77009   1048/70864 3.39    223.22  226.61   3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    66.4    3130    8326    137/6588   4.28    26.65   30.94    5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL 7685437293 69.6    3265    135353  1857/97879 4.55    422.99  427.54   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL 1783960706 64.4    3110    13395   155/10170  4.13    40.69   44.82    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL 6148712495 69.6    3170    72880   1171/70491 4.32    240.38  244.7    4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL 8261581571 68.8    3195    3930    36/2518    4.31    10.3    14.61    4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL 4705297406 76.6    3370    132231  2358/120552 4.88   482.31  487.19   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL 6724813580 64.4    3110    13395   155/10170  4.12    39.89   44.01    3       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400      bt/ T/ NIL/ NIL/ NIL 8798969000 71.8    3240    76075   1196/55596 4.47    209.03  213.5    8       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(400*     bt/ T/ NIL/ NIL/ NIL 0805098560 73.4    3310    283464  1061/191334 4.73   595.29  600.02   7       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(400*     bt/ T/ NIL/ NIL/ NIL 4767135635 67.0    3135    319931  1312/211901 4.18   595.84  600.02   1       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    74.0    3530    159953  1286/120513 5.37   542.93  548.3    8       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL 7685437293 77.2    3640    3242    26/2125    5.99    9.04    15.03    4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL 1783960706 72.4    3485    103390  5756/81886 5.17    348.38  353.55   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL 6148712495 76.6    3545    93376   1378/90292 5.74    338.99  344.73   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(450*     bt/ T/ NIL/ NIL/ NIL 8261581571 76.2    3585    242888  1552/241728 5.48   594.53  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL 4705297406 84.2    3745    90312   1118/67757 6.09    360.77  366.86   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL 6724813580 72.4    3485    103390  5756/81886 5.06    343.01  348.07   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(450*     bt/ T/ NIL/ NIL/ NIL 8798969000 77.8    3600    179509  1918/127271 5.57   594.44  600.01   7       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL 0805098560 83.0    3740    56477   2378/50034 6.26    151.82  158.08   7       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(450      bt/ T/ NIL/ NIL/ NIL 4767135635 76.6    3555    35382   447/31974  5.43    123.2   128.63   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(500*     bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    82.0    3920    408856  6689/396133 5.0    595.01  600.01   4       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(500      bt/ T/ NIL/ NIL/ NIL 7685437293 87.2    4080    43313   582/34356  2.92    85.93   88.85    5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(500      bt/ T/ NIL/ NIL/ NIL 1783960706 82.8    3935    419711  3449/352946 2.66   597.35  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time) I s 1 n
+(500      bt/ T/ NIL/ NIL/ NIL 6148712495 83.8    3920    89882   548/70240  2.66    122.82  125.48   4       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(500      bt/ T/ NIL/ NIL/ NIL 8261581571 83.4    3970    58433   687/43362  2.71    100.56  103.27   5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(500*     bt/ T/ NIL/ NIL/ NIL 4705297406 91.6    4115    416500  1834/414525 2.97   597.04  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(500*     bt/ T/ NIL/ NIL/ NIL 6724813580 82.8    3935    417653  3420/350887 2.69   597.32  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(500      bt/ T/ NIL/ NIL/ NIL 8798969000 89.2    4070    25774   225/18482  2.92    41.69   44.61    8       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(500      bt/ T/ NIL/ NIL/ NIL 0805098560 90.8    4140    119085  1708/106228 2.98   217.47  220.45   7       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(500*     bt/ T/ NIL/ NIL/ NIL 4767135635 84.6    3930    320885  1615/319425 2.67   597.34  600.01   5       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(550*     bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    92.4    4360    522997  1522/344390 3.56   596.45  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(550*     bt/ T/ NIL/ NIL/ NIL 7685437293 95.0    4485    387612  1618/385880 3.76   596.25  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(550*     bt/ T/ NIL/ NIL/ NIL 1783960706 87.2    4230    410986  3031/340573 3.1    596.91  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(550*     bt/ T/ NIL/ NIL/ NIL 6148712495 95.2    4375    495027  7257/422241 3.34   596.67  600.01   5       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(550      bt/ T/ NIL/ NIL/ NIL 8261581571 93.0    4385    224434  3304/180220 3.34   376.27  379.61   9       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(550      bt/ T/ NIL/ NIL/ NIL 4705297406 100.8   4505    67702   727/60703  3.51    134.8   138.31   5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(550*     bt/ T/ NIL/ NIL/ NIL 6724813580 87.2    4230    399103  2967/331174 3.96   596.05  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(550      bt/ T/ NIL/ NIL/ NIL 8798969000 95.8    4415    40600   461/35728  3.44    78.13   81.57    8       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(550      bt/ T/ NIL/ NIL/ NIL 0805098560 98.0    4495    153915  931/127525 3.47    278.33  281.8    7       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(550*     bt/ T/ NIL/ NIL/ NIL 4767135635 90.4    4305    379555  4299/377895 3.36   596.65  600.01   6       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(600      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    98.8    4745    11400   134/8484   4.05    24.11   28.26    9       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(600*     bt/ T/ NIL/ NIL/ NIL 7685437293 103.4   4905    336611  3631/275016 4.26   595.75  600.01   5       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(600*     bt/ T/ NIL/ NIL/ NIL 1783960706 96.4    4630    406577  2067/404910 3.74   596.27  600.01   1       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(600      bt/ T/ NIL/ NIL/ NIL 6148712495 102.8   4750    138468  1537/111810 3.92   286.31  290.23   5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(600      bt/ T/ NIL/ NIL/ NIL 8261581571 102.2   4795    21631   263/17128  4.03    42.45   46.48    10      0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(600      bt/ T/ NIL/ NIL/ NIL 4705297406 110.0   4925    127966  2176/90136 4.2     226.19  230.39   5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(600*     bt/ T/ NIL/ NIL/ NIL 6724813580 96.4    4630    412243  2094/410555 3.84   596.19  600.03   1       0    0/0       0          0        RANDOM/0.0  RANDOM > Time) I s 1 n
+(600      bt/ T/ NIL/ NIL/ NIL 8798969000 103.8   4805    82264   737/64215  4.15    191.67  195.83   11      0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(600*     bt/ T/ NIL/ NIL/ NIL 0805098560 105.4   4870    387952  2417/353548 4.18   595.83  600.01   7       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(600      bt/ T/ NIL/ NIL/ NIL 4767135635 97.4    4670    259416  3014/239297 3.9    536.28  540.19   6       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    107.4   5145    323451  1205/323330 4.75   595.26  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(650      bt/ T/ NIL/ NIL/ NIL 7685437293 109.6   5225    67547   712/51722  4.78    151.18  155.96   5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL 1783960706 103.2   4995    290727  2995/245574 4.49   595.56  600.05   4       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL 6148712495 109.0   5090    389958  993/264890 4.53    595.5   600.03   5       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL 8261581571 111.2   5195    411074  1384/382974 4.76   595.25  600.01   1       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(650      bt/ T/ NIL/ NIL/ NIL 4705297406 116.8   5290    116014  1077/101575 4.88   273.88  278.76   5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL 6724813580 103.2   4995    293182  3025/247939 4.32   595.68  600.01   4       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL 8798969000 110.4   5140    302461  1186/301399 4.89   595.12  600.01   8       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL 0805098560 115.4   5290    392727  4450/379752 4.95   595.06  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(650*     bt/ T/ NIL/ NIL/ NIL 4767135635 107.2   5095    300592  3272/237244 4.57   595.44  600.01   6       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(700      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    114.0   5505    13916   146/10364  6.03    33.58   39.61    11      0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(700      bt/ T/ NIL/ NIL/ NIL 7685437293 118.4   5645    94041   353/78194  5.65    156.19  161.85   5       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(700*     bt/ T/ NIL/ NIL/ NIL 1783960706 111.6   5390    385287  2533/364691 5.05   594.96  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(700*     bt/ T/ NIL/ NIL/ NIL 6148712495 116.2   5465    365946  1271/365750 5.23   594.78  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(700*     bt/ T/ NIL/ NIL/ NIL 8261581571 117.4   5550    282881  2673/184706 5.44   594.57  600.01   11      0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(700*     bt/ T/ NIL/ NIL/ NIL 4705297406 124.2   5650    223231  2086/221362 5.65   594.36  600.01   6       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(700*     bt/ T/ NIL/ NIL/ NIL 6724813580 111.6   5390    376110  2491/356795 5.0    595.01  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(700      bt/ T/ NIL/ NIL/ NIL 8798969000 117.2   5500    120760  1079/107097 5.31   312.2   317.51   12      0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(700*     bt/ T/ NIL/ NIL/ NIL 0805098560 122.0   5640    371043  2345/306261 5.58   594.45  600.03   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(700*     bt/ T/ NIL/ NIL/ NIL 4767135635 115.0   5475    287157  2449/236131 5.44   594.56  600.01   8       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    141.4   6970    256927  2071/153649 8.74   591.27  600.01   6       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 7685437293 156.0   7295    268491  2327/267646 9.33   590.68  600.01   2       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 1783960706 147.8   7015    246480  2134/236987 8.73   591.28  600.01   4       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 6148712495 152.6   7090    297344  3880/269903 8.99   591.02  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 8261581571 149.6   7085    306677  2455/279410 8.81   591.2   600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 4705297406 159.4   7280    323397  784/309170 9.22    590.79  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 6724813580 147.8   7015    255560  2216/245944 8.59   591.42  600.01   4       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 8798969000 151.6   7045    275054  1241/253322 8.81   591.19  600.01   12      0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(900      bt/ T/ NIL/ NIL/ NIL 0805098560 152.2   7170    61770   533/58837  9.11    124.1   133.21   7       0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(900*     bt/ T/ NIL/ NIL/ NIL 4767135635 154.2   7150    285810  650/249566 9.1     590.91  600.01   8       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(950      bt/ T/ NIL/ NIL/ NIL ) I s (default) K s (    147.8   7315    104068  757/90635  9.44    317.48  326.92   11      0    0/0       0          0        RANDOM/0.0  RANDOM) I s 1 n
+(950*     bt/ T/ NIL/ NIL/ NIL 1783960706 156.0   7410    244064  2064/234525 9.47   590.54  600.01   4       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(950*     bt/ T/ NIL/ NIL/ NIL 6148712495 162.0   7515    247163  7701/233935 9.85   590.16  600.01   3       0    0/0       0          0        RANDOM/0.0  RANDOM > Time ) I s 1 n
+(950      bt/ T/ NIL/ NIL/ NIL 8261581571 158.6   7490    109207  1056/104966 10.41  403.15  413.56   13      0    0/0       0          0        RANDOM/0.0  RANDOM) I s %%Trailer
+ppsdone

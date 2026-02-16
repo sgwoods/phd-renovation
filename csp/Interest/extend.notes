@@ -1,0 +1,100 @@
+
+Definitions
+
+---------------------------------------------------------------------------
+C_i(X, v, A)	Constraint function ( i = 1 to M contraints )
+
+	C_i( Variable X,  domain_value v, assignments A)
+
+	returns
+		0	if C_i satisfied
+		else
+		Cost	Where Cost is (how bad) assignment of v to X is.
+
+	Example
+
+	C_1(X, v, A)    = 0 if C_1() true
+
+---------------------------------------------------------------------------
+K(C_i)	Importance measure of constraint C_i  ( i = 1 to M constraints )
+
+	1 <= K(C_i) < K_max  where K_max is the most important, 1 the least.
+
+---------------------------------------------------------------------------
+Cost_j(X, v, A) "Satisfaction of the set of all constraints" for a problem 
+	  	represents the cost of assigning v to X given assignments A
+
+		Cost_j(X, v, A) where ( j = 1 to K_max importance measures ) =
+	        	Sum_all_i ( C_i(X, v, A) where K(C_i) = j )
+
+	Paraphrase
+
+	Cost_j<X v A> = < E_1 E_2 ... E_k >  
+	(E_j is sum of all C_i where importance of C_i is j)
+
+
+	Example		   C5
+		       -----------
+		      |		 |
+		  C1  |	C2    C3 v
+		A---->B---->C---->D
+		|	    ^
+		|   C4	    |
+		------------
+
+		Importance
+
+Constraint	C1 C2 C3 C4 C5  	Vector K	(Kmax = 3)
+		1  1  2  2  3
+
+		Constraint Sat values (0 Sat, else Cost)
+		(for v assigned to X, given current inst A)
+
+	        * - indicates constraint direct affect by assignment
+				 C1   C2   C3   C4   C5		
+		   (A, a1, P_1)    *              *
+		   (B, b1, P_1)    *    *              *
+		   (C, c1, P_1)         *    *    *
+
+
+	        Value - indicates constraint value this assignment, given
+			current assignments (when ?) ... assume what ?
+				 C1   C2   C3   C4   C5		
+		C_i(A, a1, P_1)   0*   -    -    1*   -
+		C_i(B, b1, P_1)   0*   2*   -    -    2*
+		C_i(C, c1, P_1)   -    2*   3*   1*   -
+
+			K1(C1,C2)  K2(C3,C4)   K3(C5)
+
+Cost_j(A, a1, P_1)   <	   3     		    	>
+Cost_j(B, b1, P_1)   <  		    		>
+Cost_j(C, c1, P_a)   <  		    		>
+---------------------------------------------------------------------------
+Cost_S(solution)  (Vector) Cost of a complete, approximate solution s
+
+	Sum( Cost(X, v, A) for all X and v in A )		
+
+	Example
+
+	complete, approximate solution
+	S_1 = {A=a1, B=b1, C=c1, D=d1}
+
+			 	C1	C2	C3	C4	C5	
+	Cost(A, a1, S_1) <						>
+	Cost(B, b1, S_1) <						>
+	Cost(C, c1, S_1) <						>
+	Cost(D, d1, S_1) <						>
+                         ------------------------------------------------
+	Cost( S_1 ) =    <						>
+
+	
+---------------------------------------------------------------------------
+	
+
+
+
+
+	
+
+
+	

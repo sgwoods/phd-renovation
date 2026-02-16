@@ -1,0 +1,19 @@
+;; load.lsp
+
+(load "bm")
+(load "bt")
+(load "ct")
+
+(load "utility")
+(load "compile")
+
+;; load Queens domain
+; (load "queens")   
+
+;; load MPR domain
+;(load "mpr-simple")   ;; functionality
+;(load "mpr-setup")    ;; template, situation information
+
+;  load ADT domain
+(load "adt-simple")   ;; functionality
+(load "adt-setup")    ;; template, situation information

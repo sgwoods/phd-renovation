@@ -1,0 +1,15 @@
+set xlabel "Program statements"
+set ylabel "Constraint checks"
+#set xrange [0:100]
+#set yrange [0:100]
+set xtics 0,50
+#set ytics 0,5
+#set term latex
+#set key 100,115
+#set nokey 
+set key 
+set term postscript landscape monochrome "Times-Roman" 14
+set output "t3-cc.ps"
+plot "t3-data-cc" title "AC-3 + FC/DR" with linespoints
+
+

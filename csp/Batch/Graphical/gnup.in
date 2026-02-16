@@ -1,0 +1,15 @@
+set xlabel "Noise"
+set ylabel "Total Time"
+#set xrange [0:100]
+#set yrange [0:100]
+#set xtics 0,5
+#set ytics 0,5
+#set term latex
+#set key 100,115
+#set nokey 
+set key 
+set term postscript landscape monochrome "Times-Roman" 14
+set output "gnup.ps"
+plot "data.t1" title "SCH on" with linespoints, "data.t2" title "SCH off" with linespoints 
+
+

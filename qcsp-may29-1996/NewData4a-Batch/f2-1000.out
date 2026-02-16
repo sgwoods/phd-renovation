@@ -1,0 +1,218 @@
+Allegro CL 4.2 [SPARC; R1] (2/1/95 11:34)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;   Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;     Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): New Test Run: 1000, q-i2, FCDR, Dist2
+"New Test Run: 1000, q-i2, FCDR, Dist2"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): ; Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+Warning: GETVAL, :OPERATOR was defined in
+         /fsys4/u/sgwoods/qcsp/quilici-search.lisp and is now being defined in
+         /fsys4/u/sgwoods/qcsp/gsat.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;   Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+T
+USER(5): USER(5): **** Noise 1000 ****
+"**** Noise 1000 ****"
+USER(6): 
+NIL
+USER(7): 
+NIL
+USER(8): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 107,260 msec (00:01:47.260) user, 280 msec system
+; cpu time (gc)     2,580 msec user, 130 msec system
+; cpu time (total)  109,840 msec (00:01:49.840) user, 410 msec system
+; real time  187,398 msec (00:03:07.398)
+; space allocation:
+ 13,226,207 cons cells,;  2,311 symbols, 13,690,352 other bytes
+(((Q1-F ADTQ2-F) (Q1-A ADTQ2-A) (Q1-B ADTQ2-B) (Q1-I ADTQ2-I) (Q1-G ADTQ2-G)
+  (Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-F ADTQ1-F) (Q1-A ADTQ1-A) (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-G ADTQ1-G)
+  (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(9): USER(9): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 149,090 msec (00:02:29.090) user, 280 msec system
+; cpu time (gc)     2,640 msec user, 80 msec system
+; cpu time (total)  151,730 msec (00:02:31.730) user, 360 msec system
+; real time  236,571 msec (00:03:56.571)
+; space allocation:
+ 16,053,388 cons cells,;  2,252 symbols, 17,846,632 other bytes
+(((Q1-H ADTQ2-H) (Q1-F ADTQ2-F) (Q1-C ADTQ2-C) (Q1-B ADTQ2-B) (Q1-I ADTQ2-I)
+  (Q1-G ADTQ2-G) (Q1-A ADTQ2-A) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-H ADTQ1-H) (Q1-F ADTQ1-F) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B) (Q1-I ADTQ1-I)
+  (Q1-G ADTQ1-G) (Q1-A ADTQ1-A) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(10): USER(10): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 143,800 msec (00:02:23.800) user, 230 msec system
+; cpu time (gc)     2,780 msec user, 20 msec system
+; cpu time (total)  146,580 msec (00:02:26.580) user, 250 msec system
+; real time  231,120 msec (00:03:51.120)
+; space allocation:
+ 11,415,754 cons cells,;  2,208 symbols, 16,475,104 other bytes
+(((Q1-B ADTQ2-B) (Q1-I ADTQ2-I) (Q1-G ADTQ2-G) (Q1-F ADTQ2-F) (Q1-A ADTQ2-A)
+  (Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-A ADTQ1-A) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F)
+  (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(11): USER(11): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 69,230 msec (00:01:09.230) user, 150 msec system
+; cpu time (gc)     2,130 msec user, 30 msec system
+; cpu time (total)  71,360 msec (00:01:11.360) user, 180 msec system
+; real time  109,925 msec (00:01:49.925)
+; space allocation:
+ 7,353,442 cons cells,;  2,244 symbols, 7,619,864 other bytes
+(((Q1-A ADTQ2-A) (Q1-F ADTQ2-F) (Q1-H ADTQ2-H) (Q1-G ADTQ2-G) (Q1-C ADTQ2-C)
+  (Q1-B ADTQ2-B) (Q1-I ADTQ2-I) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(12): USER(12): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 762,710 msec (00:12:42.710) user, 390 msec system
+; cpu time (gc)     3,950 msec user, 80 msec system
+; cpu time (total)  766,660 msec (00:12:46.660) user, 470 msec system
+; real time  1,228,359 msec (00:20:28.359)
+; space allocation:
+ 16,848,954 cons cells,;  2,227 symbols, 127,738,392 other bytes
+(((Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F)
+  (Q1-A ADTQ2-A) (Q1-B ADTQ2-B) (Q1-G ADTQ2-G) (Q1-I ADTQ2-I))
+ ((Q1-E ADTQ1-E) (Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-H ADTQ1-H) (Q1-F ADTQ1-F)
+  (Q1-A ADTQ1-A) (Q1-B ADTQ1-B) (Q1-G ADTQ1-G) (Q1-I ADTQ1-I)))
+USER(13): USER(13): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 142,230 msec (00:02:22.230) user, 310 msec system
+; cpu time (gc)     4,600 msec user, 50 msec system
+; cpu time (total)  146,830 msec (00:02:26.830) user, 360 msec system
+; real time  207,215 msec (00:03:27.215)
+; space allocation:
+ 16,052,981 cons cells,;  2,252 symbols, 17,777,296 other bytes
+(((Q1-H ADTQ2-H) (Q1-F ADTQ2-F) (Q1-C ADTQ2-C) (Q1-B ADTQ2-B) (Q1-I ADTQ2-I)
+  (Q1-G ADTQ2-G) (Q1-A ADTQ2-A) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-H ADTQ1-H) (Q1-F ADTQ1-F) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B) (Q1-I ADTQ1-I)
+  (Q1-G ADTQ1-G) (Q1-A ADTQ1-A) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(14): USER(14): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 93,490 msec (00:01:33.490) user, 200 msec system
+; cpu time (gc)     2,680 msec user, 40 msec system
+; cpu time (total)  96,170 msec (00:01:36.170) user, 240 msec system
+; real time  166,584 msec (00:02:46.584)
+; space allocation:
+ 10,923,789 cons cells,;  2,188 symbols, 12,477,960 other bytes
+(((Q1-F ADTQ2-F) (Q1-H ADTQ2-H) (Q1-C ADTQ2-C) (Q1-A ADTQ2-A) (Q1-B ADTQ2-B)
+  (Q1-I ADTQ2-I) (Q1-G ADTQ2-G) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-A ADTQ1-A) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-G ADTQ1-G) (Q1-I ADTQ1-I)))
+USER(15): USER(15): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 245,020 msec (00:04:05.020) user, 230 msec system
+; cpu time (gc)     5,440 msec user, 10 msec system
+; cpu time (total)  250,460 msec (00:04:10.460) user, 240 msec system
+; real time  399,329 msec (00:06:39.329)
+; space allocation:
+ 10,920,320 cons cells,;  2,066 symbols, 41,171,048 other bytes
+(((Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F) (Q1-B ADTQ2-B) (Q1-A ADTQ2-A)
+  (Q1-G ADTQ2-G) (Q1-I ADTQ2-I) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-C ADTQ1-C) (Q1-H ADTQ1-H) (Q1-F ADTQ1-F) (Q1-A ADTQ1-A) (Q1-B ADTQ1-B)
+  (Q1-G ADTQ1-G) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(16): USER(16): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 753,040 msec (00:12:33.040) user, 330 msec system
+; cpu time (gc)     9,350 msec user, 130 msec system
+; cpu time (total)  762,390 msec (00:12:42.390) user, 460 msec system
+; real time  1,413,968 msec (00:23:33.968)
+; space allocation:
+ 15,165,280 cons cells,;  2,259 symbols, 129,191,104 other bytes
+(((Q1-E ADTQ2-E) (Q1-D ADTQ2-D) (Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F)
+  (Q1-A ADTQ2-A) (Q1-G ADTQ2-G) (Q1-B ADTQ2-B) (Q1-I ADTQ2-I))
+ ((Q1-E ADTQ1-E) (Q1-D ADTQ1-D) (Q1-C ADTQ1-C) (Q1-H ADTQ1-H) (Q1-F ADTQ1-F)
+  (Q1-A ADTQ1-A) (Q1-G ADTQ1-G) (Q1-B ADTQ1-B) (Q1-I ADTQ1-I)))
+USER(17): USER(17): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/fcdr-dist2-1000.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 282,200 msec (00:04:42.200) user, 260 msec system
+; cpu time (gc)     3,350 msec user, 100 msec system
+; cpu time (total)  285,550 msec (00:04:45.550) user, 360 msec system
+; real time  465,185 msec (00:07:45.185)
+; space allocation:
+ 11,794,125 cons cells,;  2,170 symbols, 47,978,880 other bytes
+(((Q1-C ADTQ2-C) (Q1-H ADTQ2-H) (Q1-F ADTQ2-F) (Q1-B ADTQ2-B) (Q1-G ADTQ2-G)
+  (Q1-I ADTQ2-I) (Q1-A ADTQ2-A) (Q1-D ADTQ2-D) (Q1-E ADTQ2-E))
+ ((Q1-C ADTQ1-C) (Q1-H ADTQ1-H) (Q1-F ADTQ1-F) (Q1-B ADTQ1-B) (Q1-G ADTQ1-G)
+  (Q1-I ADTQ1-I) (Q1-A ADTQ1-A) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(18): ; Exiting Lisp

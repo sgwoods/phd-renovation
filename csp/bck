@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo Making backup in backup.$1.zoo of all lisp files ...
+zoo -add backup.$1.zoo *.lisp
+echo done
+
+echo Moving backup to old directory ...
+mv backup.$1.zoo old
+echo done
+
+echo Removing write permission from backup ...
+chmod -w old/backup.$1.zoo
+echo done 
+
+
+
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo Drawing and Display figure for $1 ...
+
+.draw-tex $1
+
+echo Now display figure using ghostview ...
+ghostview -landscape $1.ps &
+#ghostview $1.ps &
+wait

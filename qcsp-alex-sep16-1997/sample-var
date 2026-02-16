@@ -1,0 +1,76 @@
+  '("sample-variance-18-37"
+    (
+     ;;modified from average-array
+     ;;added component e0
+     (e0 (Assign Id0-1 Id0-2))            ;sdx = 0
+     (e1 (Assign Id1-1 Id1-2))            ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))            ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))        ;i<n 
+
+     (e4 (Index Id4-1 Id4-2 Id4-3))       ;temp1 = a[i] 
+     (e5 (PlusAssign Id5-1 Id5-2))        ;mean += temp1
+     ;;added component e51-e591
+     (e51 (Index Id51-1 Id51-2 Id51-3))   ;temp2 = a[i]
+     (e52 (Index Id52-1 Id52-2 Id52-3))   ;temp3 = a[i]
+     (e53 (Mult Id53-1 Id53-2 Id53-3))    ;temp4 = temp2 * temp3
+
+     (e54 (PlusAssign Id54-1 Id54-2))     ;sdx += temp4
+     (e55 (Minus Id55-1 Id55-2 Id55-3))   ;temp5 = n - 1
+     (e56 (Mult Id56-1 Id56-2 Id56-3))    ;temp6 = n * temp5 
+     (e57 (Mult Id57-1 Id57-2 Id57-3))    ;temp7 = mean * mean;
+     (e58 (Mult Id58-1 Id58-2 Id58-3))    ;temp8 = n * sdx;
+
+     (e59 (Minus Id59-1 Id59-2 Id59-3))   ;temp9 = temp8 - temp7
+     (e591 (Div Id591-1 Id591-2 Id591-3)) ;temp10 = temp9 / temp6
+     (e6 (PreInc Id6-1))                  ;++i	
+     )
+    (
+     (control-data-dependency (e21 e1))  
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e6) Id3-1)     
+     (possible-data-dependency (e4 e2) Id4-2) 
+
+     (possible-data-dependency (e4 e6) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+
+     (possible-data-dependency (e6 e6) Id6-1)
+
+     ;;new constraints follow
+     (control-data-dependency (e21 e0))
+     (possible-data-dependency (e51 e2) Id51-2) 
+     (possible-data-dependency (e51 e6) Id51-2) 
+     (same-data-dependency (e51 e4) (Id51-1 Id4-1))
+     (possible-data-dependency (e52 e2) Id52-2) 
+
+     (possible-data-dependency (e52 e6) Id52-2)
+     (same-data-dependency (e52 e4) (Id52-1 Id4-1))
+     (guaranteed-data-dependency (e53 e51) Id53-1) 
+     (guaranteed-data-dependency (e53 e52) Id53-2)  
+     (possible-data-dependency (e54 e0) Id54-1) 
+
+     (possible-data-dependency (e54 e54) Id54-1) 
+     (guaranteed-data-dependency (e54 e53) Id54-2)  
+     (same-data-dependency (e55 e3) (Id55-1 Id3-2))
+     (same-data-dependency (e56 e3) (Id56-1 Id3-2))
+     (guaranteed-data-dependency (e56 e55) Id56-2)
+
+     (possible-data-dependency (e57 e1) Id57-1)
+     (possible-data-dependency (e57 e5) Id57-1)
+     (possible-data-dependency (e57 e1) Id57-2)
+     (possible-data-dependency (e57 e5) Id57-2)
+     (same-data-dependency (e58 e3) Id58-1)
+
+     (possible-data-dependency (e58 e0) Id58-2) 
+     (possible-data-dependency (e58 e54) Id58-2)
+     (guaranteed-data-dependency (e59 e58) Id59-1)
+     (guaranteed-data-dependency (e59 e57) Id59-2)
+     (guaranteed-data-dependency (e591 e59) Id591-1)
+
+     (guaranteed-data-dependency (e591 e56) Id591-2)
+     )
+    )

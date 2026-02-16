@@ -1,0 +1,707 @@
+;;
+;; Original simple example  February 29, 1996 sgw (see notes)
+;;
+
+(defun load-simple (&optional (sys *unix*) )
+  (if sys
+      (load "example-simple.lisp")
+   (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:example-simple.lisp")
+   ))
+
+;; ***************************************************************************
+;;
+;; Construct simple example from introduction paper
+;;
+;; ***************************************************************************
+
+(setq A1 (make-DomVal))
+(setq P1 (make-DomVal))
+(setq Q1 (make-DomVal))
+(setq Q2 (make-DomVal))
+(setq P2 (make-DomVal))
+(setq Q3 (make-DomVal))
+(setq Q4 (make-DomVal))
+(setq C1 (make-DomVal))
+(setq X1 (make-DomVal))
+(setq X2 (make-DomVal))
+(setq C2 (make-DomVal))
+(setq X3 (make-DomVal))
+(setq X4 (make-DomVal))
+
+(setq B1 (make-DomVal))
+(setq R1 (make-DomVal))
+(setq S1 (make-DomVal))
+(setq S2 (make-DomVal))
+(setq R2 (make-DomVal))
+(setq S3 (make-DomVal))
+(setq S4 (make-DomVal))
+(setq T1 (make-DomVal))
+(setq U1 (make-DomVal))
+(setq U2 (make-DomVal))
+(setq T2 (make-DomVal))
+(setq U3 (make-DomVal))
+(setq U4 (make-DomVal))
+
+(setq B2 (make-DomVal))
+(setq R3 (make-DomVal))
+(setq S5 (make-DomVal))
+(setq S6 (make-DomVal))
+(setq R4 (make-DomVal))
+(setq S7 (make-DomVal))
+(setq S8 (make-DomVal))
+(setq T3 (make-DomVal))
+(setq U5 (make-DomVal))
+(setq U6 (make-DomVal))
+(setq T4 (make-DomVal))
+(setq U7 (make-DomVal))
+(setq U8 (make-DomVal))
+
+(setq *print-circle* t)
+
+(setq V1 (make-CVariable :name 'V1 :DomainValueList (list A1)     ))
+(setq V2 (make-CVariable :name 'V2 :DomainValueList (list B1 B2) ))
+
+(defun R-relation (x y)
+	  (cond 
+	   ( (eq (Domval-Name x) 'A1)
+	     (cond
+	      ( (eq (Domval-Name y) 'B1) 'poss )
+	      ( (eq (Domval-Name y) 'B2) 'poss )
+	      ( t 'invalid)) )
+
+	   ;;
+	   ;; Up Values ...
+	   ;;
+
+	   ( (eq (Domval-Name x) 'P1)
+	     (cond
+	      ( (eq (Domval-Name y) 'R1) 'fail)
+	      ( (eq (Domval-Name y) 'R2) 'poss)
+	      ( (eq (Domval-Name y) 'R3) 'poss)
+	      ( (eq (Domval-Name y) 'R4) 'fail) 
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'P2)
+	     (cond
+	      ( (eq (Domval-Name y) 'R1) 'fail)
+	      ( (eq (Domval-Name y) 'R2) 'poss)
+	      ( (eq (Domval-Name y) 'R3) 'fail)
+	      ( (eq (Domval-Name y) 'R4) 'poss) 
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'Q1)
+	     (cond 
+	      ( (eq (Domval-Name y) 'S1) 'dc)
+	      ( (eq (Domval-Name y) 'S2) 'dc)
+	      ( (eq (Domval-Name y) 'S3) 'true)
+	      ( (eq (Domval-Name y) 'S4) 'true) 
+	      ( (eq (Domval-Name y) 'S5) 'fail) 
+	      ( (eq (Domval-Name y) 'S6) 'fail) 
+	      ( (eq (Domval-Name y) 'S7) 'fail) 
+	      ( (eq (Domval-Name y) 'S8) 'fail) 
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'Q2)
+	     (cond 
+	      ( (eq (Domval-Name y) 'S1) 'dc)
+	      ( (eq (Domval-Name y) 'S2) 'dc)
+	      ( (eq (Domval-Name y) 'S3) 'true)
+	      ( (eq (Domval-Name y) 'S4) 'fail) 
+	      ( (eq (Domval-Name y) 'S5) 'fail) 
+	      ( (eq (Domval-Name y) 'S6) 'fail) 
+	      ( (eq (Domval-Name y) 'S7) 'fail) 
+	      ( (eq (Domval-Name y) 'S8) 'fail) 
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'Q3)
+	     (cond 
+	      ( (eq (Domval-Name y) 'S1) 'dc)
+	      ( (eq (Domval-Name y) 'S2) 'dc)
+	      ( (eq (Domval-Name y) 'S3) 'fail) 
+	      ( (eq (Domval-Name y) 'S4) 'fail) 
+	      ( (eq (Domval-Name y) 'S5) 'fail) 
+	      ( (eq (Domval-Name y) 'S6) 'fail) 
+	      ( (eq (Domval-Name y) 'S7) 'fail) 
+	      ( (eq (Domval-Name y) 'S8) 'fail) 
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'Q4)
+	     (cond 
+	      ( (eq (Domval-Name y) 'S1) 'dc)
+	      ( (eq (Domval-Name y) 'S2) 'dc)
+	      ( (eq (Domval-Name y) 'S3) 'fail) 
+	      ( (eq (Domval-Name y) 'S4) 'fail) 
+	      ( (eq (Domval-Name y) 'S5) 'fail) 
+	      ( (eq (Domval-Name y) 'S6) 'fail) 
+	      ( (eq (Domval-Name y) 'S7) 'fail) 
+	      ( (eq (Domval-Name y) 'S8) 'fail) 
+	      ( t 'invalid)) )
+
+	   ;;
+	   ;; Down Values ...
+	   ;;
+
+	   ( (eq (Domval-Name x) 'A1)
+	     (cond
+	      ( (eq (Domval-Name y) 'T1) 'poss)
+	      ( (eq (Domval-Name y) 'T2) 'fail)
+	      ( (eq (Domval-Name y) 'T3) 'fail) 
+	      ( (eq (Domval-Name y) 'T4) 'poss)
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'C2)
+	     (cond
+	      ( (eq (Domval-Name y) 'T1) 'fail)
+	      ( (eq (Domval-Name y) 'T2) 'fail)
+	      ( (eq (Domval-Name y) 'T3) 'fail)
+	      ( (eq (Domval-Name y) 'T4) 'fail)
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'X1)
+	     (cond 
+	      ( (eq (Domval-Name y) 'U1) 'fail)
+	      ( (eq (Domval-Name y) 'U2) 'true)
+	      ( (eq (Domval-Name y) 'U3) 'dc)
+	      ( (eq (Domval-Name y) 'U4) 'dc)
+	      ( (eq (Domval-Name y) 'U5) 'dc)
+	      ( (eq (Domval-Name y) 'U6) 'dc)
+	      ( (eq (Domval-Name y) 'U7) 'true) 
+	      ( (eq (Domval-Name y) 'U8) 'true) 
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'X2)
+	     (cond 
+	      ( (eq (Domval-Name y) 'U1) 'fail)
+	      ( (eq (Domval-Name y) 'U2) 'fail)
+	      ( (eq (Domval-Name y) 'U3) 'dc)
+	      ( (eq (Domval-Name y) 'U4) 'dc)
+	      ( (eq (Domval-Name y) 'U5) 'dc)
+	      ( (eq (Domval-Name y) 'U6) 'dc)
+	      ( (eq (Domval-Name y) 'U7) 'fail) 
+	      ( (eq (Domval-Name y) 'U8) 'fail) 
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'X3)
+	     (cond 
+	      ( (eq (Domval-Name y) 'U1) 'dc)
+	      ( (eq (Domval-Name y) 'U2) 'dc)
+	      ( (eq (Domval-Name y) 'U3) 'dc)
+	      ( (eq (Domval-Name y) 'U4) 'dc)
+	      ( (eq (Domval-Name y) 'U5) 'dc)
+	      ( (eq (Domval-Name y) 'U6) 'dc)
+	      ( (eq (Domval-Name y) 'U7) 'dc)
+	      ( (eq (Domval-Name y) 'U8) 'dc)
+	      ( t 'invalid)) )
+
+	   ( (eq (Domval-Name x) 'X4) 
+	     (cond 
+	      ( (eq (Domval-Name y) 'U1) 'dc) 
+	      ( (eq (Domval-Name y) 'U2) 'dc)
+	      ( (eq (Domval-Name y) 'U3) 'dc)
+	      ( (eq (Domval-Name y) 'U4) 'dc)
+	      ( (eq (Domval-Name y) 'U5) 'dc)
+	      ( (eq (Domval-Name y) 'U6) 'dc)
+	      ( (eq (Domval-Name y) 'U7) 'dc)
+	      ( (eq (Domval-Name y) 'U8) 'dc)
+	      ( t 'invalid)) ) 
+
+))
+
+(setq  Rfn #'(lambda (x y) (r-relation x y)))    ;; applicable constraint function
+		 
+;; ***************************************************************************
+;;
+;; Domain Value A1 hierarchy
+;;
+;; ***************************************************************************
+
+
+;; A1 ok
+
+(setf (DomVal-Name            A1)  'A1)
+(setf (DomVal-Root            A1)  t)
+(setf (DomVal-LeftParent      A1)  P1)
+(setf (DomVal-LeftParentType  A1)  'or)
+(setf (DomVal-RightParent     A1)  P2)
+(setf (DomVal-RightParentType A1)  'or)
+(setf (DomVal-LeftChild       A1)  C1)
+(setf (DomVal-LeftChildType   A1)  'or)
+(setf (DomVal-RightChild      A1)  C2)
+(setf (DomVal-RightChildType  A1)  'or)
+
+;; P1 ok
+
+(setf (DomVal-Name            P1)  'P1)
+(setf (DomVal-LeftParent      P1)  Q1)
+(setf (DomVal-LeftParentType  P1)  'or)
+(setf (DomVal-RightParent     P1)  Q2)
+(setf (DomVal-RightParentType P1)  'or)
+(setf (DomVal-LeftChild       P1)  nil)
+(setf (DomVal-LeftChildType   P1)  nil)
+(setf (DomVal-RightChild      P1)  A1)
+(setf (DomVal-RightChildType  P1)  'or)
+
+;; Q1 ok
+
+(setf (DomVal-Name            Q1)  'Q1)
+(setf (DomVal-LeftParent      Q1)  nil)
+(setf (DomVal-LeftParentType  Q1)  nil)
+(setf (DomVal-RightParent     Q1)  nil)
+(setf (DomVal-RightParentType Q1)  nil)
+(setf (DomVal-LeftChild       Q1)  nil)
+(setf (DomVal-LeftChildType   Q1)  nil)
+(setf (DomVal-RightChild      Q1)  P1)
+(setf (DomVal-RightChildType  Q1)  'or)
+
+;; Q2 ok
+
+(setf (DomVal-Name            Q2)  'Q2)
+(setf (DomVal-LeftParent      Q2)  nil)
+(setf (DomVal-LeftParentType  Q2)  nil)
+(setf (DomVal-RightParent     Q2)  nil)
+(setf (DomVal-RightParentType Q2)  nil)
+(setf (DomVal-LeftChild       Q2)  P1)
+(setf (DomVal-LeftChildType   Q2)  'or)
+(setf (DomVal-RightChild      Q2)  nil)
+(setf (DomVal-RightChildType  Q2)  nil)
+
+;; P2 ok
+
+(setf (DomVal-Name            P2)  'P2)
+(setf (DomVal-LeftParent      P2)  Q3)
+(setf (DomVal-LeftParentType  P2)  'or)
+(setf (DomVal-RightParent     P2)  Q4)
+(setf (DomVal-RightParentType P2)  'or)
+(setf (DomVal-LeftChild       P2)  A1)
+(setf (DomVal-LeftChildType   P2)  'or)
+(setf (DomVal-RightChild      P2)  nil)
+(setf (DomVal-RightChildType  P2)  nil)
+
+;; Q3
+
+(setf (DomVal-Name            Q3)  'Q3)
+(setf (DomVal-LeftParent      Q3)  nil)
+(setf (DomVal-LeftParentType  Q3)  nil)
+(setf (DomVal-RightParent     Q3)  nil)
+(setf (DomVal-RightParentType Q3)  nil)
+(setf (DomVal-LeftChild       Q3)  nil)
+(setf (DomVal-LeftChildType   Q3)  nil)
+(setf (DomVal-RightChild      Q3)  P2)
+(setf (DomVal-RightChildType  Q3)  'or)
+
+
+;; Q4
+
+(setf (DomVal-Name            Q4)  'Q4)
+(setf (DomVal-LeftParent      Q4)  nil)
+(setf (DomVal-LeftParentType  Q4)  nil)
+(setf (DomVal-RightParent     Q4)  nil)
+(setf (DomVal-RightParentType Q4)  nil)
+(setf (DomVal-LeftChild       Q4)  P2)
+(setf (DomVal-LeftChildType   Q4)  'or)
+(setf (DomVal-RightChild      Q4)  nil)
+(setf (DomVal-RightChildType  Q4)  nil)
+
+;; C1
+
+(setf (DomVal-Name            C1)  'C1)
+(setf (DomVal-LeftParent      C1)  nil)
+(setf (DomVal-LeftParentType  C1)  nil)
+(setf (DomVal-RightParent     C1)  A1)
+(setf (DomVal-RightParentType C1)  'or)
+(setf (DomVal-LeftChild       C1)  X1)
+(setf (DomVal-LeftChildType   C1)  'or)
+(setf (DomVal-RightChild      C1)  X2)
+(setf (DomVal-RightChildType  C1)  'or)
+
+;; X1
+
+(setf (DomVal-Name            X1)  'X1)
+(setf (DomVal-LeftParent      X1)  nil)
+(setf (DomVal-LeftParentType  X1)  nil)
+(setf (DomVal-RightParent     X1)  C1)
+(setf (DomVal-RightParentType X1)  'or)
+(setf (DomVal-LeftChild       X1)  nil)
+(setf (DomVal-LeftChildType   X1)  nil)
+(setf (DomVal-RightChild      X1)  nil)
+(setf (DomVal-RightChildType  X1)  nil)
+
+;; X2
+
+(setf (DomVal-Name            X2)  'X2)
+(setf (DomVal-LeftParent      X2)  C1)
+(setf (DomVal-LeftParentType  X2)  'or)
+(setf (DomVal-RightParent     X2)  nil)
+(setf (DomVal-RightParentType X2)  nil)
+(setf (DomVal-LeftChild       X2)  nil)
+(setf (DomVal-LeftChildType   X2)  nil)
+(setf (DomVal-RightChild      X2)  nil)
+(setf (DomVal-RightChildType  X2)  nil)
+
+;; C2
+
+(setf (DomVal-Name            C2)  'C2)
+(setf (DomVal-LeftParent      C2)  A1)
+(setf (DomVal-LeftParentType  C2)  'or)
+(setf (DomVal-RightParent     C2)  nil)
+(setf (DomVal-RightParentType C2)  nil)
+(setf (DomVal-LeftChild       C2)  X3)
+(setf (DomVal-LeftChildType   C2)  'or)
+(setf (DomVal-RightChild      C2)  X4)
+(setf (DomVal-RightChildType  C2)  'or)
+
+;; X3
+
+(setf (DomVal-Name            X3)  'X3)
+(setf (DomVal-LeftParent      X3)  nil)
+(setf (DomVal-LeftParentType  X3)  nil)
+(setf (DomVal-RightParent     X3)  C2)
+(setf (DomVal-RightParentType X3)  'or)
+(setf (DomVal-LeftChild       X3)  nil)
+(setf (DomVal-LeftChildType   X3)  nil)
+(setf (DomVal-RightChild      X3)  nil)
+(setf (DomVal-RightChildType  X3)  nil)
+
+;; X4
+
+(setf (DomVal-Name            X4)  'X4)
+(setf (DomVal-LeftParent      X4)  C2)
+(setf (DomVal-LeftParentType  X4)  'or)
+(setf (DomVal-RightParent     X4)  nil)
+(setf (DomVal-RightParentType X4)  nil)
+(setf (DomVal-LeftChild       X4)  nil)
+(setf (DomVal-LeftChildType   X4)  nil)
+(setf (DomVal-RightChild      X4)  nil)
+(setf (DomVal-RightChildType  X4)  nil)
+
+
+;; ***************************************************************************
+;;
+;; Domain Value B1 hierarchy
+;;
+;; ***************************************************************************
+
+;; B1 ok
+
+(setf (DomVal-Name            B1)  'B1)
+(setf (DomVal-Root            B1)  t)
+(setf (DomVal-LeftParent      B1)  R1)
+(setf (DomVal-LeftParentType  B1)  'or)
+(setf (DomVal-RightParent     B1)  R2)
+(setf (DomVal-RightParentType B1)  'or)
+(setf (DomVal-LeftChild       B1)  T1)
+(setf (DomVal-LeftChildType   B1)  'or)
+(setf (DomVal-RightChild      B1)  T2)
+(setf (DomVal-RightChildType  B1)  'or)
+
+;; R1 ok
+
+(setf (DomVal-Name            R1)  'R1)
+(setf (DomVal-LeftParent      R1)  S1)
+(setf (DomVal-LeftParentType  R1)  'or)
+(setf (DomVal-RightParent     R1)  S2)
+(setf (DomVal-RightParentType R1)  'or)
+(setf (DomVal-LeftChild       R1)  nil)
+(setf (DomVal-LeftChildType   R1)  nil)
+(setf (DomVal-RightChild      R1)  B1)
+(setf (DomVal-RightChildType  R1)  'or)
+
+;; S1 ok
+
+(setf (DomVal-Name            S1)  'S1)
+(setf (DomVal-LeftParent      S1)  nil)
+(setf (DomVal-LeftParentType  S1)  nil)
+(setf (DomVal-RightParent     S1)  nil)
+(setf (DomVal-RightParentType S1)  nil)
+(setf (DomVal-LeftChild       S1)  nil)
+(setf (DomVal-LeftChildType   S1)  nil)
+(setf (DomVal-RightChild      S1)  R1)
+(setf (DomVal-RightChildType  S1)  'or)
+
+;; S2 ok
+
+(setf (DomVal-Name            S2)  'S2)
+(setf (DomVal-LeftParent      S2)  nil)
+(setf (DomVal-LeftParentType  S2)  nil)
+(setf (DomVal-RightParent     S2)  nil)
+(setf (DomVal-RightParentType S2)  nil)
+(setf (DomVal-LeftChild       S2)  R1)
+(setf (DomVal-LeftChildType   S2)  'or)
+(setf (DomVal-RightChild      S2)  nil)
+(setf (DomVal-RightChildType  S2)  nil)
+
+;; R2 ok
+
+(setf (DomVal-Name            R2)  'R2)
+(setf (DomVal-LeftParent      R2)  S3)
+(setf (DomVal-LeftParentType  R2)  'or)
+(setf (DomVal-RightParent     R2)  S4)
+(setf (DomVal-RightParentType R2)  'or)
+(setf (DomVal-LeftChild       R2)  B1)
+(setf (DomVal-LeftChildType   R2)  'or)
+(setf (DomVal-RightChild      R2)  nil)
+(setf (DomVal-RightChildType  R2)  nil)
+
+;; S3
+
+(setf (DomVal-Name            S3)  'S3)
+(setf (DomVal-LeftParent      S3)  nil)
+(setf (DomVal-LeftParentType  S3)  nil)
+(setf (DomVal-RightParent     S3)  nil)
+(setf (DomVal-RightParentType S3)  nil)
+(setf (DomVal-LeftChild       S3)  nil)
+(setf (DomVal-LeftChildType   S3)  nil)
+(setf (DomVal-RightChild      S3)  R2)
+(setf (DomVal-RightChildType  S3)  'or)
+
+
+;; S4
+
+(setf (DomVal-Name            S4)  'S4)
+(setf (DomVal-LeftParent      S4)  nil)
+(setf (DomVal-LeftParentType  S4)  nil)
+(setf (DomVal-RightParent     S4)  nil)
+(setf (DomVal-RightParentType S4)  nil)
+(setf (DomVal-LeftChild       S4)  R2)
+(setf (DomVal-LeftChildType   S4)  'or)
+(setf (DomVal-RightChild      S4)  nil)
+(setf (DomVal-RightChildType  S4)  nil)
+
+;; T1
+
+(setf (DomVal-Name            T1)  'T1)
+(setf (DomVal-LeftParent      T1)  nil)
+(setf (DomVal-LeftParentType  T1)  nil)
+(setf (DomVal-RightParent     T1)  B1)
+(setf (DomVal-RightParentType T1)  'or)
+(setf (DomVal-LeftChild       T1)  U1)
+(setf (DomVal-LeftChildType   T1)  'or)
+(setf (DomVal-RightChild      T1)  U2)
+(setf (DomVal-RightChildType  T1)  'or)
+
+;; U1
+
+(setf (DomVal-Name            U1)  'U1)
+(setf (DomVal-LeftParent      U1)  nil)
+(setf (DomVal-LeftParentType  U1)  nil)
+(setf (DomVal-RightParent     U1)  T1)
+(setf (DomVal-RightParentType U1)  'or)
+(setf (DomVal-LeftChild       U1)  nil)
+(setf (DomVal-LeftChildType   U1)  nil)
+(setf (DomVal-RightChild      U1)  nil)
+(setf (DomVal-RightChildType  U1)  nil)
+
+;; U2
+
+(setf (DomVal-Name            U2)  'U2)
+(setf (DomVal-LeftParent      U2)  T1)
+(setf (DomVal-LeftParentType  U2)  'or)
+(setf (DomVal-RightParent     U2)  nil)
+(setf (DomVal-RightParentType U2)  nil)
+(setf (DomVal-LeftChild       U2)  nil)
+(setf (DomVal-LeftChildType   U2)  nil)
+(setf (DomVal-RightChild      U2)  nil)
+(setf (DomVal-RightChildType  U2)  nil)
+
+;; T2
+
+(setf (DomVal-Name            T2)  'T2)
+(setf (DomVal-LeftParent      T2)  B1)
+(setf (DomVal-LeftParentType  T2)  'or)
+(setf (DomVal-RightParent     T2)  nil)
+(setf (DomVal-RightParentType T2)  nil)
+(setf (DomVal-LeftChild       T2)  U3)
+(setf (DomVal-LeftChildType   T2)  'or)
+(setf (DomVal-RightChild      T2)  U4)
+(setf (DomVal-RightChildType  T2)  'or)
+
+;; U3
+
+(setf (DomVal-Name            U3)  'U3)
+(setf (DomVal-LeftParent      U3)  nil)
+(setf (DomVal-LeftParentType  U3)  nil)
+(setf (DomVal-RightParent     U3)  T2)
+(setf (DomVal-RightParentType U3)  'or)
+(setf (DomVal-LeftChild       U3)  nil)
+(setf (DomVal-LeftChildType   U3)  nil)
+(setf (DomVal-RightChild      U3)  nil)
+(setf (DomVal-RightChildType  U3)  nil)
+
+;; U4
+
+(setf (DomVal-Name            U4)  'U4)
+(setf (DomVal-LeftParent      U4)  T2)
+(setf (DomVal-LeftParentType  U4)  'or)
+(setf (DomVal-RightParent     U4)  nil)
+(setf (DomVal-RightParentType U4)  nil)
+(setf (DomVal-LeftChild       U4)  nil)
+(setf (DomVal-LeftChildType   U4)  nil)
+(setf (DomVal-RightChild      U4)  nil)
+(setf (DomVal-RightChildType  U4)  nil)
+
+
+;; ***************************************************************************
+;;
+;; Domain Value B2 hierarchy
+;;
+;; ***************************************************************************
+
+;; B2 ok
+
+(setf (DomVal-Name            B2)  'B2)
+(setf (DomVal-Root            B2)  t)
+(setf (DomVal-LeftParent      B2)  R3)
+(setf (DomVal-LeftParentType  B2)  'or)
+(setf (DomVal-RightParent     B2)  R4)
+(setf (DomVal-RightParentType B2)  'or)
+(setf (DomVal-LeftChild       B2)  T3)
+(setf (DomVal-LeftChildType   B2)  'or)
+(setf (DomVal-RightChild      B2)  T4)
+(setf (DomVal-RightChildType  B2)  'or)
+
+;; R3 ok
+
+(setf (DomVal-Name            R3)  'R3)
+(setf (DomVal-LeftParent      R3)  S5)
+(setf (DomVal-LeftParentType  R3)  'or)
+(setf (DomVal-RightParent     R3)  S6)
+(setf (DomVal-RightParentType R3)  'or)
+(setf (DomVal-LeftChild       R3)  nil)
+(setf (DomVal-LeftChildType   R3)  nil)
+(setf (DomVal-RightChild      R3)  B2)
+(setf (DomVal-RightChildType  R3)  'or)
+
+;; S5 ok
+
+(setf (DomVal-Name            S5)  'S5)
+(setf (DomVal-LeftParent      S5)  nil)
+(setf (DomVal-LeftParentType  S5)  nil)
+(setf (DomVal-RightParent     S5)  nil)
+(setf (DomVal-RightParentType S5)  nil)
+(setf (DomVal-LeftChild       S5)  nil)
+(setf (DomVal-LeftChildType   S5)  nil)
+(setf (DomVal-RightChild      S5)  R3)
+(setf (DomVal-RightChildType  S5)  'or)
+
+;; S6 ok
+
+(setf (DomVal-Name            S6)  'S6)
+(setf (DomVal-LeftParent      S6)  nil)
+(setf (DomVal-LeftParentType  S6)  nil)
+(setf (DomVal-RightParent     S6)  nil)
+(setf (DomVal-RightParentType S6)  nil)
+(setf (DomVal-LeftChild       S6)  R3)
+(setf (DomVal-LeftChildType   S6)  'or)
+(setf (DomVal-RightChild      S6)  nil)
+(setf (DomVal-RightChildType  S6)  nil)
+
+;; R4 ok
+
+(setf (DomVal-Name            R4)  'R4)
+(setf (DomVal-LeftParent      R4)  S7)
+(setf (DomVal-LeftParentType  R4)  'or)
+(setf (DomVal-RightParent     R4)  S8)
+(setf (DomVal-RightParentType R4)  'or)
+(setf (DomVal-LeftChild       R4)  B2)
+(setf (DomVal-LeftChildType   R4)  'or)
+(setf (DomVal-RightChild      R4)  nil)
+(setf (DomVal-RightChildType  R4)  nil)
+
+;; S7
+
+(setf (DomVal-Name            S7)  'S7)
+(setf (DomVal-LeftParent      S7)  nil)
+(setf (DomVal-LeftParentType  S7)  nil)
+(setf (DomVal-RightParent     S7)  nil)
+(setf (DomVal-RightParentType S7)  nil)
+(setf (DomVal-LeftChild       S7)  nil)
+(setf (DomVal-LeftChildType   S7)  nil)
+(setf (DomVal-RightChild      S7)  R4)
+(setf (DomVal-RightChildType  S7)  'or)
+
+
+;; S8
+
+(setf (DomVal-Name            S8)  'S8)
+(setf (DomVal-LeftParent      S8)  nil)
+(setf (DomVal-LeftParentType  S8)  nil)
+(setf (DomVal-RightParent     S8)  nil)
+(setf (DomVal-RightParentType S8)  nil)
+(setf (DomVal-LeftChild       S8)  R4)
+(setf (DomVal-LeftChildType   S8)  'or)
+(setf (DomVal-RightChild      S8)  nil)
+(setf (DomVal-RightChildType  S8)  nil)
+
+;; T3
+
+(setf (DomVal-Name            T3)  'T3)
+(setf (DomVal-LeftParent      T3)  nil)
+(setf (DomVal-LeftParentType  T3)  nil)
+(setf (DomVal-RightParent     T3)  B2)
+(setf (DomVal-RightParentType T3)  'or)
+(setf (DomVal-LeftChild       T3)  U5)
+(setf (DomVal-LeftChildType   T3)  'or)
+(setf (DomVal-RightChild      T3)  U6)
+(setf (DomVal-RightChildType  T3)  'or)
+
+;; U5
+
+(setf (DomVal-Name            U5)  'U5)
+(setf (DomVal-LeftParent      U5)  nil)
+(setf (DomVal-LeftParentType  U5)  nil)
+(setf (DomVal-RightParent     U5)  T3)
+(setf (DomVal-RightParentType U5)  'or)
+(setf (DomVal-LeftChild       U5)  nil)
+(setf (DomVal-LeftChildType   U5)  nil)
+(setf (DomVal-RightChild      U5)  nil)
+(setf (DomVal-RightChildType  U5)  nil)
+
+;; U6
+
+(setf (DomVal-Name            U6)  'U6)
+(setf (DomVal-LeftParent      U6)  T3)
+(setf (DomVal-LeftParentType  U6)  'or)
+(setf (DomVal-RightParent     U6)  nil)
+(setf (DomVal-RightParentType U6)  nil)
+(setf (DomVal-LeftChild       U6)  nil)
+(setf (DomVal-LeftChildType   U6)  nil)
+(setf (DomVal-RightChild      U6)  nil)
+(setf (DomVal-RightChildType  U6)  nil)
+
+;; T4
+
+(setf (DomVal-Name            T4)  'T4)
+(setf (DomVal-LeftParent      T4)  B2)
+(setf (DomVal-LeftParentType  T4)  'or)
+(setf (DomVal-RightParent     T4)  nil)
+(setf (DomVal-RightParentType T4)  nil)
+(setf (DomVal-LeftChild       T4)  U7)
+(setf (DomVal-LeftChildType   T4)  'or)
+(setf (DomVal-RightChild      T4)  U8)
+(setf (DomVal-RightChildType  T4)  'or)
+
+;; U7
+
+(setf (DomVal-Name            U7)  'U7)
+(setf (DomVal-LeftParent      U7)  nil)
+(setf (DomVal-LeftParentType  U7)  nil)
+(setf (DomVal-RightParent     U7)  T4)
+(setf (DomVal-RightParentType U7)  'or)
+(setf (DomVal-LeftChild       U7)  nil)
+(setf (DomVal-LeftChildType   U7)  nil)
+(setf (DomVal-RightChild      U7)  nil)
+(setf (DomVal-RightChildType  U7)  nil)
+
+;; U8
+
+(setf (DomVal-Name            U8)  'U8)
+(setf (DomVal-LeftParent      U8)  T4)
+(setf (DomVal-LeftParentType  U8)  'or)
+(setf (DomVal-RightParent     U8)  nil)
+(setf (DomVal-RightParentType U8)  nil)
+(setf (DomVal-LeftChild       U8)  nil)
+(setf (DomVal-LeftChildType   U8)  nil)
+(setf (DomVal-RightChild      U8)  nil)
+(setf (DomVal-RightChildType  U8)  nil)
+
+

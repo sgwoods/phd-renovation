@@ -1,0 +1,488 @@
+Allegro CL 4.2 [SPARC; R1] (2/1/95 11:34)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;   Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;     Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): Large New Test Run: 3000, h-i2, FCDR, Dist1
+"Large New Test Run: 3000, h-i2, FCDR, Dist1"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): ; Fast loading /fsys4/u/sgwoods/qcsp/load.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+Warning: GETVAL, :OPERATOR was defined in
+         /fsys4/u/sgwoods/qcsp/quilici-search.lisp and is now being defined in
+         /fsys4/u/sgwoods/qcsp/gsat.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;   Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+T
+USER(5): USER(5): **** Noise 3000 ****
+"**** Noise 3000 ****"
+USER(6): 
+NIL
+USER(7): 
+NIL
+USER(8): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,034,780 msec (00:17:14.780) user, 870 msec system
+; cpu time (gc)     10,670 msec user, 380 msec system
+; cpu time (total)  1,045,450 msec (00:17:25.450) user, 1,250 msec system
+; real time  1,514,125 msec (00:25:14.125)
+; space allocation:
+ 45,589,566 cons cells,;  5,329 symbols, 66,188,088 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(9): USER(9): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,232,740 msec (00:20:32.740) user, 620 msec system
+; cpu time (gc)     12,270 msec user, 250 msec system
+; cpu time (total)  1,245,010 msec (00:20:45.010) user, 870 msec system
+; real time  1,897,618 msec (00:31:37.618)
+; space allocation:
+ 53,515,909 cons cells,;  5,392 symbols, 79,600,928 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(10): USER(10): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,034,310 msec (00:17:14.310) user, 480 msec system
+; cpu time (gc)     24,100 msec user, 2,100 msec system
+; cpu time (total)  1,058,410 msec (00:17:38.410) user, 2,580 msec system
+; real time  1,649,292 msec (00:27:29.292)
+; space allocation:
+ 44,372,543 cons cells,;  5,276 symbols, 68,187,184 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(11): USER(11): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 779,360 msec (00:12:59.360) user, 490 msec system
+; cpu time (gc)     12,090 msec user, 140 msec system
+; cpu time (total)  791,450 msec (00:13:11.450) user, 630 msec system
+; real time  1,272,040 msec (00:21:12.040)
+; space allocation:
+ 34,583,380 cons cells,;  5,418 symbols, 48,812,656 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(12): USER(12): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,166,010 msec (00:19:26.010) user, 500 msec system
+; cpu time (gc)     14,070 msec user, 210 msec system
+; cpu time (total)  1,180,080 msec (00:19:40.080) user, 710 msec system
+; real time  1,832,296 msec (00:30:32.296)
+; space allocation:
+ 49,438,374 cons cells,;  5,351 symbols, 71,173,936 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-P1 ADTQ1-P1)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(13): USER(13): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,260,100 msec (00:21:00.100) user, 860 msec system
+; cpu time (gc)     22,920 msec user, 1,930 msec system
+; cpu time (total)  1,283,020 msec (00:21:23.020) user, 2,790 msec system
+; real time  2,175,529 msec (00:36:15.529)
+; space allocation:
+ 53,515,763 cons cells,;  5,392 symbols, 79,678,784 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(14): USER(14): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 931,390 msec (00:15:31.390) user, 490 msec system
+; cpu time (gc)     14,250 msec user, 390 msec system
+; cpu time (total)  945,640 msec (00:15:45.640) user, 880 msec system
+; real time  1,614,826 msec (00:26:54.826)
+; space allocation:
+ 39,456,433 cons cells,;  5,320 symbols, 56,262,320 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-C ADTQ1-C) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(15): USER(15): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,210,870 msec (00:20:10.870) user, 610 msec system
+; cpu time (gc)     17,930 msec user, 490 msec system
+; cpu time (total)  1,228,800 msec (00:20:28.800) user, 1,100 msec system
+; real time  2,077,625 msec (00:34:37.625)
+; space allocation:
+ 52,402,581 cons cells,;  5,364 symbols, 78,790,512 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-A3 ADTQ1-A3) (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(16): USER(16): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,391,080 msec (00:23:11.080) user, 840 msec system
+; cpu time (gc)     27,820 msec user, 2,440 msec system
+; cpu time (total)  1,418,900 msec (00:23:38.900) user, 3,280 msec system
+; real time  2,820,882 msec (00:47:00.882)
+; space allocation:
+ 58,082,835 cons cells,;  5,295 symbols, 88,779,984 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B)
+  (Q1-I ADTQ1-I) ...)
+ ...)
+USER(17): USER(17): > Initializing a new case 
+ 
+> Open file: Saving new generated situation. 
+ 
+> Opening output file/stream for :  < New-Batch/H-fcdr-dist1-3000.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,363,230 msec (00:22:43.230) user, 810 msec system
+; cpu time (gc)     18,660 msec user, 330 msec system
+; cpu time (total)  1,381,890 msec (00:23:01.890) user, 1,140 msec system
+; real time  3,158,297 msec (00:52:38.297)
+; space allocation:
+ 54,757,179 cons cells,;  5,369 symbols, 85,228,952 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-A3 ADTQ1-A3)
+  (Q1-A2 ADTQ1-A2) (Q1-P1 ADTQ1-P1) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D)
+  (Q1-B ADTQ1-B) ...)
+ ...)
+USER(18): ; Exiting Lisp

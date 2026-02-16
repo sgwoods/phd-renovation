@@ -1,0 +1,54 @@
+Hi Prof. Quilici,
+
+I have written a average-array plan, 
+
+'("ave-array-template"
+  (
+    (e1 (Assign Id1 Id2))               ;mean = 0
+    (e2 (Assign Id3 Id4))               ;i = 0
+    (e3 (Less Id5 Id6 Id7))             ;i<n
+    (e4 (Index Id7 Id8 Id9))            ;a[i] --Id9
+    (e5 (PlusAssign Id10 Id11))         ;mean += Id9
+    (e6 (Plus Id12 Id13 Id14))          ;i++ ==> Id14 = i + 1
+    (e7 (Assign Id15 Id16))             ;i = Id14
+    (e8 (DivAssign Id17 Id18))          ;mean /= n
+  )
+  (
+    (equal-zero (e1) Id2)
+    (equal-one (e6) Id13)  
+    (data-dependency (e5 e1) Id10)
+    (data-dependency (e3 e2) Id5 )
+    (data-dependency (e3 e7) Id5)
+    (data-dependency (e7 e6) Id16) 
+    (data-dependency (e5 e4) Id11) 
+    (same-data-dependency (e4 e3) (Id8 Id5))
+    (same-data-dependency (e7 e3) (Id15 Id5)) 
+    (same-data-dependency (e3 e8) (Id6 Id18))
+    (data-dependency (e8 e1) Id17)
+    (data-dependency (e8 e5) Id17) 
+  )
+ )
+
+(data-dependency (e-i e-j) Id )
+means component e-i's data Id is set at component e-j;
+
+(same-data-dependency (e-i e-j) (Id-i Id-j))
+means the data Id-i used in component e-i and the data Id-j used
+in component e-j have the same dependency. Such as the n in the plan
+is not changed and dependency of n won't change.
+
+Notice that the i in the loop is dependent on both the forinit and forincre
+and the mean in (DivAssign mean n) is dependent on both mean=0 and mean += a[i].
+
+thanks!
+
+--yongjun  
+
+----------------------------------------------------------------------
+Yongjun Zhang                      #390, Holmes Hall
+2226 Wilder Avenue                 2540 Dole St, Univ. of Hawaii 
+Honolulu, HI 96822                 Honolulu, HI 96822	
+Tel: (808)946-4964(H)              (808)956-5209(O)
+			Email: yjzhang@spectra.eng.hawaii.edu
+	Homepage: http://student-www.eng.hawaii.edu/zhang/ 
+----------------------------------------------------------------------

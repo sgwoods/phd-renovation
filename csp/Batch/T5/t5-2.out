@@ -1,0 +1,1643 @@
+;;; Sun Common Lisp, Development Environment 4.0.1, 6 July 1990
+;;; Sun-4 Version for SunOS 4.0.x and sunOS 4.1 
+;;;
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Sun Microsystems, Inc.,  All Rights Reserved
+;;; Copyright (c) 1985, 1986, 1987, 1988, 1989, 1990
+;;;            by Lucid, Inc., All Rights Reserved
+;;; This software product contains confidential and trade secret
+;;; information belonging to Sun Microsystems, Inc.  It may not be copied
+;;; for any reason other than for archival and backup purposes.
+;;;
+;;; Sun, Sun-4, and Sun Common Lisp are trademarks of Sun Microsystems Inc.
+
+> Test Aug 12, 1993 using Aug 5 version v0.5 MOTOR
+"Test Aug 12, 1993 using Aug 5 version v0.5 MOTOR"
+> 
+NIL
+> 
+NIL
+> ;;; Loading source file "load.lisp"
+;;; Warning: File "load.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "/cc/users/woods/ideas/csp/bm.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/bt.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/ct.sbin"
+;;; Loading binary file "/cc/users/woods/ideas/csp/utility.sbin"
+;;; Loading source file "/cc/users/woods/ideas/csp/compile.lisp"
+;;; Warning: File "/cc/users/woods/ideas/csp/compile.lisp" does not begin with IN-PACKAGE.  Loading into package "USER"
+;;; Loading binary file "queens.sbin"
+;;; Loading binary file "mpr-simple.sbin"
+;;; Warning: Redefining Function NODE-CONSISTENT-VARIABLES which used to be defined in "/home/users/woods/Steve/csp/queens.lisp"
+;;; Warning: Redefining Function ARC-P which used to be defined in "/home/users/woods/Steve/csp/queens.lisp"
+;;; Warning: Redefining Function CONSISTENT-P which used to be defined in "/home/users/woods/Steve/csp/queens.lisp"
+;;; Warning: Redefining Function GET-CONSTRAINT-MAX-LEVEL which used to be defined in "/home/users/woods/Steve/csp/queens.lisp"
+;;; Loading binary file "mpr-setup.sbin"
+#P"/tmp_mnt/cc/users/woods/woods/Steve/csp/load.lisp"
+> **** Noise 700 ****
+"**** Noise 700 ****"
+> 
+NIL
+> 
+NIL
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; Expanding Dynamic Memory
+;;; GC: 153368 words [613472 bytes] of dynamic storage in use.
+;;; 501990 words [2007960 bytes] of free storage available before a GC.
+;;; 1157348 words [4629392 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 167790 words [671160 bytes] of dynamic storage in use.
+;;; 487568 words [1950272 bytes] of free storage available before a GC.
+;;; 1142926 words [4571704 bytes] of free storage available if GC is disabled.
+;;; GC: 177210 words [708840 bytes] of dynamic storage in use.
+;;; 478148 words [1912592 bytes] of free storage available before a GC.
+;;; 1133506 words [4534024 bytes] of free storage available if GC is disabled.
+;;; GC: 183870 words [735480 bytes] of dynamic storage in use.
+;;; 471488 words [1885952 bytes] of free storage available before a GC.
+;;; 1126846 words [4507384 bytes] of free storage available if GC is disabled.
+;;; GC: 189158 words [756632 bytes] of dynamic storage in use.
+;;; 466200 words [1864800 bytes] of free storage available before a GC.
+;;; 1121558 words [4486232 bytes] of free storage available if GC is disabled.
+;;; GC: 193928 words [775712 bytes] of dynamic storage in use.
+;;; 461430 words [1845720 bytes] of free storage available before a GC.
+;;; 1116788 words [4467152 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 374 
+ Node Consis. cks   : 2856 
+ Ttl constr chks  : 14137 
+ BT nodes created : 99 
+ Nodes visited    : 13631 
+
+Advance Processing CPU Seconds: 6.38 
+Search             CPU Seconds: 293.65 
+Total              CPU Seconds: 300.04 
+
+;;; GC: 197782 words [791128 bytes] of dynamic storage in use.
+;;; 457576 words [1830304 bytes] of free storage available before a GC.
+;;; 1112934 words [4451736 bytes] of free storage available if GC is disabled.
+;;; GC: 201238 words [804952 bytes] of dynamic storage in use.
+;;; 454120 words [1816480 bytes] of free storage available before a GC.
+;;; 1109478 words [4437912 bytes] of free storage available if GC is disabled.
+;;; GC: 204206 words [816824 bytes] of dynamic storage in use.
+;;; 451152 words [1804608 bytes] of free storage available before a GC.
+;;; 1106510 words [4426040 bytes] of free storage available if GC is disabled.
+;;; GC: 206680 words [826720 bytes] of dynamic storage in use.
+;;; 448678 words [1794712 bytes] of free storage available before a GC.
+;;; 1104036 words [4416144 bytes] of free storage available if GC is disabled.
+;;; GC: 208738 words [834952 bytes] of dynamic storage in use.
+;;; 446620 words [1786480 bytes] of free storage available before a GC.
+;;; 1101978 words [4407912 bytes] of free storage available if GC is disabled.
+;;; GC: 211516 words [846064 bytes] of dynamic storage in use.
+;;; 443842 words [1775368 bytes] of free storage available before a GC.
+;;; 1099200 words [4396800 bytes] of free storage available if GC is disabled.
+;;; GC: 214036 words [856144 bytes] of dynamic storage in use.
+;;; 441322 words [1765288 bytes] of free storage available before a GC.
+;;; 1096680 words [4386720 bytes] of free storage available if GC is disabled.
+;;; GC: 216258 words [865032 bytes] of dynamic storage in use.
+;;; 439100 words [1756400 bytes] of free storage available before a GC.
+;;; 1094458 words [4377832 bytes] of free storage available if GC is disabled.
+;;; GC: 218246 words [872984 bytes] of dynamic storage in use.
+;;; 437112 words [1748448 bytes] of free storage available before a GC.
+;;; 1092470 words [4369880 bytes] of free storage available if GC is disabled.
+;;; GC: 220284 words [881136 bytes] of dynamic storage in use.
+;;; 435074 words [1740296 bytes] of free storage available before a GC.
+;;; 1090432 words [4361728 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 450 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 435 
+ Node Consis. cks   : 2856 
+ Ttl constr chks  : 16831 
+ BT nodes created : 118 
+ Nodes visited    : 16229 
+
+Advance Processing CPU Seconds: 6.38 
+Search             CPU Seconds: 443.72 
+Total              CPU Seconds: 450.11 
+
+;;; GC: 222168 words [888672 bytes] of dynamic storage in use.
+;;; 433190 words [1732760 bytes] of free storage available before a GC.
+;;; 1088548 words [4354192 bytes] of free storage available if GC is disabled.
+;;; GC: 224166 words [896664 bytes] of dynamic storage in use.
+;;; 431192 words [1724768 bytes] of free storage available before a GC.
+;;; 1086550 words [4346200 bytes] of free storage available if GC is disabled.
+;;; GC: 226056 words [904224 bytes] of dynamic storage in use.
+;;; 429302 words [1717208 bytes] of free storage available before a GC.
+;;; 1084660 words [4338640 bytes] of free storage available if GC is disabled.
+;;; GC: 227574 words [910296 bytes] of dynamic storage in use.
+;;; 427784 words [1711136 bytes] of free storage available before a GC.
+;;; 1083142 words [4332568 bytes] of free storage available if GC is disabled.
+;;; GC: 229020 words [916080 bytes] of dynamic storage in use.
+;;; 426338 words [1705352 bytes] of free storage available before a GC.
+;;; 1081696 words [4326784 bytes] of free storage available if GC is disabled.
+;;; GC: 230498 words [921992 bytes] of dynamic storage in use.
+;;; 424860 words [1699440 bytes] of free storage available before a GC.
+;;; 1080218 words [4320872 bytes] of free storage available if GC is disabled.
+;;; GC: 231928 words [927712 bytes] of dynamic storage in use.
+;;; 423430 words [1693720 bytes] of free storage available before a GC.
+;;; 1078788 words [4315152 bytes] of free storage available if GC is disabled.
+;;; GC: 233342 words [933368 bytes] of dynamic storage in use.
+;;; 422016 words [1688064 bytes] of free storage available before a GC.
+;;; 1077374 words [4309496 bytes] of free storage available if GC is disabled.
+;;; GC: 234806 words [939224 bytes] of dynamic storage in use.
+;;; 420552 words [1682208 bytes] of free storage available before a GC.
+;;; 1075910 words [4303640 bytes] of free storage available if GC is disabled.
+;;; GC: 236230 words [944920 bytes] of dynamic storage in use.
+;;; 419128 words [1676512 bytes] of free storage available before a GC.
+;;; 1074486 words [4297944 bytes] of free storage available if GC is disabled.
+;;; GC: 237648 words [950592 bytes] of dynamic storage in use.
+;;; 417710 words [1670840 bytes] of free storage available before a GC.
+;;; 1073068 words [4292272 bytes] of free storage available if GC is disabled.
+;;; GC: 239158 words [956632 bytes] of dynamic storage in use.
+;;; 416200 words [1664800 bytes] of free storage available before a GC.
+;;; 1071558 words [4286232 bytes] of free storage available if GC is disabled.
+;;; GC: 240552 words [962208 bytes] of dynamic storage in use.
+;;; 414806 words [1659224 bytes] of free storage available before a GC.
+;;; 1070164 words [4280656 bytes] of free storage available if GC is disabled.
+> Time limit bound exceeded  < 600 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : TIME-BOUND-EXCEEDED 
+ No. Solutions    : 475 
+ Node Consis. cks   : 2856 
+ Ttl constr chks  : 18927 
+ BT nodes created : 133 
+ Nodes visited    : 18266 
+
+Advance Processing CPU Seconds: 6.38 
+Search             CPU Seconds: 593.81 
+Total              CPU Seconds: 600.2 
+
+Elapsed Real Time = 622.43 seconds (10 minutes, 22.43 seconds)
+Total Run Time    = 601.85 seconds (10 minutes, 1.85 seconds)
+User Run Time     = 592.88 seconds (9 minutes, 52.88 seconds)
+System Run Time   = 8.97 seconds
+Process Page Faults    =        295
+Dynamic Bytes Consed   = 34,669,592
+Ephemeral Bytes Consed = 1,243,444,256
+There were 29 dynamic GCs
+There were 2372 ephemeral GCs
+TIME-BOUND
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 200490 words [801960 bytes] of dynamic storage in use.
+;;; 454868 words [1819472 bytes] of free storage available before a GC.
+;;; 1110226 words [4440904 bytes] of free storage available if GC is disabled.
+;;; GC: 145644 words [582576 bytes] of dynamic storage in use.
+;;; 509714 words [2038856 bytes] of free storage available before a GC.
+;;; 1165072 words [4660288 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 165894 words [663576 bytes] of dynamic storage in use.
+;;; 489464 words [1957856 bytes] of free storage available before a GC.
+;;; 1144822 words [4579288 bytes] of free storage available if GC is disabled.
+;;; GC: 176830 words [707320 bytes] of dynamic storage in use.
+;;; 478528 words [1914112 bytes] of free storage available before a GC.
+;;; 1133886 words [4535544 bytes] of free storage available if GC is disabled.
+;;; GC: 184294 words [737176 bytes] of dynamic storage in use.
+;;; 471064 words [1884256 bytes] of free storage available before a GC.
+;;; 1126422 words [4505688 bytes] of free storage available if GC is disabled.
+;;; GC: 189834 words [759336 bytes] of dynamic storage in use.
+;;; 465524 words [1862096 bytes] of free storage available before a GC.
+;;; 1120882 words [4483528 bytes] of free storage available if GC is disabled.
+;;; GC: 195026 words [780104 bytes] of dynamic storage in use.
+;;; 460332 words [1841328 bytes] of free storage available before a GC.
+;;; 1115690 words [4462760 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 333 
+ Node Consis. cks   : 2658 
+ Ttl constr chks  : 13558 
+ BT nodes created : 114 
+ Nodes visited    : 13136 
+
+Advance Processing CPU Seconds: 6.4 
+Search             CPU Seconds: 293.64 
+Total              CPU Seconds: 300.04 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 338 
+ Node Consis. cks   : 2658 
+ Ttl constr chks  : 13768 
+ BT nodes created : 115 
+ Nodes visited    : 13340 
+
+Advance Processing CPU Seconds: 6.4 
+Search             CPU Seconds: 303.34 
+Total              CPU Seconds: 309.74 
+
+Elapsed Real Time = 317.15 seconds (5 minutes, 17.15 seconds)
+Total Run Time    = 311.06 seconds (5 minutes, 11.06 seconds)
+User Run Time     = 307.47 seconds (5 minutes, 7.47 seconds)
+System Run Time   = 3.59 seconds
+Process Page Faults    =          8
+Dynamic Bytes Consed   =  8,415,280
+Ephemeral Bytes Consed = 666,147,920
+There were 7 dynamic GCs
+There were 1270 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 99656 words [398624 bytes] of dynamic storage in use.
+;;; 555702 words [2222808 bytes] of free storage available before a GC.
+;;; 1211060 words [4844240 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 158660 words [634640 bytes] of dynamic storage in use.
+;;; 496698 words [1986792 bytes] of free storage available before a GC.
+;;; 1152056 words [4608224 bytes] of free storage available if GC is disabled.
+;;; GC: 173156 words [692624 bytes] of dynamic storage in use.
+;;; 482202 words [1928808 bytes] of free storage available before a GC.
+;;; 1137560 words [4550240 bytes] of free storage available if GC is disabled.
+;;; GC: 180802 words [723208 bytes] of dynamic storage in use.
+;;; 474556 words [1898224 bytes] of free storage available before a GC.
+;;; 1129914 words [4519656 bytes] of free storage available if GC is disabled.
+;;; GC: 187936 words [751744 bytes] of dynamic storage in use.
+;;; 467422 words [1869688 bytes] of free storage available before a GC.
+;;; 1122780 words [4491120 bytes] of free storage available if GC is disabled.
+;;; GC: 193352 words [773408 bytes] of dynamic storage in use.
+;;; 462006 words [1848024 bytes] of free storage available before a GC.
+;;; 1117364 words [4469456 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 390 
+ Node Consis. cks   : 2726 
+ Ttl constr chks  : 13875 
+ BT nodes created : 109 
+ Nodes visited    : 13345 
+
+Advance Processing CPU Seconds: 6.43 
+Search             CPU Seconds: 293.72 
+Total              CPU Seconds: 300.16 
+
+;;; GC: 198126 words [792504 bytes] of dynamic storage in use.
+;;; 457232 words [1828928 bytes] of free storage available before a GC.
+;;; 1112590 words [4450360 bytes] of free storage available if GC is disabled.
+;;; GC: 202720 words [810880 bytes] of dynamic storage in use.
+;;; 452638 words [1810552 bytes] of free storage available before a GC.
+;;; 1107996 words [4431984 bytes] of free storage available if GC is disabled.
+;;; GC: 206212 words [824848 bytes] of dynamic storage in use.
+;;; 449146 words [1796584 bytes] of free storage available before a GC.
+;;; 1104504 words [4418016 bytes] of free storage available if GC is disabled.
+;;; GC: 210066 words [840264 bytes] of dynamic storage in use.
+;;; 445292 words [1781168 bytes] of free storage available before a GC.
+;;; 1100650 words [4402600 bytes] of free storage available if GC is disabled.
+;;; GC: 212694 words [850776 bytes] of dynamic storage in use.
+;;; 442664 words [1770656 bytes] of free storage available before a GC.
+;;; 1098022 words [4392088 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 438 
+ Node Consis. cks   : 2726 
+ Ttl constr chks  : 15602 
+ BT nodes created : 122 
+ Nodes visited    : 15006 
+
+Advance Processing CPU Seconds: 6.43 
+Search             CPU Seconds: 381.91 
+Total              CPU Seconds: 388.35 
+
+Elapsed Real Time = 401.37 seconds (6 minutes, 41.37 seconds)
+Total Run Time    = 389.86 seconds (6 minutes, 29.86 seconds)
+User Run Time     = 385.09 seconds (6 minutes, 25.09 seconds)
+System Run Time   = 4.77 seconds
+Process Page Faults    =          9
+Dynamic Bytes Consed   = 13,880,912
+Ephemeral Bytes Consed = 835,283,176
+There were 11 dynamic GCs
+There were 1593 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 178640 words [714560 bytes] of dynamic storage in use.
+;;; 476718 words [1906872 bytes] of free storage available before a GC.
+;;; 1132076 words [4528304 bytes] of free storage available if GC is disabled.
+;;; GC: 159178 words [636712 bytes] of dynamic storage in use.
+;;; 496180 words [1984720 bytes] of free storage available before a GC.
+;;; 1151538 words [4606152 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 177158 words [708632 bytes] of dynamic storage in use.
+;;; 478200 words [1912800 bytes] of free storage available before a GC.
+;;; 1133558 words [4534232 bytes] of free storage available if GC is disabled.
+;;; GC: 188144 words [752576 bytes] of dynamic storage in use.
+;;; 467214 words [1868856 bytes] of free storage available before a GC.
+;;; 1122572 words [4490288 bytes] of free storage available if GC is disabled.
+;;; GC: 195220 words [780880 bytes] of dynamic storage in use.
+;;; 460138 words [1840552 bytes] of free storage available before a GC.
+;;; 1115496 words [4461984 bytes] of free storage available if GC is disabled.
+;;; GC: 200786 words [803144 bytes] of dynamic storage in use.
+;;; 454572 words [1818288 bytes] of free storage available before a GC.
+;;; 1109930 words [4439720 bytes] of free storage available if GC is disabled.
+;;; GC: 205692 words [822768 bytes] of dynamic storage in use.
+;;; 449666 words [1798664 bytes] of free storage available before a GC.
+;;; 1105024 words [4420096 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 341 
+ Node Consis. cks   : 2738 
+ Ttl constr chks  : 13599 
+ BT nodes created : 108 
+ Nodes visited    : 13170 
+
+Advance Processing CPU Seconds: 7.79 
+Search             CPU Seconds: 292.29 
+Total              CPU Seconds: 300.08 
+
+;;; GC: 210324 words [841296 bytes] of dynamic storage in use.
+;;; 445034 words [1780136 bytes] of free storage available before a GC.
+;;; 1100392 words [4401568 bytes] of free storage available if GC is disabled.
+;;; GC: 214196 words [856784 bytes] of dynamic storage in use.
+;;; 441162 words [1764648 bytes] of free storage available before a GC.
+;;; 1096520 words [4386080 bytes] of free storage available if GC is disabled.
+;;; GC: 217508 words [870032 bytes] of dynamic storage in use.
+;;; 437850 words [1751400 bytes] of free storage available before a GC.
+;;; 1093208 words [4372832 bytes] of free storage available if GC is disabled.
+;;; GC: 220302 words [881208 bytes] of dynamic storage in use.
+;;; 435056 words [1740224 bytes] of free storage available before a GC.
+;;; 1090414 words [4361656 bytes] of free storage available if GC is disabled.
+;;; GC: 222906 words [891624 bytes] of dynamic storage in use.
+;;; 432452 words [1729808 bytes] of free storage available before a GC.
+;;; 1087810 words [4351240 bytes] of free storage available if GC is disabled.
+;;; GC: 225014 words [900056 bytes] of dynamic storage in use.
+;;; 430344 words [1721376 bytes] of free storage available before a GC.
+;;; 1085702 words [4342808 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 374 
+ Node Consis. cks   : 2738 
+ Ttl constr chks  : 15484 
+ BT nodes created : 122 
+ Nodes visited    : 15006 
+
+Advance Processing CPU Seconds: 7.79 
+Search             CPU Seconds: 391.57 
+Total              CPU Seconds: 399.36 
+
+Elapsed Real Time = 406.48 seconds (6 minutes, 46.48 seconds)
+Total Run Time    = 400.83 seconds (6 minutes, 40.83 seconds)
+User Run Time     = 397.88 seconds (6 minutes, 37.88 seconds)
+System Run Time   = 2.95 seconds
+Process Page Faults    =          7
+Dynamic Bytes Consed   = 14,279,832
+Ephemeral Bytes Consed = 843,088,472
+There were 13 dynamic GCs
+There were 1609 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 130742 words [522968 bytes] of dynamic storage in use.
+;;; 524616 words [2098464 bytes] of free storage available before a GC.
+;;; 1179974 words [4719896 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 169402 words [677608 bytes] of dynamic storage in use.
+;;; 485956 words [1943824 bytes] of free storage available before a GC.
+;;; 1141314 words [4565256 bytes] of free storage available if GC is disabled.
+;;; GC: 183232 words [732928 bytes] of dynamic storage in use.
+;;; 472126 words [1888504 bytes] of free storage available before a GC.
+;;; 1127484 words [4509936 bytes] of free storage available if GC is disabled.
+;;; GC: 191926 words [767704 bytes] of dynamic storage in use.
+;;; 463432 words [1853728 bytes] of free storage available before a GC.
+;;; 1118790 words [4475160 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 326 
+ Node Consis. cks   : 2704 
+ Ttl constr chks  : 12592 
+ BT nodes created : 110 
+ Nodes visited    : 12210 
+
+Advance Processing CPU Seconds: 6.29 
+Search             CPU Seconds: 247.5 
+Total              CPU Seconds: 253.8 
+
+Elapsed Real Time = 258.37 seconds (4 minutes, 18.37 seconds)
+Total Run Time    = 255.15 seconds (4 minutes, 15.15 seconds)
+User Run Time     = 253.04 seconds (4 minutes, 13.04 seconds)
+System Run Time   = 2.11 seconds
+Process Page Faults    =          4
+Dynamic Bytes Consed   =  5,734,368
+Ephemeral Bytes Consed = 557,994,728
+There were 4 dynamic GCs
+There were 1064 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 95698 words [382792 bytes] of dynamic storage in use.
+;;; 559660 words [2238640 bytes] of free storage available before a GC.
+;;; 1215018 words [4860072 bytes] of free storage available if GC is disabled.
+;;; GC: 166408 words [665632 bytes] of dynamic storage in use.
+;;; 488950 words [1955800 bytes] of free storage available before a GC.
+;;; 1144308 words [4577232 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 181800 words [727200 bytes] of dynamic storage in use.
+;;; 473558 words [1894232 bytes] of free storage available before a GC.
+;;; 1128916 words [4515664 bytes] of free storage available if GC is disabled.
+;;; GC: 191468 words [765872 bytes] of dynamic storage in use.
+;;; 463890 words [1855560 bytes] of free storage available before a GC.
+;;; 1119248 words [4476992 bytes] of free storage available if GC is disabled.
+;;; GC: 198294 words [793176 bytes] of dynamic storage in use.
+;;; 457064 words [1828256 bytes] of free storage available before a GC.
+;;; 1112422 words [4449688 bytes] of free storage available if GC is disabled.
+;;; GC: 203710 words [814840 bytes] of dynamic storage in use.
+;;; 451648 words [1806592 bytes] of free storage available before a GC.
+;;; 1107006 words [4428024 bytes] of free storage available if GC is disabled.
+;;; GC: 208582 words [834328 bytes] of dynamic storage in use.
+;;; 446776 words [1787104 bytes] of free storage available before a GC.
+;;; 1102134 words [4408536 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 327 
+ Node Consis. cks   : 2828 
+ Ttl constr chks  : 13939 
+ BT nodes created : 101 
+ Nodes visited    : 13492 
+
+Advance Processing CPU Seconds: 6.69 
+Search             CPU Seconds: 293.37 
+Total              CPU Seconds: 300.07 
+
+;;; GC: 212542 words [850168 bytes] of dynamic storage in use.
+;;; 442816 words [1771264 bytes] of free storage available before a GC.
+;;; 1098174 words [4392696 bytes] of free storage available if GC is disabled.
+;;; GC: 215908 words [863632 bytes] of dynamic storage in use.
+;;; 439450 words [1757800 bytes] of free storage available before a GC.
+;;; 1094808 words [4379232 bytes] of free storage available if GC is disabled.
+;;; GC: 219320 words [877280 bytes] of dynamic storage in use.
+;;; 436038 words [1744152 bytes] of free storage available before a GC.
+;;; 1091396 words [4365584 bytes] of free storage available if GC is disabled.
+;;; GC: 221994 words [887976 bytes] of dynamic storage in use.
+;;; 433364 words [1733456 bytes] of free storage available before a GC.
+;;; 1088722 words [4354888 bytes] of free storage available if GC is disabled.
+;;; GC: 224388 words [897552 bytes] of dynamic storage in use.
+;;; 430970 words [1723880 bytes] of free storage available before a GC.
+;;; 1086328 words [4345312 bytes] of free storage available if GC is disabled.
+;;; GC: 226556 words [906224 bytes] of dynamic storage in use.
+;;; 428802 words [1715208 bytes] of free storage available before a GC.
+;;; 1084160 words [4336640 bytes] of free storage available if GC is disabled.
+;;; GC: 229324 words [917296 bytes] of dynamic storage in use.
+;;; 426034 words [1704136 bytes] of free storage available before a GC.
+;;; 1081392 words [4325568 bytes] of free storage available if GC is disabled.
+;;; GC: 231672 words [926688 bytes] of dynamic storage in use.
+;;; 423686 words [1694744 bytes] of free storage available before a GC.
+;;; 1079044 words [4316176 bytes] of free storage available if GC is disabled.
+;;; GC: 233706 words [934824 bytes] of dynamic storage in use.
+;;; 421652 words [1686608 bytes] of free storage available before a GC.
+;;; 1077010 words [4308040 bytes] of free storage available if GC is disabled.
+;;; GC: 235310 words [941240 bytes] of dynamic storage in use.
+;;; 420048 words [1680192 bytes] of free storage available before a GC.
+;;; 1075406 words [4301624 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 450 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 391 
+ Node Consis. cks   : 2828 
+ Ttl constr chks  : 16660 
+ BT nodes created : 121 
+ Nodes visited    : 16128 
+
+Advance Processing CPU Seconds: 6.69 
+Search             CPU Seconds: 443.4 
+Total              CPU Seconds: 450.1 
+
+;;; GC: 237124 words [948496 bytes] of dynamic storage in use.
+;;; 418234 words [1672936 bytes] of free storage available before a GC.
+;;; 1073592 words [4294368 bytes] of free storage available if GC is disabled.
+;;; GC: 238682 words [954728 bytes] of dynamic storage in use.
+;;; 416676 words [1666704 bytes] of free storage available before a GC.
+;;; 1072034 words [4288136 bytes] of free storage available if GC is disabled.
+;;; GC: 240222 words [960888 bytes] of dynamic storage in use.
+;;; 415136 words [1660544 bytes] of free storage available before a GC.
+;;; 1070494 words [4281976 bytes] of free storage available if GC is disabled.
+;;; GC: 241786 words [967144 bytes] of dynamic storage in use.
+;;; 413572 words [1654288 bytes] of free storage available before a GC.
+;;; 1068930 words [4275720 bytes] of free storage available if GC is disabled.
+;;; GC: 243430 words [973720 bytes] of dynamic storage in use.
+;;; 411928 words [1647712 bytes] of free storage available before a GC.
+;;; 1067286 words [4269144 bytes] of free storage available if GC is disabled.
+;;; GC: 244884 words [979536 bytes] of dynamic storage in use.
+;;; 410474 words [1641896 bytes] of free storage available before a GC.
+;;; 1065832 words [4263328 bytes] of free storage available if GC is disabled.
+;;; GC: 246378 words [985512 bytes] of dynamic storage in use.
+;;; 408980 words [1635920 bytes] of free storage available before a GC.
+;;; 1064338 words [4257352 bytes] of free storage available if GC is disabled.
+;;; GC: 247858 words [991432 bytes] of dynamic storage in use.
+;;; 407500 words [1630000 bytes] of free storage available before a GC.
+;;; 1062858 words [4251432 bytes] of free storage available if GC is disabled.
+;;; GC: 249276 words [997104 bytes] of dynamic storage in use.
+;;; 406082 words [1624328 bytes] of free storage available before a GC.
+;;; 1061440 words [4245760 bytes] of free storage available if GC is disabled.
+;;; GC: 250696 words [1002784 bytes] of dynamic storage in use.
+;;; 404662 words [1618648 bytes] of free storage available before a GC.
+;;; 1060020 words [4240080 bytes] of free storage available if GC is disabled.
+;;; GC: 252150 words [1008600 bytes] of dynamic storage in use.
+;;; 403208 words [1612832 bytes] of free storage available before a GC.
+;;; 1058566 words [4234264 bytes] of free storage available if GC is disabled.
+;;; GC: 253544 words [1014176 bytes] of dynamic storage in use.
+;;; 401814 words [1607256 bytes] of free storage available before a GC.
+;;; 1057172 words [4228688 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 425 
+ Node Consis. cks   : 2828 
+ Ttl constr chks  : 18392 
+ BT nodes created : 133 
+ Nodes visited    : 17822 
+
+Advance Processing CPU Seconds: 6.69 
+Search             CPU Seconds: 567.82 
+Total              CPU Seconds: 574.52 
+
+Elapsed Real Time = 582.60 seconds (9 minutes, 42.60 seconds)
+Total Run Time    = 575.91 seconds (9 minutes, 35.91 seconds)
+User Run Time     = 572.21 seconds (9 minutes, 32.21 seconds)
+System Run Time   = 3.70 seconds
+Process Page Faults    =          9
+Dynamic Bytes Consed   = 31,136,816
+Ephemeral Bytes Consed = 1,190,175,760
+There were 29 dynamic GCs
+There were 2270 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 128810 words [515240 bytes] of dynamic storage in use.
+;;; 526548 words [2106192 bytes] of free storage available before a GC.
+;;; 1181906 words [4727624 bytes] of free storage available if GC is disabled.
+;;; GC: 169442 words [677768 bytes] of dynamic storage in use.
+;;; 485916 words [1943664 bytes] of free storage available before a GC.
+;;; 1141274 words [4565096 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 183958 words [735832 bytes] of dynamic storage in use.
+;;; 471400 words [1885600 bytes] of free storage available before a GC.
+;;; 1126758 words [4507032 bytes] of free storage available if GC is disabled.
+;;; GC: 191690 words [766760 bytes] of dynamic storage in use.
+;;; 463668 words [1854672 bytes] of free storage available before a GC.
+;;; 1119026 words [4476104 bytes] of free storage available if GC is disabled.
+;;; GC: 198432 words [793728 bytes] of dynamic storage in use.
+;;; 456926 words [1827704 bytes] of free storage available before a GC.
+;;; 1112284 words [4449136 bytes] of free storage available if GC is disabled.
+;;; GC: 203816 words [815264 bytes] of dynamic storage in use.
+;;; 451542 words [1806168 bytes] of free storage available before a GC.
+;;; 1106900 words [4427600 bytes] of free storage available if GC is disabled.
+;;; GC: 207994 words [831976 bytes] of dynamic storage in use.
+;;; 447364 words [1789456 bytes] of free storage available before a GC.
+;;; 1102722 words [4410888 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 366 
+ Node Consis. cks   : 2696 
+ Ttl constr chks  : 13792 
+ BT nodes created : 113 
+ Nodes visited    : 13335 
+
+Advance Processing CPU Seconds: 6.69 
+Search             CPU Seconds: 293.33 
+Total              CPU Seconds: 300.02 
+
+;;; GC: 212070 words [848280 bytes] of dynamic storage in use.
+;;; 443288 words [1773152 bytes] of free storage available before a GC.
+;;; 1098646 words [4394584 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 384 
+ Node Consis. cks   : 2696 
+ Ttl constr chks  : 14522 
+ BT nodes created : 118 
+ Nodes visited    : 14042 
+
+Advance Processing CPU Seconds: 6.69 
+Search             CPU Seconds: 328.4 
+Total              CPU Seconds: 335.09 
+
+Elapsed Real Time = 340.30 seconds (5 minutes, 40.30 seconds)
+Total Run Time    = 336.42 seconds (5 minutes, 36.42 seconds)
+User Run Time     = 333.74 seconds (5 minutes, 33.74 seconds)
+System Run Time   = 2.68 seconds
+Process Page Faults    =          4
+Dynamic Bytes Consed   = 10,420,744
+Ephemeral Bytes Consed = 735,210,128
+There were 8 dynamic GCs
+There were 1402 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 36378 words [145512 bytes] of dynamic storage in use.
+;;; 618980 words [2475920 bytes] of free storage available before a GC.
+;;; 1274338 words [5097352 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 168212 words [672848 bytes] of dynamic storage in use.
+;;; 487146 words [1948584 bytes] of free storage available before a GC.
+;;; 1142504 words [4570016 bytes] of free storage available if GC is disabled.
+;;; GC: 181984 words [727936 bytes] of dynamic storage in use.
+;;; 473374 words [1893496 bytes] of free storage available before a GC.
+;;; 1128732 words [4514928 bytes] of free storage available if GC is disabled.
+;;; GC: 190608 words [762432 bytes] of dynamic storage in use.
+;;; 464750 words [1859000 bytes] of free storage available before a GC.
+;;; 1120108 words [4480432 bytes] of free storage available if GC is disabled.
+;;; GC: 197550 words [790200 bytes] of dynamic storage in use.
+;;; 457808 words [1831232 bytes] of free storage available before a GC.
+;;; 1113166 words [4452664 bytes] of free storage available if GC is disabled.
+;;; GC: 202846 words [811384 bytes] of dynamic storage in use.
+;;; 452512 words [1810048 bytes] of free storage available before a GC.
+;;; 1107870 words [4431480 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 366 
+ Node Consis. cks   : 2732 
+ Ttl constr chks  : 13625 
+ BT nodes created : 114 
+ Nodes visited    : 13119 
+
+Advance Processing CPU Seconds: 6.39 
+Search             CPU Seconds: 293.69 
+Total              CPU Seconds: 300.08 
+
+;;; GC: 208016 words [832064 bytes] of dynamic storage in use.
+;;; 447342 words [1789368 bytes] of free storage available before a GC.
+;;; 1102700 words [4410800 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 378 
+ Node Consis. cks   : 2732 
+ Ttl constr chks  : 13858 
+ BT nodes created : 115 
+ Nodes visited    : 13340 
+
+Advance Processing CPU Seconds: 6.39 
+Search             CPU Seconds: 304.8 
+Total              CPU Seconds: 311.19 
+
+Elapsed Real Time = 316.05 seconds (5 minutes, 16.05 seconds)
+Total Run Time    = 312.59 seconds (5 minutes, 12.59 seconds)
+User Run Time     = 310.11 seconds (5 minutes, 10.11 seconds)
+System Run Time   = 2.48 seconds
+Process Page Faults    =          6
+Dynamic Bytes Consed   =  8,314,392
+Ephemeral Bytes Consed = 662,722,736
+There were 7 dynamic GCs
+There were 1264 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 159480 words [637920 bytes] of dynamic storage in use.
+;;; 495878 words [1983512 bytes] of free storage available before a GC.
+;;; 1151236 words [4604944 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 191920 words [767680 bytes] of dynamic storage in use.
+;;; 463438 words [1853752 bytes] of free storage available before a GC.
+;;; 1118796 words [4475184 bytes] of free storage available if GC is disabled.
+;;; GC: 204840 words [819360 bytes] of dynamic storage in use.
+;;; 450518 words [1802072 bytes] of free storage available before a GC.
+;;; 1105876 words [4423504 bytes] of free storage available if GC is disabled.
+;;; GC: 213040 words [852160 bytes] of dynamic storage in use.
+;;; 442318 words [1769272 bytes] of free storage available before a GC.
+;;; 1097676 words [4390704 bytes] of free storage available if GC is disabled.
+;;; GC: 218872 words [875488 bytes] of dynamic storage in use.
+;;; 436486 words [1745944 bytes] of free storage available before a GC.
+;;; 1091844 words [4367376 bytes] of free storage available if GC is disabled.
+;;; GC: 225008 words [900032 bytes] of dynamic storage in use.
+;;; 430350 words [1721400 bytes] of free storage available before a GC.
+;;; 1085708 words [4342832 bytes] of free storage available if GC is disabled.
+;;; GC: 229294 words [917176 bytes] of dynamic storage in use.
+;;; 426064 words [1704256 bytes] of free storage available before a GC.
+;;; 1081422 words [4325688 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 367 
+ Node Consis. cks   : 2768 
+ Ttl constr chks  : 13862 
+ BT nodes created : 107 
+ Nodes visited    : 13324 
+
+Advance Processing CPU Seconds: 6.3 
+Search             CPU Seconds: 293.73 
+Total              CPU Seconds: 300.03 
+
+;;; GC: 233196 words [932784 bytes] of dynamic storage in use.
+;;; 422162 words [1688648 bytes] of free storage available before a GC.
+;;; 1077520 words [4310080 bytes] of free storage available if GC is disabled.
+;;; GC: 236808 words [947232 bytes] of dynamic storage in use.
+;;; 418550 words [1674200 bytes] of free storage available before a GC.
+;;; 1073908 words [4295632 bytes] of free storage available if GC is disabled.
+;;; GC: 239716 words [958864 bytes] of dynamic storage in use.
+;;; 415642 words [1662568 bytes] of free storage available before a GC.
+;;; 1071000 words [4284000 bytes] of free storage available if GC is disabled.
+;;; GC: 242808 words [971232 bytes] of dynamic storage in use.
+;;; 412550 words [1650200 bytes] of free storage available before a GC.
+;;; 1067908 words [4271632 bytes] of free storage available if GC is disabled.
+;;; GC: 245098 words [980392 bytes] of dynamic storage in use.
+;;; 410260 words [1641040 bytes] of free storage available before a GC.
+;;; 1065618 words [4262472 bytes] of free storage available if GC is disabled.
+;;; GC: 247634 words [990536 bytes] of dynamic storage in use.
+;;; 407724 words [1630896 bytes] of free storage available before a GC.
+;;; 1063082 words [4252328 bytes] of free storage available if GC is disabled.
+;;; GC: 250292 words [1001168 bytes] of dynamic storage in use.
+;;; 405066 words [1620264 bytes] of free storage available before a GC.
+;;; 1060424 words [4241696 bytes] of free storage available if GC is disabled.
+;;; GC: 252326 words [1009304 bytes] of dynamic storage in use.
+;;; 403032 words [1612128 bytes] of free storage available before a GC.
+;;; 1058390 words [4233560 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 429 
+ Node Consis. cks   : 2768 
+ Ttl constr chks  : 16130 
+ BT nodes created : 124 
+ Nodes visited    : 15500 
+
+Advance Processing CPU Seconds: 6.3 
+Search             CPU Seconds: 414.12 
+Total              CPU Seconds: 420.42 
+
+Elapsed Real Time = 426.46 seconds (7 minutes, 6.46 seconds)
+Total Run Time    = 421.83 seconds (7 minutes, 1.83 seconds)
+User Run Time     = 418.54 seconds (6 minutes, 58.54 seconds)
+System Run Time   = 3.29 seconds
+Process Page Faults    =          2
+Dynamic Bytes Consed   = 16,638,496
+Ephemeral Bytes Consed = 894,145,784
+There were 15 dynamic GCs
+There were 1705 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 163976 words [655904 bytes] of dynamic storage in use.
+;;; 491382 words [1965528 bytes] of free storage available before a GC.
+;;; 1146740 words [4586960 bytes] of free storage available if GC is disabled.
+;;; GC: 193128 words [772512 bytes] of dynamic storage in use.
+;;; 462230 words [1848920 bytes] of free storage available before a GC.
+;;; 1117588 words [4470352 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 204710 words [818840 bytes] of dynamic storage in use.
+;;; 450648 words [1802592 bytes] of free storage available before a GC.
+;;; 1106006 words [4424024 bytes] of free storage available if GC is disabled.
+;;; GC: 213124 words [852496 bytes] of dynamic storage in use.
+;;; 442234 words [1768936 bytes] of free storage available before a GC.
+;;; 1097592 words [4390368 bytes] of free storage available if GC is disabled.
+;;; GC: 219080 words [876320 bytes] of dynamic storage in use.
+;;; 436278 words [1745112 bytes] of free storage available before a GC.
+;;; 1091636 words [4366544 bytes] of free storage available if GC is disabled.
+;;; GC: 224654 words [898616 bytes] of dynamic storage in use.
+;;; 430704 words [1722816 bytes] of free storage available before a GC.
+;;; 1086062 words [4344248 bytes] of free storage available if GC is disabled.
+;;; GC: 228986 words [915944 bytes] of dynamic storage in use.
+;;; 426372 words [1705488 bytes] of free storage available before a GC.
+;;; 1081730 words [4326920 bytes] of free storage available if GC is disabled.
+;;; GC: 232918 words [931672 bytes] of dynamic storage in use.
+;;; 422440 words [1689760 bytes] of free storage available before a GC.
+;;; 1077798 words [4311192 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 428 
+ Node Consis. cks   : 2702 
+ Ttl constr chks  : 14108 
+ BT nodes created : 115 
+ Nodes visited    : 13559 
+
+Advance Processing CPU Seconds: 6.54 
+Search             CPU Seconds: 293.85 
+Total              CPU Seconds: 300.39 
+
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 436 
+ Node Consis. cks   : 2702 
+ Ttl constr chks  : 14362 
+ BT nodes created : 117 
+ Nodes visited    : 13806 
+
+Advance Processing CPU Seconds: 6.54 
+Search             CPU Seconds: 305.2 
+Total              CPU Seconds: 311.74 
+
+Elapsed Real Time = 316.68 seconds (5 minutes, 16.68 seconds)
+Total Run Time    = 313.10 seconds (5 minutes, 13.10 seconds)
+User Run Time     = 310.22 seconds (5 minutes, 10.22 seconds)
+System Run Time   = 2.88 seconds
+Process Page Faults    =          2
+Dynamic Bytes Consed   =  9,258,920
+Ephemeral Bytes Consed = 704,733,144
+There were 8 dynamic GCs
+There were 1344 ephemeral GCs
+COMPLETE
+> **** Noise 800 ****
+"**** Noise 800 ****"
+> 
+NIL
+> 
+NIL
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 147648 words [590592 bytes] of dynamic storage in use.
+;;; 507710 words [2030840 bytes] of free storage available before a GC.
+;;; 1163068 words [4652272 bytes] of free storage available if GC is disabled.
+;;; GC: 196182 words [784728 bytes] of dynamic storage in use.
+;;; 459176 words [1836704 bytes] of free storage available before a GC.
+;;; 1114534 words [4458136 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 208486 words [833944 bytes] of dynamic storage in use.
+;;; 446872 words [1787488 bytes] of free storage available before a GC.
+;;; 1102230 words [4408920 bytes] of free storage available if GC is disabled.
+;;; GC: 217686 words [870744 bytes] of dynamic storage in use.
+;;; 437672 words [1750688 bytes] of free storage available before a GC.
+;;; 1093030 words [4372120 bytes] of free storage available if GC is disabled.
+;;; GC: 223924 words [895696 bytes] of dynamic storage in use.
+;;; 431434 words [1725736 bytes] of free storage available before a GC.
+;;; 1086792 words [4347168 bytes] of free storage available if GC is disabled.
+;;; GC: 229160 words [916640 bytes] of dynamic storage in use.
+;;; 426198 words [1704792 bytes] of free storage available before a GC.
+;;; 1081556 words [4326224 bytes] of free storage available if GC is disabled.
+;;; GC: 233592 words [934368 bytes] of dynamic storage in use.
+;;; 421766 words [1687064 bytes] of free storage available before a GC.
+;;; 1077124 words [4308496 bytes] of free storage available if GC is disabled.
+;;; GC: 237744 words [950976 bytes] of dynamic storage in use.
+;;; 417614 words [1670456 bytes] of free storage available before a GC.
+;;; 1072972 words [4291888 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 328 
+ Node Consis. cks   : 3214 
+ Ttl constr chks  : 14021 
+ BT nodes created : 88 
+ Nodes visited    : 13451 
+
+Advance Processing CPU Seconds: 8.31 
+Search             CPU Seconds: 291.72 
+Total              CPU Seconds: 300.03 
+
+;;; GC: 241976 words [967904 bytes] of dynamic storage in use.
+;;; 413382 words [1653528 bytes] of free storage available before a GC.
+;;; 1068740 words [4274960 bytes] of free storage available if GC is disabled.
+;;; GC: 244926 words [979704 bytes] of dynamic storage in use.
+;;; 410432 words [1641728 bytes] of free storage available before a GC.
+;;; 1065790 words [4263160 bytes] of free storage available if GC is disabled.
+;;; GC: 248104 words [992416 bytes] of dynamic storage in use.
+;;; 407254 words [1629016 bytes] of free storage available before a GC.
+;;; 1062612 words [4250448 bytes] of free storage available if GC is disabled.
+;;; GC: 250822 words [1003288 bytes] of dynamic storage in use.
+;;; 404536 words [1618144 bytes] of free storage available before a GC.
+;;; 1059894 words [4239576 bytes] of free storage available if GC is disabled.
+;;; GC: 252884 words [1011536 bytes] of dynamic storage in use.
+;;; 402474 words [1609896 bytes] of free storage available before a GC.
+;;; 1057832 words [4231328 bytes] of free storage available if GC is disabled.
+;;; GC: 255358 words [1021432 bytes] of dynamic storage in use.
+;;; 400000 words [1600000 bytes] of free storage available before a GC.
+;;; 1055358 words [4221432 bytes] of free storage available if GC is disabled.
+;;; GC: 257402 words [1029608 bytes] of dynamic storage in use.
+;;; 397956 words [1591824 bytes] of free storage available before a GC.
+;;; 1053314 words [4213256 bytes] of free storage available if GC is disabled.
+;;; GC: 259286 words [1037144 bytes] of dynamic storage in use.
+;;; 396072 words [1584288 bytes] of free storage available before a GC.
+;;; 1051430 words [4205720 bytes] of free storage available if GC is disabled.
+;;; GC: 260560 words [1042240 bytes] of dynamic storage in use.
+;;; 394798 words [1579192 bytes] of free storage available before a GC.
+;;; 1050156 words [4200624 bytes] of free storage available if GC is disabled.
+;;; GC: 262334 words [1049336 bytes] of dynamic storage in use.
+;;; 393024 words [1572096 bytes] of free storage available before a GC.
+;;; 1048382 words [4193528 bytes] of free storage available if GC is disabled.
+;;; GC: 263952 words [1055808 bytes] of dynamic storage in use.
+;;; 391406 words [1565624 bytes] of free storage available before a GC.
+;;; 1046764 words [4187056 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 450 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 411 
+ Node Consis. cks   : 3214 
+ Ttl constr chks  : 16807 
+ BT nodes created : 106 
+ Nodes visited    : 16111 
+
+Advance Processing CPU Seconds: 8.31 
+Search             CPU Seconds: 441.72 
+Total              CPU Seconds: 450.03 
+
+;;; GC: 265692 words [1062768 bytes] of dynamic storage in use.
+;;; 389666 words [1558664 bytes] of free storage available before a GC.
+;;; 1045024 words [4180096 bytes] of free storage available if GC is disabled.
+;;; GC: 267306 words [1069224 bytes] of dynamic storage in use.
+;;; 388052 words [1552208 bytes] of free storage available before a GC.
+;;; 1043410 words [4173640 bytes] of free storage available if GC is disabled.
+;;; GC: 268850 words [1075400 bytes] of dynamic storage in use.
+;;; 386508 words [1546032 bytes] of free storage available before a GC.
+;;; 1041866 words [4167464 bytes] of free storage available if GC is disabled.
+;;; GC: 270394 words [1081576 bytes] of dynamic storage in use.
+;;; 384964 words [1539856 bytes] of free storage available before a GC.
+;;; 1040322 words [4161288 bytes] of free storage available if GC is disabled.
+;;; GC: 271878 words [1087512 bytes] of dynamic storage in use.
+;;; 383480 words [1533920 bytes] of free storage available before a GC.
+;;; 1038838 words [4155352 bytes] of free storage available if GC is disabled.
+;;; GC: 273012 words [1092048 bytes] of dynamic storage in use.
+;;; 382346 words [1529384 bytes] of free storage available before a GC.
+;;; 1037704 words [4150816 bytes] of free storage available if GC is disabled.
+;;; GC: 274506 words [1098024 bytes] of dynamic storage in use.
+;;; 380852 words [1523408 bytes] of free storage available before a GC.
+;;; 1036210 words [4144840 bytes] of free storage available if GC is disabled.
+;;; GC: 276060 words [1104240 bytes] of dynamic storage in use.
+;;; 379298 words [1517192 bytes] of free storage available before a GC.
+;;; 1034656 words [4138624 bytes] of free storage available if GC is disabled.
+;;; GC: 277164 words [1108656 bytes] of dynamic storage in use.
+;;; 378194 words [1512776 bytes] of free storage available before a GC.
+;;; 1033552 words [4134208 bytes] of free storage available if GC is disabled.
+;;; GC: 278268 words [1113072 bytes] of dynamic storage in use.
+;;; 377090 words [1508360 bytes] of free storage available before a GC.
+;;; 1032448 words [4129792 bytes] of free storage available if GC is disabled.
+;;; GC: 279388 words [1117552 bytes] of dynamic storage in use.
+;;; 375970 words [1503880 bytes] of free storage available before a GC.
+;;; 1031328 words [4125312 bytes] of free storage available if GC is disabled.
+;;; GC: 280472 words [1121888 bytes] of dynamic storage in use.
+;;; 374886 words [1499544 bytes] of free storage available before a GC.
+;;; 1030244 words [4120976 bytes] of free storage available if GC is disabled.
+;;; GC: 281566 words [1126264 bytes] of dynamic storage in use.
+;;; 373792 words [1495168 bytes] of free storage available before a GC.
+;;; 1029150 words [4116600 bytes] of free storage available if GC is disabled.
+;;; GC: 282616 words [1130464 bytes] of dynamic storage in use.
+;;; 372742 words [1490968 bytes] of free storage available before a GC.
+;;; 1028100 words [4112400 bytes] of free storage available if GC is disabled.
+;;; GC: 283570 words [1134280 bytes] of dynamic storage in use.
+;;; 371788 words [1487152 bytes] of free storage available before a GC.
+;;; 1027146 words [4108584 bytes] of free storage available if GC is disabled.
+;;; GC: 284614 words [1138456 bytes] of dynamic storage in use.
+;;; 370744 words [1482976 bytes] of free storage available before a GC.
+;;; 1026102 words [4104408 bytes] of free storage available if GC is disabled.
+> Time limit bound exceeded  < 600 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : TIME-BOUND-EXCEEDED 
+ No. Solutions    : 491 
+ Node Consis. cks   : 3214 
+ Ttl constr chks  : 18938 
+ BT nodes created : 119 
+ Nodes visited    : 18125 
+
+Advance Processing CPU Seconds: 8.31 
+Search             CPU Seconds: 591.76 
+Total              CPU Seconds: 600.07 
+
+Elapsed Real Time = 613.70 seconds (10 minutes, 13.70 seconds)
+Total Run Time    = 601.67 seconds (10 minutes, 1.67 seconds)
+User Run Time     = 595.94 seconds (9 minutes, 55.94 seconds)
+System Run Time   = 5.73 seconds
+Process Page Faults    =         19
+Dynamic Bytes Consed   = 32,525,056
+Ephemeral Bytes Consed = 1,229,594,344
+There were 35 dynamic GCs
+There were 2346 ephemeral GCs
+TIME-BOUND
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 143514 words [574056 bytes] of dynamic storage in use.
+;;; 511844 words [2047376 bytes] of free storage available before a GC.
+;;; 1167202 words [4668808 bytes] of free storage available if GC is disabled.
+;;; GC: 195498 words [781992 bytes] of dynamic storage in use.
+;;; 459860 words [1839440 bytes] of free storage available before a GC.
+;;; 1115218 words [4460872 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 209380 words [837520 bytes] of dynamic storage in use.
+;;; 445978 words [1783912 bytes] of free storage available before a GC.
+;;; 1101336 words [4405344 bytes] of free storage available if GC is disabled.
+;;; GC: 218544 words [874176 bytes] of dynamic storage in use.
+;;; 436814 words [1747256 bytes] of free storage available before a GC.
+;;; 1092172 words [4368688 bytes] of free storage available if GC is disabled.
+;;; GC: 224722 words [898888 bytes] of dynamic storage in use.
+;;; 430636 words [1722544 bytes] of free storage available before a GC.
+;;; 1085994 words [4343976 bytes] of free storage available if GC is disabled.
+;;; GC: 230222 words [920888 bytes] of dynamic storage in use.
+;;; 425136 words [1700544 bytes] of free storage available before a GC.
+;;; 1080494 words [4321976 bytes] of free storage available if GC is disabled.
+;;; GC: 234534 words [938136 bytes] of dynamic storage in use.
+;;; 420824 words [1683296 bytes] of free storage available before a GC.
+;;; 1076182 words [4304728 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 391 
+ Node Consis. cks   : 3128 
+ Ttl constr chks  : 13925 
+ BT nodes created : 93 
+ Nodes visited    : 13351 
+
+Advance Processing CPU Seconds: 8.42 
+Search             CPU Seconds: 291.74 
+Total              CPU Seconds: 300.16 
+
+;;; GC: 238656 words [954624 bytes] of dynamic storage in use.
+;;; 416702 words [1666808 bytes] of free storage available before a GC.
+;;; 1072060 words [4288240 bytes] of free storage available if GC is disabled.
+;;; GC: 242864 words [971456 bytes] of dynamic storage in use.
+;;; 412494 words [1649976 bytes] of free storage available before a GC.
+;;; 1067852 words [4271408 bytes] of free storage available if GC is disabled.
+;;; GC: 245678 words [982712 bytes] of dynamic storage in use.
+;;; 409680 words [1638720 bytes] of free storage available before a GC.
+;;; 1065038 words [4260152 bytes] of free storage available if GC is disabled.
+;;; GC: 248820 words [995280 bytes] of dynamic storage in use.
+;;; 406538 words [1626152 bytes] of free storage available before a GC.
+;;; 1061896 words [4247584 bytes] of free storage available if GC is disabled.
+;;; GC: 250850 words [1003400 bytes] of dynamic storage in use.
+;;; 404508 words [1618032 bytes] of free storage available before a GC.
+;;; 1059866 words [4239464 bytes] of free storage available if GC is disabled.
+;;; GC: 253498 words [1013992 bytes] of dynamic storage in use.
+;;; 401860 words [1607440 bytes] of free storage available before a GC.
+;;; 1057218 words [4228872 bytes] of free storage available if GC is disabled.
+;;; GC: 255886 words [1023544 bytes] of dynamic storage in use.
+;;; 399472 words [1597888 bytes] of free storage available before a GC.
+;;; 1054830 words [4219320 bytes] of free storage available if GC is disabled.
+;;; GC: 257920 words [1031680 bytes] of dynamic storage in use.
+;;; 397438 words [1589752 bytes] of free storage available before a GC.
+;;; 1052796 words [4211184 bytes] of free storage available if GC is disabled.
+;;; GC: 259704 words [1038816 bytes] of dynamic storage in use.
+;;; 395654 words [1582616 bytes] of free storage available before a GC.
+;;; 1051012 words [4204048 bytes] of free storage available if GC is disabled.
+;;; GC: 260952 words [1043808 bytes] of dynamic storage in use.
+;;; 394406 words [1577624 bytes] of free storage available before a GC.
+;;; 1049764 words [4199056 bytes] of free storage available if GC is disabled.
+;;; GC: 262726 words [1050904 bytes] of dynamic storage in use.
+;;; 392632 words [1570528 bytes] of free storage available before a GC.
+;;; 1047990 words [4191960 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 450 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 439 
+ Node Consis. cks   : 3128 
+ Ttl constr chks  : 16602 
+ BT nodes created : 111 
+ Nodes visited    : 15946 
+
+Advance Processing CPU Seconds: 8.42 
+Search             CPU Seconds: 441.63 
+Total              CPU Seconds: 450.05 
+
+;;; GC: 264300 words [1057200 bytes] of dynamic storage in use.
+;;; 391058 words [1564232 bytes] of free storage available before a GC.
+;;; 1046416 words [4185664 bytes] of free storage available if GC is disabled.
+;;; GC: 266004 words [1064016 bytes] of dynamic storage in use.
+;;; 389354 words [1557416 bytes] of free storage available before a GC.
+;;; 1044712 words [4178848 bytes] of free storage available if GC is disabled.
+;;; GC: 267522 words [1070088 bytes] of dynamic storage in use.
+;;; 387836 words [1551344 bytes] of free storage available before a GC.
+;;; 1043194 words [4172776 bytes] of free storage available if GC is disabled.
+;;; GC: 269042 words [1076168 bytes] of dynamic storage in use.
+;;; 386316 words [1545264 bytes] of free storage available before a GC.
+;;; 1041674 words [4166696 bytes] of free storage available if GC is disabled.
+;;; GC: 270204 words [1080816 bytes] of dynamic storage in use.
+;;; 385154 words [1540616 bytes] of free storage available before a GC.
+;;; 1040512 words [4162048 bytes] of free storage available if GC is disabled.
+;;; GC: 271710 words [1086840 bytes] of dynamic storage in use.
+;;; 383648 words [1534592 bytes] of free storage available before a GC.
+;;; 1039006 words [4156024 bytes] of free storage available if GC is disabled.
+;;; GC: 273204 words [1092816 bytes] of dynamic storage in use.
+;;; 382154 words [1528616 bytes] of free storage available before a GC.
+;;; 1037512 words [4150048 bytes] of free storage available if GC is disabled.
+;;; GC: 274298 words [1097192 bytes] of dynamic storage in use.
+;;; 381060 words [1524240 bytes] of free storage available before a GC.
+;;; 1036418 words [4145672 bytes] of free storage available if GC is disabled.
+;;; GC: 275812 words [1103248 bytes] of dynamic storage in use.
+;;; 379546 words [1518184 bytes] of free storage available before a GC.
+;;; 1034904 words [4139616 bytes] of free storage available if GC is disabled.
+;;; GC: 276920 words [1107680 bytes] of dynamic storage in use.
+;;; 378438 words [1513752 bytes] of free storage available before a GC.
+;;; 1033796 words [4135184 bytes] of free storage available if GC is disabled.
+;;; GC: 278390 words [1113560 bytes] of dynamic storage in use.
+;;; 376968 words [1507872 bytes] of free storage available before a GC.
+;;; 1032326 words [4129304 bytes] of free storage available if GC is disabled.
+;;; GC: 279494 words [1117976 bytes] of dynamic storage in use.
+;;; 375864 words [1503456 bytes] of free storage available before a GC.
+;;; 1031222 words [4124888 bytes] of free storage available if GC is disabled.
+;;; GC: 280634 words [1122536 bytes] of dynamic storage in use.
+;;; 374724 words [1498896 bytes] of free storage available before a GC.
+;;; 1030082 words [4120328 bytes] of free storage available if GC is disabled.
+;;; GC: 281718 words [1126872 bytes] of dynamic storage in use.
+;;; 373640 words [1494560 bytes] of free storage available before a GC.
+;;; 1028998 words [4115992 bytes] of free storage available if GC is disabled.
+;;; GC: 282772 words [1131088 bytes] of dynamic storage in use.
+;;; 372586 words [1490344 bytes] of free storage available before a GC.
+;;; 1027944 words [4111776 bytes] of free storage available if GC is disabled.
+> Time limit bound exceeded  < 600 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : TIME-BOUND-EXCEEDED 
+ No. Solutions    : 498 
+ Node Consis. cks   : 3128 
+ Ttl constr chks  : 18706 
+ BT nodes created : 125 
+ Nodes visited    : 17976 
+
+Advance Processing CPU Seconds: 8.42 
+Search             CPU Seconds: 591.61 
+Total              CPU Seconds: 600.03 
+
+Elapsed Real Time = 617.51 seconds (10 minutes, 17.51 seconds)
+Total Run Time    = 601.51 seconds (10 minutes, 1.51 seconds)
+User Run Time     = 595.84 seconds (9 minutes, 55.84 seconds)
+System Run Time   = 5.67 seconds
+Process Page Faults    =         56
+Dynamic Bytes Consed   = 32,196,992
+Ephemeral Bytes Consed = 1,206,378,624
+There were 33 dynamic GCs
+There were 2301 ephemeral GCs
+TIME-BOUND
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 141930 words [567720 bytes] of dynamic storage in use.
+;;; 513428 words [2053712 bytes] of free storage available before a GC.
+;;; 1168786 words [4675144 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 193068 words [772272 bytes] of dynamic storage in use.
+;;; 462290 words [1849160 bytes] of free storage available before a GC.
+;;; 1117648 words [4470592 bytes] of free storage available if GC is disabled.
+;;; GC: 207576 words [830304 bytes] of dynamic storage in use.
+;;; 447782 words [1791128 bytes] of free storage available before a GC.
+;;; 1103140 words [4412560 bytes] of free storage available if GC is disabled.
+;;; GC: 216538 words [866152 bytes] of dynamic storage in use.
+;;; 438820 words [1755280 bytes] of free storage available before a GC.
+;;; 1094178 words [4376712 bytes] of free storage available if GC is disabled.
+;;; GC: 222952 words [891808 bytes] of dynamic storage in use.
+;;; 432406 words [1729624 bytes] of free storage available before a GC.
+;;; 1087764 words [4351056 bytes] of free storage available if GC is disabled.
+;;; GC: 228550 words [914200 bytes] of dynamic storage in use.
+;;; 426808 words [1707232 bytes] of free storage available before a GC.
+;;; 1082166 words [4328664 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 367 
+ Node Consis. cks   : 2904 
+ Ttl constr chks  : 13300 
+ BT nodes created : 111 
+ Nodes visited    : 12835 
+
+Advance Processing CPU Seconds: 9.01 
+Search             CPU Seconds: 291.02 
+Total              CPU Seconds: 300.03 
+
+;;; GC: 232790 words [931160 bytes] of dynamic storage in use.
+;;; 422568 words [1690272 bytes] of free storage available before a GC.
+;;; 1077926 words [4311704 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 381 
+ Node Consis. cks   : 2904 
+ Ttl constr chks  : 13818 
+ BT nodes created : 115 
+ Nodes visited    : 13340 
+
+Advance Processing CPU Seconds: 9.01 
+Search             CPU Seconds: 316.35 
+Total              CPU Seconds: 325.36 
+
+Elapsed Real Time = 338.03 seconds (5 minutes, 38.03 seconds)
+Total Run Time    = 326.87 seconds (5 minutes, 26.87 seconds)
+User Run Time     = 321.06 seconds (5 minutes, 21.06 seconds)
+System Run Time   = 5.81 seconds
+Process Page Faults    =        124
+Dynamic Bytes Consed   =  8,255,608
+Ephemeral Bytes Consed = 665,379,064
+There were 7 dynamic GCs
+There were 1269 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 179830 words [719320 bytes] of dynamic storage in use.
+;;; 475528 words [1902112 bytes] of free storage available before a GC.
+;;; 1130886 words [4523544 bytes] of free storage available if GC is disabled.
+;;; GC: 184428 words [737712 bytes] of dynamic storage in use.
+;;; 470930 words [1883720 bytes] of free storage available before a GC.
+;;; 1126288 words [4505152 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 204062 words [816248 bytes] of dynamic storage in use.
+;;; 451296 words [1805184 bytes] of free storage available before a GC.
+;;; 1106654 words [4426616 bytes] of free storage available if GC is disabled.
+;;; GC: 214522 words [858088 bytes] of dynamic storage in use.
+;;; 440836 words [1763344 bytes] of free storage available before a GC.
+;;; 1096194 words [4384776 bytes] of free storage available if GC is disabled.
+;;; GC: 220860 words [883440 bytes] of dynamic storage in use.
+;;; 434498 words [1737992 bytes] of free storage available before a GC.
+;;; 1089856 words [4359424 bytes] of free storage available if GC is disabled.
+;;; GC: 226674 words [906696 bytes] of dynamic storage in use.
+;;; 428684 words [1714736 bytes] of free storage available before a GC.
+;;; 1084042 words [4336168 bytes] of free storage available if GC is disabled.
+;;; GC: 231012 words [924048 bytes] of dynamic storage in use.
+;;; 424346 words [1697384 bytes] of free storage available before a GC.
+;;; 1079704 words [4318816 bytes] of free storage available if GC is disabled.
+;;; GC: 235244 words [940976 bytes] of dynamic storage in use.
+;;; 420114 words [1680456 bytes] of free storage available before a GC.
+;;; 1075472 words [4301888 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 357 
+ Node Consis. cks   : 3244 
+ Ttl constr chks  : 13718 
+ BT nodes created : 86 
+ Nodes visited    : 13224 
+
+Advance Processing CPU Seconds: 8.43 
+Search             CPU Seconds: 291.58 
+Total              CPU Seconds: 300.02 
+
+;;; GC: 239096 words [956384 bytes] of dynamic storage in use.
+;;; 416262 words [1665048 bytes] of free storage available before a GC.
+;;; 1071620 words [4286480 bytes] of free storage available if GC is disabled.
+;;; GC: 242114 words [968456 bytes] of dynamic storage in use.
+;;; 413244 words [1652976 bytes] of free storage available before a GC.
+;;; 1068602 words [4274408 bytes] of free storage available if GC is disabled.
+;;; GC: 245502 words [982008 bytes] of dynamic storage in use.
+;;; 409856 words [1639424 bytes] of free storage available before a GC.
+;;; 1065214 words [4260856 bytes] of free storage available if GC is disabled.
+;;; GC: 248500 words [994000 bytes] of dynamic storage in use.
+;;; 406858 words [1627432 bytes] of free storage available before a GC.
+;;; 1062216 words [4248864 bytes] of free storage available if GC is disabled.
+;;; GC: 250964 words [1003856 bytes] of dynamic storage in use.
+;;; 404394 words [1617576 bytes] of free storage available before a GC.
+;;; 1059752 words [4239008 bytes] of free storage available if GC is disabled.
+;;; GC: 253512 words [1014048 bytes] of dynamic storage in use.
+;;; 401846 words [1607384 bytes] of free storage available before a GC.
+;;; 1057204 words [4228816 bytes] of free storage available if GC is disabled.
+;;; GC: 255986 words [1023944 bytes] of dynamic storage in use.
+;;; 399372 words [1597488 bytes] of free storage available before a GC.
+;;; 1054730 words [4218920 bytes] of free storage available if GC is disabled.
+;;; GC: 258090 words [1032360 bytes] of dynamic storage in use.
+;;; 397268 words [1589072 bytes] of free storage available before a GC.
+;;; 1052626 words [4210504 bytes] of free storage available if GC is disabled.
+;;; GC: 259888 words [1039552 bytes] of dynamic storage in use.
+;;; 395470 words [1581880 bytes] of free storage available before a GC.
+;;; 1050828 words [4203312 bytes] of free storage available if GC is disabled.
+;;; GC: 261498 words [1045992 bytes] of dynamic storage in use.
+;;; 393860 words [1575440 bytes] of free storage available before a GC.
+;;; 1049218 words [4196872 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 450 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 405 
+ Node Consis. cks   : 3244 
+ Ttl constr chks  : 16407 
+ BT nodes created : 103 
+ Nodes visited    : 15840 
+
+Advance Processing CPU Seconds: 8.43 
+Search             CPU Seconds: 441.67 
+Total              CPU Seconds: 450.11 
+
+;;; GC: 263092 words [1052368 bytes] of dynamic storage in use.
+;;; 392266 words [1569064 bytes] of free storage available before a GC.
+;;; 1047624 words [4190496 bytes] of free storage available if GC is disabled.
+;;; GC: 264706 words [1058824 bytes] of dynamic storage in use.
+;;; 390652 words [1562608 bytes] of free storage available before a GC.
+;;; 1046010 words [4184040 bytes] of free storage available if GC is disabled.
+;;; GC: 266314 words [1065256 bytes] of dynamic storage in use.
+;;; 389044 words [1556176 bytes] of free storage available before a GC.
+;;; 1044402 words [4177608 bytes] of free storage available if GC is disabled.
+;;; GC: 267844 words [1071376 bytes] of dynamic storage in use.
+;;; 387514 words [1550056 bytes] of free storage available before a GC.
+;;; 1042872 words [4171488 bytes] of free storage available if GC is disabled.
+;;; GC: 269378 words [1077512 bytes] of dynamic storage in use.
+;;; 385980 words [1543920 bytes] of free storage available before a GC.
+;;; 1041338 words [4165352 bytes] of free storage available if GC is disabled.
+;;; GC: 270902 words [1083608 bytes] of dynamic storage in use.
+;;; 384456 words [1537824 bytes] of free storage available before a GC.
+;;; 1039814 words [4159256 bytes] of free storage available if GC is disabled.
+;;; GC: 272396 words [1089584 bytes] of dynamic storage in use.
+;;; 382962 words [1531848 bytes] of free storage available before a GC.
+;;; 1038320 words [4153280 bytes] of free storage available if GC is disabled.
+;;; GC: 273890 words [1095560 bytes] of dynamic storage in use.
+;;; 381468 words [1525872 bytes] of free storage available before a GC.
+;;; 1036826 words [4147304 bytes] of free storage available if GC is disabled.
+;;; GC: 275364 words [1101456 bytes] of dynamic storage in use.
+;;; 379994 words [1519976 bytes] of free storage available before a GC.
+;;; 1035352 words [4141408 bytes] of free storage available if GC is disabled.
+;;; GC: 276468 words [1105872 bytes] of dynamic storage in use.
+;;; 378890 words [1515560 bytes] of free storage available before a GC.
+;;; 1034248 words [4136992 bytes] of free storage available if GC is disabled.
+;;; GC: 277548 words [1110192 bytes] of dynamic storage in use.
+;;; 377810 words [1511240 bytes] of free storage available before a GC.
+;;; 1033168 words [4132672 bytes] of free storage available if GC is disabled.
+;;; GC: 278672 words [1114688 bytes] of dynamic storage in use.
+;;; 376686 words [1506744 bytes] of free storage available before a GC.
+;;; 1032044 words [4128176 bytes] of free storage available if GC is disabled.
+;;; GC: 279776 words [1119104 bytes] of dynamic storage in use.
+;;; 375582 words [1502328 bytes] of free storage available before a GC.
+;;; 1030940 words [4123760 bytes] of free storage available if GC is disabled.
+;;; GC: 280812 words [1123248 bytes] of dynamic storage in use.
+;;; 374546 words [1498184 bytes] of free storage available before a GC.
+;;; 1029904 words [4119616 bytes] of free storage available if GC is disabled.
+;;; GC: 281890 words [1127560 bytes] of dynamic storage in use.
+;;; 373468 words [1493872 bytes] of free storage available before a GC.
+;;; 1028826 words [4115304 bytes] of free storage available if GC is disabled.
+> Time limit bound exceeded  < 600 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : TIME-BOUND-EXCEEDED 
+ No. Solutions    : 464 
+ Node Consis. cks   : 3244 
+ Ttl constr chks  : 18478 
+ BT nodes created : 116 
+ Nodes visited    : 17831 
+
+Advance Processing CPU Seconds: 8.43 
+Search             CPU Seconds: 591.6 
+Total              CPU Seconds: 600.04 
+
+Elapsed Real Time = 614.29 seconds (10 minutes, 14.29 seconds)
+Total Run Time    = 601.57 seconds (10 minutes, 1.57 seconds)
+User Run Time     = 595.87 seconds (9 minutes, 55.87 seconds)
+System Run Time   = 5.70 seconds
+Process Page Faults    =         45
+Dynamic Bytes Consed   = 31,407,680
+Ephemeral Bytes Consed = 1,194,556,104
+There were 33 dynamic GCs
+There were 2278 ephemeral GCs
+TIME-BOUND
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 140478 words [561912 bytes] of dynamic storage in use.
+;;; 514880 words [2059520 bytes] of free storage available before a GC.
+;;; 1170238 words [4680952 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 195024 words [780096 bytes] of dynamic storage in use.
+;;; 460334 words [1841336 bytes] of free storage available before a GC.
+;;; 1115692 words [4462768 bytes] of free storage available if GC is disabled.
+;;; GC: 206942 words [827768 bytes] of dynamic storage in use.
+;;; 448416 words [1793664 bytes] of free storage available before a GC.
+;;; 1103774 words [4415096 bytes] of free storage available if GC is disabled.
+;;; GC: 216132 words [864528 bytes] of dynamic storage in use.
+;;; 439226 words [1756904 bytes] of free storage available before a GC.
+;;; 1094584 words [4378336 bytes] of free storage available if GC is disabled.
+;;; GC: 222404 words [889616 bytes] of dynamic storage in use.
+;;; 432954 words [1731816 bytes] of free storage available before a GC.
+;;; 1088312 words [4353248 bytes] of free storage available if GC is disabled.
+;;; GC: 228014 words [912056 bytes] of dynamic storage in use.
+;;; 427344 words [1709376 bytes] of free storage available before a GC.
+;;; 1082702 words [4330808 bytes] of free storage available if GC is disabled.
+;;; GC: 233302 words [933208 bytes] of dynamic storage in use.
+;;; 422056 words [1688224 bytes] of free storage available before a GC.
+;;; 1077414 words [4309656 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 309 
+ Node Consis. cks   : 3052 
+ Ttl constr chks  : 13446 
+ BT nodes created : 99 
+ Nodes visited    : 13010 
+
+Advance Processing CPU Seconds: 8.61 
+Search             CPU Seconds: 291.5 
+Total              CPU Seconds: 300.11 
+
+;;; GC: 236914 words [947656 bytes] of dynamic storage in use.
+;;; 418444 words [1673776 bytes] of free storage available before a GC.
+;;; 1073802 words [4295208 bytes] of free storage available if GC is disabled.
+;;; GC: 240914 words [963656 bytes] of dynamic storage in use.
+;;; 414444 words [1657776 bytes] of free storage available before a GC.
+;;; 1069802 words [4279208 bytes] of free storage available if GC is disabled.
+;;; GC: 243922 words [975688 bytes] of dynamic storage in use.
+;;; 411436 words [1645744 bytes] of free storage available before a GC.
+;;; 1066794 words [4267176 bytes] of free storage available if GC is disabled.
+;;; GC: 246410 words [985640 bytes] of dynamic storage in use.
+;;; 408948 words [1635792 bytes] of free storage available before a GC.
+;;; 1064306 words [4257224 bytes] of free storage available if GC is disabled.
+;;; GC: 249358 words [997432 bytes] of dynamic storage in use.
+;;; 406000 words [1624000 bytes] of free storage available before a GC.
+;;; 1061358 words [4245432 bytes] of free storage available if GC is disabled.
+;;; GC: 251626 words [1006504 bytes] of dynamic storage in use.
+;;; 403732 words [1614928 bytes] of free storage available before a GC.
+;;; 1059090 words [4236360 bytes] of free storage available if GC is disabled.
+;;; GC: 254384 words [1017536 bytes] of dynamic storage in use.
+;;; 400974 words [1603896 bytes] of free storage available before a GC.
+;;; 1056332 words [4225328 bytes] of free storage available if GC is disabled.
+;;; GC: 256558 words [1026232 bytes] of dynamic storage in use.
+;;; 398800 words [1595200 bytes] of free storage available before a GC.
+;;; 1054158 words [4216632 bytes] of free storage available if GC is disabled.
+;;; GC: 258412 words [1033648 bytes] of dynamic storage in use.
+;;; 396946 words [1587784 bytes] of free storage available before a GC.
+;;; 1052304 words [4209216 bytes] of free storage available if GC is disabled.
+;;; GC: 260186 words [1040744 bytes] of dynamic storage in use.
+;;; 395172 words [1580688 bytes] of free storage available before a GC.
+;;; 1050530 words [4202120 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 450 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 380 
+ Node Consis. cks   : 3052 
+ Ttl constr chks  : 16185 
+ BT nodes created : 119 
+ Nodes visited    : 15642 
+
+Advance Processing CPU Seconds: 8.61 
+Search             CPU Seconds: 442.23 
+Total              CPU Seconds: 450.84 
+
+;;; GC: 261780 words [1047120 bytes] of dynamic storage in use.
+;;; 393578 words [1574312 bytes] of free storage available before a GC.
+;;; 1048936 words [4195744 bytes] of free storage available if GC is disabled.
+;;; GC: 263384 words [1053536 bytes] of dynamic storage in use.
+;;; 391974 words [1567896 bytes] of free storage available before a GC.
+;;; 1047332 words [4189328 bytes] of free storage available if GC is disabled.
+;;; GC: 264988 words [1059952 bytes] of dynamic storage in use.
+;;; 390370 words [1561480 bytes] of free storage available before a GC.
+;;; 1045728 words [4182912 bytes] of free storage available if GC is disabled.
+;;; GC: 266586 words [1066344 bytes] of dynamic storage in use.
+;;; 388772 words [1555088 bytes] of free storage available before a GC.
+;;; 1044130 words [4176520 bytes] of free storage available if GC is disabled.
+;;; GC: 268120 words [1072480 bytes] of dynamic storage in use.
+;;; 387238 words [1548952 bytes] of free storage available before a GC.
+;;; 1042596 words [4170384 bytes] of free storage available if GC is disabled.
+;;; GC: 269644 words [1078576 bytes] of dynamic storage in use.
+;;; 385714 words [1542856 bytes] of free storage available before a GC.
+;;; 1041072 words [4164288 bytes] of free storage available if GC is disabled.
+;;; GC: 271148 words [1084592 bytes] of dynamic storage in use.
+;;; 384210 words [1536840 bytes] of free storage available before a GC.
+;;; 1039568 words [4158272 bytes] of free storage available if GC is disabled.
+;;; GC: 272628 words [1090512 bytes] of dynamic storage in use.
+;;; 382730 words [1530920 bytes] of free storage available before a GC.
+;;; 1038088 words [4152352 bytes] of free storage available if GC is disabled.
+;;; GC: 273756 words [1095024 bytes] of dynamic storage in use.
+;;; 381602 words [1526408 bytes] of free storage available before a GC.
+;;; 1036960 words [4147840 bytes] of free storage available if GC is disabled.
+;;; GC: 275256 words [1101024 bytes] of dynamic storage in use.
+;;; 380102 words [1520408 bytes] of free storage available before a GC.
+;;; 1035460 words [4141840 bytes] of free storage available if GC is disabled.
+;;; GC: 276374 words [1105496 bytes] of dynamic storage in use.
+;;; 378984 words [1515936 bytes] of free storage available before a GC.
+;;; 1034342 words [4137368 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 430 
+ Node Consis. cks   : 3052 
+ Ttl constr chks  : 17902 
+ BT nodes created : 131 
+ Nodes visited    : 17292 
+
+Advance Processing CPU Seconds: 8.61 
+Search             CPU Seconds: 561.93 
+Total              CPU Seconds: 570.54 
+
+Elapsed Real Time = 582.58 seconds (9 minutes, 42.58 seconds)
+Total Run Time    = 572.23 seconds (9 minutes, 32.23 seconds)
+User Run Time     = 566.76 seconds (9 minutes, 26.76 seconds)
+System Run Time   = 5.47 seconds
+Process Page Faults    =          8
+Dynamic Bytes Consed   = 27,439,536
+Ephemeral Bytes Consed = 1,121,901,576
+There were 28 dynamic GCs
+There were 2140 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 162324 words [649296 bytes] of dynamic storage in use.
+;;; 493034 words [1972136 bytes] of free storage available before a GC.
+;;; 1148392 words [4593568 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 195910 words [783640 bytes] of dynamic storage in use.
+;;; 459448 words [1837792 bytes] of free storage available before a GC.
+;;; 1114806 words [4459224 bytes] of free storage available if GC is disabled.
+;;; GC: 208050 words [832200 bytes] of dynamic storage in use.
+;;; 447308 words [1789232 bytes] of free storage available before a GC.
+;;; 1102666 words [4410664 bytes] of free storage available if GC is disabled.
+;;; GC: 217260 words [869040 bytes] of dynamic storage in use.
+;;; 438098 words [1752392 bytes] of free storage available before a GC.
+;;; 1093456 words [4373824 bytes] of free storage available if GC is disabled.
+;;; GC: 223320 words [893280 bytes] of dynamic storage in use.
+;;; 432038 words [1728152 bytes] of free storage available before a GC.
+;;; 1087396 words [4349584 bytes] of free storage available if GC is disabled.
+;;; GC: 228822 words [915288 bytes] of dynamic storage in use.
+;;; 426536 words [1706144 bytes] of free storage available before a GC.
+;;; 1081894 words [4327576 bytes] of free storage available if GC is disabled.
+;;; GC: 232980 words [931920 bytes] of dynamic storage in use.
+;;; 422378 words [1689512 bytes] of free storage available before a GC.
+;;; 1077736 words [4310944 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 310 
+ Node Consis. cks   : 2980 
+ Ttl constr chks  : 13444 
+ BT nodes created : 107 
+ Nodes visited    : 13060 
+
+Advance Processing CPU Seconds: 8.25 
+Search             CPU Seconds: 291.8 
+Total              CPU Seconds: 300.05 
+
+;;; GC: 236976 words [947904 bytes] of dynamic storage in use.
+;;; 418382 words [1673528 bytes] of free storage available before a GC.
+;;; 1073740 words [4294960 bytes] of free storage available if GC is disabled.
+;;; GC: 240348 words [961392 bytes] of dynamic storage in use.
+;;; 415010 words [1660040 bytes] of free storage available before a GC.
+;;; 1070368 words [4281472 bytes] of free storage available if GC is disabled.
+;;; GC: 244020 words [976080 bytes] of dynamic storage in use.
+;;; 411338 words [1645352 bytes] of free storage available before a GC.
+;;; 1066696 words [4266784 bytes] of free storage available if GC is disabled.
+;;; GC: 246878 words [987512 bytes] of dynamic storage in use.
+;;; 408480 words [1633920 bytes] of free storage available before a GC.
+;;; 1063838 words [4255352 bytes] of free storage available if GC is disabled.
+;;; GC: 249786 words [999144 bytes] of dynamic storage in use.
+;;; 405572 words [1622288 bytes] of free storage available before a GC.
+;;; 1060930 words [4243720 bytes] of free storage available if GC is disabled.
+;;; GC: 252344 words [1009376 bytes] of dynamic storage in use.
+;;; 403014 words [1612056 bytes] of free storage available before a GC.
+;;; 1058372 words [4233488 bytes] of free storage available if GC is disabled.
+***** BACKTRACK Information ***** 
+
+ Exit Location    : NULL-PARENT-STATE 
+ No. Solutions    : 355 
+ Node Consis. cks   : 2980 
+ Ttl constr chks  : 15452 
+ BT nodes created : 122 
+ Nodes visited    : 15006 
+
+Advance Processing CPU Seconds: 8.25 
+Search             CPU Seconds: 398.36 
+Total              CPU Seconds: 406.61 
+
+Elapsed Real Time = 413.20 seconds (6 minutes, 53.20 seconds)
+Total Run Time    = 408.23 seconds (6 minutes, 48.23 seconds)
+User Run Time     = 404.91 seconds (6 minutes, 44.91 seconds)
+System Run Time   = 3.32 seconds
+Process Page Faults    =          4
+Dynamic Bytes Consed   = 14,257,984
+Ephemeral Bytes Consed = 848,727,040
+There were 13 dynamic GCs
+There were 1619 ephemeral GCs
+COMPLETE
+> ;;; Loading binary file "mpr-setup.sbin"
+;;; GC: 133914 words [535656 bytes] of dynamic storage in use.
+;;; 521444 words [2085776 bytes] of free storage available before a GC.
+;;; 1176802 words [4707208 bytes] of free storage available if GC is disabled.
+;;; GC: 193528 words [774112 bytes] of dynamic storage in use.
+;;; 461830 words [1847320 bytes] of free storage available before a GC.
+;;; 1117188 words [4468752 bytes] of free storage available if GC is disabled.
+ File Closed. 
+
+;;; GC: 206844 words [827376 bytes] of dynamic storage in use.
+;;; 448514 words [1794056 bytes] of free storage available before a GC.
+;;; 1103872 words [4415488 bytes] of free storage available if GC is disabled.
+;;; GC: 216428 words [865712 bytes] of dynamic storage in use.
+;;; 438930 words [1755720 bytes] of free storage available before a GC.
+;;; 1094288 words [4377152 bytes] of free storage available if GC is disabled.
+;;; GC: 222938 words [891752 bytes] of dynamic storage in use.
+;;; 432420 words [1729680 bytes] of free storage available before a GC.
+;;; 1087778 words [4351112 bytes] of free storage available if GC is disabled.
+;;; GC: 228420 words [913680 bytes] of dynamic storage in use.
+;;; 426938 words [1707752 bytes] of free storage available before a GC.
+;;; 1082296 words [4329184 bytes] of free storage available if GC is disabled.
+;;; GC: 232672 words [930688 bytes] of dynamic storage in use.
+;;; 422686 words [1690744 bytes] of free storage available before a GC.
+;;; 1078044 words [4312176 bytes] of free storage available if GC is disabled.
+> Checkpoint ...  < 300 > 
+***** BACKTRACK Information ***** 
+
+ Exit Location    : CHECKPOINT 
+ No. Solutions    : 359 
+ Node Consis. cks   : 3006 
+ Ttl constr chks  : 13570 
+ BT nodes created : 104 
+ Nodes visited    : 13071 
+
+Advance Processing CPU Seconds: 8.6 
+Search             CPU Seconds: 291.49 
+Total              CPU Seconds: 300.09 
+
+;;; GC: 236594 words [946376 bytes] of dynamic storage in use.
+;;; 418764 words [1675056 bytes] of free storage available before a GC.
+;;; 1074122 words [4296488 bytes] of free storage available if GC is disabled.

@@ -1,0 +1,16 @@
+# AC3 + BT seconds, ij3 data showing confidence interval
+
+set xlabel "Program statements"
+set xrange [0:1049]
+set xtics 0,50
+set ylabel "CPU seconds"
+set yrange [0:600]
+set ytics 0,30
+
+set key 
+set term postscript landscape monochrome "Times-Roman" 14
+set output "ij3-acbt-sec-ci.ps"
+plot "ij3-plot-sec.ci" title "AC3+BT" with lines, "ij3-plot-sec.ci" title "AC3+BT 95% CI" with errorbars
+
+
+

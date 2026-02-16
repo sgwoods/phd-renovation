@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo Display figure for $1 ...
+ghostview -landscape /cc/users/woods/Steve/csp/Situation/$1.ps &
+echo done.
+wait

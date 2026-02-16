@@ -1,0 +1,8 @@
+cd /cc/users/woods/ideas/csp
+
+nice time /cc/software/lisp-4.0/lisp < /cc/users/woods/ideas/csp/Batch/T6/t6-1.lisp > /cc/users/woods/ideas/csp/Batch/T6/t6-1.out 
+
+nice time /cc/software/lisp-4.0/lisp < /cc/users/woods/ideas/csp/Batch/T6/t6-1b.lisp > /cc/users/woods/ideas/csp/Batch/T6/t6-1b.out 
+
+
+

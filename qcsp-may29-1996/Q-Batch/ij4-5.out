@@ -1,0 +1,471 @@
+Allegro CL 4.2 [SPARC; R1] (2/1/95 11:34)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;   Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;     Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): USER(1): Journal Testing (FCDR adv sort)
+"Journal Testing (FCDR adv sort)"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): ; Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;   Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+T
+USER(5): USER(5): **** Noise 900 ****
+"**** Noise 900 ****"
+USER(6): 
+NIL
+USER(7): 
+NIL
+USER(8): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 28,140 msec user, 270 msec system
+; cpu time (gc)     910 msec user, 90 msec system
+; cpu time (total)  29,050 msec user, 360 msec system
+; real time  89,567 msec (00:01:29.567)
+; space allocation:
+ 1,143,065 cons cells,;  1,706 symbols, 4,808,264 other bytes
+NIL
+USER(9): USER(9): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 29,100 msec user, 60 msec system
+; cpu time (gc)     650 msec user, 30 msec system
+; cpu time (total)  29,750 msec user, 90 msec system
+; real time  76,982 msec (00:01:16.982)
+; space allocation:
+ 1,120,906 cons cells,;  1,655 symbols, 4,962,808 other bytes
+NIL
+USER(10): USER(10): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 21,770 msec user, 120 msec system
+; cpu time (gc)     690 msec user, 10 msec system
+; cpu time (total)  22,460 msec user, 130 msec system
+; real time  52,867 msec
+; space allocation:
+ 587,916 cons cells,;  1,593 symbols, 3,934,288 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(11): USER(11): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 23,220 msec user, 100 msec system
+; cpu time (gc)     690 msec user, 0 msec system
+; cpu time (total)  23,910 msec user, 100 msec system
+; real time  52,309 msec
+; space allocation:
+ 663,998 cons cells,;  1,594 symbols, 4,248,800 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(12): USER(12): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 31,450 msec user, 130 msec system
+; cpu time (gc)     770 msec user, 0 msec system
+; cpu time (total)  32,220 msec user, 130 msec system
+; real time  69,750 msec (00:01:09.750)
+; space allocation:
+ 1,514,463 cons cells,;  1,652 symbols, 5,334,840 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(13): USER(13): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 29,400 msec user, 70 msec system
+; cpu time (gc)     850 msec user, 10 msec system
+; cpu time (total)  30,250 msec user, 80 msec system
+; real time  66,141 msec (00:01:06.141)
+; space allocation:
+ 1,120,410 cons cells,;  1,655 symbols, 4,961,600 other bytes
+NIL
+USER(14): USER(14): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 20,330 msec user, 130 msec system
+; cpu time (gc)     870 msec user, 20 msec system
+; cpu time (total)  21,200 msec user, 150 msec system
+; real time  46,750 msec
+; space allocation:
+ 562,813 cons cells,;  1,649 symbols, 3,645,416 other bytes
+NIL
+USER(15): USER(15): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 28,940 msec user, 130 msec system
+; cpu time (gc)     700 msec user, 10 msec system
+; cpu time (total)  29,640 msec user, 140 msec system
+; real time  65,734 msec (00:01:05.734)
+; space allocation:
+ 1,012,095 cons cells,;  1,624 symbols, 5,174,168 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(16): USER(16): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 29,410 msec user, 100 msec system
+; cpu time (gc)     860 msec user, 20 msec system
+; cpu time (total)  30,270 msec user, 120 msec system
+; real time  61,688 msec (00:01:01.688)
+; space allocation:
+ 1,315,513 cons cells,;  1,638 symbols, 5,146,584 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(17): USER(17): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-900.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 26,710 msec user, 150 msec system
+; cpu time (gc)     810 msec user, 30 msec system
+; cpu time (total)  27,520 msec user, 180 msec system
+; real time  59,172 msec
+; space allocation:
+ 1,142,295 cons cells,;  1,655 symbols, 4,741,184 other bytes
+NIL
+USER(18): USER(18): **** Noise 950 ****
+"**** Noise 950 ****"
+USER(19): 
+NIL
+USER(20): 
+NIL
+USER(21): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 32,710 msec user, 140 msec system
+; cpu time (gc)     930 msec user, 40 msec system
+; cpu time (total)  33,640 msec user, 180 msec system
+; real time  76,478 msec (00:01:16.478)
+; space allocation:
+ 1,349,801 cons cells,;  1,791 symbols, 5,345,560 other bytes
+NIL
+USER(22): USER(22): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 32,760 msec user, 100 msec system
+; cpu time (gc)     750 msec user, 0 msec system
+; cpu time (total)  33,510 msec user, 100 msec system
+; real time  79,432 msec (00:01:19.432)
+; space allocation:
+ 1,300,132 cons cells,;  1,743 symbols, 5,311,608 other bytes
+NIL
+USER(23): USER(23): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 24,530 msec user, 150 msec system
+; cpu time (gc)     990 msec user, 20 msec system
+; cpu time (total)  25,520 msec user, 170 msec system
+; real time  56,952 msec
+; space allocation:
+ 627,972 cons cells,;  1,663 symbols, 4,287,136 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(24): USER(24): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 23,680 msec user, 90 msec system
+; cpu time (gc)     840 msec user, 0 msec system
+; cpu time (total)  24,520 msec user, 90 msec system
+; real time  63,263 msec (00:01:03.263)
+; space allocation:
+ 712,415 cons cells,;  1,681 symbols, 4,246,800 other bytes
+NIL
+USER(25): USER(25): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 33,810 msec user, 190 msec system
+; cpu time (gc)     970 msec user, 30 msec system
+; cpu time (total)  34,780 msec user, 220 msec system
+; real time  78,456 msec (00:01:18.456)
+; space allocation:
+ 1,722,882 cons cells,;  1,757 symbols, 5,562,800 other bytes
+NIL
+USER(26): USER(26): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 34,450 msec user, 120 msec system
+; cpu time (gc)     1,100 msec user, 20 msec system
+; cpu time (total)  35,550 msec user, 140 msec system
+; real time  78,852 msec (00:01:18.852)
+; space allocation:
+ 1,300,084 cons cells,;  1,743 symbols, 5,311,608 other bytes
+NIL
+USER(27): USER(27): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 26,660 msec user, 80 msec system
+; cpu time (gc)     7,650 msec user, 2,290 msec system
+; cpu time (total)  34,310 msec user, 2,370 msec system
+; real time  85,999 msec (00:01:25.999)
+; space allocation:
+ 649,936 cons cells,;  1,758 symbols, 3,779,600 other bytes
+NIL
+USER(28): USER(28): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 35,320 msec user, 110 msec system
+; cpu time (gc)     1,110 msec user, 30 msec system
+; cpu time (total)  36,430 msec user, 140 msec system
+; real time  85,782 msec (00:01:25.782)
+; space allocation:
+ 1,111,222 cons cells,;  1,707 symbols, 5,606,832 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(29): USER(29): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 33,520 msec user, 120 msec system
+; cpu time (gc)     730 msec user, 60 msec system
+; cpu time (total)  34,250 msec user, 180 msec system
+; real time  79,246 msec (00:01:19.246)
+; space allocation:
+ 1,579,249 cons cells,;  1,730 symbols, 5,439,576 other bytes
+NIL
+USER(30): USER(30): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-950.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 32,490 msec user, 140 msec system
+; cpu time (gc)     800 msec user, 20 msec system
+; cpu time (total)  33,290 msec user, 160 msec system
+; real time  77,885 msec (00:01:17.885)
+; space allocation:
+ 1,245,829 cons cells,;  1,728 symbols, 5,073,688 other bytes
+NIL
+USER(31): USER(31): **** Noise 1000 ****
+"**** Noise 1000 ****"
+USER(32): 
+NIL
+USER(33): 
+NIL
+USER(34): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 38,110 msec user, 120 msec system
+; cpu time (gc)     1,170 msec user, 70 msec system
+; cpu time (total)  39,280 msec user, 190 msec system
+; real time  86,876 msec (00:01:26.876)
+; space allocation:
+ 1,496,903 cons cells,;  1,871 symbols, 5,848,880 other bytes
+NIL
+USER(35): USER(35): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 38,730 msec user, 80 msec system
+; cpu time (gc)     950 msec user, 70 msec system
+; cpu time (total)  39,680 msec user, 150 msec system
+; real time  89,536 msec (00:01:29.536)
+; space allocation:
+ 1,504,921 cons cells,;  1,835 symbols, 5,731,520 other bytes
+NIL
+USER(36): USER(36): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 27,990 msec user, 100 msec system
+; cpu time (gc)     880 msec user, 70 msec system
+; cpu time (total)  28,870 msec user, 170 msec system
+; real time  64,816 msec (00:01:04.816)
+; space allocation:
+ 743,007 cons cells,;  1,756 symbols, 4,421,752 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(37): USER(37): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 25,780 msec user, 100 msec system
+; cpu time (gc)     840 msec user, 120 msec system
+; cpu time (total)  26,620 msec user, 220 msec system
+; real time  58,835 msec
+; space allocation:
+ 797,900 cons cells,;  1,772 symbols, 4,414,712 other bytes
+NIL
+USER(38): USER(38): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 36,930 msec user, 200 msec system
+; cpu time (gc)     1,380 msec user, 90 msec system
+; cpu time (total)  38,310 msec user, 290 msec system
+; real time  89,557 msec (00:01:29.557)
+; space allocation:
+ 1,923,630 cons cells,;  1,842 symbols, 6,019,448 other bytes
+NIL
+USER(39): USER(39): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 37,340 msec user, 180 msec system
+; cpu time (gc)     980 msec user, 100 msec system
+; cpu time (total)  38,320 msec user, 280 msec system
+; real time  86,936 msec (00:01:26.936)
+; space allocation:
+ 1,504,945 cons cells,;  1,835 symbols, 5,731,384 other bytes
+NIL
+USER(40): USER(40): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 26,700 msec user, 100 msec system
+; cpu time (gc)     960 msec user, 30 msec system
+; cpu time (total)  27,660 msec user, 130 msec system
+; real time  67,339 msec (00:01:07.339)
+; space allocation:
+ 761,814 cons cells,;  1,832 symbols, 4,087,192 other bytes
+NIL
+USER(41): USER(41): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 36,970 msec user, 130 msec system
+; cpu time (gc)     1,100 msec user, 100 msec system
+; cpu time (total)  38,070 msec user, 230 msec system
+; real time  103,507 msec (00:01:43.507)
+; space allocation:
+ 1,312,665 cons cells,;  1,798 symbols, 5,828,720 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C) (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(42): USER(42): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 37,370 msec user, 310 msec system
+; cpu time (gc)     1,320 msec user, 60 msec system
+; cpu time (total)  38,690 msec user, 370 msec system
+; real time  88,550 msec (00:01:28.550)
+; space allocation:
+ 1,861,117 cons cells,;  1,810 symbols, 6,123,152 other bytes
+NIL
+USER(43): USER(43): > Open file: Saving new generated situation. 
+ 
+> Close file: new generated situation. 
+ 
+> Opening output file/stream for :  < Q-Batch/ij4/ij4-1000.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 32,560 msec user, 210 msec system
+; cpu time (gc)     1,510 msec user, 20 msec system
+; cpu time (total)  34,070 msec user, 230 msec system
+; real time  68,923 msec (00:01:08.923)
+; space allocation:
+ 1,386,674 cons cells,;  1,820 symbols, 5,730,144 other bytes
+NIL
+USER(44): USER(44): ; Exiting Lisp

@@ -1,0 +1,202 @@
+This results are got from quilici-search.lisp which uses static ordering of constraint checks
+
+(Notice 94 is actually 95, etc, my fault)
+
+1. Static ordering results:
+
+min: 94 80
+max: 94 281
+avg: 94 155.59616
+
+min: 280 648
+max: 280 3177
+avg: 280 1320.6859
+
+min: 559 2520
+max: 559 15336
+avg: 559 5252.3335
+
+min: 838 5616
+max: 838 36477
+avg: 838 13857.734
+
+above is before finishing set 4
+
+below is after finishing set 4
+
+template number 536 min: 94 80
+template number 2088 max: 94 281
+avg: 94 155.59616
+template number 536 min: 280 648
+template number 132 max: 280 3177
+avg: 280 1320.6859
+template number 536 min: 559 2520
+template number 132 max: 559 15336
+avg: 559 5252.3335
+template number 536 min: 838 5616
+template number 132 max: 838 36477
+avg: 838 11794.942
+
+below is after finishing set 5
+
+template number 536 min: 94 80
+template number 2088 max: 94 281
+avg: 94 155.59616
+template number 536 min: 280 648
+template number 132 max: 280 3177
+avg: 280 1320.6859
+template number 536 min: 559 2520
+template number 132 max: 559 15336
+avg: 559 5252.3335
+template number 536 min: 838 5616
+template number 132 max: 838 36477
+avg: 838 11794.942
+template number 536 min: 1117 9936
+template number 132 max: 1117 66600
+avg: 1117 20948.514
+
+below is without forward-checking:
+
+[1] USER(5): (test-min-max)
+template number 536 min: 95 80
+template number 2088 max: 95 281
+avg: 95 155.59616
+template number 536 min: 281 648
+template number 132 max: 281 3177
+avg: 281 1320.6859
+template number 536 min: 560 2520
+template number 132 max: 560 15336
+avg: 560 5252.3335
+template number 536 min: 839 5616
+template number 132 max: 839 36477
+avg: 839 11794.942
+template number 536 min: 1118 9936
+template number 132 max: 1118 66600
+avg: 1118 20948.514
+
+2. Dynamic rearrangement and forward checking results:
+
+95 146
+281 2263
+560 14103
+839 42674
+1118 82962
+1397 131748
+1676 191748
+1955 262962 
+2234 345390
+2513 439032
+2792 543888
+3071 659958
+3350 787242
+3629 925740
+3908 1075452
+4187 1236378
+4466 1408518
+4745 1591872
+5024 1786440
+
+3. Related templates:
+
+[1] USER(6):  (select-templates)
+Template 536: (traverse-array-template-5-7-536
+               ((E3 (LESS ID3-1 ID3-2 ID3-3)) (E1 (ASSIGN ID1-1 ID1-2))
+                (E2 (LOOP)) (E5 (PREINC ID5-1))
+                (E4 (INDEX ID4-1 ID4-2 ID4-3)))
+               ((POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1)
+                (CONTROL-DATA-DEPENDENCY (E2 E1))
+                (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1)
+                (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1)
+                (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1)
+                (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)))
+Template 2088: (traverse-array-template-5-7-2088
+                ((E4 (INDEX ID4-1 ID4-2 ID4-3)) (E1 (ASSIGN ID1-1 ID1-2))
+                 (E2 (LOOP)) (E3 (LESS ID3-1 ID3-2 ID3-3))
+                 (E5 (PREINC ID5-1)))
+                ((POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                 (CONTROL-DATA-DEPENDENCY (E2 E1))
+                 (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1)
+                 (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1)
+                 (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)
+                 (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1)
+                 (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1)))
+Template 132: (traverse-array-template-5-7-132
+               ((E2 (LOOP)) (E1 (ASSIGN ID1-1 ID1-2))
+                (E4 (INDEX ID4-1 ID4-2 ID4-3)) (E3 (LESS ID3-1 ID3-2 ID3-3))
+                (E5 (PREINC ID5-1)))
+               ((CONTROL-DATA-DEPENDENCY (E2 E1))
+                (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1)
+                (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1)
+                (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)
+                (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1)
+                (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1)))
+
+
+4. Related program statistics: 
+
+;; "testdata/dmaxc.stats" total number of components: 95 
+
+((RETURN 1 0.010526316) (FREE 1 0.010526316) (GREATER 2 0.021052632)
+ (GREATEREQ 1 0.010526316) (LESSEQ 1 0.010526316) (PLUS 2 0.021052632)
+ (NORMP 1 0.010526316) (QSORT 1 0.010526316) (DIVASSIGN 1 0.010526316)
+ (DIV 6 0.06315789) (MINUS 5 0.05263158) (PLUSASSIGN 2 0.021052632)
+ (PREINC 2 0.021052632) (LOOP 2 0.021052632) (LESS 2 0.021052632)
+ (NULLBRIDGE 2 0.021052632) (SQRT 3 0.031578947) (COMMA 1 0.010526316)
+ (FPRINTF 1 0.010526316) (ADDROF 2 0.021052632) (INDEX 11 0.11578947)
+ (EXIT 1 0.010526316) (UMINUS 1 0.010526316) (EQEQ 3 0.031578947)
+ (MALLOC 1 0.010526316) (MULT 5 0.05263158) (BRIDGENULL 9 0.094736844)
+ (IFSTATEMENT 5 0.05263158) (ASSIGN 19 0.2) (FINISH 1 0.010526316))
+Total in-degree: 103  Total out-degree: 104
+Average node degree: 2.1789474 
+
+
+;; "testdata/dmax3c.stats" total number of components: 281 
+
+((RETURN 1 0.0035587188) (FREE 3 0.010676157) (GREATER 6 0.021352313)
+ (GREATEREQ 3 0.010676157) (LESSEQ 3 0.010676157) (PLUS 6 0.021352313)
+ (NORMP 3 0.010676157) (QSORT 3 0.010676157) (DIVASSIGN 3 0.010676157)
+ (DIV 18 0.06405694) (MINUS 15 0.053380784) (PLUSASSIGN 6 0.021352313)
+ (PREINC 6 0.021352313) (LOOP 6 0.021352313) (LESS 6 0.021352313)
+ (NULLBRIDGE 6 0.021352313) (SQRT 9 0.03202847) (COMMA 3 0.010676157)
+ (FPRINTF 3 0.010676157) (ADDROF 6 0.021352313) (INDEX 33 0.11743772)
+ (EXIT 3 0.010676157) (UMINUS 3 0.010676157) (EQEQ 9 0.03202847)
+ (MALLOC 3 0.010676157) (MULT 15 0.053380784) (BRIDGENULL 27 0.09608541)
+ (IFSTATEMENT 15 0.053380784) (ASSIGN 57 0.20284697) (FINISH 1 0.0035587188))
+Total in-degree: 307  Total out-degree: 308
+Average node degree: 2.188612 
+
+
+;; "testdata/dmax6c.stats" total number of components: 560 
+
+((RETURN 1 0.0017857143) (FREE 6 0.010714286) (GREATER 12 0.021428572)
+ (GREATEREQ 6 0.010714286) (LESSEQ 6 0.010714286) (PLUS 12 0.021428572)
+ (NORMP 6 0.010714286) (QSORT 6 0.010714286) (DIVASSIGN 6 0.010714286)
+ (DIV 36 0.06428572) (MINUS 30 0.05357143) (PLUSASSIGN 12 0.021428572)
+ (PREINC 12 0.021428572) (LOOP 12 0.021428572) (LESS 12 0.021428572)
+ (NULLBRIDGE 12 0.021428572) (SQRT 18 0.03214286) (COMMA 6 0.010714286)
+ (FPRINTF 6 0.010714286) (ADDROF 12 0.021428572) (INDEX 66 0.11785714)
+ (EXIT 6 0.010714286) (UMINUS 6 0.010714286) (EQEQ 18 0.03214286)
+ (MALLOC 6 0.010714286) (MULT 30 0.05357143) (BRIDGENULL 54 0.09642857)
+ (IFSTATEMENT 30 0.05357143) (ASSIGN 114 0.20357142) (FINISH 1 0.0017857143))
+Total in-degree: 613  Total out-degree: 614
+Average node degree: 2.1910715 
+
+
+;; "testdata/dmax9c.stats" total number of components: 839 
+
+((RETURN 1 0.0011918951) (FREE 9 0.010727056) (GREATER 18 0.021454113)
+ (GREATEREQ 9 0.010727056) (LESSEQ 9 0.010727056) (PLUS 18 0.021454113)
+ (NORMP 9 0.010727056) (QSORT 9 0.010727056) (DIVASSIGN 9 0.010727056)
+ (DIV 54 0.06436234) (MINUS 45 0.05363528) (PLUSASSIGN 18 0.021454113)
+ (PREINC 18 0.021454113) (LOOP 18 0.021454113) (LESS 18 0.021454113)
+ (NULLBRIDGE 18 0.021454113) (SQRT 27 0.03218117) (COMMA 9 0.010727056)
+ (FPRINTF 9 0.010727056) (ADDROF 18 0.021454113) (INDEX 99 0.11799762)
+ (EXIT 9 0.010727056) (UMINUS 9 0.010727056) (EQEQ 27 0.03218117)
+ (MALLOC 9 0.010727056) (MULT 45 0.05363528) (BRIDGENULL 81 0.096543506)
+ (IFSTATEMENT 45 0.05363528) (ASSIGN 171 0.20381406) (FINISH 1 0.0011918951))
+Total in-degree: 919  Total out-degree: 920
+Average node degree: 2.191895 
+
+

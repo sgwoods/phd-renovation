@@ -1,0 +1,350 @@
+Allegro CL 4.2 [SPARC; R1] (2/1/95 11:34)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;   Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;     Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): Index Test Run: 5000, q-i2, FCDR, Dist3
+"Index Test Run: 5000, q-i2, FCDR, Dist3"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): ; Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+Warning: GETVAL, :OPERATOR was defined in
+         /fsys4/u/sgwoods/qcsp/quilici-search.lisp and is now being defined in
+         /fsys4/u/sgwoods/qcsp/gsat.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;   Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in /fsys4/u/sgwoods/qcsp/gsat.lisp and
+         is now being defined in /fsys4/u/sgwoods/qcsp/quilici-search.lisp
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+T
+USER(5): USER(5): **** Noise 5000 ****
+"**** Noise 5000 ****"
+USER(6): 
+NIL
+USER(7): 
+NIL
+USER(8): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-default-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-default-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,801,520 msec (00:30:01.520) user, 490 msec system
+; cpu time (gc)     5,690 msec user, 360 msec system
+; cpu time (total)  1,807,210 msec (00:30:07.210) user, 850 msec system
+; real time  2,827,574 msec (00:47:07.574)
+; space allocation:
+ 54,595,854 cons cells,;  7,910 symbols, 75,652,496 other bytes
+(((Q1-C |sit-gen491|) (Q1-D |sit-gen4801|) (Q1-E |sit-gen4803|)
+  (Q1-G |sit-gen4070|))
+ ((Q1-C |sit-gen491|) (Q1-D |sit-gen4801|) (Q1-E |sit-gen4803|)
+  (Q1-G |sit-gen148|))
+ ((Q1-C |sit-gen491|) (Q1-D |sit-gen4801|) (Q1-E |sit-gen4803|)
+  (Q1-G |sit-gen1398|))
+ ((Q1-C |sit-gen694|) (Q1-D |begin-sid695|) (Q1-E |end-sid697|)
+  (Q1-G |sit-gen2457|))
+ ((Q1-C |sit-gen694|) (Q1-D |begin-sid695|) (Q1-E |end-sid697|)
+  (Q1-G |sit-gen1623|))
+ ((Q1-C |sit-gen3810|) (Q1-D |begin-sid3811|) (Q1-E |end-sid3813|)
+  (Q1-G |sit-gen4059|))
+ ((Q1-C |sit-gen5164|) (Q1-D |sit-gen3827|) (Q1-E |sit-gen3829|)
+  (Q1-G |sit-gen2669|))
+ ((Q1-C |sit-gen5164|) (Q1-D |begin-sid5165|) (Q1-E |end-sid5167|)
+  (Q1-G |sit-gen2669|))
+ ((Q1-C |sit-gen2635|) (Q1-D |begin-sid2636|) (Q1-E |end-sid2638|)
+  (Q1-G |sit-gen1397|))
+ ((Q1-C |sit-gen2635|) (Q1-D |begin-sid2636|) (Q1-E |end-sid2638|)
+  (Q1-G |sit-gen7261|))
+ ...)
+USER(9): USER(9): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-1783960706-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-1783960706-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,805,890 msec (00:30:05.890) user, 660 msec system
+; cpu time (gc)     5,040 msec user, 130 msec system
+; cpu time (total)  1,810,930 msec (00:30:10.930) user, 790 msec system
+; real time  3,204,142 msec (00:53:24.142)
+; space allocation:
+ 57,081,965 cons cells,;  7,839 symbols, 77,182,592 other bytes
+(((Q1-C |sit-gen14813|) (Q1-D |begin-sid14814|) (Q1-E |end-sid14816|)
+  (Q1-G |sit-gen11273|))
+ ((Q1-C |sit-gen14813|) (Q1-D |begin-sid14814|) (Q1-E |end-sid14816|)
+  (Q1-G |sit-gen14862|))
+ ((Q1-C |sit-gen15332|) (Q1-D |begin-sid15333|) (Q1-E |end-sid15335|)
+  (Q1-G |sit-gen11481|))
+ ((Q1-C |sit-gen13829|) (Q1-D |sit-gen10390|) (Q1-E |sit-gen10392|)
+  (Q1-G |sit-gen7933|))
+ ((Q1-C |sit-gen9964|) (Q1-D |begin-sid9965|) (Q1-E |end-sid9967|)
+  (Q1-G |sit-gen11854|))
+ ((Q1-C |sit-gen14017|) (Q1-D |begin-sid14859|) (Q1-E |end-sid14861|)
+  (Q1-G |sit-gen11495|))
+ ((Q1-C |sit-gen14017|) (Q1-D |begin-sid14018|) (Q1-E |end-sid14020|)
+  (Q1-G |sit-gen9448|))
+ ((Q1-C |sit-gen14858|) (Q1-D |begin-sid14859|) (Q1-E |end-sid14861|)
+  (Q1-G |sit-gen11495|))
+ ((Q1-C |sit-gen14858|) (Q1-D |begin-sid14018|) (Q1-E |end-sid14020|)
+  (Q1-G |sit-gen9448|))
+ ((Q1-C |sit-gen14748|) (Q1-D |begin-sid14749|) (Q1-E |end-sid14751|)
+  (Q1-G |sit-gen8253|))
+ ...)
+USER(10): USER(10): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-6148712495-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-6148712495-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,803,580 msec (00:30:03.580) user, 960 msec system
+; cpu time (gc)     5,070 msec user, 270 msec system
+; cpu time (total)  1,808,650 msec (00:30:08.650) user, 1,230 msec system
+; real time  2,932,213 msec (00:48:52.213)
+; space allocation:
+ 60,857,629 cons cells,;  7,855 symbols, 79,897,824 other bytes
+(((Q1-C |sit-gen18036|) (Q1-D |begin-sid18037|) (Q1-E |end-sid18039|)
+  (Q1-G |sit-gen21166|))
+ ((Q1-C |sit-gen18036|) (Q1-D |begin-sid18037|) (Q1-E |end-sid18039|)
+  (Q1-G |sit-gen23560|))
+ ((Q1-C |sit-gen21001|) (Q1-D |begin-sid21002|) (Q1-E |end-sid21004|)
+  (Q1-G |sit-gen19338|))
+ ((Q1-C |sit-gen18917|) (Q1-D |begin-sid18918|) (Q1-E |end-sid18920|)
+  (Q1-G |sit-gen20985|))
+ ((Q1-C |sit-gen17209|) (Q1-D |begin-sid17210|) (Q1-E |end-sid17212|)
+  (Q1-G |sit-gen22584|))
+ ((Q1-C |sit-gen17209|) (Q1-D |begin-sid17210|) (Q1-E |end-sid17212|)
+  (Q1-G |sit-gen17956|))
+ ((Q1-C |sit-gen21537|) (Q1-D |begin-sid21538|) (Q1-E |end-sid21540|)
+  (Q1-G |sit-gen18720|))
+ ((Q1-C |sit-gen21840|) (Q1-D |sit-gen23383|) (Q1-E |sit-gen23385|)
+  (Q1-G |sit-gen17284|))
+ ((Q1-C |sit-gen21840|) (Q1-D |sit-gen23383|) (Q1-E |sit-gen23385|)
+  (Q1-G |sit-gen17760|))
+ ((Q1-C |sit-gen21840|) (Q1-D |sit-gen23383|) (Q1-E |sit-gen23385|)
+  (Q1-G |sit-gen15976|))
+ ...)
+USER(11): USER(11): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-8261581571-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-8261581571-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,807,170 msec (00:30:07.170) user, 570 msec system
+; cpu time (gc)     11,980 msec user, 2,210 msec system
+; cpu time (total)  1,819,150 msec (00:30:19.150) user, 2,780 msec system
+; real time  2,838,753 msec (00:47:18.753)
+; space allocation:
+ 52,762,457 cons cells,;  7,912 symbols, 75,515,680 other bytes
+(((Q1-C |sit-gen27746|) (Q1-D |begin-sid27747|) (Q1-E |end-sid27749|)
+  (Q1-G |sit-gen26030|))
+ ((Q1-C |sit-gen31332|) (Q1-D |begin-sid27747|) (Q1-E |end-sid27749|)
+  (Q1-G |sit-gen26030|))
+ ((Q1-C |sit-gen31332|) (Q1-D |begin-sid31333|) (Q1-E |end-sid31335|)
+  (Q1-G |sit-gen26030|))
+ ((Q1-C |sit-gen31332|) (Q1-D |begin-sid31333|) (Q1-E |end-sid31335|)
+  (Q1-G |sit-gen30619|))
+ ((Q1-C |sit-gen26456|) (Q1-D |sit-gen29300|) (Q1-E |sit-gen29302|)
+  (Q1-G |sit-gen30545|))
+ ((Q1-C |sit-gen26456|) (Q1-D |sit-gen29300|) (Q1-E |sit-gen29302|)
+  (Q1-G |sit-gen24775|))
+ ((Q1-C |sit-gen26456|) (Q1-D |sit-gen29300|) (Q1-E |sit-gen29302|)
+  (Q1-G |sit-gen29629|))
+ ((Q1-C |sit-gen26456|) (Q1-D |sit-gen29300|) (Q1-E |sit-gen29302|)
+  (Q1-G |sit-gen25104|))
+ ((Q1-C |sit-gen26456|) (Q1-D |begin-sid26457|) (Q1-E |end-sid26459|)
+  (Q1-G |sit-gen24138|))
+ ((Q1-C |sit-gen26456|) (Q1-D |begin-sid26457|) (Q1-E |end-sid26459|)
+  (Q1-G |sit-gen24388|))
+ ...)
+USER(12): USER(12): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-4705297406-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-4705297406-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,762,290 msec (00:29:22.290) user, 400 msec system
+; cpu time (gc)     4,780 msec user, 160 msec system
+; cpu time (total)  1,767,070 msec (00:29:27.070) user, 560 msec system
+; real time  2,908,184 msec (00:48:28.184)
+; space allocation:
+ 53,745,795 cons cells,;  7,872 symbols, 71,693,504 other bytes
+(((Q1-C |sit-gen32229|) (Q1-D |begin-sid32230|) (Q1-E |end-sid32232|)
+  (Q1-G |sit-gen38551|))
+ ((Q1-C |sit-gen38609|) (Q1-D |begin-sid38610|) (Q1-E |end-sid38612|)
+  (Q1-G |sit-gen32409|))
+ ((Q1-C |sit-gen34544|) (Q1-D |begin-sid34545|) (Q1-E |end-sid34547|)
+  (Q1-G |sit-gen39025|))
+ ((Q1-C |sit-gen32391|) (Q1-D |begin-sid32392|) (Q1-E |end-sid32394|)
+  (Q1-G |sit-gen33223|))
+ ((Q1-C |sit-gen36978|) (Q1-D |begin-sid36979|) (Q1-E |end-sid36981|)
+  (Q1-G |sit-gen36963|))
+ ((Q1-C |sit-gen36978|) (Q1-D |begin-sid36979|) (Q1-E |end-sid36981|)
+  (Q1-G |sit-gen34425|))
+ ((Q1-C |sit-gen37694|) (Q1-D |begin-sid37695|) (Q1-E |end-sid37697|)
+  (Q1-G |sit-gen37158|))
+ ((Q1-C |sit-gen35531|) (Q1-D |begin-sid35532|) (Q1-E |end-sid35534|)
+  (Q1-G |sit-gen34114|))
+ ((Q1-C |sit-gen36427|) (Q1-D |begin-sid36428|) (Q1-E |end-sid36430|)
+  (Q1-G |sit-gen35209|))
+ ((Q1-C |sit-gen34427|) (Q1-D |begin-sid34428|) (Q1-E |end-sid34430|)
+  (Q1-G |sit-gen35783|))
+ ...)
+USER(13): USER(13): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-6724813580-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-6724813580-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,802,730 msec (00:30:02.730) user, 430 msec system
+; cpu time (gc)     4,850 msec user, 270 msec system
+; cpu time (total)  1,807,580 msec (00:30:07.580) user, 700 msec system
+; real time  3,169,837 msec (00:52:49.837)
+; space allocation:
+ 57,082,561 cons cells,;  7,839 symbols, 77,242,360 other bytes
+(((Q1-C |sit-gen46291|) (Q1-D |begin-sid46292|) (Q1-E |end-sid46294|)
+  (Q1-G |sit-gen42751|))
+ ((Q1-C |sit-gen46291|) (Q1-D |begin-sid46292|) (Q1-E |end-sid46294|)
+  (Q1-G |sit-gen46340|))
+ ((Q1-C |sit-gen46810|) (Q1-D |begin-sid46811|) (Q1-E |end-sid46813|)
+  (Q1-G |sit-gen42959|))
+ ((Q1-C |sit-gen45307|) (Q1-D |sit-gen41868|) (Q1-E |sit-gen41870|)
+  (Q1-G |sit-gen39411|))
+ ((Q1-C |sit-gen41442|) (Q1-D |begin-sid41443|) (Q1-E |end-sid41445|)
+  (Q1-G |sit-gen43332|))
+ ((Q1-C |sit-gen45495|) (Q1-D |begin-sid46337|) (Q1-E |end-sid46339|)
+  (Q1-G |sit-gen42973|))
+ ((Q1-C |sit-gen45495|) (Q1-D |begin-sid45496|) (Q1-E |end-sid45498|)
+  (Q1-G |sit-gen40926|))
+ ((Q1-C |sit-gen46336|) (Q1-D |begin-sid46337|) (Q1-E |end-sid46339|)
+  (Q1-G |sit-gen42973|))
+ ((Q1-C |sit-gen46336|) (Q1-D |begin-sid45496|) (Q1-E |end-sid45498|)
+  (Q1-G |sit-gen40926|))
+ ((Q1-C |sit-gen46226|) (Q1-D |begin-sid46227|) (Q1-E |end-sid46229|)
+  (Q1-G |sit-gen39731|))
+ ...)
+USER(14): USER(14): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-8798969000-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-8798969000-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,813,080 msec (00:30:13.080) user, 950 msec system
+; cpu time (gc)     4,960 msec user, 540 msec system
+; cpu time (total)  1,818,040 msec (00:30:18.040) user, 1,490 msec system
+; real time  2,841,388 msec (00:47:21.388)
+; space allocation:
+ 49,539,763 cons cells,;  7,867 symbols, 75,049,808 other bytes
+(((Q1-C |sit-gen50499|) (Q1-D |begin-sid50500|) (Q1-E |end-sid50502|)
+  (Q1-G |sit-gen54860|))
+ ((Q1-C |sit-gen54541|) (Q1-D |begin-sid54542|) (Q1-E |end-sid54544|)
+  (Q1-G |sit-gen48049|))
+ ((Q1-C |sit-gen54541|) (Q1-D |begin-sid54542|) (Q1-E |end-sid54544|)
+  (Q1-G |sit-gen48269|))
+ ((Q1-C |sit-gen50730|) (Q1-D |sit-gen54643|) (Q1-E |sit-gen54645|)
+  (Q1-G |sit-gen51469|))
+ ((Q1-C |sit-gen50730|) (Q1-D |begin-sid50731|) (Q1-E |end-sid50733|)
+  (Q1-G |sit-gen51469|))
+ ((Q1-C |sit-gen49890|) (Q1-D |begin-sid49891|) (Q1-E |end-sid49893|)
+  (Q1-G |sit-gen49640|))
+ ((Q1-C |sit-gen49890|) (Q1-D |begin-sid49891|) (Q1-E |end-sid49893|)
+  (Q1-G |sit-gen50139|))
+ ((Q1-C |sit-gen49890|) (Q1-D |begin-sid49891|) (Q1-E |end-sid49893|)
+  (Q1-G |sit-gen52665|))
+ ((Q1-C |sit-gen54819|) (Q1-D |begin-sid54820|) (Q1-E |end-sid54822|)
+  (Q1-G |sit-gen51615|))
+ ((Q1-C |sit-gen53375|) (Q1-D |begin-sid53376|) (Q1-E |end-sid53378|)
+  (Q1-G |sit-gen50581|))
+ ...)
+USER(15): USER(15): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-0805098560-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-0805098560-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,829,490 msec (00:30:29.490) user, 900 msec system
+; cpu time (gc)     13,070 msec user, 2,830 msec system
+; cpu time (total)  1,842,560 msec (00:30:42.560) user, 3,730 msec system
+; real time  2,997,618 msec (00:49:57.618)
+; space allocation:
+ 56,339,155 cons cells,;  7,942 symbols, 80,715,776 other bytes
+(((Q1-C |sit-gen59653|) (Q1-D |begin-sid59654|) (Q1-E |end-sid59656|)
+  (Q1-G |sit-gen56337|))
+ ((Q1-C |sit-gen61710|) (Q1-D |begin-sid61711|) (Q1-E |end-sid61713|)
+  (Q1-G |sit-gen60265|))
+ ((Q1-C |sit-gen57485|) (Q1-D |sit-gen59069|) (Q1-E |sit-gen59071|)
+  (Q1-G |sit-gen59678|))
+ ((Q1-C |sit-gen57485|) (Q1-D |begin-sid57486|) (Q1-E |end-sid57488|)
+  (Q1-G |sit-gen55247|))
+ ((Q1-C |sit-gen56483|) (Q1-D |begin-sid56484|) (Q1-E |end-sid56486|)
+  (Q1-G |sit-gen61291|))
+ ((Q1-C |sit-gen55221|) (Q1-D |begin-sid55222|) (Q1-E |end-sid55224|)
+  (Q1-G |sit-gen59699|))
+ ((Q1-C |sit-gen59300|) (Q1-D |begin-sid55222|) (Q1-E |end-sid55224|)
+  (Q1-G |sit-gen59699|))
+ ((Q1-C |sit-gen62712|) (Q1-D |begin-sid62713|) (Q1-E |end-sid62715|)
+  (Q1-G |sit-gen58005|))
+ ((Q1-C |sit-gen62712|) (Q1-D |begin-sid62713|) (Q1-E |end-sid62715|)
+  (Q1-G |sit-gen59519|))
+ ((Q1-C |sit-gen56048|) (Q1-D |begin-sid56049|) (Q1-E |end-sid56051|)
+  (Q1-G |sit-gen58691|))
+ ...)
+USER(16): USER(16): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-4767135635-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-4767135635-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 1,809,250 msec (00:30:09.250) user, 1,700 msec system
+; cpu time (gc)     4,020 msec user, 360 msec system
+; cpu time (total)  1,813,270 msec (00:30:13.270) user, 2,060 msec system
+; real time  2,840,904 msec (00:47:20.904)
+; space allocation:
+ 51,679,369 cons cells,;  7,847 symbols, 75,535,808 other bytes
+(((Q1-C |sit-gen66638|) (Q1-D |begin-sid66639|) (Q1-E |end-sid66641|)
+  (Q1-G |sit-gen64743|))
+ ((Q1-C |sit-gen64142|) (Q1-D |sit-gen65532|) (Q1-E |sit-gen65534|)
+  (Q1-G |sit-gen67089|))
+ ((Q1-C |sit-gen64142|) (Q1-D |sit-gen65532|) (Q1-E |sit-gen65534|)
+  (Q1-G |sit-gen68148|))
+ ((Q1-C |sit-gen67532|) (Q1-D |begin-sid67533|) (Q1-E |end-sid67535|)
+  (Q1-G |sit-gen67421|))
+ ((Q1-C |sit-gen70536|) (Q1-D |begin-sid70537|) (Q1-E |end-sid70539|)
+  (Q1-G |sit-gen67710|))
+ ((Q1-C |sit-gen70536|) (Q1-D |begin-sid70537|) (Q1-E |end-sid70539|)
+  (Q1-G |sit-gen65466|))
+ ((Q1-C |sit-gen63638|) (Q1-D |begin-sid63639|) (Q1-E |end-sid63641|)
+  (Q1-G |sit-gen68718|))
+ ((Q1-C |sit-gen63638|) (Q1-D |begin-sid63639|) (Q1-E |end-sid63641|)
+  (Q1-G |sit-gen64179|))
+ ((Q1-C |sit-gen67785|) (Q1-D |begin-sid67786|) (Q1-E |end-sid67788|)
+  (Q1-G |sit-gen68519|))
+ ((Q1-C |sit-gen67785|) (Q1-D |begin-sid67786|) (Q1-E |end-sid67788|)
+  (Q1-G |sit-gen67307|))
+ ...)
+USER(17): USER(17): > Reload situation from existing file.  < ADT-Situation/Sit-q-i2-dist3-7685437293-5000 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i2-dist3-7685437293-5000" pos 0> > 
+> Opening output file/stream for :  < New-Batch/G-fcdr-dist3-5000.99 > 
+; Received signal number 15 (Terminate).  Exiting...
+; Exiting Lisp

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo Running gnuplot for creation of figure ...
+gnuplot < gnup.in
+echo done 
+
+echo Now display figure using ghostview ...
+ghostview -landscape gnup.ps &
+#ghostview $1.ps &
+wait
+

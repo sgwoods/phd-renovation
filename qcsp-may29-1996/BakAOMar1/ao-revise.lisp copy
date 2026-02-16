@@ -1,0 +1,254 @@
+
+(defun aor ()  (load
+		"Macintosh HD:Languages:Allegro Common Lisp:qcsp:ao-revise.lisp"))
+
+(defun ao-revise ( srcVar thisTarget constraint-fn maxDepth )
+" 
+ Return affected VarList if srcVar domain is revised (and existing links followed,
+ thus possibly affecting other variables ... if no revisions  are made, return nil
+"
+  (let* (
+	 (updateVarList nil)
+	 (domV1         (cdr srcVar))
+	 (domV2         (cdr thisTarget))
+	 )
+
+    (dolist ( xi  domV1 )
+	    (let* (
+		   (xi-ok   nil)
+		   (xiyj-ok nil)
+		   )
+
+	      (dolist ( yj domV2 )
+
+		      ;; xi is marked in place by applyR algorithm
+		      (setq xiyj-ok (applyR xi yj constraint-fn maxDepth 0))
+
+		      ;; xi yj are >= poss consistent w.r.t constraint-fn & maxDepth
+		      (if xiyj-ok
+			  (progn
+
+			    ;; add link object between two consistent DomVals
+			    (addLink xi yj constraint-fn)
+
+			    ;; not that xi is now justified w.r.t yj and fn
+			    (setq xi-ok t)))
+
+		      ) ;; next yj - dolist yj
+
+	      (if (not xi-ok)
+		  (progn
+		    (setq domV1         (deleteMember xi domV1))  ;;
+		    (setq updateVarList (deleteSrc xi))           ;; 
+		    )
+
+		(progn ;; xi-ok ie xi is justified w.r.t some yj and constraint-fn
+
+		  ;; We keep xi, however we might be able to simplify its hierarchy
+		  ;;  - destructive (in place) simplification of xi hierarchy
+		  (simplify xi (sizeOf domV2) domV1)
+
+		  ;; ?? 
+		  (updateLinkEndSrc srcVar xi constraint-fn)
+		  ))
+
+	      ;; reset all hierarchy of xi to 0 mark values
+	      (resetVisit xi)
+		      
+	      )) ;; next xi - dolist xi
+
+    updateVarlist   ;; return the updated variable list
+
+    )) ;; ao-revise
+
+
+(defun addLink ( )
+"Node:X_i, Node:Y_j, Relation:\rel)$ : update/creates a  Link object from 
+  $X_i$ to $Y_j$ "
+)
+
+(defun deleteMember ( )
+"> $DeleteMember(Element:E, List:L)$ : returns List $L$ without $E$ "
+)
+
+(defun deleteSrc ( )
+" $DeleteSrc(Node:X_i)$ : returns a list of variables with reduced
+ domains after recursive Link  removal for $X_i$. "
+)
+
+(defun ReplaceDom ( )
+"  $ReplaceMember(Element:X^{1}_i, Element:X^{2}_i, List:L)$ : returns $L$ with 
+      $X^{1}_i$ replaced by $X^{2}_i$. "
+)
+
+
+(defun updateLinkEndSrc ( )
+"  $UpdateLinkEndSrc(Node:X_i, Relation:\rel)$ : indicate all $Y_j$ in 
+ $D_{V_1}$ for $\rel(X_i,Y_j)$. "
+)
+
+(defun simplify ( xi N )
+"  
+  Traverse the domain hierarchy for xi, deleting all node parent and child
+  links which have a Mark value of N.  Note that a Mark value exceeding N is
+  a sign of data structure corruption - report if encountered.  Note that it
+  would be nice to DESTROY and DE-ALLOCATE the deleted structures if one could
+  figure out how to do this in ACL.
+"
+  (if (null xi)
+      t
+
+    (let* (
+	   (lc (DomVal-LeftChild xi))
+	   (rc (DomVal-RightChild xi))
+	   )
+
+      ;; Left and Right Parents
+      (simplify-up xi N)
+
+      ;; LeftChild
+      (if (not (null lc))
+	  (simplify-down lc N 'lc))
+
+      ;; RightChild
+      (if (not (null rc))
+	  (simplify-down rc N 'rc))
+      )))
+
+(defun simplify-down ( x N dir )
+
+  (if (eq dir 'lc)   
+      
+      ;; deal with right parent
+      (let* (
+	     (rp  (DomVal-RightParent x))
+	     (rpm (DomVal-RightParentMark x))
+	     )
+	(if (= rpm N)
+	  (progn  ;; destroy self,  subtree
+	    (setf (DomVal-LeftChild rp) nil)  
+	    ;; (free-storage-subtree  x)
+	    )
+	  (if (> rpm N)   ;; structure in error
+	      (progn 
+		(comment3 "DomVal rp mark value too high : name, mark, N"
+			  (DomVal-Name x) rpm N))
+
+	    ;; do not delete, recurse though
+	    (let* (
+		   (lc (DomVal-LeftChild  x))
+		   (rc (DomVal-RightChild x))
+		   )
+	      (if (not (null lc))
+		  (simplify-down lc N 'lc))
+	      (if (not (null rc))
+		  (simplify-down rc N 'rc))
+	      ))))
+	
+    ;; deal with left parent
+    (let* (
+	   (lp  (DomVal-LeftParent x))
+	   (lpm (DomVal-LeftParentMark x))
+	   )
+      (if (= lpm N)
+	  (progn  ;; destroy self,  subtree
+	    (setf (DomVal-RightChild lp) nil)  
+	    ;; (free-storage-subtree  x)
+	    )
+	  (if (> lpm N)   ;; structure in error
+	      (progn 
+		(comment3 "DomVal lp mark value too high : name, mark, N"
+			  (DomVal-Name x) lpm N))
+	    ;; do not delete, recurse though
+	    (let* (
+		   (lc (DomVal-LeftChild  x))
+		   (rc (DomVal-RightChild x))
+		   )
+	      (if (not (null lc))
+		  (simplify-down lc N 'lc))
+	      (if (not (null rc))
+		  (simplify-down rc N 'rc))
+	      ))))
+    ))
+    
+
+(defun simplify-up ( xi N )
+  (let* (
+	 (lp  (DomVal-LeftParent      xi))
+	 (lpm (DomVal-LeftParentMark  xi))
+	 (rp  (DomVal-RightParent     xi))
+	 (rpm (DomVal-RightParentMark xi))
+	 )
+      
+    ;; LeftParent
+    (if (not (null lp))
+	(if (= lpm N)
+	    (progn  ;; destroy leftparent subtree
+	      ;; (free-storage-subtree  lp)
+	      (setf (DomVal-LeftParent xi) nil)
+	      )
+	  (if (> lpm N)   ;; structure in error
+	      (progn 
+		(comment3 "DomVal lp mark value too high : name, mark, N"
+			  (DomVal-Name xi) lpm N))
+	    ;; recurse on lp subtree
+	    (simplify-up lp N))))
+    
+    ;; RightParent
+    (if (not (null rp))
+	(if (= rpm N)
+	    (progn  ;; destroy rightparent subtree
+	      ;; (free-storage-subtree  rp)
+	      (setf (DomVal-RightParent xi) nil)
+	      )
+	  (if (> rpm N)   ;; structure in error
+	      (progn 
+		(comment3 "DomVal rp mark value too high : name, mark, N"
+			  (DomVal-Name xi) rpm N))
+	    ;; recurse on rp subtree
+	    (simplify-up rp N))))
+    ))
+      
+
+(defun resetVisit ( xi )
+" 
+ Reset the hierarchy of DomVal xi to marked values of 0 throughout.  A recursive
+traverse  routine is used.
+"
+(if (null xi)
+    nil
+  (progn
+    (setf (DomVal-LeftParentMark   xi) 0)
+    (setf (DomVal-RightParentMark  xi) 0)
+    (let* (
+	   (lc (DomVal-LeftChild   xi))
+	   (rc (DomVal-RightChild  xi))
+	   (lp (DomVal-LeftParent  xi))
+	   (rp (DomVal-RightParent xi))
+	   )
+      (if lc (resetDown lc))
+      (if rc (resetDown rc))
+      (if lp (resetUp   lp))
+      (if rp (resetUp   rp)) 
+      ))))
+
+(defun resetDown ( x )
+  (setf (DomVal-LeftParentMark   x) 0)
+  (setf (DomVal-RightParentMark  x) 0)
+
+  (let* (
+	 (lc (DomVal-LeftChild  x))
+	 (rc (DomVal-RightChild x))
+	 )
+    (if lc (resetDown lc))
+    (if rc (resetDown rc)) ))
+
+(defun resetUp ( x )
+  (setf (DomVal-LeftParentMark   x) 0)
+  (setf (DomVal-RightParentMark  x) 0)
+    (let* (
+	   (lp (DomVal-LeftParent  x))
+	   (rp (DomVal-RightParent x))
+	   )
+      (if lp (resetUp   lp))
+      (if rp (resetUp   rp)) ))

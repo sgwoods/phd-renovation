@@ -1,0 +1,12 @@
+# Curve fit : see least-squares-maple information in IJCAI directory for Phd Thesis
+
+set xlabel "Program statements"
+set xrange [0:1049]
+set xtics 0,50
+set ylabel "CPU seconds"
+set yrange [0:600]
+set ytics 0,30
+set key 300,540
+set term postscript landscape monochrome "Times-Roman" 14
+set output "compare-4-crv.ps"
+plot "ij4-plot-sec.ci" title "AC3+FCDR" with linespoints 1 7, ((0.0008642541638 * x * x)  - (0.3469892277 * x) + 29.46029861) title "Quadratic fn" with lines 5

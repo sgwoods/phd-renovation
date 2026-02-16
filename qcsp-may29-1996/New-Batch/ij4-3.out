@@ -1,0 +1,619 @@
+Allegro CL 4.2 [SPARC; R1] (2/1/95 11:34)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;   Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;     Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;     Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;     Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): USER(1): Journal Testing (FCDR adv sort)
+"Journal Testing (FCDR adv sort)"
+USER(2): 
+NIL
+USER(3): 
+NIL
+USER(4): ; Loading /fsys4/u/sgwoods/qcsp/load.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bm.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/bt.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/ct.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/gsat.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/utility.fasl.
+;   Loading /fsys4/u/sgwoods/qcsp/compile.lisp.
+;   Fast loading /fsys4/u/sgwoods/qcsp/quilici-search.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-simple.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/adt-setup.fasl.
+;   Fast loading /fsys4/u/sgwoods/qcsp/memory-csp.fasl.
+T
+USER(5): USER(5): **** Noise 500 ****
+"**** Noise 500 ****"
+USER(6): 
+NIL
+USER(7): 
+NIL
+USER(8): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-default-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-default-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,930 msec user, 130 msec system
+; cpu time (gc)     490 msec user, 20 msec system
+; cpu time (total)  8,420 msec user, 150 msec system
+; real time  33,744 msec
+; space allocation:
+ 258,570 cons cells,;  927 symbols, 1,037,192 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(9): USER(9): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-1783960706-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-1783960706-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,220 msec user, 30 msec system
+; cpu time (gc)     270 msec user, 20 msec system
+; cpu time (total)  7,490 msec user, 50 msec system
+; real time  31,335 msec
+; space allocation:
+ 234,362 cons cells,;  885 symbols, 931,496 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(10): USER(10): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6148712495-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6148712495-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 5,810 msec user, 30 msec system
+; cpu time (gc)     190 msec user, 0 msec system
+; cpu time (total)  6,000 msec user, 30 msec system
+; real time  25,078 msec
+; space allocation:
+ 124,384 cons cells,;  861 symbols, 671,104 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(11): USER(11): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8261581571-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8261581571-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 6,410 msec user, 40 msec system
+; cpu time (gc)     180 msec user, 0 msec system
+; cpu time (total)  6,590 msec user, 40 msec system
+; real time  27,604 msec
+; space allocation:
+ 160,954 cons cells,;  874 symbols, 783,952 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(12): USER(12): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4705297406-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4705297406-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 8,380 msec user, 60 msec system
+; cpu time (gc)     260 msec user, 30 msec system
+; cpu time (total)  8,640 msec user, 90 msec system
+; real time  36,330 msec
+; space allocation:
+ 355,203 cons cells,;  927 symbols, 1,152,936 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-G ADTQ1-G) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(13): USER(13): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6724813580-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6724813580-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,360 msec user, 90 msec system
+; cpu time (gc)     260 msec user, 30 msec system
+; cpu time (total)  7,620 msec user, 120 msec system
+; real time  16,357 msec
+; space allocation:
+ 234,193 cons cells,;  885 symbols, 938,144 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(14): USER(14): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8798969000-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8798969000-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 5,560 msec user, 70 msec system
+; cpu time (gc)     230 msec user, 0 msec system
+; cpu time (total)  5,790 msec user, 70 msec system
+; real time  23,257 msec
+; space allocation:
+ 131,699 cons cells,;  911 symbols, 643,104 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-G ADTQ1-G)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(15): USER(15): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-0805098560-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-0805098560-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,370 msec user, 20 msec system
+; cpu time (gc)     190 msec user, 0 msec system
+; cpu time (total)  7,560 msec user, 20 msec system
+; real time  31,744 msec
+; space allocation:
+ 215,611 cons cells,;  900 symbols, 1,040,208 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(16): USER(16): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4767135635-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4767135635-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,960 msec user, 30 msec system
+; cpu time (gc)     350 msec user, 40 msec system
+; cpu time (total)  8,310 msec user, 70 msec system
+; real time  35,026 msec
+; space allocation:
+ 318,238 cons cells,;  911 symbols, 1,305,616 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(17): USER(17): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-7685437293-500 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-7685437293-500" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-500.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,750 msec user, 40 msec system
+; cpu time (gc)     220 msec user, 0 msec system
+; cpu time (total)  7,970 msec user, 40 msec system
+; real time  33,705 msec
+; space allocation:
+ 263,159 cons cells,;  894 symbols, 1,037,216 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(18): USER(18): **** Noise 550 ****
+"**** Noise 550 ****"
+USER(19): 
+NIL
+USER(20): 
+NIL
+USER(21): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-default-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-default-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,930 msec user, 50 msec system
+; cpu time (gc)     350 msec user, 0 msec system
+; cpu time (total)  10,280 msec user, 50 msec system
+; real time  43,416 msec
+; space allocation:
+ 348,945 cons cells,;  348 symbols, 1,339,032 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(22): USER(22): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-1783960706-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-1783960706-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,140 msec user, 100 msec system
+; cpu time (gc)     230 msec user, 40 msec system
+; cpu time (total)  9,370 msec user, 140 msec system
+; real time  41,029 msec
+; space allocation:
+ 302,570 cons cells,;  358 symbols, 1,232,760 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(23): USER(23): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6148712495-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6148712495-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 6,730 msec user, 30 msec system
+; cpu time (gc)     120 msec user, 10 msec system
+; cpu time (total)  6,850 msec user, 40 msec system
+; real time  28,973 msec
+; space allocation:
+ 147,224 cons cells,;  521 symbols, 565,760 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(24): USER(24): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8261581571-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8261581571-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,480 msec user, 80 msec system
+; cpu time (gc)     190 msec user, 0 msec system
+; cpu time (total)  7,670 msec user, 80 msec system
+; real time  32,469 msec
+; space allocation:
+ 208,879 cons cells,;  551 symbols, 920,752 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(25): USER(25): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4705297406-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4705297406-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,920 msec user, 50 msec system
+; cpu time (gc)     470 msec user, 0 msec system
+; cpu time (total)  10,390 msec user, 50 msec system
+; real time  43,938 msec
+; space allocation:
+ 466,485 cons cells,;  628 symbols, 1,400,512 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-G ADTQ1-G) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(26): USER(26): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6724813580-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6724813580-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,230 msec user, 60 msec system
+; cpu time (gc)     260 msec user, 0 msec system
+; cpu time (total)  9,490 msec user, 60 msec system
+; real time  40,598 msec
+; space allocation:
+ 302,582 cons cells,;  565 symbols, 1,237,832 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(27): USER(27): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8798969000-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8798969000-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 7,470 msec user, 30 msec system
+; cpu time (gc)     140 msec user, 0 msec system
+; cpu time (total)  7,610 msec user, 30 msec system
+; real time  32,879 msec
+; space allocation:
+ 158,311 cons cells,;  584 symbols, 585,800 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C) (Q1-G ADTQ1-G)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(28): USER(28): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-0805098560-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-0805098560-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,040 msec user, 30 msec system
+; cpu time (gc)     250 msec user, 0 msec system
+; cpu time (total)  9,290 msec user, 30 msec system
+; real time  23,375 msec
+; space allocation:
+ 254,515 cons cells,;  665 symbols, 1,124,552 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(29): USER(29): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4767135635-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4767135635-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,080 msec user, 50 msec system
+; cpu time (gc)     330 msec user, 0 msec system
+; cpu time (total)  9,410 msec user, 50 msec system
+; real time  40,312 msec
+; space allocation:
+ 235,454 cons cells,;  1,006 symbols, 1,307,320 other bytes
+(((Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-G ADTQ1-G) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H)
+  (Q1-C ADTQ1-C) (Q1-A ADTQ1-A) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(30): USER(30): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-7685437293-550 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-7685437293-550" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-550.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 8,660 msec user, 50 msec system
+; cpu time (gc)     520 msec user, 0 msec system
+; cpu time (total)  9,180 msec user, 50 msec system
+; real time  42,293 msec
+; space allocation:
+ 331,976 cons cells,;  988 symbols, 1,300,880 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(31): USER(31): **** Noise 600 ****
+"**** Noise 600 ****"
+USER(32): 
+NIL
+USER(33): 
+NIL
+USER(34): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-default-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-default-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 12,010 msec user, 30 msec system
+; cpu time (gc)     390 msec user, 0 msec system
+; cpu time (total)  12,400 msec user, 30 msec system
+; real time  56,461 msec
+; space allocation:
+ 442,196 cons cells,;  27 symbols, 1,451,000 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-G ADTQ1-G) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(35): USER(35): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-1783960706-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-1783960706-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 10,190 msec user, 70 msec system
+; cpu time (gc)     360 msec user, 0 msec system
+; cpu time (total)  10,550 msec user, 70 msec system
+; real time  48,919 msec
+; space allocation:
+ 360,766 cons cells,;  347 symbols, 1,278,024 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(36): USER(36): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6148712495-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6148712495-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 8,080 msec user, 70 msec system
+; cpu time (gc)     130 msec user, 0 msec system
+; cpu time (total)  8,210 msec user, 70 msec system
+; real time  12,838 msec
+; space allocation:
+ 201,908 cons cells,;  409 symbols, 684,160 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(37): USER(37): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8261581571-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8261581571-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 8,490 msec user, 50 msec system
+; cpu time (gc)     270 msec user, 0 msec system
+; cpu time (total)  8,760 msec user, 50 msec system
+; real time  35,164 msec
+; space allocation:
+ 259,200 cons cells,;  422 symbols, 1,018,712 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(38): USER(38): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4705297406-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4705297406-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 12,000 msec user, 100 msec system
+; cpu time (gc)     500 msec user, 0 msec system
+; cpu time (total)  12,500 msec user, 100 msec system
+; real time  57,401 msec
+; space allocation:
+ 548,663 cons cells,;  444 symbols, 1,435,056 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(39): USER(39): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6724813580-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6724813580-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,880 msec user, 60 msec system
+; cpu time (gc)     370 msec user, 0 msec system
+; cpu time (total)  10,250 msec user, 60 msec system
+; real time  47,140 msec
+; space allocation:
+ 360,910 cons cells,;  431 symbols, 1,285,480 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(40): USER(40): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8798969000-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8798969000-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 8,380 msec user, 30 msec system
+; cpu time (gc)     160 msec user, 0 msec system
+; cpu time (total)  8,540 msec user, 30 msec system
+; real time  39,198 msec
+; space allocation:
+ 187,976 cons cells,;  450 symbols, 645,984 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(41): USER(41): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-0805098560-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-0805098560-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 11,100 msec user, 40 msec system
+; cpu time (gc)     360 msec user, 0 msec system
+; cpu time (total)  11,460 msec user, 40 msec system
+; real time  53,281 msec
+; space allocation:
+ 295,483 cons cells,;  592 symbols, 1,248,696 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(42): USER(42): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4767135635-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4767135635-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 11,630 msec user, 10 msec system
+; cpu time (gc)     470 msec user, 20 msec system
+; cpu time (total)  12,100 msec user, 30 msec system
+; real time  44,947 msec
+; space allocation:
+ 478,369 cons cells,;  671 symbols, 1,431,600 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(43): USER(43): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-7685437293-600 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-7685437293-600" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-600.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 11,550 msec user, 70 msec system
+; cpu time (gc)     400 msec user, 0 msec system
+; cpu time (total)  11,950 msec user, 70 msec system
+; real time  51,991 msec
+; space allocation:
+ 422,985 cons cells,;  1,039 symbols, 1,338,944 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(44): USER(44): **** Noise 650 ****
+"**** Noise 650 ****"
+USER(45): 
+NIL
+USER(46): 
+NIL
+USER(47): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-default-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-default-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.1 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 13,580 msec user, 60 msec system
+; cpu time (gc)     400 msec user, 10 msec system
+; cpu time (total)  13,980 msec user, 70 msec system
+; real time  63,975 msec (00:01:03.975)
+; space allocation:
+ 545,148 cons cells,;  33 symbols, 1,529,456 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-G ADTQ1-G) (Q1-H ADTQ1-H) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(48): USER(48): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-1783960706-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-1783960706-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.2 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 13,040 msec user, 40 msec system
+; cpu time (gc)     520 msec user, 10 msec system
+; cpu time (total)  13,560 msec user, 50 msec system
+; real time  60,415 msec (00:01:00.415)
+; space allocation:
+ 440,626 cons cells,;  316 symbols, 1,541,120 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(49): USER(49): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6148712495-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6148712495-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.3 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 9,710 msec user, 40 msec system
+; cpu time (gc)     270 msec user, 0 msec system
+; cpu time (total)  9,980 msec user, 40 msec system
+; real time  45,994 msec
+; space allocation:
+ 258,280 cons cells,;  363 symbols, 873,760 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(50): USER(50): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8261581571-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8261581571-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.4 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 10,290 msec user, 90 msec system
+; cpu time (gc)     310 msec user, 0 msec system
+; cpu time (total)  10,600 msec user, 90 msec system
+; real time  48,884 msec
+; space allocation:
+ 310,043 cons cells,;  360 symbols, 1,142,360 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(51): USER(51): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4705297406-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4705297406-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.5 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 14,220 msec user, 50 msec system
+; cpu time (gc)     410 msec user, 0 msec system
+; cpu time (total)  14,630 msec user, 50 msec system
+; real time  39,187 msec
+; space allocation:
+ 678,143 cons cells,;  400 symbols, 1,751,312 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(52): USER(52): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-6724813580-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-6724813580-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.6 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 12,260 msec user, 40 msec system
+; cpu time (gc)     360 msec user, 0 msec system
+; cpu time (total)  12,620 msec user, 40 msec system
+; real time  48,839 msec
+; space allocation:
+ 440,921 cons cells,;  371 symbols, 1,388,744 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(53): USER(53): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-8798969000-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-8798969000-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.7 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 10,420 msec user, 70 msec system
+; cpu time (gc)     350 msec user, 0 msec system
+; cpu time (total)  10,770 msec user, 70 msec system
+; real time  45,089 msec
+; space allocation:
+ 247,382 cons cells,;  431 symbols, 890,728 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(54): USER(54): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-0805098560-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-0805098560-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.8 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 14,410 msec user, 20 msec system
+; cpu time (gc)     500 msec user, 0 msec system
+; cpu time (total)  14,910 msec user, 20 msec system
+; real time  17,855 msec
+; space allocation:
+ 399,539 cons cells,;  1,166 symbols, 1,768,008 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(55): USER(55): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-4767135635-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-4767135635-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.9 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 13,880 msec user, 150 msec system
+; cpu time (gc)     840 msec user, 10 msec system
+; cpu time (total)  14,720 msec user, 160 msec system
+; real time  26,894 msec
+; space allocation:
+ 588,867 cons cells,;  1,187 symbols, 1,964,096 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-B ADTQ1-B) (Q1-I ADTQ1-I) (Q1-D ADTQ1-D) (Q1-E ADTQ1-E)))
+USER(56): USER(56): > Reload situation from existing file.  < ADT-Situation/Sit-q-i1-dist1-7685437293-650 > 
+> Opened existing situation file.  < #<CHARACTER-INPUT-FILE-STREAM
+                                       #p"/fsys4/u/sgwoods/qcsp/ADT-Situation/Sit-q-i1-dist1-7685437293-650" pos 0> > 
+> Opening output file/stream for :  < ./New-Batch/ij4/ij4-650.99 > 
+ File Closed (at 1). 
+
+; cpu time (non-gc) 11,580 msec user, 90 msec system
+; cpu time (gc)     510 msec user, 0 msec system
+; cpu time (total)  12,090 msec user, 90 msec system
+; real time  40,230 msec
+; space allocation:
+ 495,865 cons cells,;  1,192 symbols, 1,335,912 other bytes
+(((Q1-A ADTQ1-A) (Q1-F ADTQ1-F) (Q1-H ADTQ1-H) (Q1-G ADTQ1-G) (Q1-C ADTQ1-C)
+  (Q1-D ADTQ1-D) (Q1-B ADTQ1-B) (Q1-E ADTQ1-E) (Q1-I ADTQ1-I)))
+USER(57): USER(57): ; Exiting Lisp

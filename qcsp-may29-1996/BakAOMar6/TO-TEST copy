@@ -1,0 +1,19 @@
+Fix the variable generation routine so that the variables are "ordered" via
+ the explicit linking methodology - we will need this for the stepped approach.
+
+-- TESTING AGGRESSIVE
+
+Add some (2) domain values to V1 so that they may be deleted appropriately. 
+ Make them fail w.r.t B1 and B2 so that they have no justification.  Make them
+ fail at different levels of the hierarchy as testing.
+
+--
+
+Create another variable V0 which is like the 3 variable example ... that is,
+ so that there is some back propagation through the aggressively structured
+ hierarchy.
+
+-- 
+ 
+
+ 

@@ -1,0 +1,578 @@
+Script started on Sun Feb  2 12:32:42 1997
+[r[m[2J[H[?7h[?1;3;4;6l> cl
+Note: the Allegro CL shared library moved to 0xef231000 because the previous
+      address of 0xf2222000 was not available.  Will perform relocation.
+      See the Allegro CL Release Notes for details.
+Allegro CL 4.2 [SPARC; R1] (9/6/94 11:02)
+Copyright (C) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.
+;; Optimization settings: safety 1, space 1, speed 1, debug 2
+;; For a complete description of all compiler switches given the current
+;; optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+USER(1): :ld load
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/load.lisp.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/bm.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/bt.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/ct.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/gsat.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/utility.fasl.
+;   Loading /users/yjzhang/thesis/CSP/qcsp-alex/compile.lisp.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/quilici-search.fasl.
+Warning: GETVAL, :OPERATOR was defined in
+         /users/yjzhang/thesis/CSP/qcsp-alex/gsat.lisp and is now being
+         defined in /users/yjzhang/thesis/CSP/qcsp-alex/quilici-search.lisp
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-simple.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-setup.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/memory-csp.fasl.
+USER(2): :ld yj-load
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/yj-load.lisp.
+USER(3): (my-fasl)
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-template.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-setup.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-dep.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/general-exp.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/adt-template.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/new-dep.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/random-templ-exp.fasl.
+;   Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/static-order-exp.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/static-order-exp.fasl.
+; Fast loading /users/yjzhang/thesis/CSP/qcsp-alex/cpu-xy.fasl.
+T
+USER(4): (setq *debug-q* t^H^[[D
+^K^CError: Received signal number 2 (Keyboard interrupt)
+  [condition type: INTERRUPT-SIGNAL]
+
+Restart actions (select using :continue):
+ 0: continue computation
+[1c] USER(5):  (setq *debug-q* tz0)
+Error: Attempt to take the value of the unbound variable `TZ0'.
+  [condition type: UNBOUND-VARIABLE]
+
+Restart actions (select using :continue):
+ 0: Try evaluating TZ0 again.
+ 1: Set the symbol-value of TZ0 and use its value.
+ 2: Use a value without setting TZ0.
+ 3: continue computation
+[2] USER(6): (setq *debug-q* 't)
+T
+[2] USER(7): :ld final-test.lisp
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/final-test.lisp.
+[2] USER(8): (start0^H
+^CError: Received signal number 2 (Keyboard interrupt)
+  [condition type: INTERRUPT-SIGNAL]
+
+Restart actions (select using :continue):
+ 0: continue computation at break level 2
+ 1: Try evaluating TZ0 again.
+ 2: Set the symbol-value of TZ0 and use its value.
+ 3: Use a value without setting TZ0.
+ 4: continue computation
+[3c] USER(9): (start-test)
+Error: File
+       "/users/yjzhang/thesis/CSP/qcsp-alex/testdata/data-d/dmaxc.control"
+       does not exist.
+  [condition type: FILE-ERROR]
+
+Restart actions (select using :continue):
+ 0: continue computation at break level 2
+ 1: Try evaluating TZ0 again.
+ 2: Set the symbol-value of TZ0 and use its value.
+ 3: Use a value without setting TZ0.
+ 4: continue computation
+[4] USER(10):  :ld final-test.lisp
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/final-test.lisp.
+[4] USER(11):  (start-test)
+
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+Error: Attempt to take the value of the unbound variable `*FINAL-TEMP*'.
+  [condition type: UNBOUND-VARIABLE]
+
+Restart actions (select using :continue):
+ 0: Try evaluating *FINAL-TEMP* again.
+ 1: Set the symbol-value of *FINAL-TEMP* and use its value.
+ 2: Use a value without setting *FINAL-TEMP*.
+ 3: continue computation at break level 2
+ 4: Try evaluating TZ0 again.
+ 5: Set the symbol-value of TZ0 and use its value.
+ 6: Use a value without setting TZ0.
+ 7: continue computation
+[5] USER(12):  :ld final-test.lisp
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/final-test.lisp.
+[5] USER(13):  (start-test)
+
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+Error: Attempt to take the car of QUOTE which is not listp.
+  [condition type: SIMPLE-ERROR]
+
+Restart actions (select using :continue):
+ 0: Try evaluating *FINAL-TEMP* again.
+ 1: Set the symbol-value of *FINAL-TEMP* and use its value.
+ 2: Use a value without setting *FINAL-TEMP*.
+ 3: continue computation at break level 2
+ 4: Try evaluating TZ0 again.
+ 5: Set the symbol-value of TZ0 and use its value.
+ 6: Use a value without setting TZ0.
+ 7: continue computation
+[6] USER(14):  :ld final-test.lisp
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/final-test.lisp.
+[6] USER(15):  (start-test)
+
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 0       qu/ T/ NIL/ NIL/ NIL DEFAULT    7.2     475     80      14 / 0     0.05    0.017   0.067    8       0    0/0       0          0        QUILICI/0.0 RANDOM   NIL
+
+Successful constraint checks: 26  Unsuccessful constraint checks 54 
+(((E4 DMAXC_32) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23) (E3 DMAXC_21))
+ ((E4 DMAXC_31) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23) (E3 DMAXC_21))
+ ((E4 DMAXC_29) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23) (E3 DMAXC_21))
+ ((E4 DMAXC_27) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23) (E3 DMAXC_21))
+ ((E4 DMAXC_26) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23) (E3 DMAXC_21))
+ ((E4 DMAXC_57) (E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49) (E3 DMAXC_47))
+ ((E4 DMAXC_53) (E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49) (E3 DMAXC_47))
+ ((E4 DMAXC_52) (E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49) (E3 DMAXC_47)))
+[6] USER(16):  :ld final-test.lisp
+; Loading /users/yjzhang/thesis/CSP/qcsp-alex/final-test.lisp.
+[6] USER(17):  (start-test)
+
+Processing DMAX now!
+Computing dependency in  DMAX now!
+Modifying dependency in  DMAX now!
+> Initializing a new case 
+ 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_2 > 
+>    < 1 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_2 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_3 > 
+>    < 2 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_3 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_8 > 
+>    < 3 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_8 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_17 > 
+>    < 4 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_17 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_19 > 
+>    < 5 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_19 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_23 > 
+>    < 6 > 
+> possible-data-dependency succeed for  < DMAXC_21, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_28 > 
+>    < 7 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_28 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_42 > 
+>    < 8 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_42 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_49 > 
+>    < 9 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_56 > 
+>    < 10 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_56 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_62 > 
+>    < 11 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_62 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_66 > 
+>    < 12 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_66 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_70 > 
+>    < 13 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_70 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_74 > 
+>    < 14 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_74 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_77 > 
+>    < 15 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_77 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_83 > 
+>    < 16 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_83 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_89 > 
+>    < 17 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_89 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_91 > 
+>    < 18 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_91 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E1, DMAXC_93 > 
+>    < 19 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_93 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_2 > 
+>    < 20 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_2 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_3 > 
+>    < 21 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_3 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_8 > 
+>    < 22 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_8 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_17 > 
+>    < 23 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_17 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_19 > 
+>    < 24 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_19 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_23 > 
+>    < 25 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_28 > 
+>    < 26 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_28 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_42 > 
+>    < 27 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_42 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_49 > 
+>    < 28 > 
+> possible-data-dependency succeed for  < DMAXC_47, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_56 > 
+>    < 29 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_56 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_62 > 
+>    < 30 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_62 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_66 > 
+>    < 31 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_66 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_70 > 
+>    < 32 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_70 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_74 > 
+>    < 33 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_74 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_77 > 
+>    < 34 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_77 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_83 > 
+>    < 35 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_83 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_89 > 
+>    < 36 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_89 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_91 > 
+>    < 37 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_91 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E1, DMAXC_93 > 
+>    < 38 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_93 > 
+>  ---------------------  
+ 
+> Done curc    :   < (POSSIBLE-DATA-DEPENDENCY (E3 E1) ID3-1) > 
+> Open is      :   < (((E1 DMAXC_23) (E3 DMAXC_21))
+                      ((E1 DMAXC_49) (E3 DMAXC_47))) > 
+> Remain cset :   < ((CONTROL-DATA-DEPENDENCY (E2 E1))
+                     (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)) > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E2, DMAXC_24, E1, DMAXC_23 > 
+>    < 39 > 
+> control-data-dependency succeed for  < DMAXC_24, DMAXC_23 > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E2, DMAXC_50, E1, DMAXC_23 > 
+>    < 40 > 
+> control-data-dependency fail for  < DMAXC_50, DMAXC_23 > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E2, DMAXC_24, E1, DMAXC_49 > 
+>    < 41 > 
+> control-data-dependency fail for  < DMAXC_24, DMAXC_49 > 
+>   Constraint :  < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+
+>   (TS1 S1) (TS2 S2)  < E2, DMAXC_50, E1, DMAXC_49 > 
+>    < 42 > 
+> control-data-dependency succeed for  < DMAXC_50, DMAXC_49 > 
+>  ---------------------  
+ 
+> Done curc    :   < (CONTROL-DATA-DEPENDENCY (E2 E1)) > 
+> Open is      :   < (((E2 DMAXC_24) (E1 DMAXC_23) (E3 DMAXC_21))
+                      ((E2 DMAXC_50) (E1 DMAXC_49) (E3 DMAXC_47))) > 
+> Remain cset :   < ((POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E5, DMAXC_25 > 
+>    < 43 > 
+> possible-data-dependency succeed for  < DMAXC_21, DMAXC_25 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_21, E5, DMAXC_51 > 
+>    < 44 > 
+> possible-data-dependency fail for  < DMAXC_21, DMAXC_51 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E5, DMAXC_25 > 
+>    < 45 > 
+> possible-data-dependency fail for  < DMAXC_47, DMAXC_25 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E3, DMAXC_47, E5, DMAXC_51 > 
+>    < 46 > 
+> possible-data-dependency succeed for  < DMAXC_47, DMAXC_51 > 
+>  ---------------------  
+ 
+> Done curc    :   < (POSSIBLE-DATA-DEPENDENCY (E3 E5) ID3-1) > 
+> Open is      :   < (((E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49)
+                       (E3 DMAXC_47))) > 
+> Remain cset :   < ((POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E5, DMAXC_25, E1, DMAXC_23 > 
+>    < 47 > 
+> possible-data-dependency succeed for  < DMAXC_25, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E5, DMAXC_51, E1, DMAXC_49 > 
+>    < 48 > 
+> possible-data-dependency succeed for  < DMAXC_51, DMAXC_49 > 
+>  ---------------------  
+ 
+> Done curc    :   < (POSSIBLE-DATA-DEPENDENCY (E5 E1) ID5-1) > 
+> Open is      :   < (((E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49)
+                       (E3 DMAXC_47))) > 
+> Remain cset :   < ((POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E5, DMAXC_25, E5, DMAXC_25 > 
+>    < 49 > 
+> possible-data-dependency succeed for  < DMAXC_25, DMAXC_25 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1) > 
+
+>   (TS1 S1) (TS2 S2)  < E5, DMAXC_51, E5, DMAXC_51 > 
+>    < 50 > 
+> possible-data-dependency succeed for  < DMAXC_51, DMAXC_51 > 
+>  ---------------------  
+ 
+> Done curc    :   < (POSSIBLE-DATA-DEPENDENCY (E5 E5) ID5-1) > 
+> Open is      :   < (((E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49)
+                       (E3 DMAXC_47))) > 
+> Remain cset :   < ((POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2)
+                     (POSSIBLE-DATA-DEPENDENCY (E4 E5) ID4-2)) > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_12, E1, DMAXC_23 > 
+>    < 51 > 
+> possible-data-dependency fail for  < DMAXC_12, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E1, DMAXC_23 > 
+>    < 52 > 
+> possible-data-dependency succeed for  < DMAXC_26, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E1, DMAXC_23 > 
+>    < 53 > 
+> possible-data-dependency succeed for  < DMAXC_27, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E1, DMAXC_23 > 
+>    < 54 > 
+> possible-data-dependency succeed for  < DMAXC_29, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E1, DMAXC_23 > 
+>    < 55 > 
+> possible-data-dependency succeed for  < DMAXC_31, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E1, DMAXC_23 > 
+>    < 56 > 
+> possible-data-dependency succeed for  < DMAXC_32, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E1, DMAXC_23 > 
+>    < 57 > 
+> possible-data-dependency fail for  < DMAXC_52, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E1, DMAXC_23 > 
+>    < 58 > 
+> possible-data-dependency fail for  < DMAXC_53, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E1, DMAXC_23 > 
+>    < 59 > 
+> possible-data-dependency fail for  < DMAXC_57, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_90, E1, DMAXC_23 > 
+>    < 60 > 
+> possible-data-dependency fail for  < DMAXC_90, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_92, E1, DMAXC_23 > 
+>    < 61 > 
+> possible-data-dependency fail for  < DMAXC_92, DMAXC_23 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_12, E1, DMAXC_49 > 
+>    < 62 > 
+> possible-data-dependency fail for  < DMAXC_12, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_26, E1, DMAXC_49 > 
+>    < 63 > 
+> possible-data-dependency fail for  < DMAXC_26, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_27, E1, DMAXC_49 > 
+>    < 64 > 
+> possible-data-dependency fail for  < DMAXC_27, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_29, E1, DMAXC_49 > 
+>    < 65 > 
+> possible-data-dependency fail for  < DMAXC_29, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_31, E1, DMAXC_49 > 
+>    < 66 > 
+> possible-data-dependency fail for  < DMAXC_31, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_32, E1, DMAXC_49 > 
+>    < 67 > 
+> possible-data-dependency fail for  < DMAXC_32, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_52, E1, DMAXC_49 > 
+>    < 68 > 
+> possible-data-dependency succeed for  < DMAXC_52, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_53, E1, DMAXC_49 > 
+>    < 69 > 
+> possible-data-dependency succeed for  < DMAXC_53, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_57, E1, DMAXC_49 > 
+>    < 70 > 
+> possible-data-dependency succeed for  < DMAXC_57, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_90, E1, DMAXC_49 > 
+>    < 71 > 
+> possible-data-dependency fail for  < DMAXC_90, DMAXC_49 > 
+>   Constraint :  < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+
+>   (TS1 S1) (TS2 S2)  < E4, DMAXC_92, E1, DMAXC_49 > 
+>    < 72 > 
+> possible-data-dependency fail for  < DMAXC_92, DMAXC_49 > 
+>  ---------------------  
+ 
+> Done curc    :   < (POSSIBLE-DATA-DEPENDENCY (E4 E1) ID4-2) > 
+> Open is      :   < (((E4 DMAXC_32) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E4 DMAXC_31) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E4 DMAXC_29) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E4 DMAXC_27) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E4 DMAXC_26) (E5 DMAXC_25) (E2 DMAXC_24) (E1 DMAXC_23)
+                       (E3 DMAXC_21))
+                      ((E4 DMAXC_57) (E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49)
+                       (E3 DMAXC_47))
+                      ((E4 DMAXC_53) (E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49)
+                       (E3 DMAXC_47))
+                      ((E4 DMAXC_52) (E5 DMAXC_51) (E2 DMAXC_50) (E1 DMAXC_49)
+     

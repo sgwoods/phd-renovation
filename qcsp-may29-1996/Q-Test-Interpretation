@@ -1,0 +1,224 @@
+---------------------------------------------------------------------------
+Note.  All experiments are limited by a 600 CPU second time limit for any 
+ individual search.  Thus, if the phase 1 search aborts, phase 2 continues on
+ each of the remaining values irregardless,
+ however it is possible the desired index was not located.  If one phase 2
+ search aborts others still start, however, if the aborted search contained the
+ solution it is either the case that the solution was found before halt,
+ or it was not, but in either case the space was not entirely searched.
+
+---------------------------------------------------------------------------
+Test #1  (experiment label Q-Batch/ij2)
+
+New 2 Phase Memory-based model
+	P1 BT alone
+	P2 FCDR w/ advance variable sort
+---------------------------------------------------------------------------
+
+All test cases for 550 or fewer lines of code completed normally.
+For 600 and more, there were occasional failures due to the incomplete 
+ heuristic constraint included in the test, and increasing numbers of 
+ aborted searches due to exceeding the pre-assigned time limit.  We list 
+ the increasing number of failures to find solutions below.  An "H" indicates
+ no solution due to a heuristic failure, "T0" indicates a time-out failure 
+ which resulted in no solution, and "T1" indicates a time-out failure in which
+ the solution was found.  
+
+Case	H fails		TO fails	T1 fails	Cases OK
+
+600	2		0		0		8
+650	2		0		0		8
+700	2		1		0		7
+750	2		1		2		4
+800	-		6		4		0		
+
+It is interesting to note how many index matches were found in phase1,  keeping
+ in mind that there is only 1 correct solution in any situation test.  This
+ to some extent addresses the appropriateness of the template index 
+ with the types of code encountered.  I list the max and min here only.
+ Note they decrease at 850 (etc) due to the incomplete heuristic in the
+ the index.
+
+	Min 	Max			Min	Max
+
+050	1	8		100	1	10
+150	2	14		200	3	18	
+250	4	21		300	8	22
+350	12	25		400	13	42
+450	15	52		500	15	52
+550	22	58		600	23	64
+
+650	27	69		700	29	81
+750	27	97		
+
+---------------------------------------------------------------------------
+Test #2  (experiment label Q-Batch/ij3)
+
+New 2 Phase Memory-based model
+	P1 FCDR w/ advance variable sort
+	P2 FCDR w/ advance variable sort
+---------------------------------------------------------------------------
+
+All test cases for 550 or fewer LOC completed normally.  No test cases
+ timed out.  All failures are due to the incomplete heuristic coupled with
+ the NOISE insertion methodology.
+
+Case	H fails		TO fails	T1 fails	Cases OK
+
+600	2		0		0		8
+650	2		0		0		8
+700	3		0		0		7
+750	3		0		0		7
+800	3		0		0		7
+850	5		0		0		5
+900	5		0		0		5
+950	8		0		0		2
+1000	8		0		0		2
+
+Phase 1 index matches are identical to Test #1 up until noise level 650.
+
+	Min 	Max			Min	Max
+
+050	1	8		100	1	10
+150	2	14		200	3	18	
+250	4	21		300	8	22
+350	12	25		400	13	42
+450	15	52		500	15	52
+550	22	58		600	23	64
+650	27	72		700	29	81
+750	41	97		800	32	110
+850	31	96		900	32	104
+950	32	101		1000	34	101
+
+--------------------------------------------------------------------------
+Test #3   (experiment label Q-Batch-Freeze/ij3)
+
+MAP-CSP FCDR (no adv variable sort)
+---------------------------------------------------------------------------
+
+All test cases for 550 or fewer LOC completed normally.  No test cases
+ timed out.  All failures are due to the incomplete heuristic coupled with
+ the NOISE insertion methodology.
+
+Case	H fails		TO fails	T1 fails	Cases OK
+
+600	2		0		0		8	
+650	2		0		0		8	
+700	3		0		0		7	
+750	3		0		0		7	
+800	3		0		0		7	
+850	5		0		0		5	
+900	5		0		0		5	
+950	8		0		0		2	
+1000	8		0		0		2	
+
+--------------------------------------------------------------------------
+Test #4   (experiment label Q-Batch/ij4)
+
+MAP-CSP FCDR (with adv variable sort)
+---------------------------------------------------------------------------
+
+All test cases for 550 or fewer LOC completed normally.  No test cases
+ timed out.  All failures are due to the incomplete heuristic coupled with
+ the NOISE insertion methodology.
+
+Case	H fails		TO fails	T1 fails	Cases OK
+
+600	2		0		0		8	
+650	2		0		0		8	
+700	3		0		0		7	
+750	3		0		0		7	
+800	3		0		0		7	
+850	5		0		0		5	
+900	5		0		0		5	
+950	8		0		0		2	
+1000	8		0		0		2	
+
+--------------------------------------------------------------------------
+Test #5   (experiment label Q-Batch-Freeze/ij1)
+
+MAP-CSP Simple BackTracking (control case)
+---------------------------------------------------------------------------
+
+All test cases for 450 or GREATER LOC timed out.  
+
+Case	H fails		TO fails	T1 fails	Cases OK
+
+200	0		0		1		9
+250	0		0		0		10
+300	0		1		1		8
+350	0		1		1		8
+400	0		0		1		9
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+Comments, Observations
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+The results measured and graphed are the total number of constraint checks
+ evaluated BETWEEN parts of the program plan template.  This number DOES
+ NOT include node consistency constraints, thus the result can be interpreted
+ as if an indexing system gave a list of all statements of a particular type 
+ at no cost. 
+
+At noise levels of 500 statements, Test #1 has a 95% confidence 
+ interval ranging between 109054 and 187728 checks.  Changing the first phase
+ to a more efficient search strategy results in Test #2's 95% confidence 
+ interval of between 20075 and 69562 checks.  Depending on the actual 
+ search approach in DECODE, this suggests a substantial possible improvement 
+ immediately through mapping to a CSP framework.  This improvement translates
+ to a much larger potential code set size which can be tackled in
+ a single run of mapping a particular template.
+
+--
+
+So Test #2 represents the best we could do with the 2 phase model ... so far
+ at least.  FCDR w/ var ordering is  always nearly the best heuristic in 
+ many many empirical evaluations of CSPs ... other more complicated ones
+ can be better (and at IJCAI some resuls show always better) but for a 
+ relatively simple heuristic combination it is consistently good.
+
+Test #4 represents the best MAP-CSP did on its own.  4 is better than
+ 2 across the board.  At 500 noise, #2's 95% Conf Interval is between
+ 7174 and 44663, while #4's is betwween 1309 and  1997.  At 1000 noise,
+ 2 ranges between 50315 and 61947, while 4 ranges between only
+ 3808 and 5878.
+
+Duplication of Search Effort:
+
+I alluded to part of the explanation before I think ... the 2 phase approach
+ essentially finds all N index matches ... and generates N secondary problems
+ (I term these resolution problems) in which we hope that the non-solution
+ bearing problems will yield this up right away.  To some extent this 
+ happens, however, in the process (particular if N is large), it is quite
+ possible that the beginning parts of the N resolution search spaces look
+ quite similar (and certainly parts will be nearly identical).  In these
+ similar spaces, a given constraint check between two candidate statements
+ will be checked many times (up to N I suppose).  This redundancy is
+ missed in the single-level problem solution.  So there is a tradeoff-
+ the 2 phase splitting eliminates a large search portion and essentially
+ focuses on N sub-parts of the space (while the whole problem cant do this), 
+ but gives some savings back by duplicating parts of the exploration in
+ constraint checks.  There are quite likely possibilities for 
+ improving this performance with a specially modified search algorithm
+ that factors out commonalities perhaps.  This would be a lot of work, but
+ is something to keep in mind.  I suspect that a bit more looking into
+ Freuder and Mackworth's work on this matter would yield some possibilities.
+ I will save this for later on .... 
+
+
+So we are left with : the 2 phase method works quite well, can be improved
+ directly with FCDR w/ adv sort in place of a simple generic indexing strategy
+ or non-generic application-specific strategy.   However, the FCDR w/ adv sort
+ working on the entire problem at once still does better.  In effect it
+ performs some kind of indexing which it determines dynamically based on 
+ the problem instance, and then doesn't duplicate any search space as
+ is the case with the 2 phase method.  I challenge anyone to show this
+ result theoretically rather than empirically :-).   At least I don't know
+ of anyone ... Perhaps Peter van Beek would have a comment about this ... also
+ a good point for later.
+
+
+
+
