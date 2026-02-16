@@ -10,7 +10,7 @@
 ;;
 ;; (lineid  linenumber  Stmt )
 ;;
-(defconstant *situations*
+(defparameter *situations*
       (list
        '( "adt-t1-1"
 	     ( adt1-1a  100 (Decl    array arr1 int 25 ))
@@ -60,7 +60,7 @@
 ;;     ie/ (Print  baseArray index)
 
 ;; 1. stmt-type-list  2. decl-type-list  3. decl-type-list w/o array
-(defconstant *distributions*
+(defparameter *distributions*
       '(
 	( "dist1" 
 	  ( (Decl 1) (Zero 1) (Assign 1) (Print 1) (Check 1) (For 1) (Block 1))
@@ -87,7 +87,7 @@
 ;;                   Type(IdxF)=int implicit
 ;;   t1-g print $G ;where G==?, Type(G)=(int char)
 ;;        
-(defconstant *template-object-list* 
+(defparameter *template-object-list* 
       (list 
        '( "adt-t2"
 	  (

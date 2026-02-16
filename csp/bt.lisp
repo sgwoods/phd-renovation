@@ -559,7 +559,6 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
 				 (rest variables-left))
 
 			   ) ;; block inst-nxt-var
-		    ) ;; block inst-nxt-var
 		  ) ;; if endp var-left
 		) ;; when s-p
 	 );; block nxt dom val

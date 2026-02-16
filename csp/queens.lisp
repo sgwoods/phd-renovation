@@ -263,13 +263,13 @@ the instantiation of SYMBOL2 with VALUE2.
   (if (eq flag t)
       (setq out-f "test-output.qc")
       (setq out-f t))
-  (queens n 
-	  :mode 'ac-3
+  (queens n
+	  :arc-consis 'ac-3
 	  :debug debug
 	  :output-file out-f ))
 
 ;; **********************************************************************
-;; confused queens test calls 
+;; confused queens test calls
 
 ;; Default C Queens
 (defun cq (n &optional (flag nil) (debug nil))
@@ -298,9 +298,9 @@ the instantiation of SYMBOL2 with VALUE2.
   (if (eq flag t)
       (setq out-f "test-confused.qc")
       (setq out-f t))
-  (queens n 
+  (queens n
 	  :dom 'confused
-	  :mode 'ac-3
+	  :arc-consis 'ac-3
 	  :debug debug
 	  :output-file out-f ))
 
