@@ -264,7 +264,7 @@ the instantiation of SYMBOL2 with VALUE2.
       (setq out-f "test-output.qc")
       (setq out-f t))
   (queens n
-	  :arc-consis 'ac-3
+	  :arc-consis 'before
 	  :debug debug
 	  :output-file out-f ))
 
@@ -276,7 +276,7 @@ the instantiation of SYMBOL2 with VALUE2.
   (if (eq flag t)
       (setq out-f "test-confused.q")
       (setq out-f t))
-  (queens n 
+  (queens n
 	  :dom 'confused
 	  :debug debug
 	  :output-file out-f))
@@ -286,7 +286,7 @@ the instantiation of SYMBOL2 with VALUE2.
   (if (eq flag t)
       (setq out-f "test-confused.qs")
       (setq out-f t))
-  (queens n 
+  (queens n
 	  :dom 'confused
 	  :forward-checking nil
 	  :dynamic-rearrangement nil
@@ -300,7 +300,7 @@ the instantiation of SYMBOL2 with VALUE2.
       (setq out-f t))
   (queens n
 	  :dom 'confused
-	  :arc-consis 'ac-3
+	  :arc-consis 'before
 	  :debug debug
 	  :output-file out-f ))
 

@@ -264,7 +264,7 @@ the instantiation of SYMBOL2 with VALUE2.
       (setq out-f "test-output.qc")
       (setq out-f t))
   (queens n
-	  :arc-consis 'ac-3
+	  :arc-consis 'before
 	  :debug debug
 	  :output-file out-f ))
 
@@ -300,7 +300,7 @@ the instantiation of SYMBOL2 with VALUE2.
       (setq out-f t))
   (queens n
 	  :dom 'confused
-	  :arc-consis 'ac-3
+	  :arc-consis 'before
 	  :debug debug
 	  :output-file out-f ))
 

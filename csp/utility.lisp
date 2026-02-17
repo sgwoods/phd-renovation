@@ -46,6 +46,12 @@
   (setq *backtrack* nil)
   (setq *backmark* nil)
 
+  ;; Override output option
+  (setq *single-line-override* nil)
+
+  ;; Output long option
+  (setq *long-output* nil)
+
   (setq *search-mode* search-mode)   
 
   (if (member-string *search-mode* '("bt" "bm" "bj"))
