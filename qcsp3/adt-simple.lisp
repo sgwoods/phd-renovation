@@ -14,7 +14,7 @@
 
 
 (defun adt (&key
-	    (situation-id       "q-i1")  ;; special implies o/ride
+	    (situation-id       "quilici-i1")  ;; special implies o/ride
 	    (sit-noise                     0)
 	    (template-id    "quilici-t1")  ;; special implies o/ride
 	    (dom (list 'adt situation-id template-id))

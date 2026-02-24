@@ -19,7 +19,7 @@
 ;;(defconstant *situations*
 (setq *situations*
       (list
-       '( "q-i1"
+       '( "quilici-i1"
 	  (adtq1-a 100 (Decl       array  A    char   99  ))
 	  (adtq1-b 200 (Zero       Idx                    ))
 	  (adtq1-c 300 (While      Result                 ))
