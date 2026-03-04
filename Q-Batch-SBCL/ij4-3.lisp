@@ -13,7 +13,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "default"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.1"
+	   :output-file "ij4-500.1"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -24,7 +24,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "1783960706"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.2"
+	   :output-file "ij4-500.2"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -35,7 +35,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6148712495"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.3"
+	   :output-file "ij4-500.3"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -46,7 +46,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8261581571"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.4"
+	   :output-file "ij4-500.4"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -57,7 +57,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4705297406"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.5"
+	   :output-file "ij4-500.5"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -68,7 +68,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6724813580"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.6"
+	   :output-file "ij4-500.6"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -79,7 +79,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8798969000"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.7"
+	   :output-file "ij4-500.7"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -90,7 +90,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "0805098560"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.8"
+	   :output-file "ij4-500.8"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -101,7 +101,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4767135635"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.9"
+	   :output-file "ij4-500.9"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -112,7 +112,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "7685437293"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-500.99"
+	   :output-file "ij4-500.99"
 	   ))
 
 
@@ -125,7 +125,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "default"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.1"
+	   :output-file "ij4-550.1"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -136,7 +136,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "1783960706"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.2"
+	   :output-file "ij4-550.2"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -147,7 +147,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6148712495"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.3"
+	   :output-file "ij4-550.3"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -158,7 +158,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8261581571"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.4"
+	   :output-file "ij4-550.4"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -169,7 +169,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4705297406"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.5"
+	   :output-file "ij4-550.5"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -180,7 +180,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6724813580"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.6"
+	   :output-file "ij4-550.6"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -191,7 +191,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8798969000"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.7"
+	   :output-file "ij4-550.7"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -202,7 +202,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "0805098560"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.8"
+	   :output-file "ij4-550.8"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -213,7 +213,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4767135635"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.9"
+	   :output-file "ij4-550.9"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -224,7 +224,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "7685437293"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-550.99"
+	   :output-file "ij4-550.99"
 	   ))
 
 
@@ -237,7 +237,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "default"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.1"
+	   :output-file "ij4-600.1"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -248,7 +248,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "1783960706"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.2"
+	   :output-file "ij4-600.2"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -259,7 +259,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6148712495"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.3"
+	   :output-file "ij4-600.3"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -270,7 +270,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8261581571"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.4"
+	   :output-file "ij4-600.4"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -281,7 +281,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4705297406"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.5"
+	   :output-file "ij4-600.5"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -292,7 +292,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6724813580"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.6"
+	   :output-file "ij4-600.6"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -303,7 +303,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8798969000"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.7"
+	   :output-file "ij4-600.7"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -314,7 +314,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "0805098560"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.8"
+	   :output-file "ij4-600.8"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -325,7 +325,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4767135635"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.9"
+	   :output-file "ij4-600.9"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -336,7 +336,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "7685437293"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-600.99"
+	   :output-file "ij4-600.99"
 	   ))
 
 
@@ -349,7 +349,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "default"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.1"
+	   :output-file "ij4-650.1"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -360,7 +360,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "1783960706"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.2"
+	   :output-file "ij4-650.2"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -371,7 +371,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6148712495"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.3"
+	   :output-file "ij4-650.3"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -382,7 +382,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8261581571"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.4"
+	   :output-file "ij4-650.4"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -393,7 +393,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4705297406"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.5"
+	   :output-file "ij4-650.5"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -404,7 +404,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "6724813580"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.6"
+	   :output-file "ij4-650.6"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -415,7 +415,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "8798969000"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.7"
+	   :output-file "ij4-650.7"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -426,7 +426,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "0805098560"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.8"
+	   :output-file "ij4-650.8"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -437,7 +437,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "4767135635"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.9"
+	   :output-file "ij4-650.9"
 	   ))
 
 (time (adt :situation-id "quilici-i1"
@@ -448,7 +448,7 @@
 	   :advance-sort t
 	   :single-line-override t
 	   :random-ident "7685437293"
-	   :output-file "../Q-Batch-SBCL/ij4/ij4-650.99"
+	   :output-file "ij4-650.99"
 	   ))
 
 (sb-ext:exit)

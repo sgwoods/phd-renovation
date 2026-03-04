@@ -105,7 +105,7 @@
           (format out "	   :advance-sort t~%")
           (format out "	   :single-line-override t~%")
           (format out "	   :random-ident \"~A\"~%" (car seed))
-          (format out "	   :output-file \"../Q-Batch-SBCL/ij4/ij4-~A.~A\"~%"
+          (format out "	   :output-file \"ij4-~A.~A\"~%"
                   (noise-label noise) (cdr seed))
           (format out "	   ))~%~%")))
       (format out "(sb-ext:exit)~%"))
