@@ -669,12 +669,7 @@ and if the param length is the same, succeeds.
 (defun get-templ-slots (template)
   (second template))
 
-;; Constraint List
 ;;
-(defun get-templ-constraints (template)
-  (third template))
-
-;;  
 (defun get-templ-slot-object (template ident)
 "
 Return template slot object based on its identifier and template.
