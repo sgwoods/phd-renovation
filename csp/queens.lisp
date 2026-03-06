@@ -1,3 +1,4 @@
+(in-package #:phd-csp)
 ;; queens.lisp
 ;;
 ;; Queens backtracking solution with, without arc consistency checking

@@ -28,6 +28,6 @@
       (truename (merge-pathnames "qcsp3/" *project-root*)))
 
 ;;; Mark unix mode for path selection in adt-setup.lisp
-(setq *unix* t)
+(setq qcsp3:*unix* t)
 
 (format t "~&; Bootstrap complete. CWD: ~A~%" *default-pathname-defaults*)

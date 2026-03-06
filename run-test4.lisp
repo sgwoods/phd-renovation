@@ -35,27 +35,28 @@
   (load "test4"))
 
 ;;; All test4 dependencies are already loaded; prevent re-loading
-(defun load-t4 (&optional sys) (declare (ignore sys)) nil)
+;;; (load-t4 is now in the qcsp3 package)
+(defun qcsp3::load-t4 (&optional sys) (declare (ignore sys)) nil)
 
 ;;; Run all tests
 (format t "~&~%;; ===== test4 suite =====~%")
 
 (format t "~&;; testacs: AO-ac3 Step, case 1~%")
-(testacs 1)
+(qcsp3::testacs 1)
 
 (format t "~&;; testaca: AO-ac3 Aggressive, case 1~%")
-(testaca 1)
+(qcsp3::testaca 1)
 
 (format t "~&;; testacns: AO-ac-new Step, case 1~%")
-(testacns 1)
+(qcsp3::testacns 1)
 
 (format t "~&;; testacna: AO-ac-new Aggressive, case 1~%")
-(testacna 1)
+(qcsp3::testacna 1)
 
 (format t "~&;; test4s: AO-revise Step~%")
-(test4s)
+(qcsp3::test4s)
 
 (format t "~&;; test4a: AO-revise Aggressive~%")
-(test4a)
+(qcsp3::test4a)
 
 (format t "~&~%;; ===== All test4 tests completed. =====~%")

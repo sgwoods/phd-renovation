@@ -5,7 +5,7 @@
 (load "Q-Batch-SBCL/bootstrap.lisp")
 
 (princ "**** Noise 250 ****") (terpri)(terpri)
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -14,7 +14,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.1"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -23,7 +23,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.2"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -32,7 +32,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.3"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -41,7 +41,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.4"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -50,7 +50,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.5"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -59,7 +59,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.6"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -68,7 +68,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.7"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -77,7 +77,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.8"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t
@@ -86,7 +86,7 @@
 	   :memory-output-file "../Q-Batch-SBCL/ij3/ij3-250.9"
 	   ))
 
-(time (memory-search "quilici-t1-index" "quilici-t1"
+(time (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
 	   :sit-noise    250
 	   :1-forward-checking t
 	   :1-dynamic-rearrangement t

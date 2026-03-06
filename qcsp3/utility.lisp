@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp3)
 ;; utility.lisp
 (defun cu () (compile-file "utility")  (load "utility"))
 
@@ -175,7 +176,7 @@
       (progn
 	(setq *debug-node* debug-node))
     (progn
-      (setq *error* 13b)
+      (setq *error* 14)
       (comment1 "Debug-node in error" debug-node)))
 
   ;; file output

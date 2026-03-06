@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp3)
 ;;
 ;; Extended example  March 5, 1996 sgw (see notes)
 ;;

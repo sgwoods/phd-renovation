@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp3)
 ;; memory-csp.lisp
 (defun cmcsp () (compile-file "memory-csp") (load "memory-csp"))
 (defun lmcsp () (load "memory-csp.lisp"))

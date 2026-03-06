@@ -1,3 +1,4 @@
+(in-package #:phd-csp)
 ;; utility.lisp
 
 (setq *output-stream* *standard-output*)

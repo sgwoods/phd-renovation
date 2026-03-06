@@ -3,8 +3,7 @@
 ;;;; Usage: sbcl --non-interactive --load "tests/run.lisp"
 ;;;;
 ;;;; Runs csp and qcsp3 test suites in separate SBCL processes
-;;;; (necessary because both systems define functions with the same
-;;;; names in CL-USER, so they cannot coexist in one image).
+;;;; (each suite is self-contained with its own setup/teardown).
 ;;;;
 ;;;; Exits with status 0 if all suites pass, 1 otherwise.
 

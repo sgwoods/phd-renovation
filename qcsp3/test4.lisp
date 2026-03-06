@@ -1,6 +1,5 @@
+(in-package #:phd-qcsp3)
 ;; test4.lisp
-
-(defvar *unix* t)
 
 (defun t4 (&optional (sys *unix*) )
   (if sys

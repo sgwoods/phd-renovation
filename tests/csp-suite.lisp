@@ -23,8 +23,7 @@
 (asdf:load-system :phd-research)
 
 ;;; Set *unix* (used by path selection code)
-(defvar *unix* t)
-(setq *unix* t)
+(setq csp:*unix* t)
 
 ;;; =========================================================================
 ;;; Test definitions
@@ -44,29 +43,29 @@
 (5am:test queens-4
   "4-Queens with AC-3 should complete"
   (with-csp-paths
-    (5am:is (eq (qc 4) 'complete))))
+    (5am:is (eq (csp:qc 4) :complete))))
 
 (5am:test queens-8
   "8-Queens with AC-3 should complete"
   (with-csp-paths
-    (5am:is (eq (qc 8) 'complete))))
+    (5am:is (eq (csp:qc 8) :complete))))
 
 (5am:test confused-queens-4
   "Confused 4-Queens with AC-3 should complete"
   (with-csp-paths
-    (5am:is (eq (cqc 4) 'complete))))
+    (5am:is (eq (csp:cqc 4) :complete))))
 
 (5am:test adt-recognition
   "ADT recognition should complete"
   (with-csp-paths
     (ensure-directories-exist "ADT-Random/dummy")
-    (5am:is (eq (adt :random-ident 'unique) 'complete))))
+    (5am:is (eq (csp:adt :random-ident 'unique) :complete))))
 
 (5am:test mpr-recognition
   "MPR recognition should complete"
   (with-csp-paths
     (ensure-directories-exist "MPR-Random/dummy")
-    (5am:is (eq (mpr :random-ident 'unique) 'complete))))
+    (5am:is (eq (csp:mpr :random-ident 'unique) :complete))))
 
 ;;; Run
 (format t "~&~%;; ===== CSP Test Suite =====~%~%")

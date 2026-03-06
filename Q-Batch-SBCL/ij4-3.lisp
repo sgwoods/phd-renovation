@@ -5,7 +5,7 @@
 (load "Q-Batch-SBCL/bootstrap.lisp")
 
 (princ "**** Noise 500 ****") (terpri)(terpri)
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -16,7 +16,7 @@
 	   :output-file "ij4-500.1"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -27,7 +27,7 @@
 	   :output-file "ij4-500.2"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -38,7 +38,7 @@
 	   :output-file "ij4-500.3"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -49,7 +49,7 @@
 	   :output-file "ij4-500.4"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -60,7 +60,7 @@
 	   :output-file "ij4-500.5"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -71,7 +71,7 @@
 	   :output-file "ij4-500.6"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -82,7 +82,7 @@
 	   :output-file "ij4-500.7"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -93,7 +93,7 @@
 	   :output-file "ij4-500.8"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -104,7 +104,7 @@
 	   :output-file "ij4-500.9"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    500
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -117,7 +117,7 @@
 
 
 (princ "**** Noise 550 ****") (terpri)(terpri)
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -128,7 +128,7 @@
 	   :output-file "ij4-550.1"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -139,7 +139,7 @@
 	   :output-file "ij4-550.2"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -150,7 +150,7 @@
 	   :output-file "ij4-550.3"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -161,7 +161,7 @@
 	   :output-file "ij4-550.4"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -172,7 +172,7 @@
 	   :output-file "ij4-550.5"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -183,7 +183,7 @@
 	   :output-file "ij4-550.6"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -194,7 +194,7 @@
 	   :output-file "ij4-550.7"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -205,7 +205,7 @@
 	   :output-file "ij4-550.8"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -216,7 +216,7 @@
 	   :output-file "ij4-550.9"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    550
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -229,7 +229,7 @@
 
 
 (princ "**** Noise 600 ****") (terpri)(terpri)
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -240,7 +240,7 @@
 	   :output-file "ij4-600.1"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -251,7 +251,7 @@
 	   :output-file "ij4-600.2"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -262,7 +262,7 @@
 	   :output-file "ij4-600.3"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -273,7 +273,7 @@
 	   :output-file "ij4-600.4"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -284,7 +284,7 @@
 	   :output-file "ij4-600.5"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -295,7 +295,7 @@
 	   :output-file "ij4-600.6"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -306,7 +306,7 @@
 	   :output-file "ij4-600.7"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -317,7 +317,7 @@
 	   :output-file "ij4-600.8"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -328,7 +328,7 @@
 	   :output-file "ij4-600.9"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    600
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -341,7 +341,7 @@
 
 
 (princ "**** Noise 650 ****") (terpri)(terpri)
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -352,7 +352,7 @@
 	   :output-file "ij4-650.1"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -363,7 +363,7 @@
 	   :output-file "ij4-650.2"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -374,7 +374,7 @@
 	   :output-file "ij4-650.3"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -385,7 +385,7 @@
 	   :output-file "ij4-650.4"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -396,7 +396,7 @@
 	   :output-file "ij4-650.5"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -407,7 +407,7 @@
 	   :output-file "ij4-650.6"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -418,7 +418,7 @@
 	   :output-file "ij4-650.7"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -429,7 +429,7 @@
 	   :output-file "ij4-650.8"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t
@@ -440,7 +440,7 @@
 	   :output-file "ij4-650.9"
 	   ))
 
-(time (adt :situation-id "quilici-i1"
+(time (qcsp3:adt :situation-id "quilici-i1"
 	   :sit-noise    650
 	   :template-id  "quilici-t1"
 	   :forward-checking t

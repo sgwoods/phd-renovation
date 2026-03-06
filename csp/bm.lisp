@@ -1,3 +1,4 @@
+(in-package #:phd-csp)
 ;; bm.lisp (global use of arrays, vectors VERSION)
 
 ;; *variables*       ( (var1 dom1 dom2 ... domn) 
@@ -62,8 +63,8 @@
     (show-solution *solution-set* 'done-backmark)
 
     (if *exit-backmark-now*
-	(if (> length *solution-set* 0) t 'error)
-      'complete)
+	(if (> length *solution-set* 0) t :error)
+      :complete)
     ))
 
 (defun backmark ( U F consistent-p )

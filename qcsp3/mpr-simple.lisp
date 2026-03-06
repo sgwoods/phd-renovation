@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp3)
 ;; mpr-simple.lisp
 ;;
 ;;  Model Pattern Recognition Domain for CSP Experimentation
@@ -44,12 +45,12 @@ it is assumed we will use the default situation and template values.
 ;; re-load mpr-setup constants
 (load "mpr-setup")
 
-;; insure MPR functions are loaded
-;; arc-p consistent-p 
+;; ensure MPR functions are loaded (domain switching)
+;; arc-p consistent-p
 (if (not (eq *domain-loaded* 'mpr))
     (progn
       (load "mpr-simple")
-      (load "mpr-setup") ))
+      (load "mpr-setup")))
 
 (setq *test* situation-id)
 
@@ -57,14 +58,14 @@ it is assumed we will use the default situation and template values.
 ;;   unique  indicates create a unique one
 ;;   default indicates to utilize the one stored as RndDefault
 ;;   string  indicates to utilize the one stored as RndString
-(if (eq random-ident 'unique)
+(if (string-equal random-ident "unique")
     (progn
       (setq random-ident (unique-string))
       (setq *random-state* (make-random-state t))
       (save-rand random-ident))
-  (if (eq random-ident 'default)
+  (if (string-equal random-ident "default")
       (progn
-	(load-rand 'default))
+	(load-rand "default"))
     (load-rand random-ident)))
 
 ;; Establish initial mpr world situations

@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp3)
 ;; mpr-setup.lisp
 ;;
 ;; MPR situation and template information

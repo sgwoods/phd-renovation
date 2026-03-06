@@ -1,10 +1,11 @@
+(in-package #:phd-csp)
 ;; adt-setup.lisp
 ;;
 ;; ADT legacy situation and template descriptions
 ;;
 
 (setq *adt-setup-loaded* 'nil)
-(setq HERE 0)
+(setq here 0)
 
 ;; legacy instantiation of example(s)
 ;;

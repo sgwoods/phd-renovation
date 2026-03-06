@@ -1,3 +1,4 @@
+(in-package #:phd-csp)
 ;; mpr-setup.lisp
 ;;
 ;; MPR situation and template information

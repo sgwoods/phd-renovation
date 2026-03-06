@@ -7,11 +7,11 @@
 ;;;; into a REPL with the CWD set to qcsp3/ for interactive use.
 ;;;;
 ;;;; Available entry points after loading:
-;;;;   (qc N)                   -- N-Queens with AC-3
-;;;;   (cqc N)                  -- Confused N-Queens with AC-3
-;;;;   (adt ...)                -- Abstract Data Type recognition
-;;;;   (mpr ...)                -- Model Pattern Recognition
-;;;;   (memory-search ...)      -- Two-phase memory-based CSP search
+;;;;   (qcsp3:qc N)             -- N-Queens with AC-3
+;;;;   (qcsp3:cqc N)            -- Confused N-Queens with AC-3
+;;;;   (qcsp3:adt ...)          -- Abstract Data Type recognition
+;;;;   (qcsp3:mpr ...)          -- Model Pattern Recognition
+;;;;   (qcsp3:memory-search ..) -- Two-phase memory-based CSP search
 ;;;;
 ;;;; For batch experiments, see Q-Batch-SBCL/*.sh
 
@@ -35,8 +35,7 @@
       (truename (merge-pathnames "qcsp3/" *project-root*)))
 
 ;;; Set platform flag
-(defvar *unix* t)
-(setq *unix* t)
+(setq qcsp3:*unix* t)
 
 ;;; Ensure required directories exist
 (ensure-directories-exist
@@ -46,6 +45,6 @@
 
 (format t "~&; Ready. CWD: ~A~%" (namestring *default-pathname-defaults*))
 (format t ";~%")
-(format t "; Try: (qc 4)           -- 4-Queens~%")
-(format t ";      (adt)            -- ADT recognition~%")
-(format t ";      (memory-search)  -- two-phase search~%")
+(format t "; Try: (qcsp3:qc 4)           -- 4-Queens~%")
+(format t ";      (qcsp3:adt)            -- ADT recognition~%")
+(format t ";      (qcsp3:memory-search)  -- two-phase search~%")

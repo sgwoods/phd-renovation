@@ -22,23 +22,23 @@
   (format t "~&~%;; ===== csp test suite =====~%")
 
   (format t "~&;; qc 4: 4-Queens with AC-3~%")
-  (qc 4)
+  (csp:qc 4)
 
   (format t "~&;; qc 8: 8-Queens with AC-3~%")
-  (qc 8)
+  (csp:qc 8)
 
   (format t "~&;; cqc 4: Confused 4-Queens with AC-3~%")
-  (cqc 4)
+  (csp:cqc 4)
 
   ;;; ===== ADT domain test =====
   (format t "~&;; adt: Abstract Data Type recognition~%")
   (ensure-directories-exist "ADT-Random/dummy")
-  (adt :random-ident 'unique)
+  (csp:adt :random-ident 'unique)
 
   ;;; ===== MPR domain test =====
   (format t "~&;; mpr: Model Pattern Recognition~%")
   (ensure-directories-exist "MPR-Random/dummy")
-  (mpr :random-ident 'unique)
+  (csp:mpr :random-ident 'unique)
 )
 
 (format t "~&~%;; ===== All csp tests completed. =====~%")

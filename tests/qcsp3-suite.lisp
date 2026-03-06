@@ -23,8 +23,7 @@
 (asdf:load-system :qcsp3)
 
 ;;; Set *unix* (used by path selection code)
-(defvar *unix* t)
-(setq *unix* t)
+(setq qcsp3:*unix* t)
 
 ;;; =========================================================================
 ;;; Test definitions
@@ -46,34 +45,34 @@
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
-    (5am:is-true (adt :random-ident 'unique))))
+    (5am:is-true (qcsp3:adt :random-ident 'unique))))
 
 (5am:test qcsp3-adt-fc
   "QCSP3 ADT with forward checking should complete"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
-    (5am:is-true (adt :random-ident 'unique
-                      :forward-checking t))))
+    (5am:is-true (qcsp3:adt :random-ident 'unique
+                             :forward-checking t))))
 
 (5am:test qcsp3-adt-fcdr
   "QCSP3 ADT with FC + dynamic rearrangement should complete"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
-    (5am:is-true (adt :random-ident 'unique
-                      :forward-checking t
-                      :dynamic-rearrangement t))))
+    (5am:is-true (qcsp3:adt :random-ident 'unique
+                             :forward-checking t
+                             :dynamic-rearrangement t))))
 
 (5am:test qcsp3-adt-fcdr-advsort
   "QCSP3 ADT with FC + DR + advance sort should complete"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
-    (5am:is-true (adt :random-ident 'unique
-                      :forward-checking t
-                      :dynamic-rearrangement t
-                      :advance-sort t))))
+    (5am:is-true (qcsp3:adt :random-ident 'unique
+                             :forward-checking t
+                             :dynamic-rearrangement t
+                             :advance-sort t))))
 
 ;;; Run
 (format t "~&~%;; ===== QCSP3 Test Suite =====~%~%")

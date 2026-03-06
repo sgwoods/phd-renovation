@@ -1,3 +1,4 @@
+(in-package #:phd-csp)
 ;; adt-simple.lisp
 ;;
 ;;  Abstract Data Type Recognition Domain for CSP Experimentation
@@ -37,12 +38,12 @@ it is assumed we will use the default situation and template values.
 ;; re-load adt-setup constants
 (load "adt-setup")
 
-;; insure ADT functions are loaded
-;; arc-p consistent-p 
+;; ensure ADT functions are loaded (domain switching)
+;; arc-p consistent-p
 (if (not (eq *domain-loaded* 'adt))
     (progn
       (load "adt-simple")
-      (load "adt-setup") ))
+      (load "adt-setup")))
 
 (setq *test* situation-id)
 
@@ -50,14 +51,14 @@ it is assumed we will use the default situation and template values.
 ;;   unique  indicates create a unique one
 ;;   default indicates to utilize the one stored as RndDefault
 ;;   string  indicates to utilize the one stored as RndString
-(if (eq random-ident 'unique)
+(if (string-equal random-ident "unique")
     (progn
       (setq random-ident (unique-string))
       (setq *random-state* (make-random-state t))
       (save-rand random-ident))
-  (if (eq random-ident 'default)
+  (if (string-equal random-ident "default")
       (progn
-	(load-rand 'default))
+	(load-rand "default"))
     (load-rand random-ident)))
 
 ;; Establish initial  ADT world situations

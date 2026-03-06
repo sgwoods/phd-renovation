@@ -1,3 +1,4 @@
+(in-package #:phd-csp)
 ;; bt.lisp
 
 ;;;
@@ -108,7 +109,7 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
       (when (null current-state) 
 	(setq *internal-end-time* (get-internal-run-time))
 	(show-solution solution-set 'null-current-state)
-	(return-from backtracking 'error))
+	(return-from backtracking :error))
 
       ;; **************************************************************
       ;; Set up initial variables for this visit position in search space
@@ -196,7 +197,7 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
 			(comment1 '"Done: BT Node w/o parent" node-id))
 		    (setq *internal-end-time* (get-internal-run-time))
 		    (show-solution solution-set 'null-parent-state)
-		    (return-from backtracking 'complete))
+		    (return-from backtracking :complete))
 
 		  ;; BACKJUMP ?
 		  ;; If Visit node's parent has a max-fail-level of less
