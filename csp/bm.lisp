@@ -63,7 +63,7 @@
     (show-solution *solution-set* 'done-backmark)
 
     (if *exit-backmark-now*
-	(if (> length *solution-set* 0) t :error)
+	(if (> (length *solution-set*) 0) t :error)
       :complete)
     ))
 

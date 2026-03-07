@@ -962,7 +962,7 @@ Return locational information only as tuples for a given type.
 ;; **************************************************
 ;; Additional utility selection functions 
 
-(defun select-all-type (type &optional (sit *current-situation) )
+(defun select-all-type (type &optional (sit *current-situation*) )
 "
 Return situational object set with this type.
 "
