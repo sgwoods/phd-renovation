@@ -181,13 +181,8 @@
 
   ;; file output
   (setq *file-output* nil)
-  (setq *whole-file-name* 
-	(if *unix* 
-	    (concatenate 'string "ADT-Batch/Test-" 
-			 output-file)
-	  (concatenate 'string  
-		       "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ADT-Batch:Test-"
-		       output-file))) 
+  (setq *whole-file-name*
+	(concatenate 'string "ADT-Batch/Test-" output-file)) 
   (setq *output-stream* 
 	(cond ((or (eq output-file t) (null output-file)) 
 	       *standard-output*)

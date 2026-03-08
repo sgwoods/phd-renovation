@@ -1,11 +1,8 @@
 (in-package #:phd-qcsp3)
 ;; comment.lisp
 
-(defun load-comment (&optional (sys *unix*) )
-  (if sys
-      (load	"comment.lisp")
-    (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:comment.lisp")
-    ))
+(defun load-comment ()
+  (load "comment.lisp"))
 
 (defun comment (com )
   (if (not (eq t nil))

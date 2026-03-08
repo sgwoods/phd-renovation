@@ -2,14 +2,9 @@
 ;; ao-revise-step.lisp  (non-aggressive or stepped linking version)
 ;;
 
-(defun aor-s (&optional (sys *unix*) )
-  (if sys
-      (progn
-	(load	"ao-revise-step.lisp")
-	(load	"ao-revise-fns.lisp"))
-    (progn
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-step.lisp")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-fns.lisp"))))
+(defun aor-s ()
+  (load "ao-revise-step.lisp")
+  (load "ao-revise-fns.lisp"))
 
 (defun ao-revise-step ( srcVar thisTarget constraint-fn maxDepth )
 " 

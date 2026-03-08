@@ -36,7 +36,7 @@
 
 ;;; All test4 dependencies are already loaded; prevent re-loading
 ;;; (load-t4 is now in the qcsp3 package)
-(defun qcsp3::load-t4 (&optional sys) (declare (ignore sys)) nil)
+(defun qcsp3::load-t4 () nil)
 
 ;;; Run all tests
 (format t "~&~%;; ===== test4 suite =====~%")

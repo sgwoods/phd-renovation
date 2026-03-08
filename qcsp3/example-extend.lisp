@@ -12,11 +12,8 @@
 ;; constraint function.
 ;;
 
-(defun load-extend (&optional (sys *unix*) )
-  (if sys
-      (load "example-extend.lisp")
-   (load "HD:Languages:Allegro Common Lisp:qcsp:example-extend.lisp")
-    ))
+(defun load-extend ()
+  (load "example-extend.lisp"))
 
 ;; ***************************************************************************
 ;;

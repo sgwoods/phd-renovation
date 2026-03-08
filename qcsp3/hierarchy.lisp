@@ -9,11 +9,8 @@
 ;; linkages and hierarchical marking for later simplification of hierarchies.
 ;;
 
-(defun load-hier (&optional (sys *unix*) )
-  (if sys
-      (load "hierarchy.lisp")
-    (load "HD:Languages:Allegro Common Lisp:qcsp:hierarchy.lisp")
-    ))
+(defun load-hier ()
+  (load "hierarchy.lisp"))
 
 (defstruct (CVariable
 	    (:print-function
