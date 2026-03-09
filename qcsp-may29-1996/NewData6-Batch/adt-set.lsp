@@ -1,7 +1,6 @@
 ;; adt-setup.lisp
 (defun cadts () (compile-file "adt-setup")  (load "adt-setup"))
 (defun ladts () (load "adt-setup.lisp"))
-(defun madts () (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:adt-setup.lisp"))
 ;;
 ;; ADT legacy situation and template descriptions
 ;;

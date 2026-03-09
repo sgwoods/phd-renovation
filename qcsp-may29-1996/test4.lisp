@@ -1,49 +1,22 @@
+(in-package #:phd-qcsp-may29)
 ;; test4.lisp
 
-(defvar *unix* t)
+(defun t4 ()
+  (load "test4.lisp"))
 
-(defun t4 (&optional (sys *unix*) )
-  (if sys
-      (progn
-	(load  "test4.lisp")
-	)
-    (progn
-      (load "HD:Languages:Allegro Common Lisp:qcsp:test4.lisp")
-      )))
-
-(defun load-t4 (&optional (sys *unix*) )
-  (if (not sys)
-    (progn
-      (load "HD:Languages:Allegro Common Lisp:qcsp:comment")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:compile-ao")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:hierarchy")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ac-graph")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-ac3")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-ac-new")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-fns")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-step")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-aggressive")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:applyr")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:example-extend")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ac-graph")
-      ;;(load "HD:Languages:Allegro Common Lisp:qcsp:example-simple")
-      )
-  (progn
-      (load "comment")
-      (load "compile-ao")
-      (load "ac-graph")
-      (load "hierarchy")
-      (load "ao-ac3")
-      (load "ao-ac-new")
-      (load "ao-revise-fns")
-      (load "ao-revise")
-      (load "ao-revise-step")
-      (load "ao-revise-aggressive")
-      (load "applyr")
-      (load "example-extend")
-      ;;(load "example-simple")
-    )))
+(defun load-t4 ()
+  (load "comment")
+  (load "compile-ao")
+  (load "ac-graph")
+  (load "hierarchy")
+  (load "ao-ac3")
+  (load "ao-ac-new")
+  (load "ao-revise-fns")
+  (load "ao-revise")
+  (load "ao-revise-step")
+  (load "ao-revise-aggressive")
+  (load "applyr")
+  (load "example-extend"))
 
 ;; ---------------------------------------------------------------------------
 

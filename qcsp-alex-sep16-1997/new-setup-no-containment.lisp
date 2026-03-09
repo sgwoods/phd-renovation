@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 ;;******************************************************************************
 ;; new-setup.lisp: to transfer results from gen++ to files of expected format
 

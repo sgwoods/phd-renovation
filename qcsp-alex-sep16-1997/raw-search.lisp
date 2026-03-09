@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 (defun quilici-search (current-state consistent-p
                         &key    (forward-checking       t)
                                 (dynamic-rearrangement  t)

@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 (setq *template-object-list* 
       (list
 

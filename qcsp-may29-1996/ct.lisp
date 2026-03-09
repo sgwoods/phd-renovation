@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-may29)
 ;; ct.lsp
 
 (defun revise (symbol1 domain1 symbol2 domain2 consistent-p partial-solution )

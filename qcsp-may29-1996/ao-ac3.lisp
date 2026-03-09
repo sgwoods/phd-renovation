@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-may29)
 ;;
 ;; ao-ac3.lisp
 ;;
@@ -16,10 +17,8 @@
 ;; OUTPUT
 ;; An AO arc-consistent graph to depth maxDepth
 
-(defun load-ao ( &optional (sys *unix*) )
-  (if sys
-      (load	     "ao-ac3.lisp")
-    (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ao-ac3.lisp")))
+(defun load-ao ()
+  (load "ao-ac3.lisp"))
 
 (defvar *ao-debug*)     ;; global debug flag  for AO related functions
 (defvar *debug-app* t)  ;; global debug flag  for apply related functions

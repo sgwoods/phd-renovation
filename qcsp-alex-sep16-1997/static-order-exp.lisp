@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 ;;functions for static ordering experiments
 ;;basically we permute the constraint list of a given template, reorder
 ;;its components with repect to each permutation to make sure the components

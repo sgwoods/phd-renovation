@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-may29)
 ;;
 ;; ac-graph.lisp
 ;;
@@ -9,11 +10,8 @@
 ;;
 
 
-(defun load-graph (&optional (sys *unix*) )
-  (if sys
-      (load "ac-graph.lisp")
-    (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ac-graph.lisp")
-    ))
+(defun load-graph ()
+  (load "ac-graph.lisp"))
 
 (defstruct (AC-Graph
 	    (:print-function

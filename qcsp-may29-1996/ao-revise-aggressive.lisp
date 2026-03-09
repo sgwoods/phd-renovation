@@ -1,16 +1,10 @@
+(in-package #:phd-qcsp-may29)
 ;; ao-revise-agressive.lisp
 ;;
 
-(defun load-aora ( &optional (sys *unix*) )
-  (if sys
-      (progn
-	(load "ao-revise-aggressive.lisp")
-	(load "ao-revise-fns.lisp") 
-	)
-    (progn
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-aggressive.lisp")
-      (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-fns.lisp")
-      )))
+(defun load-aora ()
+  (load "ao-revise-aggressive.lisp")
+  (load "ao-revise-fns.lisp"))
 
 (defun ao-revise-aggr ( srcVar thisTarget constraint-fn maxDepth )
 " 

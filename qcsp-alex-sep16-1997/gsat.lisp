@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 ;; gsat.lisp
 
 (defun cgs () (compile-file "gsat")  (load "gsat"))

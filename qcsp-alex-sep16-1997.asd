@@ -11,7 +11,10 @@
   ((:module "qcsp-alex-sep16-1997"
     :serial t
     :components
-    (;; Core search algorithms
+    (;; Package definition and global declarations
+     (:file "package")
+
+     ;; Core search algorithms
      (:file "bm")              ; BackMark search
      (:file "bt")              ; BackTrack search
      (:file "ct")              ; Constraint Techniques (AC-3)

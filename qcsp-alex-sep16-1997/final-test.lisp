@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 (defun start-test ()
 (setq *final-templ* 
          '("traverse-array-5-7-best" 

@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-may29)
 ;;
 ;; Extended example  March 5, 1996 sgw (see notes)
 ;;
@@ -11,11 +12,8 @@
 ;; constraint function.
 ;;
 
-(defun load-extend (&optional (sys *unix*) )
-  (if sys
-      (load "example-extend.lisp")
-   (load "HD:Languages:Allegro Common Lisp:qcsp:example-extend.lisp")
-    ))
+(defun load-extend ()
+  (load "example-extend.lisp"))
 
 ;; ***************************************************************************
 ;;

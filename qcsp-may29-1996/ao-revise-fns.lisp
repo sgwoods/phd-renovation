@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-may29)
 ;; ao-revise-fns.lisp  
 ;;
 
@@ -5,11 +6,8 @@
 ;; This file contains methods required for both revision algorithms.
 ;;
 
-(defun load-aor (&optional (sys *unix*) )
-  (if sys
-      (load "ao-revise-fns.lisp")
-    (load "HD:Languages:Allegro Common Lisp:qcsp:ao-revise-fns.lisp")
-    ))
+(defun load-aor ()
+  (load "ao-revise-fns.lisp"))
 
 ;; ***************************************************************************
 

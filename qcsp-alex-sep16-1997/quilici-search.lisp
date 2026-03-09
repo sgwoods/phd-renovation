@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 ;; quilici-search.lisp
 (defun cq () (compile-file "quilici-search") (load "quilici-search"))
 (defun lq () (load "quilici-search.lisp"))

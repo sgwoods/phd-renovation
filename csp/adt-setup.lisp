@@ -265,6 +265,7 @@
 	     (baseType  (second basePair))
 	     (index     (get-rand-int))
 	     )
+	(declare (ignore baseType))
 	(list sid sloc (list 'Zero baseArray index)))
     (let* (
 	   (type (random-element *ran-array-type-lst*))
@@ -361,9 +362,10 @@
 	 (baseSize  (third  basePair))
 	 (initVal   (random (1+ baseSize)))
 	 (endVal    (random (1+ baseSize)))
-	 (inloop-stmt (generate-ran-Stmt 
+	 (inloop-stmt (generate-ran-Stmt
 		       other-sid other-sloc index basePair baseType))
 	)
+    (declare (ignore baseArray))
 
     (setq *current-block-list* (cons block-name *current-block-list*))
 

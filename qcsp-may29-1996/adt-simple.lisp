@@ -1,7 +1,7 @@
+(in-package #:phd-qcsp-may29)
 ;; adt-simple.lisp
 (defun cadt () (compile-file "adt-simple")  (load "adt-simple"))
 (defun ladt () (load "adt-simple.lisp"))
-(defun madt () (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:adt-simple.lisp"))
 ;;
 ;;  Abstract Data Type Recognition Domain for CSP Experimentation
 ;; 

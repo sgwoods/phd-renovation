@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-may29)
 ;; utility.lisp
 (defun cu () (compile-file "utility")  (load "utility"))
 
@@ -175,18 +176,13 @@
       (progn
 	(setq *debug-node* debug-node))
     (progn
-      (setq *error* 13b)
+      (setq *error* 14)
       (comment1 "Debug-node in error" debug-node)))
 
   ;; file output
   (setq *file-output* nil)
-  (setq *whole-file-name* 
-	(if *unix* 
-	    (concatenate 'string "./" 
-			 output-file)
-	  (concatenate 'string  
-		       "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ADT-Batch:Test-"
-		       output-file))) 
+  (setq *whole-file-name*
+	(concatenate 'string "./" output-file)) 
   (setq *output-stream* 
 	(cond ((or (eq output-file t) (null output-file)) 
 	       *standard-output*)
@@ -1039,7 +1035,7 @@ Return locational information only as tuples for a given type.
 ;; **************************************************
 ;; Additional utility selection functions 
 
-(defun select-all-type (type &optional (sit *current-situation) )
+(defun select-all-type (type &optional (sit *current-situation*) )
 "
 Return situational object set with this type.
 "

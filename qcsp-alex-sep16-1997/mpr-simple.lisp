@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 ;; mpr-simple.lisp
 ;;
 ;;  Model Pattern Recognition Domain for CSP Experimentation

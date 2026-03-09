@@ -1,17 +1,11 @@
+(in-package #:phd-qcsp-may29)
 ;;
 ;; applyR.lisp
 ;;
 
-(defun load-applyr (&optional (sys *unix*) )
-  (if sys
-      (progn
-	(load  "applyr.lisp")
-	(load "comment.lisp")
-	)
-    (progn
-      (load "HD:Languages:Allegro Common Lisp:qcsp:applyr.lisp")    
-      (load "HD:Languages:Allegro Common Lisp:qcsp:comment.lisp"))
-      ))
+(defun load-applyr ()
+  (load "applyr.lisp")
+  (load "comment.lisp"))
 
 (defun applyR ( xi yj relation curMode maxDepth  curDepth markflg)
 " 

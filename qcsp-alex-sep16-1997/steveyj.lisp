@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 ;;This test prgram is to dump the initial hash table for
 ;;all components, and the hash table after data dependency
 ;;computation for all components. 

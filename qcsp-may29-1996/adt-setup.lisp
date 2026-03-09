@@ -1,7 +1,7 @@
+(in-package #:phd-qcsp-may29)
 ;; adt-setup.lisp
 (defun cadts () (compile-file "adt-setup")  (load "adt-setup"))
 (defun ladts () (load "adt-setup.lisp"))
-(defun madts () (load "Macintosh HD:Languages:Allegro Common Lisp:qcsp:adt-setup.lisp"))
 ;;
 ;; ADT legacy situation and template descriptions
 ;;
@@ -1054,11 +1054,8 @@ ADT problem set up.
 Save current random-state object for later recreation of this run.
 "
 (let* (
-       (dirstr (if *unix* 
-	     "ADT-Random/Rnd" 
-	     "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ADT-Random:Rnd" ))
-       (random-file  
-	(concatenate 'string dirstr
+       (random-file
+	(concatenate 'string "ADT-Random/Rnd"
 		     (string-downcase (string name))))
       )
   (setq *random-stream*
@@ -1076,10 +1073,7 @@ Reload previously stored random-state object for recreation of previous run.
 Changed Oct/94	 (nstring-downcase (string name))
 "
 (let* (
-       (dirstr (if *unix* 
-	     "ADT-Random/Rnd" 
-	     "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ADT-Random:Rnd" ))
-       (random-file (concatenate 'string dirstr
+       (random-file (concatenate 'string "ADT-Random/Rnd"
 				 (string-downcase (string name))))
        (random-stream (open random-file :direction :input))
       )
@@ -1095,9 +1089,7 @@ Only return one that does not already exist.
 (let (
       (newstr nil)
       (unique nil)
-      (dirstr (if *unix* 
-		  "ADT-Random/Rnd" 
-		"Macintosh HD:Languages:Allegro Common Lisp:qcsp:ADT-Random:Rnd"))
+      (dirstr "ADT-Random/Rnd")
       )
   (loop 
 
@@ -1205,9 +1197,7 @@ of individual situations.
   ;; normal case, reload from existing or create
   ;; 
   (let* (
-	 (dirstr (if *unix* 
-	   "ADT-Situation/Sit" 
-           "Macintosh HD:Languages:Allegro Common Lisp:qcsp:ADT-Situation:Sit" ))
+	 (dirstr "ADT-Situation/Sit")
 	 (situation-file  (concatenate 'string 
 		      dirstr
 		      "-" (string-downcase (string sit-id)) 

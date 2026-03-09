@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 (defun my-load ()
   (load "adt-template.lisp")
   (load "new-setup.lisp")

@@ -1,3 +1,4 @@
+(in-package #:phd-qcsp-alex)
 (setq *number-program-components-posi* 4)
 (setq *cpu-time-posi* 13)
 ;;*************************************************************************************

@@ -547,6 +547,7 @@
 	     (baseType  (second basePair))
 	     (index     (get-rand-int))
 	     )
+	(declare (ignore baseType))
 	(list sid sloc (list 'Zero baseArray index)))
     (let* (
 	   (type (random-element *ran-array-type-lst*))
@@ -554,7 +555,7 @@
 	   )
       (list sid sloc (list 'Zero base )))))
 
-(defun generate-ran-Increment (sid sloc &optional 
+(defun generate-ran-Increment (sid sloc &optional
 		      (index (get-rand-int))
 		      (basePair  (random-element *current-array-list*)) )
   (if (eq (random 2) 1)
@@ -563,6 +564,7 @@
 	     (baseType  (second basePair))
 	     (index     (get-rand-int))
 	     )
+	(declare (ignore baseType))
 	(list sid sloc (list 'Increment baseArray index)))
     (let* (
 	   (type (random-element *ran-array-type-lst*))
@@ -592,7 +594,6 @@
 	 (baseType  (random-element *ran-decl-type-lst*))
 	 (val1      (get-rand-instance baseType))
 	 (val2      (get-rand-instance baseType))
-	 (sel       (random 2))
 	 (assign    (generate-ran-new-bool))
 	 )
     (list sid sloc (list 'Not-Equals val1 val2 assign))
@@ -680,9 +681,10 @@
 	 (baseSize  (third  basePair))
 	 (initVal   (random (1+ baseSize)))
 	 (endVal    (random (1+ baseSize)))
-	 (inloop-stmt (generate-ran-Stmt 
+	 (inloop-stmt (generate-ran-Stmt
 		       other-sid other-sloc index basePair baseType))
 	)
+    (declare (ignore baseArray))
 
     (setq *current-block-list* (cons block-name *current-block-list*))
 
@@ -720,7 +722,6 @@
 
 (defun generate-ran-new-bool ()
   (let* (
-	 (len  (length *current-boolean-list*))
 	 (pick (random 2))
 	 )
     (if (eq pick 0)
