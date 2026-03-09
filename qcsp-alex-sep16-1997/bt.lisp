@@ -124,7 +124,7 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
 	(setq *internal-end-time* (get-internal-run-time))
 	(show-solution :solution-set  solution-set 
 		       :exit-location 'null-current-state)
-	(return-from backtracking 'error))
+	(return-from backtracking :error))
 
       ;; ------------------------------
       ;; Set up initial variables for this visit position in search space
@@ -187,7 +187,7 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
 	     (setq *internal-end-time* (get-internal-run-time))
 	     (show-solution :solution-set solution-set
 			    :exit-location 'time-bound-exceeded)
-	     (return-from backtracking 'time-bound)
+	     (return-from backtracking :time-bound)
 	     ))
 
        ;; check CPU checkpoint bound, output when encountered ...
@@ -217,7 +217,7 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
 		    (show-solution 
 		     :solution-set solution-set
 		     :exit-location 'null-parent-state)
-		    (return-from backtracking 'complete))
+		    (return-from backtracking :complete))
 
 		  ;; BACKJUMP ?
 		  ;; If Visit node's parent has a max-fail-level of less

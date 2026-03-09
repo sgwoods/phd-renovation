@@ -171,7 +171,7 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
 	     (comment1 "Time limit bound exceeded" *cpu-sec-limit*)
 	     (setq *internal-end-time* (get-internal-run-time))
 	     (show-solution solution-set 'time-bound-exceeded)
-	     (return-from backtracking 'time-bound)
+	     (return-from backtracking :time-bound)
 	     ))
 
        ;; check CPU checkpoint bound, output when encountered ...

@@ -1,4 +1,5 @@
 (in-package #:phd-qcsp-alex)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; queens.lisp
 ;;
 ;; Queens backtracking solution with, without arc consistency checking

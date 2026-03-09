@@ -1,4 +1,5 @@
 (in-package #:phd-qcsp-may29)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; adt-setup.lisp
 (defun cadts () (compile-file "adt-setup")  (load "adt-setup"))
 (defun ladts () (load "adt-setup.lisp"))
@@ -1351,3 +1352,5 @@ of individual situations.
 
 ;; ---------------------------------------------------------------------------
 (setq *adt-setup-loaded* 't)
+
+#+sbcl (declaim (sb-ext:unmuffle-conditions sb-kernel:redefinition-warning))

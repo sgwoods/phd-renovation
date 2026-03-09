@@ -40,12 +40,12 @@
 (5am:test alex-queens-4
   "Alex 4-Queens with AC-3 should complete"
   (with-alex-paths
-    (5am:is (string= (symbol-name (qcsp-alex:qc 4)) "COMPLETE"))))
+    (5am:is (eq (qcsp-alex:qc 4) :complete))))
 
 (5am:test alex-queens-8
   "Alex 8-Queens with AC-3 should complete"
   (with-alex-paths
-    (5am:is (string= (symbol-name (qcsp-alex:qc 8)) "COMPLETE"))))
+    (5am:is (eq (qcsp-alex:qc 8) :complete))))
 
 ;;; Note: ADT test omitted for the alex snapshot because its template/situation
 ;;; data is loaded from external files not included in the repository.

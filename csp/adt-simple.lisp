@@ -1,4 +1,5 @@
 (in-package #:phd-csp)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; adt-simple.lisp
 ;;
 ;;  Abstract Data Type Recognition Domain for CSP Experimentation

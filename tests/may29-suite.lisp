@@ -40,12 +40,12 @@
 (5am:test may29-queens-4
   "May29 4-Queens with AC-3 should complete"
   (with-may29-paths
-    (5am:is (string= (symbol-name (qcsp-may29:qc 4)) "COMPLETE"))))
+    (5am:is (eq (qcsp-may29:qc 4) :complete))))
 
 (5am:test may29-queens-8
   "May29 8-Queens with AC-3 should complete"
   (with-may29-paths
-    (5am:is (string= (symbol-name (qcsp-may29:qc 8)) "COMPLETE"))))
+    (5am:is (eq (qcsp-may29:qc 8) :complete))))
 
 (5am:test may29-adt
   "May29 ADT recognition should complete"
@@ -53,6 +53,13 @@
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is (consp (qcsp-may29:adt :random-ident "unique")))))
+
+(5am:test may29-mpr
+  "May29 MPR recognition should complete"
+  (with-may29-paths
+    (ensure-directories-exist "MPR-Random/dummy")
+    (ensure-directories-exist "MPR-Situation/dummy")
+    (5am:is (eq (qcsp-may29:mpr :random-ident "unique") :complete))))
 
 ;;; Run
 (format t "~&~%;; ===== May29 Test Suite =====~%~%")

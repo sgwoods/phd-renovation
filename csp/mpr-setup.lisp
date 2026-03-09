@@ -1,4 +1,5 @@
 (in-package #:phd-csp)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; mpr-setup.lisp
 ;;
 ;; MPR situation and template information
@@ -726,4 +727,4 @@ of individual situations.
 
 (setq *mpr-setup-loaded* 't)
 
-
+#+sbcl (declaim (sb-ext:unmuffle-conditions sb-kernel:redefinition-warning))

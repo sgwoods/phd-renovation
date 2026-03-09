@@ -1,4 +1,5 @@
 (in-package #:phd-qcsp-alex)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; mpr-setup.lisp
 
 ;;
@@ -727,4 +728,4 @@ of individual situations.
 
 (setq *mpr-setup-loaded* 't)
 
-
+#+sbcl (declaim (sb-ext:unmuffle-conditions sb-kernel:redefinition-warning))

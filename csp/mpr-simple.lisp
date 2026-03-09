@@ -1,4 +1,5 @@
 (in-package #:phd-csp)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; mpr-simple.lisp
 ;;
 ;;  Model Pattern Recognition Domain for CSP Experimentation

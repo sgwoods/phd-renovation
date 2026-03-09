@@ -1,4 +1,5 @@
 (in-package #:phd-qcsp-alex)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; quilici-search.lisp
 (defun cq () (compile-file "quilici-search") (load "quilici-search"))
 (defun lq () (load "quilici-search.lisp"))

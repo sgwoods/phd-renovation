@@ -1,4 +1,5 @@
 (in-package #:phd-csp)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; adt-setup.lisp
 ;;
 ;; ADT legacy situation and template descriptions
@@ -868,4 +869,6 @@ of individual situations.
 
 
 (setq *adt-setup-loaded* 't)
+
+#+sbcl (declaim (sb-ext:unmuffle-conditions sb-kernel:redefinition-warning))
 

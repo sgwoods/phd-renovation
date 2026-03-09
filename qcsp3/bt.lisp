@@ -173,7 +173,7 @@ Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
 	     (setq *internal-end-time* (get-internal-run-time))
 	     (show-solution :solution-set solution-set
 			    :exit-location 'time-bound-exceeded)
-	     (return-from backtracking 'time-bound)
+	     (return-from backtracking :time-bound)
 	     ))
 
        ;; check CPU checkpoint bound, output when encountered ...

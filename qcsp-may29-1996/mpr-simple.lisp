@@ -1,4 +1,5 @@
 (in-package #:phd-qcsp-may29)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; mpr-simple.lisp
 ;;
 ;;  Model Pattern Recognition Domain for CSP Experimentation
@@ -58,14 +59,14 @@ it is assumed we will use the default situation and template values.
 ;;   unique  indicates create a unique one
 ;;   default indicates to utilize the one stored as RndDefault
 ;;   string  indicates to utilize the one stored as RndString
-(if (eq random-ident 'unique)
+(if (string-equal random-ident "unique")
     (progn
       (setq random-ident (unique-string))
       (setq *random-state* (make-random-state t))
       (save-rand random-ident))
-  (if (eq random-ident 'default)
+  (if (string-equal random-ident "default")
       (progn
-	(load-rand 'default))
+	(load-rand "default"))
     (load-rand random-ident)))
 
 ;; Establish initial mpr world situations

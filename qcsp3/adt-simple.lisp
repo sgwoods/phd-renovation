@@ -1,4 +1,5 @@
 (in-package #:phd-qcsp3)
+#+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; adt-simple.lisp
 (defun cadt () (compile-file "adt-simple")  (load "adt-simple"))
 (defun ladt () (load "adt-simple.lisp"))
