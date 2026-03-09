@@ -855,7 +855,6 @@ Only return one that does not already exist.
 (let (
       (newstr nil)
       (unique nil)
-      (dirstr "ADT-Random/Rnd")
       )
   (loop 
 
@@ -963,14 +962,9 @@ of individual situations.
   ;; normal case, reload from existing or create
   ;; 
   (let* (
-	 (dirstr "ADT-Situation/Sit")
-	 (situation-file  (concatenate 'string 
-		      dirstr
-		      "-" (string-downcase (string sit-id)) 
-		      "-" (string-downcase (string rand-dist-id))
-		      "-" (string-downcase (string random-ident))
-		      "-" (num-to-string sit-noise) ))
 	)
+    ;; NOTE: dirstr/situation-file bindings removed — the file
+    ;; save/reload code that used them is commented out.
 
     ;; 
     ;; Flags for noise creation

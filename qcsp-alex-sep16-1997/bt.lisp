@@ -735,15 +735,14 @@ Select symbol from head of variables left list.
 	;; Check consistency
 	(let* (
 	       (result (funcall consistent-p
-		       var-symbol 
-		       domain-value 
-		       symbol 
+		       var-symbol
+		       domain-value
+		       symbol
 		       value
 		       partial-solution))    ;; added partial solution for mpr
 	       (ck-val   (first result))
-	       (ck-level (second result))
 	       )
-	  (when ck-val 
+	  (when ck-val
 	    (setq var-domain (append var-domain (list domain-value) )))) )
 
 ;; This line replaced.. it used to reverse the order while parsing

@@ -1089,7 +1089,6 @@ Only return one that does not already exist.
 (let (
       (newstr nil)
       (unique nil)
-      (dirstr "ADT-Random/Rnd")
       )
   (loop 
 

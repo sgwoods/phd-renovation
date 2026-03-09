@@ -44,10 +44,21 @@ Requires [SBCL](http://www.sbcl.org/) and [Quicklisp](https://www.quicklisp.org/
 # Interactive REPL
 sbcl --load "src/main.lisp"
 
-# Run tests (requires FiveAM via Quicklisp)
+# Run all FiveAM test suites (CSP, QCSP3, May29, Alex)
 sbcl --non-interactive --load "tests/run.lisp"
 
-# Try it
+# Run individual suites
+sbcl --non-interactive --load "tests/csp-suite.lisp"
+sbcl --non-interactive --load "tests/qcsp3-suite.lisp"
+sbcl --non-interactive --load "tests/may29-suite.lisp"
+sbcl --non-interactive --load "tests/alex-suite.lisp"
+
+# Run arc-oriented (AO) integration tests
+sbcl --non-interactive --load "run-test4.lisp"
+sbcl --non-interactive --load "run-test4-may29.lisp"
+sbcl --non-interactive --load "run-test4-alex.lisp"
+
+# Try it interactively
 # (qc 4)              ;; 4-Queens
 # (qc 8)              ;; 8-Queens
 # (adt)               ;; ADT pattern recognition

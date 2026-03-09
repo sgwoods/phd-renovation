@@ -40,11 +40,11 @@ size of the problem and has the same keywords as in BACKTRACKING.
 
 ;; set up global variables
 (if (not (set-globals (queens-variables n)
-		      (list dom n) search-mode 
+		      (list dom n) search-mode
 		      node-consis node-force-all arc-consis
 		      forward-checking dynamic-rearrangement advance-sort
-		      nil one-solution-only cpu-sec-limit ck-pt-interval
-		      debug  debug-csp  output-file))
+		      nil nil one-solution-only cpu-sec-limit ck-pt-interval
+		      debug  debug-csp  nil  output-file))
     (progn
       (comment "Exiting with a general setup error.")
       (return-from queens nil)))

@@ -182,7 +182,9 @@
   ;; file output
   (setq *file-output* nil)
   (setq *whole-file-name*
-	(concatenate 'string "./" output-file)) 
+	(if (stringp output-file)
+	    (concatenate 'string "./" output-file)
+	    nil))
   (setq *output-stream* 
 	(cond ((or (eq output-file t) (null output-file)) 
 	       *standard-output*)
