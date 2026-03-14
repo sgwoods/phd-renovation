@@ -22,7 +22,7 @@
 	    (dom (list      'adt situation-id template-id))
 	    (search-mode            "bt")  ;; backTRACK/JUMP/MARK bt bj bm qu
 	    (node-consis               t)  ;; make node consis before search
-	    (node-type-consis          t)  ;; include ntc use DFA pre-srch work
+	    (node-type-consis        nil)  ;; DFA pre-search (needs new-dep.lisp)
 	    (node-force-all          nil)  ;; for each dom val try all const
 	    (arc-consis              nil)  ;; arc consistency before/during/nil
 	    (rand-dist           "dist1")  ;; dist of random element attributes
@@ -1565,8 +1565,10 @@ Return t if both val1 and val2 are members of list
 ;;
 (defun get-tslot-type (tslot)
  " Statement type, one of Decl, Zero, Assign, Print, For .... "
-;;  (second tslot)
-	(first (second tslot)))
+  ;; Quilici format: (id Type (Param (ParamType))) — (second tslot) is atom
+  ;; C-program format: (id (Type Param1 ...))       — (second tslot) is list
+  (let ((x (second tslot)))
+    (if (listp x) (first x) x)))
 	
 ;; Stmt body itself, not including stmt type
 ;;
@@ -1882,15 +1884,19 @@ Return the Stmt of sit-obj itself.
 "
 (third sit-obj))
 
-;;Modified here 
+;;Modified here
 ;; Stmt Type
 ;;
 (defun get-sit-type (sit-obj)
 "
 Return the Stmt Type of Stmt in sit-obj
 "
-;;(first (get-sit-stmt sit-obj))
-	(second sit-obj))
+  ;; Quilici (after restructure): (id (adjLine actLine) (Type ...)) — (second) is list
+  ;; C-program:                   (id Type ...)                     — (second) is atom
+  (let ((x (second sit-obj)))
+    (if (listp x)
+        (first (get-sit-stmt sit-obj))
+        x)))
 
 ;; Stmt Parameter List
 ;;

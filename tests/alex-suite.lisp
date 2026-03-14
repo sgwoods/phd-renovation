@@ -54,10 +54,25 @@
     (ensure-directories-exist "MPR-Situation/dummy")
     (5am:is (eq (qcsp-alex:mpr :random-ident "unique") :complete))))
 
-;;; Note: ADT and memory-search tests omitted for the alex snapshot because its
-;;; template/situation data is loaded from external files not included in the
-;;; repository. MPR has inline data and works. The may29 snapshot has inline
-;;; ADT data and includes ADT and memory-search tests.
+(5am:test alex-adt
+  "Alex ADT recognition should complete"
+  (with-alex-paths
+    (ensure-directories-exist "ADT-Random/dummy")
+    (ensure-directories-exist "ADT-Situation/dummy")
+    (5am:is-true (qcsp-alex:adt :situation-id "quilici-i1"
+                                 :template-id "quilici-t1"
+                                 :random-ident "unique"))))
+
+(5am:test alex-memory-search
+  "Alex two-phase memory-based search should find solution"
+  (with-alex-paths
+    (ensure-directories-exist "ADT-Random/dummy")
+    (ensure-directories-exist "ADT-Situation/dummy")
+    (5am:is (consp (qcsp-alex:memory-search "quilici-t1-index" "quilici-t1"
+                     :sit-noise 0 :random-ident "unique")))))
+
+;;; Note: alex defaults to C-program templates ("average-array-template-9-17")
+;;; from yjzhang's research extension. Tests above explicitly pass Quilici IDs.
 
 ;;; Run
 (format t "~&~%;; ===== Alex Test Suite =====~%~%")

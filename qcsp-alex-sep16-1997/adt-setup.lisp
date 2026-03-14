@@ -18,9 +18,68 @@
 ;;
 
 ;;(defconstant *situations*
-;(setq *situations*
-;	nil
-;) 
+(setq *situations*
+      (list
+       '( "quilici-i1"
+	  (adtq1-a 100 (Decl       array  A    char   99  ))
+	  (adtq1-b 200 (Zero       Idx                    ))
+	  (adtq1-c 300 (While      Result                 ))
+	  (adtq1-d 310 (Begin      block1                 ))
+	  (adtq1-g 400 (Assign     A      Idx  ElemB      ))
+	  (adtq1-i 500 (Increment  Idx                    ))
+	  (adtq1-e 600 (End        block1                 ))
+	  (adtq1-f 700 (Assign     A      Idx  Elem       ))
+	  (adtq1-h 800 (Not-Equals Elem   NULL Result     ))
+	  )
+
+       '( "q-i2"
+	  (adtq1-a 100 (Decl       array  A    char   99  ))
+	  (adtq1-b 200 (Zero       Idx                    ))
+	  (adtq1-c 300 (While      Result                 ))
+	  (adtq1-d 310 (Begin      block1                 ))
+	  (adtq1-g 400 (Assign     A      Idx  ElemB      ))
+	  (adtq1-i 500 (Increment  Idx                    ))
+	  (adtq1-e 600 (End        block1                 ))
+	  (adtq1-f 700 (Assign     A      Idx  Elem       ))
+	  (adtq1-h 800 (Not-Equals Elem   NULL Result     ))
+
+	  (adtq2-a 1100 (Decl       array  A2   char   99  ))
+	  (adtq2-b 1120 (Zero       Idx2                   ))
+	  (adtq2-c 1140 (While      Result2                ))
+	  (adtq2-d 1145 (Begin      block2                 ))
+	  (adtq2-g 1165 (Assign     A2     Idx2  ElemB2    ))
+	  (adtq2-i 1185 (Increment  Idx2                   ))
+	  (adtq2-e 1205 (End        block2                 ))
+	  (adtq2-f 1225 (Assign     A2     Idx2  Elem2     ))
+	  (adtq2-h 1245 (Not-Equals Elem2  NULL Result2    ))
+	  )
+
+        '( "adt-t1-1"
+	   ( adt1-1a  100 (Decl    array arr1 int 25 ))
+	   ( adt1-1b  200 (Decl    int   index1      ))
+	   ( adt1-1c  300 (Decl    int   val1        ))
+	   ( adt1-1d  400 (Zero    arr1  index1      ))
+	   ( adt1-1e  500 (Assign  arr1  index1 val1 ))
+	   )
+
+	'( "adt-t2-1"
+	   ( adt2-1a  10  (Decl  array A      char  30      ))
+	   ( adt2-1b  20  (Decl  array B      char  75      ))
+	   ( adt2-1c  30  (Decl  array C      char  100     ))
+	   ( adt2-1d  40  (For   I     start1 end1          ))
+	   ( adt2-1d1 50  (Begin block1                     ))
+	   ( adt2-1d2 60  (Print A     I                    ))
+	   ( adt2-1d3 70  (End   block1                     ))
+	   ( adt2-1e  140 (For   J     start2 end2          ))
+	   ( adt2-1e1 150 (Begin block2                     ))
+	   ( adt2-1e2 160 (Print B     J                    ))
+	   ( adt2-1e3 170 (End  block2                      ))
+	   ( adt2-1f  240  (For   K    start3 end3          ))
+	   ( adt2-1f1 250  (Begin block3                    ))
+	   ( adt2-1f2 260  (Print C    K                    ))
+	   ( adt2-1f3 270  (End   block3                    ))
+	   )
+	))
 
 ;; ( adt1-1f  50 (Print  name ))
 ;; ( adt1-1f  50 (Print  arrName index))
@@ -135,12 +194,200 @@
 ;;        
 
 ;; ***************************************************************************
-;;(defconstant *template-object-list* 
+;; Quilici templates (restored from qcsp3 for memory-search/ADT testing).
+;; Additional C-program templates are in adt-template.lisp (yjzhang extension).
+;;(defconstant *template-object-list*
+(setq *template-object-list*
+      (list
+       '( "quilici-t1"
+	  (
+	   (q1-c While      (ResultA (boolean)))
+	   (q1-d Begin      (Block1 (block)))
+	   (q1-g Assign (NameC (array (char))) (IndexC (int))
+		 (ElemB (char)))
+	   (q1-e End        (Block2 (block)))
 
-;;This part has been replaced by another file adt-template.lisp 
+	   (q1-i Increment  (IndexD (int)))
+	   (q1-a Decl       (NameA (array (char) (0 10000))))
+	   (q1-b Zero       (IndexA (int)))
+	   (q1-f Assign (NameB (array (char))) (IndexB (int))
+		 (ElemA (char)) )
+	   (q1-h Not-Equals (ElemC (char)) (NULL (char)) (ResultB (boolean)))
+	   )
+  	  (
+	   (before-p    (q1-c q1-d))
+	   (close-to-p  (q1-c q1-d) 10)
+	   (before-p    (q1-d q1-g))
+	   (same-name-p (q1-d q1-e) (Block1 Block2))
+	   (before-p    (q1-g q1-e))
 
+	   (before-p    (q1-b q1-c))
+	   (before-p    (q1-a q1-b))
+	   (before-p    (q1-b q1-h))
+	   (before-p    (q1-d q1-e))
+	   (before-p    (q1-f q1-h))
+	   (before-p    (q1-g q1-i))
+	   (before-p    (q1-d q1-i))
+	   (before-p    (q1-i q1-e))
+	   (same-name-p (q1-c q1-h) (ResultA ResultB))
+	   (same-name-p (q1-f q1-h) (ElemA ElemC))
+	   (same-name-p (q1-a q1-f) (NameA NameB))
+	   (same-name-p (q1-a q1-g) (NameA NameC))
+	   (same-name-p (q1-b q1-f) (IndexA IndexB))
+	   (same-name-p (q1-b q1-g) (IndexA IndexC))
+	   (same-name-p (q1-b q1-i) (IndexA IndexD))
+	   ))
 
+       '( "quilici-t1-index"
+	  (
+	   (q1-c While      (ResultA (boolean)))
+	   (q1-d Begin      (Block1 (block)))
+	   (q1-g Assign (NameC (array (char))) (IndexC (int))
+		 (ElemB (char)))
+	   (q1-e End        (Block2 (block)))
+	   )
+	  (
+	   (before-p    (q1-c q1-d))
+	   (close-to-p  (q1-c q1-d) 10)
+	   (before-p    (q1-d q1-g))
+	   (same-name-p (q1-d q1-e) (Block1 Block2))
+	   (before-p    (q1-g q1-e))
+	   ))
 
+       '( "quilici-t1-new"
+	  (
+	   (q1-g Assign (NameC (array (char))) (IndexC (int))
+		 (ElemB (char)))
+
+	   (q1-c While      (ResultA (boolean)))
+	   (q1-d Begin      (Block1 (block)))
+	   (q1-e End        (Block2 (block)))
+	   (q1-i Increment  (IndexD (int)))
+	   (q1-a Decl       (NameA (array (char) (0 10000))))
+	   (q1-b Zero       (IndexA (int)))
+	   (q1-f Assign (NameB (array (char))) (IndexB (int))
+		 (ElemA (char)) )
+	   (q1-h Not-Equals (ElemC (char)) (NULL (char)) (ResultB (boolean)))
+	   )
+  	  (
+	   (before-p    (q1-c q1-g))
+	   (close-to-p  (q1-c q1-d) 10)
+	   (before-p    (q1-c q1-d))
+	   (before-p    (q1-d q1-g))
+	   (same-name-p (q1-d q1-e) (Block1 Block2))
+	   (before-p    (q1-d q1-e))
+	   (before-p    (q1-g q1-e))
+
+	   (before-p    (q1-b q1-c))
+	   (before-p    (q1-a q1-b))
+	   (before-p    (q1-b q1-h))
+	   (before-p    (q1-f q1-h))
+	   (before-p    (q1-g q1-i))
+	   (before-p    (q1-d q1-i))
+	   (before-p    (q1-i q1-e))
+	   (same-name-p (q1-c q1-h) (ResultA ResultB))
+	   (same-name-p (q1-f q1-h) (ElemA ElemC))
+	   (same-name-p (q1-a q1-f) (NameA NameB))
+	   (same-name-p (q1-a q1-g) (NameA NameC))
+	   (same-name-p (q1-b q1-f) (IndexA IndexB))
+	   (same-name-p (q1-b q1-g) (IndexA IndexC))
+	   (same-name-p (q1-b q1-i) (IndexA IndexD))
+	   ))
+
+       '( "quilici-t2"
+	  (
+	   (q1-c While      (ResultA (boolean)))
+	   (q1-d Begin      (Block1 (block)))
+	   (q1-g Assign (NameC (array (char))) (IndexC (int))
+		 (ElemB (char)))
+	   (q1-e End        (Block2 (block)))
+
+	   (q1-i Increment  (IndexD (int)))
+	   (q1-a Decl       (NameA (array (char) (0 10000))))
+	   (q1-b Zero       (IndexA (int)))
+	   (q1-f Assign (NameB (array (char))) (IndexB (int))
+		 (ElemA (char)) )
+	   (q1-h Not-Equals (ElemC (char)) (NULL (char)) (ResultB (boolean)))
+	   )
+  	  (
+	   (before-p    (q1-c q1-d))
+	   (close-to-p  (q1-c q1-d) 10)
+	   (before-p    (q1-d q1-g))
+	   (same-name-p (q1-d q1-e) (Block1 Block2))
+	   (before-p    (q1-g q1-e))
+
+	   (before-p    (q1-b q1-c))
+	   (before-p    (q1-a q1-b))
+	   (before-p    (q1-b q1-h))
+	   (before-p    (q1-d q1-e))
+	   (before-p    (q1-f q1-h))
+	   (before-p    (q1-g q1-i))
+	   (before-p    (q1-d q1-i))
+	   (before-p    (q1-i q1-e))
+	   (same-name-p (q1-c q1-h) (ResultA ResultB))
+	   (same-name-p (q1-f q1-h) (ElemA ElemC))
+	   (same-name-p (q1-a q1-f) (NameA NameB))
+	   (same-name-p (q1-a q1-g) (NameA NameC))
+	   (same-name-p (q1-b q1-f) (IndexA IndexB))
+	   (same-name-p (q1-b q1-g) (IndexA IndexC))
+	   (same-name-p (q1-b q1-i) (IndexA IndexD))
+	   ))
+
+       '( "adt-t2"
+	  (
+	   (t2-a Decl  (NameA  (array (char) (25 200))))
+	   (t2-b For   (index1 (int))          (initVal (int)) (endVal (int)))
+	   (t2-c Begin (Block1 (block)))
+	   (t2-d Print (NameD (array (int char))) (index2 (int)))
+	   (t2-e End   (Block2 (block)))
+	   )
+	  (
+	   (before-p    (t2-a t2-b))
+	   (before-p    (t2-b t2-c))
+	   (before-p    (t2-c t2-d))
+	   (before-p    (t2-d t2-e))
+	   (same-name-p   (t2-c t2-e) (Block1 Block2))
+	   (same-name-p   (t2-a t2-d) (NameA  NameD))
+	   (same-name-p   (t2-b t2-d) (index1 index2))
+	   (close-to-p    (t2-b t2-c) 15)
+	   ))
+
+       '( "adt-t1"
+	  (
+	   (t1-a Decl   (NameA (array (int char) (10 100))))
+	   (t1-b Decl   (NameB (int)))
+	   (t1-c Decl   (NameC (int char)))
+	   (t1-d Zero   (NameD (array (int char))) (IdxD (int)))
+	   (t1-e Assign (NameE (array (int char))) (IdxE (int))
+		 (ElemE (int char)))
+	   )
+	  (
+	   (before-p    (t1-a t1-d))
+	   (before-p    (t1-b t1-d))
+	   (before-p    (t1-c t1-e))
+	   (before-p    (t1-d t1-e))
+
+	   (same-name-p  (t1-d t1-a) (NameD NameA))
+	   (same-name-p  (t1-b t1-d) (NameB IdxD))
+	   (same-name-p  (t1-e t1-c) (ElemE NameC))
+	   (same-name-p  (t1-e t1-b) (IdxE  NameB))
+	   (same-name-p  (t1-f t1-a) (NameE NameA))
+	   ))
+
+       '( "adt-clct1"
+	  (
+	   (t1-a Decl   (TypeA (struct)))
+	   (t1-a Decl   (PtrA (pointer (struct TypeA))))
+	   (t1-a Decl   (NameA (pointer (struct) )))
+	   )
+	  (
+	   (before-p    (t1-a t1-d))
+	   (struct-contains TypeA ( (StrPtr (pointer (struct TypeA)))
+				    (StrVal (int char))
+				    ))
+	   (same-name-p  (t1-d t1-a) (NameD NameA))
+	   ))
+       ))
 
 ;; ***************************************************************************
 ;; Functions to create N random program statements (situation objects)
@@ -1035,15 +1282,21 @@ of individual situations.
 	; initialize from given starting point
 	(setq *current-situation*  (get-situation sit-id *situations*))
 	(if (eq *current-situation* nil)
-	    (progn 
+	    (progn
 	      (comment1 "Situation not found or empty" sit-id)
 	      (return-from situation-setup nil)
 	      ))
 
 	;;
 	;; generate set of line numbers to draw from in generating noise
+	;; (must run before restructure-line-numbers wraps the numbers)
 	;;
 	(setq *orig-nums* (get-orig-nums *current-situation*))
+
+	;; Transform raw (id lineNum (Stmt...)) to (id (adjLine actLine) (Stmt...))
+	;; so that get-sit-line-adj / get-sit-line-act work correctly.
+	(setq *current-situation*
+	      (restructure-line-numbers *current-situation*))
 
 ;;	(setq *max-line-number* (+ (get-max *orig-nums* sit-noise) sit-noise))
 ;;	(if *debug-local* (comment1 "Set max line number to " *max-line-number*))
