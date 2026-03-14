@@ -40,6 +40,16 @@
          (*standard-output* (make-broadcast-stream)))
      ,@body))
 
+(5am:test qcsp3-queens-4
+  "QCSP3 4-Queens with AC-3 should complete"
+  (with-qcsp3-paths
+    (5am:is (eq (qcsp3:qc 4) :complete))))
+
+(5am:test qcsp3-queens-8
+  "QCSP3 8-Queens with AC-3 should complete"
+  (with-qcsp3-paths
+    (5am:is (eq (qcsp3:qc 8) :complete))))
+
 (5am:test qcsp3-adt-bt
   "QCSP3 ADT with simple backtrack should complete"
   (with-qcsp3-paths
@@ -73,6 +83,21 @@
                              :forward-checking t
                              :dynamic-rearrangement t
                              :advance-sort t))))
+
+(5am:test qcsp3-mpr
+  "QCSP3 MPR recognition should complete"
+  (with-qcsp3-paths
+    (ensure-directories-exist "MPR-Random/dummy")
+    (ensure-directories-exist "MPR-Situation/dummy")
+    (5am:is (eq (qcsp3:mpr :random-ident "unique") :complete))))
+
+(5am:test qcsp3-memory-search
+  "QCSP3 two-phase memory-based search should find solution"
+  (with-qcsp3-paths
+    (ensure-directories-exist "ADT-Random/dummy")
+    (ensure-directories-exist "ADT-Situation/dummy")
+    (5am:is (consp (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
+                     :sit-noise 0 :random-ident "unique")))))
 
 ;;; Run
 (format t "~&~%;; ===== QCSP3 Test Suite =====~%~%")

@@ -47,9 +47,17 @@
   (with-alex-paths
     (5am:is (eq (qcsp-alex:qc 8) :complete))))
 
-;;; Note: ADT test omitted for the alex snapshot because its template/situation
-;;; data is loaded from external files not included in the repository.
-;;; The may29 snapshot has inline data and includes an ADT test.
+(5am:test alex-mpr
+  "Alex MPR recognition should complete"
+  (with-alex-paths
+    (ensure-directories-exist "MPR-Random/dummy")
+    (ensure-directories-exist "MPR-Situation/dummy")
+    (5am:is (eq (qcsp-alex:mpr :random-ident "unique") :complete))))
+
+;;; Note: ADT and memory-search tests omitted for the alex snapshot because its
+;;; template/situation data is loaded from external files not included in the
+;;; repository. MPR has inline data and works. The may29 snapshot has inline
+;;; ADT data and includes ADT and memory-search tests.
 
 ;;; Run
 (format t "~&~%;; ===== Alex Test Suite =====~%~%")

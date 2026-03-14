@@ -61,6 +61,14 @@
     (ensure-directories-exist "MPR-Situation/dummy")
     (5am:is (eq (qcsp-may29:mpr :random-ident "unique") :complete))))
 
+(5am:test may29-memory-search
+  "May29 two-phase memory-based search should find solution"
+  (with-may29-paths
+    (ensure-directories-exist "ADT-Random/dummy")
+    (ensure-directories-exist "ADT-Situation/dummy")
+    (5am:is (consp (qcsp-may29:memory-search "quilici-t1-index" "quilici-t1"
+                     :sit-noise 0 :random-ident "unique")))))
+
 ;;; Run
 (format t "~&~%;; ===== May29 Test Suite =====~%~%")
 (let ((result (5am:run! 'may29-tests)))

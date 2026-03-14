@@ -181,18 +181,18 @@
 
   ;; file output
   (setq *file-output* nil)
-  (setq *whole-file-name*
-	(concatenate 'string "ADT-Batch/Test-" output-file)) 
-  (setq *output-stream* 
-	(cond ((or (eq output-file t) (null output-file)) 
+  (setq *output-stream*
+	(cond ((or (eq output-file t) (null output-file))
 	       *standard-output*)
 	      ((eq output-file 'no-output) nil)
-	      (t 
+	      (t
 	       (setq *file-output* t)
+	       (setq *whole-file-name*
+		     (concatenate 'string "ADT-Batch/Test-" output-file))
 	       (comment1 "Opening output file/stream for :" *whole-file-name*)
 	       (open *whole-file-name*
-		     :direction :output 
-		     :if-exists :append 
+		     :direction :output
+		     :if-exists :append
 		     :if-does-not-exist :create)
 	      )))
 
