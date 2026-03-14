@@ -3,7 +3,9 @@
 
 import math
 import os
+import subprocess
 from collections import defaultdict
+from datetime import datetime
 
 import matplotlib
 matplotlib.use('Agg')
@@ -110,7 +112,21 @@ def plot_series(ax, acl, sbcl, title, ylabel_fmt='k'):
         ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'{x/1000:.0f}k'))
 
 
+def git_version():
+    """Return git short hash + dirty flag, e.g. 'c780cc5' or 'c780cc5-dirty'."""
+    try:
+        desc = subprocess.check_output(
+            ['git', 'describe', '--always', '--dirty'], text=True).strip()
+        return desc
+    except Exception:
+        return 'unknown'
+
+
 def main():
+    version = git_version()
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M')
+    stamp = f'{timestamp}  |  {version}'
+
     # --- ij2 ---
     acl_ij2 = read_acl_ci('Q-Batch/Graph/ij2-ci.dat')
     sbcl_ij2 = extract_sbcl_memory('Q-Batch-SBCL/ij2', 'ij2')
@@ -131,9 +147,11 @@ def main():
     ]:
         fig, ax = plt.subplots(figsize=(10, 6))
         plot_series(ax, acl, sbcl, f'{series}: {desc} — ACL vs SBCL\n95% Confidence Intervals')
+        fig.text(0.99, 0.01, stamp,
+                 ha='right', va='bottom', fontsize=8, color='#888888')
         plt.tight_layout()
         out = f'Q-Batch-SBCL/Graph/compare-{series}-overlay.png'
-        plt.savefig(out, dpi=150)
+        plt.savefig(out, dpi=150, bbox_inches='tight')
         plt.close()
         print(f'Saved: {out}')
 
@@ -148,6 +166,8 @@ def main():
 
     fig.suptitle('ACL (SPARC, 1996) vs SBCL (M4 Mac, 2026) — 95% CI Comparison',
                  fontsize=14, fontweight='bold', y=1.02)
+    fig.text(0.99, -0.02, stamp,
+             ha='right', va='bottom', fontsize=8, color='#888888')
     plt.tight_layout()
     out = 'Q-Batch-SBCL/Graph/compare-all-overlay.png'
     plt.savefig(out, dpi=150, bbox_inches='tight')

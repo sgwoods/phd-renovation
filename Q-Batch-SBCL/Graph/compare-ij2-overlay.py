@@ -3,7 +3,9 @@
 
 import math
 import os
+import subprocess
 from collections import defaultdict
+from datetime import datetime
 
 import matplotlib
 matplotlib.use('Agg')
@@ -49,7 +51,20 @@ def extract_sbcl_ij2(src_dir):
     return result
 
 
+def git_version():
+    """Return git short hash + dirty flag, e.g. 'c780cc5' or 'c780cc5-dirty'."""
+    try:
+        desc = subprocess.check_output(
+            ['git', 'describe', '--always', '--dirty'], text=True).strip()
+        return desc
+    except Exception:
+        return 'unknown'
+
+
 def main():
+    version = git_version()
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M')
+
     acl = read_acl_ci('Q-Batch/Graph/ij2-ci.dat')
     sbcl = extract_sbcl_ij2('Q-Batch-SBCL/ij2')
 
@@ -90,9 +105,12 @@ def main():
     ax.set_xlim(0, 1050)
     ax.set_ylim(bottom=0)
 
+    fig.text(0.99, 0.01, f'{timestamp}  |  {version}',
+             ha='right', va='bottom', fontsize=8, color='#888888')
+
     plt.tight_layout()
     out = 'Q-Batch-SBCL/Graph/compare-ij2-overlay.png'
-    plt.savefig(out, dpi=150)
+    plt.savefig(out, dpi=150, bbox_inches='tight')
     print(f'Saved: {out}')
 
 
