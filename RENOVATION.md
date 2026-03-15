@@ -108,7 +108,7 @@ sbcl --non-interactive --load "run-test4-alex.lisp"
 
 ### Experiment replication
 
-Three experiment series compare CSP search efficiency under increasing noise (50-1000 extraneous program statements), each with 20 noise levels and 10 random seeds:
+Three experiment series compare CSP search efficiency under increasing noise (50-1000 extraneous program statements), each with 20 noise levels and 10 random seeds (200 runs per series):
 
 | Series | Method | Description |
 |--------|--------|-------------|
@@ -116,20 +116,67 @@ Three experiment series compare CSP search efficiency under increasing noise (50
 | ij3 | `memory-search` | Both phases use FC + DR + advance sort |
 | ij4 | `adt` (direct) | Direct matching with FC + DR + advance sort |
 
-```bash
-bash Q-Batch-SBCL/ij2.sh    # ~5 minutes
-bash Q-Batch-SBCL/ij3.sh    # ~2 minutes
-bash Q-Batch-SBCL/ij4.sh    # ~10 seconds
-```
-
-Results are compared against the original Allegro CL runs (stored in `Q-Batch/`) using 95% confidence intervals. The CI bands overlap at every noise level for all three series, confirming algorithmic equivalence despite different random number generators (ACL's proprietary PRNG vs SBCL's Mersenne Twister).
+Experiments were run across all four code snapshots:
 
 ```bash
-python3 Q-Batch-SBCL/Graph/extract-data.py           # Extract CIs
-python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # Generate plots (requires matplotlib)
+# qcsp3 (primary)
+bash Q-Batch-SBCL/ij2.sh && bash Q-Batch-SBCL/ij3.sh && bash Q-Batch-SBCL/ij4.sh
+
+# alex (Sep 1997 snapshot)
+bash Q-Batch-SBCL/run-alex-all.sh
+
+# may29 (May 1996 snapshot)
+bash Q-Batch-SBCL/run-may29-all.sh
 ```
 
-Comparison plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`.
+Results are compared against the original Allegro CL runs (stored in `Q-Batch/`) using 95% confidence intervals. The CI bands overlap at every noise level for all three series across all snapshots, confirming algorithmic equivalence despite different random number generators (ACL's proprietary PRNG vs SBCL's Mersenne Twister).
+
+```bash
+python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # Generate 4-way plots (requires matplotlib)
+```
+
+Comparison plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`. Each plot shows four series: ACL (SPARC), SBCL qcsp3, SBCL alex, and SBCL may29.
+
+### Key experimental findings
+
+- **ij2/ij3**: All four series (ACL, qcsp3, alex, may29) track closely with overlapping CI bands, confirming algorithmic equivalence across all snapshots.
+- **ij4**: The alex snapshot diverges sharply upward (~6x higher TCC than the others). This is due to `node-type-consis` and `dfa-rearrangement` parameters unique to the alex version of `adt` — these add additional constraint checking not present in the earlier snapshots. This divergence is an open investigation item.
+
+### Batch experiment issues encountered and resolved
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| Alex TCC=0 for all experiments | Noise injection variable `*noise-count*` not incremented (local shadow) | Restored `*noise-count*` global in alex's `adt-setup.lisp` |
+| May29 TCC=0 for all experiments | Pre-generated `ADT-Situation/Sit-q-i1-*` files from old ACL runs were trivially solvable | Deleted stale situation files to force fresh generation |
+| May29 ij4 "Situation not found" | `adt` called with `:situation-id "quilici-i1"` but may29 uses `"q-i1"` | Changed to `:situation-id "q-i1"` in may29-ij4-run.lisp |
+| CRLF line endings in shell scripts | `Write` tool produced CRLF on macOS | Regenerated with `printf` and verified with `xxd` |
+
+## DataFind Archive Audit
+
+The `DataFind/` directory contains `.dir` files — original directory listings from the SPARC archive. An audit compared these against the current repo:
+
+| .dir file | Maps to | Status |
+|-----------|---------|--------|
+| `csp.dir` | `csp/` | All core solver files present. Missing: `unify.lisp`, `adt-test2.lisp`, `adt-test3.lisp`, `compile-set.lisp` |
+| `qcsp.dir` | `qcsp3/` | All core files present. Missing: `compile.lisp`, `compile-set.lisp`, `gsat-test.lisp`, `load.lisp` (all superseded by ASDF) |
+| `qcsp3.dir` | `qcsp3/` | Identical file list to `qcsp.dir` (confirms same codebase) |
+| `qcsp-alex.dir` | `qcsp-alex-sep16-1997/` | Core files present. Repo has 30 extra experiment/data files. Missing same 4 ACL build files |
+| `QCSP-nov96.dir` | **Not in repo** | Intermediate snapshot with unique terrain analysis code |
+
+Files consistently missing across all snapshots (`compile.lisp`, `compile-set.lisp`, `load.lisp`) are old ACL build infrastructure superseded by ASDF. The `package.lisp` files added during renovation are consistently "extra" (expected).
+
+## Remaining Work
+
+See [GitHub Issues](https://github.com/sgwoods/phd-renovation/issues) for tracked items. Summary:
+
+1. **Clean up alex snapshot** — 30+ extra `.lisp` files not loaded by `.asd`; organize or document
+2. **Investigate alex ij4 divergence** — ~6x higher TCC due to `node-type-consis`/`dfa-rearrangement`
+3. **Recover missing files** — `csp/unify.lisp` and test files from DataFind archives
+4. **Investigate QCSP-nov96** — intermediate snapshot with terrain analysis code not in repo
+5. **Clean up DataFind/** — document PrevResults (different noise levels), organize archives
+6. **Expand test coverage** — add regression tests with specific TCC assertions
+7. **Untrack remaining generated data** — check if qcsp3/alex ADT-Random/Situation still tracked
+8. **CI/CD** — GitHub Actions for automated test runs
 
 ## Commit History
 
@@ -150,4 +197,10 @@ e1b6c18  Fix LENGTH variable bug in bm.lisp and *current-situation typo
 d8b8650  Add FiveAM tests for older snapshots and fix latent bugs
 992fb02  Normalize return keywords, fix MPR bugs, muffle redefinition warnings
 48d6607  Add ACL vs SBCL comparison plots and seed generator
+b8ea6d4  Add renovation docs, expand tests, fix output-file concatenation bug
+c780cc5  Re-run ij3 and ij4 experiments fresh with regenerated seeds
+afe6666  Add date/time and git version stamp to comparison plots
+88da35f  Fix alex ADT/memory-search by restoring Quilici data and polymorphic accessors
+2427d96  Restore alex noise injection and run batch experiments
+80d72c6  Add may29 batch experiments, 4-way comparison plots, and consolidate gitignore
 ```
