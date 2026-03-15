@@ -78,8 +78,8 @@ def extract_sbcl_ij4(src_dir):
     return {n: ci(v) for n, v in sorted(by_noise.items())}
 
 
-def plot_series(ax, acl, sbcl, title, ylabel_fmt='k', alex=None):
-    """Plot ACL vs SBCL (qcsp3) vs SBCL (alex) comparison on given axes."""
+def plot_series(ax, acl, sbcl, title, ylabel_fmt='k', alex=None, may29=None):
+    """Plot ACL vs SBCL (qcsp3) vs SBCL (alex) vs SBCL (may29) comparison on given axes."""
     shared = sorted(set(acl) & set(sbcl))
 
     # ACL
@@ -110,10 +110,20 @@ def plot_series(ax, acl, sbcl, title, ylabel_fmt='k', alex=None):
                 label='SBCL alex (M4)', zorder=3)
         ax.fill_between(x_all, x_lo, x_hi, alpha=0.20, color='#4daf4a', zorder=1)
 
+    # SBCL may29 (optional)
+    if may29:
+        m_all = sorted(may29)
+        m_mean = [may29[n][0] for n in m_all]
+        m_lo = [may29[n][1] for n in m_all]
+        m_hi = [may29[n][2] for n in m_all]
+        ax.plot(m_all, m_mean, '^-.', color='#984ea3', linewidth=2, markersize=4,
+                label='SBCL may29 (M4)', zorder=3)
+        ax.fill_between(m_all, m_lo, m_hi, alpha=0.20, color='#984ea3', zorder=1)
+
     ax.set_title(title, fontsize=12)
     ax.set_xlabel('Extraneous Statements (Noise)', fontsize=10)
     ax.set_ylabel('Total Constraint Checks', fontsize=10)
-    ax.legend(fontsize=9, loc='upper left')
+    ax.legend(fontsize=8, loc='upper left')
     ax.grid(True, alpha=0.3)
     ax.set_xlim(0, 1050)
     ax.set_ylim(bottom=0)
@@ -141,27 +151,30 @@ def main():
     acl_ij2 = read_acl_ci('Q-Batch/Graph/ij2-ci.dat')
     sbcl_ij2 = extract_sbcl_memory('Q-Batch-SBCL/ij2', 'ij2')
     alex_ij2 = extract_sbcl_memory('Q-Batch-SBCL/alex-ij2', 'alex-ij2')
+    may29_ij2 = extract_sbcl_memory('Q-Batch-SBCL/may29-ij2', 'may29-ij2')
 
     # --- ij3 ---
     acl_ij3 = read_acl_ci('Q-Batch/Graph/ij3-ci.dat')
     sbcl_ij3 = extract_sbcl_memory('Q-Batch-SBCL/ij3', 'ij3')
     alex_ij3 = extract_sbcl_memory('Q-Batch-SBCL/alex-ij3', 'alex-ij3')
+    may29_ij3 = extract_sbcl_memory('Q-Batch-SBCL/may29-ij3', 'may29-ij3')
 
     # --- ij4 ---
     acl_ij4 = read_acl_ci('Q-Batch/Graph/ij4-ci.dat')
     sbcl_ij4 = extract_sbcl_ij4('qcsp3/ADT-Batch')
     alex_ij4 = extract_sbcl_ij4('Q-Batch-SBCL/alex-ij4')
+    may29_ij4 = extract_sbcl_ij4('Q-Batch-SBCL/may29-ij4')
 
     # --- Individual plots ---
-    for series, acl, sbcl, alex, desc in [
-        ('ij2', acl_ij2, sbcl_ij2, alex_ij2, 'Memory-Search Baseline (BT only)'),
-        ('ij3', acl_ij3, sbcl_ij3, alex_ij3, 'Memory-Search + FC/DR/Advance-Sort'),
-        ('ij4', acl_ij4, sbcl_ij4, alex_ij4, 'Direct ADT + FC/DR/Advance-Sort'),
+    for series, acl, sbcl, alex, m29, desc in [
+        ('ij2', acl_ij2, sbcl_ij2, alex_ij2, may29_ij2, 'Memory-Search Baseline (BT only)'),
+        ('ij3', acl_ij3, sbcl_ij3, alex_ij3, may29_ij3, 'Memory-Search + FC/DR/Advance-Sort'),
+        ('ij4', acl_ij4, sbcl_ij4, alex_ij4, may29_ij4, 'Direct ADT + FC/DR/Advance-Sort'),
     ]:
         fig, ax = plt.subplots(figsize=(10, 6))
         plot_series(ax, acl, sbcl,
                     f'{series}: {desc} — ACL vs SBCL\n95% Confidence Intervals',
-                    alex=alex)
+                    alex=alex, may29=m29)
         fig.text(0.99, 0.01, stamp,
                  ha='right', va='bottom', fontsize=8, color='#888888')
         plt.tight_layout()
@@ -172,14 +185,14 @@ def main():
 
     # --- Combined 3-panel figure ---
     fig, axes = plt.subplots(1, 3, figsize=(18, 6))
-    for ax, (series, acl, sbcl, alex, desc) in zip(axes, [
-        ('ij2', acl_ij2, sbcl_ij2, alex_ij2, 'ij2: Memory-Search\n(BT only)'),
-        ('ij3', acl_ij3, sbcl_ij3, alex_ij3, 'ij3: Memory-Search\n(FC/DR/Advance-Sort)'),
-        ('ij4', acl_ij4, sbcl_ij4, alex_ij4, 'ij4: Direct ADT\n(FC/DR/Advance-Sort)'),
+    for ax, (series, acl, sbcl, alex, m29, desc) in zip(axes, [
+        ('ij2', acl_ij2, sbcl_ij2, alex_ij2, may29_ij2, 'ij2: Memory-Search\n(BT only)'),
+        ('ij3', acl_ij3, sbcl_ij3, alex_ij3, may29_ij3, 'ij3: Memory-Search\n(FC/DR/Advance-Sort)'),
+        ('ij4', acl_ij4, sbcl_ij4, alex_ij4, may29_ij4, 'ij4: Direct ADT\n(FC/DR/Advance-Sort)'),
     ]):
-        plot_series(ax, acl, sbcl, desc, alex=alex)
+        plot_series(ax, acl, sbcl, desc, alex=alex, may29=m29)
 
-    fig.suptitle('ACL (SPARC) vs SBCL qcsp3 vs SBCL alex — 95% CI Comparison',
+    fig.suptitle('ACL (SPARC) vs SBCL qcsp3 vs SBCL alex vs SBCL may29 — 95% CI Comparison',
                  fontsize=14, fontweight='bold', y=1.02)
     fig.text(0.99, -0.02, stamp,
              ha='right', va='bottom', fontsize=8, color='#888888')
