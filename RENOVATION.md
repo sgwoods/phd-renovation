@@ -13,7 +13,7 @@ This document describes the migration of the PhD research codebase from Allegro 
 | **Tests** | None | FiveAM suites + integration runners |
 | **Files** | `.cl` extension | `.lisp` extension |
 
-Four systems were modernized covering ~45 source files:
+Four systems were modernized covering 49 source files:
 
 - `:phd-research` (csp/) -- base CSP solver
 - `:qcsp3` (qcsp3/) -- extended solver with memory-CSP and Quilici search
@@ -157,10 +157,10 @@ The `DataFind/` directory contains `.dir` files — original directory listings 
 
 | .dir file | Maps to | Status |
 |-----------|---------|--------|
-| `csp.dir` | `csp/` | All core solver files present. Missing: `unify.lisp`, `adt-test2.lisp`, `adt-test3.lisp`, `compile-set.lisp` |
+| `csp.dir` | `csp/` | All core solver files present. `unify.lisp` recovered from `qcsp-may29-1996/Keep/`. Still missing: `adt-test2.lisp`, `adt-test3.lisp`, `compile-set.lisp` |
 | `qcsp.dir` | `qcsp3/` | All core files present. Missing: `compile.lisp`, `compile-set.lisp`, `gsat-test.lisp`, `load.lisp` (all superseded by ASDF) |
 | `qcsp3.dir` | `qcsp3/` | Identical file list to `qcsp.dir` (confirms same codebase) |
-| `qcsp-alex.dir` | `qcsp-alex-sep16-1997/` | Core files present. Repo has 30 extra experiment/data files. Missing same 4 ACL build files |
+| `qcsp-alex.dir` | `qcsp-alex-sep16-1997/` | Core files present. Non-core files organized into `extras/` (34 .lisp) and `artifacts/` (15 result/output files). Missing same 4 ACL build files |
 | `QCSP-nov96.dir` | **Not in repo** | Intermediate snapshot with unique terrain analysis code |
 
 Files consistently missing across all snapshots (`compile.lisp`, `compile-set.lisp`, `load.lisp`) are old ACL build infrastructure superseded by ASDF. The `package.lisp` files added during renovation are consistently "extra" (expected).
@@ -169,14 +169,19 @@ Files consistently missing across all snapshots (`compile.lisp`, `compile-set.li
 
 See [GitHub Issues](https://github.com/sgwoods/phd-renovation/issues) for tracked items. Summary:
 
-1. **Clean up alex snapshot** — 30+ extra `.lisp` files not loaded by `.asd`; organize or document
-2. **Investigate alex ij4 divergence** — ~6x higher TCC due to `node-type-consis`/`dfa-rearrangement`
-3. **Recover missing files** — `csp/unify.lisp` and test files from DataFind archives
-4. **Investigate QCSP-nov96** — intermediate snapshot with terrain analysis code not in repo
-5. **Clean up DataFind/** — document PrevResults (different noise levels), organize archives
-6. **Expand test coverage** — add regression tests with specific TCC assertions
-7. **Untrack remaining generated data** — check if qcsp3/alex ADT-Random/Situation still tracked
-8. **CI/CD** — GitHub Actions for automated test runs
+### Completed
+
+1. ~~**Clean up alex snapshot**~~ — Done: 34 non-core `.lisp` files moved to `extras/`, 15 result/output files moved to `artifacts/`, 7 ephemeral files deleted, 83 generated seed files untracked. README added. (Issue #1)
+3. ~~**Recover missing files**~~ — Done: `csp/unify.lisp` recovered from `qcsp-may29-1996/Keep/` with `defconstant`→`defparameter` fix. `adt-test2.lisp`, `adt-test3.lisp`, `gsat-test.lisp` are truly lost (not in any snapshot). `compile-set.lisp` superseded by ASDF. (Issue #3)
+7. ~~**Untrack remaining generated data**~~ — Done: all `ADT-Random/` and `ADT-Situation/` directories across all four systems are untracked and in `.gitignore`. (Issue #7)
+
+### Open
+
+2. **Investigate alex ij4 divergence** — ~6x higher TCC due to `node-type-consis`/`dfa-rearrangement` (Issue #2)
+4. **Investigate QCSP-nov96** — intermediate snapshot with terrain analysis code not in repo (Issue #4)
+5. **Clean up DataFind/** — document PrevResults (different noise levels), organize archives (Issue #5)
+6. **Expand test coverage** — add regression tests with specific TCC assertions (Issue #6)
+8. **CI/CD** — GitHub Actions for automated test runs (Issue #8)
 
 ## Commit History
 
@@ -203,4 +208,6 @@ afe6666  Add date/time and git version stamp to comparison plots
 88da35f  Fix alex ADT/memory-search by restoring Quilici data and polymorphic accessors
 2427d96  Restore alex noise injection and run batch experiments
 80d72c6  Add may29 batch experiments, 4-way comparison plots, and consolidate gitignore
+ff95fae  Update README and RENOVATION docs with may29 results and .dir audit
+f4c4d51  Clean up alex snapshot and recover unify.lisp
 ```

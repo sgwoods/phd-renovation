@@ -6,7 +6,7 @@
 - Entry Point: `src/main.lisp` (loads `:qcsp3` and drops into REPL)
 
 ## ASDF Systems
-- `:phd-research` — base CSP solver (`csp/`, 9 source files)
+- `:phd-research` — base CSP solver (`csp/`, 10 source files)
 - `:qcsp3` — extended solver with memory-CSP (`qcsp3/`, 13 source files)
 - `:qcsp-may29-1996` — historical snapshot (`qcsp-may29-1996/`)
 - `:qcsp-alex-sep16-1997` — historical snapshot (`qcsp-alex-sep16-1997/`)

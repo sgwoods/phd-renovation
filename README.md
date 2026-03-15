@@ -21,6 +21,8 @@ csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MP
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
 qcsp-may29-1996/            Historical snapshot (May 1996)
 qcsp-alex-sep16-1997/       Historical snapshot (Sep 1997, with extended adt)
+  extras/                   Non-core .lisp files (experiments, data pipelines, variants)
+  artifacts/                Historical result/output files
 Q-Batch/                    Original experiment results (Allegro CL, SPARC)
 Q-Batch-SBCL/               Replicated experiments (SBCL, M4 Mac)
   Graph/                    4-way comparison plots (ACL vs qcsp3 vs alex vs may29)
