@@ -1289,73 +1289,41 @@ of individual situations.
 
 	;;
 	;; generate set of line numbers to draw from in generating noise
-	;; (must run before restructure-line-numbers wraps the numbers)
 	;;
 	(setq *orig-nums* (get-orig-nums *current-situation*))
 
-	;; Transform raw (id lineNum (Stmt...)) to (id (adjLine actLine) (Stmt...))
-	;; so that get-sit-line-adj / get-sit-line-act work correctly.
-	(setq *current-situation*
-	      (restructure-line-numbers *current-situation*))
-
-;;	(setq *max-line-number* (+ (get-max *orig-nums* sit-noise) sit-noise))
-;;	(if *debug-local* (comment1 "Set max line number to " *max-line-number*))
+	(setq *max-line-number* (+ (get-max *orig-nums* sit-noise) sit-noise))
+	(if *debug-local* (comment1 "Set max line number to " *max-line-number*))
 
 	;; generate entire range of line numbers less solution
-;;	(setq *line-number-set* 
-;;	      (remove-nums  *orig-nums* (gen-nums-to 0 *max-line-number*)))
- 
-     
+	(setq *line-number-set*
+	      (remove-nums  *orig-nums* (gen-nums-to 0 *max-line-number*)))
+
 	;; Noise addition to situation
-	;;
-	;;  Note anomaly that PREPARED elements are at the front of the
-	;;  situation list and consequently will be at the front of the
-	;;  variable domain lists and be selected first.  There should either
-	;;  be the option to randomize HERE or at selection time in the various
-	;;  search algorithm. BEST here since then there is only one location 
-	;; for this, HOWEVER  doing it here will result in the same order of
-	;; initial domain values for EVERY VARIABLE, while in the search
-	;; routine if a random position were selected, the order would vary...
+	(if (not (numberp sit-noise))
+	    (progn
+	      (comment1 "Sit noise must be a number, cant generate" sit-noise)
+	      (return-from situation-setup nil)
+	      )
+	  (if (>= sit-noise 0)
+	      (let* (
+		     (noise (create-ran-situation
+			    sit-noise
+			    (first  rand-dist-struct); stmttypes
+			    (second rand-dist-struct); types
+			    (third  rand-dist-struct); arraytyps
+			    ))
+		    )
 
-;;	(if (not (numberp sit-noise))
-;;	    (progn
-;;	      (comment1 "Sit noise must be a number, cant generate" sit-noise)
-;;	      (return-from situation-setup nil)
-;;	      )
-;;	  (if (>= sit-noise 0)
-;;	      (let* (
-;;		     (noise (create-ran-situation 
-;;			    sit-noise
-;;			    (first  rand-dist-struct); stmttypes
-;;			    (second rand-dist-struct); types
-;;			    (third  rand-dist-struct); arraytyps
-;;			    ))
-;;		    )
-;;
-;;		(setq *current-situation* (append *current-situation* noise)) 
+		(setq *current-situation* (append *current-situation* noise))
 
-		;; sort situation list by line number, 
+		;; sort situation list by line number,
 		;;  replace old line nos with new
-;;		(setq *original-situation* *current-situation*) 
-;;		(setq *current-situation*  (restructure-line-numbers  *current-situation*))
-;;		)
-;;	    (abort-fail "sit-noise < 0")
-;;	    ))
-
-	;; save situation
-;;	(progn
-;;	      (comment "Open file: Saving new generated situation.")
-;;	      (setq *situation-stream*
-;;		    (open situation-file 
-;;			  :direction :output 
-;;			  :if-exists :overwrite
-;;			  :if-does-not-exist :create))
-;;	      (format *situation-stream* ";; ")
-;;	      (write situation-file      :stream *situation-stream*)
-;;	      (format *situation-stream* "~2%")
-;;	      (write *current-situation* :stream *situation-stream*)
-;;	      (close *situation-stream*)
-;;	      )
+		(setq *original-situation* *current-situation*)
+		(setq *current-situation*  (restructure-line-numbers  *current-situation*))
+		)
+	    (abort-fail "sit-noise < 0")
+	    ))
 
 	;; not appropriate at moment for ADT
 	;; (save-gnuplot   random-ident sit-noise)
