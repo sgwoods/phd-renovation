@@ -19,9 +19,9 @@
 ;;; Load qcsp3 system so that AO file dependencies (package + core) are available
 (asdf:load-system :qcsp3)
 
-;;; Load AO support files from qcsp3/ (not part of qcsp3.asd)
+;;; Load AO support files from qcsp3/extras/ (not part of qcsp3.asd)
 (let ((*default-pathname-defaults*
-        (truename (merge-pathnames "qcsp3/"
+        (truename (merge-pathnames "qcsp3/extras/"
                    (make-pathname :name nil :type nil
                                   :defaults *load-pathname*)))))
   (load "comment")

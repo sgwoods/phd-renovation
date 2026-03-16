@@ -12,9 +12,9 @@
 ;;; Load the qcsp3 system
 (asdf:load-system :qcsp3)
 
-;;; Set default path to qcsp3/ so test4's relative loads work
+;;; Set default path to qcsp3/extras/ so test4's relative loads work
 (let ((*default-pathname-defaults*
-        (truename (merge-pathnames "qcsp3/"
+        (truename (merge-pathnames "qcsp3/extras/"
                    (make-pathname :name nil :type nil
                                   :defaults *load-pathname*)))))
 
