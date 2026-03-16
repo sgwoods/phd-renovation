@@ -14,7 +14,7 @@
 
 ;;; Set default path to qcsp-may29-1996/ so test4's relative loads work
 (let ((*default-pathname-defaults*
-        (truename (merge-pathnames "qcsp-may29-1996/"
+        (truename (merge-pathnames "qcsp-may29-1996/extras/"
                    (make-pathname :name nil :type nil
                                   :defaults *load-pathname*)))))
 

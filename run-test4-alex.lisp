@@ -36,9 +36,9 @@
   (load "applyr")
   (load "example-extend"))
 
-;;; Load test4 definitions from qcsp-alex-sep16-1997/
+;;; Load test4 definitions from qcsp-alex-sep16-1997/extras/
 (let ((*default-pathname-defaults*
-        (truename (merge-pathnames "qcsp-alex-sep16-1997/"
+        (truename (merge-pathnames "qcsp-alex-sep16-1997/extras/"
                    (make-pathname :name nil :type nil
                                   :defaults *load-pathname*)))))
   (load "test4"))
