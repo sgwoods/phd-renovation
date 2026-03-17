@@ -25,6 +25,17 @@ Loaded via ASDF system `:qcsp-alex-sep16-1997` (defined in
 | `adt-setup.lisp` | ADT template/situation data |
 | `memory-csp.lisp` | Memory-based CSP (index + resolution) |
 
+## Differences from qcsp3/may29
+
+The alex snapshot includes extensions by Yongjun Zhang:
+
+- **Simplified `ts-matches-type`** (`adt-simple.lisp:1296`): The detailed type-matching logic for node consistency was commented out (line 1312: "Modified here (commented all the following)"). Only statement type name equality is checked, producing ~1.6x larger domains and ~6x higher TCC in ij4 experiments compared to qcsp3/may29.
+- **`node-type-consis`**: DFA-based extra node consistency filtering (defaults to nil).
+- **`dfa-rearrangement`**: DFA-based variable ordering (defaults to nil).
+- **10 additional constraint type predicates**: data-dependency, contained-in, same-line, is-zero, etc.
+
+The simplified NC was likely paired with the DFA features to compensate, but those features are not enabled in the standard ij4 experiments.
+
 ## Subdirectories
 
 | Directory | Contents |

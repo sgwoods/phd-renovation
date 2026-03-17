@@ -140,7 +140,15 @@ Comparison plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`. Each plot sh
 ### Key experimental findings
 
 - **ij2/ij3**: All four series (ACL, qcsp3, alex, may29) track closely with overlapping CI bands, confirming algorithmic equivalence across all snapshots.
-- **ij4**: The alex snapshot diverges sharply upward (~6x higher TCC than the others). This is due to `node-type-consis` and `dfa-rearrangement` parameters unique to the alex version of `adt` — these add additional constraint checking not present in the earlier snapshots. This divergence is an open investigation item.
+- **ij4**: The alex snapshot diverges sharply upward (~6x higher TCC than the others). Root cause: Yongjun Zhang simplified the `ts-matches-type` function in alex's `adt-simple.lisp` (line 1296), commenting out the detailed type-matching logic (Decl array/range checking, parameter-count matching for Zero/Assign/Print/Check/Increment/Not-Equals). The simplified version only checks statement type name equality, which allows more domain values to survive node consistency:
+
+  | Metric (noise=500, seed=default) | qcsp3 | may29 | alex |
+  |---|---|---|---|
+  | Avg domain size after NC | 43.0 | 42.0 | **67.7** |
+  | TCC | 1,904 | 1,759 | **11,919** |
+  | Backtracks / Visited | 22/23 | 22/23 | **86/87** |
+
+  The causal chain: simplified `ts-matches-type` → ~1.6x larger domains → ~4x more backtracks → ~6.5x higher TCC. This was intentional — the simplified NC was likely paired with alex's DFA-based features (`node-type-consis`, `dfa-rearrangement`) which would compensate, but those features default to nil and are not enabled in the standard ij4 experiments. A diagnostic script at `Q-Batch-SBCL/diagnose-ij4.sh` reproduces these results.
 
 ### Batch experiment issues encountered and resolved
 
@@ -172,12 +180,11 @@ See [GitHub Issues](https://github.com/sgwoods/phd-renovation/issues) for tracke
 ### Completed
 
 1. ~~**Clean up alex snapshot**~~ — Done: 34 non-core `.lisp` files moved to `extras/`, 15 result/output files moved to `artifacts/`, 7 ephemeral files deleted, 83 generated seed files untracked. README added. (Issue #1)
+2. ~~**Investigate alex ij4 divergence**~~ — Done: root cause is simplified `ts-matches-type` in alex's `adt-simple.lisp` (detailed type-matching commented out by Yongjun Zhang). This was intentional, paired with DFA-based extensions not enabled in standard experiments. Diagnostic script at `Q-Batch-SBCL/diagnose-ij4.sh`. (Issue #2)
 3. ~~**Recover missing files**~~ — Done: `csp/unify.lisp` recovered from `qcsp-may29-1996/Keep/` with `defconstant`→`defparameter` fix. `adt-test2.lisp`, `adt-test3.lisp`, `gsat-test.lisp` are truly lost (not in any snapshot). `compile-set.lisp` superseded by ASDF. (Issue #3)
 7. ~~**Untrack remaining generated data**~~ — Done: all `ADT-Random/` and `ADT-Situation/` directories across all four systems are untracked and in `.gitignore`. (Issue #7)
 
 ### Open
-
-2. **Investigate alex ij4 divergence** — ~6x higher TCC due to `node-type-consis`/`dfa-rearrangement` (Issue #2)
 4. **Investigate QCSP-nov96** — intermediate snapshot with terrain analysis code not in repo (Issue #4)
 5. **Clean up DataFind/** — document PrevResults (different noise levels), organize archives (Issue #5)
 6. **Expand test coverage** — add regression tests with specific TCC assertions (Issue #6)
