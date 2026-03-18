@@ -38,36 +38,48 @@
      ,@body))
 
 (5am:test may29-queens-4
-  "May29 4-Queens with AC-3 should complete"
+  "May29 4-Queens with AC-3 should complete with exact metrics"
   (with-may29-paths
-    (5am:is (eq (qcsp-may29:qc 4) :complete))))
+    (5am:is (eq (qcsp-may29:qc 4) :complete))
+    (5am:is (= qcsp-may29:*constraint-cks* 240))
+    (5am:is (= qcsp-may29:*backtrack-nodes-created* 28))
+    (5am:is (= qcsp-may29:*nodes-visited* 116))))
 
 (5am:test may29-queens-8
-  "May29 8-Queens with AC-3 should complete"
+  "May29 8-Queens with AC-3 should complete with exact metrics"
   (with-may29-paths
-    (5am:is (eq (qcsp-may29:qc 8) :complete))))
+    (5am:is (eq (qcsp-may29:qc 8) :complete))
+    (5am:is (= qcsp-may29:*constraint-cks* 2772))
+    (5am:is (= qcsp-may29:*backtrack-nodes-created* 124))
+    (5am:is (= qcsp-may29:*nodes-visited* 1000))))
 
 (5am:test may29-adt
-  "May29 ADT recognition should complete"
+  "May29 ADT recognition should complete with expected NCC"
   (with-may29-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
-    (5am:is (consp (qcsp-may29:adt :random-ident "unique")))))
+    (5am:is (consp (qcsp-may29:adt :random-ident "unique")))
+    (5am:is (= qcsp-may29:*node-consistency-checks* 81))
+    (5am:is (< qcsp-may29:*constraint-cks* 200))))
 
 (5am:test may29-mpr
-  "May29 MPR recognition should complete"
+  "May29 MPR recognition should complete with expected NCC"
   (with-may29-paths
     (ensure-directories-exist "MPR-Random/dummy")
     (ensure-directories-exist "MPR-Situation/dummy")
-    (5am:is (eq (qcsp-may29:mpr :random-ident "unique") :complete))))
+    (5am:is (eq (qcsp-may29:mpr :random-ident "unique") :complete))
+    (5am:is (= qcsp-may29:*node-consistency-checks* 132))
+    (5am:is (< qcsp-may29:*constraint-cks* 500))))
 
 (5am:test may29-memory-search
-  "May29 two-phase memory-based search should find solution"
+  "May29 two-phase memory-based search should find solution with expected NCC"
   (with-may29-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is (consp (qcsp-may29:memory-search "quilici-t1-index" "quilici-t1"
-                     :sit-noise 0 :random-ident "unique")))))
+                     :sit-noise 0 :random-ident "unique")))
+    (5am:is (= qcsp-may29:*node-consistency-checks* 85))
+    (5am:is (< qcsp-may29:*constraint-cks* 200))))
 
 ;;; Run
 (format t "~&~%;; ===== May29 Test Suite =====~%~%")

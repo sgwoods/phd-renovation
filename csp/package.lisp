@@ -7,7 +7,9 @@
            #:adt #:mpr #:bm #:backtracking #:ac-3
            #:set-globals #:show-solution #:show-options
            #:comment1
-           #:*unix*))
+           #:*unix*
+           #:*constraint-cks* #:*node-consistency-checks*
+           #:*backtrack-nodes-created* #:*nodes-visited*))
 
 (in-package #:phd-csp)
 

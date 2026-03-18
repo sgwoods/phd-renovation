@@ -41,14 +41,20 @@
      ,@body))
 
 (5am:test queens-4
-  "4-Queens with AC-3 should complete"
+  "4-Queens with AC-3 should complete with exact metrics"
   (with-csp-paths
-    (5am:is (eq (csp:qc 4) :complete))))
+    (5am:is (eq (csp:qc 4) :complete))
+    (5am:is (= csp:*constraint-cks* 240))
+    (5am:is (= csp:*backtrack-nodes-created* 28))
+    (5am:is (= csp:*nodes-visited* 116))))
 
 (5am:test queens-8
-  "8-Queens with AC-3 should complete"
+  "8-Queens with AC-3 should complete with exact metrics"
   (with-csp-paths
-    (5am:is (eq (csp:qc 8) :complete))))
+    (5am:is (eq (csp:qc 8) :complete))
+    (5am:is (= csp:*constraint-cks* 2772))
+    (5am:is (= csp:*backtrack-nodes-created* 124))
+    (5am:is (= csp:*nodes-visited* 1000))))
 
 (5am:test confused-queens-4
   "Confused 4-Queens with AC-3 should complete"
@@ -56,16 +62,20 @@
     (5am:is (eq (csp:cqc 4) :complete))))
 
 (5am:test adt-recognition
-  "ADT recognition should complete"
+  "ADT recognition should complete with expected NCC"
   (with-csp-paths
     (ensure-directories-exist "ADT-Random/dummy")
-    (5am:is (eq (csp:adt :random-ident 'unique) :complete))))
+    (5am:is (eq (csp:adt :random-ident 'unique) :complete))
+    (5am:is (= csp:*node-consistency-checks* 75))
+    (5am:is (< csp:*constraint-cks* 500))))
 
 (5am:test mpr-recognition
-  "MPR recognition should complete"
+  "MPR recognition should complete with expected NCC"
   (with-csp-paths
     (ensure-directories-exist "MPR-Random/dummy")
-    (5am:is (eq (csp:mpr :random-ident 'unique) :complete))))
+    (5am:is (eq (csp:mpr :random-ident 'unique) :complete))
+    (5am:is (= csp:*node-consistency-checks* 132))
+    (5am:is (< csp:*constraint-cks* 500))))
 
 ;;; Run
 (format t "~&~%;; ===== CSP Test Suite =====~%~%")

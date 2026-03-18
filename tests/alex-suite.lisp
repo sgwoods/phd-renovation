@@ -38,38 +38,50 @@
      ,@body))
 
 (5am:test alex-queens-4
-  "Alex 4-Queens with AC-3 should complete"
+  "Alex 4-Queens with AC-3 should complete with exact metrics"
   (with-alex-paths
-    (5am:is (eq (qcsp-alex:qc 4) :complete))))
+    (5am:is (eq (qcsp-alex:qc 4) :complete))
+    (5am:is (= qcsp-alex:*constraint-cks* 240))
+    (5am:is (= qcsp-alex:*backtrack-nodes-created* 28))
+    (5am:is (= qcsp-alex:*nodes-visited* 116))))
 
 (5am:test alex-queens-8
-  "Alex 8-Queens with AC-3 should complete"
+  "Alex 8-Queens with AC-3 should complete with exact metrics"
   (with-alex-paths
-    (5am:is (eq (qcsp-alex:qc 8) :complete))))
+    (5am:is (eq (qcsp-alex:qc 8) :complete))
+    (5am:is (= qcsp-alex:*constraint-cks* 2772))
+    (5am:is (= qcsp-alex:*backtrack-nodes-created* 124))
+    (5am:is (= qcsp-alex:*nodes-visited* 1000))))
 
 (5am:test alex-mpr
-  "Alex MPR recognition should complete"
+  "Alex MPR recognition should complete with expected NCC"
   (with-alex-paths
     (ensure-directories-exist "MPR-Random/dummy")
     (ensure-directories-exist "MPR-Situation/dummy")
-    (5am:is (eq (qcsp-alex:mpr :random-ident "unique") :complete))))
+    (5am:is (eq (qcsp-alex:mpr :random-ident "unique") :complete))
+    (5am:is (= qcsp-alex:*node-consistency-checks* 132))
+    (5am:is (< qcsp-alex:*constraint-cks* 500))))
 
 (5am:test alex-adt
-  "Alex ADT recognition should complete"
+  "Alex ADT recognition should complete with expected NCC"
   (with-alex-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is-true (qcsp-alex:adt :situation-id "quilici-i1"
                                  :template-id "quilici-t1"
-                                 :random-ident "unique"))))
+                                 :random-ident "unique"))
+    (5am:is (= qcsp-alex:*node-consistency-checks* 81))
+    (5am:is (< qcsp-alex:*constraint-cks* 200))))
 
 (5am:test alex-memory-search
-  "Alex two-phase memory-based search should find solution"
+  "Alex two-phase memory-based search should find solution with expected NCC"
   (with-alex-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is (consp (qcsp-alex:memory-search "quilici-t1-index" "quilici-t1"
-                     :sit-noise 0 :random-ident "unique")))))
+                     :sit-noise 0 :random-ident "unique")))
+    (5am:is (= qcsp-alex:*node-consistency-checks* 85))
+    (5am:is (< qcsp-alex:*constraint-cks* 200))))
 
 ;;; Note: alex defaults to C-program templates ("average-array-template-9-17")
 ;;; from yjzhang's research extension. Tests above explicitly pass Quilici IDs.

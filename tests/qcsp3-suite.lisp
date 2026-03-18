@@ -41,63 +41,81 @@
      ,@body))
 
 (5am:test qcsp3-queens-4
-  "QCSP3 4-Queens with AC-3 should complete"
+  "QCSP3 4-Queens with AC-3 should complete with exact metrics"
   (with-qcsp3-paths
-    (5am:is (eq (qcsp3:qc 4) :complete))))
+    (5am:is (eq (qcsp3:qc 4) :complete))
+    (5am:is (= qcsp3:*constraint-cks* 240))
+    (5am:is (= qcsp3:*backtrack-nodes-created* 28))
+    (5am:is (= qcsp3:*nodes-visited* 116))))
 
 (5am:test qcsp3-queens-8
-  "QCSP3 8-Queens with AC-3 should complete"
+  "QCSP3 8-Queens with AC-3 should complete with exact metrics"
   (with-qcsp3-paths
-    (5am:is (eq (qcsp3:qc 8) :complete))))
+    (5am:is (eq (qcsp3:qc 8) :complete))
+    (5am:is (= qcsp3:*constraint-cks* 2772))
+    (5am:is (= qcsp3:*backtrack-nodes-created* 124))
+    (5am:is (= qcsp3:*nodes-visited* 1000))))
 
 (5am:test qcsp3-adt-bt
-  "QCSP3 ADT with simple backtrack should complete"
+  "QCSP3 ADT with simple backtrack should complete with expected NCC"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
-    (5am:is-true (qcsp3:adt :random-ident 'unique))))
+    (5am:is-true (qcsp3:adt :random-ident 'unique))
+    (5am:is (= qcsp3:*node-consistency-checks* 81))
+    (5am:is (< qcsp3:*constraint-cks* 200))))
 
 (5am:test qcsp3-adt-fc
-  "QCSP3 ADT with forward checking should complete"
+  "QCSP3 ADT with forward checking should complete with expected NCC"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is-true (qcsp3:adt :random-ident 'unique
-                             :forward-checking t))))
+                             :forward-checking t))
+    (5am:is (= qcsp3:*node-consistency-checks* 81))
+    (5am:is (< qcsp3:*constraint-cks* 200))))
 
 (5am:test qcsp3-adt-fcdr
-  "QCSP3 ADT with FC + dynamic rearrangement should complete"
+  "QCSP3 ADT with FC + dynamic rearrangement should complete with expected NCC"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is-true (qcsp3:adt :random-ident 'unique
                              :forward-checking t
-                             :dynamic-rearrangement t))))
+                             :dynamic-rearrangement t))
+    (5am:is (= qcsp3:*node-consistency-checks* 81))
+    (5am:is (< qcsp3:*constraint-cks* 200))))
 
 (5am:test qcsp3-adt-fcdr-advsort
-  "QCSP3 ADT with FC + DR + advance sort should complete"
+  "QCSP3 ADT with FC + DR + advance sort should complete with expected NCC"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is-true (qcsp3:adt :random-ident 'unique
                              :forward-checking t
                              :dynamic-rearrangement t
-                             :advance-sort t))))
+                             :advance-sort t))
+    (5am:is (= qcsp3:*node-consistency-checks* 81))
+    (5am:is (< qcsp3:*constraint-cks* 200))))
 
 (5am:test qcsp3-mpr
-  "QCSP3 MPR recognition should complete"
+  "QCSP3 MPR recognition should complete with expected NCC"
   (with-qcsp3-paths
     (ensure-directories-exist "MPR-Random/dummy")
     (ensure-directories-exist "MPR-Situation/dummy")
-    (5am:is (eq (qcsp3:mpr :random-ident "unique") :complete))))
+    (5am:is (eq (qcsp3:mpr :random-ident "unique") :complete))
+    (5am:is (= qcsp3:*node-consistency-checks* 132))
+    (5am:is (< qcsp3:*constraint-cks* 500))))
 
 (5am:test qcsp3-memory-search
-  "QCSP3 two-phase memory-based search should find solution"
+  "QCSP3 two-phase memory-based search should find solution with expected NCC"
   (with-qcsp3-paths
     (ensure-directories-exist "ADT-Random/dummy")
     (ensure-directories-exist "ADT-Situation/dummy")
     (5am:is (consp (qcsp3:memory-search "quilici-t1-index" "quilici-t1"
-                     :sit-noise 0 :random-ident "unique")))))
+                     :sit-noise 0 :random-ident "unique")))
+    (5am:is (= qcsp3:*node-consistency-checks* 85))
+    (5am:is (< qcsp3:*constraint-cks* 200))))
 
 ;;; Run
 (format t "~&~%;; ===== QCSP3 Test Suite =====~%~%")

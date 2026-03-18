@@ -6,7 +6,9 @@
   (:export #:q #:qs #:qc #:cq #:cqs #:cqc #:queens
            #:adt #:adt-gsat #:mpr #:bm #:backtracking #:ac-3
            #:memory-search #:quilici-search
-           #:set-globals #:show-solution #:show-options #:comment1))
+           #:set-globals #:show-solution #:show-options #:comment1
+           #:*constraint-cks* #:*node-consistency-checks*
+           #:*backtrack-nodes-created* #:*nodes-visited*))
 
 (in-package #:phd-qcsp-may29)
 
