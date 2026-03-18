@@ -73,6 +73,7 @@
   "MPR recognition should complete with expected NCC"
   (with-csp-paths
     (ensure-directories-exist "MPR-Random/dummy")
+    (ensure-directories-exist "MPR-Situation/dummy")
     (5am:is (eq (csp:mpr :random-ident 'unique) :complete))
     (5am:is (= csp:*node-consistency-checks* 132))
     (5am:is (< csp:*constraint-cks* 500))))
