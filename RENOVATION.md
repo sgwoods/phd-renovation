@@ -161,7 +161,7 @@ Comparison plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`. Each plot sh
 
 ## DataFind Archive Audit
 
-The `DataFind/` directory contains `.dir` files — original directory listings from the SPARC archive. An audit compared these against the current repo:
+The `data/sparc-archive/` directory (formerly `DataFind/`) contains `.dir` files — original directory listings from the SPARC archive. An audit compared these against the current repo:
 
 | .dir file | Maps to | Status |
 |-----------|---------|--------|
@@ -184,11 +184,13 @@ See [GitHub Issues](https://github.com/sgwoods/phd-renovation/issues) for tracke
 3. ~~**Recover missing files**~~ — Done: `csp/unify.lisp` recovered from `qcsp-may29-1996/Keep/` with `defconstant`→`defparameter` fix. `adt-test2.lisp`, `adt-test3.lisp`, `gsat-test.lisp` are truly lost (not in any snapshot). `compile-set.lisp` superseded by ASDF. (Issue #3)
 7. ~~**Untrack remaining generated data**~~ — Done: all `ADT-Random/` and `ADT-Situation/` directories across all four systems are untracked and in `.gitignore`. (Issue #7)
 
+5. ~~**Clean up DataFind/**~~ — Done: documented PrevResults, organized archives, created `DataFind/README.md`. Later consolidated into `data/sparc-archive/`. (Issue #5)
+6. ~~**Expand test coverage**~~ — Done: added TCC/NCC/BT regression assertions to all 22 tests across 4 suites. Queens get exact metrics; ADT/MPR get exact NCC + TCC ceilings. (Issue #6)
+8. ~~**CI/CD**~~ — Done: GitHub Actions workflow at `.github/workflows/test.yml` runs all FiveAM suites on push/PR. (Issue #8)
+
 ### Open
-4. **Investigate QCSP-nov96** — intermediate snapshot with terrain analysis code not in repo (Issue #4)
-5. **Clean up DataFind/** — document PrevResults (different noise levels), organize archives (Issue #5)
-6. **Expand test coverage** — add regression tests with specific TCC assertions (Issue #6)
-8. **CI/CD** — GitHub Actions for automated test runs (Issue #8)
+
+4. **Investigate QCSP-nov96** — intermediate snapshot with unique terrain analysis code not in repo. Three source files completely lost (`terrain-setup.lisp`, `terrain-simple.lisp`, `closure.lisp`). Recovery depends on finding SPARC backup media. See `data/lost-datasets.md`. (Issue #4)
 
 ## Commit History
 
@@ -217,4 +219,13 @@ afe6666  Add date/time and git version stamp to comparison plots
 80d72c6  Add may29 batch experiments, 4-way comparison plots, and consolidate gitignore
 ff95fae  Update README and RENOVATION docs with may29 results and .dir audit
 f4c4d51  Clean up alex snapshot and recover unify.lisp
+0474e79  Update docs to reflect alex cleanup and closed issues
+fdd5ceb  Replace MvSit2.tar.Z with extracted ADT situation files
+09a0d3b  Clean up may29 snapshot and fix test4 runner paths
+76df23d  Clean up qcsp3 snapshot and untrack generated MPR situation data
+251fc6f  Document alex ij4 TCC divergence root cause (Issue #2)
+188e4a6  Add TCC/NCC regression assertions and GitHub Actions CI
+afa377f  Fix CSP MPR test failure on CI — create MPR-Situation directory
+7ff62ff  Document DataFind/ archive structure (closes #5)
+a0de660  Consolidate all datasets into normalized data/ directory
 ```
