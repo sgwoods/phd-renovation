@@ -192,6 +192,57 @@ See [GitHub Issues](https://github.com/sgwoods/phd-renovation/issues) for tracke
 
 4. **Investigate QCSP-nov96** — intermediate snapshot with unique terrain analysis code not in repo. Three source files completely lost (`terrain-setup.lisp`, `terrain-simple.lisp`, `closure.lisp`). Recovery depends on finding SPARC backup media. See `data/lost-datasets.md`. (Issue #4)
 
+## Next Phase Roadmap
+
+Guiding principle for the next phase: treat the published PhD thesis results,
+the preserved historical experiment artifacts, and the current regression
+suites as the foundation for every future change. New work should either
+preserve those published behaviors or explain any intentional deviation in a
+repeatable way.
+
+### Phase 1: Stability
+
+1. Keep the artifact pipeline executable from a fresh checkout. The repo should
+   always be able to regenerate CI summaries and comparison plots from the
+   checked-in ACL and SBCL experiment artifacts.
+2. Reduce the remaining warning noise during normal loads so new regressions are
+   easier to spot. Treat a quieter load/test log as a reliability feature, not
+   cosmetic cleanup.
+
+### Phase 2: Verification
+
+3. Strengthen regression coverage around deterministic baselines, starting with
+   confused-queens metric assertions and other low-risk cases where exact
+   behavior can be pinned down.
+4. Decide whether the AO/test4 path is part of the supported research baseline.
+   If yes, convert it into asserted regression coverage and run it in CI. If
+   not, document it explicitly as a manual smoke harness.
+5. Automate the thesis-era versus modern results comparison so the repo
+   continuously checks that the renovated systems still track the published
+   experimental story.
+
+### Phase 3: Documentation
+
+6. Add docstrings and targeted explanations to the core entry points and major
+   algorithms so future work can build on a clearer map of the code.
+7. Keep the top-level docs synchronized with the actual executable state of the
+   repo, especially around CI coverage, warning state, and experiment tooling.
+
+### Phase 4: Research Readiness
+
+8. Explore alex's DFA-related options (`node-type-consis`,
+   `dfa-rearrangement`) in isolated experiments to determine whether they close
+   the known ij4 gap without disturbing the validated baseline path.
+9. Define a repeatable workflow for post-renovation research: establish the
+   baseline snapshot, rerun validation, record deltas against thesis-era
+   results, and only then evaluate new hypotheses or extensions.
+
+### Phase 5: Archive Recovery
+
+10. Continue the historical recovery track by unpacking/cataloging the legacy
+    compressed archives and keeping watch for any media that could restore the
+    lost QCSP-nov96 terrain code and data.
+
 ## Commit History
 
 ```

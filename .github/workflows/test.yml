@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install SBCL
-        run: sudo apt-get update && sudo apt-get install -y sbcl
+        run: sudo apt-get update && sudo apt-get install -y sbcl python3-matplotlib
 
       - name: Cache Quicklisp
         uses: actions/cache@v4
@@ -35,3 +35,6 @@ jobs:
 
       - name: Run FiveAM test suites
         run: sbcl --non-interactive --load "tests/run.lisp"
+
+      - name: Validate thesis-result artifact pipeline
+        run: bash tests/validate-artifacts.sh

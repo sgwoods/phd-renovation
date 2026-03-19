@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT_DIR"
+
+echo "== Artifact validation =="
+echo "This smoke test protects the thesis-result reproduction pipeline."
+
+required_inputs=(
+  "data/acl-experiments/Graph/ij2-ci.dat"
+  "data/acl-experiments/Graph/ij3-ci.dat"
+  "data/acl-experiments/Graph/ij4-ci.dat"
+  "Q-Batch-SBCL/ij2"
+  "Q-Batch-SBCL/ij3"
+  "qcsp3/ADT-Batch"
+)
+
+for path in "${required_inputs[@]}"; do
+  if [[ ! -e "$path" ]]; then
+    echo "Missing required artifact input: $path" >&2
+    exit 1
+  fi
+done
+
+MPL_TMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/phd-renovation-mpl.XXXXXX")"
+trap 'rm -rf "$MPL_TMP_DIR"' EXIT
+export MPLCONFIGDIR="$MPL_TMP_DIR"
+
+python3 Q-Batch-SBCL/Graph/extract-data.py
+python3 Q-Batch-SBCL/Graph/compare-all-overlay.py
+python3 Q-Batch-SBCL/Graph/compare-plots.py
+
+required_outputs=(
+  "Q-Batch-SBCL/Graph/ij2-ci.dat"
+  "Q-Batch-SBCL/Graph/ij3-ci.dat"
+  "Q-Batch-SBCL/Graph/ij4-ci.dat"
+  "Q-Batch-SBCL/Graph/compare-ij2-overlay.png"
+  "Q-Batch-SBCL/Graph/compare-ij3-overlay.png"
+  "Q-Batch-SBCL/Graph/compare-ij4-overlay.png"
+  "Q-Batch-SBCL/Graph/compare-all-overlay.png"
+  "Q-Batch-SBCL/Graph/compare-ij2-ci.pdf"
+  "Q-Batch-SBCL/Graph/compare-ij3-ci.pdf"
+  "Q-Batch-SBCL/Graph/compare-ij4-ci.pdf"
+  "Q-Batch-SBCL/Graph/compare-all.pdf"
+)
+
+for path in "${required_outputs[@]}"; do
+  if [[ ! -s "$path" ]]; then
+    echo "Expected artifact output missing or empty: $path" >&2
+    exit 1
+  fi
+done
+
+for path in \
+  "Q-Batch-SBCL/Graph/ij2-ci.dat" \
+  "Q-Batch-SBCL/Graph/ij3-ci.dat" \
+  "Q-Batch-SBCL/Graph/ij4-ci.dat"
+do
+  line_count="$(wc -l < "$path")"
+  if [[ "$line_count" -ne 20 ]]; then
+    echo "Unexpected CI row count in $path: got $line_count, expected 20" >&2
+    exit 1
+  fi
+done
+
+echo "Artifact validation passed."
