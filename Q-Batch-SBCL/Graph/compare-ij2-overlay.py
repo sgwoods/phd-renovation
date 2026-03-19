@@ -4,8 +4,14 @@
 import math
 import os
 import subprocess
+import tempfile
 from collections import defaultdict
 from datetime import datetime
+
+os.environ.setdefault(
+    'MPLCONFIGDIR',
+    os.path.join(tempfile.gettempdir(), 'phd-renovation-mpl'),
+)
 
 import matplotlib
 matplotlib.use('Agg')
@@ -13,6 +19,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 T_CRITICAL = {9: 2.262}
+ACL_GRAPH_DIR = 'data/acl-experiments/Graph'
 
 def ci(values):
     n = len(values)
@@ -65,7 +72,7 @@ def main():
     version = git_version()
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M')
 
-    acl = read_acl_ci('Q-Batch/Graph/ij2-ci.dat')
+    acl = read_acl_ci(os.path.join(ACL_GRAPH_DIR, 'ij2-ci.dat'))
     sbcl = extract_sbcl_ij2('Q-Batch-SBCL/ij2')
 
     # Shared noise levels

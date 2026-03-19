@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""extract-data.py -- Extract raw data and compute CIs from Q-Batch experiment outputs.
+"""extract-data.py -- Extract raw data and compute CIs from SBCL experiment outputs.
 
 Usage:
     python3 Q-Batch-SBCL/Graph/extract-data.py
@@ -9,7 +9,7 @@ Reads output files from Q-Batch-SBCL/ij2/, ij3/, ij4/ and produces:
     Q-Batch-SBCL/Graph/ij3-raw.dat, ij3-ci.dat, ij3-ci-time.dat, ij3-other-ci.dat
     Q-Batch-SBCL/Graph/ij4-raw.dat, ij4-ci.dat, ij4-ci-time.dat
 
-Also generates comparison data overlaying original ACL results from Q-Batch/Graph/.
+The ACL reference CI files now live under data/acl-experiments/Graph/.
 """
 
 import os

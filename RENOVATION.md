@@ -129,7 +129,7 @@ bash Q-Batch-SBCL/run-alex-all.sh
 bash Q-Batch-SBCL/run-may29-all.sh
 ```
 
-Results are compared against the original Allegro CL runs (stored in `Q-Batch/`) using 95% confidence intervals. The CI bands overlap at every noise level for all three series across all snapshots, confirming algorithmic equivalence despite different random number generators (ACL's proprietary PRNG vs SBCL's Mersenne Twister).
+Results are compared against the original Allegro CL runs (now stored in `data/acl-experiments/`) using 95% confidence intervals. The CI bands overlap at every noise level for all three series across all snapshots, confirming algorithmic equivalence despite different random number generators (ACL's proprietary PRNG vs SBCL's Mersenne Twister).
 
 ```bash
 python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # Generate 4-way plots (requires matplotlib)

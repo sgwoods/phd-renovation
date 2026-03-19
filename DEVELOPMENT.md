@@ -127,7 +127,7 @@ bash Q-Batch-SBCL/run-may29-all.sh
 bash Q-Batch-SBCL/run-alex-all.sh
 
 # Generate comparison plots (requires matplotlib)
-python3 Q-Batch-SBCL/Graph/compare-all-overlay.py
+python3 Q-Batch-SBCL/Graph/compare-all-overlay.py   # reads ACL baselines from data/acl-experiments/Graph
 ```
 
 ### CI

@@ -99,7 +99,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)
 ### Generating comparison plots
 
 ```bash
-python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # 4-way overlay plots (requires matplotlib)
+python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # 4-way overlay plots (uses data/acl-experiments/Graph)
 ```
 
 ### Results

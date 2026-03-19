@@ -4,13 +4,21 @@
 import math
 import os
 import subprocess
+import tempfile
 from collections import defaultdict
 from datetime import datetime
+
+os.environ.setdefault(
+    'MPLCONFIGDIR',
+    os.path.join(tempfile.gettempdir(), 'phd-renovation-mpl'),
+)
 
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+
+ACL_GRAPH_DIR = 'data/acl-experiments/Graph'
 
 T_CRITICAL = {
     1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571,
@@ -148,19 +156,19 @@ def main():
     stamp = f'{timestamp}  |  {version}'
 
     # --- ij2 ---
-    acl_ij2 = read_acl_ci('Q-Batch/Graph/ij2-ci.dat')
+    acl_ij2 = read_acl_ci(os.path.join(ACL_GRAPH_DIR, 'ij2-ci.dat'))
     sbcl_ij2 = extract_sbcl_memory('Q-Batch-SBCL/ij2', 'ij2')
     alex_ij2 = extract_sbcl_memory('Q-Batch-SBCL/alex-ij2', 'alex-ij2')
     may29_ij2 = extract_sbcl_memory('Q-Batch-SBCL/may29-ij2', 'may29-ij2')
 
     # --- ij3 ---
-    acl_ij3 = read_acl_ci('Q-Batch/Graph/ij3-ci.dat')
+    acl_ij3 = read_acl_ci(os.path.join(ACL_GRAPH_DIR, 'ij3-ci.dat'))
     sbcl_ij3 = extract_sbcl_memory('Q-Batch-SBCL/ij3', 'ij3')
     alex_ij3 = extract_sbcl_memory('Q-Batch-SBCL/alex-ij3', 'alex-ij3')
     may29_ij3 = extract_sbcl_memory('Q-Batch-SBCL/may29-ij3', 'may29-ij3')
 
     # --- ij4 ---
-    acl_ij4 = read_acl_ci('Q-Batch/Graph/ij4-ci.dat')
+    acl_ij4 = read_acl_ci(os.path.join(ACL_GRAPH_DIR, 'ij4-ci.dat'))
     sbcl_ij4 = extract_sbcl_ij4('qcsp3/ADT-Batch')
     alex_ij4 = extract_sbcl_ij4('Q-Batch-SBCL/alex-ij4')
     may29_ij4 = extract_sbcl_ij4('Q-Batch-SBCL/may29-ij4')

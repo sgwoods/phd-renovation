@@ -4,7 +4,8 @@
 Usage:
     python3 Q-Batch-SBCL/Graph/compare-plots.py
 
-Reads CI data from Q-Batch/Graph/ (ACL) and Q-Batch-SBCL/Graph/ (SBCL)
+Reads CI data from data/acl-experiments/Graph/ (ACL) and
+Q-Batch-SBCL/Graph/ (SBCL)
 and produces PDF comparison plots in Q-Batch-SBCL/Graph/.
 
 Requires: matplotlib (pip install matplotlib)
@@ -12,6 +13,14 @@ Requires: matplotlib (pip install matplotlib)
 
 import os
 import sys
+import tempfile
+
+os.environ.setdefault(
+    'MPLCONFIGDIR',
+    os.path.join(tempfile.gettempdir(), 'phd-renovation-mpl'),
+)
+
+ACL_GRAPH_DIR = "data/acl-experiments/Graph"
 
 try:
     import matplotlib
@@ -84,7 +93,7 @@ def plot_all_comparison(graph_dir):
     ]
 
     for name, label, color in series:
-        acl_file = f"Q-Batch/Graph/{name}-ci.dat"
+        acl_file = f"{ACL_GRAPH_DIR}/{name}-ci.dat"
         sbcl_file = f"Q-Batch-SBCL/Graph/{name}-ci.dat"
 
         if os.path.exists(acl_file):
@@ -122,7 +131,7 @@ def main():
         ("ij3", "ij3: Memory-CSP Both FCDR w/ adv sort"),
         ("ij4", "ij4: MAP-CSP FCDR w/ adv sort"),
     ]:
-        acl_file = f"Q-Batch/Graph/{name}-ci.dat"
+        acl_file = f"{ACL_GRAPH_DIR}/{name}-ci.dat"
         sbcl_file = f"{graph_dir}/{name}-ci.dat"
         output = f"{graph_dir}/compare-{name}-ci.pdf"
 
