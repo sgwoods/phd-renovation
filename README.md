@@ -104,11 +104,18 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # 4-way overlay plots (uses
 
 ### Results
 
-The SBCL results on M4 Mac statistically match the original Allegro CL results on SPARC across all four code snapshots (ACL, qcsp3, alex, may29), confirming algorithmic equivalence despite different compilers, platforms, and random number generators.
+The supported SBCL baseline preserves the published ACL/SPARC experimental
+story for `ij2`, `ij3`, and `ij4`: the regenerated CI curves stay highly
+correlated with the thesis-era ACL curves, preserve the same efficiency
+ordering, and remain within stable per-series ratio bands. Exact magnitudes are
+not identical across platforms, so the repo validates historical trend
+preservation rather than claiming point-for-point statistical identity.
 
 Key findings:
 - Direct CSP matching (ij4) is 10-100x more efficient than the two-phase memory approach (ij2) in constraint checks, but the memory approach provides adaptability benefits not captured by this metric.
-- The alex snapshot shows significantly higher TCC in ij4 due to additional `node-type-consis` and `dfa-rearrangement` parameters in its `adt` function.
+- The alex snapshot shows significantly higher TCC in ij4 because its
+  `ts-matches-type` logic was simplified relative to the earlier snapshots;
+  the dormant DFA options may be the missing compensating mechanism.
 
 Plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`.
 

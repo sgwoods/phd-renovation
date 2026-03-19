@@ -274,7 +274,7 @@ the source directories. They're in `.gitignore`.
 - **FiveAM test suites**: 25 tests with TCC/NCC regression assertions
 - **GitHub Actions CI**: Automated testing on push/PR
 - **Experiment replication**: ij2/ij3/ij4 across qcsp3, may29, and alex
-  with ACL-vs-SBCL comparison plots confirming algorithmic equivalence
+  with ACL-vs-SBCL comparison plots and automated thesis-trend validation
 - **Integration tests**: Arc-oriented (AO) solver tests for qcsp3, may29, alex
 - **Data consolidation**: All datasets cataloged in `data/` with READMEs
 - **Warning cleanup**: 0 WARNING conditions across all systems (only
@@ -299,9 +299,10 @@ See GitHub Issues for tracked items. Potential improvements:
 2. **Add confused-queens metric assertions** — `cqc` (confused N-Queens)
    tests only assert `:complete`, not specific TCC/BT counts.
 
-3. **Automate thesis-results comparison** — the comparison between
-   `data/sparc-archive/PrevResults/ff*.ci` and modern experiment data is
-   currently manual. Could be scripted.
+3. **Extend thesis-results comparison further back** — CI now checks the
+   supported ACL `ij2`/`ij3`/`ij4` baselines against regenerated SBCL tables.
+   A later improvement would tie the older `data/sparc-archive/PrevResults/ff*.ci`
+   family to a documented modern mapping.
 
 4. **Code documentation** — the core algorithms (backtracking, AC-3, memory-CSP)
    have minimal inline comments. Adding docstrings to key functions would

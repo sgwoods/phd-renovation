@@ -30,6 +30,7 @@ export MPLCONFIGDIR="$MPL_TMP_DIR"
 python3 Q-Batch-SBCL/Graph/extract-data.py
 python3 Q-Batch-SBCL/Graph/compare-all-overlay.py
 python3 Q-Batch-SBCL/Graph/compare-plots.py
+python3 tests/validate-thesis-comparison.py
 
 required_outputs=(
   "Q-Batch-SBCL/Graph/ij2-ci.dat"

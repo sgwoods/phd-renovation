@@ -237,9 +237,11 @@ the owning phase in the release summary so future work stays tied to the plan.
    checks deterministic case-1 AO outcomes for qcsp3, may29, and alex; next
    work should either widen that asserted coverage or clearly document any
    remaining manual-only AO paths.
-5. Automate the thesis-era versus modern results comparison so the repo
-   continuously checks that the renovated systems still track the published
-   experimental story.
+5. Keep the thesis-era versus modern results comparison executable. CI now
+   checks that regenerated SBCL `ij2`/`ij3`/`ij4` tables preserve the ACL
+   baseline ordering, correlation, and bounded ratio bands; next work should
+   connect the older `PrevResults/ff*.ci` family once the exact experiment
+   mapping is recovered.
 
 ### Phase 3: Documentation
 

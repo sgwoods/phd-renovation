@@ -39,5 +39,5 @@ jobs:
       - name: Validate thesis-result artifact pipeline
         run: bash tests/validate-artifacts.sh
 
-      - name: Run AO smoke validation
+      - name: Run AO regression validation
         run: bash tests/validate-ao.sh
