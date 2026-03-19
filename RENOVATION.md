@@ -185,7 +185,7 @@ See [GitHub Issues](https://github.com/sgwoods/phd-renovation/issues) for tracke
 7. ~~**Untrack remaining generated data**~~ — Done: all `ADT-Random/` and `ADT-Situation/` directories across all four systems are untracked and in `.gitignore`. (Issue #7)
 
 5. ~~**Clean up DataFind/**~~ — Done: documented PrevResults, organized archives, created `DataFind/README.md`. Later consolidated into `data/sparc-archive/`. (Issue #5)
-6. ~~**Expand test coverage**~~ — Done: added TCC/NCC/BT regression assertions to all 22 tests across 4 suites. Queens get exact metrics; ADT/MPR get exact NCC + TCC ceilings. (Issue #6)
+6. ~~**Expand test coverage**~~ — Done: added TCC/NCC/BT regression assertions to 25 tests across 4 suites. Standard and confused queens get exact metrics; ADT/MPR get exact NCC + TCC ceilings. (Issue #6)
 8. ~~**CI/CD**~~ — Done: GitHub Actions workflow at `.github/workflows/test.yml` runs all FiveAM suites on push/PR. (Issue #8)
 
 ### Open

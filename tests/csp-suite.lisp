@@ -57,9 +57,12 @@
     (5am:is (= csp:*nodes-visited* 1000))))
 
 (5am:test confused-queens-4
-  "Confused 4-Queens with AC-3 should complete"
+  "Confused 4-Queens with AC-3 should complete with exact metrics"
   (with-csp-paths
-    (5am:is (eq (csp:cqc 4) :complete))))
+    (5am:is (eq (csp:cqc 4) :complete))
+    (5am:is (= csp:*constraint-cks* 174))
+    (5am:is (= csp:*backtrack-nodes-created* 14))
+    (5am:is (= csp:*nodes-visited* 60))))
 
 (5am:test adt-recognition
   "ADT recognition should complete with expected NCC"

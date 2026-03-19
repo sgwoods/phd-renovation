@@ -106,7 +106,7 @@ adt-gsat memory-search quilici-search
 # Load into REPL
 sbcl --load "src/main.lisp"
 
-# Run all FiveAM test suites (4 systems, 22 tests, ~75 assertions)
+# Run all FiveAM test suites (4 systems, 25 tests, ~90 assertions)
 sbcl --non-interactive --load "tests/run.lisp"
 
 # Run individual suites
@@ -269,7 +269,7 @@ the source directories. They're in `.gitignore`.
 - **ACL-to-SBCL migration**: All 4 systems compile and run cleanly on SBCL
 - **Package isolation**: Each system in its own package with proper exports
 - **ASDF build system**: 4 `.asd` files replacing manual load chains
-- **FiveAM test suites**: 22 tests with TCC/NCC regression assertions
+- **FiveAM test suites**: 25 tests with TCC/NCC regression assertions
 - **GitHub Actions CI**: Automated testing on push/PR
 - **Experiment replication**: ij2/ij3/ij4 across qcsp3, may29, and alex
   with ACL-vs-SBCL comparison plots confirming algorithmic equivalence

@@ -53,6 +53,14 @@
     (5am:is (= qcsp-alex:*backtrack-nodes-created* 124))
     (5am:is (= qcsp-alex:*nodes-visited* 1000))))
 
+(5am:test alex-confused-queens-4
+  "Alex confused 4-Queens with AC-3 should complete with exact metrics"
+  (with-alex-paths
+    (5am:is (eq (qcsp-alex:cqc 4) :complete))
+    (5am:is (= qcsp-alex:*constraint-cks* 174))
+    (5am:is (= qcsp-alex:*backtrack-nodes-created* 14))
+    (5am:is (= qcsp-alex:*nodes-visited* 60))))
+
 (5am:test alex-mpr
   "Alex MPR recognition should complete with expected NCC"
   (with-alex-paths

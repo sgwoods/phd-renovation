@@ -53,6 +53,14 @@
     (5am:is (= qcsp-may29:*backtrack-nodes-created* 124))
     (5am:is (= qcsp-may29:*nodes-visited* 1000))))
 
+(5am:test may29-confused-queens-4
+  "May29 confused 4-Queens with AC-3 should complete with exact metrics"
+  (with-may29-paths
+    (5am:is (eq (qcsp-may29:cqc 4) :complete))
+    (5am:is (= qcsp-may29:*constraint-cks* 174))
+    (5am:is (= qcsp-may29:*backtrack-nodes-created* 14))
+    (5am:is (= qcsp-may29:*nodes-visited* 60))))
+
 (5am:test may29-adt
   "May29 ADT recognition should complete with expected NCC"
   (with-may29-paths

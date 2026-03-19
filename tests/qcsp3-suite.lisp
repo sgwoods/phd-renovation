@@ -56,6 +56,14 @@
     (5am:is (= qcsp3:*backtrack-nodes-created* 124))
     (5am:is (= qcsp3:*nodes-visited* 1000))))
 
+(5am:test qcsp3-confused-queens-4
+  "QCSP3 confused 4-Queens with AC-3 should complete with exact metrics"
+  (with-qcsp3-paths
+    (5am:is (eq (qcsp3:cqc 4) :complete))
+    (5am:is (= qcsp3:*constraint-cks* 174))
+    (5am:is (= qcsp3:*backtrack-nodes-created* 14))
+    (5am:is (= qcsp3:*nodes-visited* 60))))
+
 (5am:test qcsp3-adt-bt
   "QCSP3 ADT with simple backtrack should complete with expected NCC"
   (with-qcsp3-paths
