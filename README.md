@@ -19,17 +19,20 @@ Three CSP solving strategies are implemented and compared:
 ```
 csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
-qcsp-may29-1996/            Historical snapshot (May 1996)
+qcsp-may29-1996/            Historical snapshot (May 1996, includes embedded batch data)
 qcsp-alex-sep16-1997/       Historical snapshot (Sep 1997, with extended adt)
-  extras/                   Non-core .lisp files (experiments, data pipelines, variants)
-  artifacts/                Historical result/output files
-Q-Batch/                    Original experiment results (Allegro CL, SPARC)
+data/                       Consolidated data directory (see data/README.md)
+  sparc-archive/            Original SPARC archive listings and thesis-era data
+  acl-experiments/          Original ACL experiment results (ij2/ij3/ij4)
+  csp-batch/                Earliest batch experiments (T1-T6, 1993-1994)
+  csp-adt-batch/            ADT domain batch experiments (ij1-ij4)
+  motors-releases/          MOTORS solver releases (.tar.Z, 1993)
+  motors-backups/           MOTORS solver backups (.zoo, 1994)
+  thesis/                   PhD thesis PDF
 Q-Batch-SBCL/               Replicated experiments (SBCL, M4 Mac)
   Graph/                    4-way comparison plots (ACL vs qcsp3 vs alex vs may29)
-DataFind/                   Original SPARC archive listings and thesis-era data
 tests/                      FiveAM test suites
 src/                        Entry point
-Publications/               Thesis PDF
 ```
 
 ## ASDF Systems
@@ -111,4 +114,4 @@ Plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`.
 
 ## License
 
-Academic research code. See `Publications/` for the thesis.
+Academic research code. See `data/thesis/` for the thesis.

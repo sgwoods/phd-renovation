@@ -1,13 +1,13 @@
-# DataFind/ — Original SPARC Archive (1993-1997)
+# sparc-archive/ — Original SPARC Archive (1993-1997)
 
-This directory preserves the original PhD thesis data from a SPARC/Solaris
-workstation (monarch). It serves as a historical record and verification
-source for the modern SBCL replication.
+Preserves the original PhD thesis data from a SPARC/Solaris workstation
+(monarch). Serves as a historical record and verification source for the
+modern SBCL replication. Moved from `DataFind/`.
 
 ## Structure
 
 ```
-DataFind/
+data/sparc-archive/
 ├── AA-INDEX              Experiment metadata index (seeds, distributions, series labels)
 ├── README.exper          Original notes on experiment provenance and reproducibility
 ├── csp.dir               Directory listing of original csp/ on SPARC (1993-1994)
@@ -29,11 +29,11 @@ renovation.
 
 | File | Maps To | Notes |
 |------|---------|-------|
-| csp.dir | `csp/` | Base solver from 1993-1994, includes `Batch/T3-T6/` experiments |
+| csp.dir | `csp/` | Base solver from 1993-1994, batch experiments now in `data/csp-batch/` |
 | qcsp.dir | `qcsp3/` | May 1996 snapshot with backup dirs `BakSrcLost/`, `BakMar14/` |
 | qcsp3.dir | `qcsp3/` | Identical to qcsp.dir |
 | qcsp-alex.dir | `qcsp-alex-sep16-1997/` | Sep 1997 with 40+ ADT-Random seed directories |
-| QCSP-nov96.dir | *Not in repo* | Unique terrain analysis code (`terrain-setup.lisp`, `terrain-simple.lisp`, `data-dep.lisp`). See Issue #4. |
+| QCSP-nov96.dir | *Not in repo* | Unique terrain analysis code. See [data/lost-datasets.md](../lost-datasets.md). |
 
 ## PrevResults/
 
@@ -90,7 +90,7 @@ Structured metadata describing all experiment series:
 
 | Archive | Modern Equivalent | Notes |
 |---------|-------------------|-------|
-| PrevResults/ff*.ci | Q-Batch/Graph/ij*-ci.dat | Different experiment era; format matches |
+| PrevResults/ff*.ci | data/acl-experiments/Graph/ij*-ci.dat | Different experiment era; format matches |
 | PrevResults/*.ps | Q-Batch-SBCL/Graph/*.png | PostScript replaced by matplotlib |
 | Data/MvSit2/ | Generated at runtime | Static reference vs. dynamic generation |
 | .dir files | Renovation source tree | Cleaned up during ACL-to-SBCL migration |
