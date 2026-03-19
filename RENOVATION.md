@@ -200,6 +200,25 @@ suites as the foundation for every future change. New work should either
 preserve those published behaviors or explain any intentional deviation in a
 repeatable way.
 
+### Phase / Release Alignment
+
+Keep the repo on `0.x` releases until the thesis-validation baseline is stable
+enough that a fresh checkout can reproduce the supported historical results and
+the docs accurately describe that supported path.
+
+- **`0.1.x` Stability builds**: artifact paths, reproducible plot generation,
+  and baseline environment setup.
+- **`0.2.x` Verification builds**: stronger asserted regression coverage around
+  the thesis-era baselines. This is the current active track.
+- **`0.3.x` Documentation / research-readiness builds**: clearer operator docs,
+  explicit supported workflows, and guarded extension points for new research.
+- **`1.0.0` target**: phases 1-3 are complete, CI continuously validates the
+  supported thesis-result baseline, and release notes can describe deviations
+  from the thesis as intentional rather than accidental.
+
+Increment the internal build number once per completed roadmap cycle and note
+the owning phase in the release summary so future work stays tied to the plan.
+
 ### Phase 1: Stability
 
 1. Keep the artifact pipeline executable from a fresh checkout. The repo should
@@ -214,9 +233,10 @@ repeatable way.
 3. Strengthen regression coverage around deterministic baselines, starting with
    confused-queens metric assertions and other low-risk cases where exact
    behavior can be pinned down.
-4. Decide whether the AO/test4 path is part of the supported research baseline.
-   If yes, convert it into asserted regression coverage and run it in CI. If
-   not, document it explicitly as a manual smoke harness.
+4. Finish converting the AO/test4 path into supported asserted coverage. CI now
+   checks deterministic case-1 AO outcomes for qcsp3, may29, and alex; next
+   work should either widen that asserted coverage or clearly document any
+   remaining manual-only AO paths.
 5. Automate the thesis-era versus modern results comparison so the repo
    continuously checks that the renovated systems still track the published
    experimental story.
