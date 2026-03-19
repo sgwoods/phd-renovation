@@ -132,8 +132,9 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py   # reads ACL baselines from d
 
 ### CI
 
-GitHub Actions runs `tests/run.lisp` and the artifact validation smoke test
-(`tests/validate-artifacts.sh`) on every push to `main` and on PRs.
+GitHub Actions runs `tests/run.lisp`, the artifact validation smoke test
+(`tests/validate-artifacts.sh`), and the AO smoke test
+(`tests/validate-ao.sh`) on every push to `main` and on PRs.
 See `.github/workflows/test.yml`.
 
 ### Test Architecture
