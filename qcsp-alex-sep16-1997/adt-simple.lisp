@@ -13,6 +13,87 @@
 ;; any cumulative work in looking up from this function.... for use in
 ;; any PU-CSP use of MAP-CSP (adt) as a subroutine.  SGW Dec 6/1995
 
+;; Yongjun's optional DFA helpers lived in extras/new-dep.lisp. Define
+;; conservative local fallbacks so the default baseline path compiles cleanly
+;; even when that extension file is not loaded.
+(defvar *comp-to-comp-hash* nil)
+
+(unless (fboundp 'in-other-list)
+  (defun in-other-list (this-list atom-or-list)
+    (cond ((atom atom-or-list) nil)
+          ((endp this-list) t)
+          ((member (first this-list) atom-or-list)
+           (in-other-list (rest this-list) atom-or-list))
+          (t nil))))
+
+(unless (fboundp 'update-consumer-list)
+  (defun update-consumer-list (consumer-list var-type)
+    (let ((count-list (assoc var-type consumer-list)))
+      (cond ((null count-list)
+             (acons var-type 1 consumer-list))
+            (t
+             (rplacd (assoc var-type consumer-list)
+                     (+ 1 (rest count-list)))
+             consumer-list)))))
+
+(unless (fboundp 'get-consumer-list)
+  (defun get-consumer-list (this-variable-name variables constraints
+                               &optional (temp nil) (counted nil))
+    (cond
+      ((endp constraints) temp)
+      (t
+       (let* ((one-constraint (first constraints))
+              (cons-type (first one-constraint))
+              (first-var (first (second one-constraint)))
+              (second-var (second (second one-constraint)))
+              (first-var-type (caadr (assoc first-var variables))))
+         (cond
+           ((member first-var counted)
+            (get-consumer-list this-variable-name variables (rest constraints)
+                               temp counted))
+           ((and (member cons-type '(guaranteed-data-dependency
+                                     possible-data-dependency
+                                     control-data-dependency))
+                 (eql second-var this-variable-name))
+            (setq temp (update-consumer-list temp first-var-type))
+            (get-consumer-list this-variable-name variables (rest constraints)
+                               temp (cons first-var counted)))
+           (t
+            (get-consumer-list this-variable-name variables (rest constraints)
+                               temp counted))))))))
+
+(unless (fboundp 'get-consumer-list-from-template)
+  (defun get-consumer-list-from-template (this-variable-name template)
+    (let ((variables (nth 1 template))
+          (constraints (nth 2 template)))
+      (get-consumer-list this-variable-name variables constraints))))
+
+(unless (fboundp 'consumer-count-in-code)
+  (defun consumer-count-in-code (this-instance other-type)
+    (let ((instance-hash (and (hash-table-p *comp-to-comp-hash*)
+                              (gethash this-instance *comp-to-comp-hash*))))
+      (if (hash-table-p instance-hash)
+          (length (gethash other-type instance-hash))
+        nil))))
+
+(unless (fboundp 'check-one-to-type-consistency)
+  (defun check-one-to-type-consistency (this-instance consumer-list)
+    (cond
+      ((endp consumer-list) t)
+      ;; Without the DFA hash from extras/new-dep.lisp, leave the optional
+      ;; pruning disabled rather than changing baseline behavior.
+      ((not (hash-table-p *comp-to-comp-hash*)) t)
+      (t
+       (let* ((consumer-type (caar consumer-list))
+              (consumer-cnt (cdar consumer-list))
+              (consumer-cnt-in-code
+                (consumer-count-in-code this-instance consumer-type)))
+         (cond
+           ((null consumer-cnt-in-code) t)
+           ((>= consumer-cnt-in-code consumer-cnt)
+            (check-one-to-type-consistency this-instance (rest consumer-list)))
+           (t nil)))))))
+
 
 (defun adt (&key
 	    (situation-id       "my-sit")  ;; special implies o/ride
