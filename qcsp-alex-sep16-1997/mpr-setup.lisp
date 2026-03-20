@@ -450,7 +450,7 @@
 	    (format *output-stream*
 		    "~&~& SCHs: ~A ~&" (length 
 					     (get-templ-cohesion-constr template)))
-	    (dolist (c (get-cohesion-constr template))
+	    (dolist (c (get-templ-cohesion-constr template))
 	      (format *output-stream* "~&~& SCH Constr: ~A ~&" c))
 	    ))))
   t)
