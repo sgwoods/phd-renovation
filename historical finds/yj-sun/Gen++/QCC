@@ -1,0 +1,9 @@
+#!/bin/ksh
+#ident	"@(#)gen++:d.pkg/QCC	1.5"
+export GENPP_LICENSE_FILE 
+GENPP_LICENSE_FILE=/users1/grad/yjzhang/Gen++/GENPP.dat
+
+export cfrontC
+cfrontC=/users1/grad/yjzhang/Gen++/analyzer #EDIT: FULL PATH OF DESIRED ANALYZER
+CC -F "$@" 
+echo "$@"

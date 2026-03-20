@@ -1,0 +1,121 @@
+/*ident	"@(#)gen++:d.pkg/examples/TypeRel.query	1.2" */
+
+ROOTPROC TypeRel
+FILE dot "TypeRel.dot"
+FILE debug "TypeRel.debug"
+
+
+/*****************************************************************/
+/* Subquery TRPrint:   Arg: The name of a class                  */
+/*                     Root: a Type                              */
+/* Print an edge from Arg to aggr name                           */
+/*                                                               */
+/* This generates various dependency relationships between       */
+/* type names.  Two types of edges:  bold for inheritance        */
+/* Dotted for any other type of usage  dependency                */
+/* I.e, if a type is used for a local, argument or returntype    */
+/*****************************************************************/
+
+PROC TRPrint
+ARG GNODE DERIVED;
+ARG GNODE DOTFLAG ;
+ROOT Type;
+{
+(?NamedType
+  <refname (PRINT dot "\"%s\" -> \"%s\" [style = " DERIVED $token)>
+  (IF (EQUAL DOTFLAG 1) (THEN (PRINT dot "dotted")) (ELSE (PRINT dot "bold")))
+  (PRINT dot "] /* %s */\n" $location)
+)
+}
+
+
+/*****************************************************************/
+/* Subquery DoType:   Arg: The name of a class                   */
+/*                    Root: a Type                               */
+/* Recursively call TRPrint to print type name dependencies      */
+/*****************************************************************/
+
+
+PROC DoType
+ARG GNODE DERIVED;
+ARG GNODE DOTFLAG;
+ROOT Type;
+{
+  /* global search already finds subtypes, such as PtrType||points_to */
+  (PRINT debug "\n%s:\n" $location)
+  (DUMP debug $token 4)
+  (CALL TRPrint DERIVED DOTFLAG)
+  (?PtrType
+    <member_of <type (CALL TRPrint DERIVED DOTFLAG)>>
+  )
+  (?RefType
+    <member_of <type (CALL TRPrint DERIVED DOTFLAG)>>
+  )
+  (?FunctionType
+    <member_of <type (CALL TRPrint DERIVED DOTFLAG)>>
+  )
+}
+
+/*****************************************************************/
+/* DecRel:
+/* For each declaration in the file                              */
+/*     If it's a class def,                                      */
+/*       print a bold arrow to each base class                   */
+/*       print a dotted edge to each referenced type             */       
+/*     If it's a function spec,                                  */
+/*       print a dotted edge to each referenced type             */       
+/*                                                               */
+/*****************************************************************/
+PROC DecRel
+ARG GNODE DERIVED;
+ROOT Declaration;
+{
+LOCAL GNODE BASE;
+    (IF (TYPEOF $token AggrDef)
+      (THEN (?AggrDef
+        (IF (NOT (EQUAL DERIVED (SLOT defname $token)))
+  	  (THEN <type (CALL TRPrint DERIVED 1)>)
+        )
+        <defname  (ASSIGN DERIVED $token)>
+	<bases {BaseSpec
+	      <refname (ASSIGN BASE $token) >
+  	      (PRINT dot "/* %s */\n" $location)
+  	      (PRINT dot "\"%s\" -> \"%s\" [style=bold]\n" DERIVED BASE)
+        }>
+        <members {MemberSpec
+            (?NestedDeclaration
+              <def (CALL DecRel DERIVED)>
+            )
+            (?VisibilitySpec
+              <name <type (CALL DoType DERIVED 1)>>
+            )
+        }>
+      ))
+      (ELSE 
+        <type [(?Type (CALL DoType DERIVED 1))]>
+        (?FunctionDef
+          <meminit [(?Type (CALL DoType DERIVED 1))]>
+          <body
+             <locals {Declaration (CALL DecRel DERIVED)}>
+             <blockbody [(?Type (CALL DoType DERIVED 1))]>
+          >
+        )
+      )
+    )
+}
+
+
+/* root proc */
+PROC TypeRel
+ROOT CFile;
+{
+LOCAL GNODE DERIVED;
+(PRINT dot "digraph HI {\nrankdir = \"LR\";\nsize = \"7,10\";\n")
+<globals
+  {Declaration
+    <defname  (ASSIGN DERIVED $token)>
+    (CALL DecRel DERIVED)
+  }
+>
+(PRINT dot "}\n")
+}

@@ -1,0 +1,33 @@
+From bethke Tue Jul  9 22:29:06 1996
+Return-Path: <bethke>
+Received: by spectra.eng.hawaii.edu (4.1/SMI-4.1)
+	id AA04960; Tue, 9 Jul 96 22:29:06 HST
+From: bethke (Earl Bethke)
+Message-Id: <9607100829.AA04960@spectra.eng.hawaii.edu>
+Subject: Re: your mail
+To: yjzhang@spectra.eng.hawaii.edu (Yongjun ZHANG)
+Date: Tue, 9 Jul 1996 22:29:05 -1000 (HST)
+In-Reply-To: <9607100136.AA28638@spectra.eng.hawaii.edu> from "Yongjun ZHANG" at Jul 9, 96 03:36:13 pm
+X-Mailer: ELM [version 2.4 PL21]
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Content-Length: 379       
+Status: RO
+
+> 
+> I just talked to prof. Quilici, I need to deal with multiple source codes now. So I copy
+> CC again and use CC -F   , thanks.
+> 
+
+Try the following from the CC man page:
+
+CC -F -Qpath "analyzer-path" file.cc
+
+rename your analyzer to cfront and define analyzer-path point to the
+directory of your renamed analyzer.  With this, you won't need to copy
+CC in your directory.
+
+
+
+

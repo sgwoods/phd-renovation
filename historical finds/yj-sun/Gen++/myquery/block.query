@@ -1,0 +1,30 @@
+/*ident	"@(#)gen++:d.pkg/examples/defuse.query	1.2" */
+/* For each reference to a variable, print whether
+   it is {bf used}, or {bf assigned to}. 
+   You'll find it in the file defuse.query in the shipped package   */
+
+ROOTPROC BlockLoc 
+
+EXTERNAL PROC newBlock () RETURNS STRING  
+
+PROC BlockLoc  
+ROOT CFile;
+{
+  LOCAL GNODE count; 
+  LOCAL GNODE newblock;
+
+  (ASSIGN count  0) 
+  [
+    (?Block
+
+	(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+
+      (PRINT stdout "%s (BlockNumber %d BeginLine %s EndLine %s)\n" 
+						newblock 	
+						count 
+						(SLOT line (SLOT where $token)) 
+						(SLOT line (SLOT blockend $token)))  
+	  (ASSIGN count (+1 count))  
+   )
+  ]
+}

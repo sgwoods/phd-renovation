@@ -1,0 +1,7 @@
+#!/bin/csh -f
+#
+# find a path to a C pre processor
+#
+set ccpath = /usr/local/bin
+echo "# define CC " \""$ccpath/cc"\"
+

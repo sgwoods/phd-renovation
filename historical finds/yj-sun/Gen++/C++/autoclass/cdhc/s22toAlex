@@ -1,0 +1,26 @@
+> 
+> > I found all stdlib here and tried them with -Istdlib_path but failed, the main error
+> > is from the qsort function:
+> > 
+> > "dmax.c", line 28: error: bad argument  4 type for qsort(): int (*)(double *, double *) ( int (*)(const void *, const void *) expected)
+
+Hi Prof. Quilici,
+
+For the header files showing the above error message, qsort is declared as: 
+
+extern int  qsort(void *, size_t, size_t,
+            int (*)(const void *, const void *));
+
+It's supposed to take in int (*)(const void *, const void *) as a parameter, but 
+IN dmax.c:
+
+  double *xcopy, sqrt2, sqrtn, mean = 0.0, sdx = 0.0, fx;
+  double dp, dp_max, dm, dm_max, normp(double z);
+  int i, dcmp(double *i, double *j);
+  qsort (xcopy, n, sizeof (double), dcmp);
+
+I think I can simply modify the declaration INSIDE dmax.c as
+  int dcmp(const void*, const void*); 
+I tried it out and it works.  
+
+ 

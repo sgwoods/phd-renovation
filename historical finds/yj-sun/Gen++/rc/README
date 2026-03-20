@@ -1,0 +1,27 @@
+#ident	"@(#)gen++:d.pkg/rc/README	1.6"
+This directory contains all that is needed to build the OO Rule Checker.
+These rules are taken from "OO Programming Rules and Guidelines, Version 3"
+by Logothetis and Wilkinson.  A postscript version of this memo is included
+in docs/*.ps.
+
+To build, you must first edit makefile to set macros
+	GEN = gen++ installation directory
+	CPL = C++ compiler, version 3.0.*
+	CC  = C compiler
+edit 'mk' to set the path for the license file, then type
+	mk
+The makefile will build
+	analyzer
+which implements the rule checker.
+To use this analyzer, edit Checker to set
+	CC = 3.0.* C++ compiler
+	TOOLSDIR = directory containing rule checker
+	GENPP_LICENSE_FILE
+and copy Checker to your favorite bin.
+
+Checker will take the same command line as CC.  For each file x.c, output
+will be written to x.OO.
+For example, to run the rule checker on a C++ source file, type
+	Checker [preprocessor options] file.c
+The file 'file.OO' will then contain the diagnostics generated
+by the rule checker.

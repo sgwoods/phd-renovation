@@ -1,0 +1,132 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/naming.query	1.3" */
+/* naming conventions rule checker */
+
+ROOTPROC naming
+
+EXTERNAL PROC check (STRING STRING ) RETURNS INTEGER
+EXTERNAL PROC LastGenFixExt (STRING STRING ) RETURNS STRING
+
+PROC naming
+ROOT CFile;
+{
+LOCAL GNODE finame;
+ <filename (ASSIGN finame $token)>
+(OPEN msgout  (CEXPR C_String "LastGenFixExt(getCstring(finame),\"OO\")"))
+(PRINT msgout "NAMING CONVENTIONS\n")
+
+<globals
+  {Declaration
+    (CALL checkname)
+    (?AggrDef (CALL checkaggr_naming))
+    (?FunctionDef
+      <args {Declaration (CALL checkname)}>
+      <body (CALL checkstmt_naming)>
+    )
+  }
+>
+}
+
+PROC checkname
+ROOT Declaration;
+{
+LOCAL GNODE cname;
+LOCAL GNODE oname;
+LOCAL GNODE fname;
+LOCAL GNODE chk;
+LOCAL GNODE acro;
+      (?ClassDef
+        (ASSIGN cname (SLOT id $token))
+        (ASSIGN chk 
+          (CEXPR C_Integer "check(getCstring(cname),\"C\")")
+        )
+        (IF (EQUAL chk 0) (THEN
+          (PRINT msgout 
+            "%s: class name, %s, should begin with an uppercase letter (CNBU).\n" 
+            $location cname
+          )
+        ))
+      )
+      (?FunctionSpec
+        (ASSIGN fname (SLOT id $token))
+        (ASSIGN acro (SLOT id $token))
+        (IF (OR 
+          (TYPEOF (SLOT kind $token) NK_Constructor)
+          (TYPEOF (SLOT kind $token) NK_Destructor)
+          )
+          (THEN
+            (ASSIGN chk 1)
+          )
+          (ELSE
+            (ASSIGN chk 
+              (CEXPR C_Integer "check(getCstring(fname),\"F\")")
+            )
+          )
+        )
+        (IF (EQUAL chk 0) (THEN
+          (PRINT msgout 
+            "%s: function name, %s, should begin with a lowercase letter" 
+            $location fname
+          )
+          (PRINT msgout " (FNBL).\n")
+        ))
+      )
+      (?ObjectSpec
+        (ASSIGN oname (SLOT id $token))
+        (IF (TYPEOF (SLOT kind $token) NK_Enumerator)
+          (THEN
+            (ASSIGN chk 1)
+          )
+          (ELSE
+            (ASSIGN chk 
+              (CEXPR C_Integer "check(getCstring(oname),\"O\")")
+            )
+          )
+        )
+        (IF (EQUAL chk 0) (THEN
+          (PRINT msgout 
+            "%s: id name, %s, should begin with a lowercase letter" 
+            $location oname
+          )
+          (PRINT msgout " (IDBL).\n")
+        ))
+      )
+}
+
+PROC checkaggr_naming
+ROOT AggrDef;
+{
+  <members {MemberSpec
+    (?NestedDeclaration
+      <def
+        (CALL checkname)
+        (?AggrDef (CALL checkaggr_naming))
+        (?FunctionDef
+          <args {Declaration (CALL checkname)}>
+          <body (CALL checkstmt_naming)>
+        )
+      >
+    )
+  }>
+}
+
+PROC checkstmt_naming
+ROOT Statement;
+{
+  (?Block
+    <locals {Declaration
+      (?AggrDef (CALL checkaggr_naming))
+    }>
+    <blockbody {Statement (CALL checkstmt_naming)}>
+  )
+  (?If
+    <ifTbranch (CALL checkstmt_naming)>
+    <ifFbranch (CALL checkstmt_naming)>
+  )
+  (?While <whilebody (CALL checkstmt_naming)>)
+  (?Do <dobody (CALL checkstmt_naming)>)
+  (?For
+    <forinit (CALL checkstmt_naming)>
+    <forbody (CALL checkstmt_naming)>
+  )
+  (?Switch <switchbody (CALL checkstmt_naming)>)
+}

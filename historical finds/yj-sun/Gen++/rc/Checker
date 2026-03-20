@@ -1,0 +1,9 @@
+#ident	"@(#)gen++:d.pkg/rc/Checker	1.1"
+export GENPP_LICENSE_FILE
+GENPP_LICENSE_FILE=<gen++_installation_directory>/GENPP.dat
+echo OOP RULE CHECKER
+
+CC=3.0.3CC 
+TOOLSDIR=<directory_containing_rule_checker_analyzer>
+
+cfrontC=$TOOLSDIR/analyzer $CC -F "$@"

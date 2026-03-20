@@ -1,0 +1,189 @@
+
+(defun show-solution1 (solution-set exit-location)
+"
+Show output values at end. ALL DOMAIN VERSIONS.
+"
+(let (
+      (print-long (or (eq exit-location 'repeat) 
+		      *file-output*
+		      *long-output*
+		      ))
+      )
+  (if (not (eq *output-stream* nil))
+      (let (
+	    (num (length solution-set))
+	    (desc-string (if (equal *search-mode* "bt")
+			     'Backtrack
+			   (if (equal *search-mode* "bj")
+			       'BackJump
+			     (if (equal *search-mode* "bm")
+				 'BackMark
+			       (if (equal *search-mode* "qu")
+				   'quilici
+			       'Error)))))
+	    )
+	(setq *solution-set* solution-set)
+
+	(format *output-stream*
+		"~&~&***** ~A Information ***** ~2&" desc-string )
+	(format *output-stream*
+		"~&~& Exit Location    : ~A ~&" exit-location)
+	(format *output-stream*
+		"~&~& No. Solutions    : ~A ~&" (length solution-set))
+
+	(if (and (> num 0) print-long)
+	    (progn
+	      (format *output-stream* "~&~& Solutions... ~&")
+	      (dolist (sol solution-set)
+		(format *output-stream* "~A ~&" sol)) ))
+
+	(if *node-consis*
+	    (progn
+;;	      (format *output-stream*
+;;	      "~&~& Node Consis. calls : ~A ~&" *node-consistency-calls*)
+	      (format *output-stream*
+	      "~&~& Node Consis. cks   : ~A ~&" *node-consistency-checks*)
+	      
+	      (if (and print-long (eq *domain-loaded* 'mpr))
+		  (progn
+		    (format *output-stream*
+	    "~&~&   >Matches-type       : ~A ~&" *ts-match-type-count*)
+		    (format *output-stream*
+	    "~&~&   >Matches-orient     : ~A ~&" *ts-match-orient-count*)
+		    (format *output-stream*
+	   "~&~&   >Matches-activity   : ~A ~&" *ts-match-activity-count*)
+		    (format *output-stream*
+	   "~&~&   >Matches-abs-loc    : ~A ~&" *ts-match-abs-loc-count*)
+		    (format *output-stream*
+	   "~&~&   >Matches-size       : ~A ~&" *ts-match-size-count*)
+		    )) ))
+
+	(if print-long 
+	    (progn
+	      (format *output-stream*
+		      "~&~& Satisfy-p calls  : ~A ~&" *satisfy-p-calls*)
+	      (format *output-stream*
+		      "~&~& Satisfy-p cost   : ~A ~&" *satisfy-p-cost*)
+	      (format *output-stream*
+		      "~&~& Consistent calls : ~A ~&" *consistent-p-calls*)
+	      (if (eq *domain-loaded* 'mpr)
+		  (progn
+		    (format *output-stream*
+		  "~&~&     >Consistent nulls : ~A ~&" *consistent-null-arcs*)
+		    (format *output-stream*
+		  "~&~&     >Unique restricts : ~A ~&" *unique-restrict-count*)
+		    )) ))
+
+	(format *output-stream*
+		"~&~& Ttl constr chks  : ~A ~&" *constraint-cks*)
+
+	(if (and (eq *domain-loaded* 'mpr) print-long)
+	    (progn
+	      (format *output-stream*
+	    "~&~&    >AC     compat results: ~A ~&" *ac-count-compat*)
+	      (format *output-stream*
+	    "~&~&    >AC not compat results: ~A ~&" *ac-count-notcompat*)
+	      (format *output-stream*
+	    "~&~&    >Spatial Cohes cks: ~A ~&" *constraint-sch-cks*)
+	      (format *output-stream*
+	    "~&~&    >Spatial Cohes savings : ~A ~&" *sch-save*)
+	      (format *output-stream*
+	    "~&~&    >Separation cks   : ~A ~&" *constraint-sep-cks*)
+	      (format *output-stream*
+	    "~&~&    >Positional cks   : ~A ~&" *constraint-pos-cks*)
+	      (format *output-stream*
+	    "~&~&    >Medial cks       : ~A ~&" *constraint-med-cks*)
+	      (format *output-stream*
+	    "~&~&    >Echelon cks      : ~A ~&" *constraint-ech-cks*)
+	      (format *output-stream*
+   	    "~&~&    >Same type cks    : ~A ~&" *constraint-same-type-cks*)
+	      (format *output-stream*
+   	    "~&~&    >Same orient cks  : ~A ~&" *constraint-same-orient-cks*)
+	      (format *output-stream*
+ 	    "~&~&    >Same activity cks: ~A ~&" *constraint-same-activity-cks*)
+	      (format *output-stream*
+ 	    "~&~&    >Same size cks    : ~A ~&" *constraint-same-size-cks*)
+	      ))
+
+	(if (and (eq *domain-loaded* 'adt) print-long)
+	    (progn
+	      (format *output-stream*
+	    "~&~&    >AC     compat results: ~A ~&" *ac-count-compat*)
+	      (format *output-stream*
+	    "~&~&    >AC not compat results: ~A ~&" *ac-count-notcompat*)
+	      (format *output-stream*
+	    "~&~&    >Before-p cks         : ~A ~&" *constraint-before-cks*)
+	      (format *output-stream*
+	    "~&~&    >Same-name-p cks      : ~A ~&" *constraint-same-name-cks*)
+	      (format *output-stream*
+	    "~&~&    >Close-to-p cks      : ~A ~&" *constraint-close-to-cks*)
+	      (format *output-stream*
+   	    "~&~&    >Same type cks        : ~A ~&" *constraint-same-type-cks*)
+	      ))
+
+
+	(if (equal *search-mode* "qu")
+	    (format *output-stream*
+	    "~&~& Quilici open states created : ~A ~&" *backtrack-nodes-created*)
+	  (progn
+	      (format *output-stream*
+	      "~&~& BT nodes created : ~A ~&" *backtrack-nodes-created*)
+	      (format *output-stream*
+	      "~&~& Nodes visited    : ~A ~&" *nodes-visited*)))
+
+	(if *backjump*
+	    (format *output-stream*
+		    "~&~& Backjumps        : ~A ~&" *backjump-count*))
+
+	(if *backmark*
+	    (progn
+	      (format *output-stream*
+		      "~&~& BM Type-A Savings : ~A ~&" *type-a-savings*)
+	      (format *output-stream*
+		      "~&~& BM Type-B Savings : ~A ~&" *type-b-savings*)))
+
+	(if *forward-checking*
+	    (progn
+;;	      (format *output-stream*
+;;		      "~&~& Forward ck calls : ~A ~&" *for-check-calls*)
+	      (format *output-stream*
+		      "~&~& Forward ck cost  : ~A ~&" *for-check-cost*)))
+
+	(if *dynamic-rearrangement* 
+	    (progn
+;;	      (format *output-stream*
+;;		      "~&~& Dyn Rearr calls  : ~A ~&" *dyn-rearr-calls*)
+	      (format *output-stream*
+		      "~&~& Dyn Rearr cost   : ~A ~2&" *dyn-rearr-cost*)))
+
+	(format *output-stream* 
+                "~2&Advance Processing CPU Seconds: ~D ~&" 
+	    (/ (- *internal-advance-end-time* *internal-advance-start-time*)
+	       (* 1.0 internal-time-units-per-second)))
+  
+	(if *advance-sort*
+	    (progn
+	      (format *output-stream* 
+		 "Advance Sort       CPU Seconds: ~D ~&" 
+		 (/ (- *internal-sort-end-time* *internal-sort-start-time*)
+		    (* 1.0 internal-time-units-per-second)))))
+
+	 (format *output-stream* 
+		 "Search             CPU Seconds: ~D ~&" 
+		 (/ (- *internal-end-time* *internal-start-time*)
+		    (* 1.0 internal-time-units-per-second)))
+
+	 (format *output-stream* 
+		 "Total              CPU Seconds: ~D ~2&" 
+		 (/ (- *internal-end-time* *internal-advance-start-time*)
+		    (* 1.0 internal-time-units-per-second)))
+
+	(if (and *file-output* (not (eq exit-location 'CHECKPOINT)))
+	    (progn
+     	      (close *output-stream*)
+	      (setq *output-stream* *standard-output*)
+	      (setq *file-output* nil)
+	      (format *output-stream*
+		      "~&~& File Closed (at 2). ~2&")))
+	)) ))
+

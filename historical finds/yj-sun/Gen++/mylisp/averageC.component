@@ -1,0 +1,69 @@
+
+(averageC_stmt14
+ (
+(averageC_1 1 main 14 (Finish))
+ )
+)
+
+(averageC_stmt7 
+ (
+(averageC_2 2 main 7 (Assign mean 0) (mean 0) (mean))
+ )
+ ( (mean averageC 5)  )
+ ( (mean averageC 5)  )
+)
+
+(averageC_stmt9
+ (
+(averageC_3 3 main 9 (ForLoop))
+ )
+)
+
+(averageC_Cond1 
+ (
+(averageC_4 4 main 9 (Less i 100 averageC_R_1) (i 100 averageC_R_1) (averageC_R_1))
+ )
+ ( (i averageC 4)  )
+ (  )
+)
+
+(averageC_stmt9test
+ (
+(averageC_5 5 main 9 (BridgeNull))
+ )
+)
+
+(averageC_stmt9init 
+ (
+(averageC_6 6 main 9 (Assign i 0) (i 0) (i))
+ )
+ ( (i averageC 4)  )
+ ( (i averageC 4)  )
+)
+
+(averageC_stmt9incr 
+ (
+(averageC_7 7 main 9 (Assign averageC_R_2 i) (averageC_R_2 i) (averageC_R_2))
+(averageC_8 8 main 9 (Plus i  1 averageC_R_3) (i averageC_R_3) (averageC_R_3))
+(averageC_9 9 main 9 (Assign i averageC_R_3) (i averageC_R_3) (i))
+ )
+ ( (i averageC 4)  )
+ ( (i averageC 4)  )
+)
+
+(averageC_stmt10 
+ (
+(averageC_10 10 main 10 (Index a i averageC_R_4) (a i) (averageC_R_4))
+(averageC_11 11 main 10 (PlusAssign mean averageC_R_4) (mean averageC_R_4) (mean))
+ )
+ ( (mean averageC 5) (a averageC 3) (i averageC 4)  )
+ ( (mean averageC 5)  )
+)
+
+(averageC_stmt12 
+ (
+(averageC_12 12 main 12 (DivAssign mean 100) (mean 100) (mean))
+ )
+ ( (mean averageC 5)  )
+ ( (mean averageC 5)  )
+)

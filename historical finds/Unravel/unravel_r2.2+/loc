@@ -1,0 +1,76 @@
+#!/bin/csh -f
+#############################################################
+#                                                           #
+#                                                           #
+#     loc  -- count lines of code, discard blanks & comments#
+#                                                           #
+#     options -I -D and -U are passed to cpp                #
+#     option -x11 adds -I/applic/X11R5/include to cpp       #
+#     option -echo prints commands to be executed (no exec) #
+#                                                           #
+#############################################################
+set version = "@(#)loc	1.1  1/27/94"
+#############################################################
+set path = (~jimmy/slice/ansi $path)
+set files
+set opts
+set pp
+set ff = 0
+set out = 0
+set raw = 0
+set echo_mode = 0
+set tmp_mode = 0
+@ t_lines = 0
+@ t_words = 0
+@ t_chars = 0
+foreach p ($argv)
+	if (-e $p) then
+		set files = ($files $p)
+	else if ("$p" =~ -[lL][iI][fF] ) then
+		set ff = 1
+	else if ( "$p" == "-raw") then
+		set raw = 1
+	else if ( "$p" == "-x11") then
+		set pp = ($pp -I/applic/X11R5/include)
+	else if ("$p" =~ -[UID]* ) then
+		set pp = ($pp $p)
+	else if ("$p" == "-v" ) then
+		echo $version
+		exit 0
+	else if ("$p" == "-echo" ) then
+		set echo_mode = 1
+	else
+		set opts = ($opts $p)
+	endif
+end
+
+#echo "options: " $opts
+#echo "files: " $files
+#echo "cpp: " $pp
+foreach file ($files)
+	set date = `date`
+	set dir = $file:h
+	if (! -d $dir) set dir = "."
+	if ( -w $dir ) then
+		set outfile = $file:r.LIF
+	else
+		set outfile = /dev/null
+#		echo $dir " is not writeble ($file)"
+	endif
+	if ($echo_mode) then
+		echo "gcc -E -I$dir $pp $file | wc"
+	else
+		if ($raw) then
+			set wc = `gcc -E -I$dir $pp $file | wc`
+		else
+			set wc = `gcc -E -I$dir $pp $file |sed -e '/^[ 	]*$/ d' | wc`
+		endif
+		echo -n "$wc   "
+		echo "  $file"
+		@ t_lines += $wc[1]
+		@ t_words += $wc[2]
+		@ t_chars += $wc[3]
+#		gcc -E -I$dir $pp $file |sed -e '/^[ 	]*$/ d' 
+	endif
+end
+echo "$t_lines  $t_words  $t_chars"

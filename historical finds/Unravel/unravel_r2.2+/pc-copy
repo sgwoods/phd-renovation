@@ -1,0 +1,31 @@
+#!/bin/csh
+#
+# @(#)pc-copy	1.1  10/6/94
+#
+
+@ n_files = $#argv - 1
+
+if ($n_files <= 0) then
+	echo "usage: pc-copy file-list directory"
+	exit
+endif
+set dir = $argv[$#argv]
+if (!(-d $dir)) then
+	echo $dir must be a directory
+	exit
+endif
+set files = ($argv[1-$n_files])
+echo There are $n_files files to copy to $argv[$#argv] directory
+
+pcmount -ro
+foreach f ($files)
+	set tail = $f:t
+	echo copy $f to $dir/$tail
+	if (-d $f) then
+	else
+		mkdir $dir/$tail
+		pc-copy $f/* $dir/$tail
+	cat $f | dos2unix > $dir/$tail
+	endif
+end
+pcunmount

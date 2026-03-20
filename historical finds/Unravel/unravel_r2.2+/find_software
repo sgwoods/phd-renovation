@@ -1,0 +1,47 @@
+#!/usr/bin/csh -f
+#
+# find an ANSI C compiler and the X home directory
+#
+#
+set dir_list = "/"
+if ($#argv != 0) set dir_list = ($argv)
+/bin/rm -f {cc,X}-search.out
+foreach dir ($dir_list)
+	echo "searching directory $dir"
+	(find $dir \( -name '[ag]cc' -o -name cc \) -print >>cc-search.out) >& /dev/null
+	(find $dir -type d -name X11 -print >>X-search.out) >& /dev/null
+end
+echo "Possible C compilers"
+cat cc-search.out
+echo " "
+echo "Possible X home directories"
+set try = `cat X-search.out`
+@ n = 0
+foreach x ($try)
+	set head_no_x = $x:h
+	set tail_no_x = $head_no_x:t
+	@ ok = 1
+	if ( "$tail_no_x" != "include") @ ok = 0
+	if (!( -e $x/Xaw )) @ ok = 0
+	if (!(-e $x/../../lib)) @ ok = 0
+	if ($ok) then
+		echo "          $head_no_x:h"
+		@ n++
+	endif
+end
+if ($n == 0) then
+	foreach x ($try)
+		set head_no_x = $x:h
+		set tail_no_x = $head_no_x:t
+		@ ok = 1
+		@ is_lib = 0
+		if ( "$tail_no_x" != "include") @ ok = 0
+		if ( "$tail_no_x" == "lib") @ is_lib = 1
+		if (!( -e $x/Xaw )) @ ok = 0
+		if ($ok) then
+			echo "          $head_no_x:h for include files"
+		else if ($is_lib) then
+			echo "          $head_no_x:h for library files"
+		endif
+	end
+endif

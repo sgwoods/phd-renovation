@@ -1,0 +1,43 @@
+/*ident	"@(#)gen++:d.pkg/examples/OP.query	1.4" */
+/* generate operator<< definitions to display data members of classes. */
+ROOTPROC OP
+FILE FD "OP.out"
+
+PROC OP
+ROOT CFile;
+{
+LOCAL GNODE N;
+<globals
+  {Declaration
+	[
+	  (?ClassDef
+	    (PRINT FD "\n\n// Found %s at %s\n" $token $location)
+	    (PRINT FD "ostream& operator<<(ostream& os, ")
+	    <defname (PRINT FD "%s" $token)>
+	    (PRINT FD "& x)\n{\n")
+	    (PRINT FD "\tos << \"object of type ")
+	    <defname (PRINT FD "%s" $token)>
+	    (PRINT FD " {\" << endl;\n")
+	    <members
+	      {MemberSpec
+	        (?MemberDeclaration
+	          <def
+	            (?ObjectSpec
+	              (PRINT FD "\t// %s data member " (SLOT scope $token))
+		      <defname (PRINT FD "%s" $token)>
+	              (PRINT FD " at %s\n" $location)
+	              (ASSIGN N (SLOT defname $token))
+	              (PRINT FD "\tos << \"\t\" << x.%s << endl;\n" N)
+	            )
+	          >
+	        )
+	      }
+	    >
+	    (PRINT FD "\tos << \"}\" << endl;\n")
+	    (PRINT FD "\treturn os;\n")
+	    (PRINT FD "}\n")
+	  )
+	]
+  }
+>
+}

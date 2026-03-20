@@ -1,0 +1,65 @@
+
+(testC_stmt15
+ (
+(testC_1 1 main 15 (Finish))
+ )
+)
+
+(testC_stmt5 
+ (
+(testC_2 2 main 5 (Assign i 0) (i 0) (i))
+ )
+ ( (i testC 3)  )
+ ( (i testC 3)  )
+)
+
+(testC_stmt6 
+ (
+(testC_3 3 main 6 (Assign k 1) (k 1) (k))
+ )
+ ( (k testC 3)  )
+ ( (k testC 3)  )
+)
+
+(testC_stmt7 
+ (
+(testC_4 4 main 7 (Assign j 2) (j 2) (j))
+(testC_5 5 main 7 (Assign i 2) (i 2) (i))
+(testC_6 6 main 7 (Assign k 2) (k 2) (k))
+ )
+ ( (k testC 3) (i testC 3) (j testC 3)  )
+ ( (k testC 3) (i testC 3) (j testC 3)  )
+)
+
+(testC_stmt9 
+ (
+(testC_7 7 main 9 (Loop While))
+ )
+)
+
+(testC_Cond1 
+ (
+(testC_8 8 main 9 (Less i 20 testC_R_1) (i 20 testC_R_1) (testC_R_1))
+ )
+ ( (i testC 3)  )
+ (  )
+)
+
+(testC_stmt11 
+ (
+(testC_9 9 main 11 (Index A i testC_R_2) (A i testC_R_2) (testC_R_2))
+(testC_10 10 main 11 (Assign testC_R_2 32) (testC_R_2 32) (testC_R_2))
+ )
+ ( (A testC 4) (i testC 3)  )
+ (  )
+)
+
+(testC_stmt12 
+ (
+(testC_11 11 main 12 (Assign testC_R_3 i) (testC_R_3 i) (testC_R_3))
+(testC_12 12 main 12 (Plus i  1 testC_R_4) (i testC_R_4) (testC_R_4))
+(testC_13 13 main 12 (Assign i testC_R_4) (i testC_R_4) (i))
+ )
+ ( (i testC 3)  )
+ ( (i testC 3)  )
+)

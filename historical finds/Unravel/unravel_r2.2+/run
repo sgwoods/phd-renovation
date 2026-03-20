@@ -1,0 +1,105 @@
+#!/bin/csh -f
+#############################################################
+#                                                           #
+#                                                           #
+#  to run the analyzer: run options files                   #
+#                                                           #
+#     options -I -D and -U are passed to cpp                #
+#     option -x11 adds -I/applic/X11R5/include to cpp       #
+#     option -LIF creates LIF and related files             #
+#     option -echo prints commands to be executed (no exec) #
+#     option -tmp places output files in /tmp               #
+#     option -v prints the sccs version number              #
+#                                                           #
+#     other options are passed to parser                    #
+#                                                           #
+#############################################################
+set version = "@(#)run	1.3  9/29/94"
+#############################################################
+set path = (~jimmy/slice/ansi $path)
+set files
+set pp
+set ff = 0
+set out = 0
+set echo_mode = 0
+set tmp_mode = 0
+foreach p ($argv)
+	if (-e $p) then
+		set files = ($files $p)
+	else if ("$p" =~ -[lL][iI][fF] ) then
+		set ff = 1
+	else if ( "$p" == "-x11") then
+		set pp = ($pp -I/applic/X11R5/include)
+	else if ("$p" =~ -[UID]* ) then
+		set pp = ($pp $p)
+	else if ("$p" == "-v" ) then
+		echo run $version
+		exit 0
+	else if ("$p" == "-tmp" ) then
+		set tmp_mode = 1
+	else if ("$p" == "-echo" ) then
+		set echo_mode = 1
+	else if ("$p" == "-test" ) then
+		alias parser PARSER
+	else
+		if ($?opts) then
+			set opts = ($opts $p)
+		else 
+			set opts = ($p)
+		endif
+	endif
+end
+
+if ($?opts) then
+	set skip = 1
+else
+	set opts
+	set skip = 0
+endif
+#echo "options: " $opts
+#echo "files: " $files
+#echo "cpp: " $pp
+foreach file ($files)
+	set date = `date`
+	set dir = $file:h
+	if (! -d $dir) set dir = "."
+	if ( -w $dir ) then
+		set outfile = $file:r.LIF
+	else
+		set outfile = /dev/null
+#		echo $dir " is not writeble ($file)"
+	endif
+	if ( $tmp_mode ) then
+		set outfile = /tmp/$file:t
+		set outfile = $outfile:r.LIF
+	endif
+	if ($echo_mode) then
+		if ($ff) then
+			echo "gcc -E -I$dir $pp $file | parser $opts -o $outfile"
+			echo "sort -n '-t(' +0 -1 +1 < $outfile > & ! $outfile:r.S"
+			echo "wc $file >> $outfile:r.T"
+			echo "summary $outfile >$outfile:r.U"
+		else
+			echo "gcc -E -I$dir $pp $file | parser $opts >/dev/null"
+		endif
+		set ok = $status
+	else
+		if ($ff) then
+			gcc -E -I$dir $pp $file | parser $opts -o $outfile
+			set ok = $status
+			vprep $file
+			sort -n '-t(' +0 -1 +1 < $outfile > & ! $outfile:r.S
+			if ( -e $outfile:r.T) wc $file >> $outfile:r.T
+			summary $outfile >$outfile:r.U
+			echo "status " $ok " " $date " " $file
+		else if ($skip) then
+			gcc -E -I$dir $pp $file | parser $opts -o /dev/null
+			set ok = $status
+			echo "status " $ok " " $date " " $file
+		else
+			gcc -E -I$dir $pp $file | parser $opts >/dev/null
+			set ok = $status
+			echo "status " $ok " " $date " " $file
+		endif
+	endif
+end

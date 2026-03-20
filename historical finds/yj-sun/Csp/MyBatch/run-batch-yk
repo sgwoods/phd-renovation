@@ -1,0 +1,14 @@
+#!/bin/csh
+cd /users/yjzhang/thesis/CSP/qcsp-alex/
+
+\cp leap-year-data.lisp this-exp-data.lisp
+ 
+nice time /extra/acl4.2/bin/cl <\
+        /users/yjzhang/thesis/CSP/qcsp-alex/MyBatch/batch-7.lisp >\
+        /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/7.msg
+ 
+mkdir /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/bexp-y2k
+\cp   /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/Inter/* \
+     /users/yjzhang/thesis/CSP/qcsp-alex/testdata/Results/bexp-y2k
+
+

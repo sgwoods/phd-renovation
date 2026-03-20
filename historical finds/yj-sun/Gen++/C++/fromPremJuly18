@@ -1,0 +1,60 @@
+From prem@amontillado.research.att.com Thu Jul 18 11:06:17 1996
+Return-Path: <prem@amontillado.research.att.com>
+Received: from ns.research.att.com by spectra.eng.hawaii.edu (4.1/SMI-4.1)
+	id AA16177; Thu, 18 Jul 96 11:06:13 HST
+Received: from research.research.att.com by ns; Thu Jul 18 17:11:08 EDT 1996
+Received: from amontillado.research.att.com by research; Thu Jul 18 17:09:02 EDT 1996
+Received: from radish.research.att.com (radish.research.att.com [135.104.20.122]) by amontillado.research.att.com (8.7.5/8.7) with ESMTP id RAA23881; Thu, 18 Jul 1996 17:08:56 -0400 (EDT)
+Received: (from prem@localhost) by radish.research.att.com (8.7.5/8.7) id VAA21296; Thu, 18 Jul 1996 21:08:50 GMT
+From: "Premkumar Devanbu" <prem@research.att.com>
+Message-Id: <9607181708.ZM21294@radish.research.att.com>
+Date: Thu, 18 Jul 1996 17:08:49 -0400
+In-Reply-To: yjzhang@spectra.eng.hawaii.edu (Yongjun ZHANG)
+        "Re: question on gen++ (fwd)" (Jul 18, 10:32am)
+References: <9607182032.AA15703@spectra.eng.hawaii.edu>
+Reply-To: prem@research.att.com
+X-Mailer: Z-Mail (3.1.0 22feb94 MediaMail)
+To: yjzhang@spectra.eng.hawaii.edu (Yongjun ZHANG)
+Subject: Re: question on gen++ (fwd)
+Cc: s_fong@research.att.com
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+Status: RO
+
+Yes,  cons is actually a binary operator that produces a result.
+(See  Section 6.3.6 in  the manual) NIL is a constructor that creates an
+empty list of a given type.
+
+eg.
+
+
+GNODE var;
+GNODE alist;
+/* Suppose DealWithArg returns a node of type Expr */
+
+(ASSIGN alist (NIL  Expression))  /* Create an empty list of Expressions */
+<callargs
+   {Expression
+            (ASSIGN alist (CONS (CALL DealWithArg) alist))
+   }
+>
+
+/* As long as DealWithArg always returns a GNODE */
+
+/* Now you can do something with the list you just constructed, like
+   this  (Page 11 of manual ) */
+
+(TRAVERSE  Expression alist {Expression  (?etc etc )} )
+
+
+
+
+
+-- 
+Prem Devanbu						(W) 908 582 2062
+Software & Systems Research Laboratory,		(H) 908 757 3748
+MH 2B-417 AT&T  Research				(FAX) 908 582 7550
+600 Mountain Ave,					prem@research.att.com
+Murray Hill NJ 07974, USA	   (*****MIME  Accepted !! *****)
+http://www.research.att.com/orgs/ssr/people/prem
+

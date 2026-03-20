@@ -1,0 +1,428 @@
+
+(dmaxc_stmt51
+ (
+(dmaxc_1 1 dmax 51 (Finish))
+ )
+)
+
+(dmaxc_stmt14 
+ (
+(dmaxc_2 2 dmax 14 (Assign mean 0.0) (mean 0.0) (mean))
+ )
+ ( (mean dmaxc 10)  )
+ ( (mean dmaxc 10)  )
+)
+
+(dmaxc_stmt15 
+ (
+(dmaxc_3 3 dmax 15 (Assign sdx 0.0) (sdx 0.0) (sdx))
+ )
+ ( (sdx dmaxc 10)  )
+ ( (sdx dmaxc 10)  )
+)
+
+(dmaxc_stmt17 
+ (
+(dmaxc_4 4 dmax 17 (Ifstatement))
+ )
+)
+
+(dmaxc_stmt17then
+ (
+(dmaxc_5 5 dmax 17 (BridgeNull))
+ )
+)
+
+(dmaxc_Cond1 
+ (
+(dmaxc_6 6 dmax 17 (Mult n 1 dmaxc_R_1) (n 1 dmaxc_R_1) (dmaxc_R_1))
+(dmaxc_7 7 dmax 17 (UserCall malloc dmaxc_R_1  dmaxc_R_2) (dmaxc_R_1 dmaxc_R_2) (dmaxc_R_2))
+(dmaxc_8 8 dmax 17 (Assign xcopy dmaxc_R_2) (xcopy dmaxc_R_2) (xcopy))
+(dmaxc_9 9 dmax 17 (EqEq dmaxc_R_2 0 dmaxc_R_3) (dmaxc_R_2 0 dmaxc_R_3) (dmaxc_R_3))
+ )
+ ( (xcopy dmaxc 10) (n dmaxc 8)  )
+ ( (xcopy dmaxc 10)  )
+)
+
+(dmaxc_stmt18 
+ (
+(dmaxc_10 10 dmax 18 (Uminus 1 dmaxc_R_4) (1 dmaxc_R_4) (dmaxc_R_4))
+(dmaxc_11 11 dmax 18 (UserCall exit dmaxc_R_4  dmaxc_R_5) (dmaxc_R_4 dmaxc_R_5) (dmaxc_R_5))
+(dmaxc_12 12 dmax 18 (Index _iob 2 dmaxc_R_6) (_iob 2) (dmaxc_R_6))
+(dmaxc_13 13 dmax 18 (AddrOf dmaxc_R_6 dmaxc_R_7) (dmaxc_R_6 dmaxc_R_7) (dmaxc_R_7))
+(dmaxc_14 14 dmax 18 (UserCall fprintf dmaxc_R_7 StringConst  dmaxc_R_8) (dmaxc_R_7 StringConst dmaxc_R_8) (dmaxc_R_8))
+(dmaxc_15 15 dmax 18 (Comma dmaxc_R_8 dmaxc_R_5 dmaxc_R_9) (dmaxc_R_8 dmaxc_R_5 dmaxc_R_9) (dmaxc_R_9))
+ )
+ ( ( ::_iob dmaxc 15)  )
+ (  )
+)
+
+(dmaxc_stmt20 
+ (
+(dmaxc_16 16 dmax 20 (UserCall sqrt 2.0  dmaxc_R_10) (2.0 dmaxc_R_10) (dmaxc_R_10))
+(dmaxc_17 17 dmax 20 (Assign sqrt2 dmaxc_R_10) (sqrt2 dmaxc_R_10) (sqrt2))
+ )
+ ( (sqrt2 dmaxc 10)  )
+ ( (sqrt2 dmaxc 10)  )
+)
+
+(dmaxc_stmt21 
+ (
+(dmaxc_18 18 dmax 21 (UserCall sqrt n  dmaxc_R_11) (n dmaxc_R_11) (dmaxc_R_11))
+(dmaxc_19 19 dmax 21 (Assign sqrtn dmaxc_R_11) (sqrtn dmaxc_R_11) (sqrtn))
+ )
+ ( (sqrtn dmaxc 10) (n dmaxc 8)  )
+ ( (sqrtn dmaxc 10)  )
+)
+
+(dmaxc_stmt23
+ (
+(dmaxc_20 20 dmax 23 (ForLoop))
+ )
+)
+
+(dmaxc_Cond2 
+ (
+(dmaxc_21 21 dmax 23 (Less i n dmaxc_R_12) (i n dmaxc_R_12) (dmaxc_R_12))
+ )
+ ( (i dmaxc 12) (n dmaxc 8)  )
+ (  )
+)
+
+(dmaxc_stmt23test
+ (
+(dmaxc_22 22 dmax 23 (BridgeNull))
+ )
+)
+
+(dmaxc_stmt23init 
+ (
+(dmaxc_23 23 dmax 23 (Assign i 0) (i 0) (i))
+ )
+ ( (i dmaxc 12)  )
+ ( (i dmaxc 12)  )
+)
+
+(dmaxc_stmt23incr 
+ (
+(dmaxc_24 24 dmax 23 (Plus i  1 dmaxc_R_13) (i dmaxc_R_13) (dmaxc_R_13))
+(dmaxc_25 25 dmax 23 (Assign i dmaxc_R_13) (i dmaxc_R_13) (i))
+ )
+ ( (i dmaxc 12)  )
+ ( (i dmaxc 12)  )
+)
+
+(dmaxc_stmt25 
+ (
+(dmaxc_26 26 dmax 25 (Index xcopy i dmaxc_R_14) (xcopy i) (dmaxc_R_14))
+(dmaxc_27 27 dmax 25 (Index x i dmaxc_R_15) (x i) (dmaxc_R_15))
+(dmaxc_28 28 dmax 25 (Assign dmaxc_R_14 dmaxc_R_15) (dmaxc_R_14 dmaxc_R_15) (dmaxc_R_14))
+ )
+ ( (xcopy dmaxc 10) (i dmaxc 12) (x dmaxc 8) (i dmaxc 12)  )
+ (  )
+)
+
+(dmaxc_stmt26 
+ (
+(dmaxc_29 29 dmax 26 (Index x i dmaxc_R_16) (x i) (dmaxc_R_16))
+(dmaxc_30 30 dmax 26 (PlusAssign mean dmaxc_R_16) (mean dmaxc_R_16) (mean))
+ )
+ ( (mean dmaxc 10) (x dmaxc 8) (i dmaxc 12)  )
+ ( (mean dmaxc 10)  )
+)
+
+(dmaxc_stmt27 
+ (
+(dmaxc_31 31 dmax 27 (Index x i dmaxc_R_17) (x i) (dmaxc_R_17))
+(dmaxc_32 32 dmax 27 (Index x i dmaxc_R_18) (x i) (dmaxc_R_18))
+(dmaxc_33 33 dmax 27 (Mult dmaxc_R_18 dmaxc_R_17 dmaxc_R_19) (dmaxc_R_18 dmaxc_R_17 dmaxc_R_19) (dmaxc_R_19))
+(dmaxc_34 34 dmax 27 (PlusAssign sdx dmaxc_R_19) (sdx dmaxc_R_19) (sdx))
+ )
+ ( (sdx dmaxc 10) (x dmaxc 8) (i dmaxc 12) (x dmaxc 8) (i dmaxc 12)  )
+ ( (sdx dmaxc 10)  )
+)
+
+(dmaxc_stmt29 
+ (
+(dmaxc_35 35 dmax 29 (Minus n 1.0 dmaxc_R_20) (n 1.0 dmaxc_R_20) (dmaxc_R_20))
+(dmaxc_36 36 dmax 29 (Mult n dmaxc_R_20 dmaxc_R_21) (n dmaxc_R_20 dmaxc_R_21) (dmaxc_R_21))
+(dmaxc_37 37 dmax 29 (Mult mean mean dmaxc_R_22) (mean mean dmaxc_R_22) (dmaxc_R_22))
+(dmaxc_38 38 dmax 29 (Mult n sdx dmaxc_R_23) (n sdx dmaxc_R_23) (dmaxc_R_23))
+(dmaxc_39 39 dmax 29 (Minus dmaxc_R_23 dmaxc_R_22 dmaxc_R_24) (dmaxc_R_23 dmaxc_R_22 dmaxc_R_24) (dmaxc_R_24))
+(dmaxc_40 40 dmax 29 (Div dmaxc_R_24 dmaxc_R_21 dmaxc_R_25) (dmaxc_R_24 dmaxc_R_21 dmaxc_R_25) (dmaxc_R_25))
+(dmaxc_41 41 dmax 29 (UserCall sqrt dmaxc_R_25  dmaxc_R_26) (dmaxc_R_25 dmaxc_R_26) (dmaxc_R_26))
+(dmaxc_42 42 dmax 29 (Assign sdx dmaxc_R_26) (sdx dmaxc_R_26) (sdx))
+ )
+ ( (sdx dmaxc 10) (n dmaxc 8) (sdx dmaxc 10) (mean dmaxc 10) (mean dmaxc 10) (n dmaxc 8) (n dmaxc 8)  )
+ ( (sdx dmaxc 10)  )
+)
+
+(dmaxc_stmt30 
+ (
+(dmaxc_43 43 dmax 30 (DivAssign mean n) (mean n) (mean))
+ )
+ ( (mean dmaxc 10) (n dmaxc 8)  )
+ ( (mean dmaxc 10)  )
+)
+
+(dmaxc_stmt31 
+ (
+(dmaxc_44 44 dmax 31 (AddrOf dcmp dmaxc_R_27) (dcmp dmaxc_R_27) (dmaxc_R_27))
+(dmaxc_45 45 dmax 31 (UserCall qsort xcopy n 1 dmaxc_R_27  dmaxc_R_28) (xcopy n 1 dmaxc_R_27 dmaxc_R_28) (dmaxc_R_28))
+ )
+)
+
+(dmaxc_stmt32
+ (
+(dmaxc_46 46 dmax 32 (ForLoop))
+ )
+)
+
+(dmaxc_Cond3 
+ (
+(dmaxc_47 47 dmax 32 (Less i n dmaxc_R_29) (i n dmaxc_R_29) (dmaxc_R_29))
+ )
+ ( (i dmaxc 12) (n dmaxc 8)  )
+ (  )
+)
+
+(dmaxc_stmt32test
+ (
+(dmaxc_48 48 dmax 32 (BridgeNull))
+ )
+)
+
+(dmaxc_stmt32init 
+ (
+(dmaxc_49 49 dmax 32 (Assign i 0) (i 0) (i))
+ )
+ ( (i dmaxc 12)  )
+ ( (i dmaxc 12)  )
+)
+
+(dmaxc_stmt32incr 
+ (
+(dmaxc_50 50 dmax 32 (Plus i  1 dmaxc_R_30) (i dmaxc_R_30) (dmaxc_R_30))
+(dmaxc_51 51 dmax 32 (Assign i dmaxc_R_30) (i dmaxc_R_30) (i))
+ )
+ ( (i dmaxc 12)  )
+ ( (i dmaxc 12)  )
+)
+
+(dmaxc_stmt34 
+ (
+(dmaxc_52 52 dmax 34 (Index xcopy i dmaxc_R_31) (xcopy i) (dmaxc_R_31))
+(dmaxc_53 53 dmax 34 (Index xcopy i dmaxc_R_32) (xcopy i) (dmaxc_R_32))
+(dmaxc_54 54 dmax 34 (Minus dmaxc_R_32 mean dmaxc_R_33) (dmaxc_R_32 mean dmaxc_R_33) (dmaxc_R_33))
+(dmaxc_55 55 dmax 34 (Div dmaxc_R_33 sdx dmaxc_R_34) (dmaxc_R_33 sdx dmaxc_R_34) (dmaxc_R_34))
+(dmaxc_56 56 dmax 34 (Assign dmaxc_R_31 dmaxc_R_34) (dmaxc_R_31 dmaxc_R_34) (dmaxc_R_31))
+ )
+ ( (xcopy dmaxc 10) (i dmaxc 12) (xcopy dmaxc 10) (i dmaxc 12) (mean dmaxc 10) (sdx dmaxc 10)  )
+ (  )
+)
+
+(dmaxc_stmt35 
+ (
+(dmaxc_57 57 dmax 35 (Index xcopy i dmaxc_R_35) (xcopy i) (dmaxc_R_35))
+(dmaxc_58 58 dmax 35 (Div dmaxc_R_35 sqrt2 dmaxc_R_36) (dmaxc_R_35 sqrt2 dmaxc_R_36) (dmaxc_R_36))
+(dmaxc_59 59 dmax 35 (UserCall normp dmaxc_R_36  dmaxc_R_37) (dmaxc_R_36 dmaxc_R_37) (dmaxc_R_37))
+(dmaxc_60 60 dmax 35 (Div dmaxc_R_37 2.0 dmaxc_R_38) (dmaxc_R_37 2.0 dmaxc_R_38) (dmaxc_R_38))
+(dmaxc_61 61 dmax 35 (Plus 0.5 dmaxc_R_38 dmaxc_R_39) (0.5 dmaxc_R_38 dmaxc_R_39) (dmaxc_R_39))
+(dmaxc_62 62 dmax 35 (Assign fx dmaxc_R_39) (fx dmaxc_R_39) (fx))
+ )
+ ( (fx dmaxc 10) (xcopy dmaxc 10) (i dmaxc 12) (sqrt2 dmaxc 10)  )
+ ( (fx dmaxc 10)  )
+)
+
+(dmaxc_stmt36 
+ (
+(dmaxc_63 63 dmax 36 (Ifstatement))
+ )
+)
+
+(dmaxc_stmt36then
+ (
+(dmaxc_64 64 dmax 36 (BridgeNull))
+ )
+)
+
+(dmaxc_Cond4 
+ (
+(dmaxc_65 65 dmax 36 (LessEq fx 1e-5 dmaxc_R_40) (fx 1e-5 dmaxc_R_40) (dmaxc_R_40))
+ )
+ ( (fx dmaxc 10)  )
+ (  )
+)
+
+(dmaxc_stmt37 
+ (
+(dmaxc_66 66 dmax 37 (Assign fx 1e-5) (fx 1e-5) (fx))
+ )
+ ( (fx dmaxc 10)  )
+ ( (fx dmaxc 10)  )
+)
+
+(dmaxc_stmt38 
+ (
+(dmaxc_67 67 dmax 38 (Ifstatement))
+ )
+)
+
+(dmaxc_stmt38then
+ (
+(dmaxc_68 68 dmax 38 (BridgeNull))
+ )
+)
+
+(dmaxc_Cond5 
+ (
+(dmaxc_69 69 dmax 38 (GreaterEq fx 0.99999 dmaxc_R_41) (fx 0.99999 dmaxc_R_41) (dmaxc_R_41))
+ )
+ ( (fx dmaxc 10)  )
+ (  )
+)
+
+(dmaxc_stmt39 
+ (
+(dmaxc_70 70 dmax 39 (Assign fx 0.99999) (fx 0.99999) (fx))
+ )
+ ( (fx dmaxc 10)  )
+ ( (fx dmaxc 10)  )
+)
+
+(dmaxc_stmt40 
+ (
+(dmaxc_71 71 dmax 40 (Plus i 1 dmaxc_R_42) (i 1 dmaxc_R_42) (dmaxc_R_42))
+(dmaxc_72 72 dmax 40 (Div dmaxc_R_42 n dmaxc_R_43) (dmaxc_R_42 n dmaxc_R_43) (dmaxc_R_43))
+(dmaxc_73 73 dmax 40 (Minus dmaxc_R_43 fx dmaxc_R_44) (dmaxc_R_43 fx dmaxc_R_44) (dmaxc_R_44))
+(dmaxc_74 74 dmax 40 (Assign dp dmaxc_R_44) (dp dmaxc_R_44) (dp))
+ )
+ ( (dp dmaxc 11) (i dmaxc 12) (n dmaxc 8) (fx dmaxc 10)  )
+ ( (dp dmaxc 11)  )
+)
+
+(dmaxc_stmt41 
+ (
+(dmaxc_75 75 dmax 41 (Div i n dmaxc_R_45) (i n dmaxc_R_45) (dmaxc_R_45))
+(dmaxc_76 76 dmax 41 (Minus fx dmaxc_R_45 dmaxc_R_46) (fx dmaxc_R_45 dmaxc_R_46) (dmaxc_R_46))
+(dmaxc_77 77 dmax 41 (Assign dm dmaxc_R_46) (dm dmaxc_R_46) (dm))
+ )
+ ( (dm dmaxc 11) (fx dmaxc 10) (i dmaxc 12) (n dmaxc 8)  )
+ ( (dm dmaxc 11)  )
+)
+
+(dmaxc_stmt42 
+ (
+(dmaxc_78 78 dmax 42 (Ifstatement))
+ )
+)
+
+(dmaxc_stmt42then
+ (
+(dmaxc_79 79 dmax 42 (BridgeNull))
+ )
+)
+
+(dmaxc_Cond6
+ (
+(dmaxc_80 80 dmax 42 (BridgeNull))
+ )
+)
+
+(dmaxc_Cond7 
+ (
+(dmaxc_81 81 dmax 42 (EqEq i 0 dmaxc_R_47) (i 0 dmaxc_R_47) (dmaxc_R_47))
+ )
+ ( (i dmaxc 12)  )
+ (  )
+)
+
+(dmaxc_Cond8 
+ (
+(dmaxc_82 82 dmax 42 (Greater dp dp_max dmaxc_R_48) (dp dp_max dmaxc_R_48) (dmaxc_R_48))
+ )
+ ( (dp dmaxc 11) (dp_max dmaxc 11)  )
+ (  )
+)
+
+(dmaxc_stmt43 
+ (
+(dmaxc_83 83 dmax 43 (Assign dp_max dp) (dp_max dp) (dp_max))
+ )
+ ( (dp_max dmaxc 11) (dp dmaxc 11)  )
+ ( (dp_max dmaxc 11)  )
+)
+
+(dmaxc_stmt44 
+ (
+(dmaxc_84 84 dmax 44 (Ifstatement))
+ )
+)
+
+(dmaxc_stmt44then
+ (
+(dmaxc_85 85 dmax 44 (BridgeNull))
+ )
+)
+
+(dmaxc_Cond9
+ (
+(dmaxc_86 86 dmax 44 (BridgeNull))
+ )
+)
+
+(dmaxc_Cond10 
+ (
+(dmaxc_87 87 dmax 44 (EqEq i 0 dmaxc_R_49) (i 0 dmaxc_R_49) (dmaxc_R_49))
+ )
+ ( (i dmaxc 12)  )
+ (  )
+)
+
+(dmaxc_Cond11 
+ (
+(dmaxc_88 88 dmax 44 (Greater dm dm_max dmaxc_R_50) (dm dm_max dmaxc_R_50) (dmaxc_R_50))
+ )
+ ( (dm dmaxc 11) (dm_max dmaxc 11)  )
+ (  )
+)
+
+(dmaxc_stmt45 
+ (
+(dmaxc_89 89 dmax 45 (Assign dm_max dm) (dm_max dm) (dm_max))
+ )
+ ( (dm_max dmaxc 11) (dm dmaxc 11)  )
+ ( (dm_max dmaxc 11)  )
+)
+
+(dmaxc_stmt47 
+ (
+(dmaxc_90 90 dmax 47 (Index y 0 dmaxc_R_51) (y 0) (dmaxc_R_51))
+(dmaxc_91 91 dmax 47 (Assign dmaxc_R_51 dp_max) (dmaxc_R_51 dp_max) (dmaxc_R_51))
+ )
+ ( (y dmaxc 9) (dp_max dmaxc 11)  )
+ (  )
+)
+
+(dmaxc_stmt48 
+ (
+(dmaxc_92 92 dmax 48 (Index y 1 dmaxc_R_52) (y 1) (dmaxc_R_52))
+(dmaxc_93 93 dmax 48 (Assign dmaxc_R_52 dm_max) (dmaxc_R_52 dm_max) (dmaxc_R_52))
+ )
+ ( (y dmaxc 9) (dm_max dmaxc 11)  )
+ (  )
+)
+
+(dmaxc_stmt49 
+ (
+(dmaxc_94 94 dmax 49 (UserCall free xcopy  dmaxc_R_53) (xcopy dmaxc_R_53) (dmaxc_R_53))
+ )
+)
+
+(dmaxc_stmt50 
+ (
+(dmaxc_95 95 dmax 50 (Return y) (y) nil)
+ )
+ ( (y dmaxc 9)  )
+ (  )
+)

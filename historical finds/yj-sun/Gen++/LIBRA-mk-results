@@ -1,0 +1,33 @@
+$ mk myquery/compound-c
++ [ -z myquery/compound-c -o ! -f myquery/compound-c.query ]
++ Q=myquery/compound-c.query
++ shift
++ make CPL=CC QFILE=myquery/compound-c.query analyzer
+/proj/seg/team/sgwoods/YJ/Gen++/cplang myquery/compound-c.query
+"myquery/compound-c.query" line 316 column 27: warning: < ue_arg > is not a slot on node type < UnaryExpr >, but on a derived class
+"myquery/compound-c.query" line 393 column 26: warning: < stmt > is not a slot on node type < NameRef >, but on a derived class
+cplang: analyzer.c      generated.
+cplang: GenoaGetOpts.c  generated.
+cplang: AnalMain.c      generated.
+cplang: GenoaMainRoutine.c      generated.
+CC -g  -I/proj/seg/team/sgwoods/YJ/Gen++  -c AnalMain.c
+"print.h", line 33: Warning (Anachronism): Identifier expected instead of "}".
+"print.h", line 33: Note: Type "CC -migration" for more on anachronisms.
+"Gmainheader.h", line 323: Warning (Anachronism): Identifier expected instead of "}".
+2 Warning(s) detected.
+CC -g  -I/proj/seg/team/sgwoods/YJ/Gen++  -c analyzer.c
+"print.h", line 33: Warning (Anachronism): Identifier expected instead of "}".
+"print.h", line 33: Note: Type "CC -migration" for more on anachronisms.
+"Gmainheader.h", line 323: Warning (Anachronism): Identifier expected instead of "}".
+2 Warning(s) detected.
+CC -g  -I/proj/seg/team/sgwoods/YJ/Gen++   -c GenoaGetOpts.c
+CC -c /proj/seg/team/sgwoods/YJ/Gen++/mknewname.c
+"/proj/seg/team/sgwoods/YJ/Gen++/print.h", line 33: Warning (Anachronism): Identifier expected instead of "}".
+"/proj/seg/team/sgwoods/YJ/Gen++/print.h", line 33: Note: Type "CC -migration" for more on anachronisms.
+"/proj/seg/team/sgwoods/YJ/Gen++/Gmainheader.h", line 323: Warning (Anachronism): Identifier expected instead of "}".
+2 Warning(s) detected.
+CC -o analyzer -g  -I/proj/seg/team/sgwoods/YJ/Gen++  AnalMain.o analyzer.o GenoaGetOpts.o /proj/seg/team/sgwoods/YJ/Gen++/glib.o /proj/seg/team/sgwoods/YJ/Gen++/gfront.a mknewname.o
+ild: (bad file) the file /proj/seg/team/sgwoods/YJ/Gen++/glib.o is not in a known format
+make: *** [analyzer] Error 1
++ echo DONE.
+DONE.

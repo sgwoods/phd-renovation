@@ -1,0 +1,96 @@
+call insert from struct_decl add(a)
+call insert from struct_decl add(b)
+for array call insert from struct_decl add(x)
+INS struct mem new: x.a
+INS struct mem new: x.b
+call insert from struct_decl add(y)
+INS struct mem new: y.a
+INS struct mem new: y.b
+variable declared: z  at level 1
+insert members:
+new: z.x
+new: z.x.a
+new: z.x.b
+new: z.y
+new: z.y.a
+new: z.y.b
+end insert
+26(0,1,6)     z is structure with 6 members
+end var decl
+
+variable declared: zed  at level 1
+zed is an array
+insert members:
+new: zed.x
+new: zed.x.a
+new: zed.x.b
+new: zed.y
+new: zed.y.a
+new: zed.y.b
+end insert
+26(0,8,6)     zed is structure with 6 members
+end var decl
+
+18(1,5,1,5,4)    source for node 1 line 5 cols 1-4
+1(1,1,main)   Function main 1 entry at 1
+variable declared: i  at level 3
+insert members:
+end insert
+end var decl
+
+variable declared: w  at level 3
+w is an array
+insert members:
+end insert
+end var decl
+
+8(2,1)   local def to i (1) at stmt 2 on line 9
+18(2,9,2,9,7)    source for node 2 line 9 cols 2-7
+8(3,2)   local def to w (2) at stmt 3 on line 10
+7(3,2)   local ref to w (2) at stmt 3 on line 10
+7(3,1)   local ref to i (1) at stmt 3 on line 10
+18(3,10,2,10,10)    source for node 3 line 10 cols 2-10
+16(2,3)   connect from 2 to 3
+dot op: zed.y.a seen 0  is 0
+10(4,13)   global def to zed.y.a (13) at stmt 4 on line 11
+18(4,11,2,11,16)    source for node 4 line 11 cols 2-16
+16(3,4)   connect from 3 to 4
+dot op: zed.x.b seen 0  is 0
+25(1,0,11)    address 1 is var 11 (zed.x.b) of proc 0
+24(5,1)    array address 1 refed at node 5
+18(5,12,2,12,19)    source for node 5 line 12 cols 2-19
+16(4,5)   connect from 4 to 5
+dot op: z.y.b seen 0  is 0
+10(6,7)   global def to z.y.b (7) at stmt 6 on line 13
+18(6,13,2,13,11)    source for node 6 line 13 cols 2-11
+16(5,6)   connect from 5 to 6
+dot op: z.x.a seen 0  is 0
+25(2,0,3)    address 2 is var 3 (z.x.a) of proc 0
+24(7,2)    array address 2 refed at node 7
+18(7,14,2,14,14)    source for node 7 line 14 cols 2-14
+16(6,7)   connect from 6 to 7
+4(2,w,A)    local id array
+4(1,i)    local id
+18(8,6,1,6,1)    source for node 8 line 6 cols 1-1
+18(9,15,1,15,1)    source for node 9 line 15 cols 1-1
+16(8,2)   connect from 8 to 2
+16(7,9)   connect from 7 to 9
+17(8,2,7)     nodes 2-7 require node 8
+17(9,8)     nodes 8-8 require node 9
+16(1,8)   connect from 1 to 8
+17(8,1)     nodes 1-1 require node 8
+2(9)    end function main
+5(8,zed,A)    Global id array
+5(1,z)    Global id
+5(2,z.x,A)    Global id array
+5(3,z.x.a,A)    Global id array
+5(4,z.x.b,A)    Global id array
+5(5,z.y)    Global id
+5(6,z.y.a)    Global id
+5(7,z.y.b)    Global id
+5(9,zed.x,A)    Global id array
+5(10,zed.x.a,A)    Global id array
+5(11,zed.x.b,A)    Global id array
+5(12,zed.y)    Global id
+5(13,zed.y.a)    Global id
+5(14,zed.y.b)    Global id

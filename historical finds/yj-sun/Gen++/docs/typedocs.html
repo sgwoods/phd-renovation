@@ -1,0 +1,2927 @@
+
+<p>
+<p>
+<h2> <a name = AccessSpec > AccessSpec <a> </h2> <strong> 
+public: / protected: / private: </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#MemberSpec">MemberSpec</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = AccessedName > AccessedName <a> </h2> <strong> 
+Name declared in an access declaration (see VisibilitySpec) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameRef">NameRef</a> <br>
+
+<UL>
+<LI>
+verbose <em> Print String   </em>
+<LI>
+name <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+!enclosing_class <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Actual > Actual <a> </h2> <strong> 
+Template actual parameter (for instantiations) </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#ExprActual">ExprActual</a>  <A HREF="typedocs.html#TypeActual">TypeActual</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = AddrOf > AddrOf <a> </h2> <strong> 
+\&x </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = AggrDecl > AggrDecl <a> </h2> <strong> 
+Forward declaration of aggregate </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrSpec">AggrSpec</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#UnionDecl">UnionDecl</a>  <A HREF="typedocs.html#ClassDecl">ClassDecl</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = AggrDef > AggrDef <a> </h2> <strong> 
+Definition of aggregate (class/struct/union) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrSpec">AggrSpec</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#AnonUnion">AnonUnion</a>  <A HREF="typedocs.html#UnionDef">UnionDef</a>  <A HREF="typedocs.html#ClassDef">ClassDef</a>
+<P>
+
+<UL>
+<LI>
+!friends <em> iteration of </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+<LI>
+members <em> iteration of </em>   <A HREF="typedocs.html#MemberSpec">MemberSpec</a>
+<LI>
+bases <em> list of </em>   <A HREF="typedocs.html#BaseSpec">BaseSpec</a>
+<LI>
+!size <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+<LI>
+attrs <em> list of properties of type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a>
+</UL>
+<p>
+<p>
+<h2> <a name = AggrSpec > AggrSpec <a> </h2> <strong> 
+Declaration of aggregate (class/struct/union) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#AggrDecl">AggrDecl</a>  <A HREF="typedocs.html#AggrDef">AggrDef</a>
+<P>
+
+<UL>
+<LI>
+flavor <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = AggrType > AggrType <a> </h2> <strong> 
+Class/Union type </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NamedType">NamedType</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#ClassType">ClassType</a>  <A HREF="typedocs.html#AnonType">AnonType</a>  <A HREF="typedocs.html#UnionType">UnionType</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = AggrValue > AggrValue <a> </h2> <strong> 
+Aggregate initializer </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#PrimaryExpr">PrimaryExpr</a> <br>
+
+<UL>
+<LI>
+elements <em> iteration of </em>   <A HREF="typedocs.html#Initializer">Initializer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = AndAssign > AndAssign <a> </h2> <strong> 
+\&= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = AnonType > AnonType <a> </h2> <strong> 
+Included for completeness </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrType">AggrType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = AnonUnion > AnonUnion <a> </h2> <strong> 
+Anonymous union declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrDef">AggrDef</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ArrayType> ArrayType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+
+<UL>
+<LI>
+element_type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+dimension <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!size <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Arrow > Arrow <a> </h2> <strong> 
+x->y </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#MemberRef">MemberRef</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = AsmSpec > AsmSpec <a> </h2> <strong> 
+Asm declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+
+<UL>
+<LI>
+asm_string <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = AsmStmt > AsmStmt <a> </h2> <strong> 
+Asm statement </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+asm_string <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Assign > Assign <a> </h2> <strong> 
+= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Assignment> Assignment <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Assign">Assign</a>  <A HREF="typedocs.html#RshiftAssign">RshiftAssign</a>  <A HREF="typedocs.html#LshiftAssign">LshiftAssign</a>  <A HREF="typedocs.html#MinusAssign">MinusAssign</a>  <A HREF="typedocs.html#PlusAssign">PlusAssign</a>  <A HREF="typedocs.html#ModAssign">ModAssign</a>  <A HREF="typedocs.html#MultAssign">MultAssign</a>  <A HREF="typedocs.html#DivAssign">DivAssign</a>  <A HREF="typedocs.html#OrAssign">OrAssign</a>  <A HREF="typedocs.html#AndAssign">AndAssign</a>  <A HREF="typedocs.html#XorAssign">XorAssign</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BA_Allocated> BA_Allocated <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BaseAllocation">BaseAllocation</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BA_Plain> BA_Plain <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BaseAllocation">BaseAllocation</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BA_Private> BA_Private <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BaseAccess">BaseAccess</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BA_Promoted> BA_Promoted <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BaseAllocation">BaseAllocation</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BA_Protected> BA_Protected <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BaseAccess">BaseAccess</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BA_Public> BA_Public <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BaseAccess">BaseAccess</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BA_Virtual> BA_Virtual <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BaseAllocation">BaseAllocation</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BaseAccess > BaseAccess <a> </h2> <strong> 
+Base access identification </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#BA_Private">BA_Private</a>  <A HREF="typedocs.html#BA_Protected">BA_Protected</a>  <A HREF="typedocs.html#BA_Public">BA_Public</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BaseAllocation > BaseAllocation <a> </h2> <strong> 
+Base class allocation attribute </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#BA_Promoted">BA_Promoted</a>  <A HREF="typedocs.html#BA_Allocated">BA_Allocated</a>  <A HREF="typedocs.html#BA_Virtual">BA_Virtual</a>  <A HREF="typedocs.html#BA_Plain">BA_Plain</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BaseSpec > BaseSpec <a> </h2> <strong> 
+Base class specification </strong>
+
+<UL>
+<LI>
+refname <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+allocation <em> list of properties of type </em>   <A HREF="typedocs.html#BaseAllocation">BaseAllocation</a>
+<LI>
+access <em> a </em>   <A HREF="typedocs.html#BaseAccess">BaseAccess</a>
+</UL>
+<p>
+<p>
+<h2> <a name = BinaryExpr > BinaryExpr <a> </h2> <strong> 
+Binary expression </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Plus">Plus</a>  <A HREF="typedocs.html#Minus">Minus</a>  <A HREF="typedocs.html#Mult">Mult</a>  <A HREF="typedocs.html#Div">Div</a>  <A HREF="typedocs.html#Mod">Mod</a>  <A HREF="typedocs.html#Assignment">Assignment</a>  <A HREF="typedocs.html#NotEq">NotEq</a>  <A HREF="typedocs.html#EqEq">EqEq</a>  <A HREF="typedocs.html#LessEq">LessEq</a>  <A HREF="typedocs.html#Less">Less</a>  <A HREF="typedocs.html#GreaterEq">GreaterEq</a>  <A HREF="typedocs.html#Greater">Greater</a>  <A HREF="typedocs.html#Lshift">Lshift</a>  <A HREF="typedocs.html#Rshift">Rshift</a>  <A HREF="typedocs.html#Comma">Comma</a>  <A HREF="typedocs.html#BitOr">BitOr</a>  <A HREF="typedocs.html#BitAnd">BitAnd</a>  <A HREF="typedocs.html#Xor">Xor</a>  <A HREF="typedocs.html#LogOr">LogOr</a>  <A HREF="typedocs.html#LogAnd">LogAnd</a>
+<P>
+
+<UL>
+<LI>
+be_rhs <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+be_lhs <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = BitAnd > BitAnd <a> </h2> <strong> 
+\& </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = BitOr > BitOr <a> </h2> <strong> 
+| </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Block > Block <a> </h2> <strong> 
+Explicit or compiler generated block </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+!blockend <em> a </em>   <A HREF="typedocs.html#Location">Location</a>
+<LI>
+blockbody <em> list of </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+!ltable <em> a </em>   <A HREF="typedocs.html#Table">Table</a>
+<LI>
+locals <em> iteration of </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+</UL>
+<p>
+<p>
+<h2> <a name = BogusDecl > BogusDecl <a> </h2> <strong> 
+Implies internal error </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Break> Break <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+!enclosing <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+</UL>
+<p>
+<p>
+<h2> <a name = BuiltinType > BuiltinType <a> </h2> <strong> 
+Built-in type </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#T_Void">T_Void</a>  <A HREF="typedocs.html#T_LDouble">T_LDouble</a>  <A HREF="typedocs.html#T_Double">T_Double</a>  <A HREF="typedocs.html#T_Float">T_Float</a>  <A HREF="typedocs.html#T_Long">T_Long</a>  <A HREF="typedocs.html#T_Int">T_Int</a>  <A HREF="typedocs.html#T_Short">T_Short</a>  <A HREF="typedocs.html#T_Char">T_Char</a>  <A HREF="typedocs.html#T_Zero">T_Zero</a>  <A HREF="typedocs.html#T_Any">T_Any</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_Abstract> CA_Abstract <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasCopyCtor> CA_HasCopyCtor <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasCtor> CA_HasCtor <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasDtor> CA_HasDtor <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+<LI>
+!dtor <em> a </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasNullCtor> CA_HasNullCtor <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasOpAssign> CA_HasOpAssign <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasOpDelete> CA_HasOpDelete <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasOpNew> CA_HasOpNew <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_HasVirtuals> CA_HasVirtuals <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_Instantiated> CA_Instantiated <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+<LI>
+actuals <em> iteration of </em>   <A HREF="typedocs.html#Actual">Actual</a>
+</UL>
+<p>
+<p>
+<h2> <a name = CA_Specialized> CA_Specialized <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ClassAttr">ClassAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = CFile > CFile <a> </h2> <strong> 
+C++ source file </strong>
+
+<UL>
+<LI>
+!gtable <em> a </em>   <A HREF="typedocs.html#Table">Table</a>
+<LI>
+globals <em> iteration of </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+<LI>
+!files <em> iteration of </em>   <A HREF="typedocs.html#FileSpec">FileSpec</a>
+<LI>
+!where <em> a </em>   <A HREF="typedocs.html#Location">Location</a>
+<LI>
+!filename <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = CV_Spec > CV_Spec <a> </h2> <strong> 
+Const/Volatile specifier </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Volatile">Volatile</a>  <A HREF="typedocs.html#Const">Const</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = C_File> C_File <a> </h2>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = C_Float> C_Float <a> </h2>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = C_Integer> C_Integer <a> </h2>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = C_String> C_String <a> </h2>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Case > Case <a> </h2> <strong> 
+Case label </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#LabelStmt">LabelStmt</a> <br>
+
+<UL>
+<LI>
+caselabel <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!casevalue <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Catch > Catch <a> </h2> <strong> 
+Catch clause for try statement </strong>
+
+<UL>
+<LI>
+catchbody <em> a </em>   <A HREF="typedocs.html#Block">Block</a>
+<LI>
+catcharg <em> a </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Ccast > Ccast <a> </h2> <strong> 
+Simple C-style cast to basic type </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#GeneratedCast">GeneratedCast</a>  <A HREF="typedocs.html#UserCast">UserCast</a>
+<P>
+
+<UL>
+<LI>
+fromexpr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!fromtype <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = CharConst> CharConst <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Literal">Literal</a> <br>
+
+<UL>
+<LI>
+chvalue <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = ClassAttr > ClassAttr <a> </h2> <strong> 
+Attributes of class/union declarations </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#CA_HasOpDelete">CA_HasOpDelete</a>  <A HREF="typedocs.html#CA_HasOpNew">CA_HasOpNew</a>  <A HREF="typedocs.html#CA_HasVirtuals">CA_HasVirtuals</a>  <A HREF="typedocs.html#CA_HasOpAssign">CA_HasOpAssign</a>  <A HREF="typedocs.html#CA_HasNullCtor">CA_HasNullCtor</a>  <A HREF="typedocs.html#CA_HasCopyCtor">CA_HasCopyCtor</a>  <A HREF="typedocs.html#CA_HasDtor">CA_HasDtor</a>  <A HREF="typedocs.html#CA_HasCtor">CA_HasCtor</a>  <A HREF="typedocs.html#CA_Specialized">CA_Specialized</a>  <A HREF="typedocs.html#CA_Instantiated">CA_Instantiated</a>  <A HREF="typedocs.html#CA_Abstract">CA_Abstract</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ClassDecl > ClassDecl <a> </h2> <strong> 
+Forward declaration of class or struct </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrDecl">AggrDecl</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ClassDef > ClassDef <a> </h2> <strong> 
+Class definition </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrDef">AggrDef</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ClassTemplate > ClassTemplate <a> </h2> <strong> 
+Class template declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Template">Template</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ClassType> ClassType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrType">AggrType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Comma > Comma <a> </h2> <strong> 
+, </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Complement > Complement <a> </h2> <strong> 
+~ </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Const> Const <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#CV_Spec">CV_Spec</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Continue> Continue <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+!enclosing <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+</UL>
+<p>
+<p>
+<h2> <a name = DataTemplate > DataTemplate <a> </h2> <strong> 
+Data template declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Template">Template</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Declaration > Declaration <a> </h2> <strong> 
+Generic declaration </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#ObjectSpec">ObjectSpec</a>  <A HREF="typedocs.html#FunctionSpec">FunctionSpec</a>  <A HREF="typedocs.html#AsmSpec">AsmSpec</a>  <A HREF="typedocs.html#EnumSpec">EnumSpec</a>  <A HREF="typedocs.html#AggrSpec">AggrSpec</a>  <A HREF="typedocs.html#Typedef">Typedef</a>  <A HREF="typedocs.html#Template">Template</a>  <A HREF="typedocs.html#LabelSpec">LabelSpec</a>  <A HREF="typedocs.html#BogusDecl">BogusDecl</a>
+<P>
+
+<UL>
+<LI>
+!defname <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+!offset <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+<LI>
+storage <em> a </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a>
+<LI>
+scope <em> a </em>   <A HREF="typedocs.html#Scope">Scope</a>
+<LI>
+kind <em> a </em>   <A HREF="typedocs.html#NameKind">NameKind</a>
+<LI>
+qualifier <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+!where <em> a </em>   <A HREF="typedocs.html#Location">Location</a>
+<LI>
+id <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Default > Default <a> </h2> <strong> 
+Switch default </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#LabelStmt">LabelStmt</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Delete > Delete <a> </h2> <strong> 
+delete [size] ptr </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+<LI>
+del_size <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+del_ptr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Deref > Deref <a> </h2> <strong> 
+*x </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Div > Div <a> </h2> <strong> 
+/ </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = DivAssign > DivAssign <a> </h2> <strong> 
+/= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Do> Do <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+!doend <em> a </em>   <A HREF="typedocs.html#Location">Location</a>
+<LI>
+dobody <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+docondition <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Dot > Dot <a> </h2> <strong> 
+x.y </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#MemberRef">MemberRef</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = EnumSpec > EnumSpec <a> </h2> <strong> 
+Enum declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+
+<UL>
+<LI>
+enumerators <em> iteration of </em>   <A HREF="typedocs.html#EnumeratorSpec">EnumeratorSpec</a>
+</UL>
+<p>
+<p>
+<h2> <a name = EnumType> EnumType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NamedType">NamedType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = EnumeratorSpec > EnumeratorSpec <a> </h2> <strong> 
+Declaration of enumerator </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ObjectSpec">ObjectSpec</a> <br>
+
+<UL>
+<LI>
+init <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+value <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = EqEq > EqEq <a> </h2> <strong> 
+== </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ExprActual > ExprActual <a> </h2> <strong> 
+Actual value parameter </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Actual">Actual</a> <br>
+
+<UL>
+<LI>
+expr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = ExprStmt > ExprStmt <a> </h2> <strong> 
+expr; </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+expr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Expression> Expression <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Initializer">Initializer</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#PrimaryExpr">PrimaryExpr</a>  <A HREF="typedocs.html#Delete">Delete</a>  <A HREF="typedocs.html#New">New</a>  <A HREF="typedocs.html#Mdot">Mdot</a>  <A HREF="typedocs.html#P2MemberRef">P2MemberRef</a>  <A HREF="typedocs.html#MemberRef">MemberRef</a>  <A HREF="typedocs.html#Question">Question</a>  <A HREF="typedocs.html#Ccast">Ccast</a>  <A HREF="typedocs.html#Sizeof_T">Sizeof_T</a>  <A HREF="typedocs.html#Sizeof_E">Sizeof_E</a>  <A HREF="typedocs.html#Index">Index</a>  <A HREF="typedocs.html#FunCall">FunCall</a>  <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a>  <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a>  <A HREF="typedocs.html#NullExpr">NullExpr</a>
+<P>
+
+<UL>
+<LI>
+!type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_Const> FA_Const <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_Ellipsis> FA_Ellipsis <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_IncompleteInstantiation> FA_IncompleteInstantiation <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+<LI>
+actuals <em> iteration of </em>   <A HREF="typedocs.html#Actual">Actual</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_Inline> FA_Inline <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_Instantiation> FA_Instantiation <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+<LI>
+actuals <em> iteration of </em>   <A HREF="typedocs.html#Actual">Actual</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_Static> FA_Static <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_Template> FA_Template <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FA_Virtual> FA_Virtual <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FTA_Const> FTA_Const <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionTypeAttr">FunctionTypeAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FTA_Ellipsis> FTA_Ellipsis <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionTypeAttr">FunctionTypeAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FTA_Static> FTA_Static <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionTypeAttr">FunctionTypeAttr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FieldType> FieldType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+
+<UL>
+<LI>
+f_expr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!f_width <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+<LI>
+f_type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FileSpec > FileSpec <a> </h2> <strong> 
+File info </strong>
+
+<UL>
+<LI>
+size <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+<LI>
+name <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+<LI>
+filid <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FloatConst> FloatConst <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Literal">Literal</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = For> For <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+forbody <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+forincrement <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+forcondition <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+forinit <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FriendClass > FriendClass <a> </h2> <strong> 
+Friend class declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FriendDeclaration">FriendDeclaration</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FriendDeclaration > FriendDeclaration <a> </h2> <strong> 
+Friend declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NestedDeclaration">NestedDeclaration</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#FriendFunction">FriendFunction</a>  <A HREF="typedocs.html#FriendClass">FriendClass</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FriendFunction > FriendFunction <a> </h2> <strong> 
+Friend function declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FriendDeclaration">FriendDeclaration</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FunCall > FunCall <a> </h2> <strong> 
+Generic function call </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#GeneratedCall">GeneratedCall</a>  <A HREF="typedocs.html#UserCall">UserCall</a>
+<P>
+
+<UL>
+<LI>
+callargs <em> iteration of </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+callexpr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!callname <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionAttr > FunctionAttr <a> </h2> <strong> 
+Attributes of function declarations </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#FA_IncompleteInstantiation">FA_IncompleteInstantiation</a>  <A HREF="typedocs.html#FA_Instantiation">FA_Instantiation</a>  <A HREF="typedocs.html#FA_Template">FA_Template</a>  <A HREF="typedocs.html#FA_Ellipsis">FA_Ellipsis</a>  <A HREF="typedocs.html#FA_Static">FA_Static</a>  <A HREF="typedocs.html#FA_Const">FA_Const</a>  <A HREF="typedocs.html#FA_Virtual">FA_Virtual</a>  <A HREF="typedocs.html#FA_Inline">FA_Inline</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionDecl > FunctionDecl <a> </h2> <strong> 
+Function declaration (no body) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionSpec">FunctionSpec</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionDef > FunctionDef <a> </h2> <strong> 
+Function definition </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionSpec">FunctionSpec</a> <br>
+
+<UL>
+<LI>
+body <em> a </em>   <A HREF="typedocs.html#Block">Block</a>
+<LI>
+meminit <em> list of </em>   <A HREF="typedocs.html#MemInit">MemInit</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionLinkage > FunctionLinkage <a> </h2> <strong> 
+Function linkage specifier </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Linkage_Cplusplus">Linkage_Cplusplus</a>  <A HREF="typedocs.html#Linkage_C">Linkage_C</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionName > FunctionName <a> </h2> <strong> 
+Name of function </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#TypedName">TypedName</a> <br>
+
+<UL>
+<LI>
+verbose <em> Print String   </em>
+<LI>
+!storage <em> a </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionSpec > FunctionSpec <a> </h2> <strong> 
+Function declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#FunctionDef">FunctionDef</a>  <A HREF="typedocs.html#FunctionDecl">FunctionDecl</a>
+<P>
+
+<UL>
+<LI>
+header <em> Print String   </em>
+<LI>
+signature <em> Print String   </em>
+<LI>
+sigstring <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+<LI>
+attrs <em> list of properties of type </em>   <A HREF="typedocs.html#FunctionAttr">FunctionAttr</a>
+<LI>
+linkage <em> a </em>   <A HREF="typedocs.html#FunctionLinkage">FunctionLinkage</a>
+<LI>
+args <em> iteration of </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+<LI>
+returntype <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+!type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionTemplate > FunctionTemplate <a> </h2> <strong> 
+Function template declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Template">Template</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionType> FunctionType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+
+<UL>
+<LI>
+argtypes <em> iteration of </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+returntype <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+member_of <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+attrs <em> list of properties of type </em>   <A HREF="typedocs.html#FunctionTypeAttr">FunctionTypeAttr</a>
+</UL>
+<p>
+<p>
+<h2> <a name = FunctionTypeAttr > FunctionTypeAttr <a> </h2> <strong> 
+Attributes of function types </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#FTA_Ellipsis">FTA_Ellipsis</a>  <A HREF="typedocs.html#FTA_Static">FTA_Static</a>  <A HREF="typedocs.html#FTA_Const">FTA_Const</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = GConstruction > GConstruction <a> </h2> <strong> 
+Generated constructor call </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#GeneratedCall">GeneratedCall</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = GConversion > GConversion <a> </h2> <strong> 
+Generated call of conversion operator </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#GeneratedCall">GeneratedCall</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = GDestruction > GDestruction <a> </h2> <strong> 
+Generated destructor call </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#GeneratedCall">GeneratedCall</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = GOperatorCall > GOperatorCall <a> </h2> <strong> 
+Generated call of overloaded operator </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#GeneratedCall">GeneratedCall</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = GeneratedCall > GeneratedCall <a> </h2> <strong> 
+Compiler-generated function call </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunCall">FunCall</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#GConversion">GConversion</a>  <A HREF="typedocs.html#GDestruction">GDestruction</a>  <A HREF="typedocs.html#GConstruction">GConstruction</a>  <A HREF="typedocs.html#GOperatorCall">GOperatorCall</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = GeneratedCast > GeneratedCast <a> </h2> <strong> 
+Compiler-generated cast </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Ccast">Ccast</a> <br>
+
+<UL>
+<LI>
+!totype <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Goto> Goto <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+gotoname <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Greater > Greater <a> </h2> <strong> 
+> </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = GreaterEq > GreaterEq <a> </h2> <strong> 
+>= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = IdName > IdName <a> </h2> <strong> 
+Name of object </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#TypedName">TypedName</a> <br>
+
+<UL>
+<LI>
+verbose <em> Print String   </em>
+<LI>
+!value <em> a </em>   <A HREF="typedocs.html#NameValue">NameValue</a>
+<LI>
+!storage <em> a </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a>
+</UL>
+<p>
+<p>
+<h2> <a name = If> If <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+ifFbranch <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+ifTbranch <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+ifcondition <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Index > Index <a> </h2> <strong> 
+Subscripted expression x[y] </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+<LI>
+ix_subscript <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+ix_left <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Initializer> Initializer <a> </h2>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#StaticInitializer">StaticInitializer</a>  <A HREF="typedocs.html#Expression">Expression</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = IntConst> IntConst <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Literal">Literal</a> <br>
+
+<UL>
+<LI>
+civalue <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Label> Label <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#LabelStmt">LabelStmt</a> <br>
+
+<UL>
+<LI>
+labelname <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+</UL>
+<p>
+<p>
+<h2> <a name = LabelName > LabelName <a> </h2> <strong> 
+Name of a label </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameRef">NameRef</a> <br>
+
+<UL>
+<LI>
+!stmt <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+</UL>
+<p>
+<p>
+<h2> <a name = LabelSpec > LabelSpec <a> </h2> <strong> 
+For consistency with other declarations </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+
+<UL>
+<LI>
+!stmt <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+</UL>
+<p>
+<p>
+<h2> <a name = LabelStmt > LabelStmt <a> </h2> <strong> 
+Generic statement label </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Default">Default</a>  <A HREF="typedocs.html#Case">Case</a>  <A HREF="typedocs.html#Label">Label</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Less > Less <a> </h2> <strong> 
+< </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = LessEq > LessEq <a> </h2> <strong> 
+<= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Linkage_C> Linkage_C <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionLinkage">FunctionLinkage</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Linkage_Cplusplus> Linkage_Cplusplus <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunctionLinkage">FunctionLinkage</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Literal > Literal <a> </h2> <strong> 
+Literal constant </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#PrimaryExpr">PrimaryExpr</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#FloatConst">FloatConst</a>  <A HREF="typedocs.html#CharConst">CharConst</a>  <A HREF="typedocs.html#IntConst">IntConst</a>  <A HREF="typedocs.html#StringConst">StringConst</a>
+<P>
+
+<UL>
+<LI>
+strep <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Location > Location <a> </h2> <strong> 
+Location in file </strong>
+
+<UL>
+<LI>
+line <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+<LI>
+file <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+<LI>
+filid <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = LogAnd > LogAnd <a> </h2> <strong> 
+\&\& </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = LogOr > LogOr <a> </h2> <strong> 
+|| </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Lshift > Lshift <a> </h2> <strong> 
+<< </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = LshiftAssign > LshiftAssign <a> </h2> <strong> 
+<<= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Mdot > Mdot <a> </h2> <strong> 
+Low level ref to member of virtual base or similar construct </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+<LI>
+mem <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+bname <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = MemInit > MemInit <a> </h2> <strong> 
+Base/Member initializer in constructor definition </strong>
+
+<UL>
+<LI>
+init <em> iteration of </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!bmdef <em> a </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+</UL>
+<p>
+<p>
+<h2> <a name = MemberDeclaration > MemberDeclaration <a> </h2> <strong> 
+Member declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NestedDeclaration">NestedDeclaration</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = MemberRef > MemberRef <a> </h2> <strong> 
+. or -> </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Arrow">Arrow</a>  <A HREF="typedocs.html#Dot">Dot</a>
+<P>
+
+<UL>
+<LI>
+qualifier <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+member <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+left <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!aggrtype <em> a </em>   <A HREF="typedocs.html#AggrType">AggrType</a>
+</UL>
+<p>
+<p>
+<h2> <a name = MemberSpec > MemberSpec <a> </h2> <strong> 
+Member, friend or access declaration </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#NestedDeclaration">NestedDeclaration</a>  <A HREF="typedocs.html#VisibilitySpec">VisibilitySpec</a>  <A HREF="typedocs.html#AccessSpec">AccessSpec</a>
+<P>
+
+<UL>
+<LI>
+!where <em> a </em>   <A HREF="typedocs.html#Location">Location</a>
+<LI>
+scope <em> a </em>   <A HREF="typedocs.html#Scope">Scope</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Minus > Minus <a> </h2> <strong> 
+- </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = MinusAssign > MinusAssign <a> </h2> <strong> 
+-= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Mod > Mod <a> </h2> <strong> 
+\% </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ModAssign > ModAssign <a> </h2> <strong> 
+\%= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Mult > Mult <a> </h2> <strong> 
+* </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = MultAssign > MultAssign <a> </h2> <strong> 
+*= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_Constructor> NK_Constructor <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_Destructor> NK_Destructor <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_Enumerator> NK_Enumerator <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_Label> NK_Label <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_Operator> NK_Operator <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_Simple> NK_Simple <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_This> NK_This <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+<LI>
+!thisclass <em> a </em>   <A HREF="typedocs.html#AggrDef">AggrDef</a>
+</UL>
+<p>
+<p>
+<h2> <a name = NK_Type> NK_Type <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameKind">NameKind</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NameKind > NameKind <a> </h2> <strong> 
+Kind of name </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#NK_Type">NK_Type</a>  <A HREF="typedocs.html#NK_Enumerator">NK_Enumerator</a>  <A HREF="typedocs.html#NK_Label">NK_Label</a>  <A HREF="typedocs.html#NK_This">NK_This</a>  <A HREF="typedocs.html#NK_Simple">NK_Simple</a>  <A HREF="typedocs.html#NK_Constructor">NK_Constructor</a>  <A HREF="typedocs.html#NK_Destructor">NK_Destructor</a>  <A HREF="typedocs.html#NK_Operator">NK_Operator</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NameRef > NameRef <a> </h2> <strong> 
+Reference to a user-defined name </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#PrimaryExpr">PrimaryExpr</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#AccessedName">AccessedName</a>  <A HREF="typedocs.html#LabelName">LabelName</a>  <A HREF="typedocs.html#TypedName">TypedName</a>
+<P>
+
+<UL>
+<LI>
+verbose <em> Print String   </em>
+<LI>
+mangled <em> Print String   </em>
+<LI>
+!def <em> a </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+<LI>
+!scope <em> a </em>   <A HREF="typedocs.html#Scope">Scope</a>
+<LI>
+!kind <em> a </em>   <A HREF="typedocs.html#NameKind">NameKind</a>
+<LI>
+!id <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = NameValue > NameValue <a> </h2> <strong> 
+Integer value of name or full initializer if not constant </strong>
+
+<UL>
+<LI>
+fullvalue <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+intvalue <em> a </em>   <A HREF="typedocs.html#C_Integer">C_Integer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = NamedType > NamedType <a> </h2> <strong> 
+Types with names </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Typeref">Typeref</a>  <A HREF="typedocs.html#AggrType">AggrType</a>  <A HREF="typedocs.html#EnumType">EnumType</a>
+<P>
+
+<UL>
+<LI>
+refname <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+</UL>
+<p>
+<p>
+<h2> <a name = NestedDeclaration > NestedDeclaration <a> </h2> <strong> 
+Member or friend declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#MemberSpec">MemberSpec</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#FriendDeclaration">FriendDeclaration</a>  <A HREF="typedocs.html#MemberDeclaration">MemberDeclaration</a>
+<P>
+
+<UL>
+<LI>
+def <em> a </em>   <A HREF="typedocs.html#Declaration">Declaration</a>
+</UL>
+<p>
+<p>
+<h2> <a name = New > New <a> </h2> <strong> 
+new (placements) type (inits) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+<LI>
+new_function <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+new_placement <em> iteration of </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+new_inits <em> iteration of </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+new_type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Not > Not <a> </h2> <strong> 
+! </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = NotEq > NotEq <a> </h2> <strong> 
+!= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NullExpr > NullExpr <a> </h2> <strong> 
+Null or missing expression </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = NullStmt > NullStmt <a> </h2> <strong> 
+Null or missing statement </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ObjectDecl > ObjectDecl <a> </h2> <strong> 
+Object declaration (not allocated) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ObjectSpec">ObjectSpec</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = ObjectDef > ObjectDef <a> </h2> <strong> 
+Object definition </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#ObjectSpec">ObjectSpec</a> <br>
+
+<UL>
+<LI>
+init <em> a </em>   <A HREF="typedocs.html#Initializer">Initializer</a>
+</UL>
+<p>
+<p>
+<h2> <a name = ObjectSpec > ObjectSpec <a> </h2> <strong> 
+Object declaration or definition </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#ObjectDecl">ObjectDecl</a>  <A HREF="typedocs.html#ObjectDef">ObjectDef</a>  <A HREF="typedocs.html#EnumeratorSpec">EnumeratorSpec</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = OrAssign > OrAssign <a> </h2> <strong> 
+|= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Overload > Overload <a> </h2> <strong> 
+Identifies all instances of a function </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+
+<UL>
+<LI>
+!instances <em> iteration of </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = P2MData > P2MData <a> </h2> <strong> 
+p->*memdata </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#P2MemberRef">P2MemberRef</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = P2MFunction > P2MFunction <a> </h2> <strong> 
+p->*memfunc </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#P2MemberRef">P2MemberRef</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = P2MemberRef > P2MemberRef <a> </h2> <strong> 
+.* or ->* </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#P2MData">P2MData</a>  <A HREF="typedocs.html#P2MFunction">P2MFunction</a>
+<P>
+
+<UL>
+<LI>
+member <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+left <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+!aggrtype <em> a </em>   <A HREF="typedocs.html#AggrType">AggrType</a>
+</UL>
+<p>
+<p>
+<h2> <a name = PMFValue > PMFValue <a> </h2> <strong> 
+Value of pointer to member function </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#PrimaryExpr">PrimaryExpr</a> <br>
+
+<UL>
+<LI>
+f <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+i <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+d <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Parameter > Parameter <a> </h2> <strong> 
+Template formal parameter </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#ValueParameter">ValueParameter</a>  <A HREF="typedocs.html#TypeParameter">TypeParameter</a>
+<P>
+
+<UL>
+<LI>
+type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+id <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Plus > Plus <a> </h2> <strong> 
++ </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = PlusAssign > PlusAssign <a> </h2> <strong> 
++= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = PostDec > PostDec <a> </h2> <strong> 
+x-- </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryCount">UnaryCount</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = PostInc > PostInc <a> </h2> <strong> 
+x++ </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryCount">UnaryCount</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = PreDec > PreDec <a> </h2> <strong> 
+--x </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryCount">UnaryCount</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = PreInc > PreInc <a> </h2> <strong> 
+++x </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryCount">UnaryCount</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = PrimaryExpr> PrimaryExpr <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Literal">Literal</a>  <A HREF="typedocs.html#NameRef">NameRef</a>  <A HREF="typedocs.html#PMFValue">PMFValue</a>  <A HREF="typedocs.html#AggrValue">AggrValue</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = PtrType> PtrType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+
+<UL>
+<LI>
+points_to <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+member_of <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+attrs <em> list of properties of type </em>   <A HREF="typedocs.html#CV_Spec">CV_Spec</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Question > Question <a> </h2> <strong> 
+?: </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+<LI>
+q_false <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+q_true <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+<LI>
+q_test <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = RefType> RefType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Type">Type</a> <br>
+
+<UL>
+<LI>
+refers_to <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+<LI>
+member_of <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+attrs <em> list of properties of type </em>   <A HREF="typedocs.html#CV_Spec">CV_Spec</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Return> Return <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+value <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Rshift > Rshift <a> </h2> <strong> 
+>> </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = RshiftAssign > RshiftAssign <a> </h2> <strong> 
+>>= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = SC_Auto> SC_Auto <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = SC_Enum > SC_Enum <a> </h2> <strong> 
+Identifies an enumerator </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = SC_Member > SC_Member <a> </h2> <strong> 
+Non-static member </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = SC_Register> SC_Register <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = SC_Static> SC_Static <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#StorageClass">StorageClass</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope > Scope <a> </h2> <strong> 
+Scope identification </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Scope_Extern">Scope_Extern</a>  <A HREF="typedocs.html#Scope_Static">Scope_Static</a>  <A HREF="typedocs.html#Scope_Label">Scope_Label</a>  <A HREF="typedocs.html#Scope_Local">Scope_Local</a>  <A HREF="typedocs.html#Scope_Argument">Scope_Argument</a>  <A HREF="typedocs.html#Scope_Member">Scope_Member</a>  <A HREF="typedocs.html#Scope_Weird">Scope_Weird</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Argument > Scope_Argument <a> </h2> <strong> 
+Scope of function argument </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope">Scope</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Extern> Scope_Extern <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope">Scope</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Label > Scope_Label <a> </h2> <strong> 
+Scope of labels -- function-wide </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope">Scope</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Local > Scope_Local <a> </h2> <strong> 
+Scope of local declarations </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope">Scope</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Member > Scope_Member <a> </h2> <strong> 
+Scope of member </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope">Scope</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Scope_Private">Scope_Private</a>  <A HREF="typedocs.html#Scope_Protected">Scope_Protected</a>  <A HREF="typedocs.html#Scope_Public">Scope_Public</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Private> Scope_Private <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope_Member">Scope_Member</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Protected> Scope_Protected <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope_Member">Scope_Member</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Public> Scope_Public <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope_Member">Scope_Member</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Static > Scope_Static <a> </h2> <strong> 
+File or local static </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope">Scope</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Scope_Weird > Scope_Weird <a> </h2> <strong> 
+Unknown value (should not occur) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Scope">Scope</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Sizeof_E > Sizeof_E <a> </h2> <strong> 
+sizeof(expr) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+<LI>
+szexpr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Sizeof_T > Sizeof_T <a> </h2> <strong> 
+sizeof(type) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+
+<UL>
+<LI>
+sztype <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Statement > Statement <a> </h2> <strong> 
+Generic statement </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Try">Try</a>  <A HREF="typedocs.html#Goto">Goto</a>  <A HREF="typedocs.html#LabelStmt">LabelStmt</a>  <A HREF="typedocs.html#Continue">Continue</a>  <A HREF="typedocs.html#Break">Break</a>  <A HREF="typedocs.html#Switch">Switch</a>  <A HREF="typedocs.html#Do">Do</a>  <A HREF="typedocs.html#For">For</a>  <A HREF="typedocs.html#While">While</a>  <A HREF="typedocs.html#If">If</a>  <A HREF="typedocs.html#Block">Block</a>  <A HREF="typedocs.html#Return">Return</a>  <A HREF="typedocs.html#NullStmt">NullStmt</a>  <A HREF="typedocs.html#ExprStmt">ExprStmt</a>  <A HREF="typedocs.html#AsmStmt">AsmStmt</a>
+<P>
+
+<UL>
+<LI>
+!successor <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+!where <em> a </em>   <A HREF="typedocs.html#Location">Location</a>
+</UL>
+<p>
+<p>
+<h2> <a name = StaticInitializer > StaticInitializer <a> </h2> <strong> 
+Initializing code for static initialization </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Initializer">Initializer</a> <br>
+
+<UL>
+<LI>
+expr <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = StorageClass> StorageClass <a> </h2>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#SC_Static">SC_Static</a>  <A HREF="typedocs.html#SC_Member">SC_Member</a>  <A HREF="typedocs.html#SC_Auto">SC_Auto</a>  <A HREF="typedocs.html#SC_Register">SC_Register</a>  <A HREF="typedocs.html#SC_Enum">SC_Enum</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = StringConst> StringConst <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Literal">Literal</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Switch> Switch <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+!default_s <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+!cases <em> list of </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+switchbody <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+switchcondition <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = TA_Const> TA_Const <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = TA_Integral> TA_Integral <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = TA_Long> TA_Long <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = TA_Numeric> TA_Numeric <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = TA_Signed> TA_Signed <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = TA_Unsigned> TA_Unsigned <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = TA_Volatile> TA_Volatile <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Any> T_Any <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Attr > T_Attr <a> </h2> <strong> 
+Attributes of built-in types </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#TA_Long">TA_Long</a>  <A HREF="typedocs.html#TA_Unsigned">TA_Unsigned</a>  <A HREF="typedocs.html#TA_Signed">TA_Signed</a>  <A HREF="typedocs.html#TA_Numeric">TA_Numeric</a>  <A HREF="typedocs.html#TA_Integral">TA_Integral</a>  <A HREF="typedocs.html#TA_Volatile">TA_Volatile</a>  <A HREF="typedocs.html#TA_Const">TA_Const</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Char> T_Char <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Double> T_Double <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Float> T_Float <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Int> T_Int <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_LDouble> T_LDouble <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Long> T_Long <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Short> T_Short <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Void> T_Void <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = T_Zero> T_Zero <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BuiltinType">BuiltinType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Table > Table <a> </h2> <strong> 
+Access to internal cfront symbol table </strong>
+
+<UL>
+<LI>
+members <em> iteration of </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+scope <em> a </em>   <A HREF="typedocs.html#C_String">C_String</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Template > Template <a> </h2> <strong> 
+Declaration of a template </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#ClassTemplate">ClassTemplate</a>  <A HREF="typedocs.html#FunctionTemplate">FunctionTemplate</a>  <A HREF="typedocs.html#DataTemplate">DataTemplate</a>
+<P>
+
+<UL>
+<LI>
+formals <em> iteration of </em>   <A HREF="typedocs.html#Parameter">Parameter</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Try > Try <a> </h2> <strong> 
+Try statement (not implemented in 3.0) </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+tryhandlers <em> list of </em>   <A HREF="typedocs.html#Catch">Catch</a>
+<LI>
+tryblock <em> a </em>   <A HREF="typedocs.html#Block">Block</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Type > Type <a> </h2> <strong> 
+Type specifier </strong>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#BuiltinType">BuiltinType</a>  <A HREF="typedocs.html#PtrType">PtrType</a>  <A HREF="typedocs.html#RefType">RefType</a>  <A HREF="typedocs.html#ArrayType">ArrayType</a>  <A HREF="typedocs.html#NamedType">NamedType</a>  <A HREF="typedocs.html#FunctionType">FunctionType</a>  <A HREF="typedocs.html#Overload">Overload</a>  <A HREF="typedocs.html#FieldType">FieldType</a>
+<P>
+
+<UL>
+<LI>
+t_attrs <em> list of properties of type </em>   <A HREF="typedocs.html#T_Attr">T_Attr</a>
+</UL>
+<p>
+<p>
+<h2> <a name = TypeActual > TypeActual <a> </h2> <strong> 
+Actual type parameter </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Actual">Actual</a> <br>
+
+<UL>
+<LI>
+type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = TypeName > TypeName <a> </h2> <strong> 
+User-defined type name </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#TypedName">TypedName</a> <br>
+
+<UL>
+<LI>
+verbose <em> Print String   </em>
+</UL>
+<p>
+<p>
+<h2> <a name = TypeParameter > TypeParameter <a> </h2> <strong> 
+Template type parameter </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Parameter">Parameter</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = TypedName > TypedName <a> </h2> <strong> 
+Name of object, function or type </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NameRef">NameRef</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#TypeName">TypeName</a>  <A HREF="typedocs.html#FunctionName">FunctionName</a>  <A HREF="typedocs.html#IdName">IdName</a>
+<P>
+
+<UL>
+<LI>
+!qualifier <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+!type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Typedef > Typedef <a> </h2> <strong> 
+Typedef declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Declaration">Declaration</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Typeref > Typeref <a> </h2> <strong> 
+Reference to a typedef name </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#NamedType">NamedType</a> <br>
+
+<UL>
+<LI>
+!type <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Uminus > Uminus <a> </h2> <strong> 
+-x </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = UnaryCount > UnaryCount <a> </h2> <strong> 
+++/-- operators </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#PostInc">PostInc</a>  <A HREF="typedocs.html#PostDec">PostDec</a>  <A HREF="typedocs.html#PreDec">PreDec</a>  <A HREF="typedocs.html#PreInc">PreInc</a>
+<P>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = UnaryExpr > UnaryExpr <a> </h2> <strong> 
+Unary expression </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Expression">Expression</a> <br>
+<p>
+<em> derived types are </em>
+    <A HREF="typedocs.html#Deref">Deref</a>  <A HREF="typedocs.html#AddrOf">AddrOf</a>  <A HREF="typedocs.html#Uplus">Uplus</a>  <A HREF="typedocs.html#Uminus">Uminus</a>  <A HREF="typedocs.html#UnaryCount">UnaryCount</a>  <A HREF="typedocs.html#Complement">Complement</a>  <A HREF="typedocs.html#Not">Not</a>
+<P>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = UnionDecl > UnionDecl <a> </h2> <strong> 
+Forward declaration of union </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrDecl">AggrDecl</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = UnionDef > UnionDef <a> </h2> <strong> 
+Union definition </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrDef">AggrDef</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = UnionType> UnionType <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#AggrType">AggrType</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = Uplus > Uplus <a> </h2> <strong> 
++x </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#UnaryExpr">UnaryExpr</a> <br>
+
+<UL>
+<LI>
+ue_arg <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = UserCall > UserCall <a> </h2> <strong> 
+User-specified function call </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#FunCall">FunCall</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = UserCast > UserCast <a> </h2> <strong> 
+Explicit (user-specified) cast </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Ccast">Ccast</a> <br>
+
+<UL>
+<LI>
+totype <em> a </em>   <A HREF="typedocs.html#Type">Type</a>
+</UL>
+<p>
+<p>
+<h2> <a name = ValueParameter > ValueParameter <a> </h2> <strong> 
+Template value parameter </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Parameter">Parameter</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = VisibilitySpec > VisibilitySpec <a> </h2> <strong> 
+Base member access declaration </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#MemberSpec">MemberSpec</a> <br>
+
+<UL>
+<LI>
+verbose <em> Print String   </em>
+<LI>
+name <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+<LI>
+!enclosing_class <em> a </em>   <A HREF="typedocs.html#NameRef">NameRef</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Volatile> Volatile <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#CV_Spec">CV_Spec</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = While> While <a> </h2>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Statement">Statement</a> <br>
+
+<UL>
+<LI>
+whilebody <em> a </em>   <A HREF="typedocs.html#Statement">Statement</a>
+<LI>
+whilecondition <em> a </em>   <A HREF="typedocs.html#Expression">Expression</a>
+</UL>
+<p>
+<p>
+<h2> <a name = Xor > Xor <a> </h2> <strong> 
+\^ </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#BinaryExpr">BinaryExpr</a> <br>
+
+<UL>
+</UL>
+<p>
+<p>
+<h2> <a name = XorAssign > XorAssign <a> </h2> <strong> 
+\^= </strong>
+<p>
+
+<em> base type </em>   <A HREF="typedocs.html#Assignment">Assignment</a> <br>
+
+<UL>
+</UL>

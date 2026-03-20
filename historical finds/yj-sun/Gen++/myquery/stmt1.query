@@ -1,0 +1,152 @@
+ROOTPROC VarUseDef
+FILE component "components.zyj"
+
+EXTERNAL PROC newBlock () RETURNS STRING
+EXTERNAL PROC newElem () RETURNS STRING
+EXTERNAL PROC newResult () RETURNS STRING
+EXTERNAL PROC newConstraint () RETURNS STRING
+EXTERNAL PROC mystrconcat (STRING STRING) RETURNS STRING
+
+FUNCTION  DealWithFunCall 
+ROOT FunCall; 
+{
+	LOCAL GNODE newValue; 
+	LOCAL GNODE argList;
+	LOCAL GNODE tmpNode;
+	LOCAL GNODE tmpList; 
+	(PRINT component "This function: %s\n" $token )
+	(PRINT component "And its parent: %s\n" $parent ) 
+/*
+	(ASSIGN argList 
+		(CEXPR C_String "mystrconcat(\"\" , \"\")")
+	) 
+	<callargs 
+			{Expression
+	(ASSIGN tmpNode (CALL DealWithExpr)) 
+	(ASSIGN argList (CEXPR C_String "mystrconcat( getCstring(argList) , getCstring(tmpNode) )"))
+*/			/* Here I debugged for a while with tmpNode replaced by 
+				(CALL DealWithExpr) but it can't work. */ 
+/*
+			} 	
+	>
+*/
+	(ASSIGN argList (NIL Expression))  
+	(ASSIGN tmpList (NIL Expression)) 
+	<callargs 
+			{Expression
+			(ASSIGN argList (CONS (CALL DealWithExpr) argList) )
+			} 	
+	>
+	(PRINT component "(%s %s (%s %s "  
+				(CEXPR C_String "(char *) newElem()")
+			 	(SLOT line $location)
+				(NODETYPE $token) 
+				(SLOT callname $token))
+
+	(WHILE (NOT (EMPTY argList))				/** Reverse the arglist **/
+			(ASSIGN tmpList (CONS (CAR argList) tmpList )) 
+			(ASSIGN argList (CDR argList))
+	)  
+
+	(WHILE 	(NOT (EMPTY tmpList))
+			
+			(PRINT component "%s " (CAR tmpList))
+			(ASSIGN tmpList (CDR tmpList) )  
+	)
+
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))  
+	(PRINT component " %s))\n" 
+		 	newValue 	
+	)
+	(RETURN newValue) 
+}
+
+FUNCTION DealWithExpr  
+ 
+ROOT Expression;
+{
+	LOCAL GNODE op;
+	LOCAL GNODE lValue;
+	LOCAL GNODE rValue;
+	LOCAL GNODE newValue;
+
+	(IF (TYPEOF $token BinaryExpr)
+		(THEN
+			(IF (TYPEOF $token Assignment)
+				(THEN (RETURN (CALL DealWithAssignment)))
+				(ELSE 
+			(ASSIGN op (NODETYPE $token)) 	 
+			<be_rhs (ASSIGN rValue (CALL DealWithExpr))>
+			<be_lhs (ASSIGN lValue (CALL DealWithExpr))>
+/*** Attention please, the order of tree travel will be considered more carefully****/
+			/*(IF (TYPEOF $parent Assign )   suppose there is no Assign in an expre*/
+			/*	
+				(THEN (ASSIGN newValue (SLOT id (SLOT be_lhs $parent))))
+				(ELSE (ASSIGN newValue (CEXPR C_String "(char *) newResult()"))))
+			*/
+ 
+			(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+			(PRINT component "(%s %s (%s %s %s %s))\n"
+						(CEXPR C_String "(char *) newElem()")
+						(SLOT line $location)
+						op lValue rValue newValue)
+			(RETURN newValue)
+				)) 
+		)
+		(ELSE
+			(IF (TYPEOF $token Literal)
+				(THEN (RETURN (SLOT civalue $token)))
+				(ELSE  
+					(IF (TYPEOF $token NameRef)
+						(THEN (RETURN (SLOT id $token)))
+						(ELSE
+							(IF (TYPEOF $token FunCall)
+								(THEN ( RETURN (CALL  DealWithFunCall)) )
+							)
+						) 
+					)
+				)
+			)
+		)  
+						
+   )
+} 
+
+FUNCTION DealWithAssignment
+ 
+ROOT Assignment;
+{
+	LOCAL GNODE newValue;
+/*
+	(PRINT component "%s\n" $token) 
+*/
+	<be_rhs (ASSIGN newValue (CALL DealWithExpr))> 
+	(PRINT component "(%s %s (%s %s %s))\n"
+						(CEXPR C_String "(char *) newElem()")
+						(SLOT line $location)
+						(NODETYPE $token)
+						(SLOT be_lhs $token)
+						newValue 
+	) 
+	(RETURN newValue) 
+} 
+
+
+PROC VarUseDef
+ROOT CFile;
+{
+  LOCAL GNODE newblock;
+  LOCAL GNODE newelem; 
+
+  [
+	(?Expression
+		(?Assignment
+			(CALL DealWithAssignment) 	
+   		)
+		(?FunCall 
+			(CALL DealWithFunCall)
+		)
+	)
+  ]
+}

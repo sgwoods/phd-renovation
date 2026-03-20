@@ -1,0 +1,43 @@
+/*ident	"@(#)gen++:d.pkg/examples/hier.query	1.5" */
+
+/* Generate in inheritance hierarchy, dot format */
+/* Get dot  from north@research.att.com */
+
+
+ROOTPROC hier
+FILE dot "hier.dot"
+
+PROC hier
+ROOT CFile;
+{
+LOCAL GNODE BASE;
+LOCAL GNODE DERIVED;
+
+(PRINT dot "digraph HI {\nrankdir = \"LR\";\nsize = \"7,10\";\n")
+<globals
+  {Declaration
+	[ (?ClassDef
+	    <defname (ASSIGN DERIVED $token)>
+	    <bases
+	       {BaseSpec
+		  <refname (ASSIGN BASE $token)>
+		  (PRINT dot "\"%s\" -> \"%s\"" DERIVED BASE)
+		  <allocation (?BA_Virtual
+                	(PRINT dot "[label=virtual]")
+		  ) >
+		  <access
+			(?BA_Protected
+			  (PRINT dot "[style=dashed]")
+			)
+			(?BA_Private
+			  (PRINT dot "[style=dotted]")
+			)
+		  >
+            	  (PRINT dot "\n")
+	       }
+	    >
+	) ]
+  }
+>
+(PRINT dot "}\n")
+}

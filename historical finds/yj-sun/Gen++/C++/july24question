@@ -1,0 +1,37 @@
+
+
+1	switch( test )
+2	{
+3		case A:
+4			stmt1;
+5			break;
+6		case B:
+7			stmt2;
+8			break;
+9		default:
+10			stmt3;
+11	}
+12
+13 	stmt4;
+
+Translation:
+	(e1 3 (Equal test A result1))
+	(e2 3 (If result1))
+	(e3 4 (Begin block1))
+	(e4 4 (stmt1))
+	(e5 5 (Goto 13))
+	(e6 5 (End block1))
+	(e7 6 (Equal test B result2))
+	(e8 6 (If result1))
+	(e9 7 (Begin block2))
+	(e10 7 (stmt1))
+	(e11 8 (Goto 13))
+	(e12 8 (End block2))
+	(e13 9 (Or result1 result2 result3))
+	(e14 9 (Not result3 result4))
+	(e15 9 (If result4))
+	(e16 10 (Begin block3))
+	(e17 10 (stmt3))
+  	(e18 11 (Goto 13))
+... 	
+

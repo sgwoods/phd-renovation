@@ -1,0 +1,243 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/inher.query	1.1" */
+/* Check rules in Inheritance Section of Conventions */
+
+ROOTPROC inher
+
+PROC inher
+ROOT CFile;
+{
+  (PRINT msgout "INHERITANCE AND VIRTUAL FUNCTIONS\n")
+ 
+  (CALL virtDtor)
+  (CALL Redef)
+  (CALL RedefDP)
+}
+
+PROC virtDtor /* declare virtual destructors for base classes */
+ROOT CFile;
+{
+LOCAL GNODE BASE;
+LOCAL GNODE vdlist;
+LOCAL GNODE has_dtor;
+LOCAL GNODE has_virt;
+
+(ASSIGN vdlist (NIL ClassDef))
+
+<globals
+  {Declaration
+    [(?ClassDef
+      <bases
+        {BaseSpec <refname 
+          <def (?ClassDef
+            (ASSIGN has_dtor 0)
+            (ASSIGN has_virt 0)
+            (ASSIGN BASE $token)
+            <attrs
+              {ClassAttr
+                (?CA_HasDtor
+                  (ASSIGN has_dtor 1)
+                  (IF (NULL (SLOT dtor $token))
+                    (THEN
+                      (IF (NOT (MEMBER-EQUAL BASE vdlist))
+                        (THEN
+                          (ASSIGN vdlist (CONS BASE vdlist))
+                        )
+                      )
+                    )
+                    (ELSE
+                      <dtor (?FunctionSpec 
+	                <attrs (?FA_Virtual (ASSIGN has_virt 1)) >
+                      )>
+                    )
+                  )
+                )
+              }
+            >
+          )> 
+          (IF (OR (EQUAL has_dtor 0) (EQUAL has_virt 0))
+            (THEN
+              (IF (NOT (MEMBER-EQUAL BASE vdlist))
+                (THEN
+                  (ASSIGN vdlist (CONS BASE vdlist))
+                )
+              )
+            )
+          )
+        >}
+      >
+    )]
+  }
+>
+(ASSIGN BASE (CAR vdlist))
+
+(WHILE (NOT (NULL BASE))
+  (PRINT msgout
+    "%s: base class %s should have virtual destructor (BCVD).\n"
+    (SLOT where BASE) (SLOT id BASE)
+  )
+  (ASSIGN BASE (NEXT BASE))
+)
+}
+
+FUNCTION inFuncList 
+ARG GNODE baselist;
+ROOT FunctionSpec;
+{
+  LOCAL GNODE current;
+  (ASSIGN current (CAR baselist))
+
+  (WHILE (NOT (NULL current))
+    (IF (AND
+      (EQUAL (SLOT id $token) (SLOT id current))
+      (EQUAL (SLOT type $token) (SLOT type current))
+    )
+      (THEN (RETURN 1))
+    )
+    (ASSIGN current (NEXT current))
+  )
+  (RETURN 0)
+}
+
+FUNCTION defPar
+ROOT FunctionSpec;
+{
+  <args {Declaration
+    (?ObjectDef
+      (IF (NOT (NULL (SLOT init $token)))
+        (THEN (RETURN 1))
+      )
+    )
+  }>
+  (RETURN 0)
+}
+
+FUNCTION addToList
+ARG GNODE flag;
+ARG GNODE baselist;
+ROOT ClassDef;
+{
+
+LOCAL GNODE is_virt;
+(ASSIGN is_virt 0)
+
+<members
+  {MemberSpec
+    (?MemberDeclaration <def
+      (?FunctionSpec 
+        (ASSIGN is_virt 0)
+        <attrs (?FA_Virtual (ASSIGN is_virt 1)) >
+        (IF (AND (EQUAL flag 0) (EQUAL 0 is_virt))
+          (THEN
+            (ASSIGN baselist (CONS $token baselist))
+          )
+        )
+        (IF (AND (EQUAL flag 1)
+                 (EQUAL 1 is_virt)
+                 (EQUAL 1 (CALL defPar))
+            )
+          (THEN
+            (ASSIGN baselist (CONS $token baselist))
+          )
+        )
+      )
+    >)
+  }
+>
+<bases
+  {BaseSpec <refname <def
+    (?ClassDef 
+      (ASSIGN baselist (CALL addToList flag baselist))
+    )
+  >>}
+>
+(RETURN baselist)
+}
+
+PROC Redef
+ROOT CFile;
+{
+LOCAL GNODE baselist;
+LOCAL GNODE cname;
+
+(ASSIGN baselist (NIL FunctionSpec))
+
+<globals
+  {Declaration
+    [(?ClassDef
+      (ASSIGN cname (SLOT id $token))
+      <bases 
+        {BaseSpec <refname <def
+          (?ClassDef 
+            (ASSIGN baselist (CALL addToList 0 baselist))
+          )
+        >>}
+      >
+      (IF (NOT (EMPTY baselist))
+        (THEN
+	  <members {MemberSpec
+            (?MemberDeclaration <def
+              (?FunctionSpec
+                (IF (EQUAL 1 (CALL inFuncList baselist))
+	          (THEN 
+                    (PRINT msgout 
+                      "%s:%s redefines inherited, non-virtual function %s() (RINVF).\n"
+                      $location cname (SLOT id $token)
+                    )
+                  )
+                )
+              ) 
+            >)
+          }>
+        )
+      )
+      (ASSIGN baselist (NIL FunctionSpec))
+    )]
+  }
+>
+}
+
+PROC RedefDP
+ROOT CFile;
+{
+LOCAL GNODE baselist;
+LOCAL GNODE cname;
+
+(ASSIGN baselist (NIL FunctionSpec))
+
+<globals
+  {Declaration
+    [(?ClassDef
+      (ASSIGN cname (SLOT id $token))
+      <bases 
+        {BaseSpec <refname <def
+          (?ClassDef 
+            (ASSIGN baselist (CALL addToList 1 baselist))
+          )
+        >>}
+      >
+      (IF (NOT (EMPTY baselist))
+        (THEN
+	  <members {MemberSpec
+            (?MemberDeclaration <def
+              (?FunctionSpec
+                (IF (AND
+                  (EQUAL 1 (CALL inFuncList baselist))
+                  (EQUAL 1 (CALL defPar))
+                )
+	          (THEN 
+                    (PRINT msgout 
+                      "%s:%s redefines a default parameter for function %s() (RDPF).\n"
+                      $location cname (SLOT id $token)
+                    )
+                  )
+                )
+              ) 
+            >)
+          }>
+        )
+      )
+      (ASSIGN baselist (NIL FunctionSpec))
+    )]
+  }
+>
+}

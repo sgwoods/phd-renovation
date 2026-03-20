@@ -1,0 +1,152 @@
+ 
+UNRAVEL  /fsys/sgw/Software/Seg/Unravel/unravel_r2.2+/sjc Mon Sep 28 15:48:52 EDT 1998
+ANALYZER   Mon Sep 28 15:48:54 EDT 1998
+CPP Flags:
+parser Flags:
+
+clientorig.c summary
+  73 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+clientorig.c (1482 chars) analysis complete 1 secs  1482 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file clientorig.c requires 1 files: clientorig.c 
+Main program file client.c requires 1 files: client.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 15:49:03 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 64 (line 64 in file clientorig.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 41 (line 41 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 41 (line 41 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 41 (line 41 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 39 (line 39 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 41 (line 41 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 64 (line 64 in file clientorig.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+ANALYZER   Mon Sep 28 15:53:44 EDT 1998
+CPP Flags:
+parser Flags:
+
+clientorig.c summary
+  78 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   0 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          fn1             inet_addr       htons           
+close           connect         send            strlen          
+clientorig.c (1580 chars) analysis complete 1 secs  1580 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file clientorig.c requires 1 files: clientorig.c 
+Main program file client.c requires 1 files: client.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 15:53:50 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 69 (line 69 in file clientorig.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 69 (line 69 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 43 (line 43 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 43 (line 43 in file clientorig.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 69 (line 69 in file clientorig.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+ANALYZER   Mon Sep 28 16:57:53 EDT 1998
+CPP Flags:
+parser Flags:
+
+clientorig.c summary
+  80 Source program lines
+  32 Source program statements (flow graph nodes)
+   0 Global variables
+   0 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          fn1             inet_addr       htons           
+close           connect         send            strlen          
+clientorig.c (1616 chars) analysis complete 1 secs  1616 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file clientorig.c requires 1 files: clientorig.c 
+Main program file client.c requires 1 files: client.c 

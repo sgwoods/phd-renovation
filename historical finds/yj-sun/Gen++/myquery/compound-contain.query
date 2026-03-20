@@ -1,0 +1,1984 @@
+/**
+This program generate two files flow.dot and components.zyj, the 
+former is a control flow graph which has problem with Switch that
+has not been solved. There also need some change to make exit abort
+work fine by generating a terminationIndex 
+
+The component.zyj is a component description of each statement. 
+each component has an index, order, lineNumber, body, accessdList, modifiedList.
+
+**/  
+
+ROOTPROC FileFlow
+
+FILE slog "statementInBody" 
+/*
+FILE control "flow.dot"
+FILE component "components.zyj"
+*/ 
+FILE control 
+FILE component 
+
+GLOBAL GNODE fileName;
+GLOBAL GNODE fname;  /* function name */ 
+GLOBAL GNODE finish_stmt;
+
+EXTERNAL PROC mystrconcat (STRING STRING) RETURNS STRING
+EXTERNAL PROC myitoa (INTEGER) RETURNS STRING
+EXTERNAL PROC newname (STRING) RETURNS STRING
+EXTERNAL PROC IsHeader(STRING) RETURNS INTEGER
+
+
+
+/** In DealWithFor, field blockbody, different from
+in stmt6.query **/
+
+EXTERNAL PROC newBlock () RETURNS STRING
+EXTERNAL PROC newElem (STRING STRING) RETURNS STRING
+EXTERNAL PROC newFileName (STRING) RETURNS STRING
+EXTERNAL PROC newControlFileName (STRING) RETURNS STRING
+EXTERNAL PROC newComponentFileName (STRING) RETURNS STRING
+
+EXTERNAL PROC newResult (STRING) RETURNS STRING
+EXTERNAL PROC newConstraint () RETURNS STRING
+
+
+/********************************************************
+*********************************************************
+Functions for Level 0 Node: Initializer
+*********************************************************
+********************************************************/
+/*Initializer*/
+
+
+/********************************************************
+*********************************************************
+Functions for Level 1 Nodes of Initializer  
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithExpression  
+ 
+ROOT Expression;
+{
+	(IF (TYPEOF $token PrimaryExpr)
+		(THEN (RETURN (CALL DealWithPrimaryExpr)))  
+		(ELSE
+
+	(IF (TYPEOF $token Question)
+		(THEN (RETURN (CALL DealWithQuestion)))  
+		(ELSE
+
+	(IF (TYPEOF $token Ccast)
+		(THEN (RETURN (CALL DealWithCcast)))  
+		(ELSE
+
+	(IF (TYPEOF $token Sizeof_T)
+		(THEN (RETURN (CALL DealWithSizeof_T)))  
+		(ELSE
+
+	(IF (TYPEOF $token Sizeof_E)
+		(THEN (RETURN (CALL DealWithSizeof_E)))  
+		(ELSE
+
+	(IF (TYPEOF $token Index)
+		(THEN (RETURN (CALL DealWithIndex))) 
+		(ELSE 
+
+	(IF (TYPEOF $token FunCall)
+		(THEN (RETURN (CALL DealWithFunCall)))
+		(ELSE 
+
+	(IF (TYPEOF $token UnaryExpr)
+		(THEN (RETURN (CALL DealWithUnaryExpr)))
+		(ELSE
+
+	(IF (TYPEOF $token BinaryExpr)
+		(THEN (RETURN (CALL DealWithBinaryExpr)))
+
+	)))))))))))))))))
+
+}  
+
+
+/********************************************************
+*********************************************************
+Functions for Level 2 Nodes of Initializer  
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithPrimaryExpr  
+ 
+ROOT PrimaryExpr;
+{
+	(IF (TYPEOF $token Literal)
+		(THEN (RETURN (CALL DealWithLiteral)))
+		(ELSE  
+		
+	(IF (TYPEOF $token NameRef) /*Will be replaced later.*/ 
+		(THEN (RETURN (CALL DealWithNameRef)))
+		(ELSE
+
+	(IF (TYPEOF $token FunCall)
+		(THEN ( RETURN (CALL  DealWithFunCall)) )
+
+	)))))
+ } 
+
+
+FUNCTION DealWithQuestion
+ 
+ROOT Question;
+{
+	LOCAL GNODE testValue;
+	LOCAL GNODE oppositeTest; 
+	LOCAL GNODE trueValue;
+	LOCAL GNODE falseValue;
+	LOCAL GNODE retResult;
+	LOCAL GNODE newblock;
+
+	<q_true (ASSIGN trueValue (CALL DealWithExpression))>
+	<q_false (ASSIGN falseValue (CALL DealWithExpression))>
+	<q_test (ASSIGN testValue (CALL DealWithExpression))>
+		
+	(ASSIGN oppositeTest (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(ASSIGN retResult (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	
+	(PRINT component "(%s %s (Not %s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				testValue
+				oppositeTest)
+
+	(PRINT component "(%s %s (If %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				testValue)
+ 
+	(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+	(PRINT component "(%s %s (Begin %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+
+	(PRINT component "(%s %s (Assign %s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				retResult
+				trueValue)
+
+	(PRINT component "(%s %s (End %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+
+	(PRINT component "(%s %s (If %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				oppositeTest)
+ 
+	(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+	(PRINT component "(%s %s (Begin %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+
+	(PRINT component "(%s %s (Assign %s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				retResult
+				falseValue)
+
+	(PRINT component "(%s %s (End %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+	(RETURN retResult) 
+} 
+
+FUNCTION DealWithCcast
+
+ROOT Ccast;
+{
+	<fromexpr (RETURN (CALL DealWithExpression))>  
+}
+
+FUNCTION DealWithSizeof_E
+
+ROOT Sizeof_E;
+{
+	(RETURN 1)
+
+}
+
+FUNCTION DealWithSizeof_T
+
+ROOT Sizeof_T;
+{
+	(RETURN 1)
+
+}
+
+FUNCTION DealWithIndex
+ 
+ROOT Index;
+{
+	LOCAL GNODE IxLeft;
+	LOCAL GNODE IxSub;
+	LOCAL GNODE op;
+	LOCAL GNODE newValue;
+
+	(ASSIGN op (NODETYPE $token)) 	 
+	<ix_subscript (ASSIGN IxSub (CALL DealWithExpression))>
+	<ix_left (ASSIGN IxLeft (CALL DealWithExpression))> 
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+ 	(PRINT component "(%s %s (%s %s %s %s) (%s %s %s) (%s))\n"
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+			(SLOT line $location)
+			op IxLeft IxSub newValue
+			IxLeft IxSub newValue newValue)
+	(RETURN newValue)
+
+} 
+
+FUNCTION  DealWithFunCall 
+ROOT FunCall; 
+/* take a function call as input, process its arguments, 
+	and return a C_String resultNewIndex if any  */ 
+
+{
+	LOCAL GNODE newValue; 
+	LOCAL GNODE argList;
+	LOCAL GNODE tmpList; 
+
+	LOCAL GNODE tmp1List;
+	
+	(ASSIGN argList (NIL Expression))  
+	(ASSIGN tmpList (NIL Expression)) 
+
+	<callargs 
+			{Expression
+			(ASSIGN argList (CONS (CALL DealWithExpression) argList) )
+			} 	
+	>
+
+/*	(PRINT component "(%s %s (%s %s "  
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		 	(SLOT line $location)
+			(NODETYPE $token) 
+			(SLOT callname $token))
+*/ 
+	(PRINT component "(%s %s (%s "  
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		 	(SLOT line $location)
+			(SLOT callname $token))
+
+	(WHILE (NOT (EMPTY argList))	/** Reverse the arglist **/
+			(ASSIGN tmpList (CONS (CAR argList) tmpList )) 
+			(ASSIGN argList (CDR argList))
+	)  
+	(ASSIGN tmp1List tmpList) /* make a copy of real parameters' list*/
+
+	(WHILE 	(NOT (EMPTY tmpList))
+			
+			(PRINT component "%s " (CAR tmpList))
+			(ASSIGN tmpList (CDR tmpList) )  
+	)
+
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))  
+	(PRINT component " %s) (" 
+		 	newValue )
+	
+	(WHILE 	(NOT (EMPTY tmp1List))
+			(PRINT component "%s " (CAR tmp1List))
+			(ASSIGN tmp1List (CDR tmp1List) )  
+	)
+	(PRINT component "%s) (%s))\n" 
+		 	newValue newValue)
+	
+	(RETURN newValue) 
+}
+
+
+FUNCTION DealWithUnaryExpr  
+ 
+ROOT UnaryExpr;
+{
+	LOCAL GNODE op;
+	LOCAL GNODE oldValue;
+	LOCAL GNODE newValue;
+	(IF (TYPEOF $token UnaryCount)
+		(THEN (RETURN (CALL DealWithUnaryCount)))
+		(ELSE 
+			(ASSIGN op (NODETYPE $token)) 	 
+			 <ue_arg (ASSIGN oldValue (CALL DealWithExpression))>
+
+			(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+ 			(PRINT component "(%s %s (%s %s %s) (%s %s) (%s))\n"
+						(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+						(SLOT line $location)
+						op oldValue newValue
+						oldValue newValue newValue  
+						)
+			(RETURN newValue))
+	) 
+
+}
+
+
+
+FUNCTION DealWithBinaryExpr  
+ 
+ROOT BinaryExpr;
+{
+	LOCAL GNODE op;
+	LOCAL GNODE lValue;
+	LOCAL GNODE rValue;
+	LOCAL GNODE newValue;
+
+	(IF (TYPEOF $token Assignment)
+		(THEN (RETURN (CALL DealWithAssignment)))
+		(ELSE 
+
+	(ASSIGN op (NODETYPE $token)) 	 
+	<be_rhs (ASSIGN rValue (CALL DealWithExpression))>
+	<be_lhs (ASSIGN lValue (CALL DealWithExpression))>
+ 
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+
+	(PRINT component "(%s %s (%s %s %s %s) (%s %s %s) (%s))\n"
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+			(SLOT line $location)
+			op lValue rValue newValue
+			lValue rValue newValue newValue 
+			)
+	(RETURN newValue)
+
+	)) 
+
+}
+
+
+
+/********************************************************
+*********************************************************
+Functions for Level 3 Nodes of Initializer  
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithLiteral
+
+ROOT Literal;
+{
+	(IF (TYPEOF $token StringConst)
+		(THEN (RETURN (NODETYPE $token)))
+		(ELSE (RETURN (SLOT strep $token)))
+	) 
+} 
+
+
+FUNCTION DealWithNameRef
+
+ROOT NameRef;
+{
+	(IF (TYPEOF $token LabelName)
+		(THEN 
+			(PRINT component "(%s %s (%s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				(NODETYPE $token)
+				(SLOT id $token)) 
+			<stmt (CALL DealWithStatement)>
+			(RETURN (SLOT id $token)) 
+		)
+		(ELSE 
+
+	(IF (TYPEOF $token TypedName)
+		(THEN (RETURN (SLOT id $token)))
+
+	)))  
+} 
+
+
+FUNCTION DealWithUnaryCount 
+ 
+ROOT UnaryCount;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+	(PRINT component "(%s %s (%s %s) (%s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		$nodetype tmp1
+		tmp1 tmp1  
+		)
+
+/*	(IF (TYPEOF $token PostInc)
+		(THEN   (RETURN (CALL DealWithPostInc)) )
+		(ELSE
+	
+	(IF (TYPEOF $token PostDec)
+		(THEN (RETURN (CALL DealWithPostDec)) )
+		(ELSE 
+
+	(IF (TYPEOF $token PreInc)
+		(THEN (RETURN (CALL DealWithPreInc)) )
+		(ELSE
+
+	(IF (TYPEOF $token PreDec)
+		(THEN (RETURN (CALL DealWithPreDec)) )
+
+	))))))) 
+*/
+
+} 
+
+
+FUNCTION DealWithAssignment
+ 
+ROOT Assignment;
+{
+	LOCAL GNODE newValue;
+	LOCAL GNODE leftValue;
+
+/*
+	(PRINT component "%s\n" $token) 
+*/
+	<be_lhs (ASSIGN leftValue (CALL DealWithExpression))>
+
+	<be_rhs (ASSIGN newValue (CALL DealWithExpression))> 
+
+	(PRINT component "(%s %s (%s %s %s) (%s %s) (%s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				(NODETYPE $token)
+				leftValue newValue 
+				leftValue newValue leftValue 
+				) 
+	(RETURN newValue) 
+} 
+
+
+/********************************************************
+*********************************************************
+Functions for Level 4 Nodes Initializer  
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithPostInc
+ 
+ROOT PostInc;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+	(ASSIGN oldValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Assign %s %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		oldValue tmp1
+		oldValue tmp1 oldValue 
+		)
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Plus %s  1 %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue newValue 
+		)
+	(PRINT component "(%s %s (Assign %s %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue tmp1 
+		)
+ 
+	(RETURN oldValue) 
+} 
+
+
+FUNCTION DealWithPostDec
+ 
+ROOT PostDec;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+	(ASSIGN oldValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Assign %s %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		oldValue tmp1
+		oldValue tmp1 oldValue 
+		)
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Minus %s  1 %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue newValue 
+		)
+	(PRINT component "(%s %s (Assign %s %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue tmp1 
+		)
+ 
+	(RETURN oldValue) 
+} 
+
+
+FUNCTION DealWithPreInc
+ 
+ROOT PreInc;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+/*	(ASSIGN oldValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		oldValue 	
+		tmp1)
+*/
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Plus %s  1 %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue newValue 
+		)
+	(PRINT component "(%s %s (Assign %s %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue tmp1 
+		)
+ 
+	(RETURN newValue) 
+} 
+
+
+FUNCTION DealWithPreDec
+ 
+ROOT PreDec;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+/*	(ASSIGN oldValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		oldValue 	
+		tmp1)
+*/
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Minus %s  1 %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue newValue 
+		)
+	(PRINT component "(%s %s (Assign %s %s) (%s %s) (%s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		tmp1 newValue 
+		tmp1 newValue tmp1 
+		)
+ 
+	(RETURN newValue) 
+} 
+
+
+
+/********************************************************
+*********************************************************
+Functions for Level 0 Node: Statemeent  
+*********************************************************
+********************************************************/
+/*Statement*/
+FUNCTION DealWithStatement
+
+ROOT Statement;
+{ 
+	(IF (TYPEOF $token Goto)
+		(THEN (CALL DealWithGoto))
+		(ELSE
+
+	(IF (TYPEOF $token LabelStmt)
+		(THEN (CALL DealWithLabelStmt)) 
+		(ELSE
+
+	(IF (TYPEOF $token Continue)
+		(THEN (CALL DealWithContinue))
+		(ELSE
+							
+	(IF (TYPEOF $token Break)
+		(THEN (CALL DealWithBreak))
+		(ELSE
+							
+	(IF (TYPEOF $token Switch)
+		(THEN (CALL DealWithSwitch))
+		(ELSE
+
+	(IF (TYPEOF $token Do)
+		(THEN (CALL DealWithDo)) 
+		(ELSE
+
+	(IF (TYPEOF $token For)
+		(THEN (CALL DealWithFor))
+		(ELSE
+							
+	(IF (TYPEOF $token While)
+		(THEN (CALL DealWithWhile))
+		(ELSE
+	
+	(IF (TYPEOF $token If)
+		(THEN (CALL DealWithIf)) 
+		(ELSE
+
+	(IF (TYPEOF $token Block)
+		(THEN (CALL DealWithBlock))
+		(ELSE
+	
+	(IF (TYPEOF $token Return)
+		(THEN (CALL DealWithReturn))
+		(ELSE
+							
+	(IF (TYPEOF $token NullStmt)
+		(THEN (CALL DealWithNullStmt))
+		(ELSE
+							
+	(IF (TYPEOF $token ExprStmt)
+		(THEN (CALL DealWithExprStmt))
+
+	)))))))))))))))))))))))))
+} 
+
+
+/********************************************************
+*********************************************************
+Functions for Level 1 Nodes of Statement   
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithGoto
+
+ROOT Goto;
+{ 
+	LOCAL GNODE label;
+	<gotoname (ASSIGN label (SLOT id $token))>
+	(PRINT component "(%s %s (%s %s))\n"
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+			(SLOT line $location)
+			(NODETYPE $token)
+			label )
+	
+} 
+
+
+
+FUNCTION DealWithLabelStmt
+
+/** for Label only */ 
+ROOT LabelStmt;
+{
+	
+	(IF (TYPEOF $token Label) 
+		(THEN 
+		 	(PRINT component "(%s %s (%s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				(NODETYPE $token)
+				(SLOT id (SLOT labelname $token) ) )
+			(RETURN (SLOT id (SLOT labelname $token)))  
+		)
+
+	) 
+} 
+
+
+FUNCTION DealWithContinue
+
+ROOT Continue;
+{
+	LOCAL GNODE continueLine;
+	<enclosing
+		(ASSIGN continueLine
+			(SLOT line $location))
+	>	
+	(PRINT component "(%s %s (Goto %s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		continueLine)
+}
+
+ 
+FUNCTION DealWithBreak
+
+ROOT Break;
+{
+	LOCAL GNODE breakLine;
+	<enclosing
+		(IF (NULL (SLOT successor $token))
+			(THEN (ASSIGN breakLine "FINISH"))
+			(ELSE 	
+
+		(ASSIGN breakLine
+			(SLOT line (SLOT where (SLOT successor $token))))
+		) ) 
+	 >
+ 
+	(PRINT component "(%s %s (Goto %s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		breakLine)
+}
+
+FUNCTION DealWithSwitch
+
+ROOT Switch;
+{
+	LOCAL GNODE testValue;
+	LOCAL GNODE lastCase;
+	LOCAL GNODE newblock;
+
+	<switchcondition (ASSIGN testValue (CALL DealWithExpression))>
+
+	(PRINT component "(%s %s (Switch %s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		testValue)
+/*
+	<switchcondition (ASSIGN testValue (CALL DealWithExpression))>
+
+	(ASSIGN lastCase NULL)
+<switchbody 
+	<blockbody 
+	{Statement
+		(IF (TYPEOF $token Case)
+		(THEN
+			(CALL DealWithCase testValue)
+			(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+
+			(PRINT component "(%s %s (Begin %s))\n"
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+			(SLOT line (SLOT where (SLOT successor $token)))
+			newblock)	
+		)
+		(ELSE
+
+		(IF (TYPEOF $token Default)
+		(THEN
+			(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+
+			(PRINT component "(%s %s (Begin %s))\n"
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+			(SLOT line (SLOT where (SLOT successor $token)))
+			newblock)	
+		)
+		(ELSE
+
+			(CALL DealWithStatement)
+			(IF (TYPEOF $token Break)
+			(THEN
+				(PRINT component "(%s %s (End %s))\n"
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					(SLOT line $location)
+					newblock)	
+			)
+
+		)))))
+ 	}
+	> 		 
+> 
+*/ 
+}
+
+
+FUNCTION DealWithDo
+
+ROOT Do;
+{
+	LOCAL GNODE testValue;
+	LOCAL GNODE newTestValue;
+	LOCAL GNODE newValue;
+	LOCAL GNODE newblock;
+	LOCAL GNODE endLine;
+
+	(PRINT component "(%s %s (Loop Do \n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)) 
+
+	<docondition (PRINT component "  (%s_cond%s)\n" fileName (SLOT line $location))>  	
+	<dobody (CALL GatherContainedStatements)> 
+	(PRINT component "))\n")  
+/*
+	<dobody
+		<blockbody
+			{Statement (CALL DealWithStatement)}
+		>
+	> 
+
+	<docondition (ASSIGN testValue (CALL DealWithExpression))>
+
+	(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+
+	(PRINT component "(%s %s (While %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				testValue) 
+
+	(PRINT component "(%s %s (Begin %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+
+	<dobody
+		<blockbody
+			{Statement (CALL DealWithStatement)}
+		>
+	>
+	
+	<dobody <blockend (ASSIGN endLine 
+				(SLOT line $location))
+	>>
+	
+	<docondition (ASSIGN newTestValue (CALL DealWithExpression))>
+*/
+	/*re-evaluate the testcondition*/
+/*	(PRINT component "(%s %s (ASSIGN %s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				testValue
+				newTestValue) 
+
+	(PRINT component "(%s %s (End %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				endLine	
+				newblock) 
+
+*/
+
+}
+
+FUNCTION DealWithFor
+
+ROOT For;
+{
+	LOCAL GNODE testValue;
+	LOCAL GNODE newTestValue;
+	LOCAL GNODE newValue;
+	LOCAL GNODE newblock;
+	LOCAL GNODE endLine;
+
+	<forinit (CALL DealWithStatement)>  
+
+	<forcondition (ASSIGN testValue (CALL DealWithExpression))>
+	(IF (NULL (SLOT forcondition $token))
+		(THEN (ASSIGN testValue 1 ))
+	)
+
+	(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+
+	(PRINT component "(%s %s (While %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				testValue) 
+
+
+	<forbody 
+		(IF (EQUAL $nodetype "Block")
+			(THEN 
+				(CALL DealWithStatement)
+			)
+			(ELSE
+				(PRINT component "(%s %s (Begin %s))\n"
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					(SLOT line $location)
+					newblock) 
+
+				(ASSIGN endLine (SLOT line $location))
+				(CALL DealWithStatement)
+				(PRINT component "(%s %s (End %s))\n"
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					endLine	
+					newblock) 
+		)
+		)	
+	>
+	<forincrement (CALL DealWithExpression)>
+	
+
+}
+
+
+FUNCTION DealWithWhile
+
+ROOT While;
+{
+	LOCAL GNODE testValue;
+	LOCAL GNODE newTestValue;
+	LOCAL GNODE newValue;
+	LOCAL GNODE newblock;
+	LOCAL GNODE endLine;
+
+	(PRINT component "(%s %s (Loop While \n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)) 
+
+	<whilecondition (PRINT component "  (%s_cond%s)\n" fileName (SLOT line $location))>  	
+	<whilebody (CALL GatherContainedStatements)> 
+	(PRINT component "))\n")  
+/*
+	<whilecondition (ASSIGN testValue (CALL DealWithExpression))>
+
+	(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+
+	(PRINT component "(%s %s (While %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				testValue) 
+
+	<whilebody
+		(IF (EQUAL $nodetype "Block")
+			(THEN 
+				(CALL DealWithStatement)
+			)
+		(ELSE
+			(PRINT component "(%s %s (Begin %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+
+			(ASSIGN endLine (SLOT line $location))
+			(CALL DealWithStatement)
+			(PRINT component "(%s %s (End %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				endLine	
+				newblock) 
+		))	
+	>
+*/ 
+}
+
+
+
+FUNCTION DealWithIf
+
+ROOT If;
+{
+	LOCAL GNODE newValue;
+	LOCAL GNODE opposite; 
+	LOCAL GNODE newblock;
+	LOCAL GNODE endLine;
+
+	(PRINT component "(%s %s (Test If \n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+	) 
+	<ifcondition (PRINT component "  (%s_cond%s)\n" fileName (SLOT line $location))>  	
+	<ifTbranch (CALL GatherContainedStatements)> 
+	<ifFbranch (CALL GatherContainedStatements)>  
+	(PRINT component "))\n")  
+
+/*	
+	<ifcondition (ASSIGN newValue (CALL DealWithExpression)) > 
+	
+	(PRINT component "(%s %s (If %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newValue) 
+
+	<ifTbranch
+		(IF (EQUAL $nodetype "Block")
+			(THEN 
+				(CALL DealWithStatement)
+			)
+		(ELSE
+			(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+			(PRINT component "(%s %s (Begin %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+
+			(ASSIGN endLine (SLOT line $location))
+			(CALL DealWithStatement)
+			(PRINT component "(%s %s (End %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				endLine	
+				newblock) 
+		))	
+	>
+
+	<ifFbranch
+	(ASSIGN opposite (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (Not %s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newValue
+				opposite) 
+
+	(PRINT component "(%s %s (If %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				opposite) 
+	
+		(IF (EQUAL $nodetype "Block")
+			(THEN 
+				(CALL DealWithStatement)
+			)
+		(ELSE
+			(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+			(PRINT component "(%s %s (Begin %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newblock) 
+
+			(ASSIGN endLine (SLOT line $location))
+			(CALL DealWithStatement)
+			(PRINT component "(%s %s (End %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				endLine	
+				newblock) 
+		))	
+
+	> 
+*/ 
+} 
+
+
+FUNCTION DealWithBlock
+
+ROOT Block;
+{
+	LOCAL GNODE newblock;
+	LOCAL GNODE flname;	
+	(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+
+	(PRINT component "(%s %s (Begin %s))\n"
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+			(SLOT line $location)
+			newblock
+	)	
+	<locals
+		{Declaration
+		(?ObjectDef
+			(ASSIGN flname (SLOT file $location)) 	
+			(IF (EQUAL (CEXPR C_Integer "IsHeader( getCstring(flname))") 0 ) 
+			(THEN (CALL DealWithObjectDef)) )
+		)
+		}
+	>
+
+	<blockbody
+		{Statement	(CALL DealWithStatement)}
+	>
+
+	<blockend
+	(PRINT component "(%s %s (End %s))\n"
+			(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+			(SLOT line $token)
+			newblock
+	)	
+	>
+
+} 
+
+FUNCTION DealWithReturn
+
+ROOT Return;
+{
+	LOCAL GNODE newValue;
+	
+	<value (ASSIGN newValue (CALL DealWithExpression)) > 
+	
+	(PRINT component "(%s %s (Return %s) (%s) nil)\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newValue newValue) 
+	(RETURN newValue)
+} 
+
+FUNCTION DealWithNullStmt
+
+ROOT NullStmt;
+{
+
+	(RETURN NULL)
+
+} 
+
+
+FUNCTION DealWithExprStmt
+
+ROOT ExprStmt;
+{
+	<expr
+		(CALL DealWithExpression)
+	>
+} 
+
+
+/********************************************************
+*********************************************************
+Functions for Level 2 Nodes of Statement   
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithCase
+
+ARG GNODE testValue;  
+ 
+ROOT Case;
+{
+	LOCAL GNODE endLine;
+	LOCAL GNODE newValue;
+	LOCAL GNODE caseValue;
+
+	<caselabel (ASSIGN caseValue (CALL DealWithExpression))>
+	
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+	(PRINT component "(%s %s (EqEq %s %s %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				testValue
+				caseValue /*(SLOT caseValue $token)*/ 	
+				newValue)
+	(PRINT component "(%s %s (If %s))\n"
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				newValue) 
+
+} 
+
+
+
+
+/* Declaration   */
+
+FUNCTION DealWithObjectDef
+ 
+ROOT ObjectDef;
+{
+	LOCAL GNODE newValue;
+
+	(IF (NOT (NULL (SLOT init $token)))
+		(THEN 
+			(PRINT component "(%s %s (%s %s %s))\n"
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					(SLOT line $location)
+					(NODETYPE $token)
+					(SLOT type $token)
+					(SLOT id $token) 	
+			)
+			<init (ASSIGN newValue (CALL DealWithExpression))>
+			(PRINT component "(%s %s (Assign %s %s))\n"
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					(SLOT line $location)
+					(SLOT id $token) 
+					newValue 	
+			)
+			 
+		)
+
+		(ELSE
+			(PRINT component "(%s %s (%s %s %s))\n"
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					(SLOT line $location)
+					(NODETYPE $token)
+					(SLOT type $token)
+					(SLOT id $token) 	
+			)
+			 
+		)
+	)  
+
+/*
+	(PRINT component "%s\n" $token) 
+*/
+} 
+
+PROC Transform
+ROOT CFile;
+{
+	LOCAL GNODE flname;
+	<globals
+		{Declaration
+  
+		(?FunctionDef
+			<defname
+			(PRINT component "(%s %s (FunctionDef %s))\n"
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					(SLOT line $location)
+					(SLOT id $token) 
+			)
+			>
+			<args
+				{Declaration
+				(?ObjectDef
+				(ASSIGN flname (SLOT file $location)) 	
+				(IF (EQUAL (CEXPR C_Integer "IsHeader( getCstring(fname))") 0 ) 
+				(THEN (CALL DealWithObjectDef)) )
+				)
+				}
+			>
+
+			<body
+				(CALL DealWithStatement) 
+			>
+
+		)  
+		(?ObjectDef
+			(ASSIGN flname (SLOT file $location)) 	
+			(IF (EQUAL (CEXPR C_Integer "IsHeader( getCstring(fname))") 0 ) 
+			(THEN (CALL DealWithObjectDef)) )
+		)
+		}
+	> 			
+}
+
+
+
+PROC VariableReference  
+
+ROOT G_AnyType;
+{
+LOCAL GNODE tmpt;
+(ASSIGN tmpt (SLOT line $location))
+	(PRINT component " ( ")
+  [(?IdName
+	(PRINT component "(%s " $token)
+	<def	(PRINT component "%s %s) " fileName (SLOT line $location))>
+	) 
+  ]
+	(PRINT component " )\n") 
+ 
+	(PRINT component " ( ")
+  [(?IdName
+    (IF (OR (AND (TYPEOF $parent Assignment) (EQUAL $slot "be_lhs")) 
+                        (TYPEOF $parent UnaryCount) ) 
+      (THEN  
+		(PRINT component "(%s " $token)
+		<def	(PRINT component "%s %s) " fileName (SLOT line $location))>
+	  )
+    )
+  )]
+	(PRINT component " )\n") 
+
+}
+
+
+FUNCTION LOCSTRING
+ARG GNODE Suffix;
+
+ROOT G_AnyType;
+{
+LOCAL GNODE tmpt;
+(ASSIGN tmpt (SLOT line $location))
+(RETURN (CEXPR C_String "mystrconcat( mystrconcat( mystrconcat( getCstring(fileName),\"_stmt\"),myitoa(getCint(tmpt))),getCstring(Suffix))"))
+
+}
+
+
+
+PROC FileFlow
+ROOT CFile;
+{
+
+LOCAL GNODE foo;
+/*LOCAL GNODE fname; */ 
+LOCAL GNODE tfile;
+
+LOCAL GNODE controlFileName;
+LOCAL GNODE componentFileName;
+
+<where (ASSIGN tfile (SLOT file $location))>
+(ASSIGN fileName (CEXPR C_String "(char *)newFileName( getCstring(tfile))"))
+(ASSIGN controlFileName (CEXPR C_String "(char *)newControlFileName( getCstring(tfile))"))
+(ASSIGN componentFileName (CEXPR C_String "(char *)newComponentFileName( getCstring(tfile))"))
+
+(OPEN control controlFileName)
+(OPEN component componentFileName)
+  
+<globals
+
+  {Declaration
+     (?FunctionDef
+		<id
+			(ASSIGN fname $token)
+			(PRINT control "(%s\n(" <fname verbose>)
+		>
+		(ASSIGN fname (SLOT file  $location))
+		<args
+            {Declaration
+				(PRINT control "(%s %s %s) " (SLOT id $token) fileName (SLOT line $location)) 
+            }
+    	>
+		(PRINT control ")\n" )
+
+	(IF (EQUAL (CEXPR C_Integer "IsHeader(getCstring(fname))") 0)   
+							/* Is this from a header file ? */
+    (THEN 
+       <id (ASSIGN fname $token)> 
+      <body
+       <blockend (ASSIGN foo (CALL LOCSTRING ""))
+			(ASSIGN finish_stmt foo) 
+			(PRINT component "\n(%s_stmt%s\n (\n(%s %s (Finish))\n )\n)\n"
+					fileName (SLOT line $location) 
+					(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+					(SLOT line $location)
+			) 
+	   > /* Location, no suffix */
+
+       (CALL CompoundFlow foo foo foo) /* Exit refers the (passed down) next statement */
+       (PRINT stdout "\n(EndFunctionNamed %s)\n" <fname verbose>)
+		(PRINT control "\n)\n\n") 
+		>)))}>
+/*
+ (CLOSE control)
+ (CLOSE component)
+*/ 
+}
+
+/*
+PROC PrintVariables
+
+ARG GNODE TheLoc;
+ROOT Expression;
+{
+   (PRINT control "Statement%s [shape=record, label=\"{  Statement%s | Defines: " (SLOT line TheLoc) (SLOT line TheLoc))
+   [(?Assignment
+       <be_lhs
+         (?NameRef 
+   (PRINT control " %s" $token))>)]
+    (PRINT control "  | ")	
+   (PRINT control "Uses: ") 
+   [(?NameRef (IF (NOT (AND (TYPEOF $parent Assignment) (EQUAL $slot "be_lhs")))
+		(THEN (PRINT control   "  %s" $token))))]
+   (PRINT control "}\"];")
+
+}
+*/
+
+FUNCTION BlockFirst
+
+ROOT Statement;
+{
+(?Block
+ <blockbody
+  {Statement
+    (IF (NOT (TYPEOF $token NullStmt))  
+	(THEN 
+	 (IF (NOT (TYPEOF $token Block))
+	     (THEN  (RETURN (CALL LOCSTRING "")))
+	     (ELSE (RETURN (CALL BlockFirst))))))
+    
+  }
+ >)
+ (RETURN (CALL LOCSTRING ""))
+}
+
+
+
+FUNCTION BlockEnd
+
+ROOT Statement;
+{
+LOCAL GNODE End;
+(?Block
+ <blockbody
+  {Statement
+    (ASSIGN End $token)}
+  (IF (NOT (TYPEOF End NullStmt))  
+	(THEN 
+	 (IF (NOT (TYPEOF End Block))
+	     (THEN (SEARCH Statement  End (RETURN (CALL LOCSTRING ""))))
+	     (ELSE (SEARCH Block End (RETURN (CALL BlockFirst)))))))
+    
+
+ >)
+ (RETURN (CALL LOCSTRING ""))
+}
+
+
+/* Function findnext  looks to see if there is a next */
+/* If there is one, it's not the end of the block. */
+
+FUNCTION FindNext
+ARG GNODE GivenNext;
+ROOT Statement;
+{
+LOCAL GNODE Cursor;
+(ASSIGN Cursor $token)
+
+(IF (NOT (NULL (NEXT Cursor))) 
+    (THEN (ASSIGN Cursor (NEXT Cursor))
+	  (WHILE (AND (NOT (NULL Cursor))  (TYPEOF  Cursor NullStmt))
+		 (ASSIGN Cursor (NEXT Cursor)))
+	  (IF (NOT (NULL Cursor))
+	      (THEN (IF (TYPEOF Cursor Block)
+			(THEN  (SEARCH Block Cursor (RETURN  (CALL BlockFirst))))
+			(ELSE  (SEARCH Statement Cursor  (RETURN  (CALL LOCSTRING "")))))))))
+
+
+(RETURN GivenNext)
+}
+
+
+
+PROC CompoundFlow 
+
+
+ARG GNODE NextLoc;
+ARG GNODE ContinueLoc;
+ARG GNODE BreakLoc;
+ROOT Block;
+{
+LOCAL GNODE CurLoc;
+LOCAL GNODE TheNext;
+/*
+(PRINT stdout "DEBUG2 block %s, args %s %s %s\n" $location NextLoc ContinueLoc BreakLoc) 
+*/
+<blockbody
+ {Statement
+   (ASSIGN CurLoc $location)
+   (ASSIGN TheNext (CALL FindNext NextLoc))
+/*
+   (PRINT  slog "\nStatement%s (%s): Next %s" $location $token TheNext) 
+*/
+   (CALL StmtFlow TheNext ContinueLoc BreakLoc)}
+>
+
+}
+
+
+PROC PrintNext
+
+ARG GNODE GivenNext;
+ROOT Statement;
+{
+
+(PRINT control "\n(%s_stmt%s  %s)\n" fileName (SLOT line $location)  GivenNext)
+}
+
+
+FUNCTION DealWithCond 
+
+ROOT Expression;
+{ 
+LOCAL GNODE leftValue;
+LOCAL GNODE rightValue;
+LOCAL GNODE newValue;
+
+(?LogAnd
+   (ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+   <be_lhs
+      (ASSIGN leftValue (CALL DealWithCond)) >
+   <be_rhs
+      (ASSIGN rightValue (CALL DealWithCond)) >
+
+   (PRINT component "\n(%s %s (LogAnd %s %s %s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		leftValue
+		rightValue
+		newValue
+		) 
+(RETURN newValue)
+)
+
+(?LogOr
+   (ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+
+   <be_lhs
+      (ASSIGN leftValue (CALL DealWithCond))>
+   <be_rhs
+      (ASSIGN rightValue (CALL DealWithCond))>
+
+   (PRINT component "\n(%s %s (LogOr %s %s %s))\n"
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		leftValue
+		rightValue
+		newValue
+		) 
+
+(RETURN newValue)
+)
+
+(?Expression
+
+   (ASSIGN newValue (CEXPR C_String "(char *) newResult( getCstring( fileName ) )"))
+
+    (ASSIGN newValue (CALL DealWithExpression))  
+(RETURN newValue) 
+)  
+}
+
+
+
+PROC CondFlow
+
+ARG GNODE In;
+ARG GNODE To; /* True Output */
+ARG GNODE Fo; /* False Out */
+ROOT Expression;
+{ 
+LOCAL GNODE newnode;
+
+/* 
+(?LogAnd
+   (ASSIGN newnode (CEXPR C_String "(char *) newname( getCstring(fileName) )"))
+
+		(PRINT component "\n(%s\n (\n(%s %s (NullBridge))\n )\n)\n"
+		newnode 		
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		) 
+   <be_lhs
+      (CALL CondFlow In newnode Fo)
+      >
+   <be_rhs
+      (CALL CondFlow newnode To Fo)>
+(RETURN))
+
+(?LogOr
+   (ASSIGN newnode (CEXPR C_String "(char *) newname( getCstring(fileName) )"))
+
+		(PRINT component "\n(%s\n (\n(%s %s (NullBridge))\n )\n)\n"
+		newnode 		
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)
+		) 
+   <be_lhs
+      (CALL CondFlow In To newnode)>
+   <be_rhs
+      (CALL CondFlow newnode To Fo)>
+(RETURN))
+
+(?Expression
+*/
+/*	(ASSIGN newnode (CEXPR C_String "(char *) newname( getCstring(fileName) )"))
+*/
+	(PRINT component "\n(%s_cond%s \n (\n" fileName (SLOT line $location) )
+
+    (CALL DealWithCond)
+    (PRINT component " )\n") 
+	(CALL VariableReference)
+
+	(PRINT component ")\n")
+
+    (PRINT control "\n(%s %s_cond%s %s %s)\n" In fileName (SLOT line $location) To Fo)
+/*
+    (PRINT control "\n(%s %s_cond%s)\n" In fileName (SLOT line $location))
+    (PRINT control "\n(%s_cond%s %s)\n" fileName (SLOT line $location) To)
+    (PRINT control "\n(%s_cond%s %s)\n" fileName (SLOT line $location) Fo)
+*/
+/*)*/  
+}
+
+PROC GatherStatementsInBlock
+
+ROOT Block;
+{
+	(PRINT component " (\n")
+	<blockbody 
+ 		(TRAVERSE 
+			Statement $token 
+			{Statement 
+				(IF (TYPEOF $token For)
+					(THEN (PRINT component "  %s_stmt%sfor\n" fileName (SLOT line $location)))
+					(ELSE (PRINT component "  %s_stmt%s\n" fileName (SLOT line $location)))) 
+			})
+	>  
+	(PRINT component " )\n")  
+
+} 
+
+PROC GatherSingleStatement
+
+ROOT Statement;
+{
+	(IF (TYPEOF $token For)
+		(THEN (PRINT component "  (%s_stmt%sfor)\n" fileName (SLOT line $location)))
+		(ELSE (PRINT component "  (%s_stmt%s)\n" fileName (SLOT line $location))) 
+	)  
+} 
+
+
+PROC GatherContainedStatements
+
+/* To gather names of all statements contained by this statement into a list. */ 
+ROOT Statement;
+
+{
+	(IF (TYPEOF $token Block)
+		(THEN (CALL GatherStatementsInBlock)) 
+		(ELSE (CALL GatherSingleStatement)) 	
+	) 
+} 
+
+
+PROC StmtFlow
+
+ARG GNODE GivenNext;
+ARG GNODE ContinueLoc;
+ARG GNODE BreakLoc;
+ROOT Statement;
+{
+
+LOCAL GNODE TheNext;
+LOCAL GNODE be;
+LOCAL GNODE TmpLoc;
+LOCAL GNODE TheLoc;
+LOCAL GNODE tmpt;
+LOCAL GNODE bf;
+LOCAL GNODE cl;
+LOCAL GNODE bl;
+LOCAL GNODE flt;
+LOCAL GNODE fli;
+
+LOCAL GNODE forbridge;
+
+ (PRINT stdout "(Statement : %s :type %s)\n" $location $nodetype)
+
+        /* note: this currently ignores initializations that are
+           part of declarations.  For example, int i = x; C obj(28,x,y);
+           or member initializers in constructors: X::X() : x(stuff) {}
+        */
+
+
+
+(ASSIGN TheLoc (CALL LOCSTRING ""))
+(ASSIGN TheNext GivenNext)
+(ASSIGN tmpt TheNext)
+/* (PRINT stderr "\n(%s" ) */
+/* (ASSIGN TheNext (CALL FindNext GivenNext)) */
+
+(?Block 
+
+     (CALL CompoundFlow TheNext ContinueLoc BreakLoc))
+
+(?Return
+	(PRINT control "\n(%s  %s)\n" TheLoc finish_stmt)
+/*
+     (ASSIGN be (CALL LOCSTRING " Return"))
+     (PRINT control "\n%s [shape=box])\n" be)
+     (PRINT control "\n%s  %s )\n" TheLoc be)
+*/
+	(PRINT component "\n(%s \n (\n" TheLoc)
+	(CALL DealWithReturn)
+    (PRINT component " )\n") 
+	(CALL VariableReference)
+	(PRINT component ")\n")
+
+   (RETURN))
+
+/* !!!MUST HANDLE expr ? expr : expr */ 
+
+(?If 
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithIf)
+    (PRINT component " )\n)\n")
+
+        (IF (NULL (SLOT ifTbranch $token))
+            (THEN (ASSIGN bl TheNext))  
+					/* Here, bl is the destination of the true branch */
+            (ELSE 
+	            (ASSIGN bl (CALL LOCSTRING "then"))
+			(PRINT component "\n(%s\n (\n(%s %s (NullBridge))\n )\n)\n"
+				bl  
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+			) 
+		    ))
+
+        (IF (NULL (SLOT ifFbranch $token))
+            (THEN (ASSIGN cl TheNext))  
+					/* Here, cl is the destination of the true branch */
+            (ELSE      (ASSIGN cl (CALL LOCSTRING "else"))
+			(PRINT component "\n(%s\n (\n(%s %s (NullBridge))\n )\n)\n"
+				cl  
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+			) 
+			))
+
+	<ifcondition (CALL CondFlow TheLoc bl cl)>
+
+        (IF (NULL (SLOT ifTbranch $token))
+            (THEN (ASSIGN bl TheNext))  
+					/* Here, bl is the destination of the true branch */
+            (ELSE 
+	            (ASSIGN bl (CALL LOCSTRING "then"))
+	            <ifTbranch 
+		    (CALL StmtFlow TheNext ContinueLoc BreakLoc) 
+					/* Continuation from true branch on to next stmtm */
+
+		    (ASSIGN bf (CALL BlockFirst))
+		    (PRINT control "\n(%s  %s)\n" bl bf)>))
+
+        (IF (NULL (SLOT ifFbranch $token))
+            (THEN (ASSIGN cl TheNext))  
+					/* Here, cl is the destination of the true branch */
+            (ELSE      (ASSIGN cl (CALL LOCSTRING "else"))
+                    <ifFbranch 
+		        (CALL StmtFlow TheNext ContinueLoc BreakLoc)  
+					/* Continuation from true branch on to next stmtm */
+       	           
+		        (ASSIGN be (CALL BlockFirst))
+			(PRINT control "\n(%s  %s)\n" cl be)>))
+
+	)
+
+
+(?ExprStmt
+/*  (CALL PrintVariables TheLoc)*/
+
+/* (PRINT stderr "\nExpr %s at %s type %s" $token $location $nodetype) */
+ (IF (TYPEOF (SLOT expr $token) UserCall)
+     (THEN
+     <expr 
+		(IF (NOT (NULL (SLOT callname $token)))
+			(THEN (ASSIGN cl (SLOT callname $token)))
+			(ELSE (ASSIGN cl (SLOT callexpr $token))))
+		(ASSIGN be (CALL LOCSTRING ""))
+
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithFunCall)
+    (PRINT component " )\n)\n")
+
+      
+		(IF (OR (EQUAL cl "exit")  (EQUAL cl "abort"))
+			(THEN 
+/*
+				(PRINT control "\n\"%s%s\" [shape=doublecircle])\n" be cl)
+*/
+				(PRINT control "\n%s  %s )\n" TheLoc be))
+			(ELSE 
+/*
+				(PRINT control "\n(\"%s@%s\" [shape=box])\n" cl be)
+				(PRINT control "\n(%s  \"%s@%s\" [label=call] )\n" TheLoc cl be)
+				(PRINT control "\n(\"%s@%s\"  %s [label=return] )\n" cl be TheNext)))>)
+*/
+				(PRINT control "\n(%s  %s)\n" be TheNext)))>)
+
+	(ELSE 
+
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithExprStmt)
+    (PRINT component " )\n") 
+	(CALL VariableReference)
+	(PRINT component ")\n")
+
+	(CALL PrintNext TheNext))
+ )
+)
+
+(?Default
+	(CALL PrintNext TheNext))
+(?Case
+	(CALL PrintNext TheNext))
+
+(?For
+
+	(PRINT component "\n(%s_stmt%s\n (\n"  
+		fileName
+		(SLOT line $location)
+	) 
+	(PRINT component "(%s %s (NullBridge))\n )\n)\n" 
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)) 
+
+	(IF (NULL (SLOT forbody $token))
+
+	    (THEN (ASSIGN bf (CALL LOCSTRING "nullbody")))
+	    (ELSE 
+	       <forbody (ASSIGN bf (CALL BlockFirst)) >))
+
+	(IF (NULL (SLOT forcondition $token))
+	    (THEN 
+	     (ASSIGN flt (CALL LOCSTRING "nulltest"))
+	     (PRINT control "\n((%s  %s)\n"  flt bf)
+	     (PRINT control "\n(%s  %s [style = dotted])\n"  flt TheNext))
+	    (ELSE 
+	     <forcondition   
+	       (ASSIGN flt (CALL LOCSTRING "test"))
+/*	       (CALL PrintVariables $location) */
+               (CALL CondFlow flt bf TheNext)>))
+
+	(IF (NULL (SLOT forinit $token))
+	    (THEN (ASSIGN fli (CALL LOCSTRING "nullinit"))
+		  
+		  )
+	    (ELSE 
+	      <forinit (ASSIGN fli (CALL LOCSTRING "init"))
+
+/*	      (CALL PrintVariables $location)*/ >)
+	    )
+
+	(PRINT component "\n(%s\n (\n"  
+		flt 
+	) 
+	(PRINT component "(%s %s (NullBridge))\n )\n)\n" 
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)) 
+
+
+	<forinit 
+	(PRINT component "\n(%s \n (\n" fli)
+	(CALL DealWithStatement)
+	(PRINT component " )\n") 
+	(CALL VariableReference)
+	(PRINT component ")\n")
+
+	>
+
+/*
+	(PRINT control "\n(%s  %s)\n" TheLoc fli)
+	(PRINT control "\n(%s  %s)\n" fli  flt)
+*/
+	(ASSIGN forbridge (CALL LOCSTRING "for"))
+	(PRINT control "\n(%s  %s)\n" TheLoc fli)
+	(PRINT control "\n(%s  %s)\n" fli forbridge)
+	(PRINT control "\n(%s  %s)\n" forbridge  flt)
+
+	(PRINT component "\n(%s\n (\n" forbridge)
+ 
+	(PRINT component "(%s %s (Loop For \n" 
+		(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+		(SLOT line $location)) 
+	<forcondition (PRINT component "  (%s_cond%s)\n" fileName (SLOT line $location))>  	
+	<forbody (CALL GatherContainedStatements)>
+    (PRINT component "))\n )\n)")
+
+
+	(IF (NULL (SLOT forincrement $token))
+	    (THEN (ASSIGN fli (CALL LOCSTRING "nullincr")))
+	    (ELSE 
+	       <forincrement    
+                (ASSIGN fli (CALL LOCSTRING "incr"))
+/*		(CALL PrintVariables $location) */ >))
+	(PRINT control "\n(%s  %s)\n" fli  flt)
+
+	<forincrement
+	(PRINT component "\n(%s \n (\n" fli)
+	(CALL DealWithExpression)
+	(PRINT component " )\n") 
+	(CALL VariableReference)
+	(PRINT component ")\n")
+	>
+
+	(IF (NULL (SLOT forbody $token))
+	    (THEN  (PRINT control "\n(%s  %s)\n"  bf fli))
+	    (ELSE 
+	     <forbody
+	        (IF (TYPEOF $token Block)
+                     (THEN (ASSIGN be (CALL  BlockEnd)))
+		     (ELSE (ASSIGN be (CALL LOCSTRING ""))))
+/*		(PRINT control "\n(%s   %s)\n"   be  fli) */
+		(CALL StmtFlow fli fli TheNext)>))
+        )
+(?Continue
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithContinue)
+        (PRINT component " )\n)\n")
+
+	(PRINT control "\n(%s_stmt%s  %s)\n" fileName (SLOT line $location)  ContinueLoc))
+
+(?Break
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithBreak)
+        (PRINT component " )\n)\n")
+
+	(PRINT control "\n(%s_stmt%s  %s)\n" fileName (SLOT line $location)  BreakLoc))
+
+(?Goto 
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithGoto)
+        (PRINT component " )\n)\n")
+
+	(PRINT control "\n(%s_stmt%s  %s_stmt%s)\n" fileName  
+	(SLOT line $location) fileName (SLOT line (LOCATION (SLOT stmt (SLOT gotoname $token))))))
+
+(?Do
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithDo) 
+	(PRINT component " )\n)\n")
+
+	<dobody (ASSIGN bf (CALL BlockFirst))>
+        (PRINT control "\n(%s  %s)\n"  TheLoc bf)
+	<docondition  (ASSIGN flt (CALL LOCSTRING ""))
+                (CALL CondFlow flt bf TheNext)
+/* 		(CALL PrintVariables $location) */ >
+	<dobody
+		(CALL StmtFlow flt flt TheNext)>
+)
+
+(?While
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithWhile) 
+	(PRINT component " )\n)\n")
+
+	<whilebody (ASSIGN bf (CALL BlockFirst))>
+/*
+	<whilecondition (ASSIGN flt (CALL LOCSTRING "cond"))
+*/
+	<whilecondition (ASSIGN flt (CALL LOCSTRING ""))
+	        (CALL CondFlow flt bf TheNext)
+/*		(CALL PrintVariables TheLoc)*/ > 
+
+/*	(PRINT control "\n(%s  %s)\n"  TheLoc  flt)
+*/
+	<whilebody
+		(CALL StmtFlow flt flt TheNext)>
+)
+
+/* (?Goto <Where (ASSIGN TmpLoc $location)>
+         (CALL PrintNext TmpLoc)) */
+
+(?Switch
+	(PRINT component "\n(%s_stmt%s \n (\n" fileName (SLOT line $location) )
+	(CALL DealWithSwitch) 
+	(PRINT component " )\n)\n")
+
+          (ASSIGN TmpLoc $location)
+     	<switchcondition 
+/*          (CALL PrintVariables TheLoc) */ >
+        <switchbody 
+	   (?Block
+              <blockbody
+                {Statement
+                  (?Case (PRINT control  "\n(%s_stmt%s  %s_stmt%s)\n"  
+			fileName (SLOT line TmpLoc) fileName (SLOT line $location)))
+                  (?Default (PRINT control  "\n(%s_stmt%s  %s_stmt%s)\n" 	
+			fileName (SLOT line TmpLoc) fileName (SLOT line $location)))}>)  
+	   (CALL StmtFlow TheNext TheNext TheNext)>
+)
+}
+
+

@@ -1,0 +1,44 @@
+/*ident	"@(#)gen++:d.pkg/examples/metrics.query	1.7" */
+/* This query computes two metrics on a C++ file. */
+/* NOTE: ++ not currently implemented */
+ROOTPROC metrics
+
+PROC metrics
+ROOT CFile;
+{
+LOCAL GNODE fn;
+LOCAL GNODE npm;
+LOCAL GNODE nc;
+LOCAL GNODE nbc;
+LOCAL GNODE ndc;
+LOCAL GNODE tc;
+(ASSIGN nc 0)  (ASSIGN nbc 0)
+(ASSIGN npm 0) (ASSIGN ndc 0)
+<filename (ASSIGN fn $token)>
+<globals
+  {Declaration
+    (?ClassDef
+       (ASSIGN nc (+ nc 1))
+       (ASSIGN tc 0)
+       <bases {BaseSpec (ASSIGN tc (+ tc 1))}>
+       (IF (> tc 0) (THEN (ASSIGN ndc (+ ndc 1))) (ELSE (ASSIGN nbc (+ nbc 1))))
+       <members {MemberSpec
+          (?MemberDeclaration <def
+		   (IF (TYPEOF (SLOT scope $token) Scope_Public)
+		       (THEN (ASSIGN npm (+ npm 1)))
+		   )
+          >)
+       }>
+    )
+  }
+>
+(PRINT stdout "For file %s:\n" fn)
+(PRINT stdout "Copeland Metric 1 (# of Derived Class/# of Base Classes) == ")	
+(PRINT stdout "%s\n" (CEXPR C_Float "(getCint(ndc)/(float)getCint(nbc))"))
+(PRINT stdout "Copeland Metric 3 (Class Coupling == #public members / #classes) == ")
+(PRINT stdout "%s\n" (CEXPR C_Float "(getCint(npm)/(float)getCint(nc))"))
+(PRINT stdout "\t# classes: %s\n" nc)
+(PRINT stdout "\t# base classes: %s\n" nbc)
+(PRINT stdout "\t# derived classes: %s\n" ndc)
+(PRINT stdout "\t# public members: %s\n" npm)
+}

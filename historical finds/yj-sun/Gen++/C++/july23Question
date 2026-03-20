@@ -1,0 +1,16 @@
+Hi Prof. Quilici,
+ 
+I feel it's a little harder to take care of continue, break. Probably I can
+replace them with (goto lineNumber) where the lineNumber is the line the flow
+will go to by continue or break.
+ 
+Another issue is, I am using lineNumber for all components, but for the real 
+case, we have separate source files to be compiled together and generate one
+transformed component file. I guess later on I have to include the filename in
+the compoenent and modify the CSP program.      
+ 
+Thanks.
+ 
+ 
+--Yongjun 
+

@@ -1,0 +1,23 @@
+/*ident	"@(#)gen++:d.pkg/examples/gref.query	1.9" */
+/* print references to global names */
+ROOTPROC gref
+FILE FD "gref.out"
+PROC gref
+ROOT CFile;
+{
+LOCAL GNODE fname;
+<globals
+ {Declaration
+   (ASSIGN fname  "global scope")
+   (?FunctionSpec (ASSIGN fname (SLOT defname $token)))
+   (?AggrDef      (ASSIGN fname (SLOT defname $token)))
+   [(?NameRef
+        (IF (TYPEOF (SLOT scope $token) Scope_Extern)
+            (THEN (PRINT FD "%s: in %s: reference to %s\n" $location
+                            <fname verbose> <$token verbose>)
+            )
+        )
+   )]
+ }
+>
+}

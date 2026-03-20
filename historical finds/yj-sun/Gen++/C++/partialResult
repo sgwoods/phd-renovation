@@ -1,0 +1,30 @@
+HI Prof. Quilici,
+
+The partial result is as follows, I haven't taken care of definition with 
+initilization yet. 
+
+#include <math.h>
+
+main()
+{
+  int x1, y1;
+  int x2, y2;
+
+  x1 = y1 = 1;
+  x2 = y2 = 4;
+
+  int val1 = (x2 - x1) * (x2 - x1);
+  int val2 = (y2 - y1) * (y2 - y1);
+
+  int result = sqrt(x1 + x2);
+}
+
+(elem-1 8 (Assign y1 1))
+(elem-2 8 (Assign x1 1))
+(elem-3 8 (Assign y1 1))
+(elem-4 9 (Assign y2 1))
+(elem-5 9 (Assign x2 1))
+(elem-6 9 (Assign y2 1))
+(elem-7 14 (Plus x1 x2 Result1))
+(elem-8 14 (UserCall sqrt Result1 Result2 ))
+

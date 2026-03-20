@@ -1,0 +1,166 @@
+ROOTPROC VarUseDef
+FILE component "components.zyj"
+
+EXTERNAL PROC newBlock () RETURNS STRING
+EXTERNAL PROC newElem () RETURNS STRING
+EXTERNAL PROC newResult () RETURNS STRING
+EXTERNAL PROC newConstraint () RETURNS STRING
+
+PROC DealWithUserCall 
+ROOT UserCall; 
+{
+	(PRINT component "(%s %s (Call (%s (function) "  
+				(CEXPR C_String "(char *) newElem()")
+			 	(SLOT line $location)
+				(SLOT callname $token))
+	<callargs {Expression
+				(PRINT component "%s (%s) "
+					$token 
+					(NODETYPE $token))   
+			  } 
+	>
+	<type (PRINT component ") %s (%s)))\n" 
+				(CEXPR C_String "(char *) newResult()")
+				(NODETYPE $token))
+	> 
+}
+/*
+FUNCTION idField  
+ 
+ROOT Expression;
+{
+ <defname  
+         (RETURN TRUE)
+ >
+ (RETURN NULL)
+}
+*/  
+
+PROC VarUseDef
+ROOT CFile;
+{
+  LOCAL GNODE newblock;
+  LOCAL GNODE newelem; 
+
+
+  [
+/*	(?ObjectDef
+	  (PRINT component "(%s Decl %s " (SLOT line $location)
+									(SLOT defname $token)
+									) 
+	  <type 
+		  (?ArrayType 
+				(PRINT component "array %s %s)\n"
+					(SLOT element_type $token)  
+					(SLOT size $token)))
+		  (?BuiltinType
+					(PRINT component "%s)\n" $token))
+	  >
+	)
+*/										
+
+	
+			(?Block
+				(ASSIGN newblock (CEXPR C_String "(char *) newBlock()"))
+	  			(PRINT component "(%s %s (Begin %s))\n" 
+					(CEXPR C_String "(char *) newElem()") 
+					(SLOT line $location)
+					newblock) 
+				(PRINT component "(%s %s (End %s))\n" 
+					(CEXPR C_String "(char *) newElem()") 
+					(SLOT line (SLOT blockend $token))
+					newblock)
+			)
+	(?UserCall  (CALL DealWithUserCall)  )
+
+		
+    (?While
+	  (PRINT component "(%s %s (While %s))\n" 
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line $location) 
+					(CEXPR C_String "(char *) newResult()"))
+	  
+/*	  <whilebody 
+			(?Block
+	  			(PRINT component "(%s %s (Begin block1))\n" 
+					(CEXPR C_String "(char *) newElem()") 
+					(SLOT line $location)) 
+				(PRINT component "(%s %s (End block1))\n" 
+					(CEXPR C_String "(char *) newElem()") 
+					(SLOT line (SLOT blockend $token)))
+			)
+	  > 
+*/
+	)
+	
+    (?For 
+	  (PRINT component "(%s %s (ForInit %s))\n" 
+					(CEXPR C_String "(char *) newElem()")	
+					(SLOT line $location) 
+				    (SLOT forinit $token))
+	  (PRINT component "(%s %s (While %s))\n" 
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line $location) 
+				    (SLOT forcondition $token))
+/*	  <forbody 
+			(?Block
+	  			(PRINT component "(%s %s (Begin block1))\n" 
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line $location)) 
+				
+				(PRINT component "(%s %s (ForIncrement %s))\n" 
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line (SLOT blockend $token))
+					(SLOT forincrement $parent))
+				(PRINT component "(%s %s (End block1))\n" 
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line (SLOT blockend $token)))
+			)
+	  > 
+*/
+	)
+	
+	(?IdName
+   		 (IF (AND (TYPEOF $parent Assignment) (EQUAL $slot "be_lhs"))
+  		    (THEN  
+				(IF (TYPEOF $parent PlusAssign)
+					(THEN 
+								(PRINT component "(%s %s (AddTo %s %s))\n" 
+										(CEXPR C_String "(char *) newElem()")
+										(SLOT line $location) 
+										$token
+										(SLOT be_rhs $parent)			
+								)
+						) 	
+					(ELSE
+						(IF (AND (TYPEOF (SLOT be_rhs $parent) IntConst) 
+								 (EQUAL (SLOT civalue (SLOT be_rhs $parent)) 0)) 
+							(THEN  
+								(PRINT component "(%s %s (Zero %s))\n" 
+										(CEXPR C_String "(char *) newElem()")
+										(SLOT line $location) 
+										$token
+								))
+							(ELSE
+								(PRINT component "(%s %s (Assign %s %s))\n" 
+										(CEXPR C_String "(char *) newElem()")
+										(SLOT line $location) 
+										$token
+										(SLOT be_rhs $parent)
+								))
+   						)	
+					)  
+				)) 	
+	  		(ELSE  
+				(IF (OR (TYPEOF $parent PostInc) (TYPEOF $parent PreInc) )
+					(THEN (PRINT component "(%s %s (Increment %s))\n" 
+								(CEXPR C_String "(char *) newElem()")
+								(SLOT line $location) $token))
+			/*		(ELSE (PRINT component "(%s %s (Reference %s))\n" 
+								(CEXPR C_String "(char *) newElem()")
+								(SLOT line $location) $token))*/)
+    		) 	 
+		)
+    )
+  ]
+}

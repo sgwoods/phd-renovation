@@ -1,0 +1,61 @@
+HI Prem,
+
+I met similar problem as before. 
+I want go through the source code and translate them to my representation.
+My main program is like this:
+
+PROC Transform
+ROOT CFile;
+{
+    LOCAL GNODE fname;
+ 
+    [
+        (?ObjectDef
+            (ASSIGN fname (SLOT file $location))
+            (IF (EQUAL (CEXPR C_Integer "IsHeader( getCstring(fname))") 0 )
+            (THEN (CALL DealWithObjectDef)) )
+        )
+        (?Statement
+            (CALL DealWithStatement)
+        )
+    ]
+}
+
+For example:
+
+for( i=0; i<10; i++)
+{
+	statements; 
+} 
+
+DealWithStatement takes care of all kinds of statements.
+
+Inside DealWithStatement, I test if it's a type "For" node, DealWithFor is
+then called. DealWithFor finds i=0, i<10 and i++ are statements and call 
+DealWithStatement to deal with them.   
+
+On the other hand, because i=0 is a  statement(and so is the forbody), and 
+DealWithStatement in the main program will test and find it as a statement
+and call DealWithStatement again. The image is like this:
+ 
+ 
+                  find For                 find i=0, 
+DealWithStatement ----------> DealWithFor -----------> DealWithStatement
+
+                              find i=0, 
+DealWithStatement -----------------------------------> DealWithStatement
+
+i=0 in the forinit will be dealed with twice, I only want it be dealed with 
+once in DealWithFor.  
+
+This happen because I'm using constructs [] which will search through all nodes of
+the tree. What I need is to stop the search inside forloop of the trww once I found 
+the For node and ask DealWithFor to take care of the subtree of forloop.  
+
+I'm repeating just trying to make it clear. Hope I have. 
+
+
+
+ 
+
+ 

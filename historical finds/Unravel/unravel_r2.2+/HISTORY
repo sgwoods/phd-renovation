@@ -1,0 +1,902 @@
+ 
+UNRAVEL  /fsys/sgw/Software/Seg/Unravel/unravel_r2.2+ Mon Sep 28 14:05:38 EDT 1998
+ANALYZER   Mon Sep 28 14:05:40 EDT 1998
+CPP Flags:
+parser Flags:
+
+amoeba.c summary
+  22 Source program lines
+  17 Source program statements (flow graph nodes)
+   0 Global variables
+   0 Pointers to structure chains
+   3 Addresses (variables referenced by pointer)
+   1 Procedures defined
+   2 External procedures called
+
+Procedures defined:
+main     
+
+External procedures called:
+scanf    printf   
+amoeba.c (338 chars) analysis complete 1 secs  338 chars/sec
+ 
+running map
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:06:02 1998
+
+Linking amoeba.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 20 (line 20 in file amoeba.)
+global var 
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 21 (line 21 in file amoeba.)
+global var 
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 20 (line 20 in file amoeba.)
+global var 
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 21 (line 21 in file amoeba.)
+local var output1
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+21 in amoeba.c (11 stmts in 0:1)
+ANALYZER   Mon Sep 28 14:08:21 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  58 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1264 chars) analysis complete 1 secs  1264 chars/sec
+ 
+running map
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+ANALYZER   Mon Sep 28 14:24:24 EDT 1998
+CPP Flags:
+parser Flags:
+server.c is not ANSI C (compile errors)
+parser: syntax error near line 30 in file /software/gcc-2.7.2/lib/gcc-lib/sparc-sun-solaris2.5.1/2.7.2/include/sys/byteorder.h
+
+client.c summary
+  58 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1264 chars) analysis complete 1 secs  1264 chars/sec
+ 
+running map
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+CPP Flags:
+parser Flags:
+
+client.c summary
+  58 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1264 chars) analysis complete 1 secs  1264 chars/sec
+ 
+running map
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+ANALYZER   Mon Sep 28 14:24:59 EDT 1998
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:25:04 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+ANALYZER   Mon Sep 28 14:25:14 EDT 1998
+CPP Flags:
+parser Flags:
+server.c is not ANSI C (compile errors)
+parser: syntax error near line 30 in file /software/gcc-2.7.2/lib/gcc-lib/sparc-sun-solaris2.5.1/2.7.2/include/sys/byteorder.h
+ 
+running map
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+CPP Flags:
+parser Flags:
+
+server.c summary
+  52 Source program lines
+  45 Source program statements (flow graph nodes)
+   0 Global variables
+   0 Pointers to structure chains
+   4 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  10 External procedures called
+
+Procedures defined:
+main     
+
+External procedures called:
+socket   perror   memset   htons    close    bind     listen   
+accept   printf   recv     
+server.c (1136 chars) analysis complete 1 secs  1136 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:25:54 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 49 (line 49 in file server.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 49 (line 49 in file server.)
+local var rgcMsg
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 42 (line 42 in file server.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 49 (line 49 in file server.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 49 (line 49 in file server.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 49 (line 49 in file server.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 49 (line 49 in file server.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+ANALYZER   Mon Sep 28 14:29:50 EDT 1998
+CPP Flags:
+parser Flags:
+server.c is not ANSI C (compile errors)
+parser: syntax error near line 12 in file server.c
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+ANALYZER   Mon Sep 28 14:30:48 EDT 1998
+CPP Flags:
+parser Flags:
+server.c is not ANSI C (compile errors)
+parser: syntax error near line 12 in file server.c
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+ANALYZER   Mon Sep 28 14:31:12 EDT 1998
+CPP Flags:
+parser Flags:
+
+server.c summary
+  58 Source program lines
+  45 Source program statements (flow graph nodes)
+   0 Global variables
+   0 Pointers to structure chains
+   4 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  10 External procedures called
+
+Procedures defined:
+main     
+
+External procedures called:
+socket   perror   memset   htons    close    bind     listen   
+accept   printf   recv     
+server.c (1252 chars) analysis complete 1 secs  1252 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:31:29 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 55 (line 55 in file server.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+in server.c (8 stmts in 0:1)
+ANALYZER   Mon Sep 28 14:35:23 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  64 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1380 chars) analysis complete 1 secs  1380 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:35:42 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 55 (line 55 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 29 (line 29 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 39 (line 39 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 51 (line 51 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 54 (line 54 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 30 (line 30 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 61 (line 61 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+ 61 in client.c (4 stmts in 0:1)
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:46:38 1998
+
+client.c already linked
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 61 (line 61 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 19 (line 19 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 19 (line 19 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 18 (line 18 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 18 (line 18 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 55 (line 55 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 55 (line 55 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 53 (line 53 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 53 (line 53 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 53 (line 53 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 53 (line 53 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 61 (line 61 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 62 (line 62 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 55 (line 55 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 53 (line 53 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 52 (line 52 in file client.)
+local var sain.sin_addr
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 55 (line 55 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+ANALYZER   Mon Sep 28 14:52:22 EDT 1998
+CPP Flags:
+parser Flags:
+client.c is not ANSI C (compile errors)
+parser: syntax error near line 26 in file client.c
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+ANALYZER   Mon Sep 28 14:53:21 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  72 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1549 chars) analysis complete 1 secs  1549 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:53:44 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 71 (line 71 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 71 (line 71 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 61 (line 61 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 61 (line 61 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 61 (line 61 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 60 (line 60 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 61 (line 61 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 69 (line 69 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+in client.c (8 stmts in 0:1)
+ANALYZER   Mon Sep 28 14:56:17 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  68 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1424 chars) analysis complete 1 secs  1424 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:56:32 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+ANALYZER   Mon Sep 28 14:57:03 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  68 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1425 chars) analysis complete 1 secs  1425 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 14:57:29 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 59 (line 59 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 34 (line 34 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 34 (line 34 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 34 (line 34 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 34 (line 34 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 59 (line 59 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 67 (line 67 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 59 (line 59 in file client.)
+local var fdSocket
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 60 (line 60 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+in client.c (10 stmts in 0:1)
+ANALYZER   Mon Sep 28 15:00:13 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  73 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1475 chars) analysis complete 1 secs  1475 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+ANALYZER   Mon Sep 28 15:03:15 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  73 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1486 chars) analysis complete 1 secs  1486 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 15:03:32 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+call slice at line 69 (line 69 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+call slice at line 69 (line 69 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+call slice at line 64 (line 64 in file client.)
+local var sain
+TEST OUTPUT in slicecall from in u.c  0 sgw
+TEST OUTPUT do_slice in u.c  0 sgw
+TEST OUTPUT slice in slice.c 0 sgw
+in client.c (10 stmts in 0:1)
+ANALYZER   Mon Sep 28 15:04:43 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  73 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1485 chars) analysis complete 1 secs  1485 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 15:04:59 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+ANALYZER   Mon Sep 28 15:06:09 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  73 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1482 chars) analysis complete 1 secs  1482 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+Warning: Cannot allocate colormap entry for "seashell3"
+TEST OUTPUT main in select.c 0 sgw
+Link & Slice  Mon Sep 28 15:06:23 1998
+
+F I N I S H E D
+SGW: do_slice call from select.c
+SGW: do_slice call from do_slice.c
+Warning: Cannot allocate colormap entry for "seashell3"
+Warning: Cannot allocate colormap entry for "LightBlue1"
+unravel version 2.2+
+TEST OUTPUT main in u.c  0 sgw
+TEST OUTPUT in create_widgets from in u.c  0 sgw
+ANALYZER   Mon Sep 28 15:07:01 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  74 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1512 chars) analysis complete 1 secs  1512 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 
+ANALYZER   Mon Sep 28 15:07:19 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  74 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1512 chars) analysis complete 1 secs  1512 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 

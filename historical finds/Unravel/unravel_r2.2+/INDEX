@@ -1,0 +1,64 @@
+INDEX               This file
+LAST_TAR_DATE       Date the last tar disk was made
+MultiSlice.c        Slice text display widget
+MultiSlice.h        Slice text display widget (public header)
+MultiSliceP.h       Slice text display widget (private header)
+VERSION             SCCS version numbers for source files
+analyzer.c          Controls execution of parser & map
+analyzer.help       Help text for analyzer
+analyzer.icon       Icon for analyzer
+ansi_parse.h        Header file for parsing
+auto-all*           Script for running auto-slice
+auto-slice.c        Run slicer on all program variables
+call-tree.c         Extract call tree from .LINK for xtree display
+chain.c             Parsing pointers
+config.h            Location of cpp and unravel home
+const.c             Global variable init for parser
+count-lif*          Script to count LIF, H & T file size
+count-link*         Script to count LINK & K file size
+down.xbm            Bitmap for down arrow
+err.c               Print parsing error message
+find_cc*            Script to find cpp for config.h
+find_software*      Script for finding X Window System files
+fix.h               # defines to make X11R5 compile on Open Windows
+helpu.c             Display help and history files
+helpu.icon          Icon for help display
+history.c           Keep history of slices for u.c
+kgram.y             The ANSI C grammar in YACC
+kscan.l             The ANSI C scanner in LEX
+lif.h               LIF codes
+link-all*           Script to link all LIF of programs in SYSTEM file
+loc*                Script to count lines of code 
+makefile            Controls compile and link of unravel
+map.c               Scan LIF files for main programs
+mem_alloc.c         Allocate memory for parser
+parser.c            Parser main program
+pss-driver.c        Test driver for pointer state
+pss.c               Calculate pointer state for slicing
+run*                Script to run parser
+select.c            Dislpay program selection control panel
+select.help         Help file for select
+sets.c              Set functions
+sets.h              Set functions header file
+slice-load.c        Load LINK and K files for slicer
+slice.c             Compute slices
+slice.h             Compute slices header file
+slice.icon          Icon for slicer control panel
+slice_driver.c      Test driver for slicer
+slink.c             Link LIF, H & T files into LINK & K files
+stmt.c              Statement parsing
+summary.c           Summarize procedures in a LIF file
+sym_tab.c           Parser symbol table
+tokens.h            Parser and scanner token includes
+tsummary.c          Summarize LIF for history files
+u.c                 User interface to slicer
+u.help              Slicer interface help display
+unravel.c           Main control panel interface
+unravel.help        Main control panel help file
+unravel.icon        Icon for main control panel
+up.xbm              Up arrow bitmap
+visit-ctrl.c        Locate procedures in LIF
+visit-filter.c      Select nodes for a given procedure
+vprep*              Invoke tsort on procedure nodes
+xpr.c               Expression parsing
+y.tab.h             Token definitions created by yacc

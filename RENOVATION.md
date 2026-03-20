@@ -264,6 +264,17 @@ the owning phase in the release summary so future work stays tied to the plan.
 10. Continue the historical recovery track by unpacking/cataloging the legacy
     compressed archives and keeping watch for any media that could restore the
     lost QCSP-nov96 terrain code and data.
+11. Treat newly recovered material under `historical finds/` as archive intake,
+    not baseline code. The current intake appears to split into:
+    `yj-sun/Csp` as a likely solver-lineage recovery candidate,
+    `yj-sun/Gen++` as a likely upstream analyzer-generation toolchain,
+    and `Unravel/` / `Refine/` as adjacent program-understanding context that
+    should stay reference-only until a direct thesis-validation role is proven.
+12. Prioritize archive work that strengthens the validated research story:
+    first compare `historical finds/yj-sun/Csp` against the current snapshots
+    and experiment artifacts, then map any unique batch/results material to the
+    thesis-era `PrevResults/ff*.ci` family, and only after that spend time on
+    broader adjacent-tool recovery.
 
 ## Commit History
 

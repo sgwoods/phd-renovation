@@ -1,0 +1,93 @@
+#ident	"@(#)gen++:d.pkg/metrics/README	1.3"
+
+DESCRIPTION:
+This directory contains a gen++ tool to calculate the 6 OO metrics
+designed by S. Chidamber and C. Kemerer at MIT.  A complete description
+of the metrics and their theoretical basis can be found in "A Metrics
+Suite for Object Oriented Design", S Chidamber, C Kemerer, IEEE, 1994.
+Briefly, the metrics include
+  WMC (weighted methods per class) -- in this case,
+        a count of the number of methods in each class
+  DIT (depth of inheritance tree) -- the maximum depth of
+        the inheritance graph for each class
+  NOC (number of children) -- the number of direct descendents
+        for each class
+  CBO (coupling between object classes) -- where a class is
+        coupled to another if one uses methods or instance
+        variables of the other
+  RFC (response for a class) -- set of methods that can po-
+        tentially be executed in response to a message received
+        by an object of that class.  In this case it is the set
+        of functions directly invoked by member functions of a
+        class.
+  LCOM (lack of cohesion in methods) -- count of the number of
+        methods pairs without shared instance variables minus
+        the number with shared instance variables.
+The metrics tool in this package is a gen++ analyzer that
+generates data for all 6 metrics for each file in an application.
+This data is then combined and processed by the accompanying scripts
+to produce 5 files (described below).  These files contain tables
+that can be fed through the S package to obtain histograms for the
+various metrics.
+
+FILES:
+You should have received the following files:
+	README
+	metrics.query -- gen++ query
+	count, noc -- small awk scripts
+	LCOM -- C++ program to process LCOM data.
+
+Metrics.query processes data for all 6 metrics.
+For each c++ file x.c, 5 files are produced:
+	x.M == WMC and DIT data; each line==classname;WMC;DIT
+	x.N == NOC data; each line==class1;class2 where class2
+		is derived form class1
+	x.O == CBO data; each line==class1;class2 where class1
+		couples with class2
+	x.P == RFC data; each line==class;method where method
+		is a function in the response set of class
+	x.L == LCOM data; each line==C;M;V where C is a class
+		containing method M and V is an instance variable
+		in C referenced by M
+Notes:
+ * In 2 of the metrics (CBO and RFC), <global> refers to "global scope",
+   which is treated as a special superclass.  Its methods are all global
+   functions.  (This may be deleted in subsequent releases.)
+   The presence of <global> may inflate the data for CBO and RFC slightly.
+   It is included primarily to obtain information on use of global names.
+ * Since virtual functions can only be identified at runtime, RFC and CBO
+   calculations only count the "static name" of virtual functions called.
+   I.e., if a virtual function call f() is encountered, metrics.query
+   will count baseclass::f() as if it were not virtual.  There is no way
+   to determine the identity of virtual functions at compile time.
+ * To ensure uniqueness of various types of names (functions, global, local
+   and nested classes and instantiated templates, etc), mangled names are
+   used in the generated tables.
+ * To ensure uniqueness of file static names, static names are printed
+   with the C file name appended.
+
+TO PROCESS METRICS:
+ * Build analyzer from metrics.query.
+ * Build application using the analyzer built from metrics.query.
+   This is done by editing QCC to use this analyzer then building
+   your application with CC=QCC.
+ * Execute the following in the order shown.  Note: Be sure to include
+   all the metrics data files from all relevant directories.
+	cat *.M | sort -u >mmm
+	cat *.N | sort -u | count >nn0; noc >nnn
+	cat *.O | sort -u | count >ooo
+	cat *.P | sort -u | count >ppp
+	cat *.L | sort -u | sed -e 's/ /-/g' | LCOM >lll
+Notes:
+ * mmm will contain WMC and DIT data for all classes or structs,
+   not including <global>
+ * nn0 will include NOC data for all classes that have children.
+   For a complete histogram, it is necessary to add the names of
+   all remaining classes.  This is done using the noc script
+   which merges data from mmm and nn0.
+ * ooo contains CBO info for classes, including <global>
+ * ppp contains RFC info for classes that have member
+   functions, including <global>
+ * lll contains LCOM info for classes with member functions.
+
+COMMENTS WELCOME!

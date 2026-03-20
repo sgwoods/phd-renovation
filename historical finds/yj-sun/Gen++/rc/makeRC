@@ -1,0 +1,9 @@
+#ident	"@(#)gen++:d.pkg/rc/makeRC	1.1"
+Q=${1:-query.list}
+RC=ruleChecker.query
+rm -f $RC
+echo 'FILE msgout;' >$RC
+for i in `cat $Q`
+do
+	cat q/$i.query >>$RC
+done

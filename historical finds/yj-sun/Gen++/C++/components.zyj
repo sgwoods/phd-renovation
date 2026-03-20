@@ -1,0 +1,273 @@
+
+(typicalC_stmt6 
+ (
+(typicalC_1 1 6 (Mult j j Result1) (j j Result1) (Result1))
+(typicalC_2 2 6 (Mult i i Result2) (i i Result2) (Result2))
+(typicalC_3 3 6 (Plus Result2 Result1 Result3) (Result2 Result1 Result3) (Result3))
+(typicalC_4 4 6 (Assign k Result3) (k Result3) (k))
+ )
+ ( (k typicalC 5) (i typicalC 3) (i typicalC 3) (j typicalC 3) (j typicalC 3)  )
+ ( (k typicalC 5)  )
+)
+
+(typicalC_stmt7 
+ (
+(typicalC_5 5 7 (Return k))
+ )
+ ( (k typicalC 5)  )
+ (  )
+)
+
+(typicalC_stmt13 
+ (
+(typicalC_6 6 13 (Ifstatement))
+ )
+)
+
+(typicalC_stmt15 
+ (
+(typicalC_7 7 15 (UserCall exit 0  Result4))
+ )
+)
+
+(typicalC_Cond1 
+ (
+(typicalC_8 8 13 (Less argc 1 Result5) (argc 1 Result5) (Result5))
+ )
+ ( (argc typicalC 10)  )
+ (  )
+)
+
+(typicalC_stmt18 
+ (
+(typicalC_9 9 18 (Assign i 10) (i 10) (i))
+ )
+ ( (i typicalC 12)  )
+ ( (i typicalC 12)  )
+)
+
+(typicalC_stmt19 
+ (
+(typicalC_10 10 19 (Assign j 20) (j 20) (j))
+ )
+ ( (j typicalC 12)  )
+ ( (j typicalC 12)  )
+)
+
+(typicalC_stmt21 
+ (
+(typicalC_11 11 21 (UserCall function i j  Result6))
+(typicalC_12 12 21 (Assign k Result6) (k Result6) (k))
+ )
+ ( (k typicalC 12) (i typicalC 12) (j typicalC 12)  )
+ ( (k typicalC 12)  )
+)
+
+(typicalC_stmt23 
+ (
+(typicalC_13 13 23 (Switch k))
+ )
+)
+
+(typicalC_stmt26 
+ (
+(typicalC_14 14 26 (PlusAssign i j) (i j) (i))
+ )
+ ( (i typicalC 12) (j typicalC 12)  )
+ ( (i typicalC 12)  )
+)
+
+(typicalC_stmt27 
+ (
+(typicalC_15 15 27 (MinusAssign i 10) (i 10) (i))
+ )
+ ( (i typicalC 12)  )
+ ( (i typicalC 12)  )
+)
+
+(typicalC_stmt28 
+ (
+(typicalC_16 16 28 (Goto 47))
+ )
+)
+
+(typicalC_stmt30 
+ (
+(typicalC_17 17 30 (MinusAssign i j) (i j) (i))
+ )
+ ( (i typicalC 12) (j typicalC 12)  )
+ ( (i typicalC 12)  )
+)
+
+(typicalC_Cond2 
+ (
+(typicalC_18 18 31 (Less j 5 Result7) (j 5 Result7) (Result7))
+ )
+ ( (j typicalC 12)  )
+ (  )
+)
+
+(typicalC_stmt31init 
+ (
+(typicalC_19 19 31 (Assign j 0) (j 0) (j))
+ )
+ ( (j typicalC 12)  )
+ ( (j typicalC 12)  )
+)
+
+(typicalC_stmt31incr 
+ (
+(typicalC_20 20 31 (Assign Result8 j) (Result8 j) (Result8))
+(typicalC_21 21 31 (Plus j  1 Result9) (j Result9) (Result9))
+(typicalC_22 22 31 (Assign j Result9) (j Result9) (j))
+ )
+ ( (j typicalC 12)  )
+ ( (j typicalC 12)  )
+)
+
+(typicalC_stmt33 
+ (
+(typicalC_23 23 33 (PlusAssign i 10) (i 10) (i))
+ )
+ ( (i typicalC 12)  )
+ ( (i typicalC 12)  )
+)
+
+(typicalC_stmt34 
+ (
+(typicalC_24 24 34 (Ifstatement))
+ )
+)
+
+(typicalC_stmt36 
+ (
+(typicalC_25 25 36 (Goto 31))
+ )
+)
+
+(typicalC_Cond3 
+ (
+(typicalC_26 26 34 (Greater i 100 Result10) (i 100 Result10) (Result10))
+ )
+ ( (i typicalC 12)  )
+ (  )
+)
+
+(typicalC_stmt38 
+ (
+(typicalC_27 27 38 (PlusAssign i 10) (i 10) (i))
+ )
+ ( (i typicalC 12)  )
+ ( (i typicalC 12)  )
+)
+
+(typicalC_stmt41 
+ (
+(typicalC_28 28 41 (Goto 47))
+ )
+)
+
+(typicalC_stmt43 
+ (
+(typicalC_29 29 43 (Assign i j) (i j) (i))
+ )
+ ( (i typicalC 12) (j typicalC 12)  )
+ ( (i typicalC 12)  )
+)
+
+(typicalC_stmt44 
+ (
+(typicalC_30 30 44 (Goto 47))
+ )
+)
+
+(typicalC_stmt47 
+ (
+(typicalC_31 31 47 (Ifstatement))
+ )
+)
+
+(typicalC_stmt49 
+ (
+(typicalC_32 32 49 (Assign k 10) (k 10) (k))
+ )
+ ( (k typicalC 12)  )
+ ( (k typicalC 12)  )
+)
+
+(typicalC_stmt51 
+ (
+(typicalC_33 33 51 (Ifstatement))
+ )
+)
+
+(typicalC_stmt53 
+ (
+(typicalC_34 34 53 (Assign k 20) (k 20) (k))
+ )
+ ( (k typicalC 12)  )
+ ( (k typicalC 12)  )
+)
+
+(typicalC_stmt57 
+ (
+(typicalC_35 35 57 (Assign k 30) (k 30) (k))
+ )
+ ( (k typicalC 12)  )
+ ( (k typicalC 12)  )
+)
+
+(typicalC_Cond4 
+ (
+(typicalC_36 36 51 (EqEq k 5 Result11) (k 5 Result11) (Result11))
+ )
+ ( (k typicalC 12)  )
+ (  )
+)
+
+(typicalC_Cond5 
+ (
+(typicalC_37 37 47 (EqEq k 0 Result12) (k 0 Result12) (Result12))
+ )
+ ( (k typicalC 12)  )
+ (  )
+)
+
+(typicalC_stmt60 
+ (
+(typicalC_38 38 60 (doLoop))
+ )
+)
+
+(typicalC_Cond6 
+ (
+(typicalC_39 39 60 (Less k 100 Result13) (k 100 Result13) (Result13))
+ )
+ ( (k typicalC 12)  )
+ (  )
+)
+
+(typicalC_stmt61 
+ (
+(typicalC_40 40 61 (PlusAssign k 10) (k 10) (k))
+ )
+ ( (k typicalC 12)  )
+ ( (k typicalC 12)  )
+)
+
+(typicalC_stmt62 
+ (
+(typicalC_41 41 62 (Plus i 10 Result14) (i 10 Result14) (Result14))
+(typicalC_42 42 62 (Assign k Result14) (k Result14) (k))
+ )
+ ( (k typicalC 12) (i typicalC 12)  )
+ ( (k typicalC 12)  )
+)
+
+(typicalC_stmt63 
+ (
+(typicalC_43 43 63 (Assign i k) (i k) (i))
+ )
+ ( (i typicalC 12) (k typicalC 12)  )
+ ( (i typicalC 12)  )
+)

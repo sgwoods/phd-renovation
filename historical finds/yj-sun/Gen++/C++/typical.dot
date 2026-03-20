@@ -1,0 +1,112 @@
+digraph hier {
+node [shape=ellipse];
+ page="8.5,11";
+margin="0.1,0.1";
+fontsize= 6
+
+ Statement6 -> "Statement7";
+ 
+"Statement7 Return" [shape=box];
+
+"Statement7" -> "Statement7 Return" ;
+
+ "printf@Statement15" [shape=box];
+
+ "Statement15" -> "printf@Statement15" [label=call] ;
+
+ "printf@Statement15" -> "Statement18" [label=return] ;
+
+"Statement13 then" -> "Statement15" ;
+
+ "Statement13" -> "Statement13 then"[label = "argc< 1 " ];
+
+ "Statement13" -> "Statement18"[style = dotted, label = "NOT (argc< 1 )" ];
+
+ Statement18 -> "Statement19";
+ 
+ Statement19 -> "Statement21";
+ 
+ Statement21 -> "Statement23";
+ 
+ Statement23 -> Statement25;
+ 
+ Statement23 -> Statement29;
+ 
+ Statement23 -> Statement42;
+ 
+ Statement25 -> "Statement26";
+ 
+ Statement26 -> "Statement27";
+ 
+ Statement27 -> "Statement28";
+ 
+ Statement28 -> "Statement47";
+ 
+ Statement29 -> "Statement30";
+ 
+ Statement30 -> "Statement31";
+ 
+ "Statement31 test" -> "Statement33"[label = "j< 5 " ];
+
+ "Statement31 test" -> "Statement41"[style = dotted, label = "NOT (j< 5 )" ];
+
+ "Statement31" -> "Statement31 init";
+ 
+ "Statement31 init"-> "Statement31 test";
+ 
+ "Statement31 incr" -> "Statement31 test";
+ 
+ Statement33 -> "Statement34";
+ 
+ Statement36 -> "Statement31 incr";
+ 
+"Statement34 then" -> "Statement36" ;
+
+ "Statement34" -> "Statement34 then"[label = "i> 100 " ];
+
+ "Statement34" -> "Statement38"[style = dotted, label = "NOT (i> 100 )" ];
+
+ Statement38 -> "Statement31 incr";
+ 
+ Statement41 -> "Statement47";
+ 
+ Statement42 -> "Statement43";
+ 
+ Statement43 -> "Statement44";
+ 
+ Statement44 -> "Statement47";
+ 
+ Statement49 -> "Statement60";
+ 
+"Statement47 then" -> "Statement49" ;
+
+ Statement53 -> "Statement60";
+ 
+"Statement51 then" -> "Statement53" ;
+
+ Statement57 -> "Statement60";
+ 
+"Statement51 else" -> "Statement57" ;
+
+ "Statement51" -> "Statement51 then"[label = "k== 5 " ];
+
+ "Statement51" -> "Statement51 else"[style = dotted, label = "NOT (k== 5 )" ];
+
+"Statement47 else" -> "Statement51" ;
+
+ "Statement47" -> "Statement47 then"[label = "k== 0 " ];
+
+ "Statement47" -> "Statement47 else"[style = dotted, label = "NOT (k== 0 )" ];
+
+ "Statement60" -> Statement61;
+ 
+ "Statement60" -> "Statement61"[label = "k< 100 " ];
+
+ "Statement60" -> "Statement66"[style = dotted, label = "NOT (k< 100 )" ];
+
+ Statement61 -> "Statement62";
+ 
+ Statement62 -> "Statement63";
+ 
+ Statement63 -> "Statement60";
+ }

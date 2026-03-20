@@ -1,0 +1,76 @@
+          TESTS OF COMPOSITE DISTRIBUTIONAL HYPOTHESES FOR
+          THE ANALYSIS OF BIOLOGICAL & ENVIRONMENTAL DATA
+
+                 libcdh.a C Version 1.0 <12 Sep 1994>
+        
+This library contains C functions for testing the hypothesis
+of normality or the hypothesis of exponentiality.  Lognormality can be
+tested by carrying out the tests of normality on the log transformed
+data.  Some tests are general goodness-of-fit tests that allow any
+distribution to be tested simply by basing the distributional
+components of the test statistic on the hypothesized distribution.  
+
+It has been completely rewritten (by hand) from Paul Johnson's
+FORTRAN version that appears in statlib. A few bugs were
+fixed. Tests run faster and use less memory. Fixed limits
+on sizes of input data have been removed.
+
+From the original FORTRAN version:
+C    Subroutines By:        Paul Johnson
+C                           1420 Lake Blvd #29
+C                           Davis,California 95616
+C                           EZ006244@ALCOR.UCDAVIS.EDU
+C
+C    These subroutines can be freely used for non-commercial purposes and can
+C    be freely distributed.
+C
+C                                        Copyright   1994, Paul Johnson 
+
+This version and the tutorial were written by:
+     James Darrell McCauley, USDA Graduate Fellow 
+     <mccauley@ecn.purdue.edu>
+     Department of Agricultural Engineering
+     Purdue University
+     West Lafayette, Indiana 47907-1146
+
+This library may be freely distributed and may be freely used for 
+non-commercial purposes.
+
+For example usage, see the file driver-c.c or the tutorial cdh.ps.
+Tests include:
+
+omnibus.c  Omnibus Moments Test for Normality
+geary.c    Geary's Test of Normality
+extreme.c  Calculate Extreme Normal Deviates
+dagstndn.c D'Agostino's D-Statistic Test of Normality
+kuiprsvn.c Kuiper V-Statistic Modified to Test Normality
+watsonun.c Watson U^2-Statistic Modified to Test Normality
+durbins.c  Durbin's Exact Test (Normal Distribution
+andrsndn.c Anderson-Darling Statistic Modified to Test Normality
+cvmw2n.c   Cramer-Von Mises W^2-Statistic to Test Normality               *
+ksn.c      Kolmogorov-Smirnov D-Statistic to Test Normality               *
+           Kolmogorov-Smirnov D-Statistic (Lilliefors Critical Values)
+chisqn.c   Chi-Square Test of Normality (Equal Probability Classes)
+shapiro1.c Shapiro-Wilk W Test of Normality for Small Samples
+shapiro2.c Shapiro-Francia W' Test of Normality for Large Samples
+shapiroe.c Shapiro-Wilk W Test of Exponentiality
+cvmw2e.c   Cramer-Von Mises W^2-Statistic to Test Exponentiality          *
+kse.c      Kolmogorov-Smirnov D-Statistic to Test Exponentiality          *
+kuiprsve.c Kuiper V-Statistic Modified to Test Exponentiality
+watsonue.c Watson U^2-Statistic Modified to Test Exponentiality
+andrsnde.c Anderson-Darling Statistic Modified to Test Exponentiality
+chisqe.c   Chi-Square Test for Exponentiality(with E.P.C.)
+kotz.c     Kotz Separate-Families Test for Lognormality vs. Normality
+
+*  indicates the test statistic is modified
+** indicates the test is for normality vs. lognormality
+E.P.C. --- Equal Probability Classes
+
+**********************************************************************
+Please send all bug reports to mccauley@ecn.purdue.edu.
+
+Darrell McCauley
+30 September 1994
+
+#maxlikr.c  Modified Maximum Likelihood Ratio Test                         **
+#royston.c  W Test for larger samples

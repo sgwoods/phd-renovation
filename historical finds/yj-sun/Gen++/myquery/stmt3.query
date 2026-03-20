@@ -1,0 +1,513 @@
+ROOTPROC VarUseDef
+FILE component "components.zyj"
+
+EXTERNAL PROC newBlock () RETURNS STRING
+EXTERNAL PROC newElem () RETURNS STRING
+EXTERNAL PROC newResult () RETURNS STRING
+EXTERNAL PROC newConstraint () RETURNS STRING
+EXTERNAL PROC mystrconcat (STRING STRING) RETURNS STRING
+EXTERNAL PROC IsHeader(STRING) RETURNS INTEGER
+
+
+/********************************************************
+*********************************************************
+Functions for Level 0 Nodes 
+*********************************************************
+********************************************************/
+
+/*Initializer */ 
+
+
+
+/********************************************************
+*********************************************************
+Functions for Level 1 Nodes 
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithExpression  
+ 
+ROOT Expression;
+{
+	LOCAL GNODE op;
+	LOCAL GNODE lValue;
+	LOCAL GNODE rValue;
+	LOCAL GNODE newValue;
+
+	(IF (TYPEOF $token PrimaryExpr)
+		(THEN (RETURN (CALL DealWithPrimaryExpr)) )  
+		(ELSE
+
+			(IF (TYPEOF $token Index)
+				(THEN (RETURN (CALL DealWithIndex))) 
+			(ELSE 
+
+
+			(IF (TYPEOF $token FunCall)
+				(THEN (RETURN (CALL DealWithFunCall)))
+				(ELSE 
+					(IF (TYPEOF $token UnaryExpr)
+						(THEN (RETURN (CALL DealWithUnaryExpr)))
+						(ELSE
+							(IF 
+								(TYPEOF $token BinaryExpr)
+								(THEN (RETURN (CALL DealWithBinaryExpr)))
+							)
+						)
+					)
+				) 
+			)
+			)
+			)  
+
+		)
+	) 	
+}  
+
+
+
+
+
+/********************************************************
+*********************************************************
+Functions for Level 2 Nodes 
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithPrimaryExpr  
+ 
+ROOT PrimaryExpr;
+{
+	(IF (TYPEOF $token Literal)
+		(THEN (RETURN (CALL DealWithLiteral)))
+		(ELSE  
+			(IF (TYPEOF $token NameRef) /*Will be replaced later.*/ 
+				(THEN (RETURN (SLOT id $token)))
+				(ELSE
+					(IF (TYPEOF $token FunCall)
+						(THEN ( RETURN (CALL  DealWithFunCall)) )
+					)
+				) 
+			)
+		)
+	)
+} 
+
+
+
+FUNCTION DealWithIndex
+ 
+ROOT Index;
+{
+	LOCAL GNODE IxLeft;
+	LOCAL GNODE IxSub;
+	LOCAL GNODE op;
+	LOCAL GNODE newValue;
+
+	(PRINT component "Deal with index\n") 
+	(ASSIGN op (NODETYPE $token)) 	 
+	<ix_subscript (ASSIGN IxSub (CALL DealWithExpression))>
+	<ix_left (ASSIGN IxLeft (CALL DealWithExpression))> 
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+ 	(PRINT component "(%s %s (%s %s %s %s))\n"
+			(CEXPR C_String "(char *) newElem()")
+			(SLOT line $location)
+			op IxLeft IxSub newValue)
+	(RETURN newValue)
+
+} 
+
+FUNCTION  DealWithFunCall 
+ROOT FunCall; 
+/* take a function call as input, process its arguments, 
+	and return a C_String resultNewIndex if any  */ 
+
+{
+	LOCAL GNODE newValue; 
+	LOCAL GNODE argList;
+	LOCAL GNODE tmpNode;
+	LOCAL GNODE tmpList; 
+	
+	(ASSIGN argList (NIL Expression))  
+	(ASSIGN tmpList (NIL Expression)) 
+
+	<callargs 
+			{Expression
+			(ASSIGN argList (CONS (CALL DealWithExpression) argList) )
+			} 	
+	>
+
+	(PRINT component "(%s %s (%s %s "  
+			(CEXPR C_String "(char *) newElem()")
+		 	(SLOT line $location)
+			(NODETYPE $token) 
+			(SLOT callname $token))
+
+	(WHILE (NOT (EMPTY argList))	/** Reverse the arglist **/
+			(ASSIGN tmpList (CONS (CAR argList) tmpList )) 
+			(ASSIGN argList (CDR argList))
+	)  
+
+	(WHILE 	(NOT (EMPTY tmpList))
+			
+			(PRINT component "%s " (CAR tmpList))
+			(ASSIGN tmpList (CDR tmpList) )  
+	)
+
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))  
+	(PRINT component " %s))\n" 
+		 	newValue 	
+	)
+	(RETURN newValue) 
+}
+
+
+FUNCTION DealWithUnaryExpr  
+ 
+ROOT UnaryExpr;
+{
+	LOCAL GNODE op;
+	LOCAL GNODE oldValue;
+	LOCAL GNODE newValue;
+	(PRINT component "DealWithUnaryExpr\n") 
+	(IF (TYPEOF $token UnaryCount)
+		(THEN (RETURN (CALL DealWithUnaryCount)))
+		(ELSE 
+			(ASSIGN op (NODETYPE $token)) 	 
+			 <ue_arg (ASSIGN oldValue (CALL DealWithExpression))>
+
+			(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+ 			(PRINT component "(%s %s (%s %s %s))\n"
+						(CEXPR C_String "(char *) newElem()")
+						(SLOT line $location)
+						op oldValue newValue)
+			(RETURN newValue))
+	) 
+
+}
+
+
+
+FUNCTION DealWithBinaryExpr  
+ 
+ROOT BinaryExpr;
+{
+	LOCAL GNODE op;
+	LOCAL GNODE lValue;
+	LOCAL GNODE rValue;
+	LOCAL GNODE newValue;
+
+	(IF (TYPEOF $token Assignment)
+		(THEN (RETURN (CALL DealWithAssignment)))
+		(ELSE 
+			(ASSIGN op (NODETYPE $token)) 	 
+			<be_rhs (ASSIGN rValue (CALL DealWithExpression))>
+			<be_lhs (ASSIGN lValue (CALL DealWithExpression))>
+ 
+			(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+			(PRINT component "(%s %s (%s %s %s %s))\n"
+						(CEXPR C_String "(char *) newElem()")
+						(SLOT line $location)
+						op lValue rValue newValue)
+			(RETURN newValue))
+	) 
+
+}
+
+
+
+/********************************************************
+*********************************************************
+Functions for Level 3 Nodes 
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithLiteral
+
+ROOT Literal;
+{
+	(IF (TYPEOF $token StringConst)
+		(THEN (RETURN (NODETYPE $token)))
+		(ELSE (RETURN (SLOT strep $token)))
+	)  
+} 
+
+FUNCTION DealWithUnaryCount 
+ 
+ROOT UnaryCount;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	(IF (TYPEOF $token PostInc)
+		(THEN   (RETURN (CALL DealWithPostInc)) )
+		(ELSE
+			(IF (TYPEOF $token PostDec)
+				(THEN (RETURN (CALL DealWithPostDec)) )
+				(ELSE 
+					(IF (TYPEOF $token PreInc)
+						(THEN (RETURN (CALL DealWithPreInc)) )
+						(ELSE
+							(IF (TYPEOF $token PreDec)
+								(THEN (RETURN (CALL DealWithPreDec)) )
+							)
+						)
+					)
+				)
+			)
+		)
+	) 
+} 
+
+
+FUNCTION DealWithAssignment
+ 
+ROOT Assignment;
+{
+	LOCAL GNODE newValue;
+/*
+	(PRINT component "%s\n" $token) 
+*/
+	<be_rhs (ASSIGN newValue (CALL DealWithExpression))> 
+	(PRINT component "(%s %s (%s %s %s))\n"
+				(CEXPR C_String "(char *) newElem()")
+				(SLOT line $location)
+				(NODETYPE $token)
+				(SLOT be_lhs $token)
+				newValue 
+	) 
+	(RETURN newValue) 
+} 
+
+
+
+
+
+/********************************************************
+*********************************************************
+Functions for Level 4 Nodes 
+*********************************************************
+********************************************************/
+
+FUNCTION DealWithPostInc
+ 
+ROOT PostInc;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+	(ASSIGN oldValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		oldValue 	
+		tmp1
+	)
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Plus %s  1 %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1 
+		newValue 	
+	)
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1
+		newValue 	
+	)
+ 
+	(RETURN oldValue) 
+} 
+
+
+FUNCTION DealWithPostDec
+ 
+ROOT PostDec;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+	(ASSIGN oldValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		oldValue 	
+		tmp1
+	)
+
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Minus %s  1 %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1 
+		newValue 	
+	)
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1
+		newValue 	
+	)
+ 
+	(RETURN oldValue) 
+} 
+
+
+FUNCTION DealWithPreInc
+ 
+ROOT PreInc;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+/*	(ASSIGN oldValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		oldValue 	
+		tmp1
+	)
+*/
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Plus %s  1 %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1 
+		newValue 	
+	)
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1
+		newValue 	
+	)
+ 
+	(RETURN newValue) 
+} 
+
+
+FUNCTION DealWithPreDec
+ 
+ROOT PreDec;
+{
+	LOCAL GNODE oldValue; 
+	LOCAL GNODE newValue;
+	LOCAL GNODE tmp1;
+
+	<ue_arg (ASSIGN tmp1 (CALL DealWithExpression))>
+
+/*	(ASSIGN oldValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		oldValue 	
+		tmp1
+	)
+*/
+	(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+	(PRINT component "(%s %s (Minus %s  1 %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1 
+		newValue 	
+	)
+	(PRINT component "(%s %s (Assign %s %s))\n"
+		(CEXPR C_String "(char *) newElem()")
+		(SLOT line $location)
+		tmp1
+		newValue 	
+	)
+ 
+	(RETURN newValue) 
+} 
+
+
+
+
+
+
+
+FUNCTION DealWithObjectDef
+ 
+ROOT ObjectDef;
+{
+	LOCAL GNODE newValue;
+
+	(IF (NOT (NULL (SLOT init $token)))
+		(THEN 
+			(PRINT component "(%s %s (%s %s %s))\n"
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line $location)
+					(NODETYPE $token)
+					(SLOT type $token)
+					(SLOT id $token) 	
+			)
+			<init (ASSIGN newValue (CALL DealWithExpression))>
+			(PRINT component "(%s %s (Assign %s %s))\n"
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line $location)
+					(SLOT id $token) 
+					newValue 	
+			)
+			 
+		)
+
+		(ELSE
+			(PRINT component "(%s %s (%s %s %s))\n"
+					(CEXPR C_String "(char *) newElem()")
+					(SLOT line $location)
+					(NODETYPE $token)
+					(SLOT type $token)
+					(SLOT id $token) 	
+			)
+			 
+		)
+	)  
+
+/*
+	(PRINT component "%s\n" $token) 
+*/
+} 
+
+PROC VarUseDef
+ROOT CFile;
+{
+	LOCAL GNODE newblock;
+	LOCAL GNODE newelem; 
+	LOCAL GNODE fname;
+ 
+	[
+		(?ObjectDef
+			(ASSIGN fname (SLOT file $location)) 	
+			(IF (EQUAL (CEXPR C_Integer "IsHeader( getCstring(fname))") 0 ) 
+			(THEN (CALL DealWithObjectDef)) )
+		)
+
+		(?ExprStmt
+		<expr
+/*			(?Assignment
+				(CALL DealWithAssignment) 	
+  	 		)
+			(?FunCall 
+				(CALL DealWithFunCall)
+			)
+*/
+			(CALL DealWithExpression) 
+		>
+		)
+  	]
+}

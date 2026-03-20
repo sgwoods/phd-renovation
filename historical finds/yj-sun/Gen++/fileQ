@@ -1,0 +1,29 @@
+Hi Laura,
+ 
+I have been using gen++ for quite a while. Now I met a problem:
+in page6 of the mannual, it's said that 
+   GLOBAL GNODE OutFile;
+  ...
+   (OPEN OutFile "fileName")
+  ...
+  (CLOSE OutFile)
+ 
+I want to use this to make the filename variable, I tried this but failed,
+can you kindly tell me how I can do that by giving an example? I wrote 
+something like
+   GLOBAL GNODE newFileName;
+
+	(ASSIGN newFileName (.. result from mknewname.c) )  
+   (OPEN OutFile newFileName)
+it doesn't work.
+
+Another thing is, can I open a file as append-write? It seems I can either
+read or write. 
+
+thanks a lot!!
+
+--Yongjun 
+
+Dept of EE, Univ. of Hawaii.
+
+

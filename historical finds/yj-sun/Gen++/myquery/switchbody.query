@@ -1,0 +1,37 @@
+/*ident	"@(#)gen++:d.pkg/examples/defuse.query	1.2" */
+/* For each reference to a variable, print whether
+   it is {bf used}, or {bf assigned to}. 
+   You'll find it in the file defuse.query in the shipped package   */
+
+ROOTPROC BlockLoc 
+
+PROC BlockLoc  
+ROOT CFile;
+{
+  LOCAL GNODE End;
+
+  [
+    (?Switch
+		<switchcondition 
+			(PRINT stdout "switchcondition: %s\n" $token ) >
+		
+		<switchbody
+			(PRINT stdout "switchbody: %s\n" $token ) 
+			(?Block
+				<blockbody
+					{Statement
+						(PRINT stdout "statementInSwitch: %s\n" $token)
+					}
+				>
+			) 
+
+		>
+
+		<cases
+			(PRINT stdout "switchcases: %s\n" $token ) >
+		
+		<default_s
+			(PRINT stdout "switchdefault_s: %s\n" $token ) >
+   )
+  ]
+}

@@ -1,0 +1,327 @@
+#ident	"@(#)gen++:d.pkg/RELEASE.notes	1.29"
+
+gen1.4 9509:
+* The rule checker now places its output in file.OO in the current
+  directory -- not in the directory of the source file.
+* Similarly, metrics.query puts output files iin the current directory.
+* fix to bug "Expression not one of variants..." for exprs of the
+  form ::new/::delete
+* performance impprovements
+* added README.nmake
+* Added source file mknewname.c, used by the rule checker, metrics query
+  and examples.  Contains some useful auxiliary functions.
+* Updated generic makefile..  Note: It is important to update any makefiles
+  you have derived from this file in previous releases.  This version of gen++
+  builds analyzers somewhat differently.
+  Corresponding changes have been made in rc/makefile.
+* Changes: FunctionSpec||signature hasa been renamed sigstring.
+  It contains a "mangled" representation of the function arg types.
+  A new print_string 'signature' has also been added to FunctionSpec.
+  It is similar to 'header' except that it prints only the return type,
+  name and arg types of a function -- not the arg names, default args,
+  containing class or linkage specification.
+
+gen1.3 9503:
+* genoa bug fixes
+* fix to node type spec and documentation
+* upgrade to version 3 of OO rules and guidelines (including update of
+  rule checker).  The new rule checker is called Checker instead of RC,
+  to match the paper.
+* changes to directory structure and makefiles.  The gfront/ subdirectory
+  has been eliminated as it is not used.  This is reflected in the makefiles.
+
+gen1.2 9411:
+* added a license manager
+  To run either cplang or any of the analyzers built using cplang, it is
+  necessary to export GENPP_LICENSE_FILE and set it to ggg/GENPP.dat,
+  where ggg is the full path of the gen++ installation directory.
+  See also the contents of QCC.
+* added two hypertext-form documentation files: typesummary.html
+  and typedocs.html. These files provide a Mosaic (or other WWW
+  browser) style access to the information about the types, slots
+  and fillers of the C++ parse tree used by GEN++. 
+* added OO rule checker
+  In addition ot the sample queries found in the examples directory,
+  the current releasae also contians source for the OO rule checker.
+  See the contents of directory rc/.
+* added OO metrics suite.  In addition to the sample queries,
+  the current release also contains source for the OO metrics
+  suite developed a t MIT.  See the contents of metrics/.
+* added support for C_File interface to stdio
+  FILEs are now treated like GNODEs and can thus be passed
+  as ARGs to functions and procedures.  Note that this means
+  that FILE entities (like stdout, stderr, etc) can no longer
+  be used directly in gen++ constructs.  For example,
+	(PRINT stdout "...")
+  is no longer legal.  To use stdout you must first assign to
+  a gen++ variable, then use the variable:
+	(ASSIGN STDOUT (CEXPR C_File "stdout"))
+	...
+	(PRINT STDOUT "...")
+  NOTE: Do not confuse the node type C_File with the node type
+  CFile.  The latter is the top node of a complete parse tree.
+  The former is gen++'s interface to stdio FILE structures.
+  NOTE ALSO: As with C_Integer, C_Float and C_String, it is necessary
+  to convert the value of a GNODE variable of type C_File within
+  C expressions.  A new macro getCfile, analogous to the other C
+  conversion macros has been provided for this purpose.  File
+  descriptors are still declared as "FILE fd".
+  Sample queries have been updated to reflect the change.
+* improved garbage collection
+* front end bug fixes
+* added FileSpec to spec + list of included files to CFile
+  This allows the user to scan the list of included files.
+
+gen1.1 9406:
+* Scope_Private, Scope_Protected and Scope_Public have been mreged
+  into a new Scope_Member.  This should simplify queries that test
+  for various types of scopes
+* NameRef has a new print_string called 'mangled', that prints the
+  "mangled" or encoded id of a given c++ name.
+  Use like any other print_string:
+	(PRINT FD "%s" <mangled $token>)
+* cfront front end upgrade to 3.0.3
+* fix to handling of pointers to members
+
+gen1.0 9403:
+* The following genoa commands were added and are documented in the new manual:
+  - OPEN, CLOSE (for file I/O)
+  - PREV (analogous to NEXT on list elements)
+  - TRAVERSE (previously an undocumented command called SEARCH)
+    SEARCH is still accepted with the same syntax for compatibility
+* a number of bugs have been fixed
+* the manual has been updated
+
+gen0.3 940120:
+* fixes to queries
+* fixes for internal errors
+* updated manual
+* fixes for handling of default arguments:
+  - function declarations now contain arg Declarations (instead of NameRefs)
+    so names referenced in default args are found in global searches.
+    NOTE: Slots declarations for type, returntype and args changed slightly.
+          In particular, FunctionSpec defines !type instead of inheriting it;
+          returntype and args are also no longer suppressed ('!' removed).
+          This should have no impact on existing queries, but should improve
+          the coverage of global searches.
+  - NIT: Default args accumulate, so default args appearing in one function
+    declarration will be implicitly present in subsequent declarations.
+    For example:
+      int x = 5;
+      void f(int, char* = "fizzle",int=::x); // explicit reference to x
+      void f( int a, char* p, int i ) // implicit reference to x from last decl
+      { ... }
+    As with default arg substitutions in function calls, gen++ does not
+    differentiate explicit args from those generated by the compiler.
+* TRAVERSE construct (previously SEARCH, which was undocumented) traverses
+  an arbitrary expression.  See the manual for syntax and example.
+* other changes to spec:
+  - FunctionLinkage is now displayed in unparsing output.
+    Also, FunctionType||linkage has been moved to FunctionSpec||linkage.
+  - MemberSpec now has a location
+  - NameRef restructured slightly:
+    o scope slot moved into NameRef since it applies to all variants
+    o hierarchy now structured as follows:
+        NameRef
+          AccessedName
+          LabelName
+          TypedName  # NEW: all names with associated types
+            IdName
+            FunctionName
+            TypeName
+  - VisibilitySpec and AccessedName now contain a slot
+      !enclosing_class
+  - MemInit||init has been changed from an Expression to a list of Expression
+* Print strings have been added to various node types to provide alternate
+  ways of displaying the gtree.  Without print strings, gen++ uses the default
+  unparsing algorithm for each node.
+  Print strings are special slots with no fillers that specify an alrogithm
+  for display the given node.
+  Print can only be used in the PRINT construct in a query.
+  Print strings supplied in this release include:
+    NameRef||verbose
+          # prints different verbose information for various types of names
+          # For example, FunctionNames||verbose prints the function prototype
+    FunctionSpec||header
+          # prints the complete function prototype without arg names, defaults,
+          #   initializers or function body
+  The syntax for using print strings is illustrated in the following example,
+  taken from gref.query in the package:
+      (PRINT FD "%s: in %s: reference to %s\n" $location
+                <fname verbose>   /* use print string 'verbose' for fname  */
+                <$token verbose>  /* use print string 'verbose' for $token */
+      )
+
+gen0.2 931110 and gen0.2a 931230:
+* new list operations
+  (LIST-OF nodetype arg1 arg2 ...)
+	returns a list of nodes of type nodetype containing elements arg1 ...
+  (CAR list)
+  (CDR list)
+	like analogous LISP operations
+* numerous improvements / fixes to unparsing
+  -- i.e., output from (PRINT fd "%s" $token)
+     is now closer to legal c++ and contains fewer destructive rewrites.
+  However, code output from unparsing prints still isn't always complete
+  or legal c++.
+* changes to statements:
+	Statement||successor -- the runtime successor of a statement.
+	Break||enclosing     -- the nearest enclosing loop or switch
+	Continue||enclosing  -- the nearest enclosing loop
+  LabelStmt||successors ahs been removed.
+  Also,
+	Builtin||attrs
+  has been moved to
+	Type||t_attrs
+  and new attributes
+	TA_Const and TA_Volatile
+  have been added to type attributes.
+  Notes on const/volatile:
+   - const member functions or function types are identified by
+	FA_Const  -- for function declarations or
+	FTA_Const -- for function types
+     ex: int X::f()const;
+         // FunctionSpec||attrs contains FA_Const
+         // FunctionSpec||type||attrs contains FTA_Const
+         p = (int(*)()const)0;
+         // UserCast||type||attrs contains FTA_Const
+   - const/volatile pointers are identified by the CV_Spec Const
+     and/or Volatile (see PtrType||attrs and RefType||attrs).
+     ex: char *const p;   // PtrType||attrs contains Const
+         int &volatile q; // RefType||attrs contains Volatile
+   - other const types:
+	const int ci;   // Type||t_attrs contains TA_Const
+	const X* p[10]; // array of pointers to const X objects
+	                // ArrayType||element_type||points_to is a NamedType
+	                //    with t_attrs containing TA_Const
+
+gen0.1 930914:
+* bug fixes
+* add Scope_Label for label names
+* change label / goto names from strings to NameRefs
+* new documentation generation
+* optimizations to gtree processing
+* add OTHERLIBS to makefiles for def of external functions
+* some unparsing fixes
+* queries
+
+pkg 930430:
+* built-in node types String/Integer/Float are now C_String/C_Integer/C_Float
+  to avoid name clashes with C++ headers in generated code
+* NameRefs and global search:
+  - Name is now merged into NameRef (see new type.summary)
+    All slots of type Name are now NameRefs.
+  - references to type names (as in AggrType, EnumType and TypeRef)
+    now include a NameRef slot so searches for arbitrary NameRefs
+    will now also locate explicit refs to type names.
+  - Ccast||totype is now moved to descendent nodes and is
+    marked 'noexpand' (!) in GeneratedCast and 'expand' in UserCast.
+    This results in global search finding type name refs in explicit
+    casts, but not compiler-generated casts.
+    For example,
+        X* p = (X*)q; // global search finds reference to X
+        B* bp = new D;// type ref in implicit cast not found
+* pointer to member:
+  - slot 'member_of : NameRef' added to PtrType/RefType
+  - .*/->* now accessible as P2MemberRef (see type.summary for type hierarchy)
+  - turn off cfront rewrite for pointer to data member
+    These are now treated similar to pointer to member function in the
+    interface.
+* misc fixes:
+  - global searches can now start at lists; for example:
+        <globals [ ... ]>
+  - member function calls are now printed correctly
+  - preserve more refs to type names (as in arg prototypes, etc)
+  - avoid null type slots (use T_Any instead of null)
+  - fix some internal errors
+* update and improve sample queries
+
+pkg930331:
+* misc bug fixes
+* FunctionAttr now applies to function declarations instead of types.
+  FunctionTypeAttr is a subset of FunctionAttrs that apply to function types.
+  FudgeAttr is removed.
+  Attributes such as FA_Inline and FA_Instantiation, etc, now apply
+  to function Declarations only.   Atrributes such as
+  const, static and ellipsis are duplicated in both function type
+  and declaration attrs. 
+
+pkg930308:
+
+* documentation
+  - added file type.summary, summarizing the node type hierarchy
+    and what each node type represents.
+    To be used as a quick-reference guide in conjunction with specfile.
+  - gen++.ps has been updated to reflect changes in the spec and
+    sample queries.  Only the appendix and examples and parameterized type
+    sections have changed.
+    The appendix also contains more description of how to use specfile.
+
+* for aid in debugging queries, GENOA now includes a statement
+	(DUMP fileid expression indent)
+  where indent is an integer representing the number units to indent
+  the display.  Output is an indented prefix display of the gtree
+  represented by 'expression'.
+
+* fixed core dump on some Sun systems
+
+* pointer to data member rewrite turned off
+
+* changed handling of friend declarations
+  Instead of making 'friend' an attribute of a declaration,
+  MemberSpecs in class definitions now have the following hierarchy:
+	MemberSpec:
+	  AccessSpec     /* private:/protected:/public: */
+	  VisibilitySpec /* Base::member; in derived class */
+	  NestedDeclaration
+	    FriendDeclaration
+	      FriendClass
+	      FriendFunction
+	    MemberDeclaration
+  This simplifies queries that iterate through member declarations
+  by eliminating the need to test that the declaration is a friend.
+
+* more connectivity between declarations and names
+  Declaration||defname is the symbol table entry for a name.
+  Name||def and NameRef||def point back to the definition or
+  first declaration if undefined.
+
+* unparsing is now complete and now uses some of cfront's print
+  routines for pretty-printing.
+  - printing Name or NameRef nodes now prints a fully qualified name.
+    Queries should print Name / NameRef nodes directly instead of the
+    'id' slot to get the fully qualified name.
+  - expressions, statements and declarations are now fully unparsed.
+    To avoid printing an entire declaration in a query, print slot defname:
+	(?Declaration <defname (PRINT stdout "%s" $token)>)
+
+* parameterized types no longer cause core dumps, and are now partially
+  accessible.  Since templates are not typechecked, bodies of template
+  definitions are not defined in the spec, since the untypechecked
+  data structures in cfront have a different format, which could lead to
+  unexpeced results.
+  Formal and actual parameters are accessible, as well as bodies of
+  instantiated templates.  See
+	Template
+	  DataTemplate
+	  ClassTemplate
+	  FunctionTemplate
+	Parameter
+	  TypeParameter
+	  ValueParameter
+	Actual
+	  TypeActual
+	  ExprActual
+	/* Also see FunctionAttr and ClassAttr specs. */
+
+* sample queries have been updated to use new spec
+
+
+pkg930222: transitional (see below for full description):
+	* core dump fixed
+	* unparsing improved
+	* friends updated
+	* cross refs to declarations
+	* doc / query updates
+
+pkg930108: initial alpha

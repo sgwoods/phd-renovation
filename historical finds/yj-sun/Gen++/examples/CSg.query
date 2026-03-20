@@ -1,0 +1,78 @@
+/*ident	"@(#)gen++:d.pkg/examples/CSg.query	1.7" */
+/* g) Always declare destructor for a base class as virtual */
+ROOTPROC CSg
+FILE DEBUG "CSg.DEBUG"
+FILE FD "CSg.out"
+
+PROC CSg
+ROOT CFile;
+{
+LOCAL GNODE BASE;
+LOCAL GNODE DERIVED;
+LOCAL GNODE WHERE;
+<globals
+  {Declaration
+	[
+	  (?ClassDef
+	    <defname
+	      (PRINT DEBUG "%s: Found class %s" $location $token)
+	    >
+	    (ASSIGN DERIVED (SLOT defname $token))
+	    (ASSIGN WHERE (SLOT where $token))
+	    <bases
+               (PRINT DEBUG " -- Searching for Base Classes\n")
+	       {BaseSpec
+		  <refname
+		    (ASSIGN BASE $token) 
+		    (PRINT DEBUG "\tBase Class Name = %s" $token) 
+		  >
+		  <access
+		     (PRINT DEBUG " -- access %s;" $token)
+		  >
+		  <allocation
+		     (PRINT DEBUG " allocation")
+		     {BaseAllocation
+			(PRINT DEBUG " %s" $token)
+		     }
+		  >
+		  (PRINT DEBUG "\n")
+		  (EXEC "fflush(getCfile(DEBUG))")
+		  <refname <def (?AggrDef
+		     (PRINT DEBUG "\tattrs for base class %s:\n" BASE)
+		     (EXEC "fflush(getCfile(DEBUG))")
+		     <attrs
+			{ClassAttr
+			    (PRINT DEBUG "\t\t%s\n" $token)
+			    (?CA_HasDtor
+				(PRINT DEBUG "has dtor\n")
+				(IF (NOT (NULL (SLOT dtor $token)))
+				  (THEN
+				    <dtor
+				      (?FunctionSpec
+				        (PRINT DEBUG "dtor: %s\n" $token)
+				        <attrs
+					  (COND
+					    ( (NOT (TYPEOF $token FA_Virtual))
+						(PRINT DEBUG "%s: WARNING: non-virtual destructor in base class %s of %s\n" WHERE BASE DERIVED)
+						(PRINT FD "%s: WARNING: non-virtual destructor in base class %s of %s\n" WHERE BASE DERIVED)
+					    )
+					  )
+				        >
+				      )
+				    >
+				  )
+				)
+			    )
+			}
+		     >
+		  ) > >
+		  (PRINT DEBUG "\n")
+		  (EXEC "fflush(getCfile(DEBUG))")
+		  (EXEC "fflush(getCfile(FD))")
+	       }
+	    >
+	  )
+	]
+  }
+>
+}

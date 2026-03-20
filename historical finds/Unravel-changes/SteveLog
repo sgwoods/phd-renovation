@@ -1,0 +1,36 @@
+To Do
+------
+General:
+
+1. Need to extend parser output to include a type-chart for "components/stmts"
+   ? -> add a new LIF type for this and extend each type process in stmt.c 
+2. Need to extend variable outputs in LIF to include variable types
+   ? -> see section 4.3.3.3
+3. Dataflow diagram embedded in existing output, see section 4.2.3.4, how
+   are we going to handle asking questions such as g-d-d p-d-d etc as in YJ
+   version - probably best to look at his algorithms and thesis to determine
+   the method for this calculation/evaluation.
+
+4. Containment ??
+
+Specific/In Importance Order:
+
+1. Component type extension / label
+
+
+Source from
+/proj/seg/team/kbg/Unravel/unravel_r2.2+ 
+
+Files
+
+kgram.y (parser in Yacc)
+------------------------------
+
+
+
+stmt.c  (processing individual statments by type)
+------------------------------
+
+token_ptr->text gives "text of this token" see ansi_parse.h "struct cc" definition
+           at - loc in src file
+           token_desc_rec - description of token

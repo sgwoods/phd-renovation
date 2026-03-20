@@ -1,0 +1,37 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/classdef.query	1.1" */
+/* class definition conventions checker */
+
+ROOTPROC classDef
+
+PROC classDef
+ROOT CFile;
+{
+(PRINT msgout "CLASS DEFINITION\n")
+
+<globals
+  {Declaration
+    (?AggrDef (CALL checkaggr_classDef))
+  }
+>
+}
+
+PROC checkaggr_classDef
+ROOT AggrDef;
+{
+LOCAL GNODE FN;
+      <members 
+        {MemberSpec
+          (?NestedDeclaration
+	    <def
+              (?AggrDef (CALL checkaggr_classDef))
+              (?FunctionDef
+	        (ASSIGN FN (SLOT defname $token))
+                (PRINT msgout 
+                  "%s: function %s should be defined outside of class (FDOC).\n" 
+                  $location <FN verbose>)
+	      )
+	    >
+	  )
+	}
+      >
+}

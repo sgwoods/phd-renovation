@@ -1,0 +1,46 @@
+
+line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+ extern "C" extern int  scanf(const char *... );
+        FunctionDecl ``scanf '' at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          <sigstring> : C_String == ``''
+          <attrs> : {FunctionAttr properties /*list begin*/
+            FA_Ellipsis at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          } /*list end*/
+          <linkage> : Linkage_C at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          <args> : {Declaration /*list begin*/
+            ObjectDef ``/*?name?*/ '' at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+              !<defname> : IdName ``/*?name?*/ '' at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+              !<offset> : C_Integer == ``0''
+              <storage> : SC_Auto at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+              <scope> : Scope_Argument at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+              <kind> : NK_Simple at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+              <type> : PtrType at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+                <points_to> : T_Char at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+                  <t_attrs> : {T_Attr properties /*list begin*/
+                    TA_Const at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+                    TA_Integral at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+                    TA_Numeric at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+                  } /*list end*/
+                <attrs> : {CV_Spec properties /*list begin*/
+                } /*list end*/
+                <t_attrs> : {T_Attr properties /*list begin*/
+                  TA_Integral at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+                  TA_Numeric at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+                } /*list end*/
+              !<where> : Location == ``line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'''
+              <id> : C_String == ``''
+          } /*list end*/
+          <returntype> : T_Int at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+            <t_attrs> : {T_Attr properties /*list begin*/
+              TA_Integral at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+              TA_Numeric at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+            } /*list end*/
+          !<type> : FunctionType at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          !<defname> : FunctionName ``scanf '' at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          !<offset> : C_Integer == ``0''
+          <storage> : SC_Static at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          <scope> : Scope_Extern at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          <kind> : NK_Simple at line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'
+          !<where> : Location == ``line 75, '/usr/lang/SC2.0.1/include/CC_411/stdio.h'''
+          <id> : C_String == ``scanf''
+

@@ -1,0 +1,69 @@
+
+1. Experiment Result: 
+
+	(1) Component numbers and component type ratio  
+
+	(2) Number of constraint checks, correct constraint checks, wrong constraint checks
+
+	(3) Program graph average node degree  
+
+2. Build different plans, from small size to larger size 
+
+	(1) Increment Plan 
+			2 components, 1 constraints
+
+	(2) Copy-Array-Element Plan 
+			3 components, 2 constraints 
+
+	(3) AllocateArray-ErrorCheck Plan
+			4 components, 3 constraints
+
+	(4)	AllocateArray-ErrorCheck-FreeArray Plan
+			5 components, 4 constraints
+
+	(5) AllocateArray-ErrorCheck-Sort-FreeArray Plan  
+			6 components, 5 constraints
+
+	(6) Traverse-Array Plan
+			5 components, 7 constraints
+
+	(7) Copy-Array Plan
+			7 components, 11 constraints 	 	
+
+	(8) Average-Array Plan
+			8 components, 13 constraints 
+
+	(9) Sum-Square-Array Plan
+			9 components, 15 constrains   
+
+3. Experiment with plans in 2, give result in 1. 
+
+4. Vary constraints experiment:
+
+ 	Generate plans from 9-15 plan  	 
+                              9-15 
+
+                      9-14    9-14   9-14 
+
+               9-13  9-13  9-13  9-13  9-13  9-13 
+
+	9-12 9-12 9-12 9-12 9-12 9-12 9-12 9-12 9-12 9-12 9-12 9-12 
+
+   .............................................................
+
+
+
+Question
+
+1. Work on components having nodetype PreInc? (except to recognize plan Increment)
+
+2. Program graph average node degree include is (indegree + out-degree)? Normally one
+node has in-degree one and out-degree one. In the case of branch or loop, there will be
+two in-degree and two out-degree. 
+
+3. Random search tree for one large plan only (such as 8-13)    
+
+
+4. For step 4, the second level plans may be from the same parent, is that ok? 
+
+ 

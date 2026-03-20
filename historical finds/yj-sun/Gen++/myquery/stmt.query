@@ -1,0 +1,99 @@
+ROOTPROC VarUseDef
+FILE component "components.zyj"
+
+EXTERNAL PROC newBlock () RETURNS STRING
+EXTERNAL PROC newElem () RETURNS STRING
+EXTERNAL PROC newResult () RETURNS STRING
+EXTERNAL PROC newConstraint () RETURNS STRING
+
+PROC DealWithUserCall 
+ROOT UserCall; 
+{
+	(PRINT component "(%s %s (Call (%s (function) "  
+				(CEXPR C_String "(char *) newElem()")
+			 	(SLOT line $location)
+				(SLOT callname $token))
+	<callargs {Expression
+				(PRINT component "%s (%s) "
+					$token 
+					(NODETYPE $token))   
+			  } 
+	>
+	<type (PRINT component ") %s (%s)))\n" 
+				(CEXPR C_String "(char *) newResult()")
+				(NODETYPE $token))
+	> 
+}
+
+FUNCTION DealWithExpr  
+ 
+ROOT Expression;
+{
+	LOCAL GNODE op;
+	LOCAL GNODE lValue;
+	LOCAL GNODE rValue;
+	LOCAL GNODE newValue;
+
+	(IF (TYPEOF $token BinaryExpr)
+		(THEN
+			(ASSIGN op (NODETYPE $token)) 	 
+			<be_rhs (ASSIGN rValue (CALL DealWithExpr))>
+			<be_lhs (ASSIGN lValue (CALL DealWithExpr))>
+			/*(IF (TYPEOF $parent Assign )   suppose there is no Assign in an expre*/
+			/*	
+				(THEN (ASSIGN newValue (SLOT id (SLOT be_lhs $parent))))
+				(ELSE (ASSIGN newValue (CEXPR C_String "(char *) newResult()"))))
+			*/
+ 
+			(ASSIGN newValue (CEXPR C_String "(char *) newResult()"))
+			(PRINT component "(%s %s (%s %s %s %s))\n"
+						(CEXPR C_String "(char *) newElem()")
+						(SLOT line $location)
+						op lValue rValue newValue)
+			(RETURN newValue)
+		)
+		(ELSE
+			(IF (TYPEOF $token Literal)
+				(THEN (RETURN (SLOT civalue $token)))
+				(ELSE 
+					(IF (TYPEOF $token NameRef)
+						(THEN (RETURN (SLOT id $token))))	
+				)
+			)
+		)  
+						
+   )
+} 
+
+FUNCTION DealWithAssign
+ 
+ROOT Assign;
+{
+	LOCAL GNODE newValue;
+
+	<be_rhs (ASSIGN newValue (CALL DealWithExpr))> 
+	(PRINT component "(%s %s (%s %s %s))\n"
+						(CEXPR C_String "(char *) newElem()")
+						(SLOT line $location)
+						(NODETYPE $token)
+						(SLOT be_lhs $token)
+						newValue 
+	) 
+
+} 
+
+
+PROC VarUseDef
+ROOT CFile;
+{
+  LOCAL GNODE newblock;
+  LOCAL GNODE newelem; 
+
+
+  [
+	
+	(?Assign
+		(CALL DealWithAssign) 	
+    )
+  ]
+}

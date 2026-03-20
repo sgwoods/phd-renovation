@@ -1,0 +1,22 @@
+With renaming, I can take care of *ptr++ but not (*ptr)++ because 
+I would have to rename *pre then do PostInc. 
+The way I do *ptr++ is:
+
+temp = *ptr++;
+
+(elem-12 15 (Assign Result3 ptr))
+(elem-13 15 (Plus ptr  1 Result4))
+(elem-14 15 (Assign ptr Result4))
+(elem-15 15 (Deref Result3 Result5))
+(elem-16 15 (Assign temp Result5))
+
+You will notice that I used (Plus ptr 1 ..), here I only plus ptr with 1,
+but in real case there maybe integer, double, self defined type and they 
+will have variable length. I could use 
+	(sizeof TYPE tLen)
+	(Plus ptr tLen Result4) 
+But I'm not sure whether I should do that for our plan recognition.  
+
+
+ 
+ 

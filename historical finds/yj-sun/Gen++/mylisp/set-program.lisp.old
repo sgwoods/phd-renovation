@@ -1,0 +1,97 @@
+;;***********************************************************************************
+(defvar *end-of-file* (gensym)
+    "A unique EOF marker")
+ 
+(defun eof-p (x) (eq x *end-of-file*))
+;;***********************************************************************************
+; Read in the component-file and build up a hash table *component-hash*
+; which is as (compIndex restPartOfComponent)
+; the first element of restPartOfComponent is originally compOrder, now replaced
+; with next-comp-index if the next-comp is in the same statement, otherwise
+; with nil
+;
+; a modification will be done for the above "otherwise", check the control of this
+; statement, if it has only one child, put the first element of that statement rather
+; than a nil, for the purpose of speeding up the graph search 
+
+; Similarly we need have a hash table for the control part, which has the format of
+; (stmtIndex childStmtIndex) || (stmtIndex condIndex trueStmtIndex falseStmtIndex), 
+; the indices of components which are contained in the stmtIndex statement should be
+; added to content part part of this hash table to speed up the search.
+
+(setq *control-hash* (make-hash-table))  
+(setq *component-hash* (make-hash-table)) 
+ 
+;;***********************************************************************************
+(defun rest-of-component( this-comp next-comp )
+	(let* ( (func1 (nth 2 this-comp))
+			(func2 (nth 2 next-comp))
+			(stmt1 (nth 3 this-comp))
+			(stmt2 (nth 3 next-comp)) 
+			(next-index (first next-comp))) 
+			(cond ((and (eql func1 func2) (eql stmt1 stmt2))
+						(cons next-index (rest (rest this-comp)))) 
+				  (T 
+						(cons nil (rest (rest this-comp)))))) 
+)
+
+(defun comp-list-to-hash( comp-list )
+	(cond ((endp comp-list) nil)
+		  (T (let* ((comp1 (first comp-list))
+					(comp2 (second comp-list))
+					(index1 (first comp1)))
+				 	(setf (gethash index1 *component-hash*) 
+							(rest-of-component comp1 comp2))
+					(comp-list-to-hash (rest comp-list))))) 	
+)
+
+;;***********************************************************************************
+(defun hash-comp-file-to( infile )
+    (with-open-file (in-stream infile
+                        :direction :input)
+	(let ((comp-list (read in-stream nil *end-of-file* nil)))
+			(comp-list-to-hash comp-list)))) 		
+	
+;;***********************************************************************************
+;; Above functions are for component; following functions are for control  
+;;***********************************************************************************
+(defun stmt-list-to-hash ( stmt-list )
+	(mapcar #'(lambda ( one-stmt )
+			(setf (gethash (first one-stmt) *control-hash*) (rest one-stmt)))
+	 			stmt-list) 	
+)
+
+(defun func-list-to-hash( func-list )
+	(cond ((endp func-list) nil)
+		  (T (let* ((this-func (first func-list))
+					(stmt-list (cddr this-func)))
+					(stmt-list-to-hash stmt-list) 
+				(func-list-to-hash (rest func-list)) )))
+)
+
+(defun add-one-stmt-comps ( one-stmt )
+	(let* ((all-comps (mapcar #'car (second one-stmt))) 
+		   (old-content (gethash (first one-stmt) *control-hash*)) 
+			(setf (gethash (first one-stmt) *control-hash*) (cons all-comps old-content)))))   
+ 
+;;***********************************************************************************
+; hash stmtIndex first (forget about function name for now) 
+
+(defun control-file-to-hash-table( infile )
+    (with-open-file (in-stream infile 
+                        :direction :input)
+	(let ((func-list (read in-stream nil *end-of-file* nil)))
+			(func-list-to-hash func-list)))) 		
+	
+(defun add-comp-index-to-hash-table( orginal-component-file )
+    (with-open-file (in-stream original-component-file  
+                        :direction :input)
+	(let* ((stmt-list (read in-stream nil *end-of-file* nil)))
+			(mapcar #'add-one-stmt-comps stmt-list))) )  
+
+
+(defun hash-control-file( control-file original-component-file)
+	(control-file-to-hash-table control-file)
+	(add-comp-index-to-hash-table original-component-file) )
+	
+;;***********************************************************************************

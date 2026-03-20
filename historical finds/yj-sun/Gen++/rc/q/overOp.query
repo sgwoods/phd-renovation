@@ -1,0 +1,105 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/overOp.query	1.1" */
+/* Check rules on overloaded operators */
+
+ROOTPROC overOp
+
+PROC overOp
+ROOT CFile;
+{
+LOCAL GNODE memop;
+LOCAL GNODE isop;
+LOCAL GNODE done;
+LOCAL GNODE fname;
+
+(PRINT msgout "OVERLOADED OPERATORS\n")
+
+<globals
+  [(?FunctionSpec
+    (ASSIGN memop 0) (ASSIGN isop 0) (ASSIGN done 0)
+    <kind (IF (TYPEOF $token NK_Operator) (THEN (ASSIGN isop 1)))>
+    (IF (EQUAL isop 1) 
+      (THEN
+        (ASSIGN fname (SLOT id $token))
+        (IF (NOT (NULL (SLOT qualifier $token)))
+          (THEN (ASSIGN memop 1))
+        )
+        (IF (OR (EQUAL fname "=")
+                (EQUAL fname "()")
+                (EQUAL fname "[]")
+                (EQUAL fname "->")
+            )
+          (THEN
+            (ASSIGN done 1)
+            (IF (EQUAL memop 0) 
+              (THEN
+                (PRINT msgout 
+                  "%s: operator%s must be a member (OMBM).\n" $location fname)
+              )
+            )
+          )
+        )
+        (IF (AND (EQUAL done 0) (EQUAL (CALL isCompAss) 1))
+          (THEN
+            (ASSIGN done 1)
+            (IF (EQUAL memop 0) 
+              (THEN
+                (PRINT msgout 
+                  "%s: operator%s should be a member (OSBM).\n" $location fname)
+              )
+            )
+          )
+        )
+        (IF (AND (EQUAL done 0) (EQUAL (CALL oneArg) 1))
+          (THEN
+            (IF (EQUAL memop 0) 
+              (THEN
+                (PRINT msgout 
+                  "%s: operator%s should be a member (OMBM).\n" $location fname)
+              )
+              (ELSE
+                (IF (NOT (EQUAL fname "new"))
+                  (THEN
+                    (PRINT msgout 
+                    "%s: operator%s should not be a member (OSNBM).\n" $location fname)
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  )]
+>
+}
+
+FUNCTION isCompAss
+ROOT FunctionSpec;
+{
+  LOCAL GNODE fname;
+  (ASSIGN fname (SLOT id $token))
+
+  (IF (EQUAL fname "+=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "-=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "*=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "/=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "%=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "^=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "&=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "|=") (THEN (RETURN 1)))
+  (IF (EQUAL fname "<<=") (THEN (RETURN 1)))
+  (IF (EQUAL fname ">>=") (THEN (RETURN 1)))
+
+  (RETURN 0)
+}
+
+FUNCTION oneArg
+ROOT FunctionSpec;
+{
+  LOCAL GNODE nargs;
+  (ASSIGN nargs 0)
+
+  <args {Declaration (ASSIGN nargs (+ 1 nargs)) } >
+  (IF (EQUAL nargs 1) (THEN (RETURN 1)))
+  (RETURN 0)
+}

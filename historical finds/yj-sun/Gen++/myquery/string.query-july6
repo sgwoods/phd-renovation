@@ -1,0 +1,63 @@
+ROOTPROC VarUseDef
+
+PROC VarUseDef
+ROOT CFile;
+{
+  [
+	(?ObjectDef
+	  (PRINT stdout "(%s Decl %s " (SLOT line $location)
+									(SLOT defname $token)
+									) 
+	  <type 
+		  (?ArrayType 
+				(PRINT stdout "array %s %s)\n"
+					(SLOT element_type $token)  
+					(SLOT size $token)))
+		  (?BuiltinType
+					(PRINT stdout "%s)\n" $token))
+	  >
+	)
+										
+    (?While
+	  (PRINT stdout "(%s (While %s))\n" (SLOT line $location) 
+									     (SLOT id 	(SLOT whilecondition $token)))
+	  <whilebody 
+			(?Block
+	  			(PRINT stdout "(%s (Begin block1))\n" (SLOT line $location)) 
+				(PRINT stdout "(%s (End block1))\n" (SLOT line (SLOT blockend $token)))
+			)
+	  > 
+	)
+	
+    (?For 
+	  (PRINT stdout "(%s (ForInit %s))\n" (SLOT line $location) 
+									     (SLOT forinit $token))
+	  (PRINT stdout "(%s (While %s))\n" (SLOT line $location) 
+									     (SLOT forcondition $token))
+	  <forbody 
+			(?Block
+	  			(PRINT stdout "(%s (Begin block1))\n" (SLOT line $location)) 
+				
+				(PRINT stdout "(%s (ForIncrement %s))\n" (SLOT line (SLOT blockend $token))
+													(SLOT forincrement $parent))
+				(PRINT stdout "(%s (End block1))\n" (SLOT line (SLOT blockend $token)))
+			)
+	  > 
+	)
+	
+	(?IdName
+   		 (IF (AND (TYPEOF $parent Assignment) (EQUAL $slot "be_lhs"))
+  		    (THEN  (PRINT stdout "(%s (Assign %s %s))\n" 
+								(SLOT line $location) 
+								$token
+								(SLOT be_rhs $parent)
+								))
+      		(ELSE  
+				(IF (OR (TYPEOF $parent PostInc) (TYPEOF $parent PreInc) )
+					(THEN (PRINT stdout "(%s (Increment %s))\n" (SLOT line $location) $token))
+					(ELSE (PRINT stdout "(%s (Reference %s))\n" (SLOT line $location) $token)))
+    		) 	 
+		)
+    )
+  ]
+}

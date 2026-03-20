@@ -1,0 +1,54 @@
+> 
+> This is good.  Given what you have, how hard would it be to
+> handle this one:
+> 
+> main()
+> {
+>   int x1, y1;
+>   int x2, y2;
+> 
+>   int val1 = (x2 - x1) * (x2 - x1);
+>   int val2 = (y2 - y1) * (y2 - y1);
+> 
+>   int result = sqrt(val1 + val2);
+> }
+> 
+> This is a program to compute the distance between two points (assuming
+> there is some intermediate code to initialize those variables with
+> values).
+> 
+> Have you tried running some real programs through gen++ to see what
+> percentage you can handle turning into your components?
+> 
+> --Alex
+> 
+Hi Prof. Quilici,
+
+Thanks a lot for your mails.
+
+1. Actually I'm having problems with c programs because of strict type checking
+or whatever other reasons. I`m still working with C++ source. 
+
+2. My program can take care of the example you gave above without much
+difficulty. ( The more work is to analyze function args)  
+
+3. There is a list of nodetypes in the file types.summary in Gen++ dir. I'm trying
+to take care of as many as possible.
+
+
+4. I'm trying to reorganizing statements like:
+*a++ = (b++) + (++b) + c; 
+ 
+5. There maybe function argument binding problems, I will think carefully
+after I finished this part.  
+
+-- 
+
+----------------------------------------------------------------------
+2226 Wilder Avenue                 #491, Holmes Hall
+Honolulu, HI 96822                 2540 Dole St, Univ. of Hawaii 
+U.S.A.                             Honolulu, HI 96822	
+Tel: (808)946-4964(H)              (808)956-9550(O)
+			Email: yjzhang@spectra.eng.hawaii.edu
+	Homepage: http://student-www.eng.hawaii.edu/zhang/ 
+----------------------------------------------------------------------

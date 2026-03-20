@@ -1,0 +1,112 @@
+%!PS-Adobe-1.0
+%%Creator: spectra:yjzhang (Yongjun ZHANG)
+%%Title: study.lisp
+%%CreationDate: Thu Oct 17 00:42:38 1996
+%%DocumentFonts: Courier-Bold Courier Times-Roman Times-Bold Helvetica-Bold
+% Start of enscript.pro -- prolog for text file translator
+% Copyright (c) 1984,1985,1987 Adobe Systems Incorporated. All Rights Reserved. 
+% GOVERNMENT END USERS: See Notice file in TranScript library directory
+% -- probably /usr/lib/ps/Notice
+% RCSID: $Header: enscript.pro,v 2.2 87/11/17 16:39:56 byron Rel $
+save/EnscriptJob exch def
+/StartEnscriptDoc{$enscript begin}def
+/$enscript 50 dict def $enscript begin
+/EndEnscriptDoc{end}def
+/S/show load def
+/X{exch 0 rmoveto S}def
+/Y{exch 0 exch rmoveto S}def
+/B{3 1 roll moveto S}def
+/F{$fd exch get setfont}def
+/StartPage{/svpg save def .05 dup scale}def
+/EndPage{svpg restore showpage}def
+/DoPreFeed{/statusdict where{pop
+ statusdict/prefeed known{statusdict exch/prefeed exch put 0}if}if pop}def
+/Landscape{90 rotate 0 -15840 translate}def
+/SetUpFonts
+ {dup/$fd exch array def{findfont exch scalefont $fd 3 1 roll put}repeat}def
+/InitGaudy{/TwoColumn exch def /BarLength exch def
+ /ftD /Times-Bold findfont 12 UP scalefont def
+ /ftF /Times-Roman findfont 14 UP scalefont def
+ /ftP /Helvetica-Bold findfont 30 UP scalefont def}def
+/U{1440 mul}def
+/UP{U 72 div}def
+/LB{/pts exch UP def /charcolor exch def /boxcolor exch def /font exch def
+ /label exch def /dy exch def /dx exch def /lly exch def /llx exch def
+ gsave boxcolor setgray
+ llx lly moveto dx 0 rlineto 0 dy rlineto dx neg 0 rlineto closepath fill
+ /lines label length def
+ /yp lly dy add dy lines pts mul sub 2 div sub pts .85 mul sub def
+ font setfont charcolor setgray
+ label {dup stringwidth pop 2 div llx dx 2 div add exch sub yp moveto show
+   /yp yp pts sub def}forall grestore}def
+/Gaudy{/Page exch def /Date exch def /File exch def /Comment exch def
+ .25 U 10.2 U BarLength .1 sub U .25 U [File] ftF .97 0 14 LB
+ .25 U 10.45 U BarLength .1 sub U .25 U [Comment] ftF 1 0 14 LB
+ .25 U 10.2 U 1 U .5 U Date ftD .7 0 12 LB
+ BarLength .75 sub U 10.2 U 1 U .5 U [Page] ftP .7 1 30 LB
+ TwoColumn{BarLength 2 div .19 add U 10.2 U moveto 0 -10 U rlineto stroke}if
+}def
+end
+StartEnscriptDoc % end fixed prolog
+1 200 /Courier-Bold
+0 200 /Courier
+2 SetUpFonts
+8.0 false InitGaudy
+%%EndProlog
+%%Page: ? 1
+StartPage
+()(study.lisp)[(96/10/17)(00:22:59)](1)Gaudy
+0 F
+900 14460(;;***********************************************************************************)B
+900 14240(\(defun comp-dependency \( comp-index var-assoc-list path \))B
+5700 14020(; this var-assoc-list is what)B
+5700 13800(; set by parents  )B
+900 13580(;; \(print \(cons comp-index path\)\) )B
+1140 13360(\(let* \()B
+-220(\(comp \(gethash comp-index *component-hash*\)\))Y
+1980 12920(\(next-index \(first comp\)\))B
+1980 12700(\(existing-assoc \(nth 6 comp\)\) )B
+1980 12480(\(temp-assoc )B
+2340 12260(\(modify-var-assoc-list comp-index \(nth 5 comp\) var-assoc-list\)\)\) )B
+5700 12040(; compute new assoc-list for)B
+5700 11820(; for its children   )B
+1380 11600(\(cond )B
+1500 11380(\(\(null comp-index\) nil\)                       ; NULL index, froget about it)B
+1980 11160(\(\(and existing-assoc )B
+2820 10940(\(compare-assoc existing-assoc var-assoc-list\)\))B
+2820 10720(\(print "same now"\) )B
+3780 10500(nil\)  )B
+1500 10280(\(\(endp \(member comp-index path\)\)   ; new comp, not on the path )B
+900 10060(;      \(print "path-follow"\))B
+900 9840(;      \(print path\)  )B
+900 9620(;      \(print var-assoc-list\) )B
+1620 9400(\(cond \(\(NULL existing-assoc\))B
+4740 9180(\(setf \(gethash comp-index *component-hash*\))B
+6660 8960(\(append comp \(list var-assoc-list\)\)\)\))B
+3780 8740(\(T \(setf \(nth 6 \(gethash comp-index *component-hash*\)\))B
+4740 8520(\(combine-two-assoc-list var-assoc-list existing-assoc\)\)\)\))B
+1620 8300(\(cond )B
+1740 8080(\(\(null next-index\) nil\))B
+1740 7860(\(\(atom next-index\))B
+3780 7640(\(comp-dependency next-index temp-assoc \(cons comp-index path\)\)\) )B
+1740 7420(\(T )B
+3780 7200(\(comp-dependency \(first next-index\) temp-assoc \(cons comp-index pa)B
+900 6980(th\)\) )B
+2820 6760(\(comp-dependency \(second next-index\) temp-assoc \(cons comp-index path\)\)\)\)\))B
+1500 6540(\(T                                ;Already on the path, a loop )B
+5700 6320(;Starting from comp-index )B
+1620 6100(\(print "loop detected"\))B
+900 5660(;)B
+960(\(print \(cons comp-index path\)\) )X
+900 5440(;;      \(print var-assoc-list\) )B
+2100 5000(\(let \(\(new-assoc )B
+1620 4780(\(let* \(\(loop-path \(comps-of-loop comp-index path \)\)\))B
+2820 4560(\(redo-var-assoc-on-loop comp-index loop-path var-assoc-list path\)\)\)\))B
+2820 4120(\(comp-dependency next-index new-assoc \(list comp-index\)\)\)  )B
+2820 3680(\))B
+1860 3460(\)\)\))B
+900 3240(;;***********************************************************************************)B
+EndPage
+%%Trailer
+EndEnscriptDoc
+EnscriptJob restore

@@ -1,0 +1,86 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/canonical.query	1.1" */
+/* canonical class */
+
+ROOTPROC heapcheck
+
+PROC heapcheck
+ROOT CFile;
+{
+(PRINT msgout "CANONICAL CLASS\n")
+<globals
+ {Declaration
+   (?AggrDef (CALL checkaggr_heapcheck))
+   (?FunctionDef (CALL check4new))
+ }
+>
+}
+
+PROC check4copy
+ROOT FunctionDef;
+{
+LOCAL GNODE fn;
+LOCAL GNODE cn;
+  <defname (ASSIGN fn $token)>
+  (ASSIGN cn (SLOT qualifier $token))
+  <qualifier <def
+    (?AggrDef
+      <attrs
+        (IF (NOT (TYPEOF $token CA_HasCopyCtor))
+            (THEN (PRINT msgout "%s: %s allocates memoory from the heap but class %s has no copy constructor (NCC).\n" (LOCATION fn) <fn verbose> cn))
+        )
+        (IF (NOT (TYPEOF $token CA_HasOpAssign))
+            (THEN (PRINT msgout "%s: %s allocates memoory from the heap but class %s has no operator= (NOE).\n" (LOCATION fn) <fn verbose> cn))
+        )
+      >
+    )
+  > >
+}
+
+PROC check4new
+ROOT FunctionDef;
+{
+LOCAL GNODE hn;
+  <body (CALL checkstmt_heapcheck)>
+  (IF (TYPEOF (SLOT kind $token) NK_Constructor)
+      (THEN (ASSIGN hn 0)
+            <meminit [(?New (ASSIGN hn 1) (BREAK))]>
+            <body [(?New (ASSIGN hn 1) (BREAK))]>
+            (IF (EQUAL hn 1) (THEN (CALL check4copy)))
+      )
+  )
+}
+
+PROC checkstmt_heapcheck
+ROOT Statement;
+{
+  (?Block
+    <locals {Declaration
+      (?AggrDef (CALL checkaggr_heapcheck))
+    }>
+    <blockbody {Statement (CALL checkstmt_heapcheck)}>
+  )
+  (?If
+    <ifTbranch (CALL checkstmt_heapcheck)>
+    <ifFbranch (CALL checkstmt_heapcheck)>
+  )
+  (?While <whilebody (CALL checkstmt_heapcheck)>)
+  (?Do <dobody (CALL checkstmt_heapcheck)>)
+  (?For
+    <forinit (CALL checkstmt_heapcheck)>
+    <forbody (CALL checkstmt_heapcheck)>
+  )
+  (?Switch <switchbody (CALL checkstmt_heapcheck)>)
+}
+
+PROC checkaggr_heapcheck
+ROOT AggrDef;
+{
+  <members {MemberSpec
+    (?MemberDeclaration
+      <def
+        (?AggrDef (CALL checkaggr_heapcheck))
+        (?FunctionDef (CALL check4new))
+      >
+    )
+  }>
+}

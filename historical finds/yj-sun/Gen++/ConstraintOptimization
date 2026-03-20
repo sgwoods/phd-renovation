@@ -1,0 +1,130 @@
+From alex@wiliki.eng.hawaii.edu Tue Apr 15 14:44:46 1997
+Return-Path: <alex@wiliki.eng.hawaii.edu>
+Received: from makapuu.eng.hawaii.edu by spectra.eng.hawaii.edu (4.1/SMI-4.1)
+	id AA27622; Tue, 15 Apr 97 14:44:45 HST
+Message-Id: <9704160044.AA27622@spectra.eng.hawaii.edu>
+Received: by makapuu.eng.hawaii.edu
+	(16.7/16.2) id AA01367; Tue, 15 Apr 97 14:48:59 -1000
+From: Alex Quilici <alex@wiliki.eng.hawaii.edu>
+Subject: Constraint Optimizations
+To: sgwoods@spectra.eng.hawaii.edu, yjzhang@spectra.eng.hawaii.edu
+Date: Tue, 15 Apr 97 14:48:59 HST
+Organization: University of Hawaii, EE Department
+Mailer: Elm [revision: 66.33]
+Status: RO
+
+
+Steve and Yongjun:
+
+Here's a little note that I think summarizes my proposed
+optimizations.  I think this demonstrates that if things
+other than assigns can be producers (e.g., plus), then
+we can optimize at both ends of a datadep(x,y,v).
+
+Maybe both of you are already figured this out, but I think
+below is a reasonably solid description:
+
+Let me know:
+
+1) if there is any disagreement, and
+
+2) if the new CSP will support this (Steve) and if the
+   data structure or a simple addition to the data structure
+   will support this (Yongjun).
+
+Thanks...
+
+--Alex
+
+*****
+
+
+Improving Our Search Algorithm
+
+Given a constraint: datadep(X,Y,V)
+
+With: X1...Xn (domain of X)
+      Y1...Yn (domain of Y)
+      V (any variable in program)
+
+How can we evaluate it efficiently?
+
+An improvement:
+
+ *  Assume at some point in the CSP, we are given a particular instance 
+    of X, Xi (by definition, a producer of data values), that produces
+    a single variable Vk (e.g., an assignment, but also any arithmetic
+    operator, like Plus, Minus, and so on).
+
+    Further assume that the statements following any producer in the
+    data flow graph are organized by type:
+
+       (a1,...,an; b1,...,bn, etc...)
+
+    The type A's are a1...an, the type B's are b1...bn, and so on.
+
+    Then we can in order "1" check whether there are any Y's that
+    potentially follow Xi (and since all the Y's that follow Xi in
+    the data flow graph by definition use the same variable Xi
+    produces, we are checking whether there are any Y's that use 
+    the value of Vk produced by Xi).   
+
+    If there are no Y's, we can immediately eliminate Xi without 
+    evaluating the individual datadep(Xi, Y, Vi) for all instances of Y!
+ 
+    An example:
+       Suppose we have an ASSIGN(a,b) and a general datadep between 
+       an ASSIGN and a PRINT.  If this *PARTICULAR* assign does not
+       produce a variable (a) used by some PRINT, we don't have to
+       check any of the PRINTs.     
+
+This requires:
+
+ * The CSP prefer the "in" node of a data-dep constraint to the
+   "out" node
+    
+ * The CSP has a time when it selects Xi for cross product of 
+   Y's (rather than choosing to do individual Xi*Yj evaluations
+   at different times)
+
+What about the flip side?
+
+ *  Assume at some point in the CSP, we are given a particular instance 
+    of Y, Yi (by definition, a consumer of data values), that uses
+    a set of variables Vk..Vm (e.g., an expression - except for things
+    like function calls, we can assume no more than 2 variables into
+    a statement, and in general the average is probably right around 2)
+    
+    Suppose we assume that the statements preceding any consumer in the
+    data flow graph are organized by type:
+
+       (a1,...,an; b1,...,bn, etc...)
+
+    The type A's are a1...an, the type B's are b1...bn, and so on.
+    
+    Then we can in order "c" check whether there are any X's that
+    potentially precede Yi.
+
+    If there are no X's, we can immediately eliminate Yi without 
+    evaluating the individual datadep(X, Y, Vi) for all instances
+    of X!   (Since all the X's precede Yi in the data flow graph
+    produce one of the variables Yi is using, we are checking
+    whether there are any X's that produce any of the variables
+    consumed by X.)
+
+    An example:
+       Suppose we have an PLUS(a,b,c) and a general datadep between 
+       an MULTIPLY and the PLUS.  If neither a or b of this *PARTICULAR* 
+       PLUS are produced are by a MULTIPLE, we don't have to check
+       of the MULTIPLIES.     
+
+This relaxes the requirement that the CSP prefer the "in" node
+of a data-dep constraint to the "out" node.  It should be
+acceptable regardless of whether an "x" is picked or a "y".
+
+However, it now adds the requirement that:
+
+   The CSP has a time when it selects Yi for cross product of 
+   X's (rather than choosing to do individual Xi*Yj evaluations
+   at different times)
+

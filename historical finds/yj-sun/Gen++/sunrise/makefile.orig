@@ -1,0 +1,6 @@
+
+sun:	sun.c
+	cc -O -o sun sun.c -lm
+    
+manual:	sun.1
+	nroff -man sun.1 >sun.doc

@@ -1,0 +1,74 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/ctor.query	1.1" */
+/* constructor checker */
+
+ROOTPROC ctor
+
+INCLUDE " \"incl/ctor.h\" "
+
+PROC ctor
+ROOT CFile;
+{
+LOCAL GNODE mname;
+LOCAL GNODE fname;
+LOCAL GNODE iname;
+LOCAL GNODE aname;
+LOCAL GNODE file;
+LOCAL GNODE line;
+
+(PRINT msgout "CONSTRUCTORS\n")
+
+<globals
+  {Declaration
+    [(?FunctionDef
+      (IF (TYPEOF (SLOT kind $token) NK_Constructor)
+        (THEN
+	  (ASSIGN fname (SLOT id $token))
+	  (EXEC "clearLists()")
+          /* get initialized members */
+          <meminit 
+            {MemInit <bmdef (ASSIGN iname (SLOT id $token))>
+              (EXEC "addToInit(getCstring(iname))")
+            }
+          >
+          /* get members */
+          <type (?FunctionType
+            <member_of <def (?AggrDef <members
+              {MemberSpec 
+                (?MemberDeclaration <def
+                  (?ObjectSpec
+                    (IF (NOT (TYPEOF (SLOT storage $token) SC_Static))
+                        (THEN
+                          (ASSIGN mname (SLOT id $token))
+                          (EXEC "addToMem(getCstring(mname))")
+                        )
+                    )
+                  )
+                >)
+              }
+            >)>>
+          )>
+          /* look in body for members assigned to */
+          <body [(?Assignment
+            <be_lhs [(?NameRef 
+              (IF (EQUAL $slot "member")
+                (THEN
+                  (ASSIGN aname (SLOT id $token))
+                  (EXEC "addToAss(getCstring(aname))")
+                )
+              )
+            )]>
+          )]>
+          (ASSIGN file (SLOT file $location))
+          (ASSIGN line (SLOT line $location))
+          (EXEC 
+            "checkInit(getCfile(msgout),getCstring(fname),getCstring(file),getCint(line))"
+          )
+          (EXEC 
+            "checkOrder(getCfile(msgout),getCstring(fname),getCstring(file),getCint(line))"
+          )
+        )
+      )
+    )]
+  }
+>   
+}

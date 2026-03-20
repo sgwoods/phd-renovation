@@ -1,0 +1,428 @@
+/*ident	"@(#)gen++:d.pkg/examples/flow.query	1.10" */
+/* This is a query that makes a control flow */
+/* graph of a given problem. It generates "dot" */
+/* graph description. Get dot from north@research.att.com */
+
+
+
+/* This query has to be compiled with mknewname.c */
+/* Set OTHERLIBS = mknewname.o in the makefile */
+/* to get it in there */
+
+/* This query has some minor flaws in certain circumstances */
+/* It doesn't handle null brances of ifs, fors, etc correctly */
+/* But it works in most cases, and may prove instructive to users */
+
+ROOTPROC FileFlow
+FILE control "/users1/grad/yjzhang/Gen++/flow.dot"
+
+
+EXTERNAL PROC mystrconcat (STRING STRING) RETURNS STRING
+EXTERNAL PROC myitoa (INTEGER) RETURNS STRING
+EXTERNAL PROC newname () RETURNS STRING
+EXTERNAL PROC IsHeader(STRING) RETURNS INTEGER
+
+
+FUNCTION LOCSTRING
+ARG GNODE Suffix;
+
+ROOT G_AnyType;
+{
+LOCAL GNODE tmpt;
+(ASSIGN tmpt (SLOT line $location))
+(RETURN (CEXPR C_String "mystrconcat(mystrconcat(\"Statement\",myitoa(getCint(tmpt))),getCstring(Suffix))"))
+
+}
+
+
+
+PROC FileFlow
+ROOT CFile;
+{
+
+LOCAL GNODE foo;
+LOCAL GNODE fname;
+(PRINT control "digraph hier {\n")
+(PRINT control    "node [shape=ellipse];\n")
+(PRINT control  " page=\"8.5,11\";\n")
+(PRINT control  "margin=\"0.1,0.1\";\n")
+(PRINT control "fontsize= 6\n")
+
+
+
+
+
+
+<globals
+  {Declaration
+     (?FunctionDef
+      <id
+       (ASSIGN fname $token)
+       (PRINT stdout "(BeginFunctionNamed %s)\n" <fname verbose>)>
+       (ASSIGN fname (SLOT file  $location))
+
+(IF (EQUAL (CEXPR C_Integer "IsHeader(getCstring(fname))") 0)   /* Is this from a header file ? */
+    (THEN 
+      <body
+(PRINT stdout "DEBUG1 location %s\n" (SLOT line $location)) 
+       <blockend (ASSIGN foo (CALL LOCSTRING ""))
+(PRINT stdout "DEBUG1 location %s\n" (SLOT line $location)) 
+	   > /* Location, no suffix */
+       (CALL CompoundFlow foo foo foo) /* Exit refers the (passed down) next statement */
+       (PRINT stdout "(EndFunctionNamed %s)\n" <fname verbose>)>)))}>
+       (PRINT control "}")
+}
+
+/*
+PROC PrintVariables
+
+ARG GNODE TheLoc;
+ROOT Expression;
+{
+   (PRINT control "Statement%s [shape=record, label=\"{  Statement%s | Defines: " (SLOT line TheLoc) (SLOT line TheLoc))
+   [(?Assignment
+       <be_lhs
+         (?NameRef 
+   (PRINT control " %s" $token))>)]
+    (PRINT control "  | ")	
+   (PRINT control "Uses: ") 
+   [(?NameRef (IF (NOT (AND (TYPEOF $parent Assignment) (EQUAL $slot "be_lhs")))
+		(THEN (PRINT control   "  %s" $token))))]
+   (PRINT control "}\"];")
+
+}
+*/
+
+FUNCTION BlockFirst
+
+ROOT Statement;
+{
+(?Block
+ <blockbody
+  {Statement
+    (IF (NOT (TYPEOF $token NullStmt))  
+	(THEN 
+	 (IF (NOT (TYPEOF $token Block))
+	     (THEN  (RETURN (CALL LOCSTRING "")))
+	     (ELSE (RETURN (CALL BlockFirst))))))
+    
+  }
+ >)
+ (RETURN (CALL LOCSTRING ""))
+}
+
+
+
+FUNCTION BlockEnd
+
+ROOT Statement;
+{
+LOCAL GNODE End;
+(?Block
+ <blockbody
+  {Statement
+    (ASSIGN End $token)}
+  (IF (NOT (TYPEOF End NullStmt))  
+	(THEN 
+	 (IF (NOT (TYPEOF End Block))
+	     (THEN (SEARCH Statement  End (RETURN (CALL LOCSTRING ""))))
+	     (ELSE (SEARCH Block End (RETURN (CALL BlockFirst)))))))
+    
+
+ >)
+ (RETURN (CALL LOCSTRING ""))
+}
+
+
+/* Function findnext  looks to see if there is a next */
+/* If there is one, it's not the end of the block. */
+
+FUNCTION FindNext
+ARG GNODE GivenNext;
+ROOT Statement;
+{
+LOCAL GNODE Cursor;
+(ASSIGN Cursor $token)
+
+(IF (NOT (NULL (NEXT Cursor))) 
+    (THEN (ASSIGN Cursor (NEXT Cursor))
+	  (WHILE (AND (NOT (NULL Cursor))  (TYPEOF  Cursor NullStmt))
+		 (ASSIGN Cursor (NEXT Cursor)))
+	  (IF (NOT (NULL Cursor))
+	      (THEN (IF (TYPEOF Cursor Block)
+			(THEN  (SEARCH Block Cursor (RETURN  (CALL BlockFirst))))
+			(ELSE  (SEARCH Statement Cursor  (RETURN  (CALL LOCSTRING "")))))))))
+
+
+(RETURN GivenNext)
+}
+
+
+
+PROC CompoundFlow 
+
+
+ARG GNODE NextLoc;
+ARG GNODE ContinueLoc;
+ARG GNODE BreakLoc;
+ROOT Block;
+{
+LOCAL GNODE CurLoc;
+LOCAL GNODE TheNext;
+(PRINT stdout "DEBUG2 block %s, args %s %s %s\n" $location NextLoc ContinueLoc BreakLoc) 
+
+<blockbody
+ {Statement
+   (ASSIGN CurLoc $location)
+   (ASSIGN TheNext (CALL FindNext NextLoc))
+/*   (PRINT  slog "\nStatement%s (%s): Next %s" $location $nodetype (LOCATION TheNext)) */
+   (CALL StmtFlow TheNext ContinueLoc BreakLoc)}
+>
+
+}
+
+
+PROC PrintNext
+
+ARG GNODE GivenNext;
+ROOT Statement;
+{
+
+(PRINT control "\n Statement%s -> \"%s\";\n " (SLOT line $location)  GivenNext)
+}
+
+
+PROC CondFlow
+
+ARG GNODE In;
+ARG GNODE To; /* True Output */
+ARG GNODE Fo; /* False Out */
+ROOT Expression;
+{ 
+LOCAL GNODE newnode;
+
+(?LogAnd
+   (ASSIGN newnode (CEXPR C_String "(char *) newname()"))
+   (PRINT control "\n \"%s\" [shape=diamond];\n" newnode)
+   <be_lhs
+      (CALL CondFlow In newnode Fo)
+      >
+   <be_rhs
+      (CALL CondFlow newnode To Fo)>
+(RETURN))
+
+(?LogOr
+   (ASSIGN newnode (CEXPR C_String "(char *) newname()"))
+   (PRINT control "\n \"%s\" [shape=diamond];\n" newnode)
+   <be_lhs
+      (CALL CondFlow In To newnode)>
+   <be_rhs
+      (CALL CondFlow newnode To Fo)>
+(RETURN))
+
+
+
+(?Expression
+    (PRINT control "\n \"%s\" -> \"%s\"[label = \"%s\" ];\n" In To $token)
+    (PRINT control "\n \"%s\" -> \"%s\"[style = dotted, label = \"NOT (%s)\" ];\n" In Fo $token))
+}
+
+
+
+
+PROC StmtFlow
+
+ARG GNODE GivenNext;
+ARG GNODE ContinueLoc;
+ARG GNODE BreakLoc;
+ROOT Statement;
+{
+
+LOCAL GNODE TheNext;
+LOCAL GNODE be;
+LOCAL GNODE TmpLoc;
+LOCAL GNODE TheLoc;
+LOCAL GNODE tmpt;
+LOCAL GNODE bf;
+LOCAL GNODE cl;
+LOCAL GNODE bl;
+LOCAL GNODE flt;
+LOCAL GNODE fli;
+
+ (PRINT stdout "(Statement : %s :type %s)\n" $location $nodetype)
+
+        /* note: this currently ignores initializations that are
+           part of declarations.  For example, int i = x; C obj(28,x,y);
+           or member initializers in constructors: X::X() : x(stuff) {}
+        */
+
+
+
+(ASSIGN TheLoc (CALL LOCSTRING ""))
+(ASSIGN TheNext GivenNext)
+(ASSIGN tmpt TheNext)
+/* (PRINT stderr "\n %s" ) */
+/* (ASSIGN TheNext (CALL FindNext GivenNext)) */
+
+(?Block 
+
+     (CALL CompoundFlow TheNext ContinueLoc BreakLoc))
+
+(?Return
+     (ASSIGN be (CALL LOCSTRING " Return"))
+     (PRINT control "\n\"%s\" [shape=box];\n" be)
+     (PRINT control "\n\"%s\" -> \"%s\" ;\n" TheLoc be)
+   (RETURN))
+
+/* !!!MUST HANDLE expr ? expr : expr */ 
+
+(?If 
+        (IF (NULL (SLOT ifTbranch $token))
+            (THEN (ASSIGN bl TheNext))  /* Here, bl is the destination of the true branch */
+            (ELSE 
+	            (ASSIGN bl (CALL LOCSTRING " then"))
+	            <ifTbranch 
+		    (CALL StmtFlow TheNext ContinueLoc BreakLoc) /* Continuation from true branch on to next stmtm */
+
+		    (ASSIGN bf (CALL BlockFirst))
+		    (PRINT control "\n\"%s\" -> \"%s\" ;\n" bl bf)>))
+
+        (IF (NULL (SLOT ifFbranch $token))
+            (THEN (ASSIGN cl TheNext))  /* Here, cl is the destination of the true branch */
+            (ELSE      (ASSIGN cl (CALL LOCSTRING " else"))
+                    <ifFbranch 
+		        (CALL StmtFlow TheNext ContinueLoc BreakLoc)  /* Continuation from true branch on to next stmtm */
+       	           
+		        (ASSIGN be (CALL BlockFirst))
+			(PRINT control "\n\"%s\" -> \"%s\" ;\n" cl be)>))
+
+	<ifcondition (CALL CondFlow TheLoc bl cl)>)
+
+
+(?ExprStmt
+/*  (CALL PrintVariables TheLoc)*/
+
+/* (PRINT stderr "\nExpr %s at %s type %s" $token $location $nodetype) */
+ (IF (TYPEOF (SLOT expr $token) UserCall)
+     (THEN
+     <expr (IF (NOT (NULL (SLOT callname $token)))
+	  (THEN (ASSIGN cl (SLOT callname $token)))
+	  (ELSE (ASSIGN cl (SLOT callexpr $token))))
+      (ASSIGN be (CALL LOCSTRING ""))
+      
+      (IF (OR (EQUAL cl "exit")  (EQUAL cl "abort"))
+	  (THEN 
+    	   (PRINT control "\n\"%s%s\" [shape=doublecircle];\n" be cl)
+	   (PRINT control "\n\"%s\" -> \"%s\" ;\n" TheLoc be))
+	  (ELSE 
+	   (PRINT control "\n \"%s@%s\" [shape=box];\n" cl be)
+	   (PRINT control "\n \"%s\" -> \"%s@%s\" [label=call] ;\n" TheLoc cl be)
+	   (PRINT control "\n \"%s@%s\" -> \"%s\" [label=return] ;\n" cl be TheNext)))>)
+     (ELSE 
+      (CALL PrintNext TheNext))))
+
+(?Default
+	(CALL PrintNext TheNext))
+(?Case
+	(CALL PrintNext TheNext))
+
+(?For
+	(IF (NULL (SLOT forbody $token))
+	    (THEN (ASSIGN bf (CALL LOCSTRING " nullbody")))
+	    (ELSE 
+	       <forbody (ASSIGN bf (CALL BlockFirst)) >))
+
+	(IF (NULL (SLOT forcondition $token))
+	    (THEN 
+	     (ASSIGN flt (CALL LOCSTRING " nulltest"))
+	     (PRINT control "\n \"%s\" -> \"%s\";\n "  flt bf)
+	     (PRINT control "\n \"%s\" -> \"%s\" [style = dotted];\n "  flt TheNext))
+	    (ELSE 
+	     <forcondition   
+	       (ASSIGN flt (CALL LOCSTRING " test"))
+/*	       (CALL PrintVariables $location) */
+               (CALL CondFlow flt bf TheNext)>))
+
+	(IF (NULL (SLOT forinit $token))
+	    (THEN (ASSIGN fli (CALL LOCSTRING " nullinit"))
+		  
+		  )
+	    (ELSE 
+	      <forinit (ASSIGN fli (CALL LOCSTRING " init"))
+/*	      (CALL PrintVariables $location)*/ >)
+	    )
+	(PRINT control "\n \"%s\" -> \"%s\";\n "  TheLoc fli)
+	(PRINT control "\n \"%s\"-> \"%s\";\n " fli  flt)
+
+	(IF (NULL (SLOT forincrement $token))
+	    (THEN (ASSIGN fli (CALL LOCSTRING " nullincr")))
+	    (ELSE 
+	       <forincrement    
+                (ASSIGN fli (CALL LOCSTRING " incr"))
+/*		(CALL PrintVariables $location) */ >))
+	(PRINT control "\n \"%s\" -> \"%s\";\n " fli  flt)
+
+	(IF (NULL (SLOT forbody $token))
+	    (THEN  (PRINT control "\n \"%s\" -> \"%s\";\n "  bf fli))
+	    (ELSE 
+	     <forbody
+	        (IF (TYPEOF $token Block)
+                     (THEN (ASSIGN be (CALL  BlockEnd)))
+		     (ELSE (ASSIGN be (CALL LOCSTRING ""))))
+/*		(PRINT control "\n \"%s\"  -> \"%s\";\n "   be  fli) */
+		(CALL StmtFlow fli fli TheNext)>))
+        )
+(?Continue
+	(PRINT control "\n Statement%s -> \"%s\";\n " (SLOT line $location)  ContinueLoc))
+
+(?Break
+	(PRINT control "\n Statement%s -> \"%s\";\n " (SLOT line $location)  BreakLoc))
+
+
+(?Goto 
+	(PRINT control "\n Statement%s -> \"Statement%s\";\n " (SLOT line $location) (SLOT line (LOCATION (SLOT stmt (SLOT gotoname $token))))))
+(?Do
+	<dobody (ASSIGN bf (CALL BlockFirst))>
+        (PRINT control "\n \"%s\" -> %s;\n "  TheLoc bf)
+	<docondition  (ASSIGN flt (CALL LOCSTRING ""))
+                (CALL CondFlow flt bf TheNext)
+/* 		(CALL PrintVariables $location) */ >
+	<dobody
+		(CALL StmtFlow flt flt TheNext)>
+)
+
+(?While
+	<whilebody (ASSIGN bf (CALL BlockFirst))>
+	<whilecondition (ASSIGN flt (CALL LOCSTRING "cond"))
+	        (CALL CondFlow flt bf TheNext)
+/*		(CALL PrintVariables TheLoc)*/ > 
+
+	(PRINT control "\n \"%s\"  -> \"%s\";\n "  TheLoc  flt)
+	<whilebody
+		(CALL StmtFlow flt flt TheNext)>
+)
+
+/* (?Goto <Where (ASSIGN TmpLoc $location)>
+         (CALL PrintNext TmpLoc)) */
+
+(?Switch
+          (ASSIGN TmpLoc $location)
+     	<switchcondition 
+/*          (CALL PrintVariables TheLoc) */ >
+        <switchbody 
+	   (?Block
+              <blockbody
+                {Statement
+                  (?Case (PRINT control  "\n Statement%s -> Statement%s;\n "  (SLOT line TmpLoc) (SLOT line $location)))
+                  (?Default (PRINT control  "\n Statement%s -> Statement%s;\n "  (SLOT line TmpLoc) (SLOT line $location)))}>)
+	   (CALL StmtFlow TheNext flt TheNext)>
+/*        <cases
+            {Statement
+               (PRINT control  "\n Statement%s -> Statement%s;\n " (SLOT line TmpLoc) (SLOT line $location))}> */
+)
+}
+
+
+
+
+

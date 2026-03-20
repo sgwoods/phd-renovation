@@ -1,0 +1,42 @@
+This directory contains a technical report describing unravel
+and the unravel source code developed at NIST.
+
+This directory contains the following files and subdirectories:
+
+FILES:
+NIST-IR-5691-Volume-1.ps (Software design of unravel)
+NIST-IR-5691-Volume-2.ps (user manual for unravel)
+README	(this file)
+vol1.ps.Z (NIST-IR-5691-Volume-1.ps in compressed form)
+vol2.ps.Z (NIST-IR-5691-Volume-2.ps in compressed form)
+src2.2+.tar.Z (The source file in compressed tar format)
+
+SUBDIRECTORIES:
+archive (older versions of unravel)
+papers (Published papers about unravel)
+
+To uncompress and untar the src type the following:
+
+zcat src2.2+.tar.Z | tar xvf -
+
+The subdirectory "archive/2.2-/" contains an earlier version.
+Version 2.2+ contains some minor bug fixes that show up for
+users of the "bash" shell and for users of gnu make.
+
+We are interested in feedback on unravel.  We are planning another
+release later this year that will include lifting some restrictions
+(e.g., including goto statements in slices), tolerance for some
+non-ANSI features and improving performance.
+
+If you find unravel interesting or useful please let us know what you
+like or find useful.  If you find bugs or have comments about the
+tool's limitations let us know that too.
+
+If you have problems or questions installing unravel I'll try to help
+if you call (301) 975-3270 or send e-mail jlyle@nist.gov.
+
+Dr. James R. Lyle
+Information Technology Lab
+National Institute of Standards and Technology (NIST)
+NIST North, Building 820, Room 517
+Gaithersburg, Maryland 20899

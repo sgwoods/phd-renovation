@@ -1,0 +1,59 @@
+struct _iobuf;
+(BeginFunctionNamed function)
+DEBUG1 location 4
+DEBUG1 location 8
+DEBUG2 block line 4, 'typical.C', args Statement8 Statement8 Statement8
+(Statement : line 6, 'typical.C' :type ExprStmt)
+(Statement : line 7, 'typical.C' :type Return)
+(EndFunctionNamed typical.C)
+(BeginFunctionNamed main)
+DEBUG1 location 11
+DEBUG1 location 66
+DEBUG2 block line 11, 'typical.C', args Statement66 Statement66 Statement66
+(Statement : line 13, 'typical.C' :type If)
+(Statement : line 14, 'typical.C' :type Block)
+DEBUG2 block line 14, 'typical.C', args Statement18 Statement66 Statement66
+(Statement : line 15, 'typical.C' :type ExprStmt)
+(Statement : line 18, 'typical.C' :type ExprStmt)
+(Statement : line 19, 'typical.C' :type ExprStmt)
+(Statement : line 21, 'typical.C' :type ExprStmt)
+(Statement : line 23, 'typical.C' :type Switch)
+(Statement : line 24, 'typical.C' :type Block)
+DEBUG2 block line 24, 'typical.C', args Statement47 Statement47 Statement47
+(Statement : line 25, 'typical.C' :type Case)
+(Statement : line 26, 'typical.C' :type ExprStmt)
+(Statement : line 27, 'typical.C' :type ExprStmt)
+(Statement : line 28, 'typical.C' :type Break)
+(Statement : line 29, 'typical.C' :type Case)
+(Statement : line 30, 'typical.C' :type ExprStmt)
+(Statement : line 31, 'typical.C' :type For)
+(Statement : line 32, 'typical.C' :type Block)
+DEBUG2 block line 32, 'typical.C', args Statement31 incr Statement31 incr Statement41
+(Statement : line 33, 'typical.C' :type ExprStmt)
+(Statement : line 34, 'typical.C' :type If)
+(Statement : line 35, 'typical.C' :type Block)
+DEBUG2 block line 35, 'typical.C', args Statement38 Statement31 incr Statement41
+(Statement : line 36, 'typical.C' :type Continue)
+(Statement : line 38, 'typical.C' :type ExprStmt)
+(Statement : line 41, 'typical.C' :type Break)
+(Statement : line 42, 'typical.C' :type Default)
+(Statement : line 43, 'typical.C' :type ExprStmt)
+(Statement : line 44, 'typical.C' :type Break)
+(Statement : line 47, 'typical.C' :type If)
+(Statement : line 48, 'typical.C' :type Block)
+DEBUG2 block line 48, 'typical.C', args Statement60 Statement66 Statement66
+(Statement : line 49, 'typical.C' :type ExprStmt)
+(Statement : line 51, 'typical.C' :type If)
+(Statement : line 52, 'typical.C' :type Block)
+DEBUG2 block line 52, 'typical.C', args Statement60 Statement66 Statement66
+(Statement : line 53, 'typical.C' :type ExprStmt)
+(Statement : line 56, 'typical.C' :type Block)
+DEBUG2 block line 56, 'typical.C', args Statement60 Statement66 Statement66
+(Statement : line 57, 'typical.C' :type ExprStmt)
+(Statement : line 60, 'typical.C' :type Do)
+(Statement : line 60, 'typical.C' :type Block)
+DEBUG2 block line 60, 'typical.C', args Statement60 Statement60 Statement66
+(Statement : line 61, 'typical.C' :type ExprStmt)
+(Statement : line 62, 'typical.C' :type ExprStmt)
+(Statement : line 63, 'typical.C' :type ExprStmt)
+(EndFunctionNamed typical.C)

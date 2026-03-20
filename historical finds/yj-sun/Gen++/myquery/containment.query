@@ -1,0 +1,206 @@
+/**
+This program generate two files flow.dot and components.zyj, the 
+former is a control flow graph which has problem with Switch that
+has not been solved. There also need some change to make exit abort
+work fine by generating a terminationIndex 
+
+The component.zyj is a component description of each statement. 
+each component has an index, order, lineNumber, body, accessdList, modifiedList.
+
+**/  
+
+ROOTPROC FileFlow
+
+FILE slog "statementInBody" 
+/*
+FILE control "flow.dot"
+FILE component "components.zyj"
+*/ 
+FILE control 
+FILE component 
+
+GLOBAL GNODE fileName;
+GLOBAL GNODE fname;  /* function name */ 
+GLOBAL GNODE finish_stmt;
+GLOBAL GNODE rangeFileName;
+
+EXTERNAL PROC mystrconcat (STRING STRING) RETURNS STRING
+EXTERNAL PROC myitoa (INTEGER) RETURNS STRING
+EXTERNAL PROC newname (STRING) RETURNS STRING
+EXTERNAL PROC IsHeader(STRING) RETURNS INTEGER
+
+
+
+/** In DealWithFor, field blockbody, different from
+in stmt6.query **/
+
+EXTERNAL PROC newBlock () RETURNS STRING
+EXTERNAL PROC newElem (STRING STRING) RETURNS STRING
+EXTERNAL PROC newFileName (STRING) RETURNS STRING
+EXTERNAL PROC newControlFileName (STRING) RETURNS STRING
+EXTERNAL PROC newComponentFileName (STRING) RETURNS STRING
+EXTERNAL PROC newRangeFileName (STRING) RETURNS STRING
+
+EXTERNAL PROC newResult (STRING) RETURNS STRING
+EXTERNAL PROC newConstraint () RETURNS STRING
+
+
+
+PROC DealWithDo
+
+ROOT Do;
+{
+	LOCAL GNODE newValue;
+	LOCAL GNODE endLine;
+
+	(PRINT component "(%s %s (Loop Do) "
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+	) 
+	
+	<dobody
+		(CALL DealWithRange)
+	>	
+
+	(PRINT component ")\n") 
+
+(RETURN)
+	
+}
+
+PROC DealWithFor
+
+ROOT For;
+{
+	(PRINT component "(%s %s (Loop For) "
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				) 
+
+	<forbody 
+		(CALL DealWithRange)
+	>	
+
+	(PRINT component ")\n") 
+
+(RETURN)
+}
+
+
+PROC DealWithWhile
+
+ROOT While;
+{
+
+	(PRINT component "(%s %s (Loop While) "
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				) 
+
+	<whilebody
+		(CALL DealWithRange)
+	>	
+
+	(PRINT component ")\n") 
+(RETURN)
+}
+
+
+
+PROC DealWithIf
+
+ROOT If;
+{
+	(PRINT component "(%s %s (Ifstatement) "
+				(CEXPR C_String "(char *) newElem(getCstring(fileName), getCstring(fname))")
+				(SLOT line $location)
+				) 
+	<ifTbranch
+		(CALL DealWithRange)
+	>
+
+	<ifFbranch
+		(CALL DealWithRange)
+	>
+ 
+	(PRINT component ")\n") 
+(RETURN)
+} 
+
+
+PROC DealWithStatement
+/* to deal with statement */  
+ROOT Statement;  
+{
+	(PRINT component " (%s %s) "
+			(SLOT line $location)
+			(SLOT line $location)
+			)	
+} 
+
+PROC DealWithBlock 
+
+ROOT Block;
+{
+	(PRINT component " (%s "
+			(SLOT line $location)
+			)	
+	<blockend
+		(PRINT component "%s) "
+				(SLOT line $token)
+				)	
+	> 
+} 
+
+PROC DealWithRange
+/* to deal with statement */  
+ROOT G_AnyType;
+{
+   (IF (TYPEOF $token Block)
+        (THEN (CALL DealWithBlock))
+        (ELSE 
+			(IF (TYPEOF $token Statement) 
+				(THEN (CALL DealWithStatement))	)
+		)  
+	) 
+} 
+
+ 
+PROC FileFlow
+
+ROOT CFile;
+{
+LOCAL GNODE foo;
+/*LOCAL GNODE fname; */
+LOCAL GNODE tfile;
+ 
+LOCAL GNODE controlFileName;
+LOCAL GNODE componentFileName;
+ 
+
+<where (ASSIGN tfile (SLOT file $location))>
+(ASSIGN fileName (CEXPR C_String "(char *)newFileName( getCstring(tfile))"))
+(ASSIGN controlFileName (CEXPR C_String "(char *)newControlFileName( getCstring(tfile))"))
+(ASSIGN rangeFileName (CEXPR C_String "(char *)newRangeFileName( getCstring(tfile))"))
+ 
+(OPEN component rangeFileName)
+
+(ASSIGN fname (SLOT file $location))
+ 
+  [
+    (?While
+   		(CALL DealWithWhile) 
+	)
+
+	(?For
+		(CALL DealWithFor)
+	)
+	
+	(?If
+		(CALL DealWithIf)
+	) 
+
+  ]
+}
+
+

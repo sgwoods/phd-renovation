@@ -1,0 +1,11 @@
+#
+if( $#argv != 1 ) then
+	set temp = $0
+	echo Usage: $temp:t c/c++File  
+	unset temp
+	exit 1
+endif
+	setenv GENPP_LICENSE_FILE /users1/grad/yjzhang/Gen++/GENPP.dat
+	\rm *.i
+	CC -P $1
+	analyzer < *.i 

@@ -1,0 +1,28 @@
+#!/bin/csh -f
+#
+# find a path to a C pre processor
+#
+
+foreach dir ($path)
+	if ($dir != "." ) then
+		if (-e $dir) then
+			cd $dir
+			if (-e acc && ! $?accpath) then
+				set accpath = $dir
+			else if (-e gcc && ! $?gccpath) then
+				set gccpath = $dir
+			else if (-e cc && ! $?ccpath) then
+				set ccpath = $dir
+			endif
+		endif
+	endif
+end
+	if ($?accpath) then
+		echo "# define CC " \""$accpath/acc"\"
+	else if ($?gccpath) then
+		echo "# define CC " \""$gccpath/gcc"\"
+	else if ($?ccpath) then
+		echo "# define CC " \""$ccpath/cc"\"
+	else
+		echo no C compiler found
+	endif

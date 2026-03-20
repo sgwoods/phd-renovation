@@ -1,0 +1,105 @@
+     1  #include <stdio.h>
+     2  #include <math.h>
+     3  #include <ctype.h>
+     4
+     5  #define IN 1
+     6  #define OUT 0
+     7  #define BIG_DOUBLE 1.0E38
+     8
+     9  int calculate_average_distance( void )
+    10  {
+    11      double a, b, c, d, t1, t2, rt;
+    12      int rc;
+    13      rt = 0;
+    14      rc = 0;
+    15      while( scanf("%1f%1f%1f%1f", &a, &b, &c, &d) != EOF )
+    16      {
+    17          t1 = a - c;
+    18          t2 = b - d;
+    19          rt += sqrt( t1*t1 + t2*t2 );
+    20          rc ++;
+    21      }
+    22      printf("%f\n", rc != 0? rt/rc:0 );
+    23      return(0);
+    24
+    25  }
+    26
+    27  int calculate_char_word_line( void )
+    28  {
+    29      int c, nl, nw, nc, state;
+    30      state = OUT;
+    31      nl = nw = nc = 0;
+    32      while( (c=getchar()) != EOF )
+    33      {
+    34          ++nc;
+    35          if( c == '\n' )
+    36              ++nl;
+    37          if( c==' ' || c=='\n' || c=='\t' )
+    38              state = OUT;
+    39          else if( state == OUT )
+    40          {
+    41              state = IN;
+    42              ++nw;
+    43          }
+    44      }
+    45      printf("%d\t%d\t%d\n", nl, nw, nc );
+    46      return 0;
+    47  }
+    48
+    49  int convert_alpha_to_int( char s[] )
+    50  {
+    51      int i, n, sign;
+    52      for( i=0; isspace(s[i] ); i++ )
+    53          ;
+    54      sign = (s[i]=='-')?-1:1;
+    55      if( s[i]=='+' || s[i]=='-' )
+    56          i++;
+    57      for( n=0; isdigit( s[i] ); i++ )
+    58          n = 10*n + (s[i]-'0');
+    59      return( sign*n );
+    60  }
+    61
+    62  int binary_search( int x, int v[], int n )
+    63  {
+    64      int low, high, mid;
+    65      low = 0;
+    66      high = n-1;
+    67      while( low <= high )
+    68      {
+    69          mid = (low+high)/2;
+    70          if( x < v[mid] )
+    71              high = mid - 1;
+    72          else if ( x > v[mid] )
+    73              low = mid + 1;
+    74          else
+    75              return mid;
+    76      }
+    77      return -1;
+    78  }
+    79
+    80
+    81  double calculate_minimum_distance( int a[], int b[], int n )
+    82  {
+    83      double r, d, t1, t2;
+    84      int j, k;
+    85      j = 0;
+    86      r = BIG_DOUBLE;
+    87      while( j < n-1 )
+    88      {
+    89          k = j+1;
+    90          while( k < n )
+ 
+    91          {
+    92              t1 = a[j] - a[k];
+    93              t2 = b[j] - b[k];
+    94              d = sqrt(t1 * t1 + t2 * t2 );
+    95              if( d < r )
+    96                  r = d;
+    97              k++;
+    98          }
+    99          j ++;
+   100      }
+   101      return r;
+   102
+   103  }
+

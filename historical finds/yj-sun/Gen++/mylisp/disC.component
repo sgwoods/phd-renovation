@@ -1,0 +1,83 @@
+
+(disC_stmt7 
+ (
+(disC_1 1 Distance 7 (Minus x2 x1 Result1) (x2 x1 Result1) (Result1))
+(disC_2 2 Distance 7 (Minus x2 x1 Result2) (x2 x1 Result2) (Result2))
+(disC_3 3 Distance 7 (Mult Result2 Result1 Result3) (Result2 Result1 Result3) (Result3))
+(disC_4 4 Distance 7 (Assign val1 Result3) (val1 Result3) (val1))
+ )
+ ( (val1 disC 5) (x2 disC 3) (x1 disC 3) (x2 disC 3) (x1 disC 3)  )
+ ( (val1 disC 5)  )
+)
+
+(disC_stmt8 
+ (
+(disC_5 5 Distance 8 (Minus y2 y1 Result4) (y2 y1 Result4) (Result4))
+(disC_6 6 Distance 8 (Minus y2 y1 Result5) (y2 y1 Result5) (Result5))
+(disC_7 7 Distance 8 (Mult Result5 Result4 Result6) (Result5 Result4 Result6) (Result6))
+(disC_8 8 Distance 8 (Assign val2 Result6) (val2 Result6) (val2))
+ )
+ ( (val2 disC 5) (y2 disC 3) (y1 disC 3) (y2 disC 3) (y1 disC 3)  )
+ ( (val2 disC 5)  )
+)
+
+(disC_stmt9 
+ (
+(disC_9 9 Distance 9 (Plus val1 val2 Result7) (val1 val2 Result7) (Result7))
+(disC_10 10 Distance 9 (UserCall sqrt Result7  Result8) (Result7 Result8) (Result8))
+(disC_11 11 Distance 9 (Assign result Result8) (result Result8) (result))
+ )
+ ( (result disC 6) (val1 disC 5) (val2 disC 5)  )
+ ( (result disC 6)  )
+)
+
+(disC_stmt10 
+ (
+(disC_12 12 Distance 10 (Return result))
+ )
+ ( (result disC 6)  )
+ (  )
+)
+
+(disC_stmt17 
+ (
+(disC_13 13 main 17 (Assign y1 1) (y1 1) (y1))
+(disC_14 14 main 17 (Assign x1 1) (x1 1) (x1))
+ )
+ ( (x1 disC 14) (y1 disC 14)  )
+ ( (x1 disC 14) (y1 disC 14)  )
+)
+
+(disC_stmt18 
+ (
+(disC_15 15 main 18 (Assign y2 4) (y2 4) (y2))
+(disC_16 16 main 18 (Assign x2 4) (x2 4) (x2))
+ )
+ ( (x2 disC 15) (y2 disC 15)  )
+ ( (x2 disC 15) (y2 disC 15)  )
+)
+
+(disC_stmt19 
+ (
+(disC_17 17 main 19 (Minus y1 y2 Result9) (y1 y2 Result9) (Result9))
+(disC_18 18 main 19 (Minus y1 y2 Result10) (y1 y2 Result10) (Result10))
+(disC_19 19 main 19 (Mult Result10 Result9 Result11) (Result10 Result9 Result11) (Result11))
+(disC_20 20 main 19 (Minus x1 x2 Result12) (x1 x2 Result12) (Result12))
+(disC_21 21 main 19 (Minus x1 x2 Result13) (x1 x2 Result13) (Result13))
+(disC_22 22 main 19 (Mult Result13 Result12 Result14) (Result13 Result12 Result14) (Result14))
+(disC_23 23 main 19 (Plus Result14 Result11 Result15) (Result14 Result11 Result15) (Result15))
+(disC_24 24 main 19 (UserCall sqrt Result15  Result16) (Result15 Result16) (Result16))
+(disC_25 25 main 19 (Assign result Result16) (result Result16) (result))
+ )
+ ( (result disC 16) (x1 disC 14) (x2 disC 15) (x1 disC 14) (x2 disC 15) (y1 disC 14) (y2 disC 15) (y1 disC 14) (y2 disC 15)  )
+ ( (result disC 16)  )
+)
+
+(disC_stmt20 
+ (
+(disC_26 26 main 20 (UserCall Distance x1 y1 x2 y2  Result17) (x1 y1 x2 y2 Result17) (Result17))
+(disC_27 27 main 20 (Assign result Result17) (result Result17) (result))
+ )
+ ( (result disC 16) (x1 disC 14) (y1 disC 14) (x2 disC 15) (y2 disC 15)  )
+ ( (result disC 16)  )
+)

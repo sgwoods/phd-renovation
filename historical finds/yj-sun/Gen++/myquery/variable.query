@@ -1,0 +1,18 @@
+/*ident	"@(#)gen++:d.pkg/examples/defuse.query	1.2" */
+/* For each reference to a variable, print whether
+   it is {bf used}, or {bf assigned to}. 
+   You'll find it in the file defuse.query in the shipped package   */
+
+ROOTPROC VarUseDef
+
+PROC VarUseDef
+ROOT CFile;
+{
+  [(?IdName
+    (IF (OR (AND (TYPEOF $parent Assignment) (EQUAL $slot "be_lhs")) 
+			(TYPEOF $parent UnaryCount) ) 
+      (THEN  (PRINT stdout "At %s assignment to  %s\n" $location $token))
+      (ELSE  (PRINT stdout "At %s access of %s\n" $location $token))
+    )
+  )]
+}

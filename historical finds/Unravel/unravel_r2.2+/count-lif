@@ -1,0 +1,9 @@
+#
+@ t = 0
+foreach file ($argv)
+	set head = $file:r
+	set tot = `wc -c $head.{H,T,LIF} | grep total`
+	@ t += $tot[1]
+	echo $file " " $tot[1]
+end
+echo total " $t"

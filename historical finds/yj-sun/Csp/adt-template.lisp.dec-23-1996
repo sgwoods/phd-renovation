@@ -1,0 +1,504 @@
+;;(defconstant *template-object-list* 
+
+(setq
+ *template-object-list* 
+ (list
+
+  '("reset-value-template-2-1"
+    (
+     (e1 (LessEq Id1-1 Id1-2 Id1-3))
+     (e2 (Assign Id2-1 Id2-2))
+     )
+    (
+     (same-data-dependency (e2 e1) (Id2-1 Id1-1))
+     )
+    )
+  
+  '("increment-template-2-2"
+    (
+     (e1 (Plus Id1-1 Id1-2 Id1-3))        ;temp = i + 1
+     (e2 (Assign Id2-1 Id2-2))            ;i = temp
+     )
+    (
+     (same-variable (e2 e1) (Id2-1 Id1-1))
+     (guaranteed-data-dependency (e2 e1) Id2-2)
+     )
+    )
+
+  '("copy-array-element-template-3-2"
+    (
+     (e1 (Index Id1-1 Id1-2 Id1-3))       ;temp1 = xcopy[i] 
+     (e2 (Index Id2-1 Id2-2 Id2-3))       ;temp2 = x[i]
+     (e3 (Assign Id3-1 Id3-2))            ;temp1 = temp2
+     )
+    (
+     (guaranteed-data-dependency (e3 e1) Id3-2)
+     (guaranteed-data-dependency (e3 e2) Id3-1)
+     )
+    )
+  
+  '("alloc-array-error-check-template-4-3"
+    (
+     (e1 (Mult Id1-1 Id1-2 Id1-3))        ;temp1 = n * 1
+     (e2 (malloc Id2-1 Id2-2))            ;temp2 = malloc( temp1 )
+     (e3 (Assign Id3-1 Id3-2))            ;xcopy = temp2
+     (e4 (EqEq Id4-1 Id4-2 Id4-3))        ;temp2 == 0? 
+     )
+    (
+     (guaranteed-data-dependency (e2 e1) Id2-1)
+     (guaranteed-data-dependency (e3 e2) Id3-2)
+     (guaranteed-data-dependency (e4 e2) Id4-1)
+     )
+    )
+
+  '("traverse-array-template-5-7"
+    (
+     (e1 (Assign Id1-1 Id1-2))           ;i = 0
+     (e2 (Loop))
+     (e3 (Less Id3-1 Id3-2 Id3-3))       ;i<n
+     (e4 (Index Id4-1 Id4-2 Id4-3))      ;
+     (e5 (PreInc Id5-1))                 ;++i
+     )
+    (
+     (control-data-dependency (e2 e1))
+     (possible-data-dependency (e3 e1) Id3-1)
+     (possible-data-dependency (e3 e5) Id3-1)
+     (possible-data-dependency (e4 e1) Id4-2)
+     (possible-data-dependency (e4 e5) Id4-2)
+
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) Id5-1)  
+     )
+    )
+
+  '("addup-array-template-6-9"
+    (
+     (e1 (Assign Id1-1 Id1-2))           ;i = 0
+     (e2 (Loop))
+     (e3 (Less Id3-1 Id3-2 Id3-3))       ;i<n
+     (e4 (Index Id4-1 Id4-2 Id4-3))      ;temp1 = x[i]
+     (e5 (PlusAssign Id5-1 Id5-2))       ;mean += temp1
+     (e6 (PreInc Id6-1))                 ;++i
+     )
+    (
+     (control-data-dependency (e2 e1))
+     (possible-data-dependency (e3 e1) Id3-1)
+     (possible-data-dependency (e3 e6) Id3-1)
+     (possible-data-dependency (e4 e1) Id4-2)
+     (possible-data-dependency (e4 e6) Id4-2)
+
+     (guaranteed-data-dependency (e5 e4) Id5-2)
+     (possible-data-dependency (e5 e5) Id5-1)
+     (possible-data-dependency (e6 e1) Id6-1)
+     (possible-data-dependency (e6 e6) Id6-1)  
+     )
+    )
+
+  '("copy-array-template-7-11"
+    (
+     (e1 (Assign Id1-1 Id1-2))           ;i = 0
+     (e2 (Loop))
+     (e3 (Less Id3-1 Id3-2 Id3-3))       ;i<n
+     (e4 (Index Id4-1 Id4-2 Id4-3))      ;temp1 = xcopy[i]
+     (e5 (Index Id5-1 Id5-2 Id5-3))      ;temp2 = x[i]
+     (e6 (Assign Id6-1 Id6-2))           ;temp1 = temp2
+     (e7 (PreInc Id7-1))
+     )
+    (
+     (control-data-dependency (e2 e1))
+     (possible-data-dependency (e3 e1) Id3-1)
+     (possible-data-dependency (e3 e7) Id3-1)
+     (possible-data-dependency (e4 e1) Id4-2)
+     (possible-data-dependency (e4 e7) Id4-2)
+     
+     (possible-data-dependency (e5 e1) Id5-2)
+     (possible-data-dependency (e5 e7) Id5-2)
+     (guaranteed-data-dependency (e6 e4) Id6-1)
+     (guaranteed-data-dependency (e6 e5) Id6-2)
+     (possible-data-dependency (e7 e1) Id7-1)
+
+     (possible-data-dependency (e7 e7) Id7-1)  
+     )
+    )
+
+  '("average-array-template-8-12"
+    (
+     (e1 (Assign Id1-1 Id1-2))		 ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))		 ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))	 ;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))	 ;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 	 ;mean += Id4-3
+     (e6 (PreInc Id6-1))                 ;++i	
+     (e8 (DivAssign Id8-1 Id8-2))	 ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1))  ;data set at e1 is in dependency-list of e21
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e6) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e6) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+     
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     ) 
+  )
+  
+  '("sum-square-array-9-16"
+    (
+     (e1 (Assign Id1-1 Id1-2))           ;sdx = 0
+     (e2 (Assign Id2-1 Id2-2))           ;i=0
+     (e3 (Loop))                          
+     (e4 (Less Id4-1 Id4-2 Id4-3))       ;i<n
+     (e5 (Index Id5-1 Id5-2 Id5-3))      ;temp1 = x[i]
+     (e6 (Index Id6-1 Id6-2 Id6-3))      ;temp2 = x[i]
+     (e7 (Mult Id7-1 Id7-2 Id7-3))       ;temp3 = temp1 * temp2
+     (e8 (PlusAssign Id8-1 Id8-2))       ;sdx += temp3
+     (e9 (PreInc Id9-1))                 ;++i
+     )
+    (
+     (control-data-dependency (e3 e1))
+     (control-data-dependency (e3 e2))
+     (possible-data-dependency (e4 e2) Id4-1)
+     (possible-data-dependency (e4 e9) Id4-1)
+     (possible-data-dependency (e5 e2) Id5-2)
+
+     (possible-data-dependency (e5 e9) Id5-2)
+     (possible-data-dependency (e6 e2) Id6-2)
+     (possible-data-dependency (e6 e9) Id6-2)     
+     (same-variable (e6 e5) (Id6-1 Id5-1))
+     (guaranteed-data-dependency (e7 e5) Id7-2)
+     
+     (guaranteed-data-dependency (e7 e6) Id7-1)
+     (possible-data-dependency (e8 e1) Id8-1)
+     (possible-data-dependency (e8 e8) Id8-1)
+     (guaranteed-data-dependency (e8 e7) Id8-2)
+     (possible-data-dependency (e9 e2) Id9-1)
+     
+     (possible-data-dependency (e9 e9) Id9-1)
+     )
+    )
+  
+  
+  ;; template-array-template-9-12  -  template-array-template-9-17
+  ;; are templates with decomposed PreInc or PostInc  
+  
+  '("average-array-template-9-12"
+    (
+     (e1 (Assign Id1-1 Id1-2))            ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))            ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))	  ;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))	  ;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 	  ;mean += Id4-3
+     (e6 (Plus Id6-1 Id6-2 Id6-3))	  ;i++ ==> Id6-3 = i + 1
+     (e7 (Assign Id7-1 Id7-2))		  ;i = Id6-3  
+     (e8 (DivAssign Id8-1 Id8-2))	  ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)); data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e7) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e7) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (guaranteed-data-dependency (e7 e6) Id7-2)  
+     
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     ) 
+    )
+  
+  '("average-array-template-9-13"
+    (
+     (e1 (Assign Id1-1 Id1-2))		  ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))		  ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))	  ;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))	  ;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 	  ;mean += Id4-3
+     (e6 (Plus Id6-1 Id6-2 Id6-3))	  ;i++ ==> Id6-3 = i + 1
+     (e7 (Assign Id7-1 Id7-2))		  ;i = Id6-3  
+     (e8 (DivAssign Id8-1 Id8-2))	  ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1))  ;data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e7) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e7) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (guaranteed-data-dependency (e7 e6) Id7-2)  
+     
+     (possible-data-dependency (e8 e1) Id8-1)
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     ) 
+    )
+  
+  
+  '("average-array-template-9-14"
+    (
+     (e1 (Assign Id1-1 Id1-2))		  ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))		  ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))	  ;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))	  ;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 	  ;mean += Id4-3
+     (e6 (Plus Id6-1 Id6-2 Id6-3))	  ;i++ ==> Id6-3 = i + 1
+     (e7 (Assign Id7-1 Id7-2))		  ;i = Id6-3  
+     (e8 (DivAssign Id8-1 Id8-2))	  ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)) ;data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e7) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e7) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+     
+     (guaranteed-data-dependency (e7 e6) Id7-2)  
+     (possible-data-dependency (e8 e1) Id8-1)
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     
+     ) 
+    )
+  
+  
+  '("average-array-template-9-15"
+    (
+     (e1 (Assign Id1-1 Id1-2))		  ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))		  ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))	  ;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))	  ;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 	  ;mean += Id4-3
+     (e6 (Plus Id6-1 Id6-2 Id6-3))	  ;i++ ==> Id6-3 = i + 1
+     (e7 (Assign Id7-1 Id7-2))		  ;i = Id6-3  
+     (e8 (DivAssign Id8-1 Id8-2))	  ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)) ;data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e7) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e7) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+     
+     (possible-data-dependency (e6 e7) Id6-1)
+     (guaranteed-data-dependency (e7 e6) Id7-2)  
+     (possible-data-dependency (e8 e1) Id8-1)
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     
+     ) 
+    )
+  
+  '("average-array-template-9-16"
+    (
+     (e1 (Assign Id1-1 Id1-2))		  ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))		  ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))	  ;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))	  ;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 	  ;mean += Id4-3
+     (e6 (Plus Id6-1 Id6-2 Id6-3))	  ;i++ ==> Id6-3 = i + 1
+     (e7 (Assign Id7-1 Id7-2))		  ;i = Id6-3  
+     (e8 (DivAssign Id8-1 Id8-2))	  ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)) ;data set at e1 is in dependency-list of e21 
+      (control-data-dependency (e21 e2))  
+      (possible-data-dependency (e3 e2) Id3-1)
+      (possible-data-dependency (e3 e7) Id3-1)
+      (possible-data-dependency (e4 e2) Id4-2) 
+      
+      (possible-data-dependency (e4 e7) Id4-2) 
+      (guaranteed-data-dependency (e5 e4) Id5-2) 
+      (possible-data-dependency (e5 e1) Id5-1)
+      (possible-data-dependency (e5 e5) ID5-1) 
+      (possible-data-dependency (e6 e2) Id6-1)
+      
+      (possible-data-dependency (e6 e7) Id6-1)
+      (guaranteed-data-dependency (e7 e6) Id7-2)  
+      (possible-data-dependency (e7 e2) Id7-1)
+      (possible-data-dependency (e8 e1) Id8-1)
+      (possible-data-dependency (e8 e5) Id8-1) 
+   
+      (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+      
+      ) 
+    )
+  
+  '("average-array-template-9-17"
+    (
+     (e1 (Assign Id1-1 Id1-2))		  ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))		  ;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))	  ;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))	  ;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 	  ;mean += Id4-3
+     (e6 (Plus Id6-1 Id6-2 Id6-3))	  ;i++ ==> Id6-3 = i + 1
+     (e7 (Assign Id7-1 Id7-2))		  ;i = Id6-3  
+     (e8 (DivAssign Id8-1 Id8-2))	  ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)) ;data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e7) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e7) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+     
+     (possible-data-dependency (e6 e7) Id6-1)
+     (guaranteed-data-dependency (e7 e6) Id7-2)  
+     (possible-data-dependency (e7 e2) Id7-1)
+     (possible-data-dependency (e7 e7) Id7-1)
+     (possible-data-dependency (e8 e1) Id8-1)
+     
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     
+     ) 
+    )
+  
+  ;; amended templates which use PreInc 
+  
+  
+  '("average-array-template-8-12"
+    (
+     (e1 (Assign Id1-1 Id1-2))		        ;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))			;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))		;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))		;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 		;mean += Id4-3
+     (e6 (PreInc Id6-1))                        ;++i	
+     (e8 (DivAssign Id8-1 Id8-2))	        ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)) ; data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e6) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e6) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+     
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     
+     ) 
+  )
+  
+  '("average-array-template-8-13"
+    (
+     (e1 (Assign Id1-1 Id1-2))			;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))			;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))		;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))		;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 		;mean += Id4-3
+     (e6 (PreInc Id6-1))                        ;++i	
+     (e8 (DivAssign Id8-1 Id8-2))	        ;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)) ;data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e6) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e6) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+     
+     (possible-data-dependency (e8 e1) Id8-1)
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     
+     ) 
+    )
+  
+  
+  '("average-array-template-8-14"
+    (
+     (e1 (Assign Id1-1 Id1-2))			;mean = 0 
+     (e2 (Assign Id2-1 Id2-2))			;i = 0 
+     (e21 (Loop)) 
+     (e3 (Less Id3-1 Id3-2 Id3-3))		;i<n 
+     (e4 (Index Id4-1 Id4-2 Id4-3))		;a[i] --Id4-3 
+     
+     (e5 (PlusAssign Id5-1 Id5-2)) 		;mean += Id4-3
+     (e6 (PreInc Id6-1))                        ;++i	
+     (e8 (DivAssign Id8-1 Id8-2))		;mean /= n 
+     )
+    (
+     (control-data-dependency (e21 e1)) ; data set at e1 is in dependency-list of e21 
+     (control-data-dependency (e21 e2))  
+     (possible-data-dependency (e3 e2) Id3-1)
+     (possible-data-dependency (e3 e6) Id3-1)
+     (possible-data-dependency (e4 e2) Id4-2) 
+     
+     (possible-data-dependency (e4 e6) Id4-2) 
+     (guaranteed-data-dependency (e5 e4) Id5-2) 
+     (possible-data-dependency (e5 e1) Id5-1)
+     (possible-data-dependency (e5 e5) ID5-1) 
+     (possible-data-dependency (e6 e2) Id6-1)
+     
+     (possible-data-dependency (e6 e6) Id6-1)
+     (possible-data-dependency (e8 e1) Id8-1)
+     (possible-data-dependency (e8 e5) Id8-1) 
+     (same-data-dependency (e3 e8) (Id3-2 Id8-2))
+     
+     ) 
+    )
+  
+  
+  ))
+

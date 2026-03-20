@@ -1,0 +1,49 @@
+MAIN server.c 1
+FILES
+	server.c
+AMBIG
+LIB
+	socket
+	perror
+	memset
+	htons
+	close
+	bind
+	listen
+	accept
+	printf
+	recv
+MAIN clientorig.c 1
+FILES
+	clientorig.c
+AMBIG
+LIB
+	socket
+	perror
+	gethostbyname
+	exit
+	memset
+	fn1
+	inet_addr
+	htons
+	close
+	connect
+	send
+	strlen
+MAIN client.c 1
+FILES
+	client.c
+AMBIG
+LIB
+	socket
+	perror
+	gethostbyname
+	exit
+	memset
+	fn1
+	inet_addr
+	htons
+	close
+	connect
+	send
+	strlen

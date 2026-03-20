@@ -1,0 +1,146 @@
+#ident	"@(#)gen++:d.pkg/README	1.19"
+
+This directory contains RELEASE 1.2 of gen++, a facility for building
+tools for C++ programs.
+It is based on GENOA -- "GENerator Of Analyzers", a language independent
+tool generator, and is currently tied to the C++ Translator (cfront)
+release 3.0.3.  (This software is compatible with the C++ Translator
+from USL but is not guaranteed to work with other C++ compilation systems,
+such as g++.)
+
+Machines:
+	This package has been ported to Sun 4.* and hpux.  Other machines
+	will be supported as demand requires. 
+
+This release also contains source and documentation for the OO rule checker
+and the MIT OO metrics suite, implemented using gen++.  See subdirectories
+rc/ and metrics/. 
+
+Files:
+	README
+	README.nmake  - nmake rules for use with gen++ analyzers
+	RELEASE.notes - contains notes on the current release
+	makefile      - builds analyzer from query (see below)
+	mk            - small script to simplify running makefile
+	examples/*    - contains sample queries
+	rc/*          - source and documentation for the OO rule checker
+	metrics/*     - source and documentation for the OO metrics suite
+	docs/abstract.ps - a postscript version of a short paper introducing
+	                gen++
+	docs/gen++.ps - contains a postscript version of a draft gen++ manual
+		        Note: This memo contains copies of the genii spec and
+		        many of the sample queries and therefore appears to
+		        be longer than it really is.
+	docs/type.summary - ascii file summarizing the node type hierarchy
+			in the GENII spec and providing a brief description
+			for each type
+	docs/specfile - ascii file giving a detailed summary of node types
+			and slots, needed to write queries.  (This informa-
+			tion is also included in the manual appendix.)
+	docs/typesummary.html -
+		        This file has the same information as type.summary
+		        above, except that it is in a form that can be read
+     		        by Mosaic (or similar WWW/HTML browser). 
+	docs/typedocs.html -
+		        This file (which is indexed by the above file)
+		        gives information about the different types,
+		        and the slots and fillers for each type. 
+		        The two *.html files provide the same information
+		        as in the appendix of the manual, but in
+		        user-friendly hypertext form.
+	*.[hoa],cplang
+	              - supporting software needed to build analyzers
+	GENPP.dat     - license file -- referenced by all executables 
+	QCC           - script used to run the generated tools
+
+Installation:
+	mk and makefile were designed to run from any directory, but reference
+	files in the installation directory.  To install, simply copy *.[hoa],
+	cplang and GENPP.dat to a directory D of your choice and edit mk and
+	makefile accordingly. 
+	On systems that use ranlib, DON'T FORGET TO RUN
+		ranlib $D/gfront.a
+	before running any builds.
+
+
+To Build an Analyzer:
+	makefile and mk are designed to run from any directory when configured
+	properly.  Copy makefile to your private directory and edit it
+	to set the first 5 macros to appropriate values for your machine
+	/ application:
+		CPL = c++ compiler
+		CC  = c compiler
+		GEN = path name of gen++ installation directory
+		OTHERLIBS = additional libraries / .o's specific to your
+				application.
+		OTHERINCLUDES = additional preprocessor options specific
+				to your application
+	These macros can alternatively be set in the mk script.  mk 
+	exports info needed by the license manager and also simplifies 
+	using makefile. 
+	Copy and edit mk as needed.
+	For example, set options on the make line,
+	or set OTHERLIBS and OTHERINCLUDES at the top.
+	(SEE BELOW FOR DETAILS ON LICENSE MANAGER.)
+
+	Place a gen++ specification in a file myspec.query
+	and execute
+		mk myspec
+	This will build an executable called
+		analyzer
+	which accepts the same command line and input as cfront but
+	replaces code generation by code which implements your query. 
+	OTHERLIBS specifies libraries to be linked with queries which
+	reference external functions.  See the manual for details.
+
+	Note: This process generates intermediate files with fixed names, 
+	so that two analyzer builds can't run simultaneously in the same 
+	directory.
+
+	IMPORTANT: If two different analyzers are built in the same directory,
+	it is important to run
+		make clean
+	before building the second to clear away any intermediate files
+	specific to the first.  It is not necessary to run 'make clean'
+	between consecutive builds of the same analyzer.
+
+To Run:
+	The analyzer produced by mk could be substituted for cfront
+	in the CC shell script, except that it currently generates no
+	code, so C compilation and linking will fail.
+	(It is also possible that a user will write arbitrary output to stdout,
+	which would not be legal C.)
+	Also, due to the way temp files are handled in CC, the output
+	from an analyzer may be lost.  For example, if a query sends output
+	to a specially named file, such as query.out, this file will be
+	created in /usr/tmp, and removed by CC.
+
+	To avoid this, edit and use the QCC script provided for running
+	analyzers.  QCC will use CC to preprocess a file and run
+	the analyzer in the current directory, sending output to stdout.
+
+	For all scripts,  be sure ksh is available on your system.
+
+License Manager:
+	Beginning with release 1.2, a license manager is incorporated into
+	cplang and the analyzers built using gen++.  These reference the
+	environment variable
+		GENPP_LICENSE_FILE
+	which must be exported and set to the path name of the license file
+	GENPP.dat included in the installation directory.   Note that this
+	is done in mk, QCC, rc/RC and rc/mk.  Be sure to edit these scripts
+	appropriately to set all relevant path names.
+
+Sample Queries:
+	Sample queries are also provided in the examples directory.
+	For example, to build an analyzer from examples/hier.query, type
+		mk examples/hier
+	Details about each query can be found in the comments.
+
+	As more elaborate examples of gen++ applications, this
+	release also includes the OO Rule Checker and an OO
+	metrics suite (found in directories rc/ and metrics/,
+	respectively).  Documentation is included in associated
+	README files.
+
+	Enjoy!

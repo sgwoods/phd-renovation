@@ -1,0 +1,23 @@
+#!/bin/csh
+set dirs = (`pwd`)
+if ($#argv) set dirs = ($argv)
+foreach dir ($dirs)
+	pushd $dir >/dev/null
+	echo
+	echo Directory $dir
+	if ( -e SYSTEM) then
+		set f = `grep MAIN SYSTEM | sed 's/^MAIN //' | sed 's/ .*$//' | sort`
+		@ t = 0
+		foreach file ($f)
+			echo Counting link $file
+			set head = $file:r
+			set tot = `wc -c $head.{K,LINK} | grep total`
+			@ t += $tot[1]
+			echo $file " " $tot[1]
+		end
+		echo total " $t"
+	else
+		echo no SYSTEM file
+	endif
+	popd >/dev/null
+end

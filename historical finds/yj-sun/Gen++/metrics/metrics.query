@@ -1,0 +1,257 @@
+/*ident	"@(#)gen++:d.pkg/metrics/metrics.query	1.2" */
+ROOTPROC metrics
+
+FILE fM;
+FILE fN;
+FILE fO;
+FILE fP;
+FILE fL;
+
+GLOBAL GNODE lasto1;
+GLOBAL GNODE lasto2;
+GLOBAL GNODE filename;
+
+/* print containing class name or <global> */
+PROC printq
+ARG FILE FD;
+ROOT NameRef;
+{
+LOCAL GNODE q;
+  (ASSIGN q (SLOT qualifier $token))
+  (IF (NOT (NULL q))
+      (THEN (PRINT FD "%s" <q mangled>))
+      (ELSE (PRINT FD "<global>"))
+  )
+}
+
+/* print relations for CBO metric */
+PROC printcouple
+ARG GNODE m;
+ROOT NameRef;
+{
+LOCAL GNODE samef;
+LOCAL GNODE qt;
+LOCAL GNODE qm;
+  (ASSIGN samef 0)
+  (ASSIGN qt (SLOT qualifier $token))
+  (ASSIGN qm (SLOT qualifier m))
+  /* optimization: avoid printing duplicates */
+  (IF (AND (NOT (NULL qm))
+           (NOT (NULL qt)))
+      (THEN
+        (IF (AND (EQUAL qm qt))
+	    (THEN (ASSIGN samef 1))
+        )
+        (IF (AND (NOT (TYPEOF lasto1 C_Integer))
+	         (OR (AND (EQUAL qm (SLOT qualifier lasto1))
+	                  (EQUAL qt (SLOT qualifier lasto2)))
+	             (AND (EQUAL qm (SLOT qualifier lasto2)) 
+	                  (EQUAL qt (SLOT qualifier lasto1))
+                     )
+                 )
+            )
+            (THEN (RETURN))
+            (ELSE (ASSIGN lasto1 m) (ASSIGN lasto2 $token))
+        )
+      )
+  )
+
+  (TRAVERSE NameRef m (CALL printq fO))
+  (PRINT fO ";")
+  (CALL printq fO)
+  (PRINT fO "\n")
+
+  (IF (EQUAL samef 1) (THEN (RETURN)))
+  (CALL printq fO)
+  (PRINT fO ";")
+  (TRAVERSE NameRef m (CALL printq fO))
+  (PRINT fO "\n")
+}
+
+/* print function or var name + filename if static */
+PROC printn
+ARG FILE FD;
+ROOT NameRef;
+{
+  (PRINT FD "%s" <$token mangled>)
+  (IF (TYPEOF (SLOT scope $token) Scope_Static)
+      (THEN (PRINT FD "%s" filename))
+  )
+}
+
+/* print table entry for RFC metric: c;n, where
+ * c is class of m and n is the function name $token
+ */
+PROC printRFC
+ARG GNODE m;
+ROOT NameRef;
+{
+	(TRAVERSE NameRef m (CALL printq fP))
+        (PRINT fP ";")
+        (CALL printn fP)
+        (PRINT fP "\n")
+}
+
+/* print table entry for LCOM metric: c;m;iv, where
+ * c==class of m; m==containing function and
+ * iv == instance variable
+ */
+PROC printLCOM
+ARG GNODE m;
+ROOT NameRef;
+{
+  (IF (OR (NULL (SLOT qualifier m))
+          (NULL (SLOT qualifier $token))
+          (NOT (EQUAL (SLOT qualifier m) (SLOT qualifier $token)))
+      )
+      (THEN (RETURN))
+  )
+  (TRAVERSE NameRef m
+    (CALL printq fL)
+    (PRINT fL ";")
+    (CALL printn fL)
+  )
+  (PRINT fL ";")
+  (CALL printn fL)
+  (PRINT fL "\n")
+}
+
+/* find and print relations for CBO, RFC and LCOM metrics */
+PROC getrefs
+ROOT FunctionDef;
+{
+LOCAL GNODE m;
+LOCAL GNODE s;
+  <body (CALL checkstmt)>
+  <defname (ASSIGN m $token)>
+  <defname (CALL printRFC m)>
+  [ /* print coupling info for CBO */
+    (?FunctionName (CALL printcouple m))
+    (?IdName
+      (ASSIGN s (SLOT scope $token))
+      (IF (OR (TYPEOF s Scope_Member)
+              (TYPEOF s Scope_Static)
+              (TYPEOF s Scope_Extern))
+          (THEN (CALL printcouple m)
+                (CALL printLCOM m)
+          )
+      )
+    )
+    /* print info for RFC */
+    (?FunCall <callname
+     [ /* in case it's an AccessedName, srch to real name */
+       /* printcouple called here due to cfront internal structures */
+      (?FunctionName
+        (CALL printcouple m)
+        (CALL printRFC m)
+      )
+     ]
+    >)
+  ]
+}
+
+/* search for local classes/functions to apply metrics */
+PROC checkstmt
+ROOT Statement;
+{
+  (?Block
+    <locals {Declaration
+      (?AggrDef (CALL checkaggr))
+    }>
+    <blockbody {Statement (CALL checkstmt)}>
+  )
+  (?If
+    <ifTbranch (CALL checkstmt)>
+    <ifFbranch (CALL checkstmt)>
+  )
+  (?While <whilebody (CALL checkstmt)>)
+  (?Do <dobody (CALL checkstmt)>)
+  (?For
+    <forinit (CALL checkstmt)>
+    <forbody (CALL checkstmt)>
+  )
+  (?Switch <switchbody (CALL checkstmt)>)
+}
+
+FUNCTION getWMC
+ROOT ClassDef;
+{
+LOCAL GNODE mcount;
+(ASSIGN mcount 0)
+  <members {MemberSpec
+    (?MemberDeclaration
+      <def (?FunctionSpec
+        (ASSIGN mcount (+ 1 mcount))
+      ) >
+    )
+  }>
+  (RETURN mcount)
+}
+FUNCTION getDIT
+ROOT ClassDef;
+{
+LOCAL GNODE d;
+LOCAL GNODE m;
+(ASSIGN m 0)
+  <bases {BaseSpec
+    (IF (NOT (TYPEOF (SLOT allocation $token) BA_Promoted))
+      (THEN <refname <def (ASSIGN d (+ 1 (CALL getDIT))) > >
+            (IF (> d m) (THEN (ASSIGN m d)))
+      )
+    )
+  }>
+  (RETURN m)
+}
+PROC printNOC
+ROOT ClassDef;
+{
+LOCAL GNODE cn;
+  (ASSIGN cn (SLOT defname $token))
+  <bases {BaseSpec
+    (IF (NOT (TYPEOF (SLOT allocation $token) BA_Promoted))
+        (THEN
+          (PRINT fN "%s;%s\n"
+                    <(SLOT refname $token) mangled> <cn mangled>)
+        )
+    )
+  }>
+}
+
+/* recursively check for nested and local class/function defs
+ * printing info for WMC, DIT and NOC metrics for each class
+ */
+PROC checkaggr
+ROOT AggrDef;
+{
+  (?ClassDef
+    (PRINT fM "%s;%s;%s\n"
+                  <(SLOT defname $token) mangled> (CALL getWMC) (CALL getDIT))
+    (CALL printNOC)
+  )
+  <members {MemberSpec
+    (?MemberDeclaration
+      <def
+        (?AggrDef (CALL checkaggr))
+        (?FunctionDef (CALL getrefs))
+      >
+    )
+  }>
+}
+
+EXTERNAL PROC LastGenFixExt (STRING STRING ) RETURNS STRING
+
+PROC metrics
+ROOT CFile;
+{
+  (ASSIGN lasto1 0) (ASSIGN lasto2 0) 
+  (ASSIGN filename (SLOT filename $token))
+  (OPEN fM (CEXPR C_String "LastGenFixExt(getCstring(filename),\"M\")"))
+  (OPEN fN (CEXPR C_String "LastGenFixExt(getCstring(filename),\"N\")"))
+  (OPEN fO (CEXPR C_String "LastGenFixExt(getCstring(filename),\"O\")"))
+  (OPEN fP (CEXPR C_String "LastGenFixExt(getCstring(filename),\"P\")"))
+  (OPEN fL (CEXPR C_String "LastGenFixExt(getCstring(filename),\"L\")"))
+  <globals {Declaration
+    (?FunctionDef (CALL getrefs))
+    (?AggrDef (CALL checkaggr))
+  }>
+}

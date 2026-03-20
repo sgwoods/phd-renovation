@@ -1,0 +1,315 @@
+
+Catch        # Catch clause for try statement
+
+
+T_Attr        # Attributes of built-in types
+  TA_Long
+  TA_Unsigned
+  TA_Signed
+  TA_Numeric
+  TA_Integral
+  TA_Volatile
+  TA_Const
+
+
+FunctionTypeAttr        # Attributes of function types
+  FTA_Ellipsis
+  FTA_Static
+  FTA_Const
+
+
+CV_Spec        # Const/Volatile specifier
+  Volatile
+  Const
+
+
+Initializer
+  StaticInitializer        # Initializing code for static initialization
+  Expression
+    PrimaryExpr
+      Literal        # Literal constant
+        FloatConst
+        CharConst
+        IntConst
+        StringConst
+      NameRef        # Reference to a user-defined name
+        AccessedName        # Name declared in an access declaration (see VisibilitySpec)
+        LabelName        # Name of a label
+        TypedName        # Name of object, function or type
+          TypeName        # User-defined type name
+          FunctionName        # Name of function
+          IdName        # Name of object
+      PMFValue        # Value of pointer to member function
+      AggrValue        # Aggregate initializer
+    Delete        # delete [size] ptr
+    New        # new (placements) type (inits)
+    Mdot        # Low level ref to member of virtual base or similar construct
+    P2MemberRef        # .* or ->*
+      P2MData        # p->*memdata
+      P2MFunction        # p->*memfunc
+    MemberRef        # . or ->
+      Arrow        # x->y
+      Dot        # x.y
+    Question        # ?:
+    Ccast        # Simple C-style cast to basic type
+      GeneratedCast        # Compiler-generated cast
+      UserCast        # Explicit (user-specified) cast
+    Sizeof_T        # sizeof(type)
+    Sizeof_E        # sizeof(expr)
+    Index        # Subscripted expression x[y]
+    FunCall        # Generic function call
+      GeneratedCall        # Compiler-generated function call
+        GConversion        # Generated call of conversion operator
+        GDestruction        # Generated destructor call
+        GConstruction        # Generated constructor call
+        GOperatorCall        # Generated call of overloaded operator
+      UserCall        # User-specified function call
+    UnaryExpr        # Unary expression
+      Deref        # *x
+      AddrOf        # \&x
+      Uplus        # +x
+      Uminus        # -x
+      UnaryCount        # ++/-- operators
+        PostInc        # x++
+        PostDec        # x--
+        PreDec        # --x
+        PreInc        # ++x
+      Complement        # ~
+      Not        # !
+    BinaryExpr        # Binary expression
+      Plus        # +
+      Minus        # -
+      Mult        # *
+      Div        # /
+      Mod        # \%
+      Assignment
+        Assign        # =
+        RshiftAssign        # >>=
+        LshiftAssign        # <<=
+        MinusAssign        # -=
+        PlusAssign        # +=
+        ModAssign        # \%=
+        MultAssign        # *=
+        DivAssign        # /=
+        OrAssign        # |=
+        AndAssign        # \&=
+        XorAssign        # \^=
+      NotEq        # !=
+      EqEq        # ==
+      LessEq        # <=
+      Less        # <
+      GreaterEq        # >=
+      Greater        # >
+      Lshift        # <<
+      Rshift        # >>
+      Comma        # ,
+      BitOr        # |
+      BitAnd        # \&
+      Xor        # \^
+      LogOr        # ||
+      LogAnd        # \&\&
+    NullExpr        # Null or missing expression
+
+
+MemInit        # Base/Member initializer in constructor definition
+
+
+FunctionAttr        # Attributes of function declarations
+  FA_IncompleteInstantiation
+  FA_Instantiation
+  FA_Template
+  FA_Ellipsis
+  FA_Static
+  FA_Const
+  FA_Virtual
+  FA_Inline
+
+
+FunctionLinkage        # Function linkage specifier
+  Linkage_Cplusplus
+  Linkage_C
+
+
+BaseAllocation        # Base class allocation attribute
+  BA_Promoted
+  BA_Allocated
+  BA_Virtual
+  BA_Plain
+
+
+BaseAccess        # Base access identification
+  BA_Private
+  BA_Protected
+  BA_Public
+
+
+MemberSpec        # Member, friend or access declaration
+  NestedDeclaration        # Member or friend declaration
+    FriendDeclaration        # Friend declaration
+      FriendFunction        # Friend function declaration
+      FriendClass        # Friend class declaration
+    MemberDeclaration        # Member declaration
+  VisibilitySpec        # Base member access declaration
+  AccessSpec        # public: / protected: / private:
+
+
+BaseSpec        # Base class specification
+
+
+ClassAttr        # Attributes of class/union declarations
+  CA_HasOpDelete
+  CA_HasOpNew
+  CA_HasVirtuals
+  CA_HasOpAssign
+  CA_HasNullCtor
+  CA_HasCopyCtor
+  CA_HasDtor
+  CA_HasCtor
+  CA_Specialized
+  CA_Instantiated
+  CA_Abstract
+
+
+Actual        # Template actual parameter (for instantiations)
+  ExprActual        # Actual value parameter
+  TypeActual        # Actual type parameter
+
+
+Parameter        # Template formal parameter
+  ValueParameter        # Template value parameter
+  TypeParameter        # Template type parameter
+
+
+Statement        # Generic statement
+  Try        # Try statement (not implemented in 3.0)
+  Goto
+  LabelStmt        # Generic statement label
+    Default        # Switch default
+    Case        # Case label
+    Label
+  Continue
+  Break
+  Switch
+  Do
+  For
+  While
+  If
+  Block        # Explicit or compiler generated block
+  Return
+  NullStmt        # Null or missing statement
+  ExprStmt        # expr;
+  AsmStmt        # Asm statement
+
+
+NameValue        # Integer value of name or full initializer if not constant
+
+
+StorageClass
+  SC_Static
+  SC_Member        # Non-static member
+  SC_Auto
+  SC_Register
+  SC_Enum        # Identifies an enumerator
+
+
+Type        # Type specifier
+  BuiltinType        # Built-in type
+    T_Void
+    T_LDouble
+    T_Double
+    T_Float
+    T_Long
+    T_Int
+    T_Short
+    T_Char
+    T_Zero
+    T_Any
+  PtrType
+  RefType
+  ArrayType
+  NamedType        # Types with names
+    Typeref        # Reference to a typedef name
+    AggrType        # Class/Union type
+      ClassType
+      AnonType        # Included for completeness
+      UnionType
+    EnumType
+  FunctionType
+  Overload        # Identifies all instances of a function
+  FieldType
+
+
+Scope        # Scope identification
+  Scope_Extern
+  Scope_Static        # File or local static
+  Scope_Label        # Scope of labels -- function-wide
+  Scope_Local        # Scope of local declarations
+  Scope_Argument        # Scope of function argument
+  Scope_Member        # Scope of member
+    Scope_Private
+    Scope_Protected
+    Scope_Public
+  Scope_Weird        # Unknown value (should not occur)
+
+
+NameKind        # Kind of name
+  NK_Type
+  NK_Enumerator
+  NK_Label
+  NK_This
+  NK_Simple
+  NK_Constructor
+  NK_Destructor
+  NK_Operator
+
+
+Table        # Access to internal cfront symbol table
+
+
+Declaration        # Generic declaration
+  ObjectSpec        # Object declaration or definition
+    ObjectDecl        # Object declaration (not allocated)
+    ObjectDef        # Object definition
+    EnumeratorSpec        # Declaration of enumerator
+  FunctionSpec        # Function declaration
+    FunctionDef        # Function definition
+    FunctionDecl        # Function declaration (no body)
+  AsmSpec        # Asm declaration
+  EnumSpec        # Enum declaration
+  AggrSpec        # Declaration of aggregate (class/struct/union)
+    AggrDecl        # Forward declaration of aggregate
+      UnionDecl        # Forward declaration of union
+      ClassDecl        # Forward declaration of class or struct
+    AggrDef        # Definition of aggregate (class/struct/union)
+      AnonUnion        # Anonymous union declaration
+      UnionDef        # Union definition
+      ClassDef        # Class definition
+  Typedef        # Typedef declaration
+  Template        # Declaration of a template
+    ClassTemplate        # Class template declaration
+    FunctionTemplate        # Function template declaration
+    DataTemplate        # Data template declaration
+  LabelSpec        # For consistency with other declarations
+  BogusDecl        # Implies internal error
+
+
+FileSpec        # File info
+
+
+Location        # Location in file
+
+
+CFile        # C++ source file
+
+
+C_String
+
+
+C_File
+
+
+C_Float
+
+
+C_Integer
+

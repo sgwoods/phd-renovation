@@ -1,0 +1,49 @@
+spectra:/users1/grad/yjzhang>cd Gen++
+spectra:/users1/grad/yjzhang/Gen++>source env
+spectra:/users1/grad/yjzhang/Gen++>make clean
+rm -f analyzer.[co] AnalMain.[co] GenoaGetOpts.[co] GenoaMainRoutine.[co]
+rm -f mknewname.o
+spectra:/users1/grad/yjzhang/Gen++>ksh
+$  mk myquery/compound-c
++ [ -z myquery/compound-c -o ! -f myquery/compound-c.query ] 
+Q=myquery/compound-c.query
++ shift 
++ make CPL=CC QFILE=myquery/compound-c.query analyzer 
+/users1/grad/yjzhang/Gen++/cplang myquery/compound-c.query
+"myquery/compound-c.query" line 316 column 27: warning: < ue_arg > is not a slot on node type < UnaryExpr >, but on a derived class
+"myquery/compound-c.query" line 393 column 26: warning: < stmt > is not a slot on node type < NameRef >, but on a derived class
+cplang: analyzer.c      generated.
+cplang: GenoaGetOpts.c  generated.
+cplang: AnalMain.c      generated.
+cplang: GenoaMainRoutine.c      generated.
+CC -g  -I/users1/grad/yjzhang/Gen++  -c AnalMain.c
+"AnalMain.c", line 81: warning:  envp not used
+CC -g  -I/users1/grad/yjzhang/Gen++  -c analyzer.c
+"analyzer.c", line 4645: warning:  oldValue not used
+"analyzer.c", line 4646: warning:  newValue not used
+"analyzer.c", line 6193: warning:  oldValue not used
+"analyzer.c", line 6566: warning:  oldValue not used
+"analyzer.c", line 8285: warning:  lastCase not used
+"analyzer.c", line 8286: warning:  newblock not used
+"analyzer.c", line 8442: warning:  testValue not used
+"analyzer.c", line 8443: warning:  newTestValue not used
+"analyzer.c", line 8444: warning:  newValue not used
+"analyzer.c", line 8445: warning:  newblock not used
+"analyzer.c", line 8446: warning:  endLine not used
+"analyzer.c", line 8532: warning:  newTestValue not used
+"analyzer.c", line 8533: warning:  newValue not used
+"analyzer.c", line 9120: warning:  testValue not used
+"analyzer.c", line 9121: warning:  newTestValue not used
+"analyzer.c", line 9122: warning:  newValue not used
+"analyzer.c", line 9123: warning:  newblock not used
+"analyzer.c", line 9124: warning:  endLine not used
+"analyzer.c", line 9209: warning:  newValue not used
+"analyzer.c", line 9210: warning:  opposite not used
+"analyzer.c", line 9211: warning:  newblock not used
+"analyzer.c", line 9212: warning:  endLine not used
+"analyzer.c", line 10037: warning:  endLine not used
+CC -g  -I/users1/grad/yjzhang/Gen++   -c GenoaGetOpts.c
+CC -c /users1/grad/yjzhang/Gen++/mknewname.c
+CC -o analyzer -g  -I/users1/grad/yjzhang/Gen++  AnalMain.o analyzer.o GenoaGetOpts.o /users1/grad/yjzhang/Gen++/glib.o  /users1/grad/yjzhang/Gen++/gfront.a mknewname.o
++ echo DONE. 
+DONE.

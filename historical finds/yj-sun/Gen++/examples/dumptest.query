@@ -1,0 +1,17 @@
+/*ident	"@(#)gen++:d.pkg/examples/dumptest.query	1.3" */
+
+/* Generate a dump of the tree for inspection. */
+
+ROOTPROC dumptest
+FILE FD "dumptest.out"
+
+PROC dumptest
+ROOT CFile;
+{
+<globals
+  {Declaration
+    (PRINT FD "\n%s\n%s\n" $location $token)
+    (DUMP FD $token 4)
+  }
+>
+}

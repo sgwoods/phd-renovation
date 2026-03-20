@@ -1,0 +1,47 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/inline.query	1.1" */
+/* Print warnings for inliine ctors, dtors and virtuals.
+ * Don't process local classes since all member functions
+ *    of local classes must be inline.
+ */
+ROOTPROC badinline
+
+PROC badinline
+ROOT CFile;
+{
+(PRINT msgout "USE OF INLINES\n")
+<globals
+ {Declaration
+   (?AggrDef (CALL checkaggr_badinline))
+ }
+>
+}
+
+PROC checkinline
+ROOT FunctionSpec;
+{
+  (IF (NOT (TYPEOF (SLOT attrs $token) FA_Inline))
+      (THEN (RETURN))
+  )
+  (IF (TYPEOF (SLOT kind $token) NK_Constructor)
+      (THEN (PRINT msgout "%s: inline constructor %s defined (InCD).\n" $location <(SLOT defname $token) verbose>))
+      (ELSE (IF (TYPEOF (SLOT kind $token) NK_Destructor)
+                (THEN (PRINT msgout "%s: inline destructor %s defined (InCD).\n" $location <(SLOT defname $token) verbose>))
+                (ELSE (IF (TYPEOF (SLOT attrs $token) FA_Virtual)
+                      (THEN (PRINT msgout "%s: inline virtual function %s defined (InV).\n" $location <(SLOT defname $token) verbose>))
+                ))
+      ))
+  )
+}
+
+PROC checkaggr_badinline
+ROOT AggrDef;
+{
+  <members {MemberSpec
+    (?MemberDeclaration
+      <def
+        (?AggrDef (CALL checkaggr_badinline))
+        (?FunctionSpec (CALL checkinline))
+      >
+    )
+  }>
+}

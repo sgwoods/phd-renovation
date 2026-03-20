@@ -1,0 +1,14 @@
+#ident	"@(#)gen++:d.pkg/mk	1.9"
+export GENPP_LICENSE_FILE
+GENPP_LICENSE_FILE=/proj/seg/team/sgwoods/yj-sun/Gen++/GENPP.dat
+
+set -x
+if [ -z "$1" -o ! -f $1.query ]; then
+	echo "Usage: $0 q" >&2
+	echo "       where q.query exists" >&2
+	exit 1
+fi
+Q=$1.query
+shift
+make CPL=CC QFILE=$Q "$@" analyzer
+echo DONE.

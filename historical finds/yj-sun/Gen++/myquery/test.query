@@ -1,0 +1,84 @@
+/*ident	"@(#)gen++:d.pkg/examples/defuse.query	1.2" */
+/* For each reference to a variable, print whether
+   it is {bf used}, or {bf assigned to}. 
+   You'll find it in the file defuse.query in the shipped package   */
+
+ROOTPROC BlockLoc 
+
+EXTERNAL PROC mystrconcat (STRING STRING) RETURNS STRING
+EXTERNAL PROC myitoa (INTEGER) RETURNS STRING
+EXTERNAL PROC newname () RETURNS STRING
+EXTERNAL PROC IsHeader(STRING) RETURNS INTEGER
+
+FUNCTION LOCSTRING
+ARG GNODE Suffix;
+ 
+ROOT G_AnyType;
+{
+LOCAL GNODE tmpt;
+(ASSIGN tmpt (SLOT line $location))
+(RETURN (CEXPR C_String "mystrconcat(mystrconcat(\"Statement\",myitoa(getCint(tmpt)))
+,getCstring(Suffix))"))
+ 
+}
+
+FUNCTION BlockFirst
+ 
+ROOT Statement;
+{
+(?Block
+ <blockbody
+  {Statement
+    (IF (NOT (TYPEOF $token NullStmt))
+    (THEN
+     (IF (NOT (TYPEOF $token Block))
+         (THEN  (RETURN (CALL LOCSTRING "")))
+         (ELSE (RETURN (CALL BlockFirst))))))
+   
+  }
+ >)
+ (RETURN (CALL LOCSTRING ""))
+}
+ 
+ 
+ 
+FUNCTION BlockEnd
+ 
+ROOT Statement;
+{
+LOCAL GNODE End;
+(?Block
+ <blockbody
+  {Statement
+    (ASSIGN End $token)}
+(PRINT stdout "	[New end: %s]\n" End)
+
+  (IF (NOT (TYPEOF End NullStmt))
+    (THEN
+     (IF (NOT (TYPEOF End Block))
+      /*
+	   (THEN (SEARCH Statement  End (RETURN (CALL LOCSTRING ""))))
+         (ELSE (SEARCH Block End (RETURN (CALL BlockFirst)))))))
+	*/
+ 
+         (THEN (RETURN (CALL LOCSTRING "")))
+         (ELSE (RETURN (CALL BlockFirst))))))
+ 
+ >)
+ (RETURN (CALL LOCSTRING ""))
+}
+
+PROC BlockLoc  
+ROOT CFile;
+{
+  LOCAL GNODE End;
+
+  [
+    (?Block
+		
+		(PRINT stdout "blockfirst: %s\n" (CALL BlockFirst))
+		(PRINT stdout "blockend: %s\n" (CALL BlockEnd)) 
+
+   )
+  ]
+}

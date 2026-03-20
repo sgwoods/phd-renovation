@@ -1,0 +1,21 @@
+#!/bin/csh
+set dirs = (`pwd`)
+if ($#argv) set dirs = ($argv)
+foreach dir ($dirs)
+	pushd $dir >/dev/null
+	echo
+	echo Directory $dir
+	date >AUTO.LOG
+	if ( -e SYSTEM) then
+		set f = `grep MAIN SYSTEM | sed 's/^MAIN //' | sed 's/ .*$//'`
+		foreach file ($f)
+			echo auto slicing $file >> AUTO.LOG
+			auto-slice -l -g -h 1 $file > $file:r.out
+		end
+	else
+		echo no SYSTEM file
+	endif
+	date >>AUTO.LOG
+	echo done >>AUTO.LOG
+	popd >/dev/null
+end

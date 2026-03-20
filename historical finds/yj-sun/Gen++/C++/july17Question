@@ -1,0 +1,30 @@
+HI Prem,
+
+One more question to bother you here:
+
+Given a source:
+
+main()
+{
+	a = func( b ); 			// case 1
+
+	func(b);				// case 2  
+
+} 
+
+The following progam will CALL DealWithFunCall twice( I only need once)
+ because it is called inside DealWithAssignment, I have to put a (?FunCall
+in the following program because I need to take care of case 2 in the source.
+Would you please give me some suggestions about how to avoid this? thanks!!  
+
+  [
+    (?Expression
+        (?Assignment
+            (CALL DealWithAssignment)
+        )
+        (?FunCall
+            (CALL DealWithFunCall)
+        )
+    )
+  ]
+

@@ -1,0 +1,91 @@
+From s_fong@amontillado.research.att.com Thu Jul 18 02:27:22 1996
+Return-Path: <s_fong@amontillado.research.att.com>
+Received: from ns.research.att.com by spectra.eng.hawaii.edu (4.1/SMI-4.1)
+	id AA10919; Thu, 18 Jul 96 02:27:20 HST
+Received: from research.research.att.com by ns; Thu Jul 18 08:32:06 EDT 1996
+Received: from amontillado.research.att.com by research; Thu Jul 18 08:29:05 EDT 1996
+Received: from arran.research.att.com (arran.research.att.com [135.104.20.117]) by amontillado.research.att.com (8.7.5/8.7) with ESMTP id IAA15902 for <yjzhang@spectra.eng.hawaii.edu>; Thu, 18 Jul 1996 08:29:02 -0400 (EDT)
+From: Philip Fong <s_fong@research.att.com>
+Received: (from s_fong@localhost) by arran.research.att.com (8.7.5/8.7) id IAA17369 for yjzhang@spectra.eng.hawaii.edu; Thu, 18 Jul 1996 08:29:01 -0400 (EDT)
+Message-Id: <199607181229.IAA17369@arran.research.att.com>
+Subject: Re: question on gen++
+To: yjzhang@spectra.eng.hawaii.edu (Yongjun ZHANG)
+Date: Thu, 18 Jul 1996 08:29:01 -0400 (EDT)
+In-Reply-To: <9607172130.AA26299@spectra.eng.hawaii.edu> from "Yongjun ZHANG" at Jul 17, 96 11:30:23 am
+X-Mailer: ELM [version 2.4 PL13]
+Content-Type: text
+Status: RO
+
+
+We are working on this thing call MotifApp.  It is from a book written by
+Douglas Young on Motif programming.  We are also trying to get it working
+with Fresco.  You could find the latter from 
+http://www.faslib.com/fresco/BuildUnix.html.  I don't know where you can
+get the first one though.  Prem just have the source code.
+
+Philip
+
+> 
+> > 
+> > Hi Yongjun,
+> > 
+> > I think I now understand you problem.  I was testing my program with some
+> > C++ library code.  I had problem running the analyzer with the source at
+> > first, but this is what I did to get it running:
+> > 
+> > 1/ The C++ library comes with a make file.  In the makefile, it has a CC
+> >    variable that holds the path for the compiler to use.  Assign the path
+> >    of QCC to this CC variable.
+> > 
+> > 2/ The QCC script contains reference to the licence files.  This is how
+> >    I modified it:
+> > 
+> > ======= Begin listing =====
+> > #ident	"@(#)gen++:d.pkg/QCC	1.5"
+> > export GENPP_LICENSE_FILE
+> > GENPP_LICENSE_FILE=/home/s_fong/gen++/pkg/GENPP.dat
+> > 
+> > cfrontC=/home/s_fong/gen++/pkg/analyzer #EDIT: FULL PATH OF DESIRED ANALYZER
+> > export cfrontC
+> > CC -F "$@"
+> > 
+> > ======= End listing ======
+> > 
+> >    Basically, you replace GENPP_LICENSE_FILE by the absolute path of
+> >    the GENPP.dat file, and replace cfrontC by the absolute path of the
+> >    analyzer.
+> 
+> HI Philip, 
+> 
+> Thanks for your message. 
+> Actually I never make my QCC as above work because of the cfrontC problem 
+> I mentioned to you. Instead I'm using:
+>  
+> #
+> CC = CC 
+> CFLAGS = -F -Qpath /users1/grad/yjzhang/Gen++ 
+> .SUFFIXES: .C.o.
+> 
+> CSOURCE = alg.C
+> OBJS = alg.o
+> 
+> all:  $(OBJS) 
+> 
+> alg.o:	alg.C 
+> 	$(CC) $(CFLAGS) alg.C  
+> 
+> I set GENPP_LICENSE_FILE as an enviroment variable as you said. So this makefile 
+> works.  The -Qpath points to cfront in my Gen++ directory( I simple cp analyzer cfront
+> ). I`m not sure whether
+> I can make it work with other makefile easily. I'll try anyway.   
+> 
+> have a good day!
+> 
+> btw, would you please let me know what C++ lib you are testing with? maybe I can
+> work with it too. thanks.
+>  
+> --Yongjun 
+> 
+> 
+
+

@@ -1,0 +1,24 @@
+IDBL - Identifier name should begin in lowercase letter (CG#6) unless acronym
+FNBL - Function name should begin in lowercase letter (CG#7) unless acronym
+CNBU - Class name should begin in uppercase letter (CG#4)
+FDOC - Function should be defined outside of class (CG#15)
+NOE - Type allocates memory on heap, needs operator  =  (CG#34)
+NCC - Type allocates memory on heap, needs copy constructor (CG#34)
+OERETC -  Operator = should should return type const & (CG#35)
+OECAS - Operator = should check for assignment to self (CG#35)
+NAOE - Not assigned in operator = (CG#35)
+OECOE - Operator = should call other operator = (CG#35)
+OERT- Operator = should return "*this".  (CG#37)
+ILNA - Members should be initialized in initializer lists, not assignments. (CG#38)
+ILOD - Initializer lists should initialize members in the order declared. (CG#39)
+InV - Do not use in-line constructors, destructors or virtual functions.  CG#47
+InCD - Do not use in-line constructors, destructors or virtual functions. CG#47
+NMF - Do not use mallocs or frees. Use new/delete CG#50
+ONND - Operator New but no delete  CG #52
+ODNN - Vice versa CG #52
+BCVD - Base class should have virtual destrucotr CG #55
+RDPF - Redefines default parameter for function CG# 56
+RINVF - Redefines inherited, non virtual function CG# 57
+OMBM - Operator %s must be a member Current coding guideline number #68
+OSBM - Operator %s should be a member Current coding guideline number #69
+OSNBM - Operator %s should NOT be a member Current coding guideline number #70

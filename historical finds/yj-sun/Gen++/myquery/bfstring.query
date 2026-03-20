@@ -1,0 +1,19 @@
+ROOTPROC VarUseDef
+
+PROC VarUseDef
+ROOT CFile;
+{
+  [
+    (?While
+	 		 
+	  (PRINT stdout "(%s (While %s))\n" (SLOT line (SLOT where $token)) 
+									     (SLOT id 	(SLOT whilecondition $token)))
+	  <whilebody 
+			(?Block
+	  			(PRINT stdout "(%s (Begin block1))\n" (SLOT line (SLOT where $token))) 
+				(PRINT stdout "(%s (End block1))\n" (SLOT line (SLOT blockend $token)))
+			)
+	  > 
+	)
+  ]
+}

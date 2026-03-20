@@ -1,0 +1,4238 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%Creator: Frame 4.0
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 4.0, for use with Frame 4.0 products
+% This ps_prolog file is Copyright (c) 1986-1993 Frame Technology
+% Corporation.  All rights reserved.  This ps_prolog file may be
+% freely copied and distributed in conjunction with documents created
+% using FrameMaker, FrameBuilder and FrameViewer as long as this 
+% copyright notice is preserved.
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to True, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (4.0) def 
+/FMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	FMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	dup = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto
+	show FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Frame product version does not match ps_prolog!) FMFAILURE
+		} if
+	} def 
+/FMBADEPSF { 
+	(PostScript Lang. Ref. Man., 2nd Ed., H.2.4 says EPS must not call X              )
+	dup dup (X) search pop exch pop exch pop length 
+	4 -1 roll 
+	putinterval 
+	FMFAILURE
+	} def
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+/concatprocs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin 
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/FrameNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 ] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		setrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+FMLevel1 not { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} if
+/combineColor {
+    FrameSepIs FMnone eq
+	{
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			FrameCurColors 0 4 getinterval aload pop FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				FrameCurGray RealSetgray
+			} {
+				FMPColor graymode and {
+					0 1 3 { 
+						FrameCurColors exch get
+						1 FrameCurGray sub mul
+					} for
+					RealSetcmykcolor
+				} {
+					4 1 6 {
+						FrameCurColors exch get
+						graymode {
+							1 exch sub 1 FrameCurGray sub mul 1 exch sub
+						} {
+							1.0 lt {FrameCurGray} {1} ifelse
+						} ifelse
+					} for
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ FrameCurGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{FrameCurGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop FrameCurGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not FMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	FMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	FMPColor {
+		orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+	}
+	{
+		orgxfer cvx settransfer
+	} ifelse
+	orgfreq organgle orgproc cvx setscreen
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgrxfer FMLOCAL
+	/orggxfer FMLOCAL
+	/orgbxfer FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/orgrproc FMLOCAL
+	/orggproc FMLOCAL
+	/orgbproc FMLOCAL
+	/organgle FMLOCAL
+	/orgrangle FMLOCAL
+	/orggangle FMLOCAL
+	/orgbangle FMLOCAL
+	/orgfreq FMLOCAL
+	/orgrfreq FMLOCAL
+	/orggfreq FMLOCAL
+	/orgbfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/edown FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /FrameNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	FMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{{1 dict dup /PageSize [paperwidth paperheight]put setpagedevice}stopped
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		 {1 dict dup /ManualFeed manualfeed put setpagedevice } stopped pop }
+	ifelse 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			FrameNegative {
+				1 1 4 { 
+					pop { 1 exch sub } concatprocs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		FrameNegative {
+			{ 1 exch sub } concatprocs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/pagesave FMLOCAL
+/orgmatrix FMLOCAL
+/landscape FMLOCAL
+/pwid FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+% See Adobe's "PostScript Language Reference Manual, 2nd Edition", page 714.
+% "...the following operators MUST NOT be used in an EPS file:" (emphasis ours)
+	/banddevice {(banddevice) FMBADEPSF} def
+	/clear {(clear) FMBADEPSF} def
+	/cleardictstack {(cleardictstack) FMBADEPSF} def 
+	/copypage {(copypage) FMBADEPSF} def
+	/erasepage {(erasepage) FMBADEPSF} def
+	/exitserver {(exitserver) FMBADEPSF} def
+	/framedevice {(framedevice) FMBADEPSF} def
+	/grestoreall {(grestoreall) FMBADEPSF} def
+	/initclip {(initclip) FMBADEPSF} def
+	/initgraphics {(initgraphics) FMBADEPSF} def
+	/initmatrix {(initmatrix) FMBADEPSF} def
+	/quit {(quit) FMBADEPSF} def
+	/renderbands {(renderbands) FMBADEPSF} def
+	/setglobal {(setglobal) FMBADEPSF} def
+	/setpagedevice {(setpagedevice) FMBADEPSF} def
+	/setshared {(setshared) FMBADEPSF} def
+	/startjob {(startjob) FMBADEPSF} def
+	/lettertray {(lettertray) FMBADEPSF} def
+	/letter {(letter) FMBADEPSF} def
+	/lettersmall {(lettersmall) FMBADEPSF} def
+	/11x17tray {(11x17tray) FMBADEPSF} def
+	/11x17 {(11x17) FMBADEPSF} def
+	/ledgertray {(ledgertray) FMBADEPSF} def
+	/ledger {(ledger) FMBADEPSF} def
+	/legaltray {(legaltray) FMBADEPSF} def
+	/legal {(legal) FMBADEPSF} def
+	/statementtray {(statementtray) FMBADEPSF} def
+	/statement {(statement) FMBADEPSF} def
+	/executivetray {(executivetray) FMBADEPSF} def
+	/executive {(executive) FMBADEPSF} def
+	/a3tray {(a3tray) FMBADEPSF} def
+	/a3 {(a3) FMBADEPSF} def
+	/a4tray {(a4tray) FMBADEPSF} def
+	/a4 {(a4) FMBADEPSF} def
+	/a4small {(a4small) FMBADEPSF} def
+	/b4tray {(b4tray) FMBADEPSF} def
+	/b4 {(b4) FMBADEPSF} def
+	/b5tray {(b5tray) FMBADEPSF} def
+	/b5 {(b5) FMBADEPSF} def
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped 
+		end
+		} {true} ifelse 
+	} bind def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setPatternMode {
+	FMLevel1 {
+		/bwidth  exch def
+		/bpside  exch def
+		/bstring exch def
+		/onbits 0 def  /offbits 0 def
+		freq sangle landscape {90 add} if 
+			{/y exch def
+			 /x exch def
+			 /xindex x 1 add 2 div bpside mul cvi def
+			 /yindex y 1 add 2 div bpside mul cvi def
+			 bstring yindex bwidth mul xindex 8 idiv add get
+			 1 7 xindex 8 mod sub bitshift and 0 ne FrameNegative {not} if
+			 {/onbits  onbits  1 add def 1}
+			 {/offbits offbits 1 add def 0}
+			 ifelse
+			}
+			setscreen
+		offbits offbits onbits add div FrameNegative {1.0 exch sub} if
+		/FrameCurGray exch def
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		FMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode FMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode FMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+	/rad FMLOCAL
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+      dup dup
+      24 eq { pop pop 3 mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+FMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch concatprocs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def
+	FMLevel1 {	
+		colorsetup
+		/is w d wbytes string def
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is w d wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	FMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {ip} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/d 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris} {gis} {bis} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/d 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris gis bis w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(4.0) FMVERSION
+1 1 0 0 612 792 0 1 8 FMDOCUMENT
+0 0 /Helvetica-Bold FMFONTDEFINE
+1 0 /Helvetica FMFONTDEFINE
+2 0 /Times-Italic FMFONTDEFINE
+3 0 /Helvetica-Oblique FMFONTDEFINE
+4 0 /Times-Roman FMFONTDEFINE
+5 0 /Courier-Bold FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+J
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+75.33 567 549 687.33 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 12 Q
+0 X
+(OO Programming Rules and Guidelines:) 197.47 679.33 T
+(Version 3) 285.15 665.33 T
+(George Logothetis) 258.83 641.33 T
+(Nancy Wilkinson) 264.15 627.33 T
+(Software Development Technology Group) 192.48 603.33 T
+(December 1, 1994) 261.47 579.33 T
+71.17 723.31 575.17 723.31 2 L
+7 X
+V
+0.5 H
+2 Z
+0 X
+N
+75 731.17 203.33 747.83 R
+7 X
+V
+1 10 Q
+0 X
+(A) 75 741.17 T
+(T&T Bell Laboratories) 80.93 741.17 T
+0 6 7 83 42 77 35 456 729.33 FMBEGINEPSF
+%%BeginDocument: <inline>
+%!PS-Adobe-2.0 EPSF-1.2
+%%BoundingBox: 6 7 83 42
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0 0 90 54
+%%Title: attlogo.epsf
+%%Creator: sharma@kilauea (Ravi Sharma; editor)
+%%CreationDate: Tue Dec 11 10:48:11 EST 1990
+%%EndComments
+% #ident "@(#)TM.mif	2.1.1.2"
+gsave
+	24 24 translate
+	0.003 0.003 scale
+
+	newpath
+	-2909 5248 moveto
+	-2860 5256 lineto
+	-1463 -2621 8000 100 81 arcn
+	675 11215 6000 -99 -90 arc
+	2967 5215 lineto
+	0 0 6000 60 119 arc
+	eofill
+	newpath
+	-4116 4366 moveto
+	-3175 4455 lineto
+	-2424 -3510 8000 95 90 arcn
+	-1147 4490 lineto
+	-1147 -2510 7000 90 85 arcn
+	2005 4237 lineto
+	2716 12205 8000 -95 -90 arc
+	4280 4205 lineto
+	0 0 6000 44 56 arc
+	2112 4985 lineto
+	2112 -4015 9000 90 97 arc
+	-539 4734 lineto
+	-1364 11685 7000 -83 -90 arcn
+	-2144 4685 lineto
+	-2144 13685 9000 -90 -95 arcn
+	-3621 4785 lineto
+	0 0 6000 127 133 arc
+	eofill
+	newpath
+	-4991 3330 moveto
+	-4148 3420 lineto
+	-3299 -4535 8000 96 90 arcn
+	-410 3465 lineto
+	-410 -2535 6000 90 85 arcn
+	2357 3232 lineto
+	3475 15180 12000 -95 -90 arc
+	5088 3180 lineto
+	0 0 6000 32 41 arc
+	2866 3960 lineto
+	2866 -2040 6000 90 96 arc
+	183 3710 lineto
+	-866 13655 10000 -84 -90 arcn
+	-3152 3655 lineto
+	-3152 11655 8000 -90 -95 arcn
+	-4676 3760 lineto
+	0 0 6000 141 146 arc
+	eofill
+	newpath
+	-5537 2312 moveto
+	-4459 2414 lineto
+	-3799 -4555 7000 95 90 arcn
+	-51 2445 lineto
+	-51 -3555 6000 90 84 arcn
+	2534 2219 lineto
+	3518 12170 10000 -96 -90 arc
+	5594 2170 lineto
+	0 0 6000 21 29 arc
+	3489 2950 lineto
+	3489 -7050 10000 90 96 arc
+	577 2684 lineto
+	-210 9640 7000 -84 -90 arcn
+	-3655 2640 lineto
+	-3655 12640 10000 -90 -95 arcn
+	-5331 2754 lineto
+	0 0 6000 153 157 arc
+	eofill
+	newpath
+	-5862 1282 moveto
+	-4764 1388 lineto
+	-3994 -6575 8000 96 90 arcn
+	-140 1425 lineto
+	-140 -7575 9000 90 85 arcn
+	2717 1195 lineto
+	3565 10155 9000 -95 -90 arc
+	5888 1155 lineto
+	0 0 6000 11 19 arc
+	3657 1935 lineto
+	3657 -7065 9000 90 96 arc
+	490 1664 lineto
+	-302 9625 8000 -84 -90 arcn
+	-3963 1625 lineto
+	-3963 9625 8000 -90 -95 arcn
+	-5739 1749 lineto
+	0 0 6000 163 168 arc
+	eofill
+	newpath
+	-5996 225 moveto
+	-4515 375 lineto
+	-3513 -9575 10000 96 90 arcn
+	-456 425 lineto
+	-456 -8575 9000 90 85 arcn
+	2650 181 lineto
+	3552 10140 10000 -95 -90 arc
+	5998 140 lineto
+	0 0 6000 1 9 arc
+	3677 920 lineto
+	3677 -8080 9000 90 95 arc
+	617 670 lineto
+	-329 10625 10000 -85 -90 arcn
+	-3779 625 lineto
+	-3779 10625 10000 -90 -95 arcn
+	-5950 775 lineto
+	0 0 6000 173 178 arc
+	eofill
+	newpath
+	-5945 -810 moveto
+	-4118 -649 lineto
+	-3240 -10610 10000 95 90 arcn
+	-711 -610 lineto
+	-711 -8610 8000 90 85 arcn
+	2086 -830 lineto
+	3076 10125 11000 -95 -90 arc
+	5936 -875 lineto
+	0 0 6000 -8 -1 arc
+	3550 -95 lineto
+	3550 -10095 10000 90 95 arc
+	-207 -370 lineto
+	-944 8600 9000 -85 -90 arcn
+	-3282 -400 lineto
+	-3282 9600 10000 -90 -94 arcn
+	-5996 -225 lineto
+	0 0 6000 -178 -172 arc
+	eofill
+	newpath
+	-5700 -1873 moveto
+	-3082 -1688 lineto
+	-2091 -15652 14000 94 86 arcn
+	1307 -1869 lineto
+	2134 9100 11000 -94 -90 arc
+	5691 -1900 lineto
+	0 0 6000 -18 -11 arc
+	2821 -1120 lineto
+	2821 -9120 8000 90 94 arc
+	-1015 -1387 lineto
+	-2143 13571 15000 -86 -95 arcn
+	-5889 -1152 lineto
+	0 0 6000 -169 -162 arc
+	eofill
+	newpath
+	-5245 -2914 moveto
+	-2728 -2821 lineto
+	-2172 -17811 15000 92 88 arcn
+	670 -2908 lineto
+	1050 7085 10000 -92 -90 arc
+	5244 -2915 lineto
+	0 0 6000 -29 -21 arc
+	1987 -2135 lineto
+	1987 -17135 15000 90 92 arc
+	-1508 -2254 lineto
+	-2061 12736 15000 -88 -92 arcn
+	-5607 -2136 lineto
+	0 0 6000 -159 -151 arc
+	eofill
+	newpath
+	-4529 -3935 moveto
+	4529 -3935 lineto
+	0 0 6000 -41 -32 arc
+	10 -3155 lineto
+	-2071 -3183 lineto
+	-2207 6816 10000 -89 -91 arcn
+	-5103 -3155 lineto
+	0 0 6000 -148 -139 arc
+	eofill
+	newpath
+	-3376 -4960 moveto
+	3376 -4960 lineto
+	0 0 6000 -56 -44 arc
+	-4304 -4180 lineto
+	0 0 6000 -136 -124 arc
+	eofill
+	newpath
+	-2993 -5200 moveto
+	2993 -5200 lineto
+	0 0 6000 -60 -120 arcn
+	eofill
+	newpath
+	6790 -2405 moveto
+	8446 2405 lineto
+	9771 2405 lineto
+	11380 -2405 lineto
+	10080 -2405 lineto
+	9842 -1545 lineto
+	8353 -1545 lineto
+	8090 -2405 lineto
+	6790 -2405 lineto
+	8646 -585 moveto
+	9575 -585 lineto
+	9134 1008 lineto
+	8646 -585 lineto
+	eofill
+	newpath
+	11615 -2405 moveto
+	11615 1410 lineto
+	10360 1410 lineto
+	10360 2405 lineto
+	14140 2405 lineto
+	14140 1410 lineto
+	12885 1410 lineto
+	12885 -2405 lineto
+	11615 -2405 lineto
+	eofill
+	newpath
+	16135 -925 moveto
+	16135 -30 lineto
+	17040 -30 lineto
+	17040 -1187 lineto
+	16540 -1187 500 0 -23 arcn
+	16959 -1480 lineto
+	17100 -1510 lineto
+	17260 -1510 lineto
+	17260 -2350 lineto
+	17073 -2350 lineto
+	17073 -1225 1125 -90 -124 arcn
+	16425 -2145 lineto
+	15356 -455 2000 -58 -90 arcn
+	14989 -2455 lineto
+	14989 -705 1750 -90 -122 arcn
+	14072 -2196 lineto
+	14660 -1237 1125 -121 180 arcn
+	13535 -1081 lineto
+	14660 -1081 1125 180 135 arcn
+	13950 -200 lineto
+	13885 -103 lineto
+	14610 386 875 -146 180 arcn
+	13735 534 lineto
+	14610 534 875 180 124 arcn
+	14130 1265 lineto
+	14898 125 1375 124 90 arcn
+	15025 1500 lineto
+	15025 -500 2000 90 78 arcn
+	15536 1436 lineto
+	15380 703 750 78 44 arcn
+	15925 1218 lineto
+	15385 697 750 44 0 arcn
+	16135 -25 lineto
+	15235 -25 lineto
+	15235 515 lineto
+	14985 515 250 0 180 arc
+	14735 501 lineto
+	15235 501 500 180 -130 arc
+	16135 -925 lineto
+	14570 -1127 moveto
+	14570 -1190 lineto
+	14945 -1190 375 180 -135 arc
+	14697 -1472 lineto
+	15006 -1163 438 -135 -90 arc
+	15378 -1600 lineto
+	15378 -1475 125 -90 -73 arc
+	15495 -1570 lineto
+	14658 -855 lineto
+	14605 -968 lineto
+	14945 -1127 375 155 180 arc
+	eofill
+	newpath
+	18840 -2405 moveto
+	18840 1410 lineto
+	20095 1410 lineto
+	20095 2405 lineto
+	16315 2405 lineto
+	16315 1410 lineto
+	17570 1410 lineto
+	17570 -2405 lineto
+	18840 -2405 lineto
+	eofill
+showpage
+
+%%EndDocument
+FMENDEPSF
+216.83 12.86 396.83 51.5 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 257.94 30.83 T
+67.83 77 539.17 554.67 R
+7 X
+V
+0 12 Q
+0 X
+(I.) 67.83 546.67 T
+(Introduction) 81.18 546.67 T
+1 10 Q
+(This paper de\336nes a comprehensive set of OO and C++ programming conventions to guide the writing of) 67.83 528 T
+(C++ programs. The objectives of these conventions are the following:) 67.83 516 T
+(1.) 107.43 498 T
+(T) 118.55 498 T
+(o help programmers produce code that is as easy as possible to read, review and maintain.) 123.55 498 T
+-0.17 (2.) 107.43 483 P
+-0.17 (T) 118.55 483 P
+-0.17 (o help programmers avoid risky C++ programming practices and dark corners of the language) 123.55 483 P
+(and compiler) 118.95 471 T
+(.) 175.64 471 T
+-0.23 (The intent is to impose a discipline upon developers, over and above that imposed by the programming lan-) 67.83 453 P
+0.5 (guage, in order to enhance the comprehensibility and reliability of the code they produce. The extra ef) 67.83 441 P
+0.5 (fort) 524.72 441 P
+0.64 (on the part of the programmer to make information explicit in the code is deemed to be reasonable if the) 67.83 429 P
+(result will have a noticeable ef) 67.83 417 T
+(fect on maintainability) 201.04 417 T
+(.) 296.45 417 T
+0.93 (These conventions pertain to C++ programs. Conventions that pertain identically to both C and C++ are) 67.83 399 P
+0.59 (generally not repeated here. Exceptions to this are some of the Naming Conventions. C conventions that) 67.83 387 P
+0.23 (are important in a C++ environment in a unique way are included here, such as global namespace issues.) 67.83 375 P
+0.83 (Other C++ conventions are exactly opposite to conventions for C, e.g. using 0 rather than NULL. Where) 67.83 363 P
+-0.26 (C++ conventions diverge from C, this is explicitly noted. Readers are referred to) 67.83 351 P
+3 F
+-0.26 (C Programming Guidelines) 419.65 351 P
+1 F
+(by Thomas Plum and) 67.83 339 T
+3 F
+(C Traps and Pitfalls) 165.09 339 T
+1 F
+( by Andrew Koenig for basic C guidelines.) 252.34 339 T
+0.06 (The categories of conventions used in this document are rules and guidelines. Our intent is to suggest that) 67.83 321 P
+0.29 (all of these conventions should be followed by projects using C++, regardless of whether they are rules or) 67.83 309 P
+-0.06 (guidelines. The dif) 67.83 297 P
+-0.06 (ference lies in the subjectivity of the de\336nition of compliance. The scope and use of each) 148.69 297 P
+(category is described below) 67.83 285 T
+(.) 190.66 285 T
+(\245) 78.95 267 T
+0 F
+(Rules) 88.01 267 T
+1 F
+( are conventions which have a clear) 115.24 267 T
+(, non-subjective de\336nition of compliance. Because of this,) 273.65 267 T
+(the programmer can ensure compliance on his or her own, with the help of tools and visual inspection.) 87.27 255 T
+(\245) 78.95 240 T
+0 F
+(Guidelines) 88.01 240 T
+1 F
+( are conventions which have a more subjective de\336nition of compliance. Because of this,) 139.14 240 T
+-0.12 (peer review may be needed. T) 87.27 228 P
+-0.12 (ools may be of help, but human judgement and experience is needed to) 220.6 228 P
+(ensure compliance.) 87.27 216 T
+0.89 (Exceptions to any of these rules or guidelines should be rare and should be agreed upon by the project) 67.83 198 P
+-0.22 (team. These conventions can be augmented by particular projects. But they may only be strengthened; that) 67.83 186 P
+(is, any convention added by a project should not violate an existing rule or guideline.) 67.83 174 T
+0.42 (New versions of this document will be issued and changes made as experience warrants. But the guiding) 67.83 156 P
+2.22 (philosophies of each category and what we consider important about conventions in general will not) 67.83 144 P
+(change.) 67.83 132 T
+FMENDPAGE
+%%EndPage: "1" 1
+%%Page: "2" 2
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(2 -) 303.83 748 T
+72 68.67 543.33 720 R
+7 X
+V
+0 12 Q
+0 X
+(II.) 72 712 T
+(Changes from Previous Version) 88.68 712 T
+1 10 Q
+(V) 72 693.33 T
+(ersion 3 of this document supersedes V) 78.12 693.33 T
+(ersion 2, dated June 1. Modi\336cations include the following:) 253.21 693.33 T
+(\245) 83.12 675.33 T
+(The) 92.18 675.33 T
+0 F
+(T) 112.19 675.33 T
+(ools) 117.56 675.33 T
+1 F
+( section has been updated to re\337ect the new set of tools.) 138.12 675.33 T
+-0.15 (\245) 83.12 660.33 P
+-0.15 (The) 92.18 660.33 P
+0 F
+-0.15 (Naming Conventions) 112.04 660.33 P
+1 F
+-0.15 ( section has been updated slightly) 211.9 660.33 P
+-0.15 (. Rules 6 and 7 have been strengthened;) 361.07 660.33 P
+(and some guidance is given about how projects can add their own project-speci\336c naming conven-) 91.44 648.33 T
+(tions.) 91.44 636.33 T
+(\245) 83.12 621.33 T
+(Some extra motivation and explanation has been provided for rule 25 due to changes from the C++) 92.18 621.33 T
+(ANSI committee.) 91.44 609.33 T
+FMENDPAGE
+%%EndPage: "2" 2
+%%Page: "3" 3
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(3 -) 303.83 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+0 12 Q
+0 X
+(III.) 72 712 T
+(Available Tools) 92.02 712 T
+1 10 Q
+1.08 (In order to help projects verify compliance with the following conventions, a tool has been developed to) 72 693.33 P
+0.28 (check code for compliance to a subset of the rules \050about 25%\051. Not all rules are checkable by automated) 72 681.33 P
+(tools; some will still require human intervention to ensure compliance.) 72 669.33 T
+0 (The rule checker currently checks for compliance to conventions, where possible, under the following cate-) 72 651.33 P
+(gories:) 72 639.33 T
+0 F
+(\245) 126 621.33 T
+(Naming Conventions) 144 621.33 T
+(\245) 126 606.33 T
+(Class De\336nitions) 144 606.33 T
+(\245) 126 591.33 T
+(Canonical Class) 144 591.33 T
+(\245) 126 576.33 T
+(Assignment Operator) 144 576.33 T
+(\245) 126 561.33 T
+(Constructors) 144 561.33 T
+(\245) 126 546.33 T
+(Inlines) 144 546.33 T
+(\245) 126 531.33 T
+(Memory Management) 144 531.33 T
+(\245) 126 516.33 T
+(Inheritance and V) 144 516.33 T
+(irtual Functions) 227.18 516.33 T
+(\245) 126 501.33 T
+(Overloading) 144 501.33 T
+(\245) 126 486.33 T
+(Hierarchy) 144 486.33 T
+1 F
+1.19 (The checker tool was implemented using a tool generator environment for C++ called) 72 456.33 P
+0 F
+1.19 (gen++) 467.03 456.33 P
+1 F
+1.19 (. The next) 496.49 456.33 P
+0.65 (release of the) 72 444.33 P
+0 F
+0.65 (gen++) 137.33 444.33 P
+1 F
+0.65 ( package will include the rule checker) 166.79 444.33 P
+0.65 (, along with a metrics gathering tool and other) 335.78 444.33 P
+0.06 (sample analyzers. This will give users access, not only to the checker tool, but to the environment in which) 72 432.33 P
+0.23 (to write tools of their own. This release will be a beta release, distributed to anyone interested in trying the) 72 420.33 P
+(toolkit for 6-12 months.) 72 408.33 T
+0 F
+(Gen++) 72 390.33 T
+1 F
+( currently runs on SunOS 4.1.* and hpux and will be ported to other platforms as demand dictates.) 103.13 390.33 T
+(If you would like to become a beta customer for the package, please send mail to mozart!c++.) 72 372.33 T
+FMENDPAGE
+%%EndPage: "3" 3
+%%Page: "4" 4
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(4 -) 303.83 748 T
+72 68.67 543.33 720 R
+7 X
+V
+0 12 Q
+0 X
+(IV.) 72 712 T
+(Sources) 93.35 712 T
+1 10 Q
+1.02 (As input to this document, we reviewed existing sets of conventions, guidelines and rules of thumb. W) 72 693.33 P
+1.02 (e) 537.77 693.33 P
+0.2 (pulled from these sources as was reasonable and consistent with our experience. These sources included) 72 681.33 P
+(the following:) 72 669.33 T
+-0.07 (\245) 83.12 651.33 P
+-0.07 (Henricson and Nyquist,) 92.18 651.33 P
+3 F
+-0.07 ( Programming in C++, Rules and Recommendations.) 195.42 651.33 P
+1 F
+-0.07 (Ellemtel T) 432.27 651.33 P
+-0.07 (elecommunica-) 475.54 651.33 P
+(tions Systems Laboratories. 1992.) 91.44 639.33 T
+(\245) 83.12 624.33 T
+(J. C. Shank, \322C++ Coding Standards and Guidelines for SLC) 92.18 624.33 T
+4 8 Q
+(\250) 360.64 628.33 T
+1 10 Q
+(-2000 Access System Software Devel-) 366.72 624.33 T
+(opment.\323 A) 91.44 612.33 T
+(T&T Bell Laboratories Internal Memorandum 54585-91) 139.61 612.33 T
+(1) 381.19 612.33 T
+(1) 386.01 612.33 T
+(15-01IM.) 390.83 612.33 T
+-0.2 (\245) 83.12 597.33 P
+-0.2 (\322Conventions in MacApp code.\323) 92.18 597.33 P
+3 F
+-0.2 (MacApp T) 233.68 597.33 P
+-0.2 (utorial \050C++\051) 278.31 597.33 P
+1 F
+-0.2 (, Developer T) 333.68 597.33 P
+-0.2 (echnical Publications. Apple Com-) 392.2 597.33 P
+(puter) 91.44 585.33 T
+(, Inc. 1992.) 113.68 585.33 T
+(\245) 83.12 570.33 T
+(Plum and Saks,) 92.18 570.33 T
+3 F
+(C++ Programming Guidelines) 164.99 570.33 T
+1 F
+(, Plum-Hall, Inc. 1991.) 296.7 570.33 T
+(\245) 83.12 555.33 T
+(Scott Meyers,) 92.18 555.33 T
+3 F
+(Effective C++) 156.09 555.33 T
+1 F
+(, Addison-W) 216.12 555.33 T
+(esley) 270.4 555.33 T
+(. 1992.) 293 555.33 T
+(\245) 83.12 540.33 T
+(Robert Murray) 92.18 540.33 T
+3 F
+(, C++ Strategies and T) 155.34 540.33 T
+(actics) 255.95 540.33 T
+1 F
+(, Addison-W) 281.51 540.33 T
+(esley) 335.79 540.33 T
+(. 1993) 358.39 540.33 T
+3 F
+(.) 386.19 540.33 T
+1 F
+(\245) 83.12 525.33 T
+(Jim Coplien, \322Looking Over One\325) 92.18 525.33 T
+(s Shoulder at a C++ Program.\323) 236.49 525.33 T
+(\245) 83.12 510.33 T
+(T) 92.18 510.33 T
+(imothy Budd,) 97.92 510.33 T
+3 F
+(Object-Oriented Programming) 159.06 510.33 T
+1 F
+(, Addison-W) 292.43 510.33 T
+(esley) 346.71 510.33 T
+(. 1990.) 369.31 510.33 T
+(\245) 83.12 495.33 T
+(Rebecca Wirfs-Brock, et. al.) 92.18 495.33 T
+3 F
+(Designing Object-Oriented Software) 218.88 495.33 T
+1 F
+(, Prentice-Hall, 1991.) 378.94 495.33 T
+(\245) 83.12 480.33 T
+(Grady Booch,) 92.18 480.33 T
+3 F
+(Object-Oriented Designs with Applications) 156.1 480.33 T
+1 F
+(, Benjamin-Cummings, 1990.) 342.83 480.33 T
+FMENDPAGE
+%%EndPage: "4" 4
+%%Page: "5" 5
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(5 -) 303.83 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+0 12 Q
+0 X
+(V.) 72 712 T
+(Programming Conventions) 90.01 712 T
+192.01 684.73 72 684.73 2 L
+V
+0.88 H
+0 Z
+N
+(Naming Conventions) 72 686 T
+1 10 Q
+-0.22 (Naming conventions are the least objective and normally most controversial of any standards. They may be) 72 667.33 P
+0.08 (somewhat arbitrary) 72 655.33 P
+0.08 (, but are very useful in increasing the readability of code. Names, such as class names,) 156.36 655.33 P
+-0.03 (variable names, and function names can be distinguished by the reader at a glance. They can also be use-) 72 643.33 P
+(ful to the writer) 72 631.33 T
+(, forcing him/her to think through the role of the name as it is created.) 137.03 631.33 T
+0.94 (W) 72 613.33 P
+0.94 (e have tried to keep these conventions general, so that projects could impose additional naming rules) 81.26 613.33 P
+0.59 (that are useful in their environment and domain. In particular) 72 601.33 P
+0.59 (, a project may decide to use a pre\336x \050sepa-) 343.52 601.33 P
+-0.24 (rated from the name by an underscore\051 to provide additional information. A project could, for instance, insist) 72 589.33 P
+-0.08 (that global names be pre\336xed with a \322g\323 or that acronyms be provided as a pre\336x. W) 72 577.33 P
+-0.08 (e assume the following) 441.85 577.33 P
+(form:) 72 565.33 T
+3 F
+(prefix_) 97.56 565.33 T
+1 F
+(name \050where) 127.57 565.33 T
+3 F
+(prefix_) 188.7 565.33 T
+1 F
+( is optional\051. These conventions apply to names.) 218.71 565.33 T
+0 F
+(1.) 85.9 547.33 T
+-0.61 (\050G\051) 111.6 547.33 P
+-0.61 (Readable and comprehensive names should be preferred over names which are easy to) 131.6 547.33 P
+(type.) 111.6 535.33 T
+(2.) 85.9 517.33 T
+(\050G\051) 111.6 517.33 T
+(Names should be as speci\336c to the context as possible, e.g. Coordinate rather than) 131.6 517.33 T
+(Number) 111.6 505.33 T
+(.) 148.83 505.33 T
+(3.) 85.9 487.33 T
+(\050G\051) 111.6 487.33 T
+(Names with global scope should be distinctive and unique.) 131.6 487.33 T
+(4.) 85.9 469.33 T
+(\050R\051) 111.6 469.33 T
+(Class names should begin with an uppercase letter) 131.04 469.33 T
+(.) 373.9 469.33 T
+3 F
+(Example) 111.6 451.33 T
+1 F
+(: String, Message, NetworkElement) 150.5 451.33 T
+0 F
+(5.) 85.9 433.33 T
+(\050R\051) 111.6 433.33 T
+(Acronyms that are part of names should be all uppercase.) 131.04 433.33 T
+(6.) 85.9 415.33 T
+(\050R\051) 111.6 415.33 T
+(V) 131.04 415.33 T
+(ariable names should begin with a lowercase letter) 137.16 415.33 T
+(.) 377.81 415.33 T
+3 F
+(Example) 111.6 397.33 T
+0 F
+(: myString, msg2, \337owError) 150.5 397.33 T
+(7.) 85.9 379.33 T
+-0.31 (\050R\051) 111.6 379.33 P
+-0.31 (Function names should begin with a lowercase letter \050except constructors and destruc-) 131.04 379.33 P
+(tors\051.) 111.6 367.33 T
+3 F
+(Example) 111.6 349.33 T
+1 F
+(: length\050\051, execute\050\051) 150.5 349.33 T
+0 F
+(8.) 85.9 331.33 T
+(\050R\051) 111.6 331.33 T
+(In any name which contains more than one word, the \336rst word should follow the con-) 131.04 331.33 T
+-0.53 (vention for the type of the name, and subsequent words should immediately follow) 111.6 319.33 P
+-0.53 (, with the) 498.81 319.33 P
+(\336rst letter of each word capitalized.) 111.6 307.33 T
+3 F
+(Example) 111.6 289.33 T
+1 F
+(: logEvent\050\051, PrintManager) 150.5 289.33 T
+169.36 262.73 72 262.73 2 L
+V
+N
+0 12 Q
+(File Organization) 72 264 T
+0 10 Q
+(9.) 85.9 245.33 T
+-0.15 (\050R\051) 111.6 245.33 P
+-0.15 (Class de\336nitions should be placed in class header \336les and class member implementa-) 131.04 245.33 P
+(tions in one or more source \336les.) 111.6 233.33 T
+(10.) 85.9 215.33 T
+-0.28 (\050G\051) 111.6 215.33 P
+-0.28 (Each header \336le should de\336ne one class or a small, tightly connected group of classes.) 131.6 215.33 P
+(1) 85.9 197.33 T
+(1.) 90.91 197.33 T
+(\050G\051) 111.6 197.33 T
+(The name of the header \336le should be the name of the most visible or important class) 131.6 197.33 T
+(being de\336ned, suf\336xed by \322.h\323.) 111.6 185.33 T
+3 F
+(Example) 111.6 167.33 T
+1 F
+(: String.h, Alarm.h) 150.5 167.33 T
+0 F
+(12.) 85.9 149.33 T
+(\050G\051) 111.6 149.33 T
+(If the class name is too long, a unique and meaningful abbreviation should be chosen.) 131.6 149.33 T
+3 F
+(Example) 114.38 131.33 T
+1 F
+(: NetElem.h) 153.28 131.33 T
+0 F
+(13.) 85.9 113.33 T
+(\050G\051) 111.6 113.33 T
+(Source \336le names should indicate the class and the most general or visible capability) 131.6 113.33 T
+-0.19 (being de\336ned. They should be suf\336xed by \322.c\323 or \322.C\323 \050choose one and use it consistently\051.) 111.6 101.33 P
+3 F
+(Example) 111.6 83.33 T
+1 F
+(: StrAssign.c, AlarmInit.c) 150.5 83.33 T
+FMENDPAGE
+%%EndPage: "5" 5
+%%Page: "6" 6
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(6 -) 303.83 748 T
+72 68.67 543.33 720 R
+7 X
+V
+169.36 710.73 72 710.73 2 L
+0 X
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Class Definitions) 72 712 T
+0 10 Q
+(14.) 85.9 693.33 T
+(\050R\051) 111.6 693.33 T
+(The protection of every base class should be speci\336cally stated.) 131.04 693.33 T
+1 F
+(When one class is derived from another) 111.6 675.33 T
+(, the default protection is private. For example:) 287.23 675.33 T
+5 F
+(class D : B { };) 111.6 657.33 T
+(// D is privately derived from B) 225.6 657.33 T
+1 F
+1.62 (This is counter-intuitive for most programmers who think that the default is public inheritance.) 111.6 640.33 P
+0.76 (Thus, the compiler will generate a warning for constructs such as these. It is best to speci\336cally) 111.6 628.33 P
+(state whether the inheritance is public, protected, or private.) 111.6 616.33 T
+0 F
+(15.) 85.9 598.33 T
+(\050R\051) 111.6 598.33 T
+(No inline function should be de\336ned within a class de\336nition.) 131.04 598.33 T
+1 F
+1.66 (Programmers should resist the temptation to de\336ne functions within class de\336nitions. De\336ning) 111.6 580.33 P
+0.5 (them outside separates the declaration from the implementation details. It allows for the creation) 111.6 568.33 P
+0.31 (of separate \336les of inline function de\336nitions. And it facilitates approaches to global \322uninlining\323 of) 111.6 556.33 P
+0.78 (functions for debugging. It also minimizes the temptation to inline functions which should not be) 111.6 544.33 P
+(inline, such as constructors, destructors, and virtual functions.) 111.6 532.33 T
+0 F
+(16.) 85.9 514.33 T
+-0.43 (\050R\051) 111.6 514.33 P
+-0.43 (Class organization: the de\336nition of the class should contain the following in this order:) 131.04 514.33 P
+1 F
+(1.) 111.6 496.33 T
+(declaration of any friend functions and classes) 122.72 496.33 T
+(2.) 111.6 481.33 T
+(the \322public:\323 speci\336er) 122.72 481.33 T
+(3.) 111.6 466.33 T
+(declarations of any public member functions) 122.72 466.33 T
+(4.) 111.6 451.33 T
+(declarations of any public data members) 122.72 451.33 T
+(5.) 111.6 436.33 T
+(the \322protected:\323 speci\336er) 122.72 436.33 T
+(6.) 111.6 421.33 T
+(declarations of any protected member functions) 122.72 421.33 T
+(7.) 111.6 406.33 T
+(declarations of any protected data members) 122.72 406.33 T
+(8.) 111.6 391.33 T
+(the \322private: \322speci\336er) 122.72 391.33 T
+(9.) 111.6 376.33 T
+(declarations of any private member functions) 122.72 376.33 T
+(10.) 111.6 361.33 T
+(declarations of any private data) 128.28 361.33 T
+178.72 334.73 72 334.73 2 L
+V
+N
+0 12 Q
+(Class Header Files) 72 336 T
+0 10 Q
+(17.) 85.9 317.33 T
+-0.46 (\050R\051) 111.6 317.33 P
+-0.46 (Every header \336le should be guarded against multiple inclusion with preprocessor direc-) 131.04 317.33 P
+(tives.) 111.6 305.33 T
+3 F
+(Example) 111.6 287.33 T
+1 F
+(:) 150.5 287.33 T
+5 F
+(#ifndef CLASS_H) 111.6 269.33 T
+(#def) 111.6 257.33 T
+(ine CLASS_H) 135.6 257.33 T
+(// header f) 111.6 240.33 T
+(ile contents ...) 177.6 240.33 T
+(#endif) 111.6 223.33 T
+0 F
+(18.) 85.9 206.33 T
+-0.67 (\050R\051) 111.6 206.33 P
+-0.67 (Header \336les should #include header \336les only for classes that are directly needed by the) 131.04 206.33 P
+(class declaration. Otherwise, forward declarations should be used.) 111.6 194.33 T
+1 F
+-0.19 (In general, a class is directly needed if objects of that class are) 111.6 176.33 P
+3 F
+-0.19 (used) 389.23 176.33 P
+1 F
+-0.19 ( in the class declaration rather) 410.91 176.33 P
+1.19 (than just) 111.6 164.33 P
+3 F
+1.19 (referenced) 154.57 164.33 P
+1 F
+1.19 ( \050through a pointer or reference\051. Including other \336les needlessly increases) 202.37 164.33 P
+(code size. Include \336les needed by the class implementation will be included in the source \336les.) 111.6 152.33 T
+3 F
+(Example) 111.6 134.33 T
+1 F
+(:) 150.5 134.33 T
+(class Switch;) 111.6 116.33 T
+0 F
+(19.) 85.9 98.33 T
+(\050R\051) 111.6 98.33 T
+(Each class header \336le should contain the following:) 131.04 98.33 T
+1 F
+(1.) 111.6 80.33 T
+(header \336le guard \050as described above\051 at the beginning of the \336le) 122.72 80.33 T
+FMENDPAGE
+%%EndPage: "6" 6
+%%Page: "7" 7
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(7 -) 303.83 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+1 F
+0 X
+(2.) 111.6 713.33 T
+(a preamble C++ comment containing useful information such as \336le name, content, and copy-) 122.72 713.33 T
+(right. This comment is for) 123.12 701.33 T
+3 F
+(users) 238.15 701.33 T
+1 F
+( of the header \336le.) 262.6 701.33 T
+(3.) 111.6 686.33 T
+(any #includes) 122.72 686.33 T
+(4.) 111.6 671.33 T
+(any forward declarations) 122.72 671.33 T
+(5.) 111.6 656.33 T
+(any extern and constant declarations) 122.72 656.33 T
+(6.) 111.6 641.33 T
+(any typedef de\336nitions) 122.72 641.33 T
+(7.) 111.6 626.33 T
+(each class, struct, and union declaration followed by its inline function de\336nitions) 122.72 626.33 T
+178.72 599.73 72 599.73 2 L
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Class Source Files) 72 601 T
+0 10 Q
+(20.) 85.9 582.33 T
+(\050R\051) 111.6 582.33 T
+(Source \336les should #include header \336les instead of using extern declarations.) 131.04 582.33 T
+(21.) 85.9 564.33 T
+(\050R\051) 111.6 564.33 T
+(Each class source \336le should contain the following:) 131.04 564.33 T
+1 F
+(1.) 111.6 546.33 T
+(a preamble C++ comment containing useful information, such as \336le name, content, and copy-) 122.72 546.33 T
+(right. This comment is for) 123.12 534.33 T
+3 F
+(maintainers) 238.15 534.33 T
+1 F
+(of the source \336le.) 292.61 534.33 T
+(2.) 111.6 519.33 T
+(#includes: this will include at least the class header \336le for the class being de\336ned) 122.72 519.33 T
+(3.) 111.6 504.33 T
+(any global data initialization) 122.72 504.33 T
+(4.) 111.6 489.33 T
+(any static data initialization) 122.72 489.33 T
+(5.) 111.6 474.33 T
+(any static function declarations) 122.72 474.33 T
+(6.) 111.6 459.33 T
+(any friend functions and binary operator declarations) 122.72 459.33 T
+(7.) 111.6 444.33 T
+(member function de\336nitions) 122.72 444.33 T
+(8.) 111.6 429.33 T
+(any static function de\336nitions) 122.72 429.33 T
+242.72 402.73 72 402.73 2 L
+V
+N
+0 12 Q
+(Reference to a Class Member) 72 404 T
+0 10 Q
+(22.) 85.9 385.33 T
+(\050R\051) 111.6 385.33 T
+(Any reference to a class member within the body of a member function of that class) 131.04 385.33 T
+(should be pre\336xed by) 111.6 373.33 T
+5 F
+(this->) 217.74 373.33 T
+0 F
+(.) 253.74 373.33 T
+1 F
+0.7 (This makes it clear to the reader) 111.6 355.33 P
+0.7 (, at a glance, that the variable or function being referenced is a) 258.09 355.33 P
+0.74 (member of the class. It distinguishes a member variable from a global variable, a local variable,) 111.6 343.33 P
+0.48 (and most importantly) 111.6 331.33 P
+0.48 (, a function argument. It also distinguishes a member function from a global) 204.63 331.33 P
+(function and the sending of a message from a simple function call.) 111.6 319.33 T
+0.9 (W) 111.6 301.33 P
+0.9 (e feel that the use of) 120.86 301.33 P
+5 F
+1.94 (this->) 219.66 301.33 P
+1 F
+0.9 ( is superior to naming conventions to distinguish data members) 255.66 301.33 P
+1.01 (and member functions. It occurs only when the distinction is really necessary) 111.6 289.33 P
+1.01 (, at the use of the) 461 289.33 P
+0.27 (name in its class\325 member functions. In the uses of the name outside the class, for which the dis-) 111.6 277.33 P
+(tinction is unnecessary) 111.6 265.33 T
+(, a naming convention becomes extra baggage.) 212.01 265.33 T
+0.32 (However) 111.6 247.33 P
+0.32 (, for projects who cannot abide by this rule, an acceptable alternative would be to de\336ne) 150.5 247.33 P
+(additional naming conventions for data members and member functions.) 111.6 235.33 T
+134 208.73 72 208.73 2 L
+V
+N
+0 12 Q
+(Comments) 72 210 T
+0 10 Q
+(23.) 85.9 191.33 T
+-0.64 (\050R\051) 111.6 191.33 P
+-0.64 (Comments intermingled with code should be C++-style comments \050 // \051 and) 131.04 191.33 P
+-0.64 (C-style com-) 483.97 191.33 P
+(ments \050 /* */ \051 should be used to comment out large portions of code.) 111.6 179.33 T
+1 F
+-0.15 (This rule is meant to dif) 111.6 161.33 P
+-0.15 (ferentiate the use of C comments from C++ comments; and is not meant to) 214.04 161.33 P
+(preclude other methods for removing blocks of code, such as conditional compilation.) 111.6 149.33 T
+0.77 (These rules are presented together to stress that one should not be blindly followed without the) 111.6 131.33 P
+-0.25 (other) 111.6 119.33 P
+-0.25 (. For example, using C comments to comment code can result in problems if C comments are) 133.84 119.33 P
+1.49 (also intermingled in code. If both rules are followed, the user should not have a problem with) 111.6 107.33 P
+(nested comments.) 111.6 95.33 T
+0 F
+(24.) 85.9 77.33 T
+(\050R\051) 111.6 77.33 T
+(All comments should be in English.) 131.04 77.33 T
+FMENDPAGE
+%%EndPage: "7" 7
+%%Page: "8" 8
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(8 -) 303.83 748 T
+72 68.67 543.33 720 R
+7 X
+V
+144.02 710.73 72 710.73 2 L
+0 X
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Declarations) 72 712 T
+0 10 Q
+(25.) 85.9 693.33 T
+(\050R\051 No declaration should appear in the initializer section of a for statement.) 111.6 693.33 T
+1 F
+1.91 (This rule prevents developers from using a confusing feature of C++. Things were confusing) 111.6 675.33 P
+-0.22 (enough when the scope of such a declaration was the block surrounding the for statement. But the) 111.6 663.33 P
+0.07 (ANSI C++ committee has recently voted to change the scope of variables in the initializer section.) 111.6 651.33 P
+(It is now de\336ned to be the header and the controlled statement.) 111.6 639.33 T
+0.55 (It is hard to predict when this change will be supported by compilers. During the \050long\051 transition) 111.6 621.33 P
+0.38 (period, the safest thing to do is to follow this rule and write code which is legal under the old and) 111.6 609.33 P
+(new rules, e.g.) 111.6 597.33 T
+5 F
+(int j;) 111.6 579.33 T
+(for \050j = 0; j < 10; j++\051 // ...) 111.6 567.33 T
+0 F
+(26.) 85.9 550.33 T
+(\050R\051) 111.6 550.33 T
+(Every class or struct declaration should have a name; and no declaration of a class or) 131.04 550.33 T
+(struct should also contain a variable declaration.) 111.6 538.33 T
+1 F
+(This rule forbids declarations such as) 111.6 520.33 T
+5 F
+(struct S { int i; int j; } s1;) 111.6 502.33 T
+0 F
+(27.) 85.9 485.33 T
+(\050R\051) 111.6 485.33 T
+(The return type of a function should be explicitly stated.) 131.04 485.33 T
+(28.) 85.9 467.33 T
+-0.45 (\050R\051) 111.6 467.33 P
+-0.45 (The return type of a function \050including any *\325) 131.04 467.33 P
+-0.45 (s and &\325) 342.63 467.33 P
+-0.45 (s\051 should appear on a line by itself) 380.25 467.33 P
+(above the name of the function.) 111.6 455.33 T
+1 F
+(This rule should be followed to allow tools to more easily \336nd the name of the function.) 111.6 437.33 T
+0 F
+(29.) 85.9 419.33 T
+-0.52 (\050R\051) 111.6 419.33 P
+-0.52 (Names of formal arguments to the function should be speci\336ed and should be the same) 131.04 419.33 P
+(in the declaration and de\336nition.) 111.6 407.33 T
+(30.) 85.9 389.33 T
+-0.44 (\050R\051) 111.6 389.33 P
+-0.44 (In function declarations and function calls, arguments should either be all listed on one) 131.04 389.33 P
+(line, or each argument should be listed on its own line.) 111.6 377.33 T
+3 F
+(Example) 111.6 359.33 T
+1 F
+(:) 150.5 359.33 T
+5 F
+(int) 111.6 341.33 T
+(multiArgFunc\050int arg1,) 111.6 329.33 T
+( char *arg2, String arg3\051;) 243.6 329.33 T
+1 F
+(or) 111.6 312.33 T
+5 F
+(int) 111.6 294.33 T
+(multiArgFunc\050) 111.6 282.33 T
+(int) 135.6 270.33 T
+(arg1,) 177.6 270.33 T
+(         // comment about arg1) 207.6 270.33 T
+(char) 135.6 258.33 T
+(*arg2,         // comment about arg2) 171.6 258.33 T
+(String arg3) 135.6 246.33 T
+(// comment about arg3) 261.6 246.33 T
+(\051;) 111.6 234.33 T
+129.34 207.73 72 207.73 2 L
+V
+N
+0 12 Q
+(Functions) 72 209 T
+0 10 Q
+(31.) 85.9 190.33 T
+-0.15 (\050G\051) 111.6 190.33 P
+-0.15 (A function parameter should be a reference to an object instead of an object whenever) 131.6 190.33 P
+(possible.) 111.6 178.33 T
+1 F
+1.33 (Sometimes a function actually needs a copy of an object. If not, a reference to a const object) 111.6 160.33 P
+(should be used to avoid copying potentially large objects.) 111.6 148.33 T
+0 F
+(32.) 85.9 130.33 T
+(\050G\051) 111.6 130.33 T
+(A) 131.6 130.33 T
+(void returning non-const references or pointers to member data.) 138.45 130.33 T
+1 F
+0.51 (This allows direct access to class members and thus violates encapsulation and information hid-) 111.6 112.33 P
+(ing.) 111.6 100.33 T
+FMENDPAGE
+%%EndPage: "8" 8
+%%Page: "9" 9
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 296.5 748 T
+1 10 Q
+(9 -) 303.83 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+152.03 710.73 72 710.73 2 L
+0 X
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Use of Braces) 72 712 T
+0 10 Q
+(33.) 85.9 693.33 T
+-0.18 (\050R\051) 111.6 693.33 P
+-0.18 (Explicit blocks with braces \050even if the block is empty\051 should follow each if, for) 131.04 693.33 P
+-0.18 (, while,) 507.56 693.33 P
+(do, and switch statement.) 111.6 681.33 T
+1 F
+-0.25 (This rule, although it could apply to C as well as C++, is not a common part of C programming con-) 111.6 663.33 P
+-0.26 (ventions, and so is stated here. In our experience, many common errors \337ow from incorrectly mod-) 111.6 651.33 P
+1.62 (ifying code which has been written without explicit braces, especially when the null statement) 111.6 639.33 P
+(appears after a conditional. It increases readability as well.) 111.6 627.33 T
+3 F
+(Example) 111.6 609.33 T
+1 F
+(:) 150.5 609.33 T
+5 F
+(if \050...\051 {) 111.6 591.33 T
+(}) 111.6 579.33 T
+1 F
+(instead of) 111.6 562.33 T
+5 F
+(if \050...\051 ;) 111.6 544.33 T
+164.7 517.73 72 517.73 2 L
+V
+N
+0 12 Q
+(Canonical Class) 72 519 T
+1 10 Q
+0.2 (Each time a class is created, the compiler-generated copy constructor and assignment operator should be) 72 500.33 P
+0.14 (scrutinized to determine if they are adequate for the class. If found inadequate, versions of these functions) 72 488.33 P
+0.82 (should be provided by the programmer) 72 476.33 P
+0.82 (. The following addresses when and how these functions are cre-) 247.27 476.33 P
+(ated.) 72 464.33 T
+0 F
+(34.) 85.9 446.33 T
+(\050R\051) 111.6 446.33 T
+(If objects of the class allocate subsidiary data structures on the heap or consume any) 131.04 446.33 T
+(other shared resource, a copy constructor and assignment operator should be explicitly) 111.6 434.33 T
+(provided.) 111.6 422.33 T
+1 F
+1 (In these cases, the default copy constructor and assignment operator will not suf) 111.6 404.33 P
+1 (\336ce. The copy) 479.09 404.33 P
+0.66 (constructor will need to allocate more memory for the new object or explicitly access the shared) 111.6 392.33 P
+0.25 (resource. The assignment operator will need to free the memory or shared resource of the object) 111.6 380.33 P
+(which is on the left-hand side of the assignment.) 111.6 368.33 T
+-0.11 (Some projects might \336nd it useful to always de\336ne these functions, even if the default is adequate.) 111.6 350.33 P
+0.19 (This way) 111.6 338.33 P
+0.19 (, the class author knows exactly what is being called. The disadvantage of this approach) 150.5 338.33 P
+0.76 (is that changes to the class structure necessitate changes to user-de\336ned functions, while com-) 111.6 326.33 P
+(piler-generated functions handle them automatically) 111.6 314.33 T
+(.) 339.85 314.33 T
+194.69 287.73 72 287.73 2 L
+V
+N
+0 12 Q
+(Assignment Operator) 72 289 T
+0 10 Q
+(35.) 85.9 270.33 T
+-0.05 (\050R\051) 111.6 270.33 P
+-0.05 (In the assignment operator all members, and base classes, should be assigned values.) 131.04 270.33 P
+1 F
+0.55 (All members of an object should be explicitly assigned to in the assignment operator) 111.6 252.33 P
+0.55 (. Also, base) 489.99 252.33 P
+0.9 (class assignment operators are not automatically executed for derived class objects. Therefore,) 111.6 240.33 P
+(the derived class assignment operator must explicitly call the base class assignment operator) 111.6 228.33 T
+(.) 523.43 228.33 T
+0 F
+(36.) 85.9 210.33 T
+(\050R\051) 111.6 210.33 T
+(The assignment operator should have a check for assignment to self.) 131.04 210.33 T
+1 F
+0.14 (If the operands of an assignment actually refer to the same object, destroying the left-hand object) 111.6 192.33 P
+0.36 (before assigning it the values of the right-hand object can be disastrous. This situation should be) 111.6 180.33 P
+(caught at the beginning of the assignment operator function.) 111.6 168.33 T
+0 F
+(37.) 85.9 150.33 T
+-0.75 (\050R\051) 111.6 150.33 P
+-0.75 (The return type of the assignment operator for class T should be) 131.04 150.33 P
+5 F
+-1.61 (const T&) 432.14 150.33 P
+0 F
+-0.75 ( and it should) 478.53 150.33 P
+(return) 111.6 138.33 T
+5 F
+(*this) 143.27 138.33 T
+0 F
+(.) 173.27 138.33 T
+1 F
+0.1 (This allows expressions of the form) 111.6 120.33 P
+5 F
+0.22 (a = b = c) 271.16 120.33 P
+1 F
+0.1 (to be used and to behave as the built-in assign-) 332.28 120.33 P
+(ment operator behaves.) 111.6 108.33 T
+FMENDPAGE
+%%EndPage: "9" 9
+%%Page: "10" 10
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(10 -) 301.05 748 T
+72 68.67 543.33 720 R
+7 X
+V
+147.34 710.73 72 710.73 2 L
+0 X
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Constructors) 72 712 T
+0 10 Q
+(38.) 85.9 693.33 T
+(\050R\051) 111.6 693.33 T
+(Constructors should use initialization lists to initialize class members rather than as-) 131.04 693.33 T
+(sign to them in the body of the constructor) 111.6 681.33 T
+(.) 314.96 681.33 T
+1 F
+0.19 (Initialization lists are generally the most ef) 111.6 663.33 P
+0.19 (\336cient way to initialize object member data; in fact, they) 297.63 663.33 P
+0.19 (are the only way to initialize reference and const members. Initialization entails just one construc-) 111.6 651.33 P
+0.17 (tor call; but an assignment inside the body may result in a constructor call followed by a call to an) 111.6 639.33 P
+(assignment operator) 111.6 627.33 T
+(.) 202.2 627.33 T
+3 F
+(Example) 111.6 609.33 T
+1 F
+(:) 150.5 609.33 T
+5 F
+(class Foo {) 111.6 591.33 T
+(public:) 111.6 579.33 T
+(Foo\050const char* s\051;) 135.6 567.33 T
+(private:) 111.6 555.33 T
+(String name;) 135.6 543.33 T
+(}) 111.6 531.33 T
+(Foo::Foo\050const char* s\051 : name\050s\051 { }) 111.6 519.33 T
+(// String::String\050const char*\051) 345.6 519.33 T
+(Foo::Foo\050const char* s\051 // String::String\050\051) 111.6 495.33 T
+({ name = s; }) 111.6 483.33 T
+( // String::operator=\050const char*\051) 249.6 483.33 T
+0 F
+(39.) 85.9 454.33 T
+(\050R\051) 111.6 454.33 T
+(The members in an initialization list should be listed in the same order as they are de-) 131.04 454.33 T
+(clared inside the class.) 111.6 442.33 T
+1 F
+(Members are initialized in declaration order whether you list them that way or not.) 111.6 424.33 T
+106 397.73 72 397.73 2 L
+V
+N
+0 12 Q
+(Const) 72 399 T
+0 10 Q
+(40.) 85.9 380.33 T
+(\050R\051) 111.6 380.33 T
+(Functions that do not alter the values of any data member should be declared const.) 131.04 380.33 T
+1 F
+-0.17 (This ensures that the function can be used on the widest range of objects. Not declaring a function) 111.6 362.33 P
+(const needlessly restricts the set of objects upon which it can be called.) 111.6 350.33 T
+0 F
+(41.) 85.9 332.33 T
+-0.38 (\050G\051) 111.6 332.33 P
+-0.38 (Functions that do not alter the logical state of an object should be declared const, even) 131.6 332.33 P
+(if that means casting away const inside the function.) 111.6 320.33 T
+1 F
+0.29 (From a user) 111.6 302.33 P
+0.29 (\325) 166.45 302.33 P
+0.29 (s point of view) 168.49 302.33 P
+0.29 (, a function may not change the state of an object even if it modi\336es a) 232.16 302.33 P
+-0.18 (member internally for reasons known only to the class author) 111.6 290.33 P
+-0.18 (. In these cases, this illusion of const-) 378.97 290.33 P
+-0.29 (ness should be preserved for the user by the class author by declaring the function to be const and) 111.6 278.33 P
+-0.17 (casting away constness inside the function where changes are made to these data members. This) 111.6 266.33 P
+0.22 (is much safer than leaving those casts to the user of the class. See Meyers\325,) 111.6 254.33 P
+3 F
+0.22 (Effective C++) 454.52 254.33 P
+1 F
+0.22 (, \050Item) 514.77 254.33 P
+(21\051 for a good discussion of this topic.) 111.6 242.33 T
+0 F
+(42.) 85.9 224.33 T
+(\050G\051 Reference or pointer parameters that are not modi\336ed by the function should be de-) 111.6 224.33 T
+(clared to be references or pointers to const.) 111.6 212.33 T
+1 F
+1.26 (Not declaring such parameters as pointers or reference to const needlessly restricts the set of) 111.6 194.33 P
+(objects which can be passed to the function.) 111.6 182.33 T
+288.7 155.73 72 155.73 2 L
+V
+N
+0 12 Q
+(Encapsulation and Information Hiding) 72 157 T
+0 10 Q
+(43.) 85.9 138.33 T
+(\050G\051) 111.6 138.33 T
+(Public and protected data members should be avoided when possible.) 131.6 138.33 T
+1 F
+(Public and protected data can violate encapsulation and information hiding.) 111.6 120.33 T
+0 F
+(44.) 85.9 102.33 T
+(\050R\051) 111.6 102.33 T
+(Inline accessor and mutator functions should be provided to access and modify state) 131.04 102.33 T
+(components.) 111.6 90.33 T
+FMENDPAGE
+%%EndPage: "10" 10
+%%Page: "11" 11
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(11 -) 301.05 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+1 F
+0 X
+0.25 (State information should be only accessed and modi\336ed via functions. These functions should be) 111.6 713.33 P
+(de\336ned as inline for ef) 111.6 701.33 T
+(\336ciency reasons.) 209.25 701.33 T
+0 F
+(45.) 85.9 683.33 T
+(\050R\051) 111.6 683.33 T
+(An accessor function should not let you modify the object; thus it should return either) 131.04 683.33 T
+(an object, a reference to a const object or a pointer to a const object.) 111.6 671.33 T
+1 F
+-0.21 (Returning a non-const reference or pointer to a data member would subvert the encapsulation and) 111.6 653.33 P
+(information hiding of the class.) 111.6 641.33 T
+110.02 614.73 72 614.73 2 L
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Inlines) 72 616 T
+1 10 Q
+1.32 (The goal is to use inlines for functions where performance is critical but to not run the risk of \322outlined) 72 597.33 P
+0.72 (inlines.\323 These are static versions of inline functions which the compiler creates in each \336le that calls the) 72 585.33 P
+-0.04 (function, unbeknownst to the programmer) 72 573.33 P
+-0.04 (. They cause code size increases without the accompanying gain) 255.81 573.33 P
+(in ef) 72 561.33 T
+(\336ciency) 90.72 561.33 T
+(.) 123.32 561.33 T
+0 F
+(46.) 85.9 543.33 T
+(\050G\051) 111.6 543.33 T
+(Inlining should be reserved for accessor) 131.6 543.33 T
+(, mutator) 323.34 543.33 T
+(, and very short functions.) 365.57 543.33 T
+1 F
+0.62 (A very short function is generally 1-2 lines. Counting lines however can be complicated if one of) 111.6 525.33 P
+-0.1 (the lines is a call to another inline function. What gets generated by the compiler for an inline func-) 111.6 513.33 P
+(tion may be more than meets the eye. Other than simple forwarding functions, e.g.) 111.6 501.33 T
+5 F
+-1.12 (int length\050const String &s\051 { return s.length\050\051; } // length\050\051s are inline) 111.6 483.33 P
+1 F
+0.27 (users should call inlines within inlines only if they understand what the compiler is likely to gener-) 111.6 466.33 P
+(ate.) 111.6 454.33 T
+0 F
+(47.) 85.9 436.33 T
+(\050R\051) 111.6 436.33 T
+(Constructors, destructors, and virtual functions should not be inline.) 131.04 436.33 T
+1 F
+-0.04 (The address of these functions may need to be preserved \050even implicitly\051 which will result in mul-) 111.6 418.33 P
+(tiple copies being created.) 111.6 406.33 T
+0 F
+(48.) 85.9 388.33 T
+(\050R\051) 111.6 388.33 T
+(Inline functions should do no I/O.) 131.04 388.33 T
+1 F
+(Otherwise, iostream.h must be included in the header! This causes code bloat.) 111.6 370.33 T
+103.99 343.73 72 343.73 2 L
+V
+N
+0 12 Q
+(NULL) 72 345 T
+0 10 Q
+(49.) 85.9 326.33 T
+(\050R\051) 111.6 326.33 T
+(0 should be used instead of NULL.) 131.04 326.33 T
+1 F
+0.29 (The symbol NULL is an artifact of old C when the compiler had no way to distinguish 0, the num-) 111.6 308.33 P
+0.25 (ber) 111.6 296.33 P
+0.25 (, from 0, the pointer) 125.5 296.33 P
+0.25 (. In C++, this is no longer the case \050except when passed to a function with) 212.68 296.33 P
+-0.15 (ellipses arguments\051. NULL is not guaranteed to be compatible with all pointer types in C++. In par-) 111.6 284.33 P
+1.77 (ticular) 111.6 272.33 P
+1.77 (, in some implementations, it is de\336ned to be \050void*\0510, which cannot be assigned to all) 137.72 272.33 P
+(pointer types.) 111.6 260.33 T
+(Note that this is counter to the C convention to use NULL instead of 0.) 111.6 242.33 T
+-0.15 (This rule does not mean that the literal 0 must be used; only that some constant whose value is an) 111.6 224.33 P
+0.32 (unadorned 0 must be used and that NULL should not be. A project-wide symbolic constant could) 111.6 212.33 P
+(be de\336ned.) 111.6 200.33 T
+194.69 173.73 72 173.73 2 L
+V
+N
+0 12 Q
+(Memory Management) 72 175 T
+0 10 Q
+(50.) 85.9 156.33 T
+(\050R\051) 111.6 156.33 T
+(new and delete should be used instead of malloc\050\051 and free\050\051.) 131.04 156.33 T
+1 F
+0.98 (Operators new and delete are more convenient to use than malloc\050\051 and free\050\051 and understand) 111.6 138.33 P
+(C++ constructs.) 111.6 126.33 T
+0 F
+(51.) 85.9 108.33 T
+(\050R\051) 111.6 108.33 T
+(delete [] should be used whenever an array is deleted.) 131.04 108.33 T
+1 F
+-0.19 (The empty brackets are not strictly necessary when deleting arrays of objects of built-in type. They) 111.6 90.33 P
+(should always be used for consistency and to increase readability) 111.6 78.33 T
+(.) 400.99 78.33 T
+FMENDPAGE
+%%EndPage: "11" 11
+%%Page: "12" 12
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(12 -) 301.05 748 T
+72 68.67 543.33 720 R
+7 X
+V
+0 F
+0 X
+(52.) 85.9 713.33 T
+(\050R\051) 111.6 713.33 T
+(delete should be de\336ned whenever new has been de\336ned.) 131.04 713.33 T
+1 F
+0.22 (Memory allocation and deletion should share underlying assumptions. malloc\050\051 and free\050\051 use dif-) 111.6 695.33 P
+(ferent assumptions than new and delete.) 111.6 683.33 T
+149.36 656.73 72 656.73 2 L
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Preprocessor) 72 658 T
+1 10 Q
+0.86 (The preprocessor is not part of the language. It is used to augment the language; but its constructs and) 72 639.33 P
+0.8 (variables are unknown to the C++ compiler) 72 627.33 P
+0.8 (. Therefore, it is impossible for the compiler to process, know) 266.34 627.33 P
+0.13 (about, or report about anything but the transformed output. T) 72 615.33 P
+0.13 (wo features of C++ can replace some uses of) 341.1 615.33 P
+(the preprocessor) 72 603.33 T
+(.) 146.48 603.33 T
+0 F
+(53.) 85.9 585.33 T
+(\050R\051) 111.6 585.33 T
+(const and enum should replace use of #de\336ne for manifest constants.) 131.04 585.33 T
+(54.) 85.9 567.33 T
+(\050G\051) 111.6 567.33 T
+(Inlines and templates should replace uses of #de\336ne for macros whenever possible.) 131.6 567.33 T
+262.04 540.73 72 540.73 2 L
+V
+N
+0 12 Q
+(Inheritance and Virtual Functions) 72 542 T
+0 10 Q
+(55.) 85.9 523.33 T
+(\050R\051) 111.6 523.33 T
+(Every base class should have a virtual destructor) 131.04 523.33 T
+(.) 365.59 523.33 T
+1 F
+1.1 (Since a derived class object can be deleted through a base class pointer) 111.6 505.33 P
+1.1 (, the base class must) 444.99 505.33 P
+(have a virtual destructor to ensure that the derived class destructor gets called.) 111.6 493.33 T
+0 F
+(56.) 85.9 475.33 T
+(\050R\051) 111.6 475.33 T
+(A derived class should not rede\336ne a default parameter for a virtual function.) 131.04 475.33 T
+1 F
+1.3 (Because default parameters are statically bound while virtual functions are dynamically bound,) 111.6 457.33 P
+-0.11 (you could end up calling the derived class function with the base class default parameter) 111.6 445.33 P
+-0.11 (. So the 2) 500.85 445.33 P
+-0.05 (default parameters better be the same. See Meyers pp. 132-134 for a complete discussion of this.) 111.6 433.33 P
+0 F
+(57.) 85.9 415.33 T
+(\050R\051) 111.6 415.33 T
+(A derived class should not rede\336ne an inherited non-virtual function.) 131.04 415.33 T
+1 F
+-0.16 (Rede\336ning a non-virtual function in a derived class will cause dif) 111.6 397.33 P
+-0.16 (ferent behavior depending on how) 392.76 397.33 P
+(the function is called. For example, for a rede\336ned function) 111.6 385.33 T
+5 F
+(foo\050\051) 373.95 385.33 T
+1 F
+(:) 403.95 385.33 T
+5 F
+(Derived der;) 111.6 367.33 T
+(Derived* d = &der;) 111.6 355.33 T
+(Base* b = &der;) 111.6 343.33 T
+(b->foo\050\051;) 111.6 331.33 T
+(// calls Base::foo\050\051) 207.6 331.33 T
+(d->foo\050\051;) 111.6 319.33 T
+(// calls Der::foo\050\051) 207.6 319.33 T
+1 F
+1.1 (Also, rede\336ning an inherited non-virtual function violates the is-a relationship implied by inherit-) 111.6 302.33 P
+(ance.) 111.6 290.33 T
+179.38 263.73 72 263.73 2 L
+V
+N
+0 12 Q
+(Global Namespace) 72 265 T
+1 10 Q
+1.31 (Keeping the global namespace uncluttered reduces name collisions and makes it easier to reuse other) 72 246.33 P
+0.71 (people\325) 72 234.33 P
+0.71 (s code. It also makes it easier to \336gure out where a name is coming from. In general, global vari-) 104.06 234.33 P
+(ables should be used only when absolutely necessary) 72 222.33 T
+(.) 309.71 222.33 T
+0 F
+(58.) 85.9 204.33 T
+(\050G\051) 111.6 204.33 T
+(Nested classes and enums should be used when possible.) 131.6 204.33 T
+1 F
+0.18 (T) 111.6 186.33 P
+0.18 (ypes used only by a particular class can be declared within the scope of that class. The name is) 117.16 186.33 P
+(then not known outside of that one class.) 111.6 174.33 T
+0 F
+(59.) 85.9 156.33 T
+(\050G\051) 111.6 156.33 T
+(Static members should be used when possible.) 131.6 156.33 T
+1 F
+(Static members often provide a good alternative to global variables and functions.) 111.6 138.33 T
+0 F
+(60.) 85.9 120.33 T
+(\050G\051) 111.6 120.33 T
+(The C++) 131.6 120.33 T
+3 F
+(namespace) 173.84 120.33 T
+0 F
+( feature should be used when it becomes available.) 225.53 120.33 T
+1 F
+-0.01 (The new namespace feature of C++, which has been accepted by the ANSI committee, enables a) 111.6 102.33 P
+(programmer to partition the global namespace.) 111.6 90.33 T
+FMENDPAGE
+%%EndPage: "12" 12
+%%Page: "13" 13
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(13 -) 301.05 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+141.35 710.73 72 710.73 2 L
+0 X
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Code Reuse) 72 712 T
+0 10 Q
+(61.) 85.9 693.33 T
+(\050G\051) 111.6 693.33 T
+(Use the Standard Component libraries where applicable.) 131.6 693.33 T
+158.69 666.73 72 666.73 2 L
+V
+N
+0 12 Q
+(Use of Friends) 72 668 T
+0 10 Q
+(62.) 85.9 649.33 T
+-0.34 (\050G\051) 111.6 649.33 P
+-0.34 (Friend functions should be used only for non-member binary operators and in other ex-) 131.6 649.33 P
+(ceptional cases where ef\336ciency demands it.) 111.6 637.33 T
+1 F
+2.01 (Since friends violate encapsulation and information hiding, they should be generally avoided.) 111.6 619.33 P
+1.15 (Sometimes ef) 111.6 607.33 P
+1.15 (\336ciency concerns demand that a function have direct access to the internals of a) 173.7 607.33 P
+0.02 (class; but this should happen very rarely) 111.6 595.33 P
+0.02 (. Generally) 289.37 595.33 P
+0.02 (, the class accessor functions can be used just) 336.99 595.33 P
+(as ef) 111.6 583.33 T
+(\336ciently) 133.1 583.33 T
+(.) 165.7 583.33 T
+0 F
+(63.) 85.9 565.33 T
+-0.24 (\050G\051) 111.6 565.33 P
+-0.24 (Classes should only declare other classes as friends when the two are very tightly cou-) 131.6 565.33 P
+(pled.) 111.6 553.33 T
+1 F
+-0.17 (A common example of tightly coupled classes is a container class and its iterator) 111.6 535.33 P
+-0.17 (, e.g. List and Lis-) 465.08 535.33 P
+1.36 (tIterator) 111.6 523.33 P
+1.36 (. Another example is a class which is part of the implementation of another class, e.g.) 145.51 523.33 P
+1.03 (StringRep and String. This case, however) 111.6 511.33 P
+1.03 (, can often be handled more ef) 300.74 511.33 P
+1.03 (fectively with a nested) 442.41 511.33 P
+(class.) 111.6 499.33 T
+142.02 472.73 72 472.73 2 L
+V
+N
+0 12 Q
+(Overloading) 72 474 T
+0 10 Q
+(64.) 85.9 455.33 T
+-0.65 (\050G\051) 111.6 455.33 P
+-0.65 (Except for constructors, overloading should be reserved for functions that are really do-) 131.6 455.33 P
+(ing the same thing and that have unrelated argument types.) 111.6 443.33 T
+1 F
+1.7 (Overloading and calling overloaded functions can decrease readability because it may not be) 111.6 425.33 P
+0.12 (explicitly clear to the reader which version of the function is being called. Make sure the bene\336t of) 111.6 413.33 P
+(overloading a function outweighs this cost.) 111.6 401.33 T
+0 F
+(65.) 85.9 383.33 T
+-0.3 (\050G\051) 111.6 383.33 P
+-0.3 (Overloaded operators should be used only for classes where they make sense and in a) 131.6 383.33 P
+(way that mimics the built-in operators.) 111.6 371.33 T
+1 F
+0.03 (Overloading operators in a non-intuitive way greatly decreases the readability of C++ code. It also) 111.6 353.33 P
+0.99 (carries the same disadvantages of overloading non-operator functions. Remember that de\336ning) 111.6 341.33 P
+(one operator is considered overloading, because built-in versions always exist.) 111.6 329.33 T
+0 F
+(66.) 85.9 311.33 T
+(\050R\051) 111.6 311.33 T
+(If an operator is de\336ned which has a complementary operator) 131.04 311.33 T
+(, its complement should) 423.35 311.33 T
+(also be de\336ned and in terms of the original operator) 111.6 299.33 T
+(.) 358.33 299.33 T
+3 F
+(Example) 111.6 281.33 T
+1 F
+(:) 150.5 281.33 T
+5 F
+(int operator==\050const String&, const String&\051;) 111.6 263.33 T
+(int operator!=\050const String& s1, const String& s2\051) 111.6 239.33 T
+({) 111.6 227.33 T
+(return !\050s1 == s2\051;) 135.6 215.33 T
+(}) 111.6 203.33 T
+0 F
+(67.) 85.9 186.33 T
+(\050G\051) 111.6 186.33 T
+(Conversion functions should be used sparingly) 131.6 186.33 T
+(.) 357.02 186.33 T
+1 F
+0.25 (Conversion functions are used implicitly by the C++ compiler) 111.6 168.33 P
+0.25 (. De\336ning too many conversions can) 380.91 168.33 P
+0.13 (lead to unexpected program behavior or to compile-time ambiguities. Counting on implicit conver-) 111.6 156.33 P
+0.22 (sions also decreases the readability of code. Remember that one-argument constructors are also) 111.6 144.33 P
+-0.16 (conversion functions. See Murray\325) 111.6 132.33 P
+-0.16 (s C++ Strategies and T) 261.56 132.33 P
+-0.16 (actics, pp. 37-44 for a good discussion of) 362.66 132.33 P
+(this topic.) 111.6 120.33 T
+0 F
+(68.) 85.9 102.33 T
+(\050R\051) 111.6 102.33 T
+(All unary operators should be de\336ned as members.) 131.04 102.33 T
+1 F
+0.16 (This will suppress the implicit conversions on the operand, which is a good thing from the point of) 111.6 84.33 P
+(view of readability and comprehension. See Murray) 111.6 72.33 T
+(, pp. 44-47 for details.) 338.17 72.33 T
+FMENDPAGE
+%%EndPage: "13" 13
+%%Page: "14" 14
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(14 -) 301.05 748 T
+72 68.67 543.33 720 R
+7 X
+V
+0 F
+0 X
+(69.) 85.9 713.33 T
+(\050R\051) 111.6 713.33 T
+(Compound assignments \050+=, -=, *=, etc.\051 should be de\336ned as members.) 131.04 713.33 T
+1 F
+0.94 (Since these are forms of assignment, suppression of implicit conversions on the left operand is) 111.6 695.33 P
+(also desirable in this case. Again, see Murray) 111.6 683.33 T
+(, pp. 44-47.) 312.05 683.33 T
+0 F
+(70.) 85.9 665.33 T
+(\050R\051) 111.6 665.33 T
+(All other binary operators should be de\336ned as friends.) 131.04 665.33 T
+1 F
+1.02 (Conversions on the left-hand operand make sense in the case of other binary operators. Since) 111.6 647.33 P
+0.92 (they tend to be symmetric and conversions take place on the right, it is confusing to the user if) 111.6 635.33 P
+(conversions do not happen on the left as well. Again, see Murray) 111.6 623.33 T
+(, pp. 44-47.) 397.67 623.33 T
+187.37 596.73 72 596.73 2 L
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Ellipses Arguments.) 72 598 T
+0 10 Q
+(71.) 85.9 579.33 T
+-0.25 (\050G\051) 111.6 579.33 P
+-0.25 (Ellipses should not be used except in very rare cases. These exceptional cases should) 131.6 579.33 P
+(use <stdargs.h>.) 111.6 567.33 T
+1 F
+0.67 (Ellipses short circuit type checking and conversions. They should only be used for functions like) 111.6 549.33 P
+(printf\050\051 where it is impossible to predict the number and types of the arguments.) 111.6 537.33 T
+0.34 (The use of <stdargs.h> for these functions is guaranteed to be portable. This replaces the use of) 111.6 519.33 P
+(<varargs.h> in K&R C.) 111.6 507.33 T
+147.35 480.73 72 480.73 2 L
+V
+N
+0 12 Q
+(Type Casting) 72 482 T
+0 10 Q
+(72.) 85.9 463.33 T
+(\050G\051) 111.6 463.33 T
+(T) 131.6 463.33 T
+(ype casts should not be used unless absolutely necessary) 136.97 463.33 T
+(.) 414.67 463.33 T
+1 F
+0.38 (Each occurrence of a cast should alert the reader to some special need to override the type sys-) 111.6 445.33 P
+(tem of C++. They should not be inserted routinely or for insigni\336cant reasons.) 111.6 433.33 T
+212.71 406.73 72 406.73 2 L
+V
+N
+0 12 Q
+(References and Pointers) 72 408 T
+1 10 Q
+0.26 (Using references and pointers correctly can increase the readability of C++ code by forcing a programmer) 72 389.33 P
+(to state explicitly how a variable is used.) 72 377.33 T
+0 F
+(73.) 85.9 359.33 T
+-0.19 (\050G\051) 111.6 359.33 P
+-0.19 (Pointers should be used when you want multiple references to the same object or a dy-) 131.6 359.33 P
+(namic data structure.) 111.6 347.33 T
+1 F
+0.78 (In C, pointers were used to simulate \322call by reference\323 as well as for multiple references to the) 111.6 329.33 P
+(same object. In C++, pointers should not be used to pass an object by reference.) 111.6 317.33 T
+0 F
+(74.) 85.9 299.33 T
+(\050G\051) 111.6 299.33 T
+(References should be used whenever a parameter is being passed \322by reference\323.) 131.6 299.33 T
+1 F
+0.94 (This also leads to more readable code inside the function because parameters are not derefer-) 111.6 281.33 P
+(enced throughout.) 111.6 269.33 T
+131.35 242.73 72 242.73 2 L
+V
+N
+0 12 Q
+(Templates) 72 244 T
+0 10 Q
+(75.) 85.9 225.33 T
+-0.19 (\050G\051) 111.6 225.33 P
+-0.19 (The necessary member functions should be de\336ned for T in order for T to be used as a) 131.6 225.33 P
+(template parameter) 111.6 213.33 T
+(.) 203.3 213.33 T
+1 F
+0.75 (Member functions of a parameterized \050template\051 class may rely on functions of its parameter) 111.6 195.33 P
+0.75 (,) 529.35 195.33 P
+5 F
+1.63 (T) 535.66 195.33 P
+1 F
+0.75 (.) 540.55 195.33 P
+1.51 (For example, a) 111.6 183.33 P
+5 F
+3.27 (sort\050\051) 185.61 183.33 P
+1 F
+1.51 ( operation of a) 221.61 183.33 P
+5 F
+3.27 (List<T>) 294.37 183.33 P
+1 F
+1.51 ( may assume that) 336.37 183.33 P
+5 F
+3.27 (T) 424.12 183.33 P
+1 F
+1.51 ( has de\336ned an) 430.12 183.33 P
+5 F
+3.27 (opera-) 507.33 183.33 P
+(tor<\050\051) 111.6 171.33 T
+1 F
+(.) 147.6 171.33 T
+223.36 144.73 72 144.73 2 L
+V
+N
+0 12 Q
+(Static Object Construction) 72 146 T
+0 10 Q
+(76.) 85.9 127.33 T
+-0.2 (\050G\051) 111.6 127.33 P
+-0.2 (Static objects from other \336les should not be used in functions called at static construc-) 131.6 127.33 P
+(tor time.) 111.6 115.33 T
+1 F
+1.92 (A well-known problem with C++ is that the order of execution of static object constructors is) 111.6 97.33 P
+1 (de\336ned only within a single \336le. Therefore, references to a static object from another \336le with a) 111.6 85.33 P
+FMENDPAGE
+%%EndPage: "14" 14
+%%Page: "15" 15
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(15 -) 301.05 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+1 F
+0 X
+1.02 (static object constructor may fail mysteriously at the time of execution. This situation should be) 111.6 713.33 P
+(avoided altogether) 111.6 701.33 T
+(.) 193.32 701.33 T
+141.35 674.73 72 674.73 2 L
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Initialization) 72 676 T
+0 10 Q
+(77.) 85.9 657.33 T
+(\050G\051) 111.6 657.33 T
+(Initialization should be preferred to assignment.) 131.6 657.33 T
+1 F
+1.12 (An initialization is generally more ef) 111.6 639.33 P
+1.12 (\336cient than a declaration followed by an assignment. In the) 273.72 639.33 P
+0.1 (case of a class object, the latter will result in two function calls \050constructor plus assignment oper-) 111.6 627.33 P
+(ator\051; but initialization entails one call to a constructor) 111.6 615.33 T
+(.) 346.15 615.33 T
+0.16 (This implies that variables should be declared very close to where they are used. Note that this is) 111.6 597.33 P
+(counter to the C convention to put all declarations at the top of a block.) 111.6 585.33 T
+FMENDPAGE
+%%EndPage: "15" 15
+%%Page: "16" 16
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(16 -) 301.05 748 T
+72 68.67 543.33 720 R
+7 X
+V
+0 12 Q
+0 X
+(VI.) 72 712 T
+(Design Conventions) 93.35 712 T
+1 10 Q
+1.15 (The following guidelines pertain to the creation and review of the design of an object-oriented program.) 72 693.33 P
+0.2 (Some of these can be checked and metrics about them can be collected from code \050assuming a particular) 72 681.33 P
+0.22 (mapping from design to code\051; but their compliance must be at the design level. These are vague, as they) 72 669.33 P
+0.06 (re\337ect the state of object-oriented design heuristics, but may be useful as rules of thumb while creating the) 72 657.33 P
+(design.) 72 645.33 T
+127.36 618.73 72 618.73 2 L
+V
+0.88 H
+0 Z
+N
+0 12 Q
+(Hierarchy) 72 620 T
+1 10 Q
+(The \336rst two guidelines caution against creating classes when other alternatives are preferable.) 72 601.33 T
+0 F
+(78.) 85.9 583.33 T
+(\050G\051) 111.6 583.33 T
+(Deep class hierarchies \050e.g. more than 3 levels\051 should be scrutinized.) 131.6 583.33 T
+1 F
+1.63 (Deep class hierarchies increase the complexity of an application and make it more dif) 111.6 565.33 P
+1.63 (\336cult to) 510.02 565.33 P
+1.58 (understand a particular class deep in the class structure. Sometimes, adding a function to an) 111.6 553.33 P
+(existing class is preferable to deriving an additional class.) 111.6 541.33 T
+0 F
+(79.) 85.9 523.33 T
+(\050G\051) 111.6 523.33 T
+(W) 131.6 523.33 T
+(ide class hierarchies \050e.g. more than 3 children\051 should be scrutinized.) 140.95 523.33 T
+1 F
+0.85 (A wide and shallow class structure may not exploit all the commonality that exists. Wide hierar-) 111.6 505.33 P
+1.41 (chies may also suggest the potential for the use of templates for a more compact design and) 111.6 493.33 P
+(implementation notation.) 111.6 481.33 T
+160.69 454.73 72 454.73 2 L
+V
+N
+0 12 Q
+(Class Structure) 72 456 T
+0 10 Q
+(80.) 85.9 437.33 T
+(\050G\051) 111.6 437.33 T
+(A class should be suf\336cient and complete.) 131.6 437.33 T
+1 F
+0.31 (The class is) 111.6 419.33 P
+3 F
+0.31 (sufficient) 168.1 419.33 P
+1 F
+0.31 ( if it captures enough characteristics of the abstraction to permit meaningful) 207.56 419.33 P
+(interactions. It is) 111.6 407.33 T
+3 F
+(complete) 186.63 407.33 T
+1 F
+( if it contains all meaningful characteristics.) 227.2 407.33 T
+0 F
+(81.) 85.9 389.33 T
+(\050G\051) 111.6 389.33 T
+(A class with too few \050e.g. < 3\051 operations should be scrutinized.) 131.6 389.33 T
+1 F
+(Classes with too few responsibilities should sometimes be merged with other classes.) 111.6 371.33 T
+0 F
+(82.) 85.9 353.33 T
+(\050G\051) 111.6 353.33 T
+(A class with too many \050e.g. > 10\051 operations should be scrutinized.) 131.6 353.33 T
+1 F
+-0.21 (Classes with too much knowledge and responsibility should sometimes be split into more than one) 111.6 335.33 P
+(class.) 111.6 323.33 T
+0 F
+(83.) 85.9 305.33 T
+(\050G\051) 111.6 305.33 T
+(A class should be cohesive.) 131.6 305.33 T
+1 F
+-0.23 (The operations of a class should be highly connected by data and functionality) 111.6 287.33 P
+-0.23 (. If a class has oper-) 454.43 287.33 P
+-0.23 (ations which depend on disjoint sets of data members, it probably represents more than one class.) 111.6 275.33 P
+186.04 248.73 72 248.73 2 L
+V
+N
+0 12 Q
+(Class Relationships) 72 250 T
+0 10 Q
+(84.) 85.9 231.33 T
+(\050G\051) 111.6 231.33 T
+(A class should not depend in any way on a structure of any other class \050Law of Deme-) 131.6 231.33 T
+(ter\051.) 111.6 219.33 T
+1 F
+0.19 (This is a restatement of the need for encapsulation and information hiding. Classes should obtain) 111.6 201.33 P
+(information about other classes only through the interface of the other class.) 111.6 189.33 T
+0 F
+(85.) 85.9 171.33 T
+(\050G\051) 111.6 171.33 T
+(Class coupling should be minimized.) 131.6 171.33 T
+1 F
+0.87 (Class coupling is the number of collaborations a class has with another class. Fewer collabora-) 111.6 153.33 P
+0.93 (tions means that the class is less likely to be af) 111.6 141.33 P
+0.93 (fected by changes to other parts of the system.) 328.02 141.33 P
+-0.27 (Also, classes which do not know about many other classes may be more reusable. Operations can) 111.6 129.33 P
+(sometimes be reassigned or new classes created to decrease the number of collaborations.) 111.6 117.33 T
+0 F
+(86.) 85.9 99.33 T
+(\050G\051) 111.6 99.33 T
+(T) 131.6 99.33 T
+(emplates should be used when appropriate instead of inheritance.) 136.97 99.33 T
+FMENDPAGE
+%%EndPage: "16" 16
+%%Page: "17" 17
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 743.98 540 756 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(-) 293.72 748 T
+1 10 Q
+(17 -) 301.05 748 T
+219.33 12.02 399.33 50.67 R
+7 X
+V
+2 F
+0 X
+(AT&T - PROPRIETARY) 260.44 30 T
+72 68.67 543.33 720 R
+7 X
+V
+1 F
+0 X
+0.49 (Use templates to describe a family of classes as a single \322generic\323 class when the dif) 111.6 713.33 P
+0.49 (ferences in) 493.93 713.33 P
+(structure and implementation can be characterized by a small set of type parameters.) 111.6 701.33 T
+0 F
+(87.) 85.9 683.33 T
+(\050G\051) 111.6 683.33 T
+(Inheritance should not be used for has-a relationships.) 131.6 683.33 T
+1 F
+0.33 (Has-a design relationships are best implemented by containment, where one class has an object) 111.6 665.33 P
+(\050or reference or pointer to an object\051 of the other class as a member) 111.6 653.33 T
+(.) 411.18 653.33 T
+0 F
+(88.) 85.9 635.33 T
+(\050G\051) 111.6 635.33 T
+(Multiple inheritance should be used sparingly) 131.6 635.33 T
+(.) 348.14 635.33 T
+1 F
+-0.21 (Multiple inheritance is a fairly new feature of object-oriented languages. Use of MI introduces com-) 111.6 617.33 P
+0.43 (plexities and potential ambiguities into any C++ program. This feature should be used only when) 111.6 605.33 P
+(necessary and only if all facets are well-understood.) 111.6 593.33 T
+FMENDPAGE
+%%EndPage: "17" 17
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Ascend
+%%Pages: 17
+%%DocumentFonts: Helvetica-Bold
+%%+ Helvetica
+%%+ Times-Italic
+%%+ Helvetica-Oblique
+%%+ Times-Roman
+%%+ Courier-Bold
+%%EOF

@@ -1,0 +1,92 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/memory.query	1.1" */
+/* more memory management */
+ROOTPROC newdel
+
+PROC newdel
+ROOT CFile;
+{
+(PRINT msgout "MEMORY MANAGEMENT\n")
+(CALL nomalloc)
+<globals
+ {Declaration
+   (?AggrDef (CALL checkaggr_newdel))
+   (?FunctionDef <body (CALL checkstmt_newdel)>)
+ }
+>
+}
+
+PROC nomalloc
+ROOT CFile;
+{
+LOCAL GNODE id;
+  <globals {Declaration
+    [(?UserCall
+      <callname
+        (ASSIGN id (SLOT id $token))
+        (IF (OR (EQUAL id "malloc")
+                (EQUAL id "calloc")
+                (EQUAL id "realloc")
+                (EQUAL id "free"))
+            (THEN (PRINT msgout "%s: use of %s instead of operator new/delete (NMF).\n" $location $token))
+        )
+      >
+    )]
+  }>
+}
+
+PROC checkstmt_newdel
+ROOT Statement;
+{
+  (?Block
+    <locals {Declaration
+      (?AggrDef (CALL checkaggr_newdel))
+    }>
+    <blockbody {Statement (CALL checkstmt_newdel)}>
+  )
+  (?If
+    <ifTbranch (CALL checkstmt_newdel)>
+    <ifFbranch (CALL checkstmt_newdel)>
+  )
+  (?While <whilebody (CALL checkstmt_newdel)>)
+  (?Do <dobody (CALL checkstmt_newdel)>)
+  (?For
+    <forinit (CALL checkstmt_newdel)>
+    <forbody (CALL checkstmt_newdel)>
+  )
+  (?Switch <switchbody (CALL checkstmt_newdel)>)
+}
+
+PROC checkaggr_newdel
+ROOT AggrDef;
+{
+LOCAL GNODE hn;
+LOCAL GNODE hd;
+(ASSIGN hn 0)
+(ASSIGN hd 0)
+  <members {MemberSpec
+    (?MemberDeclaration
+      <def
+        (?AggrDef (CALL checkaggr_newdel))
+        (?FunctionSpec
+          (IF (EQUAL (SLOT id $token) "new")
+              (THEN (ASSIGN hn 1))
+              (ELSE (IF (EQUAL (SLOT id $token) "delete")
+                        (THEN (ASSIGN hd 1))
+                    )
+              )
+          )
+          (?FunctionDef <body (CALL checkstmt_newdel)>)
+        )
+      >
+    )
+  }>
+  (IF (NOT (EQUAL hn hd))
+      (THEN (PRINT msgout "class %s at %s defines "
+                   (SLOT defname $token) $location)
+            (IF (EQUAL hn 0)
+                (THEN (PRINT msgout "operator delete but not operator new (ODNN).\n"))
+                (ELSE (PRINT msgout "operator new but not operator delete (ONND).\n"))
+            )
+      )
+  )
+}

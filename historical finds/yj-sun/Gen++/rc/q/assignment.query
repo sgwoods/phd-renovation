@@ -1,0 +1,349 @@
+/*ident	"@(#)gen++:d.pkg/rc/q/assignment.query	1.1" */
+/* assignment operator checker */
+
+ROOTPROC assignOp
+
+PROC assignOp
+ROOT CFile;
+{
+LOCAL GNODE is_ass;
+LOCAL GNODE cname;
+
+(PRINT msgout "ASSIGNMENT OPERATOR\n")
+
+<globals
+  {Declaration
+    [(?FunctionSpec
+      (ASSIGN is_ass (CALL isAssOp))
+      (IF (EQUAL is_ass 1) 
+        (THEN
+          <type (?FunctionType (ASSIGN cname (SLOT member_of $token)))>
+          (CALL checkRetType cname)
+          (?FunctionDef (CALL checkAssDef cname))
+        )
+      )
+    )]
+  }
+>   
+}
+
+FUNCTION isAssOp
+ROOT FunctionSpec;
+{
+  (IF (EQUAL (SLOT id $token) "=") (THEN (RETURN 1))
+  (ELSE (RETURN 0)))
+}
+
+FUNCTION isClassAssOp
+ARG GNODE cname;
+ROOT FunctionSpec;
+{
+  LOCAL GNODE decl;
+
+  <args
+    {Declaration 
+      (ASSIGN decl $token)
+      (IF (NOT (NULL (NEXT decl))) (THEN (RETURN 0)))
+      <type 
+        (?RefType <refers_to 
+          (?ClassType <refname
+            (IF (EQUAL cname $token) (THEN (RETURN 1))) 
+          >)
+        >)
+      >
+    }
+  >
+  (RETURN 0)
+}
+
+FUNCTION minus
+ARG GNODE list;
+ARG GNODE item;
+ROOT G_AnyType;
+{
+  LOCAL GNODE nlist;
+  LOCAL GNODE car;
+
+  (ASSIGN nlist (NIL C_String))
+  (ASSIGN car (CAR list))
+
+  (WHILE (AND (NOT (EMPTY list)) (NOT (EQUAL car item)))
+    (ASSIGN nlist (CONS car nlist))
+    (ASSIGN list (CDR list))
+    (ASSIGN car (CAR list))
+  )
+  (IF (NOT (EMPTY list)) 
+    (THEN (ASSIGN nlist (APPEND nlist (CDR list))))
+  )
+  (RETURN nlist)
+}
+
+PROC returnStarThis
+ARG GNODE cname;
+ROOT FunctionDef;
+{
+  LOCAL GNODE ret_ok;
+  LOCAL GNODE no_ret;
+
+  (ASSIGN ret_ok 1) (ASSIGN no_ret 1)
+  [ (?Return 
+      (ASSIGN no_ret 0)
+      <value
+        (IF (NOT (TYPEOF $token Deref)) (THEN (ASSIGN ret_ok 0)))
+        (?Deref <ue_arg 
+          (IF (NOT (EQUAL (SLOT id $token) "this"))
+            (THEN (ASSIGN ret_ok 0))
+          )
+        >)
+      >
+    )
+  ]
+
+  (IF (OR (EQUAL ret_ok 0) (EQUAL no_ret 1)) 
+    (THEN
+      (PRINT msgout 
+        "%s: %s::operator=() should return *this (OERT).\n" $location cname
+      )
+    )
+  )
+}
+
+PROC baseAssign
+ARG GNODE cname;
+ROOT FunctionDef;
+{
+  LOCAL GNODE blist;
+  LOCAL GNODE opclass;
+
+  /* collect base classes */
+  (ASSIGN blist (NIL C_String))
+  <type (?FunctionType <member_of <def 
+    (?ClassDef <bases
+      {BaseSpec
+        <allocation (?BA_Promoted (CONTINUE))>
+        <refname (ASSIGN blist (CONS (SLOT id $token) blist))>
+      }
+    >)
+  >>)>
+  (IF (EMPTY blist) (THEN (RETURN)))
+
+  /* look for base class assignments */
+  <body <blockbody
+    [
+      (?FunCall <callname <def
+        (IF (EQUAL "=" (SLOT id $token))
+          (THEN
+            <qualifier (ASSIGN opclass (SLOT id $token)) >
+            (ASSIGN blist (CALL minus blist opclass))
+            (IF (EMPTY blist) (THEN (RETURN)))
+          )
+        )
+      >>)
+    ]
+  >>
+
+  (WHILE (NOT (EMPTY blist))
+    (PRINT msgout 
+      "%s: %s::operator=() should call %s::operator=() (OECOE).\n"
+      $location cname (CAR blist)
+    )
+    (ASSIGN blist (CDR blist))
+  )
+}
+
+PROC assOpAss
+ARG GNODE cname;
+ROOT FunctionDef;
+{
+  LOCAL GNODE mlist;
+  LOCAL GNODE alist;
+  LOCAL GNODE nlist;
+  LOCAL GNODE assmem;
+  LOCAL GNODE tname;
+  LOCAL GNODE elem;
+
+  /* collect class data members */
+  (ASSIGN mlist (NIL C_String))
+  <type (?FunctionType <member_of <def 
+    (?ClassDef <members
+      {MemberSpec
+        (?NestedDeclaration <def
+          (?ObjectDef 
+	    (IF (NOT (TYPEOF (SLOT storage $token) SC_Static))
+              (THEN
+                (ASSIGN mlist (CONS (SLOT id $token) mlist))
+              )
+            )
+          )
+        >)
+      }
+    >)
+  >>)>
+
+  /* check assignments */
+  (ASSIGN alist (NIL C_String))
+  [(?MemberRef 
+    (IF (AND (TYPEOF $parent Assignment) (EQUAL $slot "be_lhs"))
+      (THEN 
+        <member <id (ASSIGN assmem $token)>>
+        <aggrtype <refname (ASSIGN tname $token)>>
+        (IF (EQUAL tname cname) 
+          (THEN
+            (ASSIGN alist (CONS assmem alist))
+          )
+        )
+      )
+    )
+  )]
+
+  (ASSIGN nlist (NIL C_String))
+
+  (WHILE (NOT (EMPTY mlist))
+    (ASSIGN elem (CAR mlist))
+    (IF (NOT (MEMBER-EQUAL elem alist))
+      (THEN
+        (ASSIGN nlist (CONS elem nlist))
+      )
+    )
+    (ASSIGN mlist (CDR mlist))
+  )
+
+  (IF (NOT (EMPTY nlist)) 
+    (THEN
+      (PRINT msgout "%s: " $location)
+      (WHILE (NOT (EMPTY nlist))
+        (PRINT msgout "%s " (CAR nlist)) 
+        (ASSIGN nlist (CDR nlist))
+      )
+      (PRINT msgout "not assigned to in %s::operator=() (NAOE).\n" cname)
+    )
+  )
+}
+
+PROC assignSelf
+ARG GNODE cname;
+ROOT FunctionDef;
+{
+  LOCAL GNODE argname;
+  LOCAL GNODE opname;
+  LOCAL GNODE lok;
+  LOCAL GNODE rok;
+
+  /* get name of argument */
+  <args {Declaration (ASSIGN argname (SLOT id $token)) } >
+
+  (ASSIGN lok 0) (ASSIGN rok 0)
+  [(?EqEq 
+    <be_lhs [(?IdName 
+        (IF (EQUAL "this" (SLOT id $token))
+          (THEN (ASSIGN lok 1))
+        )
+    )]>
+    <be_rhs [(?IdName 
+        (IF (EQUAL argname (SLOT id $token))
+          (THEN (ASSIGN rok 1))
+        )
+    )]>
+
+    (IF (AND (EQUAL lok 1) (EQUAL rok 1))
+      (THEN (RETURN))
+    )
+
+    (ASSIGN lok 0) (ASSIGN rok 0)
+    <be_lhs [(?IdName 
+        (IF (EQUAL argname (SLOT id $token))
+          (THEN (ASSIGN lok 1))
+        )
+    )]>
+    <be_rhs [(?IdName 
+        (IF (EQUAL "this" (SLOT id $token))
+          (THEN (ASSIGN rok 1))
+        )
+    )]>
+  )]
+
+  (IF (AND (EQUAL lok 1) (EQUAL rok 1))
+    (THEN (RETURN))
+  )
+  (ASSIGN lok 0) (ASSIGN rok 0)
+
+  [(?GOperatorCall
+    (IF (EQUAL $slot "ifcondition") 
+      (THEN
+        <callname (?FunctionName (ASSIGN opname (SLOT id $token)))>
+        (IF (EQUAL opname "==")
+          (THEN
+            <callargs [(?IdName 
+              (IF (EQUAL "this" (SLOT id $token))
+                (THEN (ASSIGN lok 1))
+              )
+              (IF (EQUAL argname (SLOT id $token))
+                (THEN (ASSIGN rok 1))
+              )
+            )]>
+          )
+        )
+      )
+    )
+  )]
+
+  (IF (AND (EQUAL lok 1) (EQUAL rok 1))
+    (THEN (RETURN))
+  )
+
+  (PRINT msgout 
+   "%s: %s::operator=() should check for assignment to self (OECAS).\n"
+   $location cname
+  )
+}
+
+PROC checkAssDef
+ARG GNODE cname;
+ROOT FunctionDef;
+{
+  /* check for return *this */
+  (CALL returnStarThis cname)
+
+  /* check all data members assigned */
+  (CALL assOpAss cname)
+
+  /* check base members assigned */
+  (CALL baseAssign cname)
+
+  /* check for assignment to self */
+  (IF (EQUAL 1 (CALL isClassAssOp cname))
+    (THEN
+      (CALL assignSelf cname)
+    )
+  )
+}
+
+PROC checkRetType
+ARG GNODE cname;
+ROOT FunctionSpec;
+{
+  LOCAL GNODE ok;
+
+  /* check for const T& return type */
+  /* NOTE: due to a bug in hte interface, const cannot be detected */
+  (ASSIGN ok 0)
+  <returntype
+    (?RefType <refers_to 
+      (?ClassType
+        <refname
+          (IF (EQUAL cname $token)
+              (THEN (ASSIGN ok 1))
+          )
+        >
+      )
+    >)
+  >
+  (IF (NOT (EQUAL ok 1)) 
+    (THEN 
+      (PRINT msgout 
+        "%s: %s::operator=() should have return type const %s& (OERETC).\n" 
+        $location cname cname
+      )
+    )
+  )
+}

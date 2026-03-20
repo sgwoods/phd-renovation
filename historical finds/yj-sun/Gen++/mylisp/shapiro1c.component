@@ -1,0 +1,7147 @@
+
+(shapiro1c_stmt824
+ (
+(shapiro1c_1 1 shapiro_wilk 824 (Finish))
+ )
+)
+
+(shapiro1c_stmt14 
+ (
+(shapiro1c_2 2 shapiro_wilk 14 (Assign sumx 0.0) (sumx 0.0) (sumx))
+ )
+ ( (sumx shapiro1c 11)  )
+ ( (sumx shapiro1c 11)  )
+)
+
+(shapiro1c_stmt15 
+ (
+(shapiro1c_3 3 shapiro_wilk 15 (Assign sumx2 0.0) (sumx2 0.0) (sumx2))
+ )
+ ( (sumx2 shapiro1c 11)  )
+ ( (sumx2 shapiro1c 11)  )
+)
+
+(shapiro1c_stmt17 
+ (
+(shapiro1c_4 4 shapiro_wilk 17 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt17then
+ (
+(shapiro1c_5 5 shapiro_wilk 17 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond1 
+ (
+(shapiro1c_6 6 shapiro_wilk 17 (Mult n 1 shapiro1c_R_1) (n 1 shapiro1c_R_1) (shapiro1c_R_1))
+(shapiro1c_7 7 shapiro_wilk 17 (UserCall malloc shapiro1c_R_1  shapiro1c_R_2) (shapiro1c_R_1 shapiro1c_R_2) (shapiro1c_R_2))
+(shapiro1c_8 8 shapiro_wilk 17 (Assign xcopy shapiro1c_R_2) (xcopy shapiro1c_R_2) (xcopy))
+(shapiro1c_9 9 shapiro_wilk 17 (EqEq shapiro1c_R_2 0 shapiro1c_R_3) (shapiro1c_R_2 0 shapiro1c_R_3) (shapiro1c_R_3))
+ )
+ ( (xcopy shapiro1c 10) (n shapiro1c 8)  )
+ ( (xcopy shapiro1c 10)  )
+)
+
+(shapiro1c_stmt18 
+ (
+(shapiro1c_10 10 shapiro_wilk 18 (Uminus 1 shapiro1c_R_4) (1 shapiro1c_R_4) (shapiro1c_R_4))
+(shapiro1c_11 11 shapiro_wilk 18 (UserCall exit shapiro1c_R_4  shapiro1c_R_5) (shapiro1c_R_4 shapiro1c_R_5) (shapiro1c_R_5))
+(shapiro1c_12 12 shapiro_wilk 18 (Index _iob 2 shapiro1c_R_6) (_iob 2) (shapiro1c_R_6))
+(shapiro1c_13 13 shapiro_wilk 18 (AddrOf shapiro1c_R_6 shapiro1c_R_7) (shapiro1c_R_6 shapiro1c_R_7) (shapiro1c_R_7))
+(shapiro1c_14 14 shapiro_wilk 18 (UserCall fprintf shapiro1c_R_7 StringConst  shapiro1c_R_8) (shapiro1c_R_7 StringConst shapiro1c_R_8) (shapiro1c_R_8))
+(shapiro1c_15 15 shapiro_wilk 18 (Comma shapiro1c_R_8 shapiro1c_R_5 shapiro1c_R_9) (shapiro1c_R_8 shapiro1c_R_5 shapiro1c_R_9) (shapiro1c_R_9))
+ )
+ ( ( ::_iob shapiro1c 15)  )
+ (  )
+)
+
+(shapiro1c_stmt20 
+ (
+(shapiro1c_16 16 shapiro_wilk 20 (Div n 2 shapiro1c_R_10) (n 2 shapiro1c_R_10) (shapiro1c_R_10))
+(shapiro1c_17 17 shapiro_wilk 20 (Assign k shapiro1c_R_10) (k shapiro1c_R_10) (k))
+ )
+ ( (k shapiro1c 12) (n shapiro1c 8)  )
+ ( (k shapiro1c 12)  )
+)
+
+(shapiro1c_stmt21
+ (
+(shapiro1c_18 18 shapiro_wilk 21 (ForLoop))
+ )
+)
+
+(shapiro1c_Cond2 
+ (
+(shapiro1c_19 19 shapiro_wilk 21 (Less i n shapiro1c_R_11) (i n shapiro1c_R_11) (shapiro1c_R_11))
+ )
+ ( (i shapiro1c 12) (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt21test
+ (
+(shapiro1c_20 20 shapiro_wilk 21 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt21init 
+ (
+(shapiro1c_21 21 shapiro_wilk 21 (Assign i 0) (i 0) (i))
+ )
+ ( (i shapiro1c 12)  )
+ ( (i shapiro1c 12)  )
+)
+
+(shapiro1c_stmt21incr 
+ (
+(shapiro1c_22 22 shapiro_wilk 21 (Plus i  1 shapiro1c_R_12) (i shapiro1c_R_12) (shapiro1c_R_12))
+(shapiro1c_23 23 shapiro_wilk 21 (Assign i shapiro1c_R_12) (i shapiro1c_R_12) (i))
+ )
+ ( (i shapiro1c 12)  )
+ ( (i shapiro1c 12)  )
+)
+
+(shapiro1c_stmt23 
+ (
+(shapiro1c_24 24 shapiro_wilk 23 (Index xcopy i shapiro1c_R_13) (xcopy i) (shapiro1c_R_13))
+(shapiro1c_25 25 shapiro_wilk 23 (Index x i shapiro1c_R_14) (x i) (shapiro1c_R_14))
+(shapiro1c_26 26 shapiro_wilk 23 (Assign shapiro1c_R_13 shapiro1c_R_14) (shapiro1c_R_13 shapiro1c_R_14) (shapiro1c_R_13))
+ )
+ ( (xcopy shapiro1c 10) (i shapiro1c 12) (x shapiro1c 8) (i shapiro1c 12)  )
+ (  )
+)
+
+(shapiro1c_stmt24 
+ (
+(shapiro1c_27 27 shapiro_wilk 24 (Index x i shapiro1c_R_15) (x i) (shapiro1c_R_15))
+(shapiro1c_28 28 shapiro_wilk 24 (PlusAssign sumx shapiro1c_R_15) (sumx shapiro1c_R_15) (sumx))
+ )
+ ( (sumx shapiro1c 11) (x shapiro1c 8) (i shapiro1c 12)  )
+ ( (sumx shapiro1c 11)  )
+)
+
+(shapiro1c_stmt25 
+ (
+(shapiro1c_29 29 shapiro_wilk 25 (Index x i shapiro1c_R_16) (x i) (shapiro1c_R_16))
+(shapiro1c_30 30 shapiro_wilk 25 (Index x i shapiro1c_R_17) (x i) (shapiro1c_R_17))
+(shapiro1c_31 31 shapiro_wilk 25 (Mult shapiro1c_R_17 shapiro1c_R_16 shapiro1c_R_18) (shapiro1c_R_17 shapiro1c_R_16 shapiro1c_R_18) (shapiro1c_R_18))
+(shapiro1c_32 32 shapiro_wilk 25 (PlusAssign sumx2 shapiro1c_R_18) (sumx2 shapiro1c_R_18) (sumx2))
+ )
+ ( (sumx2 shapiro1c 11) (x shapiro1c 8) (i shapiro1c 12) (x shapiro1c 8) (i shapiro1c 12)  )
+ ( (sumx2 shapiro1c 11)  )
+)
+
+(shapiro1c_stmt27 
+ (
+(shapiro1c_33 33 shapiro_wilk 27 (Mult sumx sumx shapiro1c_R_19) (sumx sumx shapiro1c_R_19) (shapiro1c_R_19))
+(shapiro1c_34 34 shapiro_wilk 27 (Div shapiro1c_R_19 n shapiro1c_R_20) (shapiro1c_R_19 n shapiro1c_R_20) (shapiro1c_R_20))
+(shapiro1c_35 35 shapiro_wilk 27 (Minus sumx2 shapiro1c_R_20 shapiro1c_R_21) (sumx2 shapiro1c_R_20 shapiro1c_R_21) (shapiro1c_R_21))
+(shapiro1c_36 36 shapiro_wilk 27 (Assign s2 shapiro1c_R_21) (s2 shapiro1c_R_21) (s2))
+ )
+ ( (s2 shapiro1c 10) (sumx2 shapiro1c 11) (sumx shapiro1c 11) (sumx shapiro1c 11) (n shapiro1c 8)  )
+ ( (s2 shapiro1c 10)  )
+)
+
+(shapiro1c_stmt28 
+ (
+(shapiro1c_37 37 shapiro_wilk 28 (AddrOf dcmp shapiro1c_R_22) (dcmp shapiro1c_R_22) (shapiro1c_R_22))
+(shapiro1c_38 38 shapiro_wilk 28 (UserCall qsort xcopy n 1 shapiro1c_R_22  shapiro1c_R_23) (xcopy n 1 shapiro1c_R_22 shapiro1c_R_23) (shapiro1c_R_23))
+ )
+)
+
+(shapiro1c_stmt30 
+ (
+(shapiro1c_39 39 shapiro_wilk 30 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt30then
+ (
+(shapiro1c_40 40 shapiro_wilk 30 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt30else
+ (
+(shapiro1c_41 41 shapiro_wilk 30 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond3 
+ (
+(shapiro1c_42 42 shapiro_wilk 30 (EqEq n 3 shapiro1c_R_24) (n 3 shapiro1c_R_24) (shapiro1c_R_24))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt32 
+ (
+(shapiro1c_43 43 shapiro_wilk 32 (Index a 0 shapiro1c_R_25) (a 0) (shapiro1c_R_25))
+(shapiro1c_44 44 shapiro_wilk 32 (Assign shapiro1c_R_25 .7071) (shapiro1c_R_25 .7071) (shapiro1c_R_25))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt34 
+ (
+(shapiro1c_45 45 shapiro_wilk 34 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt34then
+ (
+(shapiro1c_46 46 shapiro_wilk 34 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt34else
+ (
+(shapiro1c_47 47 shapiro_wilk 34 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond4 
+ (
+(shapiro1c_48 48 shapiro_wilk 34 (EqEq n 4 shapiro1c_R_26) (n 4 shapiro1c_R_26) (shapiro1c_R_26))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt36 
+ (
+(shapiro1c_49 49 shapiro_wilk 36 (Index a 0 shapiro1c_R_27) (a 0) (shapiro1c_R_27))
+(shapiro1c_50 50 shapiro_wilk 36 (Assign shapiro1c_R_27 .6872) (shapiro1c_R_27 .6872) (shapiro1c_R_27))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt37 
+ (
+(shapiro1c_51 51 shapiro_wilk 37 (Index a 1 shapiro1c_R_28) (a 1) (shapiro1c_R_28))
+(shapiro1c_52 52 shapiro_wilk 37 (Assign shapiro1c_R_28 .1677) (shapiro1c_R_28 .1677) (shapiro1c_R_28))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt39 
+ (
+(shapiro1c_53 53 shapiro_wilk 39 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt39then
+ (
+(shapiro1c_54 54 shapiro_wilk 39 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt39else
+ (
+(shapiro1c_55 55 shapiro_wilk 39 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond5 
+ (
+(shapiro1c_56 56 shapiro_wilk 39 (EqEq n 5 shapiro1c_R_29) (n 5 shapiro1c_R_29) (shapiro1c_R_29))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt41 
+ (
+(shapiro1c_57 57 shapiro_wilk 41 (Index a 0 shapiro1c_R_30) (a 0) (shapiro1c_R_30))
+(shapiro1c_58 58 shapiro_wilk 41 (Assign shapiro1c_R_30 .6646) (shapiro1c_R_30 .6646) (shapiro1c_R_30))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt42 
+ (
+(shapiro1c_59 59 shapiro_wilk 42 (Index a 1 shapiro1c_R_31) (a 1) (shapiro1c_R_31))
+(shapiro1c_60 60 shapiro_wilk 42 (Assign shapiro1c_R_31 .2413) (shapiro1c_R_31 .2413) (shapiro1c_R_31))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt44 
+ (
+(shapiro1c_61 61 shapiro_wilk 44 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt44then
+ (
+(shapiro1c_62 62 shapiro_wilk 44 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt44else
+ (
+(shapiro1c_63 63 shapiro_wilk 44 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond6 
+ (
+(shapiro1c_64 64 shapiro_wilk 44 (EqEq n 6 shapiro1c_R_32) (n 6 shapiro1c_R_32) (shapiro1c_R_32))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt46 
+ (
+(shapiro1c_65 65 shapiro_wilk 46 (Index a 0 shapiro1c_R_33) (a 0) (shapiro1c_R_33))
+(shapiro1c_66 66 shapiro_wilk 46 (Assign shapiro1c_R_33 .6431) (shapiro1c_R_33 .6431) (shapiro1c_R_33))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt47 
+ (
+(shapiro1c_67 67 shapiro_wilk 47 (Index a 1 shapiro1c_R_34) (a 1) (shapiro1c_R_34))
+(shapiro1c_68 68 shapiro_wilk 47 (Assign shapiro1c_R_34 .2806) (shapiro1c_R_34 .2806) (shapiro1c_R_34))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt48 
+ (
+(shapiro1c_69 69 shapiro_wilk 48 (Index a 2 shapiro1c_R_35) (a 2) (shapiro1c_R_35))
+(shapiro1c_70 70 shapiro_wilk 48 (Assign shapiro1c_R_35 .0875) (shapiro1c_R_35 .0875) (shapiro1c_R_35))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt50 
+ (
+(shapiro1c_71 71 shapiro_wilk 50 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt50then
+ (
+(shapiro1c_72 72 shapiro_wilk 50 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt50else
+ (
+(shapiro1c_73 73 shapiro_wilk 50 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond7 
+ (
+(shapiro1c_74 74 shapiro_wilk 50 (EqEq n 7 shapiro1c_R_36) (n 7 shapiro1c_R_36) (shapiro1c_R_36))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt52 
+ (
+(shapiro1c_75 75 shapiro_wilk 52 (Index a 0 shapiro1c_R_37) (a 0) (shapiro1c_R_37))
+(shapiro1c_76 76 shapiro_wilk 52 (Assign shapiro1c_R_37 .6233) (shapiro1c_R_37 .6233) (shapiro1c_R_37))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt53 
+ (
+(shapiro1c_77 77 shapiro_wilk 53 (Index a 1 shapiro1c_R_38) (a 1) (shapiro1c_R_38))
+(shapiro1c_78 78 shapiro_wilk 53 (Assign shapiro1c_R_38 .3031) (shapiro1c_R_38 .3031) (shapiro1c_R_38))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt54 
+ (
+(shapiro1c_79 79 shapiro_wilk 54 (Index a 2 shapiro1c_R_39) (a 2) (shapiro1c_R_39))
+(shapiro1c_80 80 shapiro_wilk 54 (Assign shapiro1c_R_39 .1401) (shapiro1c_R_39 .1401) (shapiro1c_R_39))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt56 
+ (
+(shapiro1c_81 81 shapiro_wilk 56 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt56then
+ (
+(shapiro1c_82 82 shapiro_wilk 56 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt56else
+ (
+(shapiro1c_83 83 shapiro_wilk 56 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond8 
+ (
+(shapiro1c_84 84 shapiro_wilk 56 (EqEq n 8 shapiro1c_R_40) (n 8 shapiro1c_R_40) (shapiro1c_R_40))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt58 
+ (
+(shapiro1c_85 85 shapiro_wilk 58 (Index a 0 shapiro1c_R_41) (a 0) (shapiro1c_R_41))
+(shapiro1c_86 86 shapiro_wilk 58 (Assign shapiro1c_R_41 .6052) (shapiro1c_R_41 .6052) (shapiro1c_R_41))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt59 
+ (
+(shapiro1c_87 87 shapiro_wilk 59 (Index a 1 shapiro1c_R_42) (a 1) (shapiro1c_R_42))
+(shapiro1c_88 88 shapiro_wilk 59 (Assign shapiro1c_R_42 .3164) (shapiro1c_R_42 .3164) (shapiro1c_R_42))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt60 
+ (
+(shapiro1c_89 89 shapiro_wilk 60 (Index a 2 shapiro1c_R_43) (a 2) (shapiro1c_R_43))
+(shapiro1c_90 90 shapiro_wilk 60 (Assign shapiro1c_R_43 .1743) (shapiro1c_R_43 .1743) (shapiro1c_R_43))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt61 
+ (
+(shapiro1c_91 91 shapiro_wilk 61 (Index a 3 shapiro1c_R_44) (a 3) (shapiro1c_R_44))
+(shapiro1c_92 92 shapiro_wilk 61 (Assign shapiro1c_R_44 .0561) (shapiro1c_R_44 .0561) (shapiro1c_R_44))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt63 
+ (
+(shapiro1c_93 93 shapiro_wilk 63 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt63then
+ (
+(shapiro1c_94 94 shapiro_wilk 63 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt63else
+ (
+(shapiro1c_95 95 shapiro_wilk 63 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond9 
+ (
+(shapiro1c_96 96 shapiro_wilk 63 (EqEq n 9 shapiro1c_R_45) (n 9 shapiro1c_R_45) (shapiro1c_R_45))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt65 
+ (
+(shapiro1c_97 97 shapiro_wilk 65 (Index a 0 shapiro1c_R_46) (a 0) (shapiro1c_R_46))
+(shapiro1c_98 98 shapiro_wilk 65 (Assign shapiro1c_R_46 .5888) (shapiro1c_R_46 .5888) (shapiro1c_R_46))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt66 
+ (
+(shapiro1c_99 99 shapiro_wilk 66 (Index a 1 shapiro1c_R_47) (a 1) (shapiro1c_R_47))
+(shapiro1c_100 100 shapiro_wilk 66 (Assign shapiro1c_R_47 .3244) (shapiro1c_R_47 .3244) (shapiro1c_R_47))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt67 
+ (
+(shapiro1c_101 101 shapiro_wilk 67 (Index a 2 shapiro1c_R_48) (a 2) (shapiro1c_R_48))
+(shapiro1c_102 102 shapiro_wilk 67 (Assign shapiro1c_R_48 .1976) (shapiro1c_R_48 .1976) (shapiro1c_R_48))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt68 
+ (
+(shapiro1c_103 103 shapiro_wilk 68 (Index a 3 shapiro1c_R_49) (a 3) (shapiro1c_R_49))
+(shapiro1c_104 104 shapiro_wilk 68 (Assign shapiro1c_R_49 .0947) (shapiro1c_R_49 .0947) (shapiro1c_R_49))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt70 
+ (
+(shapiro1c_105 105 shapiro_wilk 70 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt70then
+ (
+(shapiro1c_106 106 shapiro_wilk 70 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt70else
+ (
+(shapiro1c_107 107 shapiro_wilk 70 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond10 
+ (
+(shapiro1c_108 108 shapiro_wilk 70 (EqEq n 10 shapiro1c_R_50) (n 10 shapiro1c_R_50) (shapiro1c_R_50))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt72 
+ (
+(shapiro1c_109 109 shapiro_wilk 72 (Index a 0 shapiro1c_R_51) (a 0) (shapiro1c_R_51))
+(shapiro1c_110 110 shapiro_wilk 72 (Assign shapiro1c_R_51 .5739) (shapiro1c_R_51 .5739) (shapiro1c_R_51))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt73 
+ (
+(shapiro1c_111 111 shapiro_wilk 73 (Index a 1 shapiro1c_R_52) (a 1) (shapiro1c_R_52))
+(shapiro1c_112 112 shapiro_wilk 73 (Assign shapiro1c_R_52 .3291) (shapiro1c_R_52 .3291) (shapiro1c_R_52))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt74 
+ (
+(shapiro1c_113 113 shapiro_wilk 74 (Index a 2 shapiro1c_R_53) (a 2) (shapiro1c_R_53))
+(shapiro1c_114 114 shapiro_wilk 74 (Assign shapiro1c_R_53 .2141) (shapiro1c_R_53 .2141) (shapiro1c_R_53))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt75 
+ (
+(shapiro1c_115 115 shapiro_wilk 75 (Index a 3 shapiro1c_R_54) (a 3) (shapiro1c_R_54))
+(shapiro1c_116 116 shapiro_wilk 75 (Assign shapiro1c_R_54 .1224) (shapiro1c_R_54 .1224) (shapiro1c_R_54))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt76 
+ (
+(shapiro1c_117 117 shapiro_wilk 76 (Index a 4 shapiro1c_R_55) (a 4) (shapiro1c_R_55))
+(shapiro1c_118 118 shapiro_wilk 76 (Assign shapiro1c_R_55 .0399) (shapiro1c_R_55 .0399) (shapiro1c_R_55))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt78 
+ (
+(shapiro1c_119 119 shapiro_wilk 78 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt78then
+ (
+(shapiro1c_120 120 shapiro_wilk 78 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt78else
+ (
+(shapiro1c_121 121 shapiro_wilk 78 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond11 
+ (
+(shapiro1c_122 122 shapiro_wilk 78 (EqEq n 11 shapiro1c_R_56) (n 11 shapiro1c_R_56) (shapiro1c_R_56))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt80 
+ (
+(shapiro1c_123 123 shapiro_wilk 80 (Index a 0 shapiro1c_R_57) (a 0) (shapiro1c_R_57))
+(shapiro1c_124 124 shapiro_wilk 80 (Assign shapiro1c_R_57 .5601) (shapiro1c_R_57 .5601) (shapiro1c_R_57))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt81 
+ (
+(shapiro1c_125 125 shapiro_wilk 81 (Index a 1 shapiro1c_R_58) (a 1) (shapiro1c_R_58))
+(shapiro1c_126 126 shapiro_wilk 81 (Assign shapiro1c_R_58 .3315) (shapiro1c_R_58 .3315) (shapiro1c_R_58))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt82 
+ (
+(shapiro1c_127 127 shapiro_wilk 82 (Index a 2 shapiro1c_R_59) (a 2) (shapiro1c_R_59))
+(shapiro1c_128 128 shapiro_wilk 82 (Assign shapiro1c_R_59 .226) (shapiro1c_R_59 .226) (shapiro1c_R_59))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt83 
+ (
+(shapiro1c_129 129 shapiro_wilk 83 (Index a 3 shapiro1c_R_60) (a 3) (shapiro1c_R_60))
+(shapiro1c_130 130 shapiro_wilk 83 (Assign shapiro1c_R_60 .1429) (shapiro1c_R_60 .1429) (shapiro1c_R_60))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt84 
+ (
+(shapiro1c_131 131 shapiro_wilk 84 (Index a 4 shapiro1c_R_61) (a 4) (shapiro1c_R_61))
+(shapiro1c_132 132 shapiro_wilk 84 (Assign shapiro1c_R_61 .0695) (shapiro1c_R_61 .0695) (shapiro1c_R_61))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt86 
+ (
+(shapiro1c_133 133 shapiro_wilk 86 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt86then
+ (
+(shapiro1c_134 134 shapiro_wilk 86 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt86else
+ (
+(shapiro1c_135 135 shapiro_wilk 86 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond12 
+ (
+(shapiro1c_136 136 shapiro_wilk 86 (EqEq n 12 shapiro1c_R_62) (n 12 shapiro1c_R_62) (shapiro1c_R_62))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt88 
+ (
+(shapiro1c_137 137 shapiro_wilk 88 (Index a 0 shapiro1c_R_63) (a 0) (shapiro1c_R_63))
+(shapiro1c_138 138 shapiro_wilk 88 (Assign shapiro1c_R_63 .5475) (shapiro1c_R_63 .5475) (shapiro1c_R_63))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt89 
+ (
+(shapiro1c_139 139 shapiro_wilk 89 (Index a 1 shapiro1c_R_64) (a 1) (shapiro1c_R_64))
+(shapiro1c_140 140 shapiro_wilk 89 (Assign shapiro1c_R_64 .3325) (shapiro1c_R_64 .3325) (shapiro1c_R_64))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt90 
+ (
+(shapiro1c_141 141 shapiro_wilk 90 (Index a 2 shapiro1c_R_65) (a 2) (shapiro1c_R_65))
+(shapiro1c_142 142 shapiro_wilk 90 (Assign shapiro1c_R_65 .2347) (shapiro1c_R_65 .2347) (shapiro1c_R_65))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt91 
+ (
+(shapiro1c_143 143 shapiro_wilk 91 (Index a 3 shapiro1c_R_66) (a 3) (shapiro1c_R_66))
+(shapiro1c_144 144 shapiro_wilk 91 (Assign shapiro1c_R_66 .1586) (shapiro1c_R_66 .1586) (shapiro1c_R_66))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt92 
+ (
+(shapiro1c_145 145 shapiro_wilk 92 (Index a 4 shapiro1c_R_67) (a 4) (shapiro1c_R_67))
+(shapiro1c_146 146 shapiro_wilk 92 (Assign shapiro1c_R_67 .0922) (shapiro1c_R_67 .0922) (shapiro1c_R_67))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt93 
+ (
+(shapiro1c_147 147 shapiro_wilk 93 (Index a 5 shapiro1c_R_68) (a 5) (shapiro1c_R_68))
+(shapiro1c_148 148 shapiro_wilk 93 (Assign shapiro1c_R_68 .0303) (shapiro1c_R_68 .0303) (shapiro1c_R_68))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt95 
+ (
+(shapiro1c_149 149 shapiro_wilk 95 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt95then
+ (
+(shapiro1c_150 150 shapiro_wilk 95 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt95else
+ (
+(shapiro1c_151 151 shapiro_wilk 95 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond13 
+ (
+(shapiro1c_152 152 shapiro_wilk 95 (EqEq n 13 shapiro1c_R_69) (n 13 shapiro1c_R_69) (shapiro1c_R_69))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt97 
+ (
+(shapiro1c_153 153 shapiro_wilk 97 (Index a 0 shapiro1c_R_70) (a 0) (shapiro1c_R_70))
+(shapiro1c_154 154 shapiro_wilk 97 (Assign shapiro1c_R_70 .5359) (shapiro1c_R_70 .5359) (shapiro1c_R_70))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt98 
+ (
+(shapiro1c_155 155 shapiro_wilk 98 (Index a 1 shapiro1c_R_71) (a 1) (shapiro1c_R_71))
+(shapiro1c_156 156 shapiro_wilk 98 (Assign shapiro1c_R_71 .3325) (shapiro1c_R_71 .3325) (shapiro1c_R_71))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt99 
+ (
+(shapiro1c_157 157 shapiro_wilk 99 (Index a 2 shapiro1c_R_72) (a 2) (shapiro1c_R_72))
+(shapiro1c_158 158 shapiro_wilk 99 (Assign shapiro1c_R_72 .2412) (shapiro1c_R_72 .2412) (shapiro1c_R_72))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt100 
+ (
+(shapiro1c_159 159 shapiro_wilk 100 (Index a 3 shapiro1c_R_73) (a 3) (shapiro1c_R_73))
+(shapiro1c_160 160 shapiro_wilk 100 (Assign shapiro1c_R_73 .1707) (shapiro1c_R_73 .1707) (shapiro1c_R_73))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt101 
+ (
+(shapiro1c_161 161 shapiro_wilk 101 (Index a 4 shapiro1c_R_74) (a 4) (shapiro1c_R_74))
+(shapiro1c_162 162 shapiro_wilk 101 (Assign shapiro1c_R_74 .1099) (shapiro1c_R_74 .1099) (shapiro1c_R_74))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt102 
+ (
+(shapiro1c_163 163 shapiro_wilk 102 (Index a 5 shapiro1c_R_75) (a 5) (shapiro1c_R_75))
+(shapiro1c_164 164 shapiro_wilk 102 (Assign shapiro1c_R_75 .0539) (shapiro1c_R_75 .0539) (shapiro1c_R_75))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt104 
+ (
+(shapiro1c_165 165 shapiro_wilk 104 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt104then
+ (
+(shapiro1c_166 166 shapiro_wilk 104 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt104else
+ (
+(shapiro1c_167 167 shapiro_wilk 104 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond14 
+ (
+(shapiro1c_168 168 shapiro_wilk 104 (EqEq n 14 shapiro1c_R_76) (n 14 shapiro1c_R_76) (shapiro1c_R_76))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt106 
+ (
+(shapiro1c_169 169 shapiro_wilk 106 (Index a 0 shapiro1c_R_77) (a 0) (shapiro1c_R_77))
+(shapiro1c_170 170 shapiro_wilk 106 (Assign shapiro1c_R_77 .5251) (shapiro1c_R_77 .5251) (shapiro1c_R_77))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt107 
+ (
+(shapiro1c_171 171 shapiro_wilk 107 (Index a 1 shapiro1c_R_78) (a 1) (shapiro1c_R_78))
+(shapiro1c_172 172 shapiro_wilk 107 (Assign shapiro1c_R_78 .3318) (shapiro1c_R_78 .3318) (shapiro1c_R_78))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt108 
+ (
+(shapiro1c_173 173 shapiro_wilk 108 (Index a 2 shapiro1c_R_79) (a 2) (shapiro1c_R_79))
+(shapiro1c_174 174 shapiro_wilk 108 (Assign shapiro1c_R_79 .246) (shapiro1c_R_79 .246) (shapiro1c_R_79))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt109 
+ (
+(shapiro1c_175 175 shapiro_wilk 109 (Index a 3 shapiro1c_R_80) (a 3) (shapiro1c_R_80))
+(shapiro1c_176 176 shapiro_wilk 109 (Assign shapiro1c_R_80 .1802) (shapiro1c_R_80 .1802) (shapiro1c_R_80))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt110 
+ (
+(shapiro1c_177 177 shapiro_wilk 110 (Index a 4 shapiro1c_R_81) (a 4) (shapiro1c_R_81))
+(shapiro1c_178 178 shapiro_wilk 110 (Assign shapiro1c_R_81 .124) (shapiro1c_R_81 .124) (shapiro1c_R_81))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt111 
+ (
+(shapiro1c_179 179 shapiro_wilk 111 (Index a 5 shapiro1c_R_82) (a 5) (shapiro1c_R_82))
+(shapiro1c_180 180 shapiro_wilk 111 (Assign shapiro1c_R_82 .0727) (shapiro1c_R_82 .0727) (shapiro1c_R_82))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt112 
+ (
+(shapiro1c_181 181 shapiro_wilk 112 (Index a 6 shapiro1c_R_83) (a 6) (shapiro1c_R_83))
+(shapiro1c_182 182 shapiro_wilk 112 (Assign shapiro1c_R_83 .024) (shapiro1c_R_83 .024) (shapiro1c_R_83))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt114 
+ (
+(shapiro1c_183 183 shapiro_wilk 114 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt114then
+ (
+(shapiro1c_184 184 shapiro_wilk 114 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt114else
+ (
+(shapiro1c_185 185 shapiro_wilk 114 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond15 
+ (
+(shapiro1c_186 186 shapiro_wilk 114 (EqEq n 15 shapiro1c_R_84) (n 15 shapiro1c_R_84) (shapiro1c_R_84))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt116 
+ (
+(shapiro1c_187 187 shapiro_wilk 116 (Index a 0 shapiro1c_R_85) (a 0) (shapiro1c_R_85))
+(shapiro1c_188 188 shapiro_wilk 116 (Assign shapiro1c_R_85 .515) (shapiro1c_R_85 .515) (shapiro1c_R_85))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt117 
+ (
+(shapiro1c_189 189 shapiro_wilk 117 (Index a 1 shapiro1c_R_86) (a 1) (shapiro1c_R_86))
+(shapiro1c_190 190 shapiro_wilk 117 (Assign shapiro1c_R_86 .3306) (shapiro1c_R_86 .3306) (shapiro1c_R_86))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt118 
+ (
+(shapiro1c_191 191 shapiro_wilk 118 (Index a 2 shapiro1c_R_87) (a 2) (shapiro1c_R_87))
+(shapiro1c_192 192 shapiro_wilk 118 (Assign shapiro1c_R_87 .2495) (shapiro1c_R_87 .2495) (shapiro1c_R_87))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt119 
+ (
+(shapiro1c_193 193 shapiro_wilk 119 (Index a 3 shapiro1c_R_88) (a 3) (shapiro1c_R_88))
+(shapiro1c_194 194 shapiro_wilk 119 (Assign shapiro1c_R_88 .1878) (shapiro1c_R_88 .1878) (shapiro1c_R_88))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt120 
+ (
+(shapiro1c_195 195 shapiro_wilk 120 (Index a 4 shapiro1c_R_89) (a 4) (shapiro1c_R_89))
+(shapiro1c_196 196 shapiro_wilk 120 (Assign shapiro1c_R_89 .1353) (shapiro1c_R_89 .1353) (shapiro1c_R_89))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt121 
+ (
+(shapiro1c_197 197 shapiro_wilk 121 (Index a 5 shapiro1c_R_90) (a 5) (shapiro1c_R_90))
+(shapiro1c_198 198 shapiro_wilk 121 (Assign shapiro1c_R_90 .088) (shapiro1c_R_90 .088) (shapiro1c_R_90))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt122 
+ (
+(shapiro1c_199 199 shapiro_wilk 122 (Index a 6 shapiro1c_R_91) (a 6) (shapiro1c_R_91))
+(shapiro1c_200 200 shapiro_wilk 122 (Assign shapiro1c_R_91 .0433) (shapiro1c_R_91 .0433) (shapiro1c_R_91))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt124 
+ (
+(shapiro1c_201 201 shapiro_wilk 124 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt124then
+ (
+(shapiro1c_202 202 shapiro_wilk 124 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt124else
+ (
+(shapiro1c_203 203 shapiro_wilk 124 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond16 
+ (
+(shapiro1c_204 204 shapiro_wilk 124 (EqEq n 16 shapiro1c_R_92) (n 16 shapiro1c_R_92) (shapiro1c_R_92))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt126 
+ (
+(shapiro1c_205 205 shapiro_wilk 126 (Index a 0 shapiro1c_R_93) (a 0) (shapiro1c_R_93))
+(shapiro1c_206 206 shapiro_wilk 126 (Assign shapiro1c_R_93 .5056) (shapiro1c_R_93 .5056) (shapiro1c_R_93))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt127 
+ (
+(shapiro1c_207 207 shapiro_wilk 127 (Index a 1 shapiro1c_R_94) (a 1) (shapiro1c_R_94))
+(shapiro1c_208 208 shapiro_wilk 127 (Assign shapiro1c_R_94 .329) (shapiro1c_R_94 .329) (shapiro1c_R_94))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt128 
+ (
+(shapiro1c_209 209 shapiro_wilk 128 (Index a 2 shapiro1c_R_95) (a 2) (shapiro1c_R_95))
+(shapiro1c_210 210 shapiro_wilk 128 (Assign shapiro1c_R_95 .2521) (shapiro1c_R_95 .2521) (shapiro1c_R_95))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt129 
+ (
+(shapiro1c_211 211 shapiro_wilk 129 (Index a 3 shapiro1c_R_96) (a 3) (shapiro1c_R_96))
+(shapiro1c_212 212 shapiro_wilk 129 (Assign shapiro1c_R_96 .1939) (shapiro1c_R_96 .1939) (shapiro1c_R_96))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt130 
+ (
+(shapiro1c_213 213 shapiro_wilk 130 (Index a 4 shapiro1c_R_97) (a 4) (shapiro1c_R_97))
+(shapiro1c_214 214 shapiro_wilk 130 (Assign shapiro1c_R_97 .1447) (shapiro1c_R_97 .1447) (shapiro1c_R_97))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt131 
+ (
+(shapiro1c_215 215 shapiro_wilk 131 (Index a 5 shapiro1c_R_98) (a 5) (shapiro1c_R_98))
+(shapiro1c_216 216 shapiro_wilk 131 (Assign shapiro1c_R_98 .1005) (shapiro1c_R_98 .1005) (shapiro1c_R_98))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt132 
+ (
+(shapiro1c_217 217 shapiro_wilk 132 (Index a 6 shapiro1c_R_99) (a 6) (shapiro1c_R_99))
+(shapiro1c_218 218 shapiro_wilk 132 (Assign shapiro1c_R_99 .0593) (shapiro1c_R_99 .0593) (shapiro1c_R_99))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt133 
+ (
+(shapiro1c_219 219 shapiro_wilk 133 (Index a 7 shapiro1c_R_100) (a 7) (shapiro1c_R_100))
+(shapiro1c_220 220 shapiro_wilk 133 (Assign shapiro1c_R_100 .0196) (shapiro1c_R_100 .0196) (shapiro1c_R_100))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt135 
+ (
+(shapiro1c_221 221 shapiro_wilk 135 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt135then
+ (
+(shapiro1c_222 222 shapiro_wilk 135 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt135else
+ (
+(shapiro1c_223 223 shapiro_wilk 135 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond17 
+ (
+(shapiro1c_224 224 shapiro_wilk 135 (EqEq n 17 shapiro1c_R_101) (n 17 shapiro1c_R_101) (shapiro1c_R_101))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt137 
+ (
+(shapiro1c_225 225 shapiro_wilk 137 (Index a 0 shapiro1c_R_102) (a 0) (shapiro1c_R_102))
+(shapiro1c_226 226 shapiro_wilk 137 (Assign shapiro1c_R_102 .4968) (shapiro1c_R_102 .4968) (shapiro1c_R_102))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt138 
+ (
+(shapiro1c_227 227 shapiro_wilk 138 (Index a 1 shapiro1c_R_103) (a 1) (shapiro1c_R_103))
+(shapiro1c_228 228 shapiro_wilk 138 (Assign shapiro1c_R_103 .3273) (shapiro1c_R_103 .3273) (shapiro1c_R_103))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt139 
+ (
+(shapiro1c_229 229 shapiro_wilk 139 (Index a 2 shapiro1c_R_104) (a 2) (shapiro1c_R_104))
+(shapiro1c_230 230 shapiro_wilk 139 (Assign shapiro1c_R_104 .254) (shapiro1c_R_104 .254) (shapiro1c_R_104))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt140 
+ (
+(shapiro1c_231 231 shapiro_wilk 140 (Index a 3 shapiro1c_R_105) (a 3) (shapiro1c_R_105))
+(shapiro1c_232 232 shapiro_wilk 140 (Assign shapiro1c_R_105 .1988) (shapiro1c_R_105 .1988) (shapiro1c_R_105))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt141 
+ (
+(shapiro1c_233 233 shapiro_wilk 141 (Index a 4 shapiro1c_R_106) (a 4) (shapiro1c_R_106))
+(shapiro1c_234 234 shapiro_wilk 141 (Assign shapiro1c_R_106 .1524) (shapiro1c_R_106 .1524) (shapiro1c_R_106))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt142 
+ (
+(shapiro1c_235 235 shapiro_wilk 142 (Index a 5 shapiro1c_R_107) (a 5) (shapiro1c_R_107))
+(shapiro1c_236 236 shapiro_wilk 142 (Assign shapiro1c_R_107 .1109) (shapiro1c_R_107 .1109) (shapiro1c_R_107))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt143 
+ (
+(shapiro1c_237 237 shapiro_wilk 143 (Index a 6 shapiro1c_R_108) (a 6) (shapiro1c_R_108))
+(shapiro1c_238 238 shapiro_wilk 143 (Assign shapiro1c_R_108 .0725) (shapiro1c_R_108 .0725) (shapiro1c_R_108))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt144 
+ (
+(shapiro1c_239 239 shapiro_wilk 144 (Index a 7 shapiro1c_R_109) (a 7) (shapiro1c_R_109))
+(shapiro1c_240 240 shapiro_wilk 144 (Assign shapiro1c_R_109 .0359) (shapiro1c_R_109 .0359) (shapiro1c_R_109))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt146 
+ (
+(shapiro1c_241 241 shapiro_wilk 146 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt146then
+ (
+(shapiro1c_242 242 shapiro_wilk 146 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt146else
+ (
+(shapiro1c_243 243 shapiro_wilk 146 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond18 
+ (
+(shapiro1c_244 244 shapiro_wilk 146 (EqEq n 18 shapiro1c_R_110) (n 18 shapiro1c_R_110) (shapiro1c_R_110))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt148 
+ (
+(shapiro1c_245 245 shapiro_wilk 148 (Index a 0 shapiro1c_R_111) (a 0) (shapiro1c_R_111))
+(shapiro1c_246 246 shapiro_wilk 148 (Assign shapiro1c_R_111 .4886) (shapiro1c_R_111 .4886) (shapiro1c_R_111))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt149 
+ (
+(shapiro1c_247 247 shapiro_wilk 149 (Index a 1 shapiro1c_R_112) (a 1) (shapiro1c_R_112))
+(shapiro1c_248 248 shapiro_wilk 149 (Assign shapiro1c_R_112 .3253) (shapiro1c_R_112 .3253) (shapiro1c_R_112))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt150 
+ (
+(shapiro1c_249 249 shapiro_wilk 150 (Index a 2 shapiro1c_R_113) (a 2) (shapiro1c_R_113))
+(shapiro1c_250 250 shapiro_wilk 150 (Assign shapiro1c_R_113 .2553) (shapiro1c_R_113 .2553) (shapiro1c_R_113))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt151 
+ (
+(shapiro1c_251 251 shapiro_wilk 151 (Index a 3 shapiro1c_R_114) (a 3) (shapiro1c_R_114))
+(shapiro1c_252 252 shapiro_wilk 151 (Assign shapiro1c_R_114 .2027) (shapiro1c_R_114 .2027) (shapiro1c_R_114))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt152 
+ (
+(shapiro1c_253 253 shapiro_wilk 152 (Index a 4 shapiro1c_R_115) (a 4) (shapiro1c_R_115))
+(shapiro1c_254 254 shapiro_wilk 152 (Assign shapiro1c_R_115 .1587) (shapiro1c_R_115 .1587) (shapiro1c_R_115))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt153 
+ (
+(shapiro1c_255 255 shapiro_wilk 153 (Index a 5 shapiro1c_R_116) (a 5) (shapiro1c_R_116))
+(shapiro1c_256 256 shapiro_wilk 153 (Assign shapiro1c_R_116 .1197) (shapiro1c_R_116 .1197) (shapiro1c_R_116))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt154 
+ (
+(shapiro1c_257 257 shapiro_wilk 154 (Index a 6 shapiro1c_R_117) (a 6) (shapiro1c_R_117))
+(shapiro1c_258 258 shapiro_wilk 154 (Assign shapiro1c_R_117 .0837) (shapiro1c_R_117 .0837) (shapiro1c_R_117))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt155 
+ (
+(shapiro1c_259 259 shapiro_wilk 155 (Index a 7 shapiro1c_R_118) (a 7) (shapiro1c_R_118))
+(shapiro1c_260 260 shapiro_wilk 155 (Assign shapiro1c_R_118 .0496) (shapiro1c_R_118 .0496) (shapiro1c_R_118))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt156 
+ (
+(shapiro1c_261 261 shapiro_wilk 156 (Index a 8 shapiro1c_R_119) (a 8) (shapiro1c_R_119))
+(shapiro1c_262 262 shapiro_wilk 156 (Assign shapiro1c_R_119 .0163) (shapiro1c_R_119 .0163) (shapiro1c_R_119))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt158 
+ (
+(shapiro1c_263 263 shapiro_wilk 158 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt158then
+ (
+(shapiro1c_264 264 shapiro_wilk 158 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt158else
+ (
+(shapiro1c_265 265 shapiro_wilk 158 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond19 
+ (
+(shapiro1c_266 266 shapiro_wilk 158 (EqEq n 19 shapiro1c_R_120) (n 19 shapiro1c_R_120) (shapiro1c_R_120))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt160 
+ (
+(shapiro1c_267 267 shapiro_wilk 160 (Index a 0 shapiro1c_R_121) (a 0) (shapiro1c_R_121))
+(shapiro1c_268 268 shapiro_wilk 160 (Assign shapiro1c_R_121 .4808) (shapiro1c_R_121 .4808) (shapiro1c_R_121))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt161 
+ (
+(shapiro1c_269 269 shapiro_wilk 161 (Index a 1 shapiro1c_R_122) (a 1) (shapiro1c_R_122))
+(shapiro1c_270 270 shapiro_wilk 161 (Assign shapiro1c_R_122 .3232) (shapiro1c_R_122 .3232) (shapiro1c_R_122))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt162 
+ (
+(shapiro1c_271 271 shapiro_wilk 162 (Index a 2 shapiro1c_R_123) (a 2) (shapiro1c_R_123))
+(shapiro1c_272 272 shapiro_wilk 162 (Assign shapiro1c_R_123 .2561) (shapiro1c_R_123 .2561) (shapiro1c_R_123))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt163 
+ (
+(shapiro1c_273 273 shapiro_wilk 163 (Index a 3 shapiro1c_R_124) (a 3) (shapiro1c_R_124))
+(shapiro1c_274 274 shapiro_wilk 163 (Assign shapiro1c_R_124 .2059) (shapiro1c_R_124 .2059) (shapiro1c_R_124))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt164 
+ (
+(shapiro1c_275 275 shapiro_wilk 164 (Index a 4 shapiro1c_R_125) (a 4) (shapiro1c_R_125))
+(shapiro1c_276 276 shapiro_wilk 164 (Assign shapiro1c_R_125 .1641) (shapiro1c_R_125 .1641) (shapiro1c_R_125))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt165 
+ (
+(shapiro1c_277 277 shapiro_wilk 165 (Index a 5 shapiro1c_R_126) (a 5) (shapiro1c_R_126))
+(shapiro1c_278 278 shapiro_wilk 165 (Assign shapiro1c_R_126 .1271) (shapiro1c_R_126 .1271) (shapiro1c_R_126))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt166 
+ (
+(shapiro1c_279 279 shapiro_wilk 166 (Index a 6 shapiro1c_R_127) (a 6) (shapiro1c_R_127))
+(shapiro1c_280 280 shapiro_wilk 166 (Assign shapiro1c_R_127 .0932) (shapiro1c_R_127 .0932) (shapiro1c_R_127))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt167 
+ (
+(shapiro1c_281 281 shapiro_wilk 167 (Index a 7 shapiro1c_R_128) (a 7) (shapiro1c_R_128))
+(shapiro1c_282 282 shapiro_wilk 167 (Assign shapiro1c_R_128 .0612) (shapiro1c_R_128 .0612) (shapiro1c_R_128))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt168 
+ (
+(shapiro1c_283 283 shapiro_wilk 168 (Index a 8 shapiro1c_R_129) (a 8) (shapiro1c_R_129))
+(shapiro1c_284 284 shapiro_wilk 168 (Assign shapiro1c_R_129 .0303) (shapiro1c_R_129 .0303) (shapiro1c_R_129))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt170 
+ (
+(shapiro1c_285 285 shapiro_wilk 170 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt170then
+ (
+(shapiro1c_286 286 shapiro_wilk 170 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt170else
+ (
+(shapiro1c_287 287 shapiro_wilk 170 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond20 
+ (
+(shapiro1c_288 288 shapiro_wilk 170 (EqEq n 20 shapiro1c_R_130) (n 20 shapiro1c_R_130) (shapiro1c_R_130))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt172 
+ (
+(shapiro1c_289 289 shapiro_wilk 172 (Index a 0 shapiro1c_R_131) (a 0) (shapiro1c_R_131))
+(shapiro1c_290 290 shapiro_wilk 172 (Assign shapiro1c_R_131 .4734) (shapiro1c_R_131 .4734) (shapiro1c_R_131))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt173 
+ (
+(shapiro1c_291 291 shapiro_wilk 173 (Index a 1 shapiro1c_R_132) (a 1) (shapiro1c_R_132))
+(shapiro1c_292 292 shapiro_wilk 173 (Assign shapiro1c_R_132 .3211) (shapiro1c_R_132 .3211) (shapiro1c_R_132))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt174 
+ (
+(shapiro1c_293 293 shapiro_wilk 174 (Index a 2 shapiro1c_R_133) (a 2) (shapiro1c_R_133))
+(shapiro1c_294 294 shapiro_wilk 174 (Assign shapiro1c_R_133 .2565) (shapiro1c_R_133 .2565) (shapiro1c_R_133))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt175 
+ (
+(shapiro1c_295 295 shapiro_wilk 175 (Index a 3 shapiro1c_R_134) (a 3) (shapiro1c_R_134))
+(shapiro1c_296 296 shapiro_wilk 175 (Assign shapiro1c_R_134 .2085) (shapiro1c_R_134 .2085) (shapiro1c_R_134))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt176 
+ (
+(shapiro1c_297 297 shapiro_wilk 176 (Index a 4 shapiro1c_R_135) (a 4) (shapiro1c_R_135))
+(shapiro1c_298 298 shapiro_wilk 176 (Assign shapiro1c_R_135 .1686) (shapiro1c_R_135 .1686) (shapiro1c_R_135))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt177 
+ (
+(shapiro1c_299 299 shapiro_wilk 177 (Index a 5 shapiro1c_R_136) (a 5) (shapiro1c_R_136))
+(shapiro1c_300 300 shapiro_wilk 177 (Assign shapiro1c_R_136 .1334) (shapiro1c_R_136 .1334) (shapiro1c_R_136))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt178 
+ (
+(shapiro1c_301 301 shapiro_wilk 178 (Index a 6 shapiro1c_R_137) (a 6) (shapiro1c_R_137))
+(shapiro1c_302 302 shapiro_wilk 178 (Assign shapiro1c_R_137 .1013) (shapiro1c_R_137 .1013) (shapiro1c_R_137))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt179 
+ (
+(shapiro1c_303 303 shapiro_wilk 179 (Index a 7 shapiro1c_R_138) (a 7) (shapiro1c_R_138))
+(shapiro1c_304 304 shapiro_wilk 179 (Assign shapiro1c_R_138 .0711) (shapiro1c_R_138 .0711) (shapiro1c_R_138))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt180 
+ (
+(shapiro1c_305 305 shapiro_wilk 180 (Index a 8 shapiro1c_R_139) (a 8) (shapiro1c_R_139))
+(shapiro1c_306 306 shapiro_wilk 180 (Assign shapiro1c_R_139 .0422) (shapiro1c_R_139 .0422) (shapiro1c_R_139))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt181 
+ (
+(shapiro1c_307 307 shapiro_wilk 181 (Index a 9 shapiro1c_R_140) (a 9) (shapiro1c_R_140))
+(shapiro1c_308 308 shapiro_wilk 181 (Assign shapiro1c_R_140 .014) (shapiro1c_R_140 .014) (shapiro1c_R_140))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt183 
+ (
+(shapiro1c_309 309 shapiro_wilk 183 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt183then
+ (
+(shapiro1c_310 310 shapiro_wilk 183 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt183else
+ (
+(shapiro1c_311 311 shapiro_wilk 183 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond21 
+ (
+(shapiro1c_312 312 shapiro_wilk 183 (EqEq n 21 shapiro1c_R_141) (n 21 shapiro1c_R_141) (shapiro1c_R_141))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt185 
+ (
+(shapiro1c_313 313 shapiro_wilk 185 (Index a 0 shapiro1c_R_142) (a 0) (shapiro1c_R_142))
+(shapiro1c_314 314 shapiro_wilk 185 (Assign shapiro1c_R_142 .4643) (shapiro1c_R_142 .4643) (shapiro1c_R_142))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt186 
+ (
+(shapiro1c_315 315 shapiro_wilk 186 (Index a 1 shapiro1c_R_143) (a 1) (shapiro1c_R_143))
+(shapiro1c_316 316 shapiro_wilk 186 (Assign shapiro1c_R_143 .3185) (shapiro1c_R_143 .3185) (shapiro1c_R_143))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt187 
+ (
+(shapiro1c_317 317 shapiro_wilk 187 (Index a 2 shapiro1c_R_144) (a 2) (shapiro1c_R_144))
+(shapiro1c_318 318 shapiro_wilk 187 (Assign shapiro1c_R_144 .2578) (shapiro1c_R_144 .2578) (shapiro1c_R_144))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt188 
+ (
+(shapiro1c_319 319 shapiro_wilk 188 (Index a 3 shapiro1c_R_145) (a 3) (shapiro1c_R_145))
+(shapiro1c_320 320 shapiro_wilk 188 (Assign shapiro1c_R_145 .2119) (shapiro1c_R_145 .2119) (shapiro1c_R_145))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt189 
+ (
+(shapiro1c_321 321 shapiro_wilk 189 (Index a 4 shapiro1c_R_146) (a 4) (shapiro1c_R_146))
+(shapiro1c_322 322 shapiro_wilk 189 (Assign shapiro1c_R_146 .1736) (shapiro1c_R_146 .1736) (shapiro1c_R_146))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt190 
+ (
+(shapiro1c_323 323 shapiro_wilk 190 (Index a 5 shapiro1c_R_147) (a 5) (shapiro1c_R_147))
+(shapiro1c_324 324 shapiro_wilk 190 (Assign shapiro1c_R_147 .1399) (shapiro1c_R_147 .1399) (shapiro1c_R_147))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt191 
+ (
+(shapiro1c_325 325 shapiro_wilk 191 (Index a 6 shapiro1c_R_148) (a 6) (shapiro1c_R_148))
+(shapiro1c_326 326 shapiro_wilk 191 (Assign shapiro1c_R_148 .1092) (shapiro1c_R_148 .1092) (shapiro1c_R_148))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt192 
+ (
+(shapiro1c_327 327 shapiro_wilk 192 (Index a 7 shapiro1c_R_149) (a 7) (shapiro1c_R_149))
+(shapiro1c_328 328 shapiro_wilk 192 (Assign shapiro1c_R_149 .0804) (shapiro1c_R_149 .0804) (shapiro1c_R_149))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt193 
+ (
+(shapiro1c_329 329 shapiro_wilk 193 (Index a 8 shapiro1c_R_150) (a 8) (shapiro1c_R_150))
+(shapiro1c_330 330 shapiro_wilk 193 (Assign shapiro1c_R_150 .053) (shapiro1c_R_150 .053) (shapiro1c_R_150))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt194 
+ (
+(shapiro1c_331 331 shapiro_wilk 194 (Index a 9 shapiro1c_R_151) (a 9) (shapiro1c_R_151))
+(shapiro1c_332 332 shapiro_wilk 194 (Assign shapiro1c_R_151 .0263) (shapiro1c_R_151 .0263) (shapiro1c_R_151))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt196 
+ (
+(shapiro1c_333 333 shapiro_wilk 196 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt196then
+ (
+(shapiro1c_334 334 shapiro_wilk 196 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt196else
+ (
+(shapiro1c_335 335 shapiro_wilk 196 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond22 
+ (
+(shapiro1c_336 336 shapiro_wilk 196 (EqEq n 22 shapiro1c_R_152) (n 22 shapiro1c_R_152) (shapiro1c_R_152))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt198 
+ (
+(shapiro1c_337 337 shapiro_wilk 198 (Index a 0 shapiro1c_R_153) (a 0) (shapiro1c_R_153))
+(shapiro1c_338 338 shapiro_wilk 198 (Assign shapiro1c_R_153 .459) (shapiro1c_R_153 .459) (shapiro1c_R_153))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt199 
+ (
+(shapiro1c_339 339 shapiro_wilk 199 (Index a 1 shapiro1c_R_154) (a 1) (shapiro1c_R_154))
+(shapiro1c_340 340 shapiro_wilk 199 (Assign shapiro1c_R_154 .3156) (shapiro1c_R_154 .3156) (shapiro1c_R_154))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt200 
+ (
+(shapiro1c_341 341 shapiro_wilk 200 (Index a 2 shapiro1c_R_155) (a 2) (shapiro1c_R_155))
+(shapiro1c_342 342 shapiro_wilk 200 (Assign shapiro1c_R_155 .2571) (shapiro1c_R_155 .2571) (shapiro1c_R_155))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt201 
+ (
+(shapiro1c_343 343 shapiro_wilk 201 (Index a 3 shapiro1c_R_156) (a 3) (shapiro1c_R_156))
+(shapiro1c_344 344 shapiro_wilk 201 (Assign shapiro1c_R_156 .2131) (shapiro1c_R_156 .2131) (shapiro1c_R_156))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt202 
+ (
+(shapiro1c_345 345 shapiro_wilk 202 (Index a 4 shapiro1c_R_157) (a 4) (shapiro1c_R_157))
+(shapiro1c_346 346 shapiro_wilk 202 (Assign shapiro1c_R_157 .1764) (shapiro1c_R_157 .1764) (shapiro1c_R_157))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt203 
+ (
+(shapiro1c_347 347 shapiro_wilk 203 (Index a 5 shapiro1c_R_158) (a 5) (shapiro1c_R_158))
+(shapiro1c_348 348 shapiro_wilk 203 (Assign shapiro1c_R_158 .1443) (shapiro1c_R_158 .1443) (shapiro1c_R_158))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt204 
+ (
+(shapiro1c_349 349 shapiro_wilk 204 (Index a 6 shapiro1c_R_159) (a 6) (shapiro1c_R_159))
+(shapiro1c_350 350 shapiro_wilk 204 (Assign shapiro1c_R_159 .115) (shapiro1c_R_159 .115) (shapiro1c_R_159))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt205 
+ (
+(shapiro1c_351 351 shapiro_wilk 205 (Index a 7 shapiro1c_R_160) (a 7) (shapiro1c_R_160))
+(shapiro1c_352 352 shapiro_wilk 205 (Assign shapiro1c_R_160 .0878) (shapiro1c_R_160 .0878) (shapiro1c_R_160))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt206 
+ (
+(shapiro1c_353 353 shapiro_wilk 206 (Index a 8 shapiro1c_R_161) (a 8) (shapiro1c_R_161))
+(shapiro1c_354 354 shapiro_wilk 206 (Assign shapiro1c_R_161 .0618) (shapiro1c_R_161 .0618) (shapiro1c_R_161))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt207 
+ (
+(shapiro1c_355 355 shapiro_wilk 207 (Index a 9 shapiro1c_R_162) (a 9) (shapiro1c_R_162))
+(shapiro1c_356 356 shapiro_wilk 207 (Assign shapiro1c_R_162 .0368) (shapiro1c_R_162 .0368) (shapiro1c_R_162))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt208 
+ (
+(shapiro1c_357 357 shapiro_wilk 208 (Index a 10 shapiro1c_R_163) (a 10) (shapiro1c_R_163))
+(shapiro1c_358 358 shapiro_wilk 208 (Assign shapiro1c_R_163 .0122) (shapiro1c_R_163 .0122) (shapiro1c_R_163))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt210 
+ (
+(shapiro1c_359 359 shapiro_wilk 210 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt210then
+ (
+(shapiro1c_360 360 shapiro_wilk 210 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt210else
+ (
+(shapiro1c_361 361 shapiro_wilk 210 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond23 
+ (
+(shapiro1c_362 362 shapiro_wilk 210 (EqEq n 23 shapiro1c_R_164) (n 23 shapiro1c_R_164) (shapiro1c_R_164))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt212 
+ (
+(shapiro1c_363 363 shapiro_wilk 212 (Index a 0 shapiro1c_R_165) (a 0) (shapiro1c_R_165))
+(shapiro1c_364 364 shapiro_wilk 212 (Assign shapiro1c_R_165 .4542) (shapiro1c_R_165 .4542) (shapiro1c_R_165))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt213 
+ (
+(shapiro1c_365 365 shapiro_wilk 213 (Index a 1 shapiro1c_R_166) (a 1) (shapiro1c_R_166))
+(shapiro1c_366 366 shapiro_wilk 213 (Assign shapiro1c_R_166 .3126) (shapiro1c_R_166 .3126) (shapiro1c_R_166))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt214 
+ (
+(shapiro1c_367 367 shapiro_wilk 214 (Index a 2 shapiro1c_R_167) (a 2) (shapiro1c_R_167))
+(shapiro1c_368 368 shapiro_wilk 214 (Assign shapiro1c_R_167 .2563) (shapiro1c_R_167 .2563) (shapiro1c_R_167))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt215 
+ (
+(shapiro1c_369 369 shapiro_wilk 215 (Index a 3 shapiro1c_R_168) (a 3) (shapiro1c_R_168))
+(shapiro1c_370 370 shapiro_wilk 215 (Assign shapiro1c_R_168 .2139) (shapiro1c_R_168 .2139) (shapiro1c_R_168))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt216 
+ (
+(shapiro1c_371 371 shapiro_wilk 216 (Index a 4 shapiro1c_R_169) (a 4) (shapiro1c_R_169))
+(shapiro1c_372 372 shapiro_wilk 216 (Assign shapiro1c_R_169 .1787) (shapiro1c_R_169 .1787) (shapiro1c_R_169))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt217 
+ (
+(shapiro1c_373 373 shapiro_wilk 217 (Index a 5 shapiro1c_R_170) (a 5) (shapiro1c_R_170))
+(shapiro1c_374 374 shapiro_wilk 217 (Assign shapiro1c_R_170 .148) (shapiro1c_R_170 .148) (shapiro1c_R_170))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt218 
+ (
+(shapiro1c_375 375 shapiro_wilk 218 (Index a 6 shapiro1c_R_171) (a 6) (shapiro1c_R_171))
+(shapiro1c_376 376 shapiro_wilk 218 (Assign shapiro1c_R_171 .1201) (shapiro1c_R_171 .1201) (shapiro1c_R_171))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt219 
+ (
+(shapiro1c_377 377 shapiro_wilk 219 (Index a 7 shapiro1c_R_172) (a 7) (shapiro1c_R_172))
+(shapiro1c_378 378 shapiro_wilk 219 (Assign shapiro1c_R_172 .0941) (shapiro1c_R_172 .0941) (shapiro1c_R_172))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt220 
+ (
+(shapiro1c_379 379 shapiro_wilk 220 (Index a 8 shapiro1c_R_173) (a 8) (shapiro1c_R_173))
+(shapiro1c_380 380 shapiro_wilk 220 (Assign shapiro1c_R_173 .0696) (shapiro1c_R_173 .0696) (shapiro1c_R_173))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt221 
+ (
+(shapiro1c_381 381 shapiro_wilk 221 (Index a 9 shapiro1c_R_174) (a 9) (shapiro1c_R_174))
+(shapiro1c_382 382 shapiro_wilk 221 (Assign shapiro1c_R_174 .0459) (shapiro1c_R_174 .0459) (shapiro1c_R_174))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt222 
+ (
+(shapiro1c_383 383 shapiro_wilk 222 (Index a 10 shapiro1c_R_175) (a 10) (shapiro1c_R_175))
+(shapiro1c_384 384 shapiro_wilk 222 (Assign shapiro1c_R_175 .0228) (shapiro1c_R_175 .0228) (shapiro1c_R_175))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt224 
+ (
+(shapiro1c_385 385 shapiro_wilk 224 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt224then
+ (
+(shapiro1c_386 386 shapiro_wilk 224 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt224else
+ (
+(shapiro1c_387 387 shapiro_wilk 224 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond24 
+ (
+(shapiro1c_388 388 shapiro_wilk 224 (EqEq n 24 shapiro1c_R_176) (n 24 shapiro1c_R_176) (shapiro1c_R_176))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt226 
+ (
+(shapiro1c_389 389 shapiro_wilk 226 (Index a 0 shapiro1c_R_177) (a 0) (shapiro1c_R_177))
+(shapiro1c_390 390 shapiro_wilk 226 (Assign shapiro1c_R_177 .4493) (shapiro1c_R_177 .4493) (shapiro1c_R_177))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt227 
+ (
+(shapiro1c_391 391 shapiro_wilk 227 (Index a 1 shapiro1c_R_178) (a 1) (shapiro1c_R_178))
+(shapiro1c_392 392 shapiro_wilk 227 (Assign shapiro1c_R_178 .3098) (shapiro1c_R_178 .3098) (shapiro1c_R_178))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt228 
+ (
+(shapiro1c_393 393 shapiro_wilk 228 (Index a 2 shapiro1c_R_179) (a 2) (shapiro1c_R_179))
+(shapiro1c_394 394 shapiro_wilk 228 (Assign shapiro1c_R_179 .2554) (shapiro1c_R_179 .2554) (shapiro1c_R_179))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt229 
+ (
+(shapiro1c_395 395 shapiro_wilk 229 (Index a 3 shapiro1c_R_180) (a 3) (shapiro1c_R_180))
+(shapiro1c_396 396 shapiro_wilk 229 (Assign shapiro1c_R_180 .2145) (shapiro1c_R_180 .2145) (shapiro1c_R_180))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt230 
+ (
+(shapiro1c_397 397 shapiro_wilk 230 (Index a 4 shapiro1c_R_181) (a 4) (shapiro1c_R_181))
+(shapiro1c_398 398 shapiro_wilk 230 (Assign shapiro1c_R_181 .1807) (shapiro1c_R_181 .1807) (shapiro1c_R_181))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt231 
+ (
+(shapiro1c_399 399 shapiro_wilk 231 (Index a 5 shapiro1c_R_182) (a 5) (shapiro1c_R_182))
+(shapiro1c_400 400 shapiro_wilk 231 (Assign shapiro1c_R_182 .1512) (shapiro1c_R_182 .1512) (shapiro1c_R_182))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt232 
+ (
+(shapiro1c_401 401 shapiro_wilk 232 (Index a 6 shapiro1c_R_183) (a 6) (shapiro1c_R_183))
+(shapiro1c_402 402 shapiro_wilk 232 (Assign shapiro1c_R_183 .1245) (shapiro1c_R_183 .1245) (shapiro1c_R_183))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt233 
+ (
+(shapiro1c_403 403 shapiro_wilk 233 (Index a 7 shapiro1c_R_184) (a 7) (shapiro1c_R_184))
+(shapiro1c_404 404 shapiro_wilk 233 (Assign shapiro1c_R_184 .0997) (shapiro1c_R_184 .0997) (shapiro1c_R_184))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt234 
+ (
+(shapiro1c_405 405 shapiro_wilk 234 (Index a 8 shapiro1c_R_185) (a 8) (shapiro1c_R_185))
+(shapiro1c_406 406 shapiro_wilk 234 (Assign shapiro1c_R_185 .0764) (shapiro1c_R_185 .0764) (shapiro1c_R_185))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt235 
+ (
+(shapiro1c_407 407 shapiro_wilk 235 (Index a 9 shapiro1c_R_186) (a 9) (shapiro1c_R_186))
+(shapiro1c_408 408 shapiro_wilk 235 (Assign shapiro1c_R_186 .0539) (shapiro1c_R_186 .0539) (shapiro1c_R_186))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt236 
+ (
+(shapiro1c_409 409 shapiro_wilk 236 (Index a 10 shapiro1c_R_187) (a 10) (shapiro1c_R_187))
+(shapiro1c_410 410 shapiro_wilk 236 (Assign shapiro1c_R_187 .0321) (shapiro1c_R_187 .0321) (shapiro1c_R_187))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt237 
+ (
+(shapiro1c_411 411 shapiro_wilk 237 (Index a 11 shapiro1c_R_188) (a 11) (shapiro1c_R_188))
+(shapiro1c_412 412 shapiro_wilk 237 (Assign shapiro1c_R_188 .0107) (shapiro1c_R_188 .0107) (shapiro1c_R_188))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt239 
+ (
+(shapiro1c_413 413 shapiro_wilk 239 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt239then
+ (
+(shapiro1c_414 414 shapiro_wilk 239 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt239else
+ (
+(shapiro1c_415 415 shapiro_wilk 239 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond25 
+ (
+(shapiro1c_416 416 shapiro_wilk 239 (EqEq n 25 shapiro1c_R_189) (n 25 shapiro1c_R_189) (shapiro1c_R_189))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt241 
+ (
+(shapiro1c_417 417 shapiro_wilk 241 (Index a 0 shapiro1c_R_190) (a 0) (shapiro1c_R_190))
+(shapiro1c_418 418 shapiro_wilk 241 (Assign shapiro1c_R_190 .445) (shapiro1c_R_190 .445) (shapiro1c_R_190))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt242 
+ (
+(shapiro1c_419 419 shapiro_wilk 242 (Index a 1 shapiro1c_R_191) (a 1) (shapiro1c_R_191))
+(shapiro1c_420 420 shapiro_wilk 242 (Assign shapiro1c_R_191 .3069) (shapiro1c_R_191 .3069) (shapiro1c_R_191))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt243 
+ (
+(shapiro1c_421 421 shapiro_wilk 243 (Index a 2 shapiro1c_R_192) (a 2) (shapiro1c_R_192))
+(shapiro1c_422 422 shapiro_wilk 243 (Assign shapiro1c_R_192 .2543) (shapiro1c_R_192 .2543) (shapiro1c_R_192))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt244 
+ (
+(shapiro1c_423 423 shapiro_wilk 244 (Index a 3 shapiro1c_R_193) (a 3) (shapiro1c_R_193))
+(shapiro1c_424 424 shapiro_wilk 244 (Assign shapiro1c_R_193 .2148) (shapiro1c_R_193 .2148) (shapiro1c_R_193))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt245 
+ (
+(shapiro1c_425 425 shapiro_wilk 245 (Index a 4 shapiro1c_R_194) (a 4) (shapiro1c_R_194))
+(shapiro1c_426 426 shapiro_wilk 245 (Assign shapiro1c_R_194 .1822) (shapiro1c_R_194 .1822) (shapiro1c_R_194))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt246 
+ (
+(shapiro1c_427 427 shapiro_wilk 246 (Index a 5 shapiro1c_R_195) (a 5) (shapiro1c_R_195))
+(shapiro1c_428 428 shapiro_wilk 246 (Assign shapiro1c_R_195 .1539) (shapiro1c_R_195 .1539) (shapiro1c_R_195))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt247 
+ (
+(shapiro1c_429 429 shapiro_wilk 247 (Index a 6 shapiro1c_R_196) (a 6) (shapiro1c_R_196))
+(shapiro1c_430 430 shapiro_wilk 247 (Assign shapiro1c_R_196 .1283) (shapiro1c_R_196 .1283) (shapiro1c_R_196))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt248 
+ (
+(shapiro1c_431 431 shapiro_wilk 248 (Index a 7 shapiro1c_R_197) (a 7) (shapiro1c_R_197))
+(shapiro1c_432 432 shapiro_wilk 248 (Assign shapiro1c_R_197 .1046) (shapiro1c_R_197 .1046) (shapiro1c_R_197))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt249 
+ (
+(shapiro1c_433 433 shapiro_wilk 249 (Index a 8 shapiro1c_R_198) (a 8) (shapiro1c_R_198))
+(shapiro1c_434 434 shapiro_wilk 249 (Assign shapiro1c_R_198 .0823) (shapiro1c_R_198 .0823) (shapiro1c_R_198))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt250 
+ (
+(shapiro1c_435 435 shapiro_wilk 250 (Index a 9 shapiro1c_R_199) (a 9) (shapiro1c_R_199))
+(shapiro1c_436 436 shapiro_wilk 250 (Assign shapiro1c_R_199 .061) (shapiro1c_R_199 .061) (shapiro1c_R_199))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt251 
+ (
+(shapiro1c_437 437 shapiro_wilk 251 (Index a 10 shapiro1c_R_200) (a 10) (shapiro1c_R_200))
+(shapiro1c_438 438 shapiro_wilk 251 (Assign shapiro1c_R_200 .0403) (shapiro1c_R_200 .0403) (shapiro1c_R_200))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt252 
+ (
+(shapiro1c_439 439 shapiro_wilk 252 (Index a 11 shapiro1c_R_201) (a 11) (shapiro1c_R_201))
+(shapiro1c_440 440 shapiro_wilk 252 (Assign shapiro1c_R_201 .02) (shapiro1c_R_201 .02) (shapiro1c_R_201))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt254 
+ (
+(shapiro1c_441 441 shapiro_wilk 254 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt254then
+ (
+(shapiro1c_442 442 shapiro_wilk 254 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt254else
+ (
+(shapiro1c_443 443 shapiro_wilk 254 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond26 
+ (
+(shapiro1c_444 444 shapiro_wilk 254 (EqEq n 26 shapiro1c_R_202) (n 26 shapiro1c_R_202) (shapiro1c_R_202))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt256 
+ (
+(shapiro1c_445 445 shapiro_wilk 256 (Index a 0 shapiro1c_R_203) (a 0) (shapiro1c_R_203))
+(shapiro1c_446 446 shapiro_wilk 256 (Assign shapiro1c_R_203 .4407) (shapiro1c_R_203 .4407) (shapiro1c_R_203))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt257 
+ (
+(shapiro1c_447 447 shapiro_wilk 257 (Index a 1 shapiro1c_R_204) (a 1) (shapiro1c_R_204))
+(shapiro1c_448 448 shapiro_wilk 257 (Assign shapiro1c_R_204 .3043) (shapiro1c_R_204 .3043) (shapiro1c_R_204))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt258 
+ (
+(shapiro1c_449 449 shapiro_wilk 258 (Index a 2 shapiro1c_R_205) (a 2) (shapiro1c_R_205))
+(shapiro1c_450 450 shapiro_wilk 258 (Assign shapiro1c_R_205 .2533) (shapiro1c_R_205 .2533) (shapiro1c_R_205))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt259 
+ (
+(shapiro1c_451 451 shapiro_wilk 259 (Index a 3 shapiro1c_R_206) (a 3) (shapiro1c_R_206))
+(shapiro1c_452 452 shapiro_wilk 259 (Assign shapiro1c_R_206 .2151) (shapiro1c_R_206 .2151) (shapiro1c_R_206))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt260 
+ (
+(shapiro1c_453 453 shapiro_wilk 260 (Index a 4 shapiro1c_R_207) (a 4) (shapiro1c_R_207))
+(shapiro1c_454 454 shapiro_wilk 260 (Assign shapiro1c_R_207 .1836) (shapiro1c_R_207 .1836) (shapiro1c_R_207))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt261 
+ (
+(shapiro1c_455 455 shapiro_wilk 261 (Index a 5 shapiro1c_R_208) (a 5) (shapiro1c_R_208))
+(shapiro1c_456 456 shapiro_wilk 261 (Assign shapiro1c_R_208 .1563) (shapiro1c_R_208 .1563) (shapiro1c_R_208))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt262 
+ (
+(shapiro1c_457 457 shapiro_wilk 262 (Index a 6 shapiro1c_R_209) (a 6) (shapiro1c_R_209))
+(shapiro1c_458 458 shapiro_wilk 262 (Assign shapiro1c_R_209 .1316) (shapiro1c_R_209 .1316) (shapiro1c_R_209))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt263 
+ (
+(shapiro1c_459 459 shapiro_wilk 263 (Index a 7 shapiro1c_R_210) (a 7) (shapiro1c_R_210))
+(shapiro1c_460 460 shapiro_wilk 263 (Assign shapiro1c_R_210 .1089) (shapiro1c_R_210 .1089) (shapiro1c_R_210))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt264 
+ (
+(shapiro1c_461 461 shapiro_wilk 264 (Index a 8 shapiro1c_R_211) (a 8) (shapiro1c_R_211))
+(shapiro1c_462 462 shapiro_wilk 264 (Assign shapiro1c_R_211 .0876) (shapiro1c_R_211 .0876) (shapiro1c_R_211))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt265 
+ (
+(shapiro1c_463 463 shapiro_wilk 265 (Index a 9 shapiro1c_R_212) (a 9) (shapiro1c_R_212))
+(shapiro1c_464 464 shapiro_wilk 265 (Assign shapiro1c_R_212 .0672) (shapiro1c_R_212 .0672) (shapiro1c_R_212))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt266 
+ (
+(shapiro1c_465 465 shapiro_wilk 266 (Index a 10 shapiro1c_R_213) (a 10) (shapiro1c_R_213))
+(shapiro1c_466 466 shapiro_wilk 266 (Assign shapiro1c_R_213 .0476) (shapiro1c_R_213 .0476) (shapiro1c_R_213))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt267 
+ (
+(shapiro1c_467 467 shapiro_wilk 267 (Index a 11 shapiro1c_R_214) (a 11) (shapiro1c_R_214))
+(shapiro1c_468 468 shapiro_wilk 267 (Assign shapiro1c_R_214 .0284) (shapiro1c_R_214 .0284) (shapiro1c_R_214))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt268 
+ (
+(shapiro1c_469 469 shapiro_wilk 268 (Index a 12 shapiro1c_R_215) (a 12) (shapiro1c_R_215))
+(shapiro1c_470 470 shapiro_wilk 268 (Assign shapiro1c_R_215 .0094) (shapiro1c_R_215 .0094) (shapiro1c_R_215))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt270 
+ (
+(shapiro1c_471 471 shapiro_wilk 270 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt270then
+ (
+(shapiro1c_472 472 shapiro_wilk 270 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt270else
+ (
+(shapiro1c_473 473 shapiro_wilk 270 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond27 
+ (
+(shapiro1c_474 474 shapiro_wilk 270 (EqEq n 27 shapiro1c_R_216) (n 27 shapiro1c_R_216) (shapiro1c_R_216))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt272 
+ (
+(shapiro1c_475 475 shapiro_wilk 272 (Index a 0 shapiro1c_R_217) (a 0) (shapiro1c_R_217))
+(shapiro1c_476 476 shapiro_wilk 272 (Assign shapiro1c_R_217 .4366) (shapiro1c_R_217 .4366) (shapiro1c_R_217))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt273 
+ (
+(shapiro1c_477 477 shapiro_wilk 273 (Index a 1 shapiro1c_R_218) (a 1) (shapiro1c_R_218))
+(shapiro1c_478 478 shapiro_wilk 273 (Assign shapiro1c_R_218 .3018) (shapiro1c_R_218 .3018) (shapiro1c_R_218))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt274 
+ (
+(shapiro1c_479 479 shapiro_wilk 274 (Index a 2 shapiro1c_R_219) (a 2) (shapiro1c_R_219))
+(shapiro1c_480 480 shapiro_wilk 274 (Assign shapiro1c_R_219 .2522) (shapiro1c_R_219 .2522) (shapiro1c_R_219))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt275 
+ (
+(shapiro1c_481 481 shapiro_wilk 275 (Index a 3 shapiro1c_R_220) (a 3) (shapiro1c_R_220))
+(shapiro1c_482 482 shapiro_wilk 275 (Assign shapiro1c_R_220 .2152) (shapiro1c_R_220 .2152) (shapiro1c_R_220))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt276 
+ (
+(shapiro1c_483 483 shapiro_wilk 276 (Index a 4 shapiro1c_R_221) (a 4) (shapiro1c_R_221))
+(shapiro1c_484 484 shapiro_wilk 276 (Assign shapiro1c_R_221 .1848) (shapiro1c_R_221 .1848) (shapiro1c_R_221))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt277 
+ (
+(shapiro1c_485 485 shapiro_wilk 277 (Index a 5 shapiro1c_R_222) (a 5) (shapiro1c_R_222))
+(shapiro1c_486 486 shapiro_wilk 277 (Assign shapiro1c_R_222 .1584) (shapiro1c_R_222 .1584) (shapiro1c_R_222))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt278 
+ (
+(shapiro1c_487 487 shapiro_wilk 278 (Index a 6 shapiro1c_R_223) (a 6) (shapiro1c_R_223))
+(shapiro1c_488 488 shapiro_wilk 278 (Assign shapiro1c_R_223 .1346) (shapiro1c_R_223 .1346) (shapiro1c_R_223))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt279 
+ (
+(shapiro1c_489 489 shapiro_wilk 279 (Index a 7 shapiro1c_R_224) (a 7) (shapiro1c_R_224))
+(shapiro1c_490 490 shapiro_wilk 279 (Assign shapiro1c_R_224 .1128) (shapiro1c_R_224 .1128) (shapiro1c_R_224))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt280 
+ (
+(shapiro1c_491 491 shapiro_wilk 280 (Index a 8 shapiro1c_R_225) (a 8) (shapiro1c_R_225))
+(shapiro1c_492 492 shapiro_wilk 280 (Assign shapiro1c_R_225 .0923) (shapiro1c_R_225 .0923) (shapiro1c_R_225))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt281 
+ (
+(shapiro1c_493 493 shapiro_wilk 281 (Index a 9 shapiro1c_R_226) (a 9) (shapiro1c_R_226))
+(shapiro1c_494 494 shapiro_wilk 281 (Assign shapiro1c_R_226 .0728) (shapiro1c_R_226 .0728) (shapiro1c_R_226))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt282 
+ (
+(shapiro1c_495 495 shapiro_wilk 282 (Index a 10 shapiro1c_R_227) (a 10) (shapiro1c_R_227))
+(shapiro1c_496 496 shapiro_wilk 282 (Assign shapiro1c_R_227 .054) (shapiro1c_R_227 .054) (shapiro1c_R_227))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt283 
+ (
+(shapiro1c_497 497 shapiro_wilk 283 (Index a 11 shapiro1c_R_228) (a 11) (shapiro1c_R_228))
+(shapiro1c_498 498 shapiro_wilk 283 (Assign shapiro1c_R_228 .0358) (shapiro1c_R_228 .0358) (shapiro1c_R_228))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt284 
+ (
+(shapiro1c_499 499 shapiro_wilk 284 (Index a 12 shapiro1c_R_229) (a 12) (shapiro1c_R_229))
+(shapiro1c_500 500 shapiro_wilk 284 (Assign shapiro1c_R_229 .0178) (shapiro1c_R_229 .0178) (shapiro1c_R_229))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt286 
+ (
+(shapiro1c_501 501 shapiro_wilk 286 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt286then
+ (
+(shapiro1c_502 502 shapiro_wilk 286 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt286else
+ (
+(shapiro1c_503 503 shapiro_wilk 286 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond28 
+ (
+(shapiro1c_504 504 shapiro_wilk 286 (EqEq n 28 shapiro1c_R_230) (n 28 shapiro1c_R_230) (shapiro1c_R_230))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt288 
+ (
+(shapiro1c_505 505 shapiro_wilk 288 (Index a 0 shapiro1c_R_231) (a 0) (shapiro1c_R_231))
+(shapiro1c_506 506 shapiro_wilk 288 (Assign shapiro1c_R_231 .4328) (shapiro1c_R_231 .4328) (shapiro1c_R_231))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt289 
+ (
+(shapiro1c_507 507 shapiro_wilk 289 (Index a 1 shapiro1c_R_232) (a 1) (shapiro1c_R_232))
+(shapiro1c_508 508 shapiro_wilk 289 (Assign shapiro1c_R_232 .2992) (shapiro1c_R_232 .2992) (shapiro1c_R_232))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt290 
+ (
+(shapiro1c_509 509 shapiro_wilk 290 (Index a 2 shapiro1c_R_233) (a 2) (shapiro1c_R_233))
+(shapiro1c_510 510 shapiro_wilk 290 (Assign shapiro1c_R_233 .251) (shapiro1c_R_233 .251) (shapiro1c_R_233))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt291 
+ (
+(shapiro1c_511 511 shapiro_wilk 291 (Index a 3 shapiro1c_R_234) (a 3) (shapiro1c_R_234))
+(shapiro1c_512 512 shapiro_wilk 291 (Assign shapiro1c_R_234 .2151) (shapiro1c_R_234 .2151) (shapiro1c_R_234))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt292 
+ (
+(shapiro1c_513 513 shapiro_wilk 292 (Index a 4 shapiro1c_R_235) (a 4) (shapiro1c_R_235))
+(shapiro1c_514 514 shapiro_wilk 292 (Assign shapiro1c_R_235 .1857) (shapiro1c_R_235 .1857) (shapiro1c_R_235))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt293 
+ (
+(shapiro1c_515 515 shapiro_wilk 293 (Index a 5 shapiro1c_R_236) (a 5) (shapiro1c_R_236))
+(shapiro1c_516 516 shapiro_wilk 293 (Assign shapiro1c_R_236 .1601) (shapiro1c_R_236 .1601) (shapiro1c_R_236))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt294 
+ (
+(shapiro1c_517 517 shapiro_wilk 294 (Index a 6 shapiro1c_R_237) (a 6) (shapiro1c_R_237))
+(shapiro1c_518 518 shapiro_wilk 294 (Assign shapiro1c_R_237 .1372) (shapiro1c_R_237 .1372) (shapiro1c_R_237))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt295 
+ (
+(shapiro1c_519 519 shapiro_wilk 295 (Index a 7 shapiro1c_R_238) (a 7) (shapiro1c_R_238))
+(shapiro1c_520 520 shapiro_wilk 295 (Assign shapiro1c_R_238 .1162) (shapiro1c_R_238 .1162) (shapiro1c_R_238))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt296 
+ (
+(shapiro1c_521 521 shapiro_wilk 296 (Index a 8 shapiro1c_R_239) (a 8) (shapiro1c_R_239))
+(shapiro1c_522 522 shapiro_wilk 296 (Assign shapiro1c_R_239 .0965) (shapiro1c_R_239 .0965) (shapiro1c_R_239))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt297 
+ (
+(shapiro1c_523 523 shapiro_wilk 297 (Index a 9 shapiro1c_R_240) (a 9) (shapiro1c_R_240))
+(shapiro1c_524 524 shapiro_wilk 297 (Assign shapiro1c_R_240 .0778) (shapiro1c_R_240 .0778) (shapiro1c_R_240))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt298 
+ (
+(shapiro1c_525 525 shapiro_wilk 298 (Index a 10 shapiro1c_R_241) (a 10) (shapiro1c_R_241))
+(shapiro1c_526 526 shapiro_wilk 298 (Assign shapiro1c_R_241 .0598) (shapiro1c_R_241 .0598) (shapiro1c_R_241))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt299 
+ (
+(shapiro1c_527 527 shapiro_wilk 299 (Index a 11 shapiro1c_R_242) (a 11) (shapiro1c_R_242))
+(shapiro1c_528 528 shapiro_wilk 299 (Assign shapiro1c_R_242 .0424) (shapiro1c_R_242 .0424) (shapiro1c_R_242))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt300 
+ (
+(shapiro1c_529 529 shapiro_wilk 300 (Index a 12 shapiro1c_R_243) (a 12) (shapiro1c_R_243))
+(shapiro1c_530 530 shapiro_wilk 300 (Assign shapiro1c_R_243 .0253) (shapiro1c_R_243 .0253) (shapiro1c_R_243))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt301 
+ (
+(shapiro1c_531 531 shapiro_wilk 301 (Index a 13 shapiro1c_R_244) (a 13) (shapiro1c_R_244))
+(shapiro1c_532 532 shapiro_wilk 301 (Assign shapiro1c_R_244 .0084) (shapiro1c_R_244 .0084) (shapiro1c_R_244))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt303 
+ (
+(shapiro1c_533 533 shapiro_wilk 303 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt303then
+ (
+(shapiro1c_534 534 shapiro_wilk 303 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt303else
+ (
+(shapiro1c_535 535 shapiro_wilk 303 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond29 
+ (
+(shapiro1c_536 536 shapiro_wilk 303 (EqEq n 29 shapiro1c_R_245) (n 29 shapiro1c_R_245) (shapiro1c_R_245))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt305 
+ (
+(shapiro1c_537 537 shapiro_wilk 305 (Index a 0 shapiro1c_R_246) (a 0) (shapiro1c_R_246))
+(shapiro1c_538 538 shapiro_wilk 305 (Assign shapiro1c_R_246 .4291) (shapiro1c_R_246 .4291) (shapiro1c_R_246))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt306 
+ (
+(shapiro1c_539 539 shapiro_wilk 306 (Index a 1 shapiro1c_R_247) (a 1) (shapiro1c_R_247))
+(shapiro1c_540 540 shapiro_wilk 306 (Assign shapiro1c_R_247 .2968) (shapiro1c_R_247 .2968) (shapiro1c_R_247))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt307 
+ (
+(shapiro1c_541 541 shapiro_wilk 307 (Index a 2 shapiro1c_R_248) (a 2) (shapiro1c_R_248))
+(shapiro1c_542 542 shapiro_wilk 307 (Assign shapiro1c_R_248 .2499) (shapiro1c_R_248 .2499) (shapiro1c_R_248))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt308 
+ (
+(shapiro1c_543 543 shapiro_wilk 308 (Index a 3 shapiro1c_R_249) (a 3) (shapiro1c_R_249))
+(shapiro1c_544 544 shapiro_wilk 308 (Assign shapiro1c_R_249 .215) (shapiro1c_R_249 .215) (shapiro1c_R_249))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt309 
+ (
+(shapiro1c_545 545 shapiro_wilk 309 (Index a 4 shapiro1c_R_250) (a 4) (shapiro1c_R_250))
+(shapiro1c_546 546 shapiro_wilk 309 (Assign shapiro1c_R_250 .1864) (shapiro1c_R_250 .1864) (shapiro1c_R_250))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt310 
+ (
+(shapiro1c_547 547 shapiro_wilk 310 (Index a 5 shapiro1c_R_251) (a 5) (shapiro1c_R_251))
+(shapiro1c_548 548 shapiro_wilk 310 (Assign shapiro1c_R_251 .1616) (shapiro1c_R_251 .1616) (shapiro1c_R_251))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt311 
+ (
+(shapiro1c_549 549 shapiro_wilk 311 (Index a 6 shapiro1c_R_252) (a 6) (shapiro1c_R_252))
+(shapiro1c_550 550 shapiro_wilk 311 (Assign shapiro1c_R_252 .1395) (shapiro1c_R_252 .1395) (shapiro1c_R_252))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt312 
+ (
+(shapiro1c_551 551 shapiro_wilk 312 (Index a 7 shapiro1c_R_253) (a 7) (shapiro1c_R_253))
+(shapiro1c_552 552 shapiro_wilk 312 (Assign shapiro1c_R_253 .1192) (shapiro1c_R_253 .1192) (shapiro1c_R_253))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt313 
+ (
+(shapiro1c_553 553 shapiro_wilk 313 (Index a 8 shapiro1c_R_254) (a 8) (shapiro1c_R_254))
+(shapiro1c_554 554 shapiro_wilk 313 (Assign shapiro1c_R_254 .1002) (shapiro1c_R_254 .1002) (shapiro1c_R_254))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt314 
+ (
+(shapiro1c_555 555 shapiro_wilk 314 (Index a 9 shapiro1c_R_255) (a 9) (shapiro1c_R_255))
+(shapiro1c_556 556 shapiro_wilk 314 (Assign shapiro1c_R_255 .0822) (shapiro1c_R_255 .0822) (shapiro1c_R_255))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt315 
+ (
+(shapiro1c_557 557 shapiro_wilk 315 (Index a 10 shapiro1c_R_256) (a 10) (shapiro1c_R_256))
+(shapiro1c_558 558 shapiro_wilk 315 (Assign shapiro1c_R_256 .065) (shapiro1c_R_256 .065) (shapiro1c_R_256))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt316 
+ (
+(shapiro1c_559 559 shapiro_wilk 316 (Index a 11 shapiro1c_R_257) (a 11) (shapiro1c_R_257))
+(shapiro1c_560 560 shapiro_wilk 316 (Assign shapiro1c_R_257 .0483) (shapiro1c_R_257 .0483) (shapiro1c_R_257))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt317 
+ (
+(shapiro1c_561 561 shapiro_wilk 317 (Index a 12 shapiro1c_R_258) (a 12) (shapiro1c_R_258))
+(shapiro1c_562 562 shapiro_wilk 317 (Assign shapiro1c_R_258 .032) (shapiro1c_R_258 .032) (shapiro1c_R_258))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt318 
+ (
+(shapiro1c_563 563 shapiro_wilk 318 (Index a 13 shapiro1c_R_259) (a 13) (shapiro1c_R_259))
+(shapiro1c_564 564 shapiro_wilk 318 (Assign shapiro1c_R_259 .0159) (shapiro1c_R_259 .0159) (shapiro1c_R_259))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt320 
+ (
+(shapiro1c_565 565 shapiro_wilk 320 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt320then
+ (
+(shapiro1c_566 566 shapiro_wilk 320 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt320else
+ (
+(shapiro1c_567 567 shapiro_wilk 320 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond30 
+ (
+(shapiro1c_568 568 shapiro_wilk 320 (EqEq n 30 shapiro1c_R_260) (n 30 shapiro1c_R_260) (shapiro1c_R_260))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt322 
+ (
+(shapiro1c_569 569 shapiro_wilk 322 (Index a 0 shapiro1c_R_261) (a 0) (shapiro1c_R_261))
+(shapiro1c_570 570 shapiro_wilk 322 (Assign shapiro1c_R_261 .4254) (shapiro1c_R_261 .4254) (shapiro1c_R_261))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt323 
+ (
+(shapiro1c_571 571 shapiro_wilk 323 (Index a 1 shapiro1c_R_262) (a 1) (shapiro1c_R_262))
+(shapiro1c_572 572 shapiro_wilk 323 (Assign shapiro1c_R_262 .2944) (shapiro1c_R_262 .2944) (shapiro1c_R_262))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt324 
+ (
+(shapiro1c_573 573 shapiro_wilk 324 (Index a 2 shapiro1c_R_263) (a 2) (shapiro1c_R_263))
+(shapiro1c_574 574 shapiro_wilk 324 (Assign shapiro1c_R_263 .2487) (shapiro1c_R_263 .2487) (shapiro1c_R_263))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt325 
+ (
+(shapiro1c_575 575 shapiro_wilk 325 (Index a 3 shapiro1c_R_264) (a 3) (shapiro1c_R_264))
+(shapiro1c_576 576 shapiro_wilk 325 (Assign shapiro1c_R_264 .2148) (shapiro1c_R_264 .2148) (shapiro1c_R_264))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt326 
+ (
+(shapiro1c_577 577 shapiro_wilk 326 (Index a 4 shapiro1c_R_265) (a 4) (shapiro1c_R_265))
+(shapiro1c_578 578 shapiro_wilk 326 (Assign shapiro1c_R_265 .187) (shapiro1c_R_265 .187) (shapiro1c_R_265))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt327 
+ (
+(shapiro1c_579 579 shapiro_wilk 327 (Index a 5 shapiro1c_R_266) (a 5) (shapiro1c_R_266))
+(shapiro1c_580 580 shapiro_wilk 327 (Assign shapiro1c_R_266 .163) (shapiro1c_R_266 .163) (shapiro1c_R_266))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt328 
+ (
+(shapiro1c_581 581 shapiro_wilk 328 (Index a 6 shapiro1c_R_267) (a 6) (shapiro1c_R_267))
+(shapiro1c_582 582 shapiro_wilk 328 (Assign shapiro1c_R_267 .1415) (shapiro1c_R_267 .1415) (shapiro1c_R_267))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt329 
+ (
+(shapiro1c_583 583 shapiro_wilk 329 (Index a 7 shapiro1c_R_268) (a 7) (shapiro1c_R_268))
+(shapiro1c_584 584 shapiro_wilk 329 (Assign shapiro1c_R_268 .1219) (shapiro1c_R_268 .1219) (shapiro1c_R_268))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt330 
+ (
+(shapiro1c_585 585 shapiro_wilk 330 (Index a 8 shapiro1c_R_269) (a 8) (shapiro1c_R_269))
+(shapiro1c_586 586 shapiro_wilk 330 (Assign shapiro1c_R_269 .1036) (shapiro1c_R_269 .1036) (shapiro1c_R_269))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt331 
+ (
+(shapiro1c_587 587 shapiro_wilk 331 (Index a 9 shapiro1c_R_270) (a 9) (shapiro1c_R_270))
+(shapiro1c_588 588 shapiro_wilk 331 (Assign shapiro1c_R_270 .0862) (shapiro1c_R_270 .0862) (shapiro1c_R_270))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt332 
+ (
+(shapiro1c_589 589 shapiro_wilk 332 (Index a 10 shapiro1c_R_271) (a 10) (shapiro1c_R_271))
+(shapiro1c_590 590 shapiro_wilk 332 (Assign shapiro1c_R_271 .0697) (shapiro1c_R_271 .0697) (shapiro1c_R_271))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt333 
+ (
+(shapiro1c_591 591 shapiro_wilk 333 (Index a 11 shapiro1c_R_272) (a 11) (shapiro1c_R_272))
+(shapiro1c_592 592 shapiro_wilk 333 (Assign shapiro1c_R_272 .0537) (shapiro1c_R_272 .0537) (shapiro1c_R_272))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt334 
+ (
+(shapiro1c_593 593 shapiro_wilk 334 (Index a 12 shapiro1c_R_273) (a 12) (shapiro1c_R_273))
+(shapiro1c_594 594 shapiro_wilk 334 (Assign shapiro1c_R_273 .0381) (shapiro1c_R_273 .0381) (shapiro1c_R_273))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt335 
+ (
+(shapiro1c_595 595 shapiro_wilk 335 (Index a 13 shapiro1c_R_274) (a 13) (shapiro1c_R_274))
+(shapiro1c_596 596 shapiro_wilk 335 (Assign shapiro1c_R_274 .0227) (shapiro1c_R_274 .0227) (shapiro1c_R_274))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt336 
+ (
+(shapiro1c_597 597 shapiro_wilk 336 (Index a 14 shapiro1c_R_275) (a 14) (shapiro1c_R_275))
+(shapiro1c_598 598 shapiro_wilk 336 (Assign shapiro1c_R_275 .0076) (shapiro1c_R_275 .0076) (shapiro1c_R_275))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt338 
+ (
+(shapiro1c_599 599 shapiro_wilk 338 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt338then
+ (
+(shapiro1c_600 600 shapiro_wilk 338 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt338else
+ (
+(shapiro1c_601 601 shapiro_wilk 338 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond31 
+ (
+(shapiro1c_602 602 shapiro_wilk 338 (EqEq n 31 shapiro1c_R_276) (n 31 shapiro1c_R_276) (shapiro1c_R_276))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt340 
+ (
+(shapiro1c_603 603 shapiro_wilk 340 (Index a 0 shapiro1c_R_277) (a 0) (shapiro1c_R_277))
+(shapiro1c_604 604 shapiro_wilk 340 (Assign shapiro1c_R_277 .422) (shapiro1c_R_277 .422) (shapiro1c_R_277))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt341 
+ (
+(shapiro1c_605 605 shapiro_wilk 341 (Index a 1 shapiro1c_R_278) (a 1) (shapiro1c_R_278))
+(shapiro1c_606 606 shapiro_wilk 341 (Assign shapiro1c_R_278 .2921) (shapiro1c_R_278 .2921) (shapiro1c_R_278))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt342 
+ (
+(shapiro1c_607 607 shapiro_wilk 342 (Index a 2 shapiro1c_R_279) (a 2) (shapiro1c_R_279))
+(shapiro1c_608 608 shapiro_wilk 342 (Assign shapiro1c_R_279 .2475) (shapiro1c_R_279 .2475) (shapiro1c_R_279))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt343 
+ (
+(shapiro1c_609 609 shapiro_wilk 343 (Index a 3 shapiro1c_R_280) (a 3) (shapiro1c_R_280))
+(shapiro1c_610 610 shapiro_wilk 343 (Assign shapiro1c_R_280 .2145) (shapiro1c_R_280 .2145) (shapiro1c_R_280))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt344 
+ (
+(shapiro1c_611 611 shapiro_wilk 344 (Index a 4 shapiro1c_R_281) (a 4) (shapiro1c_R_281))
+(shapiro1c_612 612 shapiro_wilk 344 (Assign shapiro1c_R_281 .1874) (shapiro1c_R_281 .1874) (shapiro1c_R_281))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt345 
+ (
+(shapiro1c_613 613 shapiro_wilk 345 (Index a 5 shapiro1c_R_282) (a 5) (shapiro1c_R_282))
+(shapiro1c_614 614 shapiro_wilk 345 (Assign shapiro1c_R_282 .1641) (shapiro1c_R_282 .1641) (shapiro1c_R_282))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt346 
+ (
+(shapiro1c_615 615 shapiro_wilk 346 (Index a 6 shapiro1c_R_283) (a 6) (shapiro1c_R_283))
+(shapiro1c_616 616 shapiro_wilk 346 (Assign shapiro1c_R_283 .1433) (shapiro1c_R_283 .1433) (shapiro1c_R_283))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt347 
+ (
+(shapiro1c_617 617 shapiro_wilk 347 (Index a 7 shapiro1c_R_284) (a 7) (shapiro1c_R_284))
+(shapiro1c_618 618 shapiro_wilk 347 (Assign shapiro1c_R_284 .1243) (shapiro1c_R_284 .1243) (shapiro1c_R_284))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt348 
+ (
+(shapiro1c_619 619 shapiro_wilk 348 (Index a 8 shapiro1c_R_285) (a 8) (shapiro1c_R_285))
+(shapiro1c_620 620 shapiro_wilk 348 (Assign shapiro1c_R_285 .1066) (shapiro1c_R_285 .1066) (shapiro1c_R_285))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt349 
+ (
+(shapiro1c_621 621 shapiro_wilk 349 (Index a 9 shapiro1c_R_286) (a 9) (shapiro1c_R_286))
+(shapiro1c_622 622 shapiro_wilk 349 (Assign shapiro1c_R_286 .0899) (shapiro1c_R_286 .0899) (shapiro1c_R_286))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt350 
+ (
+(shapiro1c_623 623 shapiro_wilk 350 (Index a 10 shapiro1c_R_287) (a 10) (shapiro1c_R_287))
+(shapiro1c_624 624 shapiro_wilk 350 (Assign shapiro1c_R_287 .0739) (shapiro1c_R_287 .0739) (shapiro1c_R_287))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt351 
+ (
+(shapiro1c_625 625 shapiro_wilk 351 (Index a 11 shapiro1c_R_288) (a 11) (shapiro1c_R_288))
+(shapiro1c_626 626 shapiro_wilk 351 (Assign shapiro1c_R_288 .0585) (shapiro1c_R_288 .0585) (shapiro1c_R_288))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt352 
+ (
+(shapiro1c_627 627 shapiro_wilk 352 (Index a 12 shapiro1c_R_289) (a 12) (shapiro1c_R_289))
+(shapiro1c_628 628 shapiro_wilk 352 (Assign shapiro1c_R_289 .0435) (shapiro1c_R_289 .0435) (shapiro1c_R_289))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt353 
+ (
+(shapiro1c_629 629 shapiro_wilk 353 (Index a 13 shapiro1c_R_290) (a 13) (shapiro1c_R_290))
+(shapiro1c_630 630 shapiro_wilk 353 (Assign shapiro1c_R_290 .0289) (shapiro1c_R_290 .0289) (shapiro1c_R_290))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt354 
+ (
+(shapiro1c_631 631 shapiro_wilk 354 (Index a 14 shapiro1c_R_291) (a 14) (shapiro1c_R_291))
+(shapiro1c_632 632 shapiro_wilk 354 (Assign shapiro1c_R_291 .0144) (shapiro1c_R_291 .0144) (shapiro1c_R_291))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt356 
+ (
+(shapiro1c_633 633 shapiro_wilk 356 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt356then
+ (
+(shapiro1c_634 634 shapiro_wilk 356 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt356else
+ (
+(shapiro1c_635 635 shapiro_wilk 356 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond32 
+ (
+(shapiro1c_636 636 shapiro_wilk 356 (EqEq n 32 shapiro1c_R_292) (n 32 shapiro1c_R_292) (shapiro1c_R_292))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt358 
+ (
+(shapiro1c_637 637 shapiro_wilk 358 (Index a 0 shapiro1c_R_293) (a 0) (shapiro1c_R_293))
+(shapiro1c_638 638 shapiro_wilk 358 (Assign shapiro1c_R_293 .4188) (shapiro1c_R_293 .4188) (shapiro1c_R_293))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt359 
+ (
+(shapiro1c_639 639 shapiro_wilk 359 (Index a 1 shapiro1c_R_294) (a 1) (shapiro1c_R_294))
+(shapiro1c_640 640 shapiro_wilk 359 (Assign shapiro1c_R_294 .2898) (shapiro1c_R_294 .2898) (shapiro1c_R_294))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt360 
+ (
+(shapiro1c_641 641 shapiro_wilk 360 (Index a 2 shapiro1c_R_295) (a 2) (shapiro1c_R_295))
+(shapiro1c_642 642 shapiro_wilk 360 (Assign shapiro1c_R_295 .2463) (shapiro1c_R_295 .2463) (shapiro1c_R_295))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt361 
+ (
+(shapiro1c_643 643 shapiro_wilk 361 (Index a 3 shapiro1c_R_296) (a 3) (shapiro1c_R_296))
+(shapiro1c_644 644 shapiro_wilk 361 (Assign shapiro1c_R_296 .2141) (shapiro1c_R_296 .2141) (shapiro1c_R_296))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt362 
+ (
+(shapiro1c_645 645 shapiro_wilk 362 (Index a 4 shapiro1c_R_297) (a 4) (shapiro1c_R_297))
+(shapiro1c_646 646 shapiro_wilk 362 (Assign shapiro1c_R_297 .1878) (shapiro1c_R_297 .1878) (shapiro1c_R_297))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt363 
+ (
+(shapiro1c_647 647 shapiro_wilk 363 (Index a 5 shapiro1c_R_298) (a 5) (shapiro1c_R_298))
+(shapiro1c_648 648 shapiro_wilk 363 (Assign shapiro1c_R_298 .1651) (shapiro1c_R_298 .1651) (shapiro1c_R_298))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt364 
+ (
+(shapiro1c_649 649 shapiro_wilk 364 (Index a 6 shapiro1c_R_299) (a 6) (shapiro1c_R_299))
+(shapiro1c_650 650 shapiro_wilk 364 (Assign shapiro1c_R_299 .1449) (shapiro1c_R_299 .1449) (shapiro1c_R_299))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt365 
+ (
+(shapiro1c_651 651 shapiro_wilk 365 (Index a 7 shapiro1c_R_300) (a 7) (shapiro1c_R_300))
+(shapiro1c_652 652 shapiro_wilk 365 (Assign shapiro1c_R_300 .1265) (shapiro1c_R_300 .1265) (shapiro1c_R_300))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt366 
+ (
+(shapiro1c_653 653 shapiro_wilk 366 (Index a 8 shapiro1c_R_301) (a 8) (shapiro1c_R_301))
+(shapiro1c_654 654 shapiro_wilk 366 (Assign shapiro1c_R_301 .1093) (shapiro1c_R_301 .1093) (shapiro1c_R_301))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt367 
+ (
+(shapiro1c_655 655 shapiro_wilk 367 (Index a 9 shapiro1c_R_302) (a 9) (shapiro1c_R_302))
+(shapiro1c_656 656 shapiro_wilk 367 (Assign shapiro1c_R_302 .0931) (shapiro1c_R_302 .0931) (shapiro1c_R_302))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt368 
+ (
+(shapiro1c_657 657 shapiro_wilk 368 (Index a 10 shapiro1c_R_303) (a 10) (shapiro1c_R_303))
+(shapiro1c_658 658 shapiro_wilk 368 (Assign shapiro1c_R_303 .0777) (shapiro1c_R_303 .0777) (shapiro1c_R_303))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt369 
+ (
+(shapiro1c_659 659 shapiro_wilk 369 (Index a 11 shapiro1c_R_304) (a 11) (shapiro1c_R_304))
+(shapiro1c_660 660 shapiro_wilk 369 (Assign shapiro1c_R_304 .0629) (shapiro1c_R_304 .0629) (shapiro1c_R_304))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt370 
+ (
+(shapiro1c_661 661 shapiro_wilk 370 (Index a 12 shapiro1c_R_305) (a 12) (shapiro1c_R_305))
+(shapiro1c_662 662 shapiro_wilk 370 (Assign shapiro1c_R_305 .0485) (shapiro1c_R_305 .0485) (shapiro1c_R_305))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt371 
+ (
+(shapiro1c_663 663 shapiro_wilk 371 (Index a 13 shapiro1c_R_306) (a 13) (shapiro1c_R_306))
+(shapiro1c_664 664 shapiro_wilk 371 (Assign shapiro1c_R_306 .0344) (shapiro1c_R_306 .0344) (shapiro1c_R_306))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt372 
+ (
+(shapiro1c_665 665 shapiro_wilk 372 (Index a 14 shapiro1c_R_307) (a 14) (shapiro1c_R_307))
+(shapiro1c_666 666 shapiro_wilk 372 (Assign shapiro1c_R_307 .0206) (shapiro1c_R_307 .0206) (shapiro1c_R_307))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt373 
+ (
+(shapiro1c_667 667 shapiro_wilk 373 (Index a 15 shapiro1c_R_308) (a 15) (shapiro1c_R_308))
+(shapiro1c_668 668 shapiro_wilk 373 (Assign shapiro1c_R_308 .0068) (shapiro1c_R_308 .0068) (shapiro1c_R_308))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt375 
+ (
+(shapiro1c_669 669 shapiro_wilk 375 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt375then
+ (
+(shapiro1c_670 670 shapiro_wilk 375 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt375else
+ (
+(shapiro1c_671 671 shapiro_wilk 375 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond33 
+ (
+(shapiro1c_672 672 shapiro_wilk 375 (EqEq n 33 shapiro1c_R_309) (n 33 shapiro1c_R_309) (shapiro1c_R_309))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt377 
+ (
+(shapiro1c_673 673 shapiro_wilk 377 (Index a 0 shapiro1c_R_310) (a 0) (shapiro1c_R_310))
+(shapiro1c_674 674 shapiro_wilk 377 (Assign shapiro1c_R_310 .4156) (shapiro1c_R_310 .4156) (shapiro1c_R_310))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt378 
+ (
+(shapiro1c_675 675 shapiro_wilk 378 (Index a 1 shapiro1c_R_311) (a 1) (shapiro1c_R_311))
+(shapiro1c_676 676 shapiro_wilk 378 (Assign shapiro1c_R_311 .2876) (shapiro1c_R_311 .2876) (shapiro1c_R_311))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt379 
+ (
+(shapiro1c_677 677 shapiro_wilk 379 (Index a 2 shapiro1c_R_312) (a 2) (shapiro1c_R_312))
+(shapiro1c_678 678 shapiro_wilk 379 (Assign shapiro1c_R_312 .2451) (shapiro1c_R_312 .2451) (shapiro1c_R_312))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt380 
+ (
+(shapiro1c_679 679 shapiro_wilk 380 (Index a 3 shapiro1c_R_313) (a 3) (shapiro1c_R_313))
+(shapiro1c_680 680 shapiro_wilk 380 (Assign shapiro1c_R_313 .2137) (shapiro1c_R_313 .2137) (shapiro1c_R_313))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt381 
+ (
+(shapiro1c_681 681 shapiro_wilk 381 (Index a 4 shapiro1c_R_314) (a 4) (shapiro1c_R_314))
+(shapiro1c_682 682 shapiro_wilk 381 (Assign shapiro1c_R_314 .188) (shapiro1c_R_314 .188) (shapiro1c_R_314))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt382 
+ (
+(shapiro1c_683 683 shapiro_wilk 382 (Index a 5 shapiro1c_R_315) (a 5) (shapiro1c_R_315))
+(shapiro1c_684 684 shapiro_wilk 382 (Assign shapiro1c_R_315 .166) (shapiro1c_R_315 .166) (shapiro1c_R_315))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt383 
+ (
+(shapiro1c_685 685 shapiro_wilk 383 (Index a 6 shapiro1c_R_316) (a 6) (shapiro1c_R_316))
+(shapiro1c_686 686 shapiro_wilk 383 (Assign shapiro1c_R_316 .1463) (shapiro1c_R_316 .1463) (shapiro1c_R_316))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt384 
+ (
+(shapiro1c_687 687 shapiro_wilk 384 (Index a 7 shapiro1c_R_317) (a 7) (shapiro1c_R_317))
+(shapiro1c_688 688 shapiro_wilk 384 (Assign shapiro1c_R_317 .1284) (shapiro1c_R_317 .1284) (shapiro1c_R_317))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt385 
+ (
+(shapiro1c_689 689 shapiro_wilk 385 (Index a 8 shapiro1c_R_318) (a 8) (shapiro1c_R_318))
+(shapiro1c_690 690 shapiro_wilk 385 (Assign shapiro1c_R_318 .1118) (shapiro1c_R_318 .1118) (shapiro1c_R_318))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt386 
+ (
+(shapiro1c_691 691 shapiro_wilk 386 (Index a 9 shapiro1c_R_319) (a 9) (shapiro1c_R_319))
+(shapiro1c_692 692 shapiro_wilk 386 (Assign shapiro1c_R_319 .0961) (shapiro1c_R_319 .0961) (shapiro1c_R_319))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt387 
+ (
+(shapiro1c_693 693 shapiro_wilk 387 (Index a 10 shapiro1c_R_320) (a 10) (shapiro1c_R_320))
+(shapiro1c_694 694 shapiro_wilk 387 (Assign shapiro1c_R_320 .0812) (shapiro1c_R_320 .0812) (shapiro1c_R_320))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt388 
+ (
+(shapiro1c_695 695 shapiro_wilk 388 (Index a 11 shapiro1c_R_321) (a 11) (shapiro1c_R_321))
+(shapiro1c_696 696 shapiro_wilk 388 (Assign shapiro1c_R_321 .0669) (shapiro1c_R_321 .0669) (shapiro1c_R_321))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt389 
+ (
+(shapiro1c_697 697 shapiro_wilk 389 (Index a 12 shapiro1c_R_322) (a 12) (shapiro1c_R_322))
+(shapiro1c_698 698 shapiro_wilk 389 (Assign shapiro1c_R_322 .053) (shapiro1c_R_322 .053) (shapiro1c_R_322))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt390 
+ (
+(shapiro1c_699 699 shapiro_wilk 390 (Index a 13 shapiro1c_R_323) (a 13) (shapiro1c_R_323))
+(shapiro1c_700 700 shapiro_wilk 390 (Assign shapiro1c_R_323 .0395) (shapiro1c_R_323 .0395) (shapiro1c_R_323))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt391 
+ (
+(shapiro1c_701 701 shapiro_wilk 391 (Index a 14 shapiro1c_R_324) (a 14) (shapiro1c_R_324))
+(shapiro1c_702 702 shapiro_wilk 391 (Assign shapiro1c_R_324 .0262) (shapiro1c_R_324 .0262) (shapiro1c_R_324))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt392 
+ (
+(shapiro1c_703 703 shapiro_wilk 392 (Index a 15 shapiro1c_R_325) (a 15) (shapiro1c_R_325))
+(shapiro1c_704 704 shapiro_wilk 392 (Assign shapiro1c_R_325 .0131) (shapiro1c_R_325 .0131) (shapiro1c_R_325))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt394 
+ (
+(shapiro1c_705 705 shapiro_wilk 394 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt394then
+ (
+(shapiro1c_706 706 shapiro_wilk 394 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt394else
+ (
+(shapiro1c_707 707 shapiro_wilk 394 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond34 
+ (
+(shapiro1c_708 708 shapiro_wilk 394 (EqEq n 34 shapiro1c_R_326) (n 34 shapiro1c_R_326) (shapiro1c_R_326))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt396 
+ (
+(shapiro1c_709 709 shapiro_wilk 396 (Index a 0 shapiro1c_R_327) (a 0) (shapiro1c_R_327))
+(shapiro1c_710 710 shapiro_wilk 396 (Assign shapiro1c_R_327 .4127) (shapiro1c_R_327 .4127) (shapiro1c_R_327))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt397 
+ (
+(shapiro1c_711 711 shapiro_wilk 397 (Index a 1 shapiro1c_R_328) (a 1) (shapiro1c_R_328))
+(shapiro1c_712 712 shapiro_wilk 397 (Assign shapiro1c_R_328 .2854) (shapiro1c_R_328 .2854) (shapiro1c_R_328))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt398 
+ (
+(shapiro1c_713 713 shapiro_wilk 398 (Index a 2 shapiro1c_R_329) (a 2) (shapiro1c_R_329))
+(shapiro1c_714 714 shapiro_wilk 398 (Assign shapiro1c_R_329 .2439) (shapiro1c_R_329 .2439) (shapiro1c_R_329))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt399 
+ (
+(shapiro1c_715 715 shapiro_wilk 399 (Index a 3 shapiro1c_R_330) (a 3) (shapiro1c_R_330))
+(shapiro1c_716 716 shapiro_wilk 399 (Assign shapiro1c_R_330 .2132) (shapiro1c_R_330 .2132) (shapiro1c_R_330))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt400 
+ (
+(shapiro1c_717 717 shapiro_wilk 400 (Index a 4 shapiro1c_R_331) (a 4) (shapiro1c_R_331))
+(shapiro1c_718 718 shapiro_wilk 400 (Assign shapiro1c_R_331 .1882) (shapiro1c_R_331 .1882) (shapiro1c_R_331))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt401 
+ (
+(shapiro1c_719 719 shapiro_wilk 401 (Index a 5 shapiro1c_R_332) (a 5) (shapiro1c_R_332))
+(shapiro1c_720 720 shapiro_wilk 401 (Assign shapiro1c_R_332 .1667) (shapiro1c_R_332 .1667) (shapiro1c_R_332))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt402 
+ (
+(shapiro1c_721 721 shapiro_wilk 402 (Index a 6 shapiro1c_R_333) (a 6) (shapiro1c_R_333))
+(shapiro1c_722 722 shapiro_wilk 402 (Assign shapiro1c_R_333 .1475) (shapiro1c_R_333 .1475) (shapiro1c_R_333))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt403 
+ (
+(shapiro1c_723 723 shapiro_wilk 403 (Index a 7 shapiro1c_R_334) (a 7) (shapiro1c_R_334))
+(shapiro1c_724 724 shapiro_wilk 403 (Assign shapiro1c_R_334 .1301) (shapiro1c_R_334 .1301) (shapiro1c_R_334))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt404 
+ (
+(shapiro1c_725 725 shapiro_wilk 404 (Index a 8 shapiro1c_R_335) (a 8) (shapiro1c_R_335))
+(shapiro1c_726 726 shapiro_wilk 404 (Assign shapiro1c_R_335 .114) (shapiro1c_R_335 .114) (shapiro1c_R_335))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt405 
+ (
+(shapiro1c_727 727 shapiro_wilk 405 (Index a 9 shapiro1c_R_336) (a 9) (shapiro1c_R_336))
+(shapiro1c_728 728 shapiro_wilk 405 (Assign shapiro1c_R_336 .0988) (shapiro1c_R_336 .0988) (shapiro1c_R_336))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt406 
+ (
+(shapiro1c_729 729 shapiro_wilk 406 (Index a 10 shapiro1c_R_337) (a 10) (shapiro1c_R_337))
+(shapiro1c_730 730 shapiro_wilk 406 (Assign shapiro1c_R_337 .0844) (shapiro1c_R_337 .0844) (shapiro1c_R_337))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt407 
+ (
+(shapiro1c_731 731 shapiro_wilk 407 (Index a 11 shapiro1c_R_338) (a 11) (shapiro1c_R_338))
+(shapiro1c_732 732 shapiro_wilk 407 (Assign shapiro1c_R_338 .0706) (shapiro1c_R_338 .0706) (shapiro1c_R_338))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt408 
+ (
+(shapiro1c_733 733 shapiro_wilk 408 (Index a 12 shapiro1c_R_339) (a 12) (shapiro1c_R_339))
+(shapiro1c_734 734 shapiro_wilk 408 (Assign shapiro1c_R_339 .0572) (shapiro1c_R_339 .0572) (shapiro1c_R_339))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt409 
+ (
+(shapiro1c_735 735 shapiro_wilk 409 (Index a 13 shapiro1c_R_340) (a 13) (shapiro1c_R_340))
+(shapiro1c_736 736 shapiro_wilk 409 (Assign shapiro1c_R_340 .0441) (shapiro1c_R_340 .0441) (shapiro1c_R_340))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt410 
+ (
+(shapiro1c_737 737 shapiro_wilk 410 (Index a 14 shapiro1c_R_341) (a 14) (shapiro1c_R_341))
+(shapiro1c_738 738 shapiro_wilk 410 (Assign shapiro1c_R_341 .0314) (shapiro1c_R_341 .0314) (shapiro1c_R_341))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt411 
+ (
+(shapiro1c_739 739 shapiro_wilk 411 (Index a 15 shapiro1c_R_342) (a 15) (shapiro1c_R_342))
+(shapiro1c_740 740 shapiro_wilk 411 (Assign shapiro1c_R_342 .0187) (shapiro1c_R_342 .0187) (shapiro1c_R_342))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt412 
+ (
+(shapiro1c_741 741 shapiro_wilk 412 (Index a 16 shapiro1c_R_343) (a 16) (shapiro1c_R_343))
+(shapiro1c_742 742 shapiro_wilk 412 (Assign shapiro1c_R_343 .0062) (shapiro1c_R_343 .0062) (shapiro1c_R_343))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt414 
+ (
+(shapiro1c_743 743 shapiro_wilk 414 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt414then
+ (
+(shapiro1c_744 744 shapiro_wilk 414 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt414else
+ (
+(shapiro1c_745 745 shapiro_wilk 414 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond35 
+ (
+(shapiro1c_746 746 shapiro_wilk 414 (EqEq n 35 shapiro1c_R_344) (n 35 shapiro1c_R_344) (shapiro1c_R_344))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt416 
+ (
+(shapiro1c_747 747 shapiro_wilk 416 (Index a 0 shapiro1c_R_345) (a 0) (shapiro1c_R_345))
+(shapiro1c_748 748 shapiro_wilk 416 (Assign shapiro1c_R_345 .4096) (shapiro1c_R_345 .4096) (shapiro1c_R_345))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt417 
+ (
+(shapiro1c_749 749 shapiro_wilk 417 (Index a 1 shapiro1c_R_346) (a 1) (shapiro1c_R_346))
+(shapiro1c_750 750 shapiro_wilk 417 (Assign shapiro1c_R_346 .2834) (shapiro1c_R_346 .2834) (shapiro1c_R_346))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt418 
+ (
+(shapiro1c_751 751 shapiro_wilk 418 (Index a 2 shapiro1c_R_347) (a 2) (shapiro1c_R_347))
+(shapiro1c_752 752 shapiro_wilk 418 (Assign shapiro1c_R_347 .2427) (shapiro1c_R_347 .2427) (shapiro1c_R_347))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt419 
+ (
+(shapiro1c_753 753 shapiro_wilk 419 (Index a 3 shapiro1c_R_348) (a 3) (shapiro1c_R_348))
+(shapiro1c_754 754 shapiro_wilk 419 (Assign shapiro1c_R_348 .2127) (shapiro1c_R_348 .2127) (shapiro1c_R_348))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt420 
+ (
+(shapiro1c_755 755 shapiro_wilk 420 (Index a 4 shapiro1c_R_349) (a 4) (shapiro1c_R_349))
+(shapiro1c_756 756 shapiro_wilk 420 (Assign shapiro1c_R_349 .1883) (shapiro1c_R_349 .1883) (shapiro1c_R_349))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt421 
+ (
+(shapiro1c_757 757 shapiro_wilk 421 (Index a 5 shapiro1c_R_350) (a 5) (shapiro1c_R_350))
+(shapiro1c_758 758 shapiro_wilk 421 (Assign shapiro1c_R_350 .1673) (shapiro1c_R_350 .1673) (shapiro1c_R_350))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt422 
+ (
+(shapiro1c_759 759 shapiro_wilk 422 (Index a 6 shapiro1c_R_351) (a 6) (shapiro1c_R_351))
+(shapiro1c_760 760 shapiro_wilk 422 (Assign shapiro1c_R_351 .1487) (shapiro1c_R_351 .1487) (shapiro1c_R_351))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt423 
+ (
+(shapiro1c_761 761 shapiro_wilk 423 (Index a 7 shapiro1c_R_352) (a 7) (shapiro1c_R_352))
+(shapiro1c_762 762 shapiro_wilk 423 (Assign shapiro1c_R_352 .1317) (shapiro1c_R_352 .1317) (shapiro1c_R_352))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt424 
+ (
+(shapiro1c_763 763 shapiro_wilk 424 (Index a 8 shapiro1c_R_353) (a 8) (shapiro1c_R_353))
+(shapiro1c_764 764 shapiro_wilk 424 (Assign shapiro1c_R_353 .116) (shapiro1c_R_353 .116) (shapiro1c_R_353))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt425 
+ (
+(shapiro1c_765 765 shapiro_wilk 425 (Index a 9 shapiro1c_R_354) (a 9) (shapiro1c_R_354))
+(shapiro1c_766 766 shapiro_wilk 425 (Assign shapiro1c_R_354 .1013) (shapiro1c_R_354 .1013) (shapiro1c_R_354))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt426 
+ (
+(shapiro1c_767 767 shapiro_wilk 426 (Index a 10 shapiro1c_R_355) (a 10) (shapiro1c_R_355))
+(shapiro1c_768 768 shapiro_wilk 426 (Assign shapiro1c_R_355 .0873) (shapiro1c_R_355 .0873) (shapiro1c_R_355))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt427 
+ (
+(shapiro1c_769 769 shapiro_wilk 427 (Index a 11 shapiro1c_R_356) (a 11) (shapiro1c_R_356))
+(shapiro1c_770 770 shapiro_wilk 427 (Assign shapiro1c_R_356 .0739) (shapiro1c_R_356 .0739) (shapiro1c_R_356))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt428 
+ (
+(shapiro1c_771 771 shapiro_wilk 428 (Index a 12 shapiro1c_R_357) (a 12) (shapiro1c_R_357))
+(shapiro1c_772 772 shapiro_wilk 428 (Assign shapiro1c_R_357 .061) (shapiro1c_R_357 .061) (shapiro1c_R_357))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt429 
+ (
+(shapiro1c_773 773 shapiro_wilk 429 (Index a 13 shapiro1c_R_358) (a 13) (shapiro1c_R_358))
+(shapiro1c_774 774 shapiro_wilk 429 (Assign shapiro1c_R_358 .0484) (shapiro1c_R_358 .0484) (shapiro1c_R_358))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt430 
+ (
+(shapiro1c_775 775 shapiro_wilk 430 (Index a 14 shapiro1c_R_359) (a 14) (shapiro1c_R_359))
+(shapiro1c_776 776 shapiro_wilk 430 (Assign shapiro1c_R_359 .0361) (shapiro1c_R_359 .0361) (shapiro1c_R_359))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt431 
+ (
+(shapiro1c_777 777 shapiro_wilk 431 (Index a 15 shapiro1c_R_360) (a 15) (shapiro1c_R_360))
+(shapiro1c_778 778 shapiro_wilk 431 (Assign shapiro1c_R_360 .0239) (shapiro1c_R_360 .0239) (shapiro1c_R_360))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt432 
+ (
+(shapiro1c_779 779 shapiro_wilk 432 (Index a 16 shapiro1c_R_361) (a 16) (shapiro1c_R_361))
+(shapiro1c_780 780 shapiro_wilk 432 (Assign shapiro1c_R_361 .0119) (shapiro1c_R_361 .0119) (shapiro1c_R_361))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt434 
+ (
+(shapiro1c_781 781 shapiro_wilk 434 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt434then
+ (
+(shapiro1c_782 782 shapiro_wilk 434 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt434else
+ (
+(shapiro1c_783 783 shapiro_wilk 434 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond36 
+ (
+(shapiro1c_784 784 shapiro_wilk 434 (EqEq n 36 shapiro1c_R_362) (n 36 shapiro1c_R_362) (shapiro1c_R_362))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt436 
+ (
+(shapiro1c_785 785 shapiro_wilk 436 (Index a 0 shapiro1c_R_363) (a 0) (shapiro1c_R_363))
+(shapiro1c_786 786 shapiro_wilk 436 (Assign shapiro1c_R_363 .4068) (shapiro1c_R_363 .4068) (shapiro1c_R_363))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt437 
+ (
+(shapiro1c_787 787 shapiro_wilk 437 (Index a 1 shapiro1c_R_364) (a 1) (shapiro1c_R_364))
+(shapiro1c_788 788 shapiro_wilk 437 (Assign shapiro1c_R_364 .2813) (shapiro1c_R_364 .2813) (shapiro1c_R_364))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt438 
+ (
+(shapiro1c_789 789 shapiro_wilk 438 (Index a 2 shapiro1c_R_365) (a 2) (shapiro1c_R_365))
+(shapiro1c_790 790 shapiro_wilk 438 (Assign shapiro1c_R_365 .2415) (shapiro1c_R_365 .2415) (shapiro1c_R_365))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt439 
+ (
+(shapiro1c_791 791 shapiro_wilk 439 (Index a 3 shapiro1c_R_366) (a 3) (shapiro1c_R_366))
+(shapiro1c_792 792 shapiro_wilk 439 (Assign shapiro1c_R_366 .2121) (shapiro1c_R_366 .2121) (shapiro1c_R_366))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt440 
+ (
+(shapiro1c_793 793 shapiro_wilk 440 (Index a 4 shapiro1c_R_367) (a 4) (shapiro1c_R_367))
+(shapiro1c_794 794 shapiro_wilk 440 (Assign shapiro1c_R_367 .1883) (shapiro1c_R_367 .1883) (shapiro1c_R_367))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt441 
+ (
+(shapiro1c_795 795 shapiro_wilk 441 (Index a 5 shapiro1c_R_368) (a 5) (shapiro1c_R_368))
+(shapiro1c_796 796 shapiro_wilk 441 (Assign shapiro1c_R_368 .1678) (shapiro1c_R_368 .1678) (shapiro1c_R_368))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt442 
+ (
+(shapiro1c_797 797 shapiro_wilk 442 (Index a 6 shapiro1c_R_369) (a 6) (shapiro1c_R_369))
+(shapiro1c_798 798 shapiro_wilk 442 (Assign shapiro1c_R_369 .1496) (shapiro1c_R_369 .1496) (shapiro1c_R_369))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt443 
+ (
+(shapiro1c_799 799 shapiro_wilk 443 (Index a 7 shapiro1c_R_370) (a 7) (shapiro1c_R_370))
+(shapiro1c_800 800 shapiro_wilk 443 (Assign shapiro1c_R_370 .1331) (shapiro1c_R_370 .1331) (shapiro1c_R_370))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt444 
+ (
+(shapiro1c_801 801 shapiro_wilk 444 (Index a 8 shapiro1c_R_371) (a 8) (shapiro1c_R_371))
+(shapiro1c_802 802 shapiro_wilk 444 (Assign shapiro1c_R_371 .1179) (shapiro1c_R_371 .1179) (shapiro1c_R_371))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt445 
+ (
+(shapiro1c_803 803 shapiro_wilk 445 (Index a 9 shapiro1c_R_372) (a 9) (shapiro1c_R_372))
+(shapiro1c_804 804 shapiro_wilk 445 (Assign shapiro1c_R_372 .1036) (shapiro1c_R_372 .1036) (shapiro1c_R_372))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt446 
+ (
+(shapiro1c_805 805 shapiro_wilk 446 (Index a 10 shapiro1c_R_373) (a 10) (shapiro1c_R_373))
+(shapiro1c_806 806 shapiro_wilk 446 (Assign shapiro1c_R_373 .09) (shapiro1c_R_373 .09) (shapiro1c_R_373))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt447 
+ (
+(shapiro1c_807 807 shapiro_wilk 447 (Index a 11 shapiro1c_R_374) (a 11) (shapiro1c_R_374))
+(shapiro1c_808 808 shapiro_wilk 447 (Assign shapiro1c_R_374 .077) (shapiro1c_R_374 .077) (shapiro1c_R_374))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt448 
+ (
+(shapiro1c_809 809 shapiro_wilk 448 (Index a 12 shapiro1c_R_375) (a 12) (shapiro1c_R_375))
+(shapiro1c_810 810 shapiro_wilk 448 (Assign shapiro1c_R_375 .0645) (shapiro1c_R_375 .0645) (shapiro1c_R_375))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt449 
+ (
+(shapiro1c_811 811 shapiro_wilk 449 (Index a 13 shapiro1c_R_376) (a 13) (shapiro1c_R_376))
+(shapiro1c_812 812 shapiro_wilk 449 (Assign shapiro1c_R_376 .0523) (shapiro1c_R_376 .0523) (shapiro1c_R_376))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt450 
+ (
+(shapiro1c_813 813 shapiro_wilk 450 (Index a 14 shapiro1c_R_377) (a 14) (shapiro1c_R_377))
+(shapiro1c_814 814 shapiro_wilk 450 (Assign shapiro1c_R_377 .0404) (shapiro1c_R_377 .0404) (shapiro1c_R_377))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt451 
+ (
+(shapiro1c_815 815 shapiro_wilk 451 (Index a 15 shapiro1c_R_378) (a 15) (shapiro1c_R_378))
+(shapiro1c_816 816 shapiro_wilk 451 (Assign shapiro1c_R_378 .0287) (shapiro1c_R_378 .0287) (shapiro1c_R_378))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt452 
+ (
+(shapiro1c_817 817 shapiro_wilk 452 (Index a 16 shapiro1c_R_379) (a 16) (shapiro1c_R_379))
+(shapiro1c_818 818 shapiro_wilk 452 (Assign shapiro1c_R_379 .0172) (shapiro1c_R_379 .0172) (shapiro1c_R_379))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt453 
+ (
+(shapiro1c_819 819 shapiro_wilk 453 (Index a 17 shapiro1c_R_380) (a 17) (shapiro1c_R_380))
+(shapiro1c_820 820 shapiro_wilk 453 (Assign shapiro1c_R_380 .0057) (shapiro1c_R_380 .0057) (shapiro1c_R_380))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt455 
+ (
+(shapiro1c_821 821 shapiro_wilk 455 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt455then
+ (
+(shapiro1c_822 822 shapiro_wilk 455 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt455else
+ (
+(shapiro1c_823 823 shapiro_wilk 455 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond37 
+ (
+(shapiro1c_824 824 shapiro_wilk 455 (EqEq n 37 shapiro1c_R_381) (n 37 shapiro1c_R_381) (shapiro1c_R_381))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt457 
+ (
+(shapiro1c_825 825 shapiro_wilk 457 (Index a 0 shapiro1c_R_382) (a 0) (shapiro1c_R_382))
+(shapiro1c_826 826 shapiro_wilk 457 (Assign shapiro1c_R_382 .404) (shapiro1c_R_382 .404) (shapiro1c_R_382))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt458 
+ (
+(shapiro1c_827 827 shapiro_wilk 458 (Index a 1 shapiro1c_R_383) (a 1) (shapiro1c_R_383))
+(shapiro1c_828 828 shapiro_wilk 458 (Assign shapiro1c_R_383 .2794) (shapiro1c_R_383 .2794) (shapiro1c_R_383))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt459 
+ (
+(shapiro1c_829 829 shapiro_wilk 459 (Index a 2 shapiro1c_R_384) (a 2) (shapiro1c_R_384))
+(shapiro1c_830 830 shapiro_wilk 459 (Assign shapiro1c_R_384 .2403) (shapiro1c_R_384 .2403) (shapiro1c_R_384))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt460 
+ (
+(shapiro1c_831 831 shapiro_wilk 460 (Index a 3 shapiro1c_R_385) (a 3) (shapiro1c_R_385))
+(shapiro1c_832 832 shapiro_wilk 460 (Assign shapiro1c_R_385 .2116) (shapiro1c_R_385 .2116) (shapiro1c_R_385))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt461 
+ (
+(shapiro1c_833 833 shapiro_wilk 461 (Index a 4 shapiro1c_R_386) (a 4) (shapiro1c_R_386))
+(shapiro1c_834 834 shapiro_wilk 461 (Assign shapiro1c_R_386 .1883) (shapiro1c_R_386 .1883) (shapiro1c_R_386))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt462 
+ (
+(shapiro1c_835 835 shapiro_wilk 462 (Index a 5 shapiro1c_R_387) (a 5) (shapiro1c_R_387))
+(shapiro1c_836 836 shapiro_wilk 462 (Assign shapiro1c_R_387 .1683) (shapiro1c_R_387 .1683) (shapiro1c_R_387))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt463 
+ (
+(shapiro1c_837 837 shapiro_wilk 463 (Index a 6 shapiro1c_R_388) (a 6) (shapiro1c_R_388))
+(shapiro1c_838 838 shapiro_wilk 463 (Assign shapiro1c_R_388 .1505) (shapiro1c_R_388 .1505) (shapiro1c_R_388))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt464 
+ (
+(shapiro1c_839 839 shapiro_wilk 464 (Index a 7 shapiro1c_R_389) (a 7) (shapiro1c_R_389))
+(shapiro1c_840 840 shapiro_wilk 464 (Assign shapiro1c_R_389 .1344) (shapiro1c_R_389 .1344) (shapiro1c_R_389))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt465 
+ (
+(shapiro1c_841 841 shapiro_wilk 465 (Index a 8 shapiro1c_R_390) (a 8) (shapiro1c_R_390))
+(shapiro1c_842 842 shapiro_wilk 465 (Assign shapiro1c_R_390 .1196) (shapiro1c_R_390 .1196) (shapiro1c_R_390))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt466 
+ (
+(shapiro1c_843 843 shapiro_wilk 466 (Index a 9 shapiro1c_R_391) (a 9) (shapiro1c_R_391))
+(shapiro1c_844 844 shapiro_wilk 466 (Assign shapiro1c_R_391 .1056) (shapiro1c_R_391 .1056) (shapiro1c_R_391))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt467 
+ (
+(shapiro1c_845 845 shapiro_wilk 467 (Index a 10 shapiro1c_R_392) (a 10) (shapiro1c_R_392))
+(shapiro1c_846 846 shapiro_wilk 467 (Assign shapiro1c_R_392 .0924) (shapiro1c_R_392 .0924) (shapiro1c_R_392))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt468 
+ (
+(shapiro1c_847 847 shapiro_wilk 468 (Index a 11 shapiro1c_R_393) (a 11) (shapiro1c_R_393))
+(shapiro1c_848 848 shapiro_wilk 468 (Assign shapiro1c_R_393 .0798) (shapiro1c_R_393 .0798) (shapiro1c_R_393))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt469 
+ (
+(shapiro1c_849 849 shapiro_wilk 469 (Index a 12 shapiro1c_R_394) (a 12) (shapiro1c_R_394))
+(shapiro1c_850 850 shapiro_wilk 469 (Assign shapiro1c_R_394 .0677) (shapiro1c_R_394 .0677) (shapiro1c_R_394))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt470 
+ (
+(shapiro1c_851 851 shapiro_wilk 470 (Index a 13 shapiro1c_R_395) (a 13) (shapiro1c_R_395))
+(shapiro1c_852 852 shapiro_wilk 470 (Assign shapiro1c_R_395 .0559) (shapiro1c_R_395 .0559) (shapiro1c_R_395))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt471 
+ (
+(shapiro1c_853 853 shapiro_wilk 471 (Index a 14 shapiro1c_R_396) (a 14) (shapiro1c_R_396))
+(shapiro1c_854 854 shapiro_wilk 471 (Assign shapiro1c_R_396 .0444) (shapiro1c_R_396 .0444) (shapiro1c_R_396))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt472 
+ (
+(shapiro1c_855 855 shapiro_wilk 472 (Index a 15 shapiro1c_R_397) (a 15) (shapiro1c_R_397))
+(shapiro1c_856 856 shapiro_wilk 472 (Assign shapiro1c_R_397 .0331) (shapiro1c_R_397 .0331) (shapiro1c_R_397))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt473 
+ (
+(shapiro1c_857 857 shapiro_wilk 473 (Index a 16 shapiro1c_R_398) (a 16) (shapiro1c_R_398))
+(shapiro1c_858 858 shapiro_wilk 473 (Assign shapiro1c_R_398 .022) (shapiro1c_R_398 .022) (shapiro1c_R_398))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt474 
+ (
+(shapiro1c_859 859 shapiro_wilk 474 (Index a 17 shapiro1c_R_399) (a 17) (shapiro1c_R_399))
+(shapiro1c_860 860 shapiro_wilk 474 (Assign shapiro1c_R_399 .011) (shapiro1c_R_399 .011) (shapiro1c_R_399))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt476 
+ (
+(shapiro1c_861 861 shapiro_wilk 476 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt476then
+ (
+(shapiro1c_862 862 shapiro_wilk 476 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt476else
+ (
+(shapiro1c_863 863 shapiro_wilk 476 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond38 
+ (
+(shapiro1c_864 864 shapiro_wilk 476 (EqEq n 38 shapiro1c_R_400) (n 38 shapiro1c_R_400) (shapiro1c_R_400))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt478 
+ (
+(shapiro1c_865 865 shapiro_wilk 478 (Index a 0 shapiro1c_R_401) (a 0) (shapiro1c_R_401))
+(shapiro1c_866 866 shapiro_wilk 478 (Assign shapiro1c_R_401 .4015) (shapiro1c_R_401 .4015) (shapiro1c_R_401))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt479 
+ (
+(shapiro1c_867 867 shapiro_wilk 479 (Index a 1 shapiro1c_R_402) (a 1) (shapiro1c_R_402))
+(shapiro1c_868 868 shapiro_wilk 479 (Assign shapiro1c_R_402 .2774) (shapiro1c_R_402 .2774) (shapiro1c_R_402))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt480 
+ (
+(shapiro1c_869 869 shapiro_wilk 480 (Index a 2 shapiro1c_R_403) (a 2) (shapiro1c_R_403))
+(shapiro1c_870 870 shapiro_wilk 480 (Assign shapiro1c_R_403 .2391) (shapiro1c_R_403 .2391) (shapiro1c_R_403))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt481 
+ (
+(shapiro1c_871 871 shapiro_wilk 481 (Index a 3 shapiro1c_R_404) (a 3) (shapiro1c_R_404))
+(shapiro1c_872 872 shapiro_wilk 481 (Assign shapiro1c_R_404 .211) (shapiro1c_R_404 .211) (shapiro1c_R_404))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt482 
+ (
+(shapiro1c_873 873 shapiro_wilk 482 (Index a 4 shapiro1c_R_405) (a 4) (shapiro1c_R_405))
+(shapiro1c_874 874 shapiro_wilk 482 (Assign shapiro1c_R_405 .1881) (shapiro1c_R_405 .1881) (shapiro1c_R_405))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt483 
+ (
+(shapiro1c_875 875 shapiro_wilk 483 (Index a 5 shapiro1c_R_406) (a 5) (shapiro1c_R_406))
+(shapiro1c_876 876 shapiro_wilk 483 (Assign shapiro1c_R_406 .1686) (shapiro1c_R_406 .1686) (shapiro1c_R_406))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt484 
+ (
+(shapiro1c_877 877 shapiro_wilk 484 (Index a 6 shapiro1c_R_407) (a 6) (shapiro1c_R_407))
+(shapiro1c_878 878 shapiro_wilk 484 (Assign shapiro1c_R_407 .1513) (shapiro1c_R_407 .1513) (shapiro1c_R_407))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt485 
+ (
+(shapiro1c_879 879 shapiro_wilk 485 (Index a 7 shapiro1c_R_408) (a 7) (shapiro1c_R_408))
+(shapiro1c_880 880 shapiro_wilk 485 (Assign shapiro1c_R_408 .1356) (shapiro1c_R_408 .1356) (shapiro1c_R_408))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt486 
+ (
+(shapiro1c_881 881 shapiro_wilk 486 (Index a 8 shapiro1c_R_409) (a 8) (shapiro1c_R_409))
+(shapiro1c_882 882 shapiro_wilk 486 (Assign shapiro1c_R_409 .1211) (shapiro1c_R_409 .1211) (shapiro1c_R_409))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt487 
+ (
+(shapiro1c_883 883 shapiro_wilk 487 (Index a 9 shapiro1c_R_410) (a 9) (shapiro1c_R_410))
+(shapiro1c_884 884 shapiro_wilk 487 (Assign shapiro1c_R_410 .1075) (shapiro1c_R_410 .1075) (shapiro1c_R_410))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt488 
+ (
+(shapiro1c_885 885 shapiro_wilk 488 (Index a 10 shapiro1c_R_411) (a 10) (shapiro1c_R_411))
+(shapiro1c_886 886 shapiro_wilk 488 (Assign shapiro1c_R_411 .0947) (shapiro1c_R_411 .0947) (shapiro1c_R_411))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt489 
+ (
+(shapiro1c_887 887 shapiro_wilk 489 (Index a 11 shapiro1c_R_412) (a 11) (shapiro1c_R_412))
+(shapiro1c_888 888 shapiro_wilk 489 (Assign shapiro1c_R_412 .0824) (shapiro1c_R_412 .0824) (shapiro1c_R_412))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt490 
+ (
+(shapiro1c_889 889 shapiro_wilk 490 (Index a 12 shapiro1c_R_413) (a 12) (shapiro1c_R_413))
+(shapiro1c_890 890 shapiro_wilk 490 (Assign shapiro1c_R_413 .0706) (shapiro1c_R_413 .0706) (shapiro1c_R_413))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt491 
+ (
+(shapiro1c_891 891 shapiro_wilk 491 (Index a 13 shapiro1c_R_414) (a 13) (shapiro1c_R_414))
+(shapiro1c_892 892 shapiro_wilk 491 (Assign shapiro1c_R_414 .0592) (shapiro1c_R_414 .0592) (shapiro1c_R_414))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt492 
+ (
+(shapiro1c_893 893 shapiro_wilk 492 (Index a 14 shapiro1c_R_415) (a 14) (shapiro1c_R_415))
+(shapiro1c_894 894 shapiro_wilk 492 (Assign shapiro1c_R_415 .0481) (shapiro1c_R_415 .0481) (shapiro1c_R_415))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt493 
+ (
+(shapiro1c_895 895 shapiro_wilk 493 (Index a 15 shapiro1c_R_416) (a 15) (shapiro1c_R_416))
+(shapiro1c_896 896 shapiro_wilk 493 (Assign shapiro1c_R_416 .0372) (shapiro1c_R_416 .0372) (shapiro1c_R_416))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt494 
+ (
+(shapiro1c_897 897 shapiro_wilk 494 (Index a 16 shapiro1c_R_417) (a 16) (shapiro1c_R_417))
+(shapiro1c_898 898 shapiro_wilk 494 (Assign shapiro1c_R_417 .0264) (shapiro1c_R_417 .0264) (shapiro1c_R_417))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt495 
+ (
+(shapiro1c_899 899 shapiro_wilk 495 (Index a 17 shapiro1c_R_418) (a 17) (shapiro1c_R_418))
+(shapiro1c_900 900 shapiro_wilk 495 (Assign shapiro1c_R_418 .0158) (shapiro1c_R_418 .0158) (shapiro1c_R_418))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt496 
+ (
+(shapiro1c_901 901 shapiro_wilk 496 (Index a 18 shapiro1c_R_419) (a 18) (shapiro1c_R_419))
+(shapiro1c_902 902 shapiro_wilk 496 (Assign shapiro1c_R_419 .0053) (shapiro1c_R_419 .0053) (shapiro1c_R_419))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt498 
+ (
+(shapiro1c_903 903 shapiro_wilk 498 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt498then
+ (
+(shapiro1c_904 904 shapiro_wilk 498 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt498else
+ (
+(shapiro1c_905 905 shapiro_wilk 498 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond39 
+ (
+(shapiro1c_906 906 shapiro_wilk 498 (EqEq n 39 shapiro1c_R_420) (n 39 shapiro1c_R_420) (shapiro1c_R_420))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt500 
+ (
+(shapiro1c_907 907 shapiro_wilk 500 (Index a 0 shapiro1c_R_421) (a 0) (shapiro1c_R_421))
+(shapiro1c_908 908 shapiro_wilk 500 (Assign shapiro1c_R_421 .3989) (shapiro1c_R_421 .3989) (shapiro1c_R_421))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt501 
+ (
+(shapiro1c_909 909 shapiro_wilk 501 (Index a 1 shapiro1c_R_422) (a 1) (shapiro1c_R_422))
+(shapiro1c_910 910 shapiro_wilk 501 (Assign shapiro1c_R_422 .2755) (shapiro1c_R_422 .2755) (shapiro1c_R_422))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt502 
+ (
+(shapiro1c_911 911 shapiro_wilk 502 (Index a 2 shapiro1c_R_423) (a 2) (shapiro1c_R_423))
+(shapiro1c_912 912 shapiro_wilk 502 (Assign shapiro1c_R_423 .238) (shapiro1c_R_423 .238) (shapiro1c_R_423))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt503 
+ (
+(shapiro1c_913 913 shapiro_wilk 503 (Index a 3 shapiro1c_R_424) (a 3) (shapiro1c_R_424))
+(shapiro1c_914 914 shapiro_wilk 503 (Assign shapiro1c_R_424 .2104) (shapiro1c_R_424 .2104) (shapiro1c_R_424))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt504 
+ (
+(shapiro1c_915 915 shapiro_wilk 504 (Index a 4 shapiro1c_R_425) (a 4) (shapiro1c_R_425))
+(shapiro1c_916 916 shapiro_wilk 504 (Assign shapiro1c_R_425 .188) (shapiro1c_R_425 .188) (shapiro1c_R_425))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt505 
+ (
+(shapiro1c_917 917 shapiro_wilk 505 (Index a 5 shapiro1c_R_426) (a 5) (shapiro1c_R_426))
+(shapiro1c_918 918 shapiro_wilk 505 (Assign shapiro1c_R_426 .1689) (shapiro1c_R_426 .1689) (shapiro1c_R_426))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt506 
+ (
+(shapiro1c_919 919 shapiro_wilk 506 (Index a 6 shapiro1c_R_427) (a 6) (shapiro1c_R_427))
+(shapiro1c_920 920 shapiro_wilk 506 (Assign shapiro1c_R_427 .152) (shapiro1c_R_427 .152) (shapiro1c_R_427))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt507 
+ (
+(shapiro1c_921 921 shapiro_wilk 507 (Index a 7 shapiro1c_R_428) (a 7) (shapiro1c_R_428))
+(shapiro1c_922 922 shapiro_wilk 507 (Assign shapiro1c_R_428 .1366) (shapiro1c_R_428 .1366) (shapiro1c_R_428))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt508 
+ (
+(shapiro1c_923 923 shapiro_wilk 508 (Index a 8 shapiro1c_R_429) (a 8) (shapiro1c_R_429))
+(shapiro1c_924 924 shapiro_wilk 508 (Assign shapiro1c_R_429 .1225) (shapiro1c_R_429 .1225) (shapiro1c_R_429))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt509 
+ (
+(shapiro1c_925 925 shapiro_wilk 509 (Index a 9 shapiro1c_R_430) (a 9) (shapiro1c_R_430))
+(shapiro1c_926 926 shapiro_wilk 509 (Assign shapiro1c_R_430 .1092) (shapiro1c_R_430 .1092) (shapiro1c_R_430))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt510 
+ (
+(shapiro1c_927 927 shapiro_wilk 510 (Index a 10 shapiro1c_R_431) (a 10) (shapiro1c_R_431))
+(shapiro1c_928 928 shapiro_wilk 510 (Assign shapiro1c_R_431 .0967) (shapiro1c_R_431 .0967) (shapiro1c_R_431))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt511 
+ (
+(shapiro1c_929 929 shapiro_wilk 511 (Index a 11 shapiro1c_R_432) (a 11) (shapiro1c_R_432))
+(shapiro1c_930 930 shapiro_wilk 511 (Assign shapiro1c_R_432 .0848) (shapiro1c_R_432 .0848) (shapiro1c_R_432))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt512 
+ (
+(shapiro1c_931 931 shapiro_wilk 512 (Index a 12 shapiro1c_R_433) (a 12) (shapiro1c_R_433))
+(shapiro1c_932 932 shapiro_wilk 512 (Assign shapiro1c_R_433 .0733) (shapiro1c_R_433 .0733) (shapiro1c_R_433))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt513 
+ (
+(shapiro1c_933 933 shapiro_wilk 513 (Index a 13 shapiro1c_R_434) (a 13) (shapiro1c_R_434))
+(shapiro1c_934 934 shapiro_wilk 513 (Assign shapiro1c_R_434 .0622) (shapiro1c_R_434 .0622) (shapiro1c_R_434))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt514 
+ (
+(shapiro1c_935 935 shapiro_wilk 514 (Index a 14 shapiro1c_R_435) (a 14) (shapiro1c_R_435))
+(shapiro1c_936 936 shapiro_wilk 514 (Assign shapiro1c_R_435 .0515) (shapiro1c_R_435 .0515) (shapiro1c_R_435))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt515 
+ (
+(shapiro1c_937 937 shapiro_wilk 515 (Index a 15 shapiro1c_R_436) (a 15) (shapiro1c_R_436))
+(shapiro1c_938 938 shapiro_wilk 515 (Assign shapiro1c_R_436 .0409) (shapiro1c_R_436 .0409) (shapiro1c_R_436))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt516 
+ (
+(shapiro1c_939 939 shapiro_wilk 516 (Index a 16 shapiro1c_R_437) (a 16) (shapiro1c_R_437))
+(shapiro1c_940 940 shapiro_wilk 516 (Assign shapiro1c_R_437 .0305) (shapiro1c_R_437 .0305) (shapiro1c_R_437))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt517 
+ (
+(shapiro1c_941 941 shapiro_wilk 517 (Index a 17 shapiro1c_R_438) (a 17) (shapiro1c_R_438))
+(shapiro1c_942 942 shapiro_wilk 517 (Assign shapiro1c_R_438 .0203) (shapiro1c_R_438 .0203) (shapiro1c_R_438))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt518 
+ (
+(shapiro1c_943 943 shapiro_wilk 518 (Index a 18 shapiro1c_R_439) (a 18) (shapiro1c_R_439))
+(shapiro1c_944 944 shapiro_wilk 518 (Assign shapiro1c_R_439 .0101) (shapiro1c_R_439 .0101) (shapiro1c_R_439))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt520 
+ (
+(shapiro1c_945 945 shapiro_wilk 520 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt520then
+ (
+(shapiro1c_946 946 shapiro_wilk 520 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt520else
+ (
+(shapiro1c_947 947 shapiro_wilk 520 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond40 
+ (
+(shapiro1c_948 948 shapiro_wilk 520 (EqEq n 40 shapiro1c_R_440) (n 40 shapiro1c_R_440) (shapiro1c_R_440))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt522 
+ (
+(shapiro1c_949 949 shapiro_wilk 522 (Index a 0 shapiro1c_R_441) (a 0) (shapiro1c_R_441))
+(shapiro1c_950 950 shapiro_wilk 522 (Assign shapiro1c_R_441 .3964) (shapiro1c_R_441 .3964) (shapiro1c_R_441))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt523 
+ (
+(shapiro1c_951 951 shapiro_wilk 523 (Index a 1 shapiro1c_R_442) (a 1) (shapiro1c_R_442))
+(shapiro1c_952 952 shapiro_wilk 523 (Assign shapiro1c_R_442 .2737) (shapiro1c_R_442 .2737) (shapiro1c_R_442))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt524 
+ (
+(shapiro1c_953 953 shapiro_wilk 524 (Index a 2 shapiro1c_R_443) (a 2) (shapiro1c_R_443))
+(shapiro1c_954 954 shapiro_wilk 524 (Assign shapiro1c_R_443 .2368) (shapiro1c_R_443 .2368) (shapiro1c_R_443))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt525 
+ (
+(shapiro1c_955 955 shapiro_wilk 525 (Index a 3 shapiro1c_R_444) (a 3) (shapiro1c_R_444))
+(shapiro1c_956 956 shapiro_wilk 525 (Assign shapiro1c_R_444 .2098) (shapiro1c_R_444 .2098) (shapiro1c_R_444))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt526 
+ (
+(shapiro1c_957 957 shapiro_wilk 526 (Index a 4 shapiro1c_R_445) (a 4) (shapiro1c_R_445))
+(shapiro1c_958 958 shapiro_wilk 526 (Assign shapiro1c_R_445 .1878) (shapiro1c_R_445 .1878) (shapiro1c_R_445))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt527 
+ (
+(shapiro1c_959 959 shapiro_wilk 527 (Index a 5 shapiro1c_R_446) (a 5) (shapiro1c_R_446))
+(shapiro1c_960 960 shapiro_wilk 527 (Assign shapiro1c_R_446 .1691) (shapiro1c_R_446 .1691) (shapiro1c_R_446))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt528 
+ (
+(shapiro1c_961 961 shapiro_wilk 528 (Index a 6 shapiro1c_R_447) (a 6) (shapiro1c_R_447))
+(shapiro1c_962 962 shapiro_wilk 528 (Assign shapiro1c_R_447 .1526) (shapiro1c_R_447 .1526) (shapiro1c_R_447))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt529 
+ (
+(shapiro1c_963 963 shapiro_wilk 529 (Index a 7 shapiro1c_R_448) (a 7) (shapiro1c_R_448))
+(shapiro1c_964 964 shapiro_wilk 529 (Assign shapiro1c_R_448 .1376) (shapiro1c_R_448 .1376) (shapiro1c_R_448))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt530 
+ (
+(shapiro1c_965 965 shapiro_wilk 530 (Index a 8 shapiro1c_R_449) (a 8) (shapiro1c_R_449))
+(shapiro1c_966 966 shapiro_wilk 530 (Assign shapiro1c_R_449 .1237) (shapiro1c_R_449 .1237) (shapiro1c_R_449))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt531 
+ (
+(shapiro1c_967 967 shapiro_wilk 531 (Index a 9 shapiro1c_R_450) (a 9) (shapiro1c_R_450))
+(shapiro1c_968 968 shapiro_wilk 531 (Assign shapiro1c_R_450 .1108) (shapiro1c_R_450 .1108) (shapiro1c_R_450))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt532 
+ (
+(shapiro1c_969 969 shapiro_wilk 532 (Index a 10 shapiro1c_R_451) (a 10) (shapiro1c_R_451))
+(shapiro1c_970 970 shapiro_wilk 532 (Assign shapiro1c_R_451 .0986) (shapiro1c_R_451 .0986) (shapiro1c_R_451))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt533 
+ (
+(shapiro1c_971 971 shapiro_wilk 533 (Index a 11 shapiro1c_R_452) (a 11) (shapiro1c_R_452))
+(shapiro1c_972 972 shapiro_wilk 533 (Assign shapiro1c_R_452 .087) (shapiro1c_R_452 .087) (shapiro1c_R_452))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt534 
+ (
+(shapiro1c_973 973 shapiro_wilk 534 (Index a 12 shapiro1c_R_453) (a 12) (shapiro1c_R_453))
+(shapiro1c_974 974 shapiro_wilk 534 (Assign shapiro1c_R_453 .0759) (shapiro1c_R_453 .0759) (shapiro1c_R_453))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt535 
+ (
+(shapiro1c_975 975 shapiro_wilk 535 (Index a 13 shapiro1c_R_454) (a 13) (shapiro1c_R_454))
+(shapiro1c_976 976 shapiro_wilk 535 (Assign shapiro1c_R_454 .0651) (shapiro1c_R_454 .0651) (shapiro1c_R_454))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt536 
+ (
+(shapiro1c_977 977 shapiro_wilk 536 (Index a 14 shapiro1c_R_455) (a 14) (shapiro1c_R_455))
+(shapiro1c_978 978 shapiro_wilk 536 (Assign shapiro1c_R_455 .0546) (shapiro1c_R_455 .0546) (shapiro1c_R_455))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt537 
+ (
+(shapiro1c_979 979 shapiro_wilk 537 (Index a 15 shapiro1c_R_456) (a 15) (shapiro1c_R_456))
+(shapiro1c_980 980 shapiro_wilk 537 (Assign shapiro1c_R_456 .0444) (shapiro1c_R_456 .0444) (shapiro1c_R_456))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt538 
+ (
+(shapiro1c_981 981 shapiro_wilk 538 (Index a 16 shapiro1c_R_457) (a 16) (shapiro1c_R_457))
+(shapiro1c_982 982 shapiro_wilk 538 (Assign shapiro1c_R_457 .0343) (shapiro1c_R_457 .0343) (shapiro1c_R_457))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt539 
+ (
+(shapiro1c_983 983 shapiro_wilk 539 (Index a 17 shapiro1c_R_458) (a 17) (shapiro1c_R_458))
+(shapiro1c_984 984 shapiro_wilk 539 (Assign shapiro1c_R_458 .0244) (shapiro1c_R_458 .0244) (shapiro1c_R_458))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt540 
+ (
+(shapiro1c_985 985 shapiro_wilk 540 (Index a 18 shapiro1c_R_459) (a 18) (shapiro1c_R_459))
+(shapiro1c_986 986 shapiro_wilk 540 (Assign shapiro1c_R_459 .0146) (shapiro1c_R_459 .0146) (shapiro1c_R_459))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt541 
+ (
+(shapiro1c_987 987 shapiro_wilk 541 (Index a 19 shapiro1c_R_460) (a 19) (shapiro1c_R_460))
+(shapiro1c_988 988 shapiro_wilk 541 (Assign shapiro1c_R_460 .0049) (shapiro1c_R_460 .0049) (shapiro1c_R_460))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt543 
+ (
+(shapiro1c_989 989 shapiro_wilk 543 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt543then
+ (
+(shapiro1c_990 990 shapiro_wilk 543 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt543else
+ (
+(shapiro1c_991 991 shapiro_wilk 543 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond41 
+ (
+(shapiro1c_992 992 shapiro_wilk 543 (EqEq n 41 shapiro1c_R_461) (n 41 shapiro1c_R_461) (shapiro1c_R_461))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt545 
+ (
+(shapiro1c_993 993 shapiro_wilk 545 (Index a 0 shapiro1c_R_462) (a 0) (shapiro1c_R_462))
+(shapiro1c_994 994 shapiro_wilk 545 (Assign shapiro1c_R_462 .394) (shapiro1c_R_462 .394) (shapiro1c_R_462))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt546 
+ (
+(shapiro1c_995 995 shapiro_wilk 546 (Index a 1 shapiro1c_R_463) (a 1) (shapiro1c_R_463))
+(shapiro1c_996 996 shapiro_wilk 546 (Assign shapiro1c_R_463 .2719) (shapiro1c_R_463 .2719) (shapiro1c_R_463))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt547 
+ (
+(shapiro1c_997 997 shapiro_wilk 547 (Index a 2 shapiro1c_R_464) (a 2) (shapiro1c_R_464))
+(shapiro1c_998 998 shapiro_wilk 547 (Assign shapiro1c_R_464 .2357) (shapiro1c_R_464 .2357) (shapiro1c_R_464))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt548 
+ (
+(shapiro1c_999 999 shapiro_wilk 548 (Index a 3 shapiro1c_R_465) (a 3) (shapiro1c_R_465))
+(shapiro1c_1000 1000 shapiro_wilk 548 (Assign shapiro1c_R_465 .2091) (shapiro1c_R_465 .2091) (shapiro1c_R_465))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt549 
+ (
+(shapiro1c_1001 1001 shapiro_wilk 549 (Index a 4 shapiro1c_R_466) (a 4) (shapiro1c_R_466))
+(shapiro1c_1002 1002 shapiro_wilk 549 (Assign shapiro1c_R_466 .1876) (shapiro1c_R_466 .1876) (shapiro1c_R_466))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt550 
+ (
+(shapiro1c_1003 1003 shapiro_wilk 550 (Index a 5 shapiro1c_R_467) (a 5) (shapiro1c_R_467))
+(shapiro1c_1004 1004 shapiro_wilk 550 (Assign shapiro1c_R_467 .1693) (shapiro1c_R_467 .1693) (shapiro1c_R_467))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt551 
+ (
+(shapiro1c_1005 1005 shapiro_wilk 551 (Index a 6 shapiro1c_R_468) (a 6) (shapiro1c_R_468))
+(shapiro1c_1006 1006 shapiro_wilk 551 (Assign shapiro1c_R_468 .1531) (shapiro1c_R_468 .1531) (shapiro1c_R_468))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt552 
+ (
+(shapiro1c_1007 1007 shapiro_wilk 552 (Index a 7 shapiro1c_R_469) (a 7) (shapiro1c_R_469))
+(shapiro1c_1008 1008 shapiro_wilk 552 (Assign shapiro1c_R_469 .1384) (shapiro1c_R_469 .1384) (shapiro1c_R_469))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt553 
+ (
+(shapiro1c_1009 1009 shapiro_wilk 553 (Index a 8 shapiro1c_R_470) (a 8) (shapiro1c_R_470))
+(shapiro1c_1010 1010 shapiro_wilk 553 (Assign shapiro1c_R_470 .1249) (shapiro1c_R_470 .1249) (shapiro1c_R_470))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt554 
+ (
+(shapiro1c_1011 1011 shapiro_wilk 554 (Index a 9 shapiro1c_R_471) (a 9) (shapiro1c_R_471))
+(shapiro1c_1012 1012 shapiro_wilk 554 (Assign shapiro1c_R_471 .1123) (shapiro1c_R_471 .1123) (shapiro1c_R_471))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt555 
+ (
+(shapiro1c_1013 1013 shapiro_wilk 555 (Index a 10 shapiro1c_R_472) (a 10) (shapiro1c_R_472))
+(shapiro1c_1014 1014 shapiro_wilk 555 (Assign shapiro1c_R_472 .1004) (shapiro1c_R_472 .1004) (shapiro1c_R_472))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt556 
+ (
+(shapiro1c_1015 1015 shapiro_wilk 556 (Index a 11 shapiro1c_R_473) (a 11) (shapiro1c_R_473))
+(shapiro1c_1016 1016 shapiro_wilk 556 (Assign shapiro1c_R_473 .0891) (shapiro1c_R_473 .0891) (shapiro1c_R_473))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt557 
+ (
+(shapiro1c_1017 1017 shapiro_wilk 557 (Index a 12 shapiro1c_R_474) (a 12) (shapiro1c_R_474))
+(shapiro1c_1018 1018 shapiro_wilk 557 (Assign shapiro1c_R_474 .0782) (shapiro1c_R_474 .0782) (shapiro1c_R_474))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt558 
+ (
+(shapiro1c_1019 1019 shapiro_wilk 558 (Index a 13 shapiro1c_R_475) (a 13) (shapiro1c_R_475))
+(shapiro1c_1020 1020 shapiro_wilk 558 (Assign shapiro1c_R_475 .0677) (shapiro1c_R_475 .0677) (shapiro1c_R_475))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt559 
+ (
+(shapiro1c_1021 1021 shapiro_wilk 559 (Index a 14 shapiro1c_R_476) (a 14) (shapiro1c_R_476))
+(shapiro1c_1022 1022 shapiro_wilk 559 (Assign shapiro1c_R_476 .0575) (shapiro1c_R_476 .0575) (shapiro1c_R_476))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt560 
+ (
+(shapiro1c_1023 1023 shapiro_wilk 560 (Index a 15 shapiro1c_R_477) (a 15) (shapiro1c_R_477))
+(shapiro1c_1024 1024 shapiro_wilk 560 (Assign shapiro1c_R_477 .0476) (shapiro1c_R_477 .0476) (shapiro1c_R_477))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt561 
+ (
+(shapiro1c_1025 1025 shapiro_wilk 561 (Index a 16 shapiro1c_R_478) (a 16) (shapiro1c_R_478))
+(shapiro1c_1026 1026 shapiro_wilk 561 (Assign shapiro1c_R_478 .0379) (shapiro1c_R_478 .0379) (shapiro1c_R_478))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt562 
+ (
+(shapiro1c_1027 1027 shapiro_wilk 562 (Index a 17 shapiro1c_R_479) (a 17) (shapiro1c_R_479))
+(shapiro1c_1028 1028 shapiro_wilk 562 (Assign shapiro1c_R_479 .0283) (shapiro1c_R_479 .0283) (shapiro1c_R_479))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt563 
+ (
+(shapiro1c_1029 1029 shapiro_wilk 563 (Index a 18 shapiro1c_R_480) (a 18) (shapiro1c_R_480))
+(shapiro1c_1030 1030 shapiro_wilk 563 (Assign shapiro1c_R_480 .0188) (shapiro1c_R_480 .0188) (shapiro1c_R_480))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt564 
+ (
+(shapiro1c_1031 1031 shapiro_wilk 564 (Index a 19 shapiro1c_R_481) (a 19) (shapiro1c_R_481))
+(shapiro1c_1032 1032 shapiro_wilk 564 (Assign shapiro1c_R_481 .0094) (shapiro1c_R_481 .0094) (shapiro1c_R_481))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt566 
+ (
+(shapiro1c_1033 1033 shapiro_wilk 566 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt566then
+ (
+(shapiro1c_1034 1034 shapiro_wilk 566 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt566else
+ (
+(shapiro1c_1035 1035 shapiro_wilk 566 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond42 
+ (
+(shapiro1c_1036 1036 shapiro_wilk 566 (EqEq n 42 shapiro1c_R_482) (n 42 shapiro1c_R_482) (shapiro1c_R_482))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt568 
+ (
+(shapiro1c_1037 1037 shapiro_wilk 568 (Index a 0 shapiro1c_R_483) (a 0) (shapiro1c_R_483))
+(shapiro1c_1038 1038 shapiro_wilk 568 (Assign shapiro1c_R_483 .3917) (shapiro1c_R_483 .3917) (shapiro1c_R_483))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt569 
+ (
+(shapiro1c_1039 1039 shapiro_wilk 569 (Index a 1 shapiro1c_R_484) (a 1) (shapiro1c_R_484))
+(shapiro1c_1040 1040 shapiro_wilk 569 (Assign shapiro1c_R_484 .2701) (shapiro1c_R_484 .2701) (shapiro1c_R_484))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt570 
+ (
+(shapiro1c_1041 1041 shapiro_wilk 570 (Index a 2 shapiro1c_R_485) (a 2) (shapiro1c_R_485))
+(shapiro1c_1042 1042 shapiro_wilk 570 (Assign shapiro1c_R_485 .2345) (shapiro1c_R_485 .2345) (shapiro1c_R_485))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt571 
+ (
+(shapiro1c_1043 1043 shapiro_wilk 571 (Index a 3 shapiro1c_R_486) (a 3) (shapiro1c_R_486))
+(shapiro1c_1044 1044 shapiro_wilk 571 (Assign shapiro1c_R_486 .2085) (shapiro1c_R_486 .2085) (shapiro1c_R_486))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt572 
+ (
+(shapiro1c_1045 1045 shapiro_wilk 572 (Index a 4 shapiro1c_R_487) (a 4) (shapiro1c_R_487))
+(shapiro1c_1046 1046 shapiro_wilk 572 (Assign shapiro1c_R_487 .1874) (shapiro1c_R_487 .1874) (shapiro1c_R_487))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt573 
+ (
+(shapiro1c_1047 1047 shapiro_wilk 573 (Index a 5 shapiro1c_R_488) (a 5) (shapiro1c_R_488))
+(shapiro1c_1048 1048 shapiro_wilk 573 (Assign shapiro1c_R_488 .1694) (shapiro1c_R_488 .1694) (shapiro1c_R_488))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt574 
+ (
+(shapiro1c_1049 1049 shapiro_wilk 574 (Index a 6 shapiro1c_R_489) (a 6) (shapiro1c_R_489))
+(shapiro1c_1050 1050 shapiro_wilk 574 (Assign shapiro1c_R_489 .1535) (shapiro1c_R_489 .1535) (shapiro1c_R_489))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt575 
+ (
+(shapiro1c_1051 1051 shapiro_wilk 575 (Index a 7 shapiro1c_R_490) (a 7) (shapiro1c_R_490))
+(shapiro1c_1052 1052 shapiro_wilk 575 (Assign shapiro1c_R_490 .1392) (shapiro1c_R_490 .1392) (shapiro1c_R_490))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt576 
+ (
+(shapiro1c_1053 1053 shapiro_wilk 576 (Index a 8 shapiro1c_R_491) (a 8) (shapiro1c_R_491))
+(shapiro1c_1054 1054 shapiro_wilk 576 (Assign shapiro1c_R_491 .1259) (shapiro1c_R_491 .1259) (shapiro1c_R_491))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt577 
+ (
+(shapiro1c_1055 1055 shapiro_wilk 577 (Index a 9 shapiro1c_R_492) (a 9) (shapiro1c_R_492))
+(shapiro1c_1056 1056 shapiro_wilk 577 (Assign shapiro1c_R_492 .1136) (shapiro1c_R_492 .1136) (shapiro1c_R_492))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt578 
+ (
+(shapiro1c_1057 1057 shapiro_wilk 578 (Index a 10 shapiro1c_R_493) (a 10) (shapiro1c_R_493))
+(shapiro1c_1058 1058 shapiro_wilk 578 (Assign shapiro1c_R_493 .102) (shapiro1c_R_493 .102) (shapiro1c_R_493))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt579 
+ (
+(shapiro1c_1059 1059 shapiro_wilk 579 (Index a 11 shapiro1c_R_494) (a 11) (shapiro1c_R_494))
+(shapiro1c_1060 1060 shapiro_wilk 579 (Assign shapiro1c_R_494 .0909) (shapiro1c_R_494 .0909) (shapiro1c_R_494))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt580 
+ (
+(shapiro1c_1061 1061 shapiro_wilk 580 (Index a 12 shapiro1c_R_495) (a 12) (shapiro1c_R_495))
+(shapiro1c_1062 1062 shapiro_wilk 580 (Assign shapiro1c_R_495 .0804) (shapiro1c_R_495 .0804) (shapiro1c_R_495))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt581 
+ (
+(shapiro1c_1063 1063 shapiro_wilk 581 (Index a 13 shapiro1c_R_496) (a 13) (shapiro1c_R_496))
+(shapiro1c_1064 1064 shapiro_wilk 581 (Assign shapiro1c_R_496 .0701) (shapiro1c_R_496 .0701) (shapiro1c_R_496))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt582 
+ (
+(shapiro1c_1065 1065 shapiro_wilk 582 (Index a 14 shapiro1c_R_497) (a 14) (shapiro1c_R_497))
+(shapiro1c_1066 1066 shapiro_wilk 582 (Assign shapiro1c_R_497 .0602) (shapiro1c_R_497 .0602) (shapiro1c_R_497))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt583 
+ (
+(shapiro1c_1067 1067 shapiro_wilk 583 (Index a 15 shapiro1c_R_498) (a 15) (shapiro1c_R_498))
+(shapiro1c_1068 1068 shapiro_wilk 583 (Assign shapiro1c_R_498 .0506) (shapiro1c_R_498 .0506) (shapiro1c_R_498))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt584 
+ (
+(shapiro1c_1069 1069 shapiro_wilk 584 (Index a 16 shapiro1c_R_499) (a 16) (shapiro1c_R_499))
+(shapiro1c_1070 1070 shapiro_wilk 584 (Assign shapiro1c_R_499 .0411) (shapiro1c_R_499 .0411) (shapiro1c_R_499))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt585 
+ (
+(shapiro1c_1071 1071 shapiro_wilk 585 (Index a 17 shapiro1c_R_500) (a 17) (shapiro1c_R_500))
+(shapiro1c_1072 1072 shapiro_wilk 585 (Assign shapiro1c_R_500 .0318) (shapiro1c_R_500 .0318) (shapiro1c_R_500))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt586 
+ (
+(shapiro1c_1073 1073 shapiro_wilk 586 (Index a 18 shapiro1c_R_501) (a 18) (shapiro1c_R_501))
+(shapiro1c_1074 1074 shapiro_wilk 586 (Assign shapiro1c_R_501 .0227) (shapiro1c_R_501 .0227) (shapiro1c_R_501))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt587 
+ (
+(shapiro1c_1075 1075 shapiro_wilk 587 (Index a 19 shapiro1c_R_502) (a 19) (shapiro1c_R_502))
+(shapiro1c_1076 1076 shapiro_wilk 587 (Assign shapiro1c_R_502 .0136) (shapiro1c_R_502 .0136) (shapiro1c_R_502))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt588 
+ (
+(shapiro1c_1077 1077 shapiro_wilk 588 (Index a 20 shapiro1c_R_503) (a 20) (shapiro1c_R_503))
+(shapiro1c_1078 1078 shapiro_wilk 588 (Assign shapiro1c_R_503 .0045) (shapiro1c_R_503 .0045) (shapiro1c_R_503))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt590 
+ (
+(shapiro1c_1079 1079 shapiro_wilk 590 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt590then
+ (
+(shapiro1c_1080 1080 shapiro_wilk 590 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt590else
+ (
+(shapiro1c_1081 1081 shapiro_wilk 590 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond43 
+ (
+(shapiro1c_1082 1082 shapiro_wilk 590 (EqEq n 43 shapiro1c_R_504) (n 43 shapiro1c_R_504) (shapiro1c_R_504))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt592 
+ (
+(shapiro1c_1083 1083 shapiro_wilk 592 (Index a 0 shapiro1c_R_505) (a 0) (shapiro1c_R_505))
+(shapiro1c_1084 1084 shapiro_wilk 592 (Assign shapiro1c_R_505 .3894) (shapiro1c_R_505 .3894) (shapiro1c_R_505))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt593 
+ (
+(shapiro1c_1085 1085 shapiro_wilk 593 (Index a 1 shapiro1c_R_506) (a 1) (shapiro1c_R_506))
+(shapiro1c_1086 1086 shapiro_wilk 593 (Assign shapiro1c_R_506 .2684) (shapiro1c_R_506 .2684) (shapiro1c_R_506))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt594 
+ (
+(shapiro1c_1087 1087 shapiro_wilk 594 (Index a 2 shapiro1c_R_507) (a 2) (shapiro1c_R_507))
+(shapiro1c_1088 1088 shapiro_wilk 594 (Assign shapiro1c_R_507 .2334) (shapiro1c_R_507 .2334) (shapiro1c_R_507))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt595 
+ (
+(shapiro1c_1089 1089 shapiro_wilk 595 (Index a 3 shapiro1c_R_508) (a 3) (shapiro1c_R_508))
+(shapiro1c_1090 1090 shapiro_wilk 595 (Assign shapiro1c_R_508 .2078) (shapiro1c_R_508 .2078) (shapiro1c_R_508))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt596 
+ (
+(shapiro1c_1091 1091 shapiro_wilk 596 (Index a 4 shapiro1c_R_509) (a 4) (shapiro1c_R_509))
+(shapiro1c_1092 1092 shapiro_wilk 596 (Assign shapiro1c_R_509 .1871) (shapiro1c_R_509 .1871) (shapiro1c_R_509))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt597 
+ (
+(shapiro1c_1093 1093 shapiro_wilk 597 (Index a 5 shapiro1c_R_510) (a 5) (shapiro1c_R_510))
+(shapiro1c_1094 1094 shapiro_wilk 597 (Assign shapiro1c_R_510 .1695) (shapiro1c_R_510 .1695) (shapiro1c_R_510))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt598 
+ (
+(shapiro1c_1095 1095 shapiro_wilk 598 (Index a 6 shapiro1c_R_511) (a 6) (shapiro1c_R_511))
+(shapiro1c_1096 1096 shapiro_wilk 598 (Assign shapiro1c_R_511 .1539) (shapiro1c_R_511 .1539) (shapiro1c_R_511))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt599 
+ (
+(shapiro1c_1097 1097 shapiro_wilk 599 (Index a 7 shapiro1c_R_512) (a 7) (shapiro1c_R_512))
+(shapiro1c_1098 1098 shapiro_wilk 599 (Assign shapiro1c_R_512 .1398) (shapiro1c_R_512 .1398) (shapiro1c_R_512))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt600 
+ (
+(shapiro1c_1099 1099 shapiro_wilk 600 (Index a 8 shapiro1c_R_513) (a 8) (shapiro1c_R_513))
+(shapiro1c_1100 1100 shapiro_wilk 600 (Assign shapiro1c_R_513 .1269) (shapiro1c_R_513 .1269) (shapiro1c_R_513))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt601 
+ (
+(shapiro1c_1101 1101 shapiro_wilk 601 (Index a 9 shapiro1c_R_514) (a 9) (shapiro1c_R_514))
+(shapiro1c_1102 1102 shapiro_wilk 601 (Assign shapiro1c_R_514 .1149) (shapiro1c_R_514 .1149) (shapiro1c_R_514))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt602 
+ (
+(shapiro1c_1103 1103 shapiro_wilk 602 (Index a 10 shapiro1c_R_515) (a 10) (shapiro1c_R_515))
+(shapiro1c_1104 1104 shapiro_wilk 602 (Assign shapiro1c_R_515 .1035) (shapiro1c_R_515 .1035) (shapiro1c_R_515))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt603 
+ (
+(shapiro1c_1105 1105 shapiro_wilk 603 (Index a 11 shapiro1c_R_516) (a 11) (shapiro1c_R_516))
+(shapiro1c_1106 1106 shapiro_wilk 603 (Assign shapiro1c_R_516 .0927) (shapiro1c_R_516 .0927) (shapiro1c_R_516))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt604 
+ (
+(shapiro1c_1107 1107 shapiro_wilk 604 (Index a 12 shapiro1c_R_517) (a 12) (shapiro1c_R_517))
+(shapiro1c_1108 1108 shapiro_wilk 604 (Assign shapiro1c_R_517 .0824) (shapiro1c_R_517 .0824) (shapiro1c_R_517))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt605 
+ (
+(shapiro1c_1109 1109 shapiro_wilk 605 (Index a 13 shapiro1c_R_518) (a 13) (shapiro1c_R_518))
+(shapiro1c_1110 1110 shapiro_wilk 605 (Assign shapiro1c_R_518 .0724) (shapiro1c_R_518 .0724) (shapiro1c_R_518))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt606 
+ (
+(shapiro1c_1111 1111 shapiro_wilk 606 (Index a 14 shapiro1c_R_519) (a 14) (shapiro1c_R_519))
+(shapiro1c_1112 1112 shapiro_wilk 606 (Assign shapiro1c_R_519 .0628) (shapiro1c_R_519 .0628) (shapiro1c_R_519))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt607 
+ (
+(shapiro1c_1113 1113 shapiro_wilk 607 (Index a 15 shapiro1c_R_520) (a 15) (shapiro1c_R_520))
+(shapiro1c_1114 1114 shapiro_wilk 607 (Assign shapiro1c_R_520 .0534) (shapiro1c_R_520 .0534) (shapiro1c_R_520))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt608 
+ (
+(shapiro1c_1115 1115 shapiro_wilk 608 (Index a 16 shapiro1c_R_521) (a 16) (shapiro1c_R_521))
+(shapiro1c_1116 1116 shapiro_wilk 608 (Assign shapiro1c_R_521 .0442) (shapiro1c_R_521 .0442) (shapiro1c_R_521))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt609 
+ (
+(shapiro1c_1117 1117 shapiro_wilk 609 (Index a 17 shapiro1c_R_522) (a 17) (shapiro1c_R_522))
+(shapiro1c_1118 1118 shapiro_wilk 609 (Assign shapiro1c_R_522 .0352) (shapiro1c_R_522 .0352) (shapiro1c_R_522))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt610 
+ (
+(shapiro1c_1119 1119 shapiro_wilk 610 (Index a 18 shapiro1c_R_523) (a 18) (shapiro1c_R_523))
+(shapiro1c_1120 1120 shapiro_wilk 610 (Assign shapiro1c_R_523 .0263) (shapiro1c_R_523 .0263) (shapiro1c_R_523))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt611 
+ (
+(shapiro1c_1121 1121 shapiro_wilk 611 (Index a 19 shapiro1c_R_524) (a 19) (shapiro1c_R_524))
+(shapiro1c_1122 1122 shapiro_wilk 611 (Assign shapiro1c_R_524 .0175) (shapiro1c_R_524 .0175) (shapiro1c_R_524))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt612 
+ (
+(shapiro1c_1123 1123 shapiro_wilk 612 (Index a 20 shapiro1c_R_525) (a 20) (shapiro1c_R_525))
+(shapiro1c_1124 1124 shapiro_wilk 612 (Assign shapiro1c_R_525 .0087) (shapiro1c_R_525 .0087) (shapiro1c_R_525))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt614 
+ (
+(shapiro1c_1125 1125 shapiro_wilk 614 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt614then
+ (
+(shapiro1c_1126 1126 shapiro_wilk 614 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt614else
+ (
+(shapiro1c_1127 1127 shapiro_wilk 614 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond44 
+ (
+(shapiro1c_1128 1128 shapiro_wilk 614 (EqEq n 44 shapiro1c_R_526) (n 44 shapiro1c_R_526) (shapiro1c_R_526))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt616 
+ (
+(shapiro1c_1129 1129 shapiro_wilk 616 (Index a 0 shapiro1c_R_527) (a 0) (shapiro1c_R_527))
+(shapiro1c_1130 1130 shapiro_wilk 616 (Assign shapiro1c_R_527 .3872) (shapiro1c_R_527 .3872) (shapiro1c_R_527))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt617 
+ (
+(shapiro1c_1131 1131 shapiro_wilk 617 (Index a 1 shapiro1c_R_528) (a 1) (shapiro1c_R_528))
+(shapiro1c_1132 1132 shapiro_wilk 617 (Assign shapiro1c_R_528 .2667) (shapiro1c_R_528 .2667) (shapiro1c_R_528))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt618 
+ (
+(shapiro1c_1133 1133 shapiro_wilk 618 (Index a 2 shapiro1c_R_529) (a 2) (shapiro1c_R_529))
+(shapiro1c_1134 1134 shapiro_wilk 618 (Assign shapiro1c_R_529 .2323) (shapiro1c_R_529 .2323) (shapiro1c_R_529))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt619 
+ (
+(shapiro1c_1135 1135 shapiro_wilk 619 (Index a 3 shapiro1c_R_530) (a 3) (shapiro1c_R_530))
+(shapiro1c_1136 1136 shapiro_wilk 619 (Assign shapiro1c_R_530 .2072) (shapiro1c_R_530 .2072) (shapiro1c_R_530))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt620 
+ (
+(shapiro1c_1137 1137 shapiro_wilk 620 (Index a 4 shapiro1c_R_531) (a 4) (shapiro1c_R_531))
+(shapiro1c_1138 1138 shapiro_wilk 620 (Assign shapiro1c_R_531 .1868) (shapiro1c_R_531 .1868) (shapiro1c_R_531))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt621 
+ (
+(shapiro1c_1139 1139 shapiro_wilk 621 (Index a 5 shapiro1c_R_532) (a 5) (shapiro1c_R_532))
+(shapiro1c_1140 1140 shapiro_wilk 621 (Assign shapiro1c_R_532 .1695) (shapiro1c_R_532 .1695) (shapiro1c_R_532))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt622 
+ (
+(shapiro1c_1141 1141 shapiro_wilk 622 (Index a 6 shapiro1c_R_533) (a 6) (shapiro1c_R_533))
+(shapiro1c_1142 1142 shapiro_wilk 622 (Assign shapiro1c_R_533 .1542) (shapiro1c_R_533 .1542) (shapiro1c_R_533))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt623 
+ (
+(shapiro1c_1143 1143 shapiro_wilk 623 (Index a 7 shapiro1c_R_534) (a 7) (shapiro1c_R_534))
+(shapiro1c_1144 1144 shapiro_wilk 623 (Assign shapiro1c_R_534 .1405) (shapiro1c_R_534 .1405) (shapiro1c_R_534))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt624 
+ (
+(shapiro1c_1145 1145 shapiro_wilk 624 (Index a 8 shapiro1c_R_535) (a 8) (shapiro1c_R_535))
+(shapiro1c_1146 1146 shapiro_wilk 624 (Assign shapiro1c_R_535 .1278) (shapiro1c_R_535 .1278) (shapiro1c_R_535))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt625 
+ (
+(shapiro1c_1147 1147 shapiro_wilk 625 (Index a 9 shapiro1c_R_536) (a 9) (shapiro1c_R_536))
+(shapiro1c_1148 1148 shapiro_wilk 625 (Assign shapiro1c_R_536 .116) (shapiro1c_R_536 .116) (shapiro1c_R_536))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt626 
+ (
+(shapiro1c_1149 1149 shapiro_wilk 626 (Index a 10 shapiro1c_R_537) (a 10) (shapiro1c_R_537))
+(shapiro1c_1150 1150 shapiro_wilk 626 (Assign shapiro1c_R_537 .1049) (shapiro1c_R_537 .1049) (shapiro1c_R_537))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt627 
+ (
+(shapiro1c_1151 1151 shapiro_wilk 627 (Index a 11 shapiro1c_R_538) (a 11) (shapiro1c_R_538))
+(shapiro1c_1152 1152 shapiro_wilk 627 (Assign shapiro1c_R_538 .0943) (shapiro1c_R_538 .0943) (shapiro1c_R_538))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt628 
+ (
+(shapiro1c_1153 1153 shapiro_wilk 628 (Index a 12 shapiro1c_R_539) (a 12) (shapiro1c_R_539))
+(shapiro1c_1154 1154 shapiro_wilk 628 (Assign shapiro1c_R_539 .0842) (shapiro1c_R_539 .0842) (shapiro1c_R_539))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt629 
+ (
+(shapiro1c_1155 1155 shapiro_wilk 629 (Index a 13 shapiro1c_R_540) (a 13) (shapiro1c_R_540))
+(shapiro1c_1156 1156 shapiro_wilk 629 (Assign shapiro1c_R_540 .0745) (shapiro1c_R_540 .0745) (shapiro1c_R_540))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt630 
+ (
+(shapiro1c_1157 1157 shapiro_wilk 630 (Index a 14 shapiro1c_R_541) (a 14) (shapiro1c_R_541))
+(shapiro1c_1158 1158 shapiro_wilk 630 (Assign shapiro1c_R_541 .0651) (shapiro1c_R_541 .0651) (shapiro1c_R_541))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt631 
+ (
+(shapiro1c_1159 1159 shapiro_wilk 631 (Index a 15 shapiro1c_R_542) (a 15) (shapiro1c_R_542))
+(shapiro1c_1160 1160 shapiro_wilk 631 (Assign shapiro1c_R_542 .056) (shapiro1c_R_542 .056) (shapiro1c_R_542))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt632 
+ (
+(shapiro1c_1161 1161 shapiro_wilk 632 (Index a 16 shapiro1c_R_543) (a 16) (shapiro1c_R_543))
+(shapiro1c_1162 1162 shapiro_wilk 632 (Assign shapiro1c_R_543 .0471) (shapiro1c_R_543 .0471) (shapiro1c_R_543))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt633 
+ (
+(shapiro1c_1163 1163 shapiro_wilk 633 (Index a 17 shapiro1c_R_544) (a 17) (shapiro1c_R_544))
+(shapiro1c_1164 1164 shapiro_wilk 633 (Assign shapiro1c_R_544 .0383) (shapiro1c_R_544 .0383) (shapiro1c_R_544))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt634 
+ (
+(shapiro1c_1165 1165 shapiro_wilk 634 (Index a 18 shapiro1c_R_545) (a 18) (shapiro1c_R_545))
+(shapiro1c_1166 1166 shapiro_wilk 634 (Assign shapiro1c_R_545 .0296) (shapiro1c_R_545 .0296) (shapiro1c_R_545))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt635 
+ (
+(shapiro1c_1167 1167 shapiro_wilk 635 (Index a 19 shapiro1c_R_546) (a 19) (shapiro1c_R_546))
+(shapiro1c_1168 1168 shapiro_wilk 635 (Assign shapiro1c_R_546 .0211) (shapiro1c_R_546 .0211) (shapiro1c_R_546))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt636 
+ (
+(shapiro1c_1169 1169 shapiro_wilk 636 (Index a 20 shapiro1c_R_547) (a 20) (shapiro1c_R_547))
+(shapiro1c_1170 1170 shapiro_wilk 636 (Assign shapiro1c_R_547 .0126) (shapiro1c_R_547 .0126) (shapiro1c_R_547))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt637 
+ (
+(shapiro1c_1171 1171 shapiro_wilk 637 (Index a 21 shapiro1c_R_548) (a 21) (shapiro1c_R_548))
+(shapiro1c_1172 1172 shapiro_wilk 637 (Assign shapiro1c_R_548 .0042) (shapiro1c_R_548 .0042) (shapiro1c_R_548))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt639 
+ (
+(shapiro1c_1173 1173 shapiro_wilk 639 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt639then
+ (
+(shapiro1c_1174 1174 shapiro_wilk 639 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt639else
+ (
+(shapiro1c_1175 1175 shapiro_wilk 639 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond45 
+ (
+(shapiro1c_1176 1176 shapiro_wilk 639 (EqEq n 45 shapiro1c_R_549) (n 45 shapiro1c_R_549) (shapiro1c_R_549))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt641 
+ (
+(shapiro1c_1177 1177 shapiro_wilk 641 (Index a 0 shapiro1c_R_550) (a 0) (shapiro1c_R_550))
+(shapiro1c_1178 1178 shapiro_wilk 641 (Assign shapiro1c_R_550 .385) (shapiro1c_R_550 .385) (shapiro1c_R_550))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt642 
+ (
+(shapiro1c_1179 1179 shapiro_wilk 642 (Index a 1 shapiro1c_R_551) (a 1) (shapiro1c_R_551))
+(shapiro1c_1180 1180 shapiro_wilk 642 (Assign shapiro1c_R_551 .2651) (shapiro1c_R_551 .2651) (shapiro1c_R_551))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt643 
+ (
+(shapiro1c_1181 1181 shapiro_wilk 643 (Index a 2 shapiro1c_R_552) (a 2) (shapiro1c_R_552))
+(shapiro1c_1182 1182 shapiro_wilk 643 (Assign shapiro1c_R_552 .2313) (shapiro1c_R_552 .2313) (shapiro1c_R_552))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt644 
+ (
+(shapiro1c_1183 1183 shapiro_wilk 644 (Index a 3 shapiro1c_R_553) (a 3) (shapiro1c_R_553))
+(shapiro1c_1184 1184 shapiro_wilk 644 (Assign shapiro1c_R_553 .2065) (shapiro1c_R_553 .2065) (shapiro1c_R_553))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt645 
+ (
+(shapiro1c_1185 1185 shapiro_wilk 645 (Index a 4 shapiro1c_R_554) (a 4) (shapiro1c_R_554))
+(shapiro1c_1186 1186 shapiro_wilk 645 (Assign shapiro1c_R_554 .1865) (shapiro1c_R_554 .1865) (shapiro1c_R_554))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt646 
+ (
+(shapiro1c_1187 1187 shapiro_wilk 646 (Index a 5 shapiro1c_R_555) (a 5) (shapiro1c_R_555))
+(shapiro1c_1188 1188 shapiro_wilk 646 (Assign shapiro1c_R_555 .1695) (shapiro1c_R_555 .1695) (shapiro1c_R_555))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt647 
+ (
+(shapiro1c_1189 1189 shapiro_wilk 647 (Index a 6 shapiro1c_R_556) (a 6) (shapiro1c_R_556))
+(shapiro1c_1190 1190 shapiro_wilk 647 (Assign shapiro1c_R_556 .1545) (shapiro1c_R_556 .1545) (shapiro1c_R_556))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt648 
+ (
+(shapiro1c_1191 1191 shapiro_wilk 648 (Index a 7 shapiro1c_R_557) (a 7) (shapiro1c_R_557))
+(shapiro1c_1192 1192 shapiro_wilk 648 (Assign shapiro1c_R_557 .141) (shapiro1c_R_557 .141) (shapiro1c_R_557))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt649 
+ (
+(shapiro1c_1193 1193 shapiro_wilk 649 (Index a 8 shapiro1c_R_558) (a 8) (shapiro1c_R_558))
+(shapiro1c_1194 1194 shapiro_wilk 649 (Assign shapiro1c_R_558 .1286) (shapiro1c_R_558 .1286) (shapiro1c_R_558))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt650 
+ (
+(shapiro1c_1195 1195 shapiro_wilk 650 (Index a 9 shapiro1c_R_559) (a 9) (shapiro1c_R_559))
+(shapiro1c_1196 1196 shapiro_wilk 650 (Assign shapiro1c_R_559 .117) (shapiro1c_R_559 .117) (shapiro1c_R_559))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt651 
+ (
+(shapiro1c_1197 1197 shapiro_wilk 651 (Index a 10 shapiro1c_R_560) (a 10) (shapiro1c_R_560))
+(shapiro1c_1198 1198 shapiro_wilk 651 (Assign shapiro1c_R_560 .1062) (shapiro1c_R_560 .1062) (shapiro1c_R_560))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt652 
+ (
+(shapiro1c_1199 1199 shapiro_wilk 652 (Index a 11 shapiro1c_R_561) (a 11) (shapiro1c_R_561))
+(shapiro1c_1200 1200 shapiro_wilk 652 (Assign shapiro1c_R_561 .0959) (shapiro1c_R_561 .0959) (shapiro1c_R_561))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt653 
+ (
+(shapiro1c_1201 1201 shapiro_wilk 653 (Index a 12 shapiro1c_R_562) (a 12) (shapiro1c_R_562))
+(shapiro1c_1202 1202 shapiro_wilk 653 (Assign shapiro1c_R_562 .086) (shapiro1c_R_562 .086) (shapiro1c_R_562))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt654 
+ (
+(shapiro1c_1203 1203 shapiro_wilk 654 (Index a 13 shapiro1c_R_563) (a 13) (shapiro1c_R_563))
+(shapiro1c_1204 1204 shapiro_wilk 654 (Assign shapiro1c_R_563 .0765) (shapiro1c_R_563 .0765) (shapiro1c_R_563))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt655 
+ (
+(shapiro1c_1205 1205 shapiro_wilk 655 (Index a 14 shapiro1c_R_564) (a 14) (shapiro1c_R_564))
+(shapiro1c_1206 1206 shapiro_wilk 655 (Assign shapiro1c_R_564 .0673) (shapiro1c_R_564 .0673) (shapiro1c_R_564))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt656 
+ (
+(shapiro1c_1207 1207 shapiro_wilk 656 (Index a 15 shapiro1c_R_565) (a 15) (shapiro1c_R_565))
+(shapiro1c_1208 1208 shapiro_wilk 656 (Assign shapiro1c_R_565 .0584) (shapiro1c_R_565 .0584) (shapiro1c_R_565))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt657 
+ (
+(shapiro1c_1209 1209 shapiro_wilk 657 (Index a 16 shapiro1c_R_566) (a 16) (shapiro1c_R_566))
+(shapiro1c_1210 1210 shapiro_wilk 657 (Assign shapiro1c_R_566 .0497) (shapiro1c_R_566 .0497) (shapiro1c_R_566))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt658 
+ (
+(shapiro1c_1211 1211 shapiro_wilk 658 (Index a 17 shapiro1c_R_567) (a 17) (shapiro1c_R_567))
+(shapiro1c_1212 1212 shapiro_wilk 658 (Assign shapiro1c_R_567 .0412) (shapiro1c_R_567 .0412) (shapiro1c_R_567))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt659 
+ (
+(shapiro1c_1213 1213 shapiro_wilk 659 (Index a 18 shapiro1c_R_568) (a 18) (shapiro1c_R_568))
+(shapiro1c_1214 1214 shapiro_wilk 659 (Assign shapiro1c_R_568 .0328) (shapiro1c_R_568 .0328) (shapiro1c_R_568))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt660 
+ (
+(shapiro1c_1215 1215 shapiro_wilk 660 (Index a 19 shapiro1c_R_569) (a 19) (shapiro1c_R_569))
+(shapiro1c_1216 1216 shapiro_wilk 660 (Assign shapiro1c_R_569 .0245) (shapiro1c_R_569 .0245) (shapiro1c_R_569))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt661 
+ (
+(shapiro1c_1217 1217 shapiro_wilk 661 (Index a 20 shapiro1c_R_570) (a 20) (shapiro1c_R_570))
+(shapiro1c_1218 1218 shapiro_wilk 661 (Assign shapiro1c_R_570 .0163) (shapiro1c_R_570 .0163) (shapiro1c_R_570))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt662 
+ (
+(shapiro1c_1219 1219 shapiro_wilk 662 (Index a 21 shapiro1c_R_571) (a 21) (shapiro1c_R_571))
+(shapiro1c_1220 1220 shapiro_wilk 662 (Assign shapiro1c_R_571 .0081) (shapiro1c_R_571 .0081) (shapiro1c_R_571))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt664 
+ (
+(shapiro1c_1221 1221 shapiro_wilk 664 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt664then
+ (
+(shapiro1c_1222 1222 shapiro_wilk 664 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt664else
+ (
+(shapiro1c_1223 1223 shapiro_wilk 664 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond46 
+ (
+(shapiro1c_1224 1224 shapiro_wilk 664 (EqEq n 46 shapiro1c_R_572) (n 46 shapiro1c_R_572) (shapiro1c_R_572))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt666 
+ (
+(shapiro1c_1225 1225 shapiro_wilk 666 (Index a 0 shapiro1c_R_573) (a 0) (shapiro1c_R_573))
+(shapiro1c_1226 1226 shapiro_wilk 666 (Assign shapiro1c_R_573 .383) (shapiro1c_R_573 .383) (shapiro1c_R_573))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt667 
+ (
+(shapiro1c_1227 1227 shapiro_wilk 667 (Index a 1 shapiro1c_R_574) (a 1) (shapiro1c_R_574))
+(shapiro1c_1228 1228 shapiro_wilk 667 (Assign shapiro1c_R_574 .2635) (shapiro1c_R_574 .2635) (shapiro1c_R_574))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt668 
+ (
+(shapiro1c_1229 1229 shapiro_wilk 668 (Index a 2 shapiro1c_R_575) (a 2) (shapiro1c_R_575))
+(shapiro1c_1230 1230 shapiro_wilk 668 (Assign shapiro1c_R_575 .2302) (shapiro1c_R_575 .2302) (shapiro1c_R_575))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt669 
+ (
+(shapiro1c_1231 1231 shapiro_wilk 669 (Index a 3 shapiro1c_R_576) (a 3) (shapiro1c_R_576))
+(shapiro1c_1232 1232 shapiro_wilk 669 (Assign shapiro1c_R_576 .2058) (shapiro1c_R_576 .2058) (shapiro1c_R_576))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt670 
+ (
+(shapiro1c_1233 1233 shapiro_wilk 670 (Index a 4 shapiro1c_R_577) (a 4) (shapiro1c_R_577))
+(shapiro1c_1234 1234 shapiro_wilk 670 (Assign shapiro1c_R_577 .1862) (shapiro1c_R_577 .1862) (shapiro1c_R_577))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt671 
+ (
+(shapiro1c_1235 1235 shapiro_wilk 671 (Index a 5 shapiro1c_R_578) (a 5) (shapiro1c_R_578))
+(shapiro1c_1236 1236 shapiro_wilk 671 (Assign shapiro1c_R_578 .1695) (shapiro1c_R_578 .1695) (shapiro1c_R_578))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt672 
+ (
+(shapiro1c_1237 1237 shapiro_wilk 672 (Index a 6 shapiro1c_R_579) (a 6) (shapiro1c_R_579))
+(shapiro1c_1238 1238 shapiro_wilk 672 (Assign shapiro1c_R_579 .1548) (shapiro1c_R_579 .1548) (shapiro1c_R_579))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt673 
+ (
+(shapiro1c_1239 1239 shapiro_wilk 673 (Index a 7 shapiro1c_R_580) (a 7) (shapiro1c_R_580))
+(shapiro1c_1240 1240 shapiro_wilk 673 (Assign shapiro1c_R_580 .1415) (shapiro1c_R_580 .1415) (shapiro1c_R_580))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt674 
+ (
+(shapiro1c_1241 1241 shapiro_wilk 674 (Index a 8 shapiro1c_R_581) (a 8) (shapiro1c_R_581))
+(shapiro1c_1242 1242 shapiro_wilk 674 (Assign shapiro1c_R_581 .1293) (shapiro1c_R_581 .1293) (shapiro1c_R_581))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt675 
+ (
+(shapiro1c_1243 1243 shapiro_wilk 675 (Index a 9 shapiro1c_R_582) (a 9) (shapiro1c_R_582))
+(shapiro1c_1244 1244 shapiro_wilk 675 (Assign shapiro1c_R_582 .118) (shapiro1c_R_582 .118) (shapiro1c_R_582))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt676 
+ (
+(shapiro1c_1245 1245 shapiro_wilk 676 (Index a 10 shapiro1c_R_583) (a 10) (shapiro1c_R_583))
+(shapiro1c_1246 1246 shapiro_wilk 676 (Assign shapiro1c_R_583 .1073) (shapiro1c_R_583 .1073) (shapiro1c_R_583))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt677 
+ (
+(shapiro1c_1247 1247 shapiro_wilk 677 (Index a 11 shapiro1c_R_584) (a 11) (shapiro1c_R_584))
+(shapiro1c_1248 1248 shapiro_wilk 677 (Assign shapiro1c_R_584 .0972) (shapiro1c_R_584 .0972) (shapiro1c_R_584))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt678 
+ (
+(shapiro1c_1249 1249 shapiro_wilk 678 (Index a 12 shapiro1c_R_585) (a 12) (shapiro1c_R_585))
+(shapiro1c_1250 1250 shapiro_wilk 678 (Assign shapiro1c_R_585 .0876) (shapiro1c_R_585 .0876) (shapiro1c_R_585))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt679 
+ (
+(shapiro1c_1251 1251 shapiro_wilk 679 (Index a 13 shapiro1c_R_586) (a 13) (shapiro1c_R_586))
+(shapiro1c_1252 1252 shapiro_wilk 679 (Assign shapiro1c_R_586 .0783) (shapiro1c_R_586 .0783) (shapiro1c_R_586))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt680 
+ (
+(shapiro1c_1253 1253 shapiro_wilk 680 (Index a 14 shapiro1c_R_587) (a 14) (shapiro1c_R_587))
+(shapiro1c_1254 1254 shapiro_wilk 680 (Assign shapiro1c_R_587 .0694) (shapiro1c_R_587 .0694) (shapiro1c_R_587))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt681 
+ (
+(shapiro1c_1255 1255 shapiro_wilk 681 (Index a 15 shapiro1c_R_588) (a 15) (shapiro1c_R_588))
+(shapiro1c_1256 1256 shapiro_wilk 681 (Assign shapiro1c_R_588 .0607) (shapiro1c_R_588 .0607) (shapiro1c_R_588))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt682 
+ (
+(shapiro1c_1257 1257 shapiro_wilk 682 (Index a 16 shapiro1c_R_589) (a 16) (shapiro1c_R_589))
+(shapiro1c_1258 1258 shapiro_wilk 682 (Assign shapiro1c_R_589 .0522) (shapiro1c_R_589 .0522) (shapiro1c_R_589))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt683 
+ (
+(shapiro1c_1259 1259 shapiro_wilk 683 (Index a 17 shapiro1c_R_590) (a 17) (shapiro1c_R_590))
+(shapiro1c_1260 1260 shapiro_wilk 683 (Assign shapiro1c_R_590 .0439) (shapiro1c_R_590 .0439) (shapiro1c_R_590))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt684 
+ (
+(shapiro1c_1261 1261 shapiro_wilk 684 (Index a 18 shapiro1c_R_591) (a 18) (shapiro1c_R_591))
+(shapiro1c_1262 1262 shapiro_wilk 684 (Assign shapiro1c_R_591 .0357) (shapiro1c_R_591 .0357) (shapiro1c_R_591))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt685 
+ (
+(shapiro1c_1263 1263 shapiro_wilk 685 (Index a 19 shapiro1c_R_592) (a 19) (shapiro1c_R_592))
+(shapiro1c_1264 1264 shapiro_wilk 685 (Assign shapiro1c_R_592 .0277) (shapiro1c_R_592 .0277) (shapiro1c_R_592))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt686 
+ (
+(shapiro1c_1265 1265 shapiro_wilk 686 (Index a 20 shapiro1c_R_593) (a 20) (shapiro1c_R_593))
+(shapiro1c_1266 1266 shapiro_wilk 686 (Assign shapiro1c_R_593 .0197) (shapiro1c_R_593 .0197) (shapiro1c_R_593))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt687 
+ (
+(shapiro1c_1267 1267 shapiro_wilk 687 (Index a 21 shapiro1c_R_594) (a 21) (shapiro1c_R_594))
+(shapiro1c_1268 1268 shapiro_wilk 687 (Assign shapiro1c_R_594 .0118) (shapiro1c_R_594 .0118) (shapiro1c_R_594))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt688 
+ (
+(shapiro1c_1269 1269 shapiro_wilk 688 (Index a 22 shapiro1c_R_595) (a 22) (shapiro1c_R_595))
+(shapiro1c_1270 1270 shapiro_wilk 688 (Assign shapiro1c_R_595 .0039) (shapiro1c_R_595 .0039) (shapiro1c_R_595))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt690 
+ (
+(shapiro1c_1271 1271 shapiro_wilk 690 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt690then
+ (
+(shapiro1c_1272 1272 shapiro_wilk 690 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt690else
+ (
+(shapiro1c_1273 1273 shapiro_wilk 690 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond47 
+ (
+(shapiro1c_1274 1274 shapiro_wilk 690 (EqEq n 47 shapiro1c_R_596) (n 47 shapiro1c_R_596) (shapiro1c_R_596))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt692 
+ (
+(shapiro1c_1275 1275 shapiro_wilk 692 (Index a 0 shapiro1c_R_597) (a 0) (shapiro1c_R_597))
+(shapiro1c_1276 1276 shapiro_wilk 692 (Assign shapiro1c_R_597 .3808) (shapiro1c_R_597 .3808) (shapiro1c_R_597))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt693 
+ (
+(shapiro1c_1277 1277 shapiro_wilk 693 (Index a 1 shapiro1c_R_598) (a 1) (shapiro1c_R_598))
+(shapiro1c_1278 1278 shapiro_wilk 693 (Assign shapiro1c_R_598 .262) (shapiro1c_R_598 .262) (shapiro1c_R_598))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt694 
+ (
+(shapiro1c_1279 1279 shapiro_wilk 694 (Index a 2 shapiro1c_R_599) (a 2) (shapiro1c_R_599))
+(shapiro1c_1280 1280 shapiro_wilk 694 (Assign shapiro1c_R_599 .2291) (shapiro1c_R_599 .2291) (shapiro1c_R_599))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt695 
+ (
+(shapiro1c_1281 1281 shapiro_wilk 695 (Index a 3 shapiro1c_R_600) (a 3) (shapiro1c_R_600))
+(shapiro1c_1282 1282 shapiro_wilk 695 (Assign shapiro1c_R_600 .2052) (shapiro1c_R_600 .2052) (shapiro1c_R_600))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt696 
+ (
+(shapiro1c_1283 1283 shapiro_wilk 696 (Index a 4 shapiro1c_R_601) (a 4) (shapiro1c_R_601))
+(shapiro1c_1284 1284 shapiro_wilk 696 (Assign shapiro1c_R_601 .1859) (shapiro1c_R_601 .1859) (shapiro1c_R_601))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt697 
+ (
+(shapiro1c_1285 1285 shapiro_wilk 697 (Index a 5 shapiro1c_R_602) (a 5) (shapiro1c_R_602))
+(shapiro1c_1286 1286 shapiro_wilk 697 (Assign shapiro1c_R_602 .1695) (shapiro1c_R_602 .1695) (shapiro1c_R_602))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt698 
+ (
+(shapiro1c_1287 1287 shapiro_wilk 698 (Index a 6 shapiro1c_R_603) (a 6) (shapiro1c_R_603))
+(shapiro1c_1288 1288 shapiro_wilk 698 (Assign shapiro1c_R_603 .155) (shapiro1c_R_603 .155) (shapiro1c_R_603))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt699 
+ (
+(shapiro1c_1289 1289 shapiro_wilk 699 (Index a 7 shapiro1c_R_604) (a 7) (shapiro1c_R_604))
+(shapiro1c_1290 1290 shapiro_wilk 699 (Assign shapiro1c_R_604 .142) (shapiro1c_R_604 .142) (shapiro1c_R_604))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt700 
+ (
+(shapiro1c_1291 1291 shapiro_wilk 700 (Index a 8 shapiro1c_R_605) (a 8) (shapiro1c_R_605))
+(shapiro1c_1292 1292 shapiro_wilk 700 (Assign shapiro1c_R_605 .13) (shapiro1c_R_605 .13) (shapiro1c_R_605))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt701 
+ (
+(shapiro1c_1293 1293 shapiro_wilk 701 (Index a 9 shapiro1c_R_606) (a 9) (shapiro1c_R_606))
+(shapiro1c_1294 1294 shapiro_wilk 701 (Assign shapiro1c_R_606 .1189) (shapiro1c_R_606 .1189) (shapiro1c_R_606))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt702 
+ (
+(shapiro1c_1295 1295 shapiro_wilk 702 (Index a 10 shapiro1c_R_607) (a 10) (shapiro1c_R_607))
+(shapiro1c_1296 1296 shapiro_wilk 702 (Assign shapiro1c_R_607 .1085) (shapiro1c_R_607 .1085) (shapiro1c_R_607))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt703 
+ (
+(shapiro1c_1297 1297 shapiro_wilk 703 (Index a 11 shapiro1c_R_608) (a 11) (shapiro1c_R_608))
+(shapiro1c_1298 1298 shapiro_wilk 703 (Assign shapiro1c_R_608 .0986) (shapiro1c_R_608 .0986) (shapiro1c_R_608))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt704 
+ (
+(shapiro1c_1299 1299 shapiro_wilk 704 (Index a 12 shapiro1c_R_609) (a 12) (shapiro1c_R_609))
+(shapiro1c_1300 1300 shapiro_wilk 704 (Assign shapiro1c_R_609 .0892) (shapiro1c_R_609 .0892) (shapiro1c_R_609))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt705 
+ (
+(shapiro1c_1301 1301 shapiro_wilk 705 (Index a 13 shapiro1c_R_610) (a 13) (shapiro1c_R_610))
+(shapiro1c_1302 1302 shapiro_wilk 705 (Assign shapiro1c_R_610 .0801) (shapiro1c_R_610 .0801) (shapiro1c_R_610))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt706 
+ (
+(shapiro1c_1303 1303 shapiro_wilk 706 (Index a 14 shapiro1c_R_611) (a 14) (shapiro1c_R_611))
+(shapiro1c_1304 1304 shapiro_wilk 706 (Assign shapiro1c_R_611 .0713) (shapiro1c_R_611 .0713) (shapiro1c_R_611))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt707 
+ (
+(shapiro1c_1305 1305 shapiro_wilk 707 (Index a 15 shapiro1c_R_612) (a 15) (shapiro1c_R_612))
+(shapiro1c_1306 1306 shapiro_wilk 707 (Assign shapiro1c_R_612 .0628) (shapiro1c_R_612 .0628) (shapiro1c_R_612))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt708 
+ (
+(shapiro1c_1307 1307 shapiro_wilk 708 (Index a 16 shapiro1c_R_613) (a 16) (shapiro1c_R_613))
+(shapiro1c_1308 1308 shapiro_wilk 708 (Assign shapiro1c_R_613 .0546) (shapiro1c_R_613 .0546) (shapiro1c_R_613))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt709 
+ (
+(shapiro1c_1309 1309 shapiro_wilk 709 (Index a 17 shapiro1c_R_614) (a 17) (shapiro1c_R_614))
+(shapiro1c_1310 1310 shapiro_wilk 709 (Assign shapiro1c_R_614 .0465) (shapiro1c_R_614 .0465) (shapiro1c_R_614))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt710 
+ (
+(shapiro1c_1311 1311 shapiro_wilk 710 (Index a 18 shapiro1c_R_615) (a 18) (shapiro1c_R_615))
+(shapiro1c_1312 1312 shapiro_wilk 710 (Assign shapiro1c_R_615 .0385) (shapiro1c_R_615 .0385) (shapiro1c_R_615))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt711 
+ (
+(shapiro1c_1313 1313 shapiro_wilk 711 (Index a 19 shapiro1c_R_616) (a 19) (shapiro1c_R_616))
+(shapiro1c_1314 1314 shapiro_wilk 711 (Assign shapiro1c_R_616 .0307) (shapiro1c_R_616 .0307) (shapiro1c_R_616))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt712 
+ (
+(shapiro1c_1315 1315 shapiro_wilk 712 (Index a 20 shapiro1c_R_617) (a 20) (shapiro1c_R_617))
+(shapiro1c_1316 1316 shapiro_wilk 712 (Assign shapiro1c_R_617 .0229) (shapiro1c_R_617 .0229) (shapiro1c_R_617))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt713 
+ (
+(shapiro1c_1317 1317 shapiro_wilk 713 (Index a 21 shapiro1c_R_618) (a 21) (shapiro1c_R_618))
+(shapiro1c_1318 1318 shapiro_wilk 713 (Assign shapiro1c_R_618 .0153) (shapiro1c_R_618 .0153) (shapiro1c_R_618))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt714 
+ (
+(shapiro1c_1319 1319 shapiro_wilk 714 (Index a 22 shapiro1c_R_619) (a 22) (shapiro1c_R_619))
+(shapiro1c_1320 1320 shapiro_wilk 714 (Assign shapiro1c_R_619 .0076) (shapiro1c_R_619 .0076) (shapiro1c_R_619))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt716 
+ (
+(shapiro1c_1321 1321 shapiro_wilk 716 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt716then
+ (
+(shapiro1c_1322 1322 shapiro_wilk 716 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt716else
+ (
+(shapiro1c_1323 1323 shapiro_wilk 716 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond48 
+ (
+(shapiro1c_1324 1324 shapiro_wilk 716 (EqEq n 48 shapiro1c_R_620) (n 48 shapiro1c_R_620) (shapiro1c_R_620))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt718 
+ (
+(shapiro1c_1325 1325 shapiro_wilk 718 (Index a 0 shapiro1c_R_621) (a 0) (shapiro1c_R_621))
+(shapiro1c_1326 1326 shapiro_wilk 718 (Assign shapiro1c_R_621 .3789) (shapiro1c_R_621 .3789) (shapiro1c_R_621))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt719 
+ (
+(shapiro1c_1327 1327 shapiro_wilk 719 (Index a 1 shapiro1c_R_622) (a 1) (shapiro1c_R_622))
+(shapiro1c_1328 1328 shapiro_wilk 719 (Assign shapiro1c_R_622 .2604) (shapiro1c_R_622 .2604) (shapiro1c_R_622))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt720 
+ (
+(shapiro1c_1329 1329 shapiro_wilk 720 (Index a 2 shapiro1c_R_623) (a 2) (shapiro1c_R_623))
+(shapiro1c_1330 1330 shapiro_wilk 720 (Assign shapiro1c_R_623 .2281) (shapiro1c_R_623 .2281) (shapiro1c_R_623))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt721 
+ (
+(shapiro1c_1331 1331 shapiro_wilk 721 (Index a 3 shapiro1c_R_624) (a 3) (shapiro1c_R_624))
+(shapiro1c_1332 1332 shapiro_wilk 721 (Assign shapiro1c_R_624 .2045) (shapiro1c_R_624 .2045) (shapiro1c_R_624))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt722 
+ (
+(shapiro1c_1333 1333 shapiro_wilk 722 (Index a 4 shapiro1c_R_625) (a 4) (shapiro1c_R_625))
+(shapiro1c_1334 1334 shapiro_wilk 722 (Assign shapiro1c_R_625 .1855) (shapiro1c_R_625 .1855) (shapiro1c_R_625))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt723 
+ (
+(shapiro1c_1335 1335 shapiro_wilk 723 (Index a 5 shapiro1c_R_626) (a 5) (shapiro1c_R_626))
+(shapiro1c_1336 1336 shapiro_wilk 723 (Assign shapiro1c_R_626 .1693) (shapiro1c_R_626 .1693) (shapiro1c_R_626))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt724 
+ (
+(shapiro1c_1337 1337 shapiro_wilk 724 (Index a 6 shapiro1c_R_627) (a 6) (shapiro1c_R_627))
+(shapiro1c_1338 1338 shapiro_wilk 724 (Assign shapiro1c_R_627 .1551) (shapiro1c_R_627 .1551) (shapiro1c_R_627))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt725 
+ (
+(shapiro1c_1339 1339 shapiro_wilk 725 (Index a 7 shapiro1c_R_628) (a 7) (shapiro1c_R_628))
+(shapiro1c_1340 1340 shapiro_wilk 725 (Assign shapiro1c_R_628 .1423) (shapiro1c_R_628 .1423) (shapiro1c_R_628))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt726 
+ (
+(shapiro1c_1341 1341 shapiro_wilk 726 (Index a 8 shapiro1c_R_629) (a 8) (shapiro1c_R_629))
+(shapiro1c_1342 1342 shapiro_wilk 726 (Assign shapiro1c_R_629 .1306) (shapiro1c_R_629 .1306) (shapiro1c_R_629))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt727 
+ (
+(shapiro1c_1343 1343 shapiro_wilk 727 (Index a 9 shapiro1c_R_630) (a 9) (shapiro1c_R_630))
+(shapiro1c_1344 1344 shapiro_wilk 727 (Assign shapiro1c_R_630 .1197) (shapiro1c_R_630 .1197) (shapiro1c_R_630))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt728 
+ (
+(shapiro1c_1345 1345 shapiro_wilk 728 (Index a 10 shapiro1c_R_631) (a 10) (shapiro1c_R_631))
+(shapiro1c_1346 1346 shapiro_wilk 728 (Assign shapiro1c_R_631 .1095) (shapiro1c_R_631 .1095) (shapiro1c_R_631))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt729 
+ (
+(shapiro1c_1347 1347 shapiro_wilk 729 (Index a 11 shapiro1c_R_632) (a 11) (shapiro1c_R_632))
+(shapiro1c_1348 1348 shapiro_wilk 729 (Assign shapiro1c_R_632 .0998) (shapiro1c_R_632 .0998) (shapiro1c_R_632))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt730 
+ (
+(shapiro1c_1349 1349 shapiro_wilk 730 (Index a 12 shapiro1c_R_633) (a 12) (shapiro1c_R_633))
+(shapiro1c_1350 1350 shapiro_wilk 730 (Assign shapiro1c_R_633 .0906) (shapiro1c_R_633 .0906) (shapiro1c_R_633))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt731 
+ (
+(shapiro1c_1351 1351 shapiro_wilk 731 (Index a 13 shapiro1c_R_634) (a 13) (shapiro1c_R_634))
+(shapiro1c_1352 1352 shapiro_wilk 731 (Assign shapiro1c_R_634 .0817) (shapiro1c_R_634 .0817) (shapiro1c_R_634))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt732 
+ (
+(shapiro1c_1353 1353 shapiro_wilk 732 (Index a 14 shapiro1c_R_635) (a 14) (shapiro1c_R_635))
+(shapiro1c_1354 1354 shapiro_wilk 732 (Assign shapiro1c_R_635 .0731) (shapiro1c_R_635 .0731) (shapiro1c_R_635))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt733 
+ (
+(shapiro1c_1355 1355 shapiro_wilk 733 (Index a 15 shapiro1c_R_636) (a 15) (shapiro1c_R_636))
+(shapiro1c_1356 1356 shapiro_wilk 733 (Assign shapiro1c_R_636 .0648) (shapiro1c_R_636 .0648) (shapiro1c_R_636))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt734 
+ (
+(shapiro1c_1357 1357 shapiro_wilk 734 (Index a 16 shapiro1c_R_637) (a 16) (shapiro1c_R_637))
+(shapiro1c_1358 1358 shapiro_wilk 734 (Assign shapiro1c_R_637 .0568) (shapiro1c_R_637 .0568) (shapiro1c_R_637))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt735 
+ (
+(shapiro1c_1359 1359 shapiro_wilk 735 (Index a 17 shapiro1c_R_638) (a 17) (shapiro1c_R_638))
+(shapiro1c_1360 1360 shapiro_wilk 735 (Assign shapiro1c_R_638 .0489) (shapiro1c_R_638 .0489) (shapiro1c_R_638))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt736 
+ (
+(shapiro1c_1361 1361 shapiro_wilk 736 (Index a 18 shapiro1c_R_639) (a 18) (shapiro1c_R_639))
+(shapiro1c_1362 1362 shapiro_wilk 736 (Assign shapiro1c_R_639 .0411) (shapiro1c_R_639 .0411) (shapiro1c_R_639))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt737 
+ (
+(shapiro1c_1363 1363 shapiro_wilk 737 (Index a 19 shapiro1c_R_640) (a 19) (shapiro1c_R_640))
+(shapiro1c_1364 1364 shapiro_wilk 737 (Assign shapiro1c_R_640 .0335) (shapiro1c_R_640 .0335) (shapiro1c_R_640))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt738 
+ (
+(shapiro1c_1365 1365 shapiro_wilk 738 (Index a 20 shapiro1c_R_641) (a 20) (shapiro1c_R_641))
+(shapiro1c_1366 1366 shapiro_wilk 738 (Assign shapiro1c_R_641 .0259) (shapiro1c_R_641 .0259) (shapiro1c_R_641))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt739 
+ (
+(shapiro1c_1367 1367 shapiro_wilk 739 (Index a 21 shapiro1c_R_642) (a 21) (shapiro1c_R_642))
+(shapiro1c_1368 1368 shapiro_wilk 739 (Assign shapiro1c_R_642 .0185) (shapiro1c_R_642 .0185) (shapiro1c_R_642))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt740 
+ (
+(shapiro1c_1369 1369 shapiro_wilk 740 (Index a 22 shapiro1c_R_643) (a 22) (shapiro1c_R_643))
+(shapiro1c_1370 1370 shapiro_wilk 740 (Assign shapiro1c_R_643 .0111) (shapiro1c_R_643 .0111) (shapiro1c_R_643))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt741 
+ (
+(shapiro1c_1371 1371 shapiro_wilk 741 (Index a 23 shapiro1c_R_644) (a 23) (shapiro1c_R_644))
+(shapiro1c_1372 1372 shapiro_wilk 741 (Assign shapiro1c_R_644 .0037) (shapiro1c_R_644 .0037) (shapiro1c_R_644))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt743 
+ (
+(shapiro1c_1373 1373 shapiro_wilk 743 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt743then
+ (
+(shapiro1c_1374 1374 shapiro_wilk 743 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt743else
+ (
+(shapiro1c_1375 1375 shapiro_wilk 743 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond49 
+ (
+(shapiro1c_1376 1376 shapiro_wilk 743 (EqEq n 49 shapiro1c_R_645) (n 49 shapiro1c_R_645) (shapiro1c_R_645))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt745 
+ (
+(shapiro1c_1377 1377 shapiro_wilk 745 (Index a 0 shapiro1c_R_646) (a 0) (shapiro1c_R_646))
+(shapiro1c_1378 1378 shapiro_wilk 745 (Assign shapiro1c_R_646 .377) (shapiro1c_R_646 .377) (shapiro1c_R_646))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt746 
+ (
+(shapiro1c_1379 1379 shapiro_wilk 746 (Index a 1 shapiro1c_R_647) (a 1) (shapiro1c_R_647))
+(shapiro1c_1380 1380 shapiro_wilk 746 (Assign shapiro1c_R_647 .2589) (shapiro1c_R_647 .2589) (shapiro1c_R_647))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt747 
+ (
+(shapiro1c_1381 1381 shapiro_wilk 747 (Index a 2 shapiro1c_R_648) (a 2) (shapiro1c_R_648))
+(shapiro1c_1382 1382 shapiro_wilk 747 (Assign shapiro1c_R_648 .2271) (shapiro1c_R_648 .2271) (shapiro1c_R_648))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt748 
+ (
+(shapiro1c_1383 1383 shapiro_wilk 748 (Index a 3 shapiro1c_R_649) (a 3) (shapiro1c_R_649))
+(shapiro1c_1384 1384 shapiro_wilk 748 (Assign shapiro1c_R_649 .2038) (shapiro1c_R_649 .2038) (shapiro1c_R_649))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt749 
+ (
+(shapiro1c_1385 1385 shapiro_wilk 749 (Index a 4 shapiro1c_R_650) (a 4) (shapiro1c_R_650))
+(shapiro1c_1386 1386 shapiro_wilk 749 (Assign shapiro1c_R_650 .1851) (shapiro1c_R_650 .1851) (shapiro1c_R_650))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt750 
+ (
+(shapiro1c_1387 1387 shapiro_wilk 750 (Index a 5 shapiro1c_R_651) (a 5) (shapiro1c_R_651))
+(shapiro1c_1388 1388 shapiro_wilk 750 (Assign shapiro1c_R_651 .1692) (shapiro1c_R_651 .1692) (shapiro1c_R_651))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt751 
+ (
+(shapiro1c_1389 1389 shapiro_wilk 751 (Index a 6 shapiro1c_R_652) (a 6) (shapiro1c_R_652))
+(shapiro1c_1390 1390 shapiro_wilk 751 (Assign shapiro1c_R_652 .1553) (shapiro1c_R_652 .1553) (shapiro1c_R_652))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt752 
+ (
+(shapiro1c_1391 1391 shapiro_wilk 752 (Index a 7 shapiro1c_R_653) (a 7) (shapiro1c_R_653))
+(shapiro1c_1392 1392 shapiro_wilk 752 (Assign shapiro1c_R_653 .1427) (shapiro1c_R_653 .1427) (shapiro1c_R_653))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt753 
+ (
+(shapiro1c_1393 1393 shapiro_wilk 753 (Index a 8 shapiro1c_R_654) (a 8) (shapiro1c_R_654))
+(shapiro1c_1394 1394 shapiro_wilk 753 (Assign shapiro1c_R_654 .1312) (shapiro1c_R_654 .1312) (shapiro1c_R_654))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt754 
+ (
+(shapiro1c_1395 1395 shapiro_wilk 754 (Index a 9 shapiro1c_R_655) (a 9) (shapiro1c_R_655))
+(shapiro1c_1396 1396 shapiro_wilk 754 (Assign shapiro1c_R_655 .1205) (shapiro1c_R_655 .1205) (shapiro1c_R_655))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt755 
+ (
+(shapiro1c_1397 1397 shapiro_wilk 755 (Index a 10 shapiro1c_R_656) (a 10) (shapiro1c_R_656))
+(shapiro1c_1398 1398 shapiro_wilk 755 (Assign shapiro1c_R_656 .1105) (shapiro1c_R_656 .1105) (shapiro1c_R_656))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt756 
+ (
+(shapiro1c_1399 1399 shapiro_wilk 756 (Index a 11 shapiro1c_R_657) (a 11) (shapiro1c_R_657))
+(shapiro1c_1400 1400 shapiro_wilk 756 (Assign shapiro1c_R_657 .101) (shapiro1c_R_657 .101) (shapiro1c_R_657))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt757 
+ (
+(shapiro1c_1401 1401 shapiro_wilk 757 (Index a 12 shapiro1c_R_658) (a 12) (shapiro1c_R_658))
+(shapiro1c_1402 1402 shapiro_wilk 757 (Assign shapiro1c_R_658 .0919) (shapiro1c_R_658 .0919) (shapiro1c_R_658))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt758 
+ (
+(shapiro1c_1403 1403 shapiro_wilk 758 (Index a 13 shapiro1c_R_659) (a 13) (shapiro1c_R_659))
+(shapiro1c_1404 1404 shapiro_wilk 758 (Assign shapiro1c_R_659 .0832) (shapiro1c_R_659 .0832) (shapiro1c_R_659))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt759 
+ (
+(shapiro1c_1405 1405 shapiro_wilk 759 (Index a 14 shapiro1c_R_660) (a 14) (shapiro1c_R_660))
+(shapiro1c_1406 1406 shapiro_wilk 759 (Assign shapiro1c_R_660 .0748) (shapiro1c_R_660 .0748) (shapiro1c_R_660))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt760 
+ (
+(shapiro1c_1407 1407 shapiro_wilk 760 (Index a 15 shapiro1c_R_661) (a 15) (shapiro1c_R_661))
+(shapiro1c_1408 1408 shapiro_wilk 760 (Assign shapiro1c_R_661 .0667) (shapiro1c_R_661 .0667) (shapiro1c_R_661))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt761 
+ (
+(shapiro1c_1409 1409 shapiro_wilk 761 (Index a 16 shapiro1c_R_662) (a 16) (shapiro1c_R_662))
+(shapiro1c_1410 1410 shapiro_wilk 761 (Assign shapiro1c_R_662 .0588) (shapiro1c_R_662 .0588) (shapiro1c_R_662))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt762 
+ (
+(shapiro1c_1411 1411 shapiro_wilk 762 (Index a 17 shapiro1c_R_663) (a 17) (shapiro1c_R_663))
+(shapiro1c_1412 1412 shapiro_wilk 762 (Assign shapiro1c_R_663 .0511) (shapiro1c_R_663 .0511) (shapiro1c_R_663))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt763 
+ (
+(shapiro1c_1413 1413 shapiro_wilk 763 (Index a 18 shapiro1c_R_664) (a 18) (shapiro1c_R_664))
+(shapiro1c_1414 1414 shapiro_wilk 763 (Assign shapiro1c_R_664 .0436) (shapiro1c_R_664 .0436) (shapiro1c_R_664))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt764 
+ (
+(shapiro1c_1415 1415 shapiro_wilk 764 (Index a 19 shapiro1c_R_665) (a 19) (shapiro1c_R_665))
+(shapiro1c_1416 1416 shapiro_wilk 764 (Assign shapiro1c_R_665 .0361) (shapiro1c_R_665 .0361) (shapiro1c_R_665))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt765 
+ (
+(shapiro1c_1417 1417 shapiro_wilk 765 (Index a 20 shapiro1c_R_666) (a 20) (shapiro1c_R_666))
+(shapiro1c_1418 1418 shapiro_wilk 765 (Assign shapiro1c_R_666 .0288) (shapiro1c_R_666 .0288) (shapiro1c_R_666))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt766 
+ (
+(shapiro1c_1419 1419 shapiro_wilk 766 (Index a 21 shapiro1c_R_667) (a 21) (shapiro1c_R_667))
+(shapiro1c_1420 1420 shapiro_wilk 766 (Assign shapiro1c_R_667 .0215) (shapiro1c_R_667 .0215) (shapiro1c_R_667))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt767 
+ (
+(shapiro1c_1421 1421 shapiro_wilk 767 (Index a 22 shapiro1c_R_668) (a 22) (shapiro1c_R_668))
+(shapiro1c_1422 1422 shapiro_wilk 767 (Assign shapiro1c_R_668 .0143) (shapiro1c_R_668 .0143) (shapiro1c_R_668))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt768 
+ (
+(shapiro1c_1423 1423 shapiro_wilk 768 (Index a 23 shapiro1c_R_669) (a 23) (shapiro1c_R_669))
+(shapiro1c_1424 1424 shapiro_wilk 768 (Assign shapiro1c_R_669 .0071) (shapiro1c_R_669 .0071) (shapiro1c_R_669))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt770 
+ (
+(shapiro1c_1425 1425 shapiro_wilk 770 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt770then
+ (
+(shapiro1c_1426 1426 shapiro_wilk 770 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond50 
+ (
+(shapiro1c_1427 1427 shapiro_wilk 770 (EqEq n 50 shapiro1c_R_670) (n 50 shapiro1c_R_670) (shapiro1c_R_670))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt772 
+ (
+(shapiro1c_1428 1428 shapiro_wilk 772 (Index a 0 shapiro1c_R_671) (a 0) (shapiro1c_R_671))
+(shapiro1c_1429 1429 shapiro_wilk 772 (Assign shapiro1c_R_671 .3751) (shapiro1c_R_671 .3751) (shapiro1c_R_671))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt773 
+ (
+(shapiro1c_1430 1430 shapiro_wilk 773 (Index a 1 shapiro1c_R_672) (a 1) (shapiro1c_R_672))
+(shapiro1c_1431 1431 shapiro_wilk 773 (Assign shapiro1c_R_672 .2574) (shapiro1c_R_672 .2574) (shapiro1c_R_672))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt774 
+ (
+(shapiro1c_1432 1432 shapiro_wilk 774 (Index a 2 shapiro1c_R_673) (a 2) (shapiro1c_R_673))
+(shapiro1c_1433 1433 shapiro_wilk 774 (Assign shapiro1c_R_673 .226) (shapiro1c_R_673 .226) (shapiro1c_R_673))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt775 
+ (
+(shapiro1c_1434 1434 shapiro_wilk 775 (Index a 3 shapiro1c_R_674) (a 3) (shapiro1c_R_674))
+(shapiro1c_1435 1435 shapiro_wilk 775 (Assign shapiro1c_R_674 .2032) (shapiro1c_R_674 .2032) (shapiro1c_R_674))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt776 
+ (
+(shapiro1c_1436 1436 shapiro_wilk 776 (Index a 4 shapiro1c_R_675) (a 4) (shapiro1c_R_675))
+(shapiro1c_1437 1437 shapiro_wilk 776 (Assign shapiro1c_R_675 .1847) (shapiro1c_R_675 .1847) (shapiro1c_R_675))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt777 
+ (
+(shapiro1c_1438 1438 shapiro_wilk 777 (Index a 5 shapiro1c_R_676) (a 5) (shapiro1c_R_676))
+(shapiro1c_1439 1439 shapiro_wilk 777 (Assign shapiro1c_R_676 .1691) (shapiro1c_R_676 .1691) (shapiro1c_R_676))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt778 
+ (
+(shapiro1c_1440 1440 shapiro_wilk 778 (Index a 6 shapiro1c_R_677) (a 6) (shapiro1c_R_677))
+(shapiro1c_1441 1441 shapiro_wilk 778 (Assign shapiro1c_R_677 .1554) (shapiro1c_R_677 .1554) (shapiro1c_R_677))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt779 
+ (
+(shapiro1c_1442 1442 shapiro_wilk 779 (Index a 7 shapiro1c_R_678) (a 7) (shapiro1c_R_678))
+(shapiro1c_1443 1443 shapiro_wilk 779 (Assign shapiro1c_R_678 .143) (shapiro1c_R_678 .143) (shapiro1c_R_678))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt780 
+ (
+(shapiro1c_1444 1444 shapiro_wilk 780 (Index a 8 shapiro1c_R_679) (a 8) (shapiro1c_R_679))
+(shapiro1c_1445 1445 shapiro_wilk 780 (Assign shapiro1c_R_679 .1317) (shapiro1c_R_679 .1317) (shapiro1c_R_679))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt781 
+ (
+(shapiro1c_1446 1446 shapiro_wilk 781 (Index a 9 shapiro1c_R_680) (a 9) (shapiro1c_R_680))
+(shapiro1c_1447 1447 shapiro_wilk 781 (Assign shapiro1c_R_680 .1212) (shapiro1c_R_680 .1212) (shapiro1c_R_680))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt782 
+ (
+(shapiro1c_1448 1448 shapiro_wilk 782 (Index a 10 shapiro1c_R_681) (a 10) (shapiro1c_R_681))
+(shapiro1c_1449 1449 shapiro_wilk 782 (Assign shapiro1c_R_681 .1113) (shapiro1c_R_681 .1113) (shapiro1c_R_681))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt783 
+ (
+(shapiro1c_1450 1450 shapiro_wilk 783 (Index a 11 shapiro1c_R_682) (a 11) (shapiro1c_R_682))
+(shapiro1c_1451 1451 shapiro_wilk 783 (Assign shapiro1c_R_682 .102) (shapiro1c_R_682 .102) (shapiro1c_R_682))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt784 
+ (
+(shapiro1c_1452 1452 shapiro_wilk 784 (Index a 12 shapiro1c_R_683) (a 12) (shapiro1c_R_683))
+(shapiro1c_1453 1453 shapiro_wilk 784 (Assign shapiro1c_R_683 .0932) (shapiro1c_R_683 .0932) (shapiro1c_R_683))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt785 
+ (
+(shapiro1c_1454 1454 shapiro_wilk 785 (Index a 13 shapiro1c_R_684) (a 13) (shapiro1c_R_684))
+(shapiro1c_1455 1455 shapiro_wilk 785 (Assign shapiro1c_R_684 .0846) (shapiro1c_R_684 .0846) (shapiro1c_R_684))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt786 
+ (
+(shapiro1c_1456 1456 shapiro_wilk 786 (Index a 14 shapiro1c_R_685) (a 14) (shapiro1c_R_685))
+(shapiro1c_1457 1457 shapiro_wilk 786 (Assign shapiro1c_R_685 .0764) (shapiro1c_R_685 .0764) (shapiro1c_R_685))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt787 
+ (
+(shapiro1c_1458 1458 shapiro_wilk 787 (Index a 15 shapiro1c_R_686) (a 15) (shapiro1c_R_686))
+(shapiro1c_1459 1459 shapiro_wilk 787 (Assign shapiro1c_R_686 .0685) (shapiro1c_R_686 .0685) (shapiro1c_R_686))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt788 
+ (
+(shapiro1c_1460 1460 shapiro_wilk 788 (Index a 16 shapiro1c_R_687) (a 16) (shapiro1c_R_687))
+(shapiro1c_1461 1461 shapiro_wilk 788 (Assign shapiro1c_R_687 .0608) (shapiro1c_R_687 .0608) (shapiro1c_R_687))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt789 
+ (
+(shapiro1c_1462 1462 shapiro_wilk 789 (Index a 17 shapiro1c_R_688) (a 17) (shapiro1c_R_688))
+(shapiro1c_1463 1463 shapiro_wilk 789 (Assign shapiro1c_R_688 .0532) (shapiro1c_R_688 .0532) (shapiro1c_R_688))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt790 
+ (
+(shapiro1c_1464 1464 shapiro_wilk 790 (Index a 18 shapiro1c_R_689) (a 18) (shapiro1c_R_689))
+(shapiro1c_1465 1465 shapiro_wilk 790 (Assign shapiro1c_R_689 .0459) (shapiro1c_R_689 .0459) (shapiro1c_R_689))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt791 
+ (
+(shapiro1c_1466 1466 shapiro_wilk 791 (Index a 19 shapiro1c_R_690) (a 19) (shapiro1c_R_690))
+(shapiro1c_1467 1467 shapiro_wilk 791 (Assign shapiro1c_R_690 .0386) (shapiro1c_R_690 .0386) (shapiro1c_R_690))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt792 
+ (
+(shapiro1c_1468 1468 shapiro_wilk 792 (Index a 20 shapiro1c_R_691) (a 20) (shapiro1c_R_691))
+(shapiro1c_1469 1469 shapiro_wilk 792 (Assign shapiro1c_R_691 .0314) (shapiro1c_R_691 .0314) (shapiro1c_R_691))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt793 
+ (
+(shapiro1c_1470 1470 shapiro_wilk 793 (Index a 21 shapiro1c_R_692) (a 21) (shapiro1c_R_692))
+(shapiro1c_1471 1471 shapiro_wilk 793 (Assign shapiro1c_R_692 .0244) (shapiro1c_R_692 .0244) (shapiro1c_R_692))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt794 
+ (
+(shapiro1c_1472 1472 shapiro_wilk 794 (Index a 22 shapiro1c_R_693) (a 22) (shapiro1c_R_693))
+(shapiro1c_1473 1473 shapiro_wilk 794 (Assign shapiro1c_R_693 .0174) (shapiro1c_R_693 .0174) (shapiro1c_R_693))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt795 
+ (
+(shapiro1c_1474 1474 shapiro_wilk 795 (Index a 23 shapiro1c_R_694) (a 23) (shapiro1c_R_694))
+(shapiro1c_1475 1475 shapiro_wilk 795 (Assign shapiro1c_R_694 .0104) (shapiro1c_R_694 .0104) (shapiro1c_R_694))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt796 
+ (
+(shapiro1c_1476 1476 shapiro_wilk 796 (Index a 24 shapiro1c_R_695) (a 24) (shapiro1c_R_695))
+(shapiro1c_1477 1477 shapiro_wilk 796 (Assign shapiro1c_R_695 .0035) (shapiro1c_R_695 .0035) (shapiro1c_R_695))
+ )
+ ( (a shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt799 
+ (
+(shapiro1c_1478 1478 shapiro_wilk 799 (Ifstatement))
+ )
+)
+
+(shapiro1c_stmt799then
+ (
+(shapiro1c_1479 1479 shapiro_wilk 799 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt799else
+ (
+(shapiro1c_1480 1480 shapiro_wilk 799 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond51
+ (
+(shapiro1c_1481 1481 shapiro_wilk 799 (BridgeNull))
+ )
+)
+
+(shapiro1c_Cond52 
+ (
+(shapiro1c_1482 1482 shapiro_wilk 799 (Greater n 50 shapiro1c_R_696) (n 50 shapiro1c_R_696) (shapiro1c_R_696))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_Cond53 
+ (
+(shapiro1c_1483 1483 shapiro_wilk 799 (Less n 3 shapiro1c_R_697) (n 3 shapiro1c_R_697) (shapiro1c_R_697))
+ )
+ ( (n shapiro1c 8)  )
+ (  )
+)
+
+(shapiro1c_stmt805 
+ (
+(shapiro1c_1484 1484 shapiro_wilk 805 (Index y 0 shapiro1c_R_698) (y 0) (shapiro1c_R_698))
+(shapiro1c_1485 1485 shapiro_wilk 805 (Index y 1 shapiro1c_R_699) (y 1) (shapiro1c_R_699))
+(shapiro1c_1486 1486 shapiro_wilk 805 (Assign shapiro1c_R_699 0.0) (shapiro1c_R_699 0.0) (shapiro1c_R_699))
+(shapiro1c_1487 1487 shapiro_wilk 805 (Assign shapiro1c_R_698 0.0) (shapiro1c_R_698 0.0) (shapiro1c_R_698))
+ )
+ ( (y shapiro1c 9) (y shapiro1c 9)  )
+ (  )
+)
+
+(shapiro1c_stmt813
+ (
+(shapiro1c_1488 1488 shapiro_wilk 813 (ForLoop))
+ )
+)
+
+(shapiro1c_Cond54 
+ (
+(shapiro1c_1489 1489 shapiro_wilk 813 (Less i k shapiro1c_R_700) (i k shapiro1c_R_700) (shapiro1c_R_700))
+ )
+ ( (i shapiro1c 12) (k shapiro1c 12)  )
+ (  )
+)
+
+(shapiro1c_stmt813test
+ (
+(shapiro1c_1490 1490 shapiro_wilk 813 (BridgeNull))
+ )
+)
+
+(shapiro1c_stmt813init 
+ (
+(shapiro1c_1491 1491 shapiro_wilk 813 (Assign i 0) (i 0) (i))
+ )
+ ( (i shapiro1c 12)  )
+ ( (i shapiro1c 12)  )
+)
+
+(shapiro1c_stmt813incr 
+ (
+(shapiro1c_1492 1492 shapiro_wilk 813 (Plus i  1 shapiro1c_R_701) (i shapiro1c_R_701) (shapiro1c_R_701))
+(shapiro1c_1493 1493 shapiro_wilk 813 (Assign i shapiro1c_R_701) (i shapiro1c_R_701) (i))
+ )
+ ( (i shapiro1c 12)  )
+ ( (i shapiro1c 12)  )
+)
+
+(shapiro1c_stmt814 
+ (
+(shapiro1c_1494 1494 shapiro_wilk 814 (Index xcopy i shapiro1c_R_702) (xcopy i) (shapiro1c_R_702))
+(shapiro1c_1495 1495 shapiro_wilk 814 (Minus n i shapiro1c_R_703) (n i shapiro1c_R_703) (shapiro1c_R_703))
+(shapiro1c_1496 1496 shapiro_wilk 814 (Plus shapiro1c_R_703 1 shapiro1c_R_704) (shapiro1c_R_703 1 shapiro1c_R_704) (shapiro1c_R_704))
+(shapiro1c_1497 1497 shapiro_wilk 814 (Index xcopy shapiro1c_R_704 shapiro1c_R_705) (xcopy shapiro1c_R_704) (shapiro1c_R_705))
+(shapiro1c_1498 1498 shapiro_wilk 814 (Minus shapiro1c_R_705 shapiro1c_R_702 shapiro1c_R_706) (shapiro1c_R_705 shapiro1c_R_702 shapiro1c_R_706) (shapiro1c_R_706))
+(shapiro1c_1499 1499 shapiro_wilk 814 (Index a i shapiro1c_R_707) (a i) (shapiro1c_R_707))
+(shapiro1c_1500 1500 shapiro_wilk 814 (Mult shapiro1c_R_707 shapiro1c_R_706 shapiro1c_R_708) (shapiro1c_R_707 shapiro1c_R_706 shapiro1c_R_708) (shapiro1c_R_708))
+(shapiro1c_1501 1501 shapiro_wilk 814 (PlusAssign sumb shapiro1c_R_708) (sumb shapiro1c_R_708) (sumb))
+ )
+ ( (sumb shapiro1c 11) (a shapiro1c 10) (i shapiro1c 12) (xcopy shapiro1c 10) (n shapiro1c 8) (i shapiro1c 12) (xcopy shapiro1c 10) (i shapiro1c 12)  )
+ ( (sumb shapiro1c 11)  )
+)
+
+(shapiro1c_stmt815 
+ (
+(shapiro1c_1502 1502 shapiro_wilk 815 (Index y 0 shapiro1c_R_709) (y 0) (shapiro1c_R_709))
+(shapiro1c_1503 1503 shapiro_wilk 815 (Mult sumb sumb shapiro1c_R_710) (sumb sumb shapiro1c_R_710) (shapiro1c_R_710))
+(shapiro1c_1504 1504 shapiro_wilk 815 (Div shapiro1c_R_710 s2 shapiro1c_R_711) (shapiro1c_R_710 s2 shapiro1c_R_711) (shapiro1c_R_711))
+(shapiro1c_1505 1505 shapiro_wilk 815 (Assign shapiro1c_R_709 shapiro1c_R_711) (shapiro1c_R_709 shapiro1c_R_711) (shapiro1c_R_709))
+ )
+ ( (y shapiro1c 9) (sumb shapiro1c 11) (sumb shapiro1c 11) (s2 shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt816 
+ (
+(shapiro1c_1506 1506 shapiro_wilk 816 (Index y 1 shapiro1c_R_712) (y 1) (shapiro1c_R_712))
+(shapiro1c_1507 1507 shapiro_wilk 816 (Assign shapiro1c_R_712 s2) (shapiro1c_R_712 s2) (shapiro1c_R_712))
+ )
+ ( (y shapiro1c 9) (s2 shapiro1c 10)  )
+ (  )
+)
+
+(shapiro1c_stmt822 
+ (
+(shapiro1c_1508 1508 shapiro_wilk 822 (UserCall free xcopy  shapiro1c_R_713) (xcopy shapiro1c_R_713) (shapiro1c_R_713))
+ )
+)
+
+(shapiro1c_stmt823 
+ (
+(shapiro1c_1509 1509 shapiro_wilk 823 (Return y) (y) nil)
+ )
+ ( (y shapiro1c 9)  )
+ (  )
+)

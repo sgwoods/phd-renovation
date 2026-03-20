@@ -1,0 +1,5 @@
+#ident	"@(#)gen++:d.pkg/metrics/noc	1.1"
+nawk 'BEGIN { FS = ";"; }
+FILENAME == "mmm" { T[$1] = 0; next; }
+FILENAME == "nn0" { T[$1] = $2; }
+END { for ( e in T ) print e ";" T[e]; }' mmm nn0 

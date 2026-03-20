@@ -1,0 +1,54 @@
+#ident	"@(#)gen++:d.pkg/README.nmake	1.1"
+For those using nmake, attached are nmake rules for use with gen++.
+In particular, these can be used with the rule checker, which generates
+a .OO file for each source file.
+To use, place these rules in a file (say, genoa.mk) and type
+	nmake -g genoa.mk
+
+/*
+ * genoa global makefile
+ *
+ * nmake -g genoa.mk [ genoa={metrics|standards} ]
+ *
+ ***** NOTE: THIS IS FOR NMAKE 3.0 or later !!! *********
+ */
+
+genoa = standards
+
+/* These variables GENOA.COMMAND  tell which executable to run */
+/* Which analyzer, that is */
+
+GENOA.COMMAND.standards = cfrontC=/home/sablime2/GEN++/pkg/rc/analyzer cppC=$(CPP) CC
+GENOA.SUFFIX.standards = .OO
+
+/* These metarules generate .OO files from .c or .C files */
+%$(GENOA.SUFFIX.$(genoa)) : %.c (genoa)
+	$(GENOA.COMMAND.$(genoa)) -F $(CPPFLAGS) $(CCFLAGS) -c $(>)
+
+%$(GENOA.SUFFIX.$(genoa)) : %.C (genoa)
+	$(GENOA.COMMAND.$(genoa)) -F $(CPPFLAGS) $(CCFLAGS) -c $(>)
+
+/* These rules tell nmake to make .OO for every source file */ 
+.MAKEINIT : .GENOA.ARGS
+ 
+.GENOA.ARGS : .MAKE .VIRTUAL .FORCE
+	if ! "$(*.ARGS)"
+		.ARGS : .GENOA
+	end
+
+.GENOA : .MAKE .VIRTUAL .FORCE .ONOBJECT .REPEAT  
+	local T U
+	T := $(.SOURCES.:N!=$(CC.REPOSITORY:?*$(CC.REPOSITORY)*??):G=%.c:B:S=.o) $(.SOURCES.:N!=$(CC.REPOSITORY:?*$(CC.REPOSITORY)*??):G=%.C:B:S=.o) $(.FILES.:T=F:P=S:G=%.o)
+	if T
+		for U $(T)
+			$(U:B:S=$(GENOA.SUFFIX.$(genoa))) : .IMPLICIT $(*$(U):G=%.c) $(*$(U):G=%.C) $(~$(U):A=.STATEVAR)
+		end
+		.MAKE : $(T:B:S=$(GENOA.SUFFIX.$(genoa)))
+	elif .GENOA.AGAIN
+		error genoa: no source to generate $(genoa)
+	else
+		.GENOA.AGAIN = 1
+		.ARGS : .INSERT $(<)
+		.MAKE : .ALL
+	end
+

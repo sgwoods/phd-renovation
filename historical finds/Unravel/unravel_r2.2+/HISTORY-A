@@ -1,0 +1,26 @@
+ANALYZER   Mon Sep 28 15:07:19 EDT 1998
+CPP Flags:
+parser Flags:
+
+client.c summary
+  74 Source program lines
+  31 Source program statements (flow graph nodes)
+   0 Global variables
+   4 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          sprintf         inet_addr       htons           
+close           connect         send            strlen          
+client.c (1512 chars) analysis complete 1 secs  1512 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file client.c requires 1 files: client.c 
+Main program file amoeba.c requires 1 files: amoeba.c 

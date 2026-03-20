@@ -1,0 +1,18 @@
+#!/bin/csh
+set dirs = (`pwd`)
+if ($#argv) set dirs = ($argv)
+foreach dir ($dirs)
+	pushd $dir >/dev/null
+	echo
+	echo Directory $dir
+	if ( -e SYSTEM) then
+		set f = `grep MAIN SYSTEM | sed 's/^MAIN //' | sed 's/ .*$//'`
+		foreach file ($f)
+			echo linking $file
+			~jimmy/slice/ansi/slink $file >/dev/null
+		end
+	else
+		echo no SYSTEM file
+	endif
+	popd >/dev/null
+end

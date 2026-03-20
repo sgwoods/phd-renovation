@@ -1,0 +1,29 @@
+How to generate analyzer: 
+
+   1. cd Gen++
+
+   2. source env
+
+   3. ksh
+
+   4. SELECT ONE
+      mk myquery/compound-c   (for non-decomposed ++ )
+      OR 
+      mk myquery/compound-d   (for decomposed ++ )  
+
+      A file called "analyzer" is generated at directory Gen++
+
+   5. mv analyzer cfront
+
+How to analyze a C program "file.C":
+
+   1. go to the corresponding directory such as Gen++/SteveCode
+
+   2. CC file.C
+
+   Two files are generated for file.C: fileC.component and
+                                       fileC.control 
+
+
+     
+ 

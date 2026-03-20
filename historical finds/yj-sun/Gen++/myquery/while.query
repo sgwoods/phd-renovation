@@ -1,0 +1,23 @@
+/*ident	"@(#)gen++:d.pkg/examples/defuse.query	1.2" */
+/* For each reference to a variable, print whether
+   it is {bf used}, or {bf assigned to}. 
+   You'll find it in the file defuse.query in the shipped package   */
+
+ROOTPROC VarUseDef
+
+PROC VarUseDef
+ROOT CFile;
+{
+  LOCAL GNODE bodyStatement; 
+  [
+    (?While
+	  (PRINT stdout "(BlockBgnLine %s)\n" (SLOT line (SLOT where $token))) 
+	  <whilebody 
+			(?Block
+				(PRINT stdout "( BlockEndLine %s)\n" (SLOT line (SLOT blockend $token)))
+			)
+	  > 
+	(PRINT stdout "while-statement-successor: %s\n" (SLOT successor $token) )  
+	)
+  ]
+}

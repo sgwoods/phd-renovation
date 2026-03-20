@@ -1,0 +1,49 @@
+
+(whileC_stmt12
+ (
+(whileC_1 1 main 12 (Finish))
+ )
+)
+
+(whileC_stmt5 
+ (
+(whileC_2 2 main 5 (Assign j 2) (j 2) (j))
+(whileC_3 3 main 5 (Assign i 2) (i 2) (i))
+(whileC_4 4 main 5 (Assign k 2) (k 2) (k))
+ )
+ ( (k whileC 3) (i whileC 3) (j whileC 3)  )
+ ( (k whileC 3) (i whileC 3) (j whileC 3)  )
+)
+
+(whileC_stmt7 
+ (
+(whileC_5 5 main 7 (whileLoop))
+ )
+)
+
+(whileC_Cond1 
+ (
+(whileC_6 6 main 7 (Less i 20 whileC_R_1) (i 20 whileC_R_1) (whileC_R_1))
+ )
+ ( (i whileC 3)  )
+ (  )
+)
+
+(whileC_stmt9 
+ (
+(whileC_7 7 main 9 (Index a i whileC_R_2) (a i) (whileC_R_2))
+(whileC_8 8 main 9 (Assign whileC_R_2 10) (whileC_R_2 10) (whileC_R_2))
+ )
+ ( (a whileC 4) (i whileC 3)  )
+ (  )
+)
+
+(whileC_stmt10 
+ (
+(whileC_9 9 main 10 (Assign whileC_R_3 i) (whileC_R_3 i) (whileC_R_3))
+(whileC_10 10 main 10 (Plus i  1 whileC_R_4) (i whileC_R_4) (whileC_R_4))
+(whileC_11 11 main 10 (Assign i whileC_R_4) (i whileC_R_4) (i))
+ )
+ ( (i whileC 3)  )
+ ( (i whileC 3)  )
+)

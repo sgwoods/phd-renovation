@@ -1,0 +1,26 @@
+ANALYZER   Mon Sep 28 16:57:53 EDT 1998
+CPP Flags:
+parser Flags:
+
+clientorig.c summary
+  80 Source program lines
+  32 Source program statements (flow graph nodes)
+   0 Global variables
+   0 Pointers to structure chains
+   2 Addresses (variables referenced by pointer)
+   1 Procedures defined
+  12 External procedures called
+
+Procedures defined:
+main            
+
+External procedures called:
+socket          perror          gethostbyname   exit            
+memset          fn1             inet_addr       htons           
+close           connect         send            strlen          
+clientorig.c (1616 chars) analysis complete 1 secs  1616 chars/sec
+ 
+running map
+Main program file server.c requires 1 files: server.c 
+Main program file clientorig.c requires 1 files: clientorig.c 
+Main program file client.c requires 1 files: client.c 

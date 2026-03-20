@@ -1,0 +1,17 @@
+/*ident	"@(#)gen++:d.pkg/examples/Gprint.query	1.4" */
+
+/* trace expansion of tree */
+
+ROOTPROC Gprint
+FILE FD "Gprint.out"
+
+PROC Gprint
+ROOT CFile;
+{
+<globals
+  [
+	(PRINT FD "expanding %s at %s\n" $nodetype $location)
+	(EXEC "fflush(getCfile(FD))")
+  ]
+>
+}

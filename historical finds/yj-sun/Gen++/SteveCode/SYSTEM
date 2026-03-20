@@ -1,0 +1,17 @@
+MAIN test.c 1
+FILES
+	test.c
+AMBIG
+LIB
+MAIN test-alex.c 1
+FILES
+	test-alex.c
+AMBIG
+LIB
+MAIN 2test.c 2
+FILES
+	2test.c
+	2func1.c
+AMBIG
+LIB
+	printf

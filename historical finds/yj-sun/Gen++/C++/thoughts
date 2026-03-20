@@ -1,0 +1,69 @@
+#include <math.h>
+
+double Distance( int x1, int y1, int x2, int y2 )
+{
+  int val1, val2;
+  double result;
+  val1 = (x2 - x1) * (x2 - x1);
+  val2 = (y2 - y1) * (y2 - y1);
+  result = sqrt(val1+val2);
+  return result;
+} 
+main()
+{
+  int x1, y1;
+  int x2, y2;
+  double result;
+  x1 = y1 = 1;
+  x2 = y2 = 4;
+  result = sqrt( (x1-x2) * (x1-x2) + (y1-y2) * (y1-y2) ); 
+  result = Distance(x1, y1, x2, y2); 
+			;
+}
+
+
+(elem-1 3 (FunctionDef Distance))
+(elem-2 3 (ObjectDef int  x1))
+(elem-3 3 (ObjectDef int  y1))
+(elem-4 3 (ObjectDef int  x2))
+(elem-5 3 (ObjectDef int  y2))
+(elem-6 4 (Begin Block1))
+(elem-7 5 (ObjectDef int  val1))
+(elem-8 5 (ObjectDef int  val2))
+(elem-9 6 (ObjectDef double  result))
+(elem-10 7 (Minus x2 x1 Result1))
+(elem-11 7 (Minus x2 x1 Result2))
+(elem-12 7 (Mult Result2 Result1 Result3))
+(elem-13 7 (Assign val1 Result3))
+(elem-14 8 (Minus y2 y1 Result4))
+(elem-15 8 (Minus y2 y1 Result5))
+(elem-16 8 (Mult Result5 Result4 Result6))
+(elem-17 8 (Assign val2 Result6))
+(elem-18 9 (Plus val1 val2 Result7))
+(elem-19 9 (UserCall sqrt Result7  Result8))
+(elem-20 9 (Assign result Result8))
+(elem-21 10 (Return result))
+(elem-22 11 (End Block1))
+(elem-23 12 (FunctionDef main))
+(elem-24 13 (Begin Block2))
+(elem-25 14 (ObjectDef int  x1))
+(elem-26 14 (ObjectDef int  y1))
+(elem-27 15 (ObjectDef int  x2))
+(elem-28 15 (ObjectDef int  y2))
+(elem-29 16 (ObjectDef double  result))
+(elem-30 17 (Assign y1 1))
+(elem-31 17 (Assign x1 1))
+(elem-32 18 (Assign y2 4))
+(elem-33 18 (Assign x2 4))
+(elem-34 19 (Minus y1 y2 Result9))
+(elem-35 19 (Minus y1 y2 Result10))
+(elem-36 19 (Mult Result10 Result9 Result11))
+(elem-37 19 (Minus x1 x2 Result12))
+(elem-38 19 (Minus x1 x2 Result13))
+(elem-39 19 (Mult Result13 Result12 Result14))
+(elem-40 19 (Plus Result14 Result11 Result15))
+(elem-41 19 (UserCall sqrt Result15  Result16))
+(elem-42 19 (Assign result Result16))
+(elem-43 20 (UserCall Distance x1 y1 x2 y2  Result17))
+(elem-44 20 (Assign result Result17))
+(elem-45 22 (End Block2))

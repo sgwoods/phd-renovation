@@ -1,0 +1,480 @@
+%!PS-Adobe-1.0
+%%Creator: spectra:yjzhang (Yongjun ZHANG)
+%%Title: typescript
+%%CreationDate: Wed Oct 16 14:51:01 1996
+%%DocumentFonts: Courier-Bold Courier Times-Roman Times-Bold Helvetica-Bold
+% Start of enscript.pro -- prolog for text file translator
+% Copyright (c) 1984,1985,1987 Adobe Systems Incorporated. All Rights Reserved. 
+% GOVERNMENT END USERS: See Notice file in TranScript library directory
+% -- probably /usr/lib/ps/Notice
+% RCSID: $Header: enscript.pro,v 2.2 87/11/17 16:39:56 byron Rel $
+save/EnscriptJob exch def
+/StartEnscriptDoc{$enscript begin}def
+/$enscript 50 dict def $enscript begin
+/EndEnscriptDoc{end}def
+/S/show load def
+/X{exch 0 rmoveto S}def
+/Y{exch 0 exch rmoveto S}def
+/B{3 1 roll moveto S}def
+/F{$fd exch get setfont}def
+/StartPage{/svpg save def .05 dup scale}def
+/EndPage{svpg restore showpage}def
+/DoPreFeed{/statusdict where{pop
+ statusdict/prefeed known{statusdict exch/prefeed exch put 0}if}if pop}def
+/Landscape{90 rotate 0 -15840 translate}def
+/SetUpFonts
+ {dup/$fd exch array def{findfont exch scalefont $fd 3 1 roll put}repeat}def
+/InitGaudy{/TwoColumn exch def /BarLength exch def
+ /ftD /Times-Bold findfont 12 UP scalefont def
+ /ftF /Times-Roman findfont 14 UP scalefont def
+ /ftP /Helvetica-Bold findfont 30 UP scalefont def}def
+/U{1440 mul}def
+/UP{U 72 div}def
+/LB{/pts exch UP def /charcolor exch def /boxcolor exch def /font exch def
+ /label exch def /dy exch def /dx exch def /lly exch def /llx exch def
+ gsave boxcolor setgray
+ llx lly moveto dx 0 rlineto 0 dy rlineto dx neg 0 rlineto closepath fill
+ /lines label length def
+ /yp lly dy add dy lines pts mul sub 2 div sub pts .85 mul sub def
+ font setfont charcolor setgray
+ label {dup stringwidth pop 2 div llx dx 2 div add exch sub yp moveto show
+   /yp yp pts sub def}forall grestore}def
+/Gaudy{/Page exch def /Date exch def /File exch def /Comment exch def
+ .25 U 10.2 U BarLength .1 sub U .25 U [File] ftF .97 0 14 LB
+ .25 U 10.45 U BarLength .1 sub U .25 U [Comment] ftF 1 0 14 LB
+ .25 U 10.2 U 1 U .5 U Date ftD .7 0 12 LB
+ BarLength .75 sub U 10.2 U 1 U .5 U [Page] ftP .7 1 30 LB
+ TwoColumn{BarLength 2 div .19 add U 10.2 U moveto 0 -10 U rlineto stroke}if
+}def
+end
+StartEnscriptDoc % end fixed prolog
+1 200 /Courier-Bold
+0 140 /Courier
+2 SetUpFonts
+10.55 true InitGaudy
+%%EndProlog
+%%Page: ? 1
+StartPage
+Landscape
+()(typescript)[(96/10/16)(14:50:43)](1)Gaudy
+0 F
+360 14470(Script started on Wed Oct 16 14:32:44 1996)B
+360 14310(rm2JH?7h?1;3;4;6l)B
+-1428(> cl)X
+360 14150(Allegro CL 4.2 [SPARC; R1] \(9/6/94 11:02\))B
+360 13990(Copyright \(C\) 1985-1993, Franz Inc., Berkeley, CA, USA.  All Rights Reserved.)B
+360 13830(;; Optimization settings: safety 1, space 1, speed 1, debug 2)B
+360 13670(;; For a complete description of all compiler switches given the current)B
+360 13510(;; optimization settings evaluate \(EXPLAIN-COMPILER-SETTINGS\).)B
+360 13350(USER\(1\): :ld program-)B
+-924(:l)X
+-168(ld data-dep.lisp)X
+360 13190(; Loading /users1/grad/yjzhang/Gen++/mylisp/data-dep.lisp.)B
+360 13030(USER\(2\): \(compile-fe)B
+-84(ile "data-dep.lisp"\))X
+360 12870(; --- Compiling file /users1/grad/yjzhang/Gen++/mylisp/data-dep.lisp ---)B
+360 12710(; Compiling LIST-ALL-VAR-OF-FUNC)B
+360 12550(Warning: Symbol *CONTROL-HASH* declared special)B
+360 12390(; Compiling LIST-ALL-COMP-INDEX-OF-FUNC)B
+360 12230(Warning: Symbol *CONTROL-HASH* declared special)B
+360 12070(; Compiling MY-ACONS)B
+360 11910(; Compiling IN-OTHER-LIST)B
+360 11750(;  Note: doing tail merge)B
+360 11590(; Compiling COMPARE-ATOM-OR-LIST)B
+360 11430(; Compiling COMPARE-ASSOC-AUX)B
+360 11270(;  Note: doing tail merge)B
+360 11110(; Compiling COMPARE-ASSOC)B
+360 10950(; Compiling MODIFY-VAR-ASSOC-LIST)B
+360 10790(;  Note: doing tail merge)B
+360 10630(; Compiling ADD-TO-VAR-ASSOC-LIST)B
+360 10470(;  Note: doing tail merge)B
+360 10310(;  Note: doing tail merge)B
+360 10150(;  Note: doing tail merge)B
+360 9990(; Compiling COMPS-OF-LOOP)B
+360 9830(; Compiling ADD-TO-ATOM-LIST)B
+360 9670(;  Note: doing tail merge)B
+360 9510(; Compiling COMBINE-TWO-ASSOC-LIST)B
+360 9350(;  Note: doing tail merge)B
+360 9190(; Compiling SET-VAR-ON-GIVEN-PATH)B
+360 9030(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 8870(;  Note: doing tail merge)B
+360 8710(; Compiling REDO-VAR-ASSOC-ON-LOOP)B
+360 8550(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 8390(Warning: variable NEXT-INDEX is never used)B
+360 8230(Warning: variable PATH is never used)B
+360 8070(Warning: variable LOOP-PATH is never used)B
+360 7910(; Compiling COMP-DEPENDENCY)B
+360 7750(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 7590(;  Note: doing tail merge)B
+360 7430(;  Note: doing tail merge)B
+360 7270(; Compiling REMOVE-VARS-NOT-IN-ACCESSED-LIST)B
+360 7110(;  Note: doing tail merge)B
+360 6950(; Compiling FINALIZE-HASH-VALUE)B
+360 6790(; Compiling RESET-VAR-DEPENDENCY)B
+360 6630(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 6470(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 6310(; Compiling MODIFY-COMPONENT-HASH-VALUE)B
+360 6150(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 5990(;  Note: doing tail merge)B
+360 5830(; Compiling SINGLE-FUNC-DEPENDENCY)B
+360 5670(Warning: Symbol *CONTROL-HASH* declared special)B
+360 5510(Warning: Symbol *ALL-VAR-OF-THIS-FUNC* declared special)B
+360 5350(; Compiling ALL-FUNCTIONS-INNER-DEPENDENCY)B
+360 5190(Warning: Symbol *ALL-VAR-OF-THIS-FUNC* declared special)B
+360 5030(;  Note: doing tail merge)B
+360 4870(; Compiling TEST-MAIN)B
+360 4710(Warning: Symbol *ALL-FUNCTION-LIST* declared special)B
+360 4550(; Writing fasl file "/users1/grad/yjzhang/Gen++/mylisp/data-dep.fasl")B
+360 4390(Warning: No IN-PACKAGE form seen in)B
+8676 14470(/users1/grad/yjzhang/Gen++/mylisp/data-dep.lisp.  \(Allegro Presto)B
+8676 14310(will be ineffective when loading a file having no IN-PACKAGE form.\))B
+7920 14150(; Fasl write complete)B
+7920 13990(Warning: While compiling in #<The COMMON-LISP-USER package>, the following)B
+8676 13830(undefined functions were referenced:)B
+8676 13670(\(ADD-TO-LIST DATA-DEPENDENCY SETUP-DATA\))B
+7920 13510(#p"/users1/grad/yjzhang/Gen++/mylisp/data-dep.fasl")B
+7920 13350(T)B
+7920 13190(T)B
+7920 13030(USER\(3\): :ld program-steup.fasl)B
+7920 12870(Error: "program-steup.fasl" does not exist, cannot load)B
+8088 12710([condition type: FILE-ERROR])B
+7920 12390(Restart actions \(select using :continue\):)B
+8004 12230(0: retry the load of program-steup.fasl)B
+7920 12070([1] USER\(4\): :ld program-setup.fasl)B
+7920 11910(;   Fast loading /users1/grad/yjzhang/Gen++/mylisp/program-setup.fasl.)B
+7920 11750([1] USER\(5\): :ld data-dep.fasl)B
+7920 11590(;   Fast loading /users1/grad/yjzhang/Gen++/mylisp/data-dep.fasl.)B
+7920 11430([1] USER\(6\): \(test-main "dmaxc.component" "dmaxc.control"\))B
+7920 11110(Processing DMAX now!)B
+7920 10950(Computing dependency in  DMAX now!)B
+7920 10790(Error: attempt to call `DATA-DEPENDENCY' which is an undefined function.)B
+8088 10630([condition type: UNDEFINED-FUNCTION])B
+7920 10310(Restart actions \(select using :continue\):)B
+8004 10150(0: Try calling DATA-DEPENDENCY again.)B
+8004 9990(1: Return a value instead of calling DATA-DEPENDENCY.)B
+8004 9830(2: Try calling a function other than DATA-DEPENDENCY.)B
+8004 9670(3: Setf the symbol-function of DATA-DEPENDENCY and call it again.)B
+8004 9510(4: retry the load of program-steup.fasl)B
+7920 9350([2] USER\(7\): :ld pro)B
+-252(data-dep.lisp)X
+7920 9190(;   Loading /users1/grad/yjzhang/Gen++/mylisp/data-dep.lisp.)B
+7920 9030([2] USER\(8\): \(compile-file "data-dep.lisp"\))B
+7920 8870(; --- Compiling file /users1/grad/yjzhang/Gen++/mylisp/data-dep.lisp ---)B
+7920 8710(; Compiling LIST-ALL-VAR-OF-FUNC)B
+7920 8550(Warning: Symbol *CONTROL-HASH* declared special)B
+7920 8390(; Compiling LIST-ALL-COMP-INDEX-OF-FUNC)B
+7920 8230(Warning: Symbol *CONTROL-HASH* declared special)B
+7920 8070(; Compiling MY-ACONS)B
+7920 7910(; Compiling IN-OTHER-LIST)B
+7920 7750(;  Note: doing tail merge)B
+7920 7590(; Compiling COMPARE-ATOM-OR-LIST)B
+7920 7430(; Compiling COMPARE-ASSOC-AUX)B
+7920 7270(;  Note: doing tail merge)B
+7920 7110(; Compiling COMPARE-ASSOC)B
+7920 6950(; Compiling MODIFY-VAR-ASSOC-LIST)B
+7920 6790(;  Note: doing tail merge)B
+7920 6630(; Compiling ADD-TO-VAR-ASSOC-LIST)B
+7920 6470(;  Note: doing tail merge)B
+7920 6310(;  Note: doing tail merge)B
+7920 6150(;  Note: doing tail merge)B
+7920 5990(; Compiling COMPS-OF-LOOP)B
+7920 5830(; Compiling ADD-TO-ATOM-LIST)B
+7920 5670(;  Note: doing tail merge)B
+7920 5510(; Compiling COMBINE-TWO-ASSOC-LIST)B
+7920 5350(;  Note: doing tail merge)B
+7920 5190(; Compiling SET-VAR-ON-GIVEN-PATH)B
+7920 5030(Warning: Symbol *COMPONENT-HASH* declared special)B
+7920 4870(;  Note: doing tail merge)B
+7920 4710(; Compiling REDO-VAR-ASSOC-ON-LOOP)B
+7920 4550(Warning: Symbol *COMPONENT-HASH* declared special)B
+7920 4390(Warning: variable NEXT-INDEX is never used)B
+EndPage
+%%Page: ? 2
+StartPage
+Landscape
+()(typescript)[(96/10/16)(14:50:43)](2)Gaudy
+0 F
+360 14470(Warning: variable PATH is never used)B
+360 14310(Warning: variable LOOP-PATH is never used)B
+360 14150(; Compiling COMP-DEPENDENCY)B
+360 13990(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 13830(;  Note: doing tail merge)B
+360 13670(;  Note: doing tail merge)B
+360 13510(;  Note: doing tail merge)B
+360 13350(; Compiling REMOVE-VARS-NOT-IN-ACCESSED-LIST)B
+360 13190(;  Note: doing tail merge)B
+360 13030(; Compiling FINALIZE-HASH-VALUE)B
+360 12870(; Compiling RESET-VAR-DEPENDENCY)B
+360 12710(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 12550(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 12390(; Compiling MODIFY-COMPONENT-HASH-VALUE)B
+360 12230(Warning: Symbol *COMPONENT-HASH* declared special)B
+360 12070(;  Note: doing tail merge)B
+360 11910(; Compiling SINGLE-FUNC-DEPENDENCY)B
+360 11750(Warning: Symbol *CONTROL-HASH* declared special)B
+360 11590(Warning: Symbol *ALL-VAR-OF-THIS-FUNC* declared special)B
+360 11430(; Compiling ALL-FUNCTIONS-INNER-DEPENDENCY)B
+360 11270(Warning: Symbol *ALL-VAR-OF-THIS-FUNC* declared special)B
+360 11110(;  Note: doing tail merge)B
+360 10950(; Compiling TEST-MAIN)B
+360 10790(Warning: Symbol *ALL-FUNCTION-LIST* declared special)B
+360 10630(; Writing fasl file "/users1/grad/yjzhang/Gen++/mylisp/data-dep.fasl")B
+360 10470(Warning: No IN-PACKAGE form seen in)B
+1116 10310(/users1/grad/yjzhang/Gen++/mylisp/data-dep.lisp.  \(Allegro Presto)B
+1116 10150(will be ineffective when loading a file having no IN-PACKAGE form.\))B
+360 9990(; Fasl write complete)B
+360 9830(#p"/users1/grad/yjzhang/Gen++/mylisp/data-dep.fasl")B
+360 9670(T)B
+360 9510(T)B
+360 9350([2] USER\(9\): :ld program-setup.fasl)B
+360 9190(;   Fast loading /users1/grad/yjzhang/Gen++/mylisp/program-setup.fasl.)B
+360 9030([2] USER\(10\): :ld data-dep.lisp)B
+-336(fasl)X
+360 8870(;   Fast loading /users1/grad/yjzhang/Gen++/mylisp/data-dep.fasl.)B
+360 8710([2] USER\(11\): \(test-main "dmaxc.component" "dmaxc.control'\))B
+360 8550(^CError: Received signal number 2 \(Keyboard interrupt\))B
+528 8390([condition type: INTERRUPT-SIGNAL])B
+360 8070(Restart actions \(select using :continue\):)B
+444 7910(0: continue computation at break level 2)B
+444 7750(1: Try calling DATA-DEPENDENCY again.)B
+444 7590(2: Return a value instead of calling DATA-DEPENDENCY.)B
+444 7430(3: Try calling a function other than DATA-DEPENDENCY.)B
+444 7270(4: Setf the symbol-function of DATA-DEPENDENCY and call it again.)B
+444 7110(5: retry the load of program-steup.fasl)B
+360 6950([3c] USER\(12\): \(test-main "dmaxc.component" "dmaxc.control"\))B
+360 6630(Processing DMAX now!)B
+360 6470(Computing dependency in  DMAX now!^C)B
+360 6150(Error: Received signal number 2 \(Keyboard interrupt\))B
+528 5990([condition type: INTERRUPT-SIGNAL])B
+360 5670(Restart actions \(select using :continue\):)B
+444 5510(0: continue computation at break level 3)B
+444 5350(1: continue computation at break level 2)B
+444 5190(2: Try calling DATA-DEPENDENCY again.)B
+444 5030(3: Return a value instead of calling DATA-DEPENDENCY.)B
+444 4870(4: Try calling a function other than DATA-DEPENDENCY.)B
+444 4710(5: Setf the symbol-function of DATA-DEPENDENCY and call it again.)B
+444 4550(6: retry the load of program-steup.fasl)B
+360 4390([4c] USER\(13\): :ld program-setup.fasl)B
+7920 14470(;   Fast loading /users1/grad/yjzhang/Gen++/mylisp/program-setup.fasl.)B
+7920 14310([4c] USER\(14\): :ld data-dfep)B
+-252(ep.fasl)X
+7920 14150(;   Fast loading /users1/grad/yjzhang/Gen++/mylisp/data-dep.fasl.)B
+7920 13990([4c] USER\(15\): \(trace comp-dependency_)B
+-84(\))X
+7920 13830(\(COMP-DEPENDENCY\))B
+7920 13670([4c] USER\(16\): \(test-main "dmaxc.component" "dmaxc.control"\))B
+7920 13350(Processing DMAX now!)B
+7920 13190(Computing dependency in  DMAX now!)B
+8004 13030(0: \(COMP-DEPENDENCY DMAXC_2)B
+9684 12870(\(\(\(DMAXC_R_53\)\) \(\(DMAXC_R_52\)\) \(\(DMAXC_R_51\)\))B
+9768 12710(\(\(Y DMAXC 9\)\) \(\(DMAXC_R_50\)\) \(\(DM_MAX DMAXC 11\)\))B
+9768 12550(\(\(DMAXC_R_49\)\) \(\(DMAXC_R_48\)\) \(\(DP_MAX DMAXC 11\)\))B
+9768 12390(\(\(DMAXC_R_47\)\) \(\(DM DMAXC 11\)\) \(\(DMAXC_R_46\)\))B
+9768 12230(\(\(DMAXC_R_45\)\) \(\(DP DMAXC 11\)\) \(\(DMAXC_R_44\)\))B
+9768 12070(\(\(DMAXC_R_43\)\) \(\(DMAXC_R_42\)\) \(\(DMAXC_R_41\)\) \(\(0.99999\)\))B
+9768 11910(\(\(DMAXC_R_40\)\) \(\(1.0e-5\)\) \(\(FX DMAXC 10\)\) \(\(DMAXC_R_39\)\))B
+9768 11750(\(\(0.5\)\) \(\(DMAXC_R_38\)\) \(\(DMAXC_R_37\)\) \(\(DMAXC_R_36\)\))B
+9768 11590(\(\(DMAXC_R_35\)\) \(\(DMAXC_R_31\)\) \(\(DMAXC_R_34\)\))B
+9768 11430(\(\(DMAXC_R_33\)\) \(\(DMAXC_R_32\)\) \(\(DMAXC_R_30\)\))B
+9768 11270(\(\(DMAXC_R_29\)\) \(\(DMAXC_R_28\)\) \(\(N\)\) \(\(XCOPY\)\))B
+9768 11110(\(\(DMAXC_R_27\)\) \(\(DCMP\)\) \(\(DMAXC_R_26\)\) \(\(DMAXC_R_25\)\))B
+9768 10950(\(\(DMAXC_R_24\)\) \(\(DMAXC_R_23\)\) \(\(DMAXC_R_22\)\))B
+9768 10790(\(\(DMAXC_R_21\)\) \(\(DMAXC_R_20\)\) \(\(1.0\)\) \(\(DMAXC_R_19\)\))B
+9768 10630(\(\(DMAXC_R_17\)\) \(\(DMAXC_R_18\)\) \(\(DMAXC_R_16\)\))B
+9768 10470(\(\(DMAXC_R_15\)\) \(\(DMAXC_R_14\)\) \(\(X DMAXC 8\)\))B
+9768 10310(\(\(DMAXC_R_13\)\) \(\(DMAXC_R_12\)\) \(\(I DMAXC 12\)\))B
+9768 10150(\(\(SQRTN DMAXC 10\)\) \(\(DMAXC_R_11\)\) \(\(SQRT2 DMAXC 10\)\))B
+9768 9990(\(\(DMAXC_R_10\)\) \(\(2.0\)\) \(\(DMAXC_R_9\)\) \(\(DMAXC_R_8\)\))B
+9768 9830(\(\(STRINGCONST\)\) \(\(DMAXC_R_7\)\) \(\(DMAXC_R_6\)\) \(\(2\)\))B
+9768 9670(\(\(_IOB\)\) \(\(DMAXC_R_5\)\) \(\(DMAXC_R_4\)\) \(\(DMAXC_R_3\)\) \(\(0\)\))B
+9768 9510(\(\(XCOPY DMAXC 10\)\) \(\(DMAXC_R_2\)\) \(\(DMAXC_R_1\)\) \(\(1\)\))B
+9768 9350(\(\(N DMAXC 8\)\) \(\(SDX DMAXC 10\)\) \(\(0.0\)\))B
+9768 9190(\(\(MEAN DMAXC 10\)\)\))B
+9684 9030(NIL\))B
+8004 8870(0: returned NIL)B
+7920 8550(Modifying dependency in  DMAX now!)B
+7920 8390(\(DMAXC_1 \(FINISH\) NIL\) )B
+7920 8230(\(DMAXC_2 \(ASSIGN MEAN 0.0\) \(\(\(0.0\)\) \(\(MEAN DMAXC 10\)\)\)\) )B
+7920 8070(\(DMAXC_3 \(ASSIGN SDX 0.0\) \(\(\(SDX DMAXC 10\)\) \(\(0.0\)\)\)\) )B
+7920 7910(\(DMAXC_4 \(IFSTATEMENT\) NIL\) )B
+7920 7750(\(DMAXC_5 \(BRIDGENULL\) NIL\) )B
+7920 7590(\(DMAXC_6 \(MULT N 1 DMAXC_R_1\) \(\(\(DMAXC_R_1\)\) \(\(1\)\) \(\(N DMAXC 8\)\)\)\) )B
+7920 7430(\(DMAXC_7 \(USERCALL MALLOC DMAXC_R_1 DMAXC_R_2\))B
+8004 7270(\(\(\(DMAXC_R_2\)\) \(\(DMAXC_R_1\) . DMAXC_6\)\)\) )B
+7920 7110(\(DMAXC_8 \(ASSIGN XCOPY DMAXC_R_2\) \(\(\(XCOPY DMAXC 10\)\) \(\(DMAXC_R_2\) . DMAXC_7\)\)\) )B
+7920 6950(\(DMAXC_9 \(EQEQ DMAXC_R_2 0 DMAXC_R_3\))B
+8004 6790(\(\(\(DMAXC_R_3\)\) \(\(0\)\) \(\(DMAXC_R_2\) . DMAXC_7\)\)\) )B
+7920 6630(\(DMAXC_10 \(UMINUS 1 DMAXC_R_4\) \(\(\(DMAXC_R_4\)\) \(\(1\)\)\)\) )B
+7920 6470(\(DMAXC_11 \(USERCALL EXIT DMAXC_R_4 DMAXC_R_5\))B
+8004 6310(\(\(\(DMAXC_R_5\)\) \(\(DMAXC_R_4\) . DMAXC_10\)\)\) )B
+7920 6150(\(DMAXC_12 \(INDEX _IOB 2 DMAXC_R_6\) \(\(\(2\)\) \(\(_IOB\)\)\)\) )B
+7920 5990(\(DMAXC_13 \(ADDROF DMAXC_R_6 DMAXC_R_7\))B
+8004 5830(\(\(\(DMAXC_R_7\)\) \(\(DMAXC_R_6\) . DMAXC_12\)\)\) )B
+7920 5670(\(DMAXC_14 \(USERCALL FPRINTF DMAXC_R_7 STRINGCONST DMAXC_R_8\))B
+8004 5510(\(\(\(DMAXC_R_8\)\) \(\(STRINGCONST\)\) \(\(DMAXC_R_7\) . DMAXC_13\)\)\) )B
+7920 5350(\(DMAXC_15 \(COMMA DMAXC_R_8 DMAXC_R_5 DMAXC_R_9\))B
+8004 5190(\(\(\(DMAXC_R_9\)\) \(\(DMAXC_R_8\) . DMAXC_14\) \(\(DMAXC_R_5\) . DMAXC_11\)\)\) )B
+7920 5030(\(DMAXC_16 \(USERCALL SQRT 2.0 DMAXC_R_10\) \(\(\(DMAXC_R_10\)\) \(\(2.0\)\)\)\) )B
+7920 4870(\(DMAXC_17 \(ASSIGN SQRT2 DMAXC_R_10\))B
+8004 4710(\(\(\(SQRT2 DMAXC 10\)\) \(\(DMAXC_R_10\) . DMAXC_16\)\)\) )B
+7920 4550(\(DMAXC_18 \(USERCALL SQRT N DMAXC_R_11\) \(\(\(DMAXC_R_11\)\) \(\(N DMAXC 8\)\)\)\) )B
+7920 4390(\(DMAXC_19 \(ASSIGN SQRTN DMAXC_R_11\))B
+EndPage
+%%Page: ? 3
+StartPage
+Landscape
+()(typescript)[(96/10/16)(14:50:43)](3)Gaudy
+0 F
+444 14470(\(\(\(SQRTN DMAXC 10\)\) \(\(DMAXC_R_11\) . DMAXC_18\)\)\) )B
+360 14310(\(DMAXC_20 \(FORLOOP\) NIL\) )B
+360 14150(\(DMAXC_21 \(LESS I N DMAXC_R_12\))B
+444 13990(\(\(\(DMAXC_R_12\) . DMAXC_21\) \(\(I DMAXC 12\) DMAXC_25 DMAXC_23\) \(\(N DMAXC 8\)\)\)\) )B
+360 13830(\(DMAXC_22 \(BRIDGENULL\) NIL\) )B
+360 13670(\(DMAXC_23 \(ASSIGN I 0\) \(\(\(I DMAXC 12\)\) \(\(0\)\)\)\) )B
+360 13510(\(DMAXC_24 \(PLUS I 1 DMAXC_R_13\))B
+444 13350(\(\(\(DMAXC_R_13\) . DMAXC_24\) \(\(I DMAXC 12\) DMAXC_25 DMAXC_23\)\)\) )B
+360 13190(\(DMAXC_25 \(ASSIGN I DMAXC_R_13\))B
+444 13030(\(\(\(DMAXC_R_13\) . DMAXC_24\) \(\(I DMAXC 12\) DMAXC_25 DMAXC_23\)\)\) )B
+360 12870(\(DMAXC_26 \(INDEX XCOPY I DMAXC_R_14\))B
+444 12710(\(\(\(I DMAXC 12\) DMAXC_25 DMAXC_23\) \(\(XCOPY DMAXC 10\) . DMAXC_8\)\)\) )B
+360 12550(\(DMAXC_27 \(INDEX X I DMAXC_R_15\))B
+444 12390(\(\(\(X DMAXC 8\)\) \(\(I DMAXC 12\) DMAXC_25 DMAXC_23\)\)\) )B
+360 12230(\(DMAXC_28 \(ASSIGN DMAXC_R_14 DMAXC_R_15\))B
+444 12070(\(\(\(DMAXC_R_15\) . DMAXC_27\) \(\(DMAXC_R_14\) . DMAXC_26\)\)\) )B
+360 11910(\(DMAXC_29 \(INDEX X I DMAXC_R_16\))B
+444 11750(\(\(\(X DMAXC 8\)\) \(\(I DMAXC 12\) DMAXC_25 DMAXC_23\)\)\) )B
+360 11590(\(DMAXC_30 \(PLUSASSIGN MEAN DMAXC_R_16\))B
+444 11430(\(\(\(DMAXC_R_16\) . DMAXC_29\) \(\(MEAN DMAXC 10\) DMAXC_30 DMAXC_2\)\)\) )B
+360 11270(\(DMAXC_31 \(INDEX X I DMAXC_R_17\))B
+444 11110(\(\(\(X DMAXC 8\)\) \(\(I DMAXC 12\) DMAXC_25 DMAXC_23\)\)\) )B
+360 10950(\(DMAXC_32 \(INDEX X I DMAXC_R_18\))B
+444 10790(\(\(\(X DMAXC 8\)\) \(\(I DMAXC 12\) DMAXC_25 DMAXC_23\)\)\) )B
+360 10630(\(DMAXC_33 \(MULT DMAXC_R_18 DMAXC_R_17 DMAXC_R_19\))B
+444 10470(\(\(\(DMAXC_R_19\) . DMAXC_33\) \(\(DMAXC_R_17\) . DMAXC_31\))B
+528 10310(\(\(DMAXC_R_18\) . DMAXC_32\)\)\) )B
+360 10150(\(DMAXC_34 \(PLUSASSIGN SDX DMAXC_R_19\))B
+444 9990(\(\(\(DMAXC_R_19\) . DMAXC_33\) \(\(SDX DMAXC 10\) DMAXC_34 DMAXC_3\)\)\) )B
+360 9830(\(DMAXC_35 \(MINUS N 1.0 DMAXC_R_20\) \(\(\(DMAXC_R_20\)\) \(\(1.0\)\) \(\(N DMAXC 8\)\)\)\) )B
+360 9670(\(DMAXC_36 \(MULT N DMAXC_R_20 DMAXC_R_21\))B
+444 9510(\(\(\(DMAXC_R_21\)\) \(\(DMAXC_R_20\) . DMAXC_35\) \(\(N DMAXC 8\)\)\)\) )B
+360 9350(\(DMAXC_37 \(MULT MEAN MEAN DMAXC_R_22\))B
+444 9190(\(\(\(DMAXC_R_22\)\) \(\(MEAN DMAXC 10\) DMAXC_30 DMAXC_2\)\)\) )B
+360 9030(\(DMAXC_38 \(MULT N SDX DMAXC_R_23\))B
+444 8870(\(\(\(DMAXC_R_23\)\) \(\(N DMAXC 8\)\) \(\(SDX DMAXC 10\) DMAXC_34 DMAXC_3\)\)\) )B
+360 8710(\(DMAXC_39 \(MINUS DMAXC_R_23 DMAXC_R_22 DMAXC_R_24\))B
+444 8550(\(\(\(DMAXC_R_24\)\) \(\(DMAXC_R_23\) . DMAXC_38\) \(\(DMAXC_R_22\) . DMAXC_37\)\)\) )B
+360 8390(\(DMAXC_40 \(DIV DMAXC_R_24 DMAXC_R_21 DMAXC_R_25\))B
+444 8230(\(\(\(DMAXC_R_25\)\) \(\(DMAXC_R_24\) . DMAXC_39\) \(\(DMAXC_R_21\) . DMAXC_36\)\)\) )B
+360 8070(\(DMAXC_41 \(USERCALL SQRT DMAXC_R_25 DMAXC_R_26\))B
+444 7910(\(\(\(DMAXC_R_26\)\) \(\(DMAXC_R_25\) . DMAXC_40\)\)\) )B
+360 7750(\(DMAXC_42 \(ASSIGN SDX DMAXC_R_26\))B
+444 7590(\(\(\(DMAXC_R_26\) . DMAXC_41\) \(\(SDX DMAXC 10\) DMAXC_34 DMAXC_3\)\)\) )B
+360 7430(\(DMAXC_43 \(DIVASSIGN MEAN N\))B
+444 7270(\(\(\(N DMAXC 8\)\) \(\(MEAN DMAXC 10\) DMAXC_30 DMAXC_2\)\)\) )B
+360 7110(\(DMAXC_44 \(ADDROF DCMP DMAXC_R_27\) \(\(\(DMAXC_R_27\)\) \(\(DCMP\)\)\)\) )B
+360 6950(\(DMAXC_45 \(USERCALL QSORT XCOPY N 1 DMAXC_R_27 DMAXC_R_28\))B
+444 6790(\(\(\(DMAXC_R_28\)\) \(\(N\)\) \(\(XCOPY\)\) \(\(DMAXC_R_27\) . DMAXC_44\) \(\(1\)\)\)\) )B
+360 6630(\(DMAXC_46 \(FORLOOP\) NIL\) )B
+360 6470(\(DMAXC_47 \(LESS I N DMAXC_R_29\))B
+444 6310(\(\(\(DMAXC_R_29\) . DMAXC_47\) \(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(N DMAXC 8\)\)\)\) )B
+360 6150(\(DMAXC_48 \(BRIDGENULL\) NIL\) )B
+360 5990(\(DMAXC_49 \(ASSIGN I 0\) \(\(\(I DMAXC 12\) DMAXC_25 DMAXC_23\) \(\(0\)\)\)\) )B
+360 5830(\(DMAXC_50 \(PLUS I 1 DMAXC_R_30\))B
+444 5670(\(\(\(DMAXC_R_30\) . DMAXC_50\) \(\(I DMAXC 12\) DMAXC_51 DMAXC_49\)\)\) )B
+360 5510(\(DMAXC_51 \(ASSIGN I DMAXC_R_30\))B
+444 5350(\(\(\(DMAXC_R_30\) . DMAXC_50\) \(\(I DMAXC 12\) DMAXC_51 DMAXC_49\)\)\) )B
+360 5190(\(DMAXC_52 \(INDEX XCOPY I DMAXC_R_31\))B
+444 5030(\(\(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(XCOPY DMAXC 10\) . DMAXC_8\)\)\) )B
+360 4870(\(DMAXC_53 \(INDEX XCOPY I DMAXC_R_32\))B
+444 4710(\(\(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(XCOPY DMAXC 10\) . DMAXC_8\)\)\) )B
+360 4550(\(DMAXC_54 \(MINUS DMAXC_R_32 MEAN DMAXC_R_33\))B
+444 4390(\(\(\(DMAXC_R_33\) . DMAXC_54\) \(\(DMAXC_R_32\) . DMAXC_53\))B
+8088 14470(\(\(MEAN DMAXC 10\) . DMAXC_43\)\)\) )B
+7920 14310(\(DMAXC_55 \(DIV DMAXC_R_33 SDX DMAXC_R_34\))B
+8004 14150(\(\(\(DMAXC_R_34\) . DMAXC_55\) \(\(DMAXC_R_33\) . DMAXC_54\))B
+8088 13990(\(\(SDX DMAXC 10\) . DMAXC_42\)\)\) )B
+7920 13830(\(DMAXC_56 \(ASSIGN DMAXC_R_31 DMAXC_R_34\))B
+8004 13670(\(\(\(DMAXC_R_31\) . DMAXC_52\) \(\(DMAXC_R_34\) . DMAXC_55\)\)\) )B
+7920 13510(\(DMAXC_57 \(INDEX XCOPY I DMAXC_R_35\))B
+8004 13350(\(\(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(XCOPY DMAXC 10\) . DMAXC_8\)\)\) )B
+7920 13190(\(DMAXC_58 \(DIV DMAXC_R_35 SQRT2 DMAXC_R_36\))B
+8004 13030(\(\(\(DMAXC_R_36\) . DMAXC_58\) \(\(DMAXC_R_35\) . DMAXC_57\))B
+8088 12870(\(\(SQRT2 DMAXC 10\) . DMAXC_17\)\)\) )B
+7920 12710(\(DMAXC_59 \(USERCALL NORMP DMAXC_R_36 DMAXC_R_37\))B
+8004 12550(\(\(\(DMAXC_R_37\) . DMAXC_59\) \(\(DMAXC_R_36\) . DMAXC_58\)\)\) )B
+7920 12390(\(DMAXC_60 \(DIV DMAXC_R_37 2.0 DMAXC_R_38\))B
+8004 12230(\(\(\(DMAXC_R_38\) . DMAXC_60\) \(\(DMAXC_R_37\) . DMAXC_59\) \(\(2.0\)\)\)\) )B
+7920 12070(\(DMAXC_61 \(PLUS 0.5 DMAXC_R_38 DMAXC_R_39\))B
+8004 11910(\(\(\(DMAXC_R_39\) . DMAXC_61\) \(\(0.5\)\) \(\(DMAXC_R_38\) . DMAXC_60\)\)\) )B
+7920 11750(\(DMAXC_62 \(ASSIGN FX DMAXC_R_39\))B
+8004 11590(\(\(\(FX DMAXC 10\) DMAXC_66 DMAXC_70\) \(\(DMAXC_R_39\) . DMAXC_61\)\)\) )B
+7920 11430(\(DMAXC_63 \(IFSTATEMENT\) NIL\) )B
+7920 11270(\(DMAXC_64 \(BRIDGENULL\) NIL\) )B
+7920 11110(\(DMAXC_65 \(LESSEQ FX 1.0e-5 DMAXC_R_40\))B
+8004 10950(\(\(\(DMAXC_R_40\) . DMAXC_65\) \(\(1.0e-5\)\) \(\(FX DMAXC 10\) . DMAXC_62\)\)\) )B
+7920 10790(\(DMAXC_66 \(ASSIGN FX 1.0e-5\) \(\(\(1.0e-5\)\) \(\(FX DMAXC 10\) . DMAXC_62\)\)\) )B
+7920 10630(\(DMAXC_67 \(IFSTATEMENT\) NIL\) )B
+7920 10470(\(DMAXC_68 \(BRIDGENULL\) NIL\) )B
+7920 10310(\(DMAXC_69 \(GREATEREQ FX 0.99999 DMAXC_R_41\))B
+8004 10150(\(\(\(DMAXC_R_41\) . DMAXC_69\) \(\(0.99999\)\) \(\(FX DMAXC 10\) DMAXC_62 DMAXC_66\)\)\) )B
+7920 9990(\(DMAXC_70 \(ASSIGN FX 0.99999\) \(\(\(0.99999\)\) \(\(FX DMAXC 10\) DMAXC_62 DMAXC_66\)\)\) )B
+7920 9830(\(DMAXC_71 \(PLUS I 1 DMAXC_R_42\))B
+8004 9670(\(\(\(DMAXC_R_42\) . DMAXC_71\) \(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(1\)\)\)\) )B
+7920 9510(\(DMAXC_72 \(DIV DMAXC_R_42 N DMAXC_R_43\))B
+8004 9350(\(\(\(DMAXC_R_43\) . DMAXC_72\) \(\(DMAXC_R_42\) . DMAXC_71\) \(\(N DMAXC 8\)\)\)\) )B
+7920 9190(\(DMAXC_73 \(MINUS DMAXC_R_43 FX DMAXC_R_44\))B
+8004 9030(\(\(\(DMAXC_R_44\) . DMAXC_73\) \(\(DMAXC_R_43\) . DMAXC_72\))B
+8088 8870(\(\(FX DMAXC 10\) DMAXC_62 DMAXC_66 DMAXC_70\)\)\) )B
+7920 8710(\(DMAXC_74 \(ASSIGN DP DMAXC_R_44\))B
+8004 8550(\(\(\(DP DMAXC 11\) . DMAXC_74\) \(\(DMAXC_R_44\) . DMAXC_73\)\)\) )B
+7920 8390(\(DMAXC_75 \(DIV I N DMAXC_R_45\))B
+8004 8230(\(\(\(DMAXC_R_45\) . DMAXC_75\) \(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(N DMAXC 8\)\)\)\) )B
+7920 8070(\(DMAXC_76 \(MINUS FX DMAXC_R_45 DMAXC_R_46\))B
+8004 7910(\(\(\(DMAXC_R_46\) . DMAXC_76\) \(\(DMAXC_R_45\) . DMAXC_75\))B
+8088 7750(\(\(FX DMAXC 10\) DMAXC_62 DMAXC_66 DMAXC_70\)\)\) )B
+7920 7590(\(DMAXC_77 \(ASSIGN DM DMAXC_R_46\))B
+8004 7430(\(\(\(DM DMAXC 11\) . DMAXC_77\) \(\(DMAXC_R_46\) . DMAXC_76\)\)\) )B
+7920 7270(\(DMAXC_78 \(IFSTATEMENT\) NIL\) )B
+7920 7110(\(DMAXC_79 \(BRIDGENULL\) NIL\) )B
+7920 6950(\(DMAXC_80 \(BRIDGENULL\) NIL\) )B
+7920 6790(\(DMAXC_81 \(EQEQ I 0 DMAXC_R_47\))B
+8004 6630(\(\(\(DMAXC_R_47\) . DMAXC_81\) \(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(0\)\)\)\) )B
+7920 6470(\(DMAXC_82 \(GREATER DP DP_MAX DMAXC_R_48\))B
+8004 6310(\(\(\(DMAXC_R_48\) . DMAXC_82\) \(\(DP_MAX DMAXC 11\) . DMAXC_83\))B
+8088 6150(\(\(DP DMAXC 11\) . DMAXC_74\)\)\) )B
+7920 5990(\(DMAXC_83 \(ASSIGN DP_MAX DP\))B
+8004 5830(\(\(\(DP_MAX DMAXC 11\) . DMAXC_83\) \(\(DP DMAXC 11\) . DMAXC_74\)\)\) )B
+7920 5670(\(DMAXC_84 \(IFSTATEMENT\) NIL\) )B
+7920 5510(\(DMAXC_85 \(BRIDGENULL\) NIL\) )B
+7920 5350(\(DMAXC_86 \(BRIDGENULL\) NIL\) )B
+7920 5190(\(DMAXC_87 \(EQEQ I 0 DMAXC_R_49\))B
+8004 5030(\(\(\(DMAXC_R_49\) . DMAXC_87\) \(\(I DMAXC 12\) DMAXC_51 DMAXC_49\) \(\(0\)\)\)\) )B
+7920 4870(\(DMAXC_88 \(GREATER DM DM_MAX DMAXC_R_50\))B
+8004 4710(\(\(\(DMAXC_R_50\) . DMAXC_88\) \(\(DM_MAX DMAXC 11\) . DMAXC_89\))B
+8088 4550(\(\(DM DMAXC 11\) . DMAXC_77\)\)\) )B
+7920 4390(\(DMAXC_89 \(ASSIGN DM_MAX DM\))B
+EndPage
+%%Page: ? 4
+StartPage
+Landscape
+()(typescript)[(96/10/16)(14:50:43)](4)Gaudy
+0 F
+444 14470(\(\(\(DM_MAX DMAXC 11\) . DMAXC_89\) \(\(DM DMAXC 11\) . DMAXC_77\)\)\) )B
+360 14310(\(DMAXC_90 \(INDEX Y 0 DMAXC_R_51\) \(\(\(Y DMAXC 9\)\) \(\(0\)\)\)\) )B
+360 14150(\(DMAXC_91 \(ASSIGN DMAXC_R_51 DP_MAX\))B
+444 13990(\(\(\(DMAXC_R_51\) . DMAXC_90\) \(\(DP_MAX DMAXC 11\) . DMAXC_83\)\)\) )B
+360 13830(\(DMAXC_92 \(INDEX Y 1 DMAXC_R_52\) \(\(\(Y DMAXC 9\)\) \(\(1\)\)\)\) )B
+360 13670(\(DMAXC_93 \(ASSIGN DMAXC_R_52 DM_MAX\))B
+444 13510(\(\(\(DMAXC_R_52\) . DMAXC_92\) \(\(DM_MAX DMAXC 11\) . DMAXC_89\)\)\) )B
+360 13350(\(DMAXC_94 \(USERCALL FREE XCOPY DMAXC_R_53\) \(\(\(DMAXC_R_53\)\) \(\(XCOPY\)\)\)\) )B
+360 13190(\(DMAXC_95 \(RETURN Y\) \(\(\(Y DMAXC 9\)\)\)\) )B
+360 13030(NIL)B
+360 12870([4c] USER\(17\): :exit)B
+360 12710(; Exiting Lisp)B
+360 12550(> exit)B
+360 12390(exit)B
+360 12070(script done on Wed Oct 16 14:50:43 1996)B
+EndPage
+%%Trailer
+EndEnscriptDoc
+EnscriptJob restore
