@@ -650,6 +650,7 @@
   (let ( 
 	(sel (random 4))
 	)
+    (declare (ignore baseType))
     (if (eq sel 0)
 	(generate-ran-Zero sid (get-specific-line (1+ sloc)) index)
       (if (eq sel 1)
