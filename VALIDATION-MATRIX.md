@@ -33,6 +33,8 @@ accepted, but it is not the final "everything historical is unified" finish line
 
 The current delta ledger for this milestone lives in `INTEGRATION-DELTAS.md`.
 The short gate summary for this milestone lives in `M1-READINESS.md`.
+The current bridge note for the next deliberate integration target lives in
+`ADT-BATCH-INTEGRATION.md`.
 
 ## Status Key
 

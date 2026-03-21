@@ -85,6 +85,8 @@ src/                        Entry point
   indexed, integrated, tested, and publication-validated.
 - `WORKFLOWS.md` maps the primary supported operator workflows and the
   secondary/manual ones.
+- `MANUAL-HELPERS.md` explains the repo-root helper scripts and how they
+  relate to the supported operator flow.
 - `REPOSITORY-STRUCTURE-REVIEW.md` classifies the repo layout into supported
   systems, result archives, experiment workspaces, and archive-only material.
 - `DUPLICATES-REVIEW.md` records which reviewed historical overlaps are true
@@ -203,11 +205,13 @@ Directory guides:
 - `Q-Batch-SBCL/README.md`
 - `tests/README.md`
 - `WORKFLOWS.md`
+- `MANUAL-HELPERS.md`
 - `data/README.md`
 - `incoming/README.md`
 - `REPOSITORY-STATUS.md`
 - `REPOSITORY-STRUCTURE-REVIEW.md`
 - `DUPLICATES-REVIEW.md`
+- `ADT-BATCH-INTEGRATION.md`
 
 ## License
 

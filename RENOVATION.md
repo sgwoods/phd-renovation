@@ -314,6 +314,8 @@ anchors rather than co-equal supported workflows.
 3. Use the ADT batch `ij1`-`ij4` archive family as the next deliberate
    post-M1 integration target, because it is already integrity-checkable and
    sits closest to the current ADT solver line.
+   The current bridge note for that target now lives in
+   `ADT-BATCH-INTEGRATION.md`.
 4. Keep the supported validation gate clean and high-signal; treat new warning
    output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
    investigate, not normal background.

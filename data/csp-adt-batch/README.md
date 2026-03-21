@@ -43,3 +43,16 @@ The preserved `Graphical/*.ci` summaries are historically uneven: `ij1`
 keeps CC points through 500 statements but SEC points only through 450, and
 `ij3` stops at 950. `tests/validate-adt-batch.sh` treats those truncations as
 part of the preserved archive contract rather than as missing modern data.
+
+## Integration Bridge
+
+This family is now the **next deliberate post-M1 integration target**.
+
+That does not mean it is already rerunnable through `qcsp3/`.
+It means the repo now treats this preserved archive as the next bridge between
+an integrity-checkable historical family and a future integrated executable
+workflow.
+
+The current bridge note lives in:
+
+- `ADT-BATCH-INTEGRATION.md`

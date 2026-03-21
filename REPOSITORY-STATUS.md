@@ -18,6 +18,7 @@ Short answer: **not entirely yet.**
 Use this artifact as the repo-wide counterpart to `VALIDATION-MATRIX.md`.
 For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
+For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 
 ## Status Key
 
@@ -104,6 +105,8 @@ That means the current recommended order is:
 2. use the ADT batch family as the next integration experiment,
 3. keep `T1`-`T6` as a later preserved-family target,
 4. keep terrain as the major deferred recovery lane.
+
+The current bridge note for this target lives in `ADT-BATCH-INTEGRATION.md`.
 
 ## Maintenance Rule
 
