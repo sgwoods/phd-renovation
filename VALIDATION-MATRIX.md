@@ -57,8 +57,8 @@ yet the final "everything historical is unified" finish line.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Finish shrinking the remaining warning tail so the validation spine stays a
-   high-signal merge gate.
+2. Finish shrinking the remaining routine validation-log noise so the
+   validation spine stays a high-signal merge gate.
 3. Drive `qcsp3/` toward Milestone M1 by keeping the PhD baseline, AO
    baseline, and preserved `ff*` relationship aligned under one supported
    integrated story.

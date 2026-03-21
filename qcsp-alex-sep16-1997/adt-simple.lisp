@@ -904,26 +904,23 @@ ADT version.
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
-	 (temp-t	t1)
-	 (temp-s	s1) 
-	 (t1 (if (eq order 't1) t1 t2))
-	 (t2 (if (eq order 't1) t2 temp-t))
-	 (s1 (if (eq order 't1) s1 s2))
-	 (s2 (if (eq order 't1) s2 temp-s))
-	 (t1-posi  (get-var-posi t1 (nth 2 constraint)))   
-	 (s1-dependency  (get-sit-dependency s1 t1-posi))  ; 
-	 (dependency (cond ((atom s1-dependency) (equal s2 s1-dependency)) 
-					 (T (member s2 s1-dependency)))))                        
+	 (ordered-t1 (if (eq order 't1) t1 t2))
+	 (ordered-s1 (if (eq order 't1) s1 s2))
+	 (ordered-s2 (if (eq order 't1) s2 s1))
+	 (t1-posi  (get-var-posi ordered-t1 (nth 2 constraint)))   
+	 (s1-dependency  (get-sit-dependency ordered-s1 t1-posi))  ; 
+	 (dependency (cond ((atom s1-dependency) (equal ordered-s2 s1-dependency)) 
+					 (T (member ordered-s2 s1-dependency)))))                        
 ;;  (format t
 ;;          "~%~a  ~a  ~a  ~a  ~a"
 ;;          constraint t1 s1 t2 s2)
                
     (if dependency 
 	(progn
-	  (if  *debug-consis* (comment2 "possible-data-dependency succeed for" s1 s2))
+	  (if  *debug-consis* (comment2 "possible-data-dependency succeed for" ordered-s1 ordered-s2))
 	  t)
       (progn
-	(if  *debug-consis* (comment2 "possible-data-dependency fail for" s1 s2))
+	(if  *debug-consis* (comment2 "possible-data-dependency fail for" ordered-s1 ordered-s2))
 	nil)
       )) )
 
@@ -933,19 +930,16 @@ ADT version.
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
-	 (temp-t	t1)
-	 (temp-s	s1) 
-	 (t1 (if (eq order 't1) t1 t2))
-	 (t2 (if (eq order 't1) t2 temp-t))
-	 (s1 (if (eq order 't1) s1 s2))
-	 (s2 (if (eq order 't1) s2 temp-s))
-	 (t1-posi  (get-var-posi t1 (nth 2 constraint)))   
-	 (s1-dependency  (get-sit-dependency s1 t1-posi))  ; 
+	 (ordered-t1 (if (eq order 't1) t1 t2))
+	 (ordered-s1 (if (eq order 't1) s1 s2))
+	 (ordered-s2 (if (eq order 't1) s2 s1))
+	 (t1-posi  (get-var-posi ordered-t1 (nth 2 constraint)))   
+	 (s1-dependency  (get-sit-dependency ordered-s1 t1-posi))  ; 
 ;;	 (dependency (cond ((atom s1-dependency) (equal s2 s1-dependency)) 
 ;;					 (T nil))))                        
 ;;above statement is modified to the following to test CPU difference on Jan 9, 1997
 
-	 (dependency (equal s2 s1-dependency)))                        
+	 (dependency (equal ordered-s2 s1-dependency)))                        
 
 ;;  (format t
 ;;          "~%~a  ~a  ~a  ~a  ~a"
@@ -953,10 +947,10 @@ ADT version.
                
     (if dependency 
 	(progn
-	  (if  *debug-consis* (comment2 "guaranteed-data-dependency succeed for" s1 s2))
+	  (if  *debug-consis* (comment2 "guaranteed-data-dependency succeed for" ordered-s1 ordered-s2))
 	  t)
       (progn
-	(if  *debug-consis* (comment2 "guaranteed-data-dependency fail for" s1 s2))
+	(if  *debug-consis* (comment2 "guaranteed-data-dependency fail for" ordered-s1 ordered-s2))
 	nil)
       )) )
 
@@ -1039,17 +1033,14 @@ ADT version.
 ;; ***************************************************************************
 ;;(CONTROL-DATA-DEPENDENCY (E4 E3) (ID8 ID5)) E4 AVERAGEC_10 E3 AVERAGEC_4 
 (defun check-control-data-dependency (constraint t1 s1 t2 s2 )
+  (declare (ignore t2))
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
-	 (temp-t	t1)
-	 (temp-s	s1) 
-	 (t1 (if (eq order 't1) t1 t2))
-	 (t2 (if (eq order 't1) t2 temp-t))
-	 (s1 (if (eq order 't1) s1 s2))
-	 (s2 (if (eq order 't1) s2 temp-s))
-	 (s1-dependency  (nth 1 (gethash  s1 *component-hash*))) ;  
-	 (control-dependency (in-dependency s2 s1-dependency))  
+	 (ordered-s1 (if (eq order 't1) s1 s2))
+	 (ordered-s2 (if (eq order 't1) s2 s1))
+	 (s1-dependency  (nth 1 (gethash  ordered-s1 *component-hash*))) ;  
+	 (control-dependency (in-dependency ordered-s2 s1-dependency))  
 	)           
                        
 ;;  (format t
@@ -1058,10 +1049,10 @@ ADT version.
  
     (if control-dependency 
 	(progn
-	  (if  *debug-consis* (comment2 "control-data-dependency succeed for" s1 s2))
+	  (if  *debug-consis* (comment2 "control-data-dependency succeed for" ordered-s1 ordered-s2))
 	  t)
       (progn
-	(if  *debug-consis* (comment2 "control-data-dependency fail for" s1 s2))
+	(if  *debug-consis* (comment2 "control-data-dependency fail for" ordered-s1 ordered-s2))
 	nil)
       )) )
 
@@ -1086,17 +1077,14 @@ ADT version.
 ;; comp-a is a component in the test statement.
 
 (defun check-contained-in-condition (constraint t1 s1 t2 s2 )
+  (declare (ignore t2))
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
-	 (temp-t	t1)
-	 (temp-s	s1) 
-	 (t1 (if (eq order 't1) t1 t2))
-	 (t2 (if (eq order 't1) t2 temp-t))
-	 (s1 (if (eq order 't1) s1 s2))
-	 (s2 (if (eq order 't1) s2 temp-s))
-	 (s2-test-comps  (get-test-comp-list s2))   
-	 (in-condition (member s1 s2-test-comps))  
+	 (ordered-s1 (if (eq order 't1) s1 s2))
+	 (ordered-s2 (if (eq order 't1) s2 s1))
+	 (s2-test-comps  (get-test-comp-list ordered-s2))   
+	 (in-condition (member ordered-s1 s2-test-comps))  
 	)           
                        
 ;;  (format t
@@ -1105,10 +1093,10 @@ ADT version.
  
     (if in-condition
 	(progn
-	  (if  *debug-consis* (comment2 "contained-in-condition succeed for" s1 s2))
+	  (if  *debug-consis* (comment2 "contained-in-condition succeed for" ordered-s1 ordered-s2))
 	  t)
       (progn
-	(if  *debug-consis* (comment2 "contained-in-condition fail for" s1 s2))
+	(if  *debug-consis* (comment2 "contained-in-condition fail for" ordered-s1 ordered-s2))
 	nil)
       )) )
 
@@ -1120,17 +1108,14 @@ ADT version.
 ;; comp-a is a component in the true branch.
 
 (defun check-contained-in-true (constraint t1 s1 t2 s2 )
+  (declare (ignore t2))
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
-	 (temp-t	t1)
-	 (temp-s	s1) 
-	 (t1 (if (eq order 't1) t1 t2))
-	 (t2 (if (eq order 't1) t2 temp-t))
-	 (s1 (if (eq order 't1) s1 s2))
-	 (s2 (if (eq order 't1) s2 temp-s))
-	 (s2-true-comps  (get-test-true-list s2))   
-	 (in-true (member s1 s2-true-comps))  
+	 (ordered-s1 (if (eq order 't1) s1 s2))
+	 (ordered-s2 (if (eq order 't1) s2 s1))
+	 (s2-true-comps  (get-test-true-list ordered-s2))   
+	 (in-true (member ordered-s1 s2-true-comps))  
 	)           
                        
 ;;  (format t
@@ -1139,10 +1124,10 @@ ADT version.
  
     (if in-true
 	(progn
-	  (if  *debug-consis* (comment2 "contained-in-true succeed for" s1 s2))
+	  (if  *debug-consis* (comment2 "contained-in-true succeed for" ordered-s1 ordered-s2))
 	  t)
       (progn
-	(if  *debug-consis* (comment2 "contained-in-true fail for" s1 s2))
+	(if  *debug-consis* (comment2 "contained-in-true fail for" ordered-s1 ordered-s2))
 	nil)
       )) )
 
@@ -1154,17 +1139,14 @@ ADT version.
 
 
 (defun check-contained-in-false (constraint t1 s1 t2 s2 )
+  (declare (ignore t2))
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
-	 (temp-t	t1)
-	 (temp-s	s1) 
-	 (t1 (if (eq order 't1) t1 t2))
-	 (t2 (if (eq order 't1) t2 temp-t))
-	 (s1 (if (eq order 't1) s1 s2))
-	 (s2 (if (eq order 't1) s2 temp-s))
-	 (s2-false-comps  (get-test-false-list s2))   
-	 (in-false (member s1 s2-false-comps))  
+	 (ordered-s1 (if (eq order 't1) s1 s2))
+	 (ordered-s2 (if (eq order 't1) s2 s1))
+	 (s2-false-comps  (get-test-false-list ordered-s2))   
+	 (in-false (member ordered-s1 s2-false-comps))  
 	)           
                        
 ;;  (format t
@@ -1173,10 +1155,10 @@ ADT version.
  
     (if in-false
 	(progn
-	  (if  *debug-consis* (comment2 "contained-in-false succeed for" s1 s2))
+	  (if  *debug-consis* (comment2 "contained-in-false succeed for" ordered-s1 ordered-s2))
 	  t)
       (progn
-	(if  *debug-consis* (comment2 "contained-in-false fail for" s1 s2))
+	(if  *debug-consis* (comment2 "contained-in-false fail for" ordered-s1 ordered-s2))
 	nil)
       )) )
 
@@ -1188,17 +1170,14 @@ ADT version.
 
 
 (defun check-contained-in-loop (constraint t1 s1 t2 s2 )
+  (declare (ignore t2))
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
-	 (temp-t	t1)
-	 (temp-s	s1) 
-	 (t1 (if (eq order 't1) t1 t2))
-	 (t2 (if (eq order 't1) t2 temp-t))
-	 (s1 (if (eq order 't1) s1 s2))
-	 (s2 (if (eq order 't1) s2 temp-s))
-	 (s2-loop-comps  (get-test-true-list s2))    
-	 (in-loop (member s1 s2-loop-comps))  
+	 (ordered-s1 (if (eq order 't1) s1 s2))
+	 (ordered-s2 (if (eq order 't1) s2 s1))
+	 (s2-loop-comps  (get-test-true-list ordered-s2))    
+	 (in-loop (member ordered-s1 s2-loop-comps))  
 	)           
                        
 ;;  (format t
@@ -1207,10 +1186,10 @@ ADT version.
  
     (if in-loop
 	(progn
-	  (if  *debug-consis* (comment2 "contained-in-loop succeed for" s1 s2))
+	  (if  *debug-consis* (comment2 "contained-in-loop succeed for" ordered-s1 ordered-s2))
 	  t)
       (progn
-	(if  *debug-consis* (comment2 "contained-in-loop fail for" s1 s2))
+	(if  *debug-consis* (comment2 "contained-in-loop fail for" ordered-s1 ordered-s2))
 	nil)
       )) )
 
@@ -1218,6 +1197,7 @@ ADT version.
 ;; ***************************************************************************
 
 (defun check-before-p (constraint t1 s1 t2 s2 )
+  (declare (ignore t2))
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
@@ -1236,9 +1216,8 @@ ADT version.
 
 ;; Added by Yongjun Zhang 
 (defun check-same-line (constraint t1 s1 t2 s2 )
+  (declare (ignore constraint t1 t2))
   (let* (
-	 (aflist   (get-affected-list constraint))
-	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
 	 (s1-line  (get-sit-obj-line-act s1))  ; changed by YJ from adj to act 
 	 (s2-line  (get-sit-obj-line-act s2))  ; ......................
 	 (sameline (eq s2-line s1-line))
@@ -1333,6 +1312,7 @@ ADT version.
 (defun check-close-to-p (constraint t1 s1 t2 s2 )
 "Two statements are close together if they are within some number of 
  statements as indicated in the constraint."
+(declare (ignore t1 t2))
 ;(print constraint)
 ;(print t1)
 ;(print s1)

@@ -242,7 +242,7 @@ For the current phase, the practical subgoals are:
 | Core regression baseline | **Strong** | Deterministic metric assertions exist for standard and confused queens across all four systems. |
 | AO / `test4` validation | **Good** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline; broader AO coverage is still open. |
 | PhD-result validation path | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
-| Warning hygiene | **Good and improving** | Repeated core and AO warning families have been reduced substantially. The remaining tail is now narrower and concentrated mostly in alex-specific ADT code and a few legacy redefinition patterns. |
+| Warning hygiene | **Strong and improving** | The repeated alex/core STYLE-WARNING tail has now been cleared from the supported validation path. The remaining routine noise is mostly legacy redefinition chatter in the AO loads plus a small alex `adt-setup` note. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, and the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check. |
 | Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but the project has not yet defined and satisfied the first explicit milestone for saying it covers the PhD baseline, AO baseline, and preserved historical result families under one supported umbrella. |
@@ -304,10 +304,10 @@ anchors rather than co-equal supported workflows.
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
-2. Finish the remaining warning tail reduction so validation logs become a
-   clearer signal channel for real regressions. The current highest-value tail
-   is the small alex ADT/simple cluster and the last cross-domain legacy
-   redefinition noise.
+2. Finish the remaining validation-log cleanup so the merge gate stays a
+   clearer signal channel for real regressions. The biggest remaining routine
+   noise is the legacy AO redefinition chatter rather than the old alex
+   ADT/simple STYLE-WARNING tail.
 3. Drive toward Milestone M1 for `qcsp3/`: keep the supported PhD baseline,
    the asserted AO baseline, and the documented `ff*` relationship under one
    coherent integrated-solver story.
