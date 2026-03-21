@@ -48,6 +48,20 @@ tests/                      FiveAM test suites
 src/                        Entry point
 ```
 
+## Where To Look
+
+- `qcsp3/` is the primary codebase for the supported thesis-validation
+  baseline; `csp/`, `qcsp-may29-1996/`, and `qcsp-alex-sep16-1997/` are the
+  comparison snapshots.
+- `tests/` is the authoritative validation surface. It contains the Four
+  FiveAM suites, the asserted AO runner, and the artifact/thesis-result
+  validation scripts that CI uses.
+- `Q-Batch-SBCL/` is the runnable SBCL experiment workspace. It holds the
+  modern experiment drivers, generated run directories, and comparison plots.
+- `data/` holds preserved ACL/SPARC-era baselines and archive material.
+- `historical finds/` is archive intake and provenance work, not supported
+  baseline code.
+
 ## ASDF Systems
 
 | System | Directory | Description |
@@ -68,13 +82,20 @@ sbcl --load "src/main.lisp"
 # Run all FiveAM test suites (CSP, QCSP3, May29, Alex)
 sbcl --non-interactive --load "tests/run.lisp"
 
+# Run asserted AO regression coverage
+sbcl --non-interactive --load "tests/ao-run.lisp"
+
 # Run individual suites
 sbcl --non-interactive --load "tests/csp-suite.lisp"
 sbcl --non-interactive --load "tests/qcsp3-suite.lisp"
 sbcl --non-interactive --load "tests/may29-suite.lisp"
 sbcl --non-interactive --load "tests/alex-suite.lisp"
 
-# Run arc-oriented (AO) integration tests
+# Run the validation spine used by CI
+bash tests/validate-artifacts.sh
+bash tests/validate-ao.sh
+
+# Run legacy/manual AO harnesses
 sbcl --non-interactive --load "run-test4.lisp"
 sbcl --non-interactive --load "run-test4-may29.lisp"
 sbcl --non-interactive --load "run-test4-alex.lisp"
@@ -131,6 +152,12 @@ Key findings:
   the dormant DFA options may be the missing compensating mechanism.
 
 Plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`.
+
+Directory guides:
+- `csp/README.md`
+- `Q-Batch-SBCL/README.md`
+- `tests/README.md`
+- `data/README.md`
 
 ## License
 

@@ -59,21 +59,25 @@ place to preserve snapshot integrity. Each is documented with a README.
 ### Q-Batch-SBCL/ (not moved -- uses relative paths)
 
 Modern SBCL experiment framework. Shell scripts and Lisp loaders reference
-relative paths to the 4 ASDF systems.
+relative paths to the 4 ASDF systems. See also `Q-Batch-SBCL/README.md` for
+the code/test/results layout inside that workspace.
 
 **Tracked files:** bootstrap\*.lisp, gen-seeds\*.lisp, generate-experiments.lisp,
 ij\*.lisp (45 experiment scripts), \*.sh (6 runner scripts), diagnose-ij4.sh,
 Graph/\*.py (4 Python scripts), Graph/\*.gp (5 Gnuplot scripts),
 Graph/\*.png (4 comparison overlay plots).
 
-**Gitignored (generated at runtime):**
+**Gitignored/runtime-generated:**
 - Result directories: ij2/, ij3/, ij4/, alex-ij2/, alex-ij3/, alex-ij4/,
   may29-ij2/, may29-ij3/, may29-ij4/ (200 files each when populated)
 - Console output: \*.out
 - Extracted data: Graph/\*.dat, \*.all, \*.p1, \*.pdf
 
-**To regenerate:** `bash Q-Batch-SBCL/ij2.sh` (also ij3.sh, ij4.sh,
+**To regenerate experiments:** `bash Q-Batch-SBCL/ij2.sh` (also ij3.sh, ij4.sh,
 run-may29-all.sh, run-alex-all.sh).
+
+**To regenerate the supported thesis-comparison artifacts:** `bash
+tests/validate-artifacts.sh`.
 
 ---
 

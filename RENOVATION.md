@@ -225,7 +225,7 @@ platform, not just a modernized copy of legacy Lisp.
 | AO / `test4` validation | **Good** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline; broader AO coverage is still open. |
 | Thesis artifact pipeline | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
 | Warning hygiene | **Improving** | Repeated core and AO warning families have been reduced substantially, but a small residual tail remains. |
-| Documentation and onboarding | **Good** | `README.md`, `DEVELOPMENT.md`, `RENOVATION.md`, and archive notes now describe the project and current workflow much more accurately. |
+| Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Partial but advancing** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, and many `PrevResults` artifacts are mapped, but the `ff1`/`ff2`/`ff3` generation bridge is still unresolved. |
 | Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` research platform claim. |
 
@@ -238,8 +238,9 @@ platform, not just a modernized copy of legacy Lisp.
   now includes stronger regression assertions, AO asserted coverage, automated
   thesis-comparison checks, and incremental warning cleanup.
 - **Phase 3 / `0.3.x` Documentation**: started, but not complete. High-level
-  docs are much stronger; core algorithm docstrings and operator-facing
-  workflow polish still remain.
+  docs are much stronger, the code/test/results roots are now easier to
+  navigate, but core algorithm docstrings and operator-facing workflow polish
+  still remain.
 - **Phase 4 / Research Readiness**: not yet active as the main lane. We have
   diagnosed alex's `ij4` divergence, but we are intentionally holding off on
   broader experimental changes until the baseline is tighter.

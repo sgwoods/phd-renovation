@@ -74,9 +74,10 @@ one broader historical workflow.
 
 1. Compare `yj-sun/Csp` against the tracked solver snapshots to identify unique
    source variants, missing helpers, and older experiment drivers.
-2. Map `yj-sun/Csp/testdata/Results/` and `MyBatch/` against current thesis
-   artifacts to see whether they explain older `PrevResults/ff*.ci` families or
-   the AO/test4 path.
+2. Keep separating result families cleanly: `yj-sun/Csp/testdata/Results/`
+   explains part of `PrevResults/`, while the `ff1` / `ff2` / `ff3` family now
+   appears to belong to the qcsp-era `NewData4b-Batch` lineage rather than the
+   older `MyBatch` lane.
 3. Catalog `yj-sun/Gen++` as an upstream toolchain archive and identify the
    minimum subset needed to explain `.component` / `.control` generation.
 4. Leave `Unravel/`, `Refine/`, and the note files as reference/context until a

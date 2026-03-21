@@ -109,20 +109,28 @@ sbcl --load "src/main.lisp"
 # Run all FiveAM test suites (4 systems, 25 tests, ~90 assertions)
 sbcl --non-interactive --load "tests/run.lisp"
 
+# Run asserted AO coverage
+sbcl --non-interactive --load "tests/ao-run.lisp"
+
 # Run individual suites
 sbcl --non-interactive --load "tests/csp-suite.lisp"
 sbcl --non-interactive --load "tests/qcsp3-suite.lisp"
 sbcl --non-interactive --load "tests/may29-suite.lisp"
 sbcl --non-interactive --load "tests/alex-suite.lisp"
 
-# Integration tests (arc-oriented solver)
+# Legacy/manual AO harnesses
 sbcl --non-interactive --load "run-test4.lisp"
 sbcl --non-interactive --load "run-test4-may29.lisp"
 sbcl --non-interactive --load "run-test4-alex.lisp"
 
+# Full supported validation spine
+bash tests/validate-artifacts.sh
+bash tests/validate-ao.sh
+
 # Run experiments (takes hours — generates 200 data points each)
 bash Q-Batch-SBCL/ij2.sh
 bash Q-Batch-SBCL/ij3.sh
+bash Q-Batch-SBCL/ij4.sh
 bash Q-Batch-SBCL/run-may29-all.sh
 bash Q-Batch-SBCL/run-alex-all.sh
 
@@ -143,6 +151,16 @@ See `.github/workflows/test.yml`.
 Tests run in separate SBCL processes (one per suite) because the four systems
 cannot coexist in a single Lisp image. `tests/run.lisp` orchestrates this.
 
+`tests/` is the authoritative supported validation surface. The repo-root
+`run-test4*.lisp` scripts remain useful historical/manual harnesses, but CI
+and day-to-day confidence checks should flow through:
+
+- `tests/run.lisp`
+- `tests/ao-run.lisp`
+- `tests/validate-artifacts.sh`
+- `tests/validate-ao.sh`
+- `tests/validate-thesis-comparison.py`
+
 Each suite:
 1. Loads Quicklisp and FiveAM
 2. Registers the project root with ASDF
@@ -161,6 +179,7 @@ Each suite:
 
 ```
 csp/                           Base CSP solver (14 source .lisp files)
+  README.md                    Snapshot guide and file-role orientation
 qcsp3/                         Extended solver (13 source files + extras/)
 qcsp-may29-1996/               May 1996 snapshot (13 source + extras/ + batch data)
 qcsp-alex-sep16-1997/          Sep 1997 snapshot (14 source + extras/ + testdata/)
@@ -176,16 +195,22 @@ data/                          Consolidated data directory (see data/README.md)
   thesis/                      PhD thesis PDF
   lost-datasets.md             QCSP-nov96 terrain/TCSP recovery guide
 Q-Batch-SBCL/                  SBCL experiment infrastructure
+  README.md                    Experiment/workspace guide
   Graph/                       Analysis scripts and comparison plots
 tests/                         FiveAM test suites
+  README.md                    Validation entry points and coverage guide
   run.lisp                     Test orchestrator (runs all 4 suites)
   csp-suite.lisp               CSP tests (4 tests)
   qcsp3-suite.lisp             QCSP3 tests (8 tests)
   may29-suite.lisp             May29 tests (5 tests)
   alex-suite.lisp              Alex tests (5 tests)
+  ao-run.lisp                  Asserted AO regression runner
+  validate-artifacts.sh        Thesis artifact regeneration/validation
+  validate-ao.sh               AO validation wrapper
+  validate-thesis-comparison.py ACL-vs-SBCL thesis baseline check
 src/main.lisp                  REPL entry point
 *.asd                          ASDF system definitions (4 files)
-run-test4*.lisp                Integration test runners (3 files)
+run-test4*.lisp                Legacy/manual AO harnesses (3 files)
 ```
 
 ## Known Pitfalls
