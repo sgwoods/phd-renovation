@@ -30,6 +30,8 @@ To satisfy M1, `qcsp3/` must:
 This is the first practical step toward one gold-standard code line. It is not
 yet the final "everything historical is unified" finish line.
 
+The current delta ledger for this milestone lives in `INTEGRATION-DELTAS.md`.
+
 ## Status Key
 
 - `Executable now`: we have a supported runnable validation path today.

@@ -271,6 +271,8 @@ when all of the following are true:
 5. any remaining meaningful differences between `qcsp3/` and the reference
    snapshots are documented as intentional, bounded, or still-open gaps.
 
+The active delta list for this is now centralized in `INTEGRATION-DELTAS.md`.
+
 M1 is intentionally narrower than a final "gold-standard achieved" claim. It
 does not require every historical family to be fully executable through
 `qcsp3/` yet. It does require that `qcsp3/` become the clear operational center
@@ -310,7 +312,8 @@ anchors rather than co-equal supported workflows.
    ADT/simple STYLE-WARNING tail.
 3. Drive toward Milestone M1 for `qcsp3/`: keep the supported PhD baseline,
    the asserted AO baseline, and the documented `ff*` relationship under one
-   coherent integrated-solver story.
+   coherent integrated-solver story, with the remaining snapshot deltas tracked
+   in `INTEGRATION-DELTAS.md`.
 4. Keep building out the validation matrix: for each historical domain/result
    family, mark whether it is executable now, integrity-checkable now, or
    provenance-only for now, and identify which family should move next.
