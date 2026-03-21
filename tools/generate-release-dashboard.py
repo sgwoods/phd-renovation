@@ -4,8 +4,6 @@
 from __future__ import annotations
 
 import json
-import subprocess
-from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
 
@@ -357,22 +355,8 @@ def render_public_links(items: list[dict[str, str]]) -> str:
     return "\n".join(blocks)
 
 
-def git_head_timestamp_utc() -> str:
-    result = subprocess.run(
-        ["git", "log", "-1", "--format=%cI"],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    value = result.stdout.strip()
-    timestamp = datetime.fromisoformat(value)
-    return timestamp.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
-
-
 def build_public_status_manifest(data: dict[str, object]) -> str:
     public_status = data["public_status"]
-    repo_timestamp = git_head_timestamp_utc()
     metrics = data["metrics"]
     manifest = {
         "schema_version": public_status["schema_version"],
@@ -383,8 +367,8 @@ def build_public_status_manifest(data: dict[str, object]) -> str:
         "repo_url": public_status["repo_url"],
         "dashboard_url": public_status["dashboard_url"],
         "experience_url": public_status["experience_url"],
-        "repo_pushed_at": repo_timestamp,
-        "status_generated_at": repo_timestamp,
+        "repo_pushed_at": public_status["repo_pushed_at"],
+        "status_generated_at": public_status["status_generated_at"],
         "status_label": public_status["status_label"],
         "status_value": metrics[2]["value"],
         "focus_label": public_status["focus_label"],
