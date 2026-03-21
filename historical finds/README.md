@@ -29,6 +29,9 @@ Working assumption: `yj-sun/Csp` is a recovery candidate for Phase 5 archive
 work, while `yj-sun/Gen++` is an upstream toolchain archive that may help us
 understand how historical `.component` / `.control` inputs were produced.
 
+See also: `yj-sun/Csp/README.md` for the first comparison pass against the
+tracked solver snapshots.
+
 ### `Unravel/`
 
 This looks like an external NIST release of the Unravel slicing tool, including
