@@ -96,6 +96,28 @@
       "summary": "Every new step still runs through the same validation spine so the thesis baseline stays trustworthy while the docs lane finishes and the ADT batch family becomes the next deliberate post-M1 target."
     }
   ],
+  "handbook_refresh_policy": {
+    "title": "Handbook refresh cadence",
+    "summary": "Treat the handbook as part of the release/status build, not as an occasional side document.",
+    "triggers": [
+      {
+        "title": "Milestone meaningfully moves",
+        "summary": "Refresh the handbook when a milestone is accepted, re-scoped, or otherwise changes the project's real stage."
+      },
+      {
+        "title": "Current blocker changes",
+        "summary": "Refresh the handbook when the main blocker, gap, or risk lane changes so the narrative stays accurate."
+      },
+      {
+        "title": "Harness materially changes",
+        "summary": "Refresh the handbook when validation, experiment, or integration harnesses materially change their coverage, behavior, or operator entry points."
+      },
+      {
+        "title": "Release focus changes",
+        "summary": "Refresh the handbook when the current build line, active track, or release focus shifts."
+      }
+    ]
+  },
   "legend": [
     {
       "title": "Snapshot rescue and modernization",
