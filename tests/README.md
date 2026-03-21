@@ -11,6 +11,8 @@ start here.
   baseline across qcsp3, may29, and alex.
 - `validate-artifacts.sh`: rebuilds SBCL graph artifacts, regenerates overlay
   plots, and checks the current thesis-result pipeline.
+- `validate-dashboard.sh`: regenerates the visual release dashboard from its
+  structured source file and fails if the checked-in HTML is out of sync.
 - `validate-ff-provenance.sh`: checks that the preserved `NewData4b-Batch`
   `ff*` graph summaries match their `PrevResults/` carry-forward copies and
   that the supporting raw/count lineage is present.
@@ -34,6 +36,7 @@ Run these from the repository root:
 ```bash
 sbcl --non-interactive --load "tests/run.lisp"
 bash tests/validate-artifacts.sh
+bash tests/validate-dashboard.sh
 bash tests/validate-ff-provenance.sh
 bash tests/validate-ao.sh
 ```

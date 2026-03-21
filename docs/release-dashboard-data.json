@@ -1,0 +1,134 @@
+{
+  "title": "PhD Renovation Release Dashboard",
+  "eyebrow": "PhD Renovation • Release Dashboard",
+  "headline": "One glance at the road to a gold-standard solver.",
+  "summary": "This dashboard tracks the project against its main mission: validate the integrated constraint solver against the PhD results, expand that validated umbrella to other historical result families, and converge on one trustworthy code line.",
+  "metrics": [
+    {
+      "label": "Current Track",
+      "value": "0.2.x",
+      "note": "Late verification, nearing integration planning."
+    },
+    {
+      "label": "Current Focus",
+      "value": "M1 + warning tail",
+      "note": "Define the integrated line while keeping the logs quiet and trustworthy."
+    },
+    {
+      "label": "Build Line",
+      "value": "0.2.x-M1",
+      "note": "Late verification with the first explicit integration milestone."
+    },
+    {
+      "label": "Updated",
+      "value": "March 21, 2026",
+      "note": "Dashboard now generated as part of the regular validation flow."
+    }
+  ],
+  "timeline_note": "Green steps are complete, amber marks the active front, and muted cards show the work still ahead.",
+  "timeline": [
+    {
+      "status": "done",
+      "status_label": "Completed",
+      "phase": "Phase 0.1",
+      "title": "Snapshot rescue and modernization",
+      "summary": "Four historical solver snapshots load on modern SBCL with ASDF, package isolation, and cleaned archival structure."
+    },
+    {
+      "status": "done",
+      "status_label": "Completed",
+      "phase": "Phase 0.1",
+      "title": "Artifact pipeline restored",
+      "summary": "The experiment plots, ACL-vs-SBCL overlays, and tracked graph assets regenerate from a fresh checkout."
+    },
+    {
+      "status": "done",
+      "status_label": "Completed",
+      "phase": "Phase 0.2",
+      "title": "Thesis-result validation spine in CI",
+      "summary": "The core suites, artifact validation, AO assertions, ff provenance, and dashboard sync now form the supported merge gate."
+    },
+    {
+      "status": "done",
+      "status_label": "Completed",
+      "phase": "Archive support",
+      "title": "Historical result families mapped",
+      "summary": "yj-sun/Csp, PrevResults, and NewData4b-Batch are tied together well enough to support integrity checks and roadmap decisions."
+    },
+    {
+      "status": "active",
+      "status_label": "In Progress",
+      "phase": "Late 0.2",
+      "title": "Warning tail reduction",
+      "summary": "Shared core and AO warning families are much quieter now, but a small alex ADT/simple cluster and a few legacy redefinition patterns still need cleanup."
+    },
+    {
+      "status": "active",
+      "status_label": "Active Milestone",
+      "phase": "Integration gate",
+      "title": "M1: integrated validated baseline",
+      "summary": "qcsp3 must hold the PhD baseline, AO baseline, and documented ff relationship together under one supported integrated story."
+    },
+    {
+      "status": "pending",
+      "status_label": "Up Next",
+      "phase": "Phase 0.3",
+      "title": "Docs, operator clarity, and entry points",
+      "summary": "Core docstrings, workflow docs, and clearer entry-point maps should make the solver easier to operate and safer to extend."
+    },
+    {
+      "status": "pending",
+      "status_label": "Future",
+      "phase": "1.0 target",
+      "title": "Gold-standard integrated solver line",
+      "summary": "One trusted code path covers the validated historical surface, with remaining deltas explained rather than accidental."
+    }
+  ],
+  "parallel_cards": [
+    {
+      "label": "Parallel Lane",
+      "title": "Archive recovery keeps feeding the plan",
+      "summary": "Archive work stays parallel to the mainline: classify new finds, strengthen provenance, and move preserved result families from reference-only toward integrity-checkable or executable."
+    },
+    {
+      "label": "Current Focus",
+      "title": "The mainline stays disciplined",
+      "summary": "Every new step still runs through the same validation spine so the thesis baseline stays trustworthy while the integrated line matures."
+    }
+  ],
+  "legend": [
+    {
+      "title": "Snapshot rescue and modernization",
+      "summary": "Legacy solver trees load on modern SBCL with restored structure."
+    },
+    {
+      "title": "Artifact pipeline restored",
+      "summary": "Tracked graphs and comparison outputs regenerate from checked-in inputs."
+    },
+    {
+      "title": "Thesis-result validation spine",
+      "summary": "Core regressions, AO assertions, artifact checks, ff provenance, and dashboard sync form the gate."
+    },
+    {
+      "title": "Historical result families mapped",
+      "summary": "Older archives are tied to known experiment/result lines strongly enough to plan against."
+    },
+    {
+      "title": "Warning tail reduction",
+      "summary": "Quiet the logs so new regressions stand out quickly."
+    },
+    {
+      "title": "M1: integrated validated baseline",
+      "summary": "qcsp3 becomes the operational center of the validated solver story."
+    },
+    {
+      "title": "Docs and operator clarity",
+      "summary": "Make the supported workflows and entry points readable enough to hand off confidently."
+    },
+    {
+      "title": "Gold-standard integrated solver line",
+      "summary": "One code line covers the validated historical surface with bounded, explained deltas."
+    }
+  ],
+  "footer_html": "Source of truth for status details remains <a href=\"../RENOVATION.md\">RENOVATION.md</a> and <a href=\"../VALIDATION-MATRIX.md\">VALIDATION-MATRIX.md</a>. This page is the quick visual version for fast review."
+}

@@ -102,6 +102,7 @@ sbcl --non-interactive --load "tests/alex-suite.lisp"
 
 # Run the validation spine used by CI
 bash tests/validate-artifacts.sh
+bash tests/validate-dashboard.sh
 bash tests/validate-ff-provenance.sh
 bash tests/validate-ao.sh
 

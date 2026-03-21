@@ -39,6 +39,9 @@ jobs:
       - name: Validate thesis-result artifact pipeline
         run: bash tests/validate-artifacts.sh
 
+      - name: Validate release dashboard sync
+        run: bash tests/validate-dashboard.sh
+
       - name: Validate ff provenance carry-forward
         run: bash tests/validate-ff-provenance.sh
 
