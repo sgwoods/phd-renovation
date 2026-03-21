@@ -292,8 +292,8 @@ anchors rather than co-equal supported workflows.
   validation, and incremental warning cleanup.
 - **Phase 3 / `0.3.x` Documentation**: active. High-level docs are much
   stronger, the code/test/results roots are easier to navigate, and the next
-  push is core algorithm docstrings plus clearer operator-facing workflow
-  polish.
+  push is core algorithm docstrings, clearer operator-facing workflow polish,
+  and leaving the next post-M1 integration target explicit rather than implied.
 - **Phase 4 / Research Readiness**: not yet active as the main lane. We have
   diagnosed alex's `ij4` divergence, but we are intentionally holding off on
   broader experimental changes until the baseline is tighter.
@@ -311,14 +311,16 @@ anchors rather than co-equal supported workflows.
    the broader repo surface changes.
 2. Push the `0.3.x` documentation lane: add docstrings and clearer entry-point
    explanations for the major algorithms and supported workflows.
-3. Finish the remaining validation-log cleanup so the merge gate stays a
-   clearer signal channel for real regressions. The biggest remaining routine
-   noise is now small legacy leftovers like the alex `adt-setup` note rather
-   than the old AO redefinition chatter or alex ADT/simple STYLE-WARNING tail.
-4. Keep building out the validation matrix when useful, but with the main
+3. Use the ADT batch `ij1`-`ij4` archive family as the next deliberate
+   post-M1 integration target, because it is already integrity-checkable and
+   sits closest to the current ADT solver line.
+4. Keep the supported validation gate clean and high-signal; treat new warning
+   output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
+   investigate, not normal background.
+5. Keep building out the validation matrix when useful, but with the main
    archive-heavy families now mapped or integrity-checked, avoid widening the
    supported umbrella casually without a clear post-M1 benefit.
-5. Only after the baseline, warning surface, and provenance work are tighter,
+6. Only after the baseline, warning surface, and provenance work are tighter,
    begin controlled integration and research-readiness experiments such as
    alex DFA-option isolation against the validated snapshot.
 

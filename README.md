@@ -83,6 +83,8 @@ src/                        Entry point
   families are executable now, integrity-checkable now, or still reference-only.
 - `REPOSITORY-STATUS.md` answers the broader repo-wide question: what is
   indexed, integrated, tested, and publication-validated.
+- `WORKFLOWS.md` maps the primary supported operator workflows and the
+  secondary/manual ones.
 - `REPOSITORY-STRUCTURE-REVIEW.md` classifies the repo layout into supported
   systems, result archives, experiment workspaces, and archive-only material.
 - `DUPLICATES-REVIEW.md` records which reviewed historical overlaps are true
@@ -200,6 +202,7 @@ Directory guides:
 - `src/README.md`
 - `Q-Batch-SBCL/README.md`
 - `tests/README.md`
+- `WORKFLOWS.md`
 - `data/README.md`
 - `incoming/README.md`
 - `REPOSITORY-STATUS.md`

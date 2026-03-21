@@ -17,6 +17,7 @@ Short answer: **not entirely yet.**
 
 Use this artifact as the repo-wide counterpart to `VALIDATION-MATRIX.md`.
 For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
+For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
 
 ## Status Key
 
@@ -79,6 +80,30 @@ The repository now has three broad zones:
 4. `Incoming review queue`
    Newly found relevant material should land in `incoming/` first, then be
    reviewed and promoted into one of the three zones above.
+
+## Deliberate Next Integration Target
+
+The next post-M1 integration target should be:
+
+**ADT batch archives (`ij1`-`ij4` era before the SBCL replication line)**
+
+Why this family is the best next step:
+
+1. it is already integrity-checkable through `tests/validate-adt-batch.sh`,
+2. it sits closest to the direct-matching ADT solver line that `qcsp3/`
+   already supports,
+3. it extends historical coverage without depending on the still-blocked
+   terrain lane, and
+4. it is a better post-M1 bridge than the earlier `T1`-`T6` family, which is
+   historically valuable but further away from the current integrated solver
+   story.
+
+That means the current recommended order is:
+
+1. finish the `0.3.x` operator-docs pass,
+2. use the ADT batch family as the next integration experiment,
+3. keep `T1`-`T6` as a later preserved-family target,
+4. keep terrain as the major deferred recovery lane.
 
 ## Maintenance Rule
 
