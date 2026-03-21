@@ -226,7 +226,7 @@ platform, not just a modernized copy of legacy Lisp.
 | Thesis artifact pipeline | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
 | Warning hygiene | **Improving** | Repeated core and AO warning families have been reduced substantially, but a small residual tail remains. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
-| Historical provenance | **Partial but advancing** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, and many `PrevResults` artifacts are mapped, but the `ff1`/`ff2`/`ff3` generation bridge is still unresolved. |
+| Historical provenance | **Good and advancing** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, and the `ff1`/`ff2`/`ff3` family is now grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree. |
 | Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` research platform claim. |
 
 ### Current roadmap position
@@ -251,11 +251,12 @@ platform, not just a modernized copy of legacy Lisp.
 ### Recommended next steps
 
 1. Recover the missing provenance bridge for `data/sparc-archive/PrevResults/ff1.ci`,
-   `ff2.ci`, and `ff3.ci`, starting with `historical finds/yj-sun/Csp/MyBatch/`,
-   `first-3-xy`, `first-3-cpu`, and related archive summaries.
-2. Once that bridge is understood, decide whether to extend CI with a light
-   provenance check for the `ff*` family or keep it documented as a historical
-   comparison layer outside the active executable baseline.
+   `ff2.ci`, and `ff3.ci` has largely shifted into documenting and validating
+   the preserved `qcsp-may29-1996/NewData4b-Batch/` lineage rather than
+   searching for an unknown source tree.
+2. Decide whether to extend CI with a light provenance check asserting that the
+   `NewData4b-Batch/Graph/ff*.ci` files match the `PrevResults/ff*.ci`
+   carry-forward, or keep that relationship documented but not executable.
 3. Continue shrinking the remaining warning tail so validation logs become a
    clearer signal channel for real regressions.
 4. Finish the `0.3.x` documentation lane by adding docstrings and clearer

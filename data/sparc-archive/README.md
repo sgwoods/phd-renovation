@@ -52,9 +52,7 @@ Three-column format: `noise  mean_CC  CI_lower  CI_upper`
 
 These are **not** the same as ij2/ij3/ij4 — they come from an older experiment
 series using FCDR + Advance Sort, run before the memory-CSP two-phase approach
-was developed. The README.exper file notes that the source code for these
-experiments was "accidentally deleted" and changes to noise generation make
-them irreproducible.
+was developed.
 
 Archive metadata now grounds these files more specifically:
 
@@ -64,10 +62,17 @@ Archive metadata now grounds these files more specifically:
 - `qcsp.dir` records their original location as
   `qcsp/NewData4b-Batch/Graph/`, including preserved `ff*.all`, `ff*.ci`,
   `ff*.avg`, and raw/intermediate `Graph/Orig/ff*.raw*` files.
+- The repository now preserves that batch family directly under
+  `qcsp-may29-1996/NewData4b-Batch/`, including:
+  - `Graph/ff1.ci`, `ff2.ci`, `ff3.ci` byte-identical to `PrevResults/`
+  - `Count/fcdr-dist{1,2,3}-*` per-seed result files
+  - batch driver stubs such as `f1-0100.lsp` showing direct `adt` runs over
+    `q-i2` / `quilici-t1` with FC + DR across the thesis seed family
 
-So while the generating batch Lisp is still missing, the `ff*` family is now
-better understood as a qcsp-era ADT/FCDR distribution-comparison dataset, not a
-direct precursor of the later `ij2` / `ij3` / `ij4` series.
+So the `ff*` family is now better understood as a preserved qcsp-era
+ADT/FCDR distribution-comparison dataset, not a direct precursor of the later
+`ij2` / `ij3` / `ij4` series. What is still missing is a clean modern rerun
+path, not the thesis-era artifact lineage itself.
 
 ### Other Files
 
@@ -103,7 +108,8 @@ Structured metadata describing all experiment series:
 
 | Archive | Modern Equivalent | Notes |
 |---------|-------------------|-------|
-| PrevResults/ff*.ci | data/acl-experiments/Graph/ij*-ci.dat | Different experiment era; format matches |
+| PrevResults/ff*.ci | qcsp-may29-1996/NewData4b-Batch/Graph/ff*.ci | Same preserved thesis-era family; byte-identical carry-forward |
+| qcsp-may29-1996/NewData4b-Batch/Graph/ff*.ci | data/acl-experiments/Graph/ij*-ci.dat | Different experiment era; both are historical graph baselines, but they answer different thesis questions |
 | PrevResults/*.ps | Q-Batch-SBCL/Graph/*.png | PostScript replaced by matplotlib |
 | Data/MvSit2/ | Generated at runtime | Static reference vs. dynamic generation |
 | .dir files | Renovation source tree | Cleaned up during ACL-to-SBCL migration |

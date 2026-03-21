@@ -130,12 +130,27 @@ This changes the picture materially:
 - It belongs to the direct ADT/FCDR lineage, not the `MyBatch` /
   `bexp-*` experiment lane.
 
-What is still missing:
+What the repo now preserves directly:
 
-- The actual `NewData4b-Batch` Lisp runner/source files are not present in the
-  repo.
-- We have the graph products and directory metadata, but not the checked-in
-  script that generated `ff*.all` or the raw `NewData4b` batch outputs.
+- `qcsp-may29-1996/NewData4b-Batch/Graph/ff1.ci`,
+  `ff2.ci`, and `ff3.ci` are byte-for-byte identical to the copies under
+  `data/sparc-archive/PrevResults/`.
+- `qcsp-may29-1996/NewData4b-Batch/Graph/` also preserves the matching
+  `ff*.all`, `ff*.avg`, `ff*-ci.gp`, `ff*-ci.ps`, and `Graph/Orig/ff*.raw*`
+  lineage referenced by `qcsp.dir`.
+- `qcsp-may29-1996/NewData4b-Batch/Count/` preserves the per-seed result files
+  behind that graph family.
+- `qcsp-may29-1996/NewData4b-Batch/f1-0100.lsp` shows the original batch shape:
+  direct `adt` runs on `q-i2` / `quilici-t1` with `:forward-checking t`,
+  `:dynamic-rearrangement t`, three noise distributions, and the thesis seed
+  family from `AA-INDEX`.
+
+What is still imperfect:
+
+- The preserved shell stub `f0.sh` still points at the old `New-Batch/`
+  location, so the on-disk batch wrapper is not a clean modern rerun path.
+- We have strong preserved outputs and batch intent, but not yet a modernized,
+  executable regeneration path for this `ff*` family.
 
 Best current interpretation:
 
@@ -144,8 +159,9 @@ Best current interpretation:
 - They likely share lineage with the older `data/csp-adt-batch/` ADT batch
   experiments because they use the same random-seed family and single-line
   result style, but they are not the same dataset.
-- The strongest surviving provenance anchor is `qcsp/NewData4b-Batch/Graph`,
-  not `yj-sun/Csp/MyBatch`.
+- The strongest surviving provenance anchor is now the checked-in
+  `qcsp-may29-1996/NewData4b-Batch/` tree, with `PrevResults/` acting as its
+  preserved thesis-era carry-forward.
 
 ## 5. Relationship To The Current Thesis-Validation Pipeline
 
@@ -188,18 +204,17 @@ Current best mapping:
 
 ## 7. Best Next Step
 
-To close the remaining gap, the next highest-value search is now for the missing
-`NewData4b-Batch` generation path, not for a transform from `exp-*`.
+The open question has shifted from "where did `ff*` come from?" to
+"how much of `NewData4b-Batch` should become part of the supported executable
+baseline?"
 
 The most promising next targets are:
 
-- any surviving `NewData4b-Batch` references elsewhere in the SPARC archive
-- notes such as `README.exper` or related experiment indexes
-- `Data/MvSit2/` situation names like `Sit-q-i2-dist{1,2,3}-*`, which may be
-  the static inputs behind the `qi-2` instance listed in `AA-INDEX`
-- the preserved `Graph/Orig/ff*.raw` / `ff*.raw2` lineage referenced by
-  `qcsp.dir`
-
-Until that bridge is found, `PrevResults/ff*.ci` should be treated as a
-historically important, substantially grounded comparison layer whose exact
-batch-generation source is still missing.
+- compare `NewData4b-Batch/Count/` against the `ff*.all` summaries to document
+  the aggregation path explicitly
+- connect `Data/MvSit2/` situation names like `Sit-q-i2-dist{1,2,3}-*` to the
+  preserved `q-i2` runs in `NewData4b-Batch`
+- decide whether to add a lightweight provenance/integrity check asserting that
+  `NewData4b-Batch/Graph/ff*.ci` matches `PrevResults/ff*.ci`
+- only after that, consider whether a full modern rerun path is worth
+  engineering for this older thesis-era family
