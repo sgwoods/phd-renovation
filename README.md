@@ -29,7 +29,9 @@ Current focus: keep the supported PhD-result validation path executable
 end-to-end, widen the validated umbrella to additional historical result
 families, and use the preserved snapshots as reference baselines while the
 future gold-standard line takes shape. See `RENOVATION.md` for the active
-roadmap and `VALIDATION-MATRIX.md` for the current domain/result coverage map.
+roadmap, `VALIDATION-MATRIX.md` for the current domain/result coverage map, and
+[`docs/release-dashboard.html`](docs/release-dashboard.html) for the visual
+release dashboard.
 
 ## Project Structure
 
