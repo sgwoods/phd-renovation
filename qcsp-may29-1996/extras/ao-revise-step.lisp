@@ -6,6 +6,12 @@
   (load "ao-revise-step.lisp")
   (load "ao-revise-fns.lisp"))
 
+(declaim (ftype function
+                applyr
+                fail3-p
+                keepsrcvalpropagatestep
+                deletesrcvalpropagatestep))
+
 (defun ao-revise-step ( srcVar thisTarget constraint-fn maxDepth )
 " 
  THIS IS THE STEPPED LINKING VERSION of AO-REVISE - 

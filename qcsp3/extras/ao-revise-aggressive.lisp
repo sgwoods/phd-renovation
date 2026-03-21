@@ -6,6 +6,12 @@
   (load "ao-revise-aggressive.lisp")
   (load "ao-revise-fns.lisp"))
 
+(declaim (ftype function
+                applyr
+                fail3-p
+                keepsrcvalpropagateaggr
+                deletesrcvalpropagateaggr))
+
 (defun ao-revise-aggr ( srcVar thisTarget constraint-fn maxDepth )
 " 
  THIS IS THE AGGRESSIVE LINKING VERSION of AO-REVISE - 

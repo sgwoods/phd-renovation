@@ -12,6 +12,22 @@
 (defun load-hier ()
   (load "hierarchy.lisp"))
 
+;; Forward declarations quiet compile-order warnings when SBCL compiles source
+;; top-level forms during AO validation loads.
+(declaim (ftype function
+                domval-list-to-names
+                show-targeted
+                show-sources
+                bottom-leaf-p
+                top-leaf-p
+                lookup-mark
+                get-markit
+                member-key
+                update-key
+                reset-mark
+                traverse-down
+                traverse-up))
+
 (defstruct (CVariable
 	    (:print-function
 	     (lambda ( p s k )

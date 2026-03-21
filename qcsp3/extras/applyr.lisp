@@ -7,6 +7,14 @@
   (load "applyr.lisp")
   (load "comment.lisp"))
 
+(declaim (ftype function
+                apply-relation
+                applydown
+                applyup
+                fail3-p
+                and3
+                or3))
+
 (defun applyR ( xi yj relation curMode maxDepth  curDepth markflg)
 " 
   Returns tri logic value: one of true, fail, poss

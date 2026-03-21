@@ -20,6 +20,12 @@
 (defun load-ao ()
   (load "ao-ac3.lisp"))
 
+(declaim (ftype function
+                ao-revise
+                initialize-global-counters
+                select-target
+                targetunion))
+
 (defvar *ao-debug*)     ;; global debug flag  for AO related functions
 (defvar *debug-app* t)  ;; global debug flag  for apply related functions
 (defvar *constraint-count* 0)  ;; global counter of constraint applications

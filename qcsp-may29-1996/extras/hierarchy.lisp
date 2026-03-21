@@ -12,6 +12,20 @@
 (defun load-hier ()
   (load "hierarchy.lisp"))
 
+(declaim (ftype function
+                domval-list-to-names
+                show-targeted
+                show-sources
+                bottom-leaf-p
+                top-leaf-p
+                lookup-mark
+                get-markit
+                member-key
+                update-key
+                reset-mark
+                traverse-down
+                traverse-up))
+
 (defstruct (CVariable
 	    (:print-function
 	     (lambda ( p s k )

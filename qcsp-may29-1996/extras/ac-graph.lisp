@@ -13,6 +13,12 @@
 (defun load-graph ()
   (load "ac-graph.lisp"))
 
+(declaim (ftype function
+                cvariable-p
+                cvariable-name
+                variable-list-to-names
+                arc-list-to-names))
+
 (defstruct (AC-Graph
 	    (:print-function
 	     (lambda ( p s k )

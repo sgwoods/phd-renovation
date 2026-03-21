@@ -3,6 +3,8 @@
 ;; ao-ac-new.lisp
 ;;
 
+(declaim (ftype function ao-revise))
+
 (defun ao-ac-new ( graph  maxDepth &key (revise-mode 'step)  
 			  (debug-mode  nil)   )
 (let* (

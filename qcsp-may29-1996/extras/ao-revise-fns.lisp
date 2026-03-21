@@ -9,6 +9,16 @@
 (defun load-aor ()
   (load "ao-revise-fns.lisp"))
 
+(declaim (ftype function
+                createlink
+                exists-link-p
+                free-storage-link
+                free-storage-subtree
+                resetdown
+                resetup
+                simplify-down
+                simplify-up))
+
 ;; ***************************************************************************
 
 (defun addLink ( xi varxi yj varyj constraint-fn )

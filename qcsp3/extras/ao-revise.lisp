@@ -2,6 +2,10 @@
 ;; ao-revise.lisp
 ;;
 
+(declaim (ftype function
+                ao-revise-aggr
+                ao-revise-step))
+
 (defun ao-revise ( srcVar thisTarget constraint-fn maxDepth &key (mode 'step))
 
   (cond 
