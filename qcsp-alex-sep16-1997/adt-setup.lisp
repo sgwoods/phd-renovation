@@ -639,10 +639,10 @@
 
 (defun generate-ran-Stmt ( sid sloc index basePair baseType)
   "one of Assign, Zero, Print, w/ index used"
+  (declare (ignore baseType))
   (let ( 
 	(sel (random 4))
 	)
-    (declare (ignore baseType))
     (if (eq sel 0)
 	(generate-ran-Zero sid (get-specific-line (1+ sloc)) index)
       (if (eq sel 1)

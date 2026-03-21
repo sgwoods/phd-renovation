@@ -335,6 +335,7 @@
 
 (defun generate-ran-Stmt ( sid sloc index basePair baseType)
   "one of Assign, Zero, Print, w/ index used"
+  (declare (ignore baseType))
   (let ( 
 	(sel (random 3))
 	)
