@@ -130,5 +130,44 @@
       "summary": "One code line covers the validated historical surface with bounded, explained deltas."
     }
   ],
-  "footer_html": "Source of truth for status details remains <a href=\"../RENOVATION.md\">RENOVATION.md</a> and <a href=\"../VALIDATION-MATRIX.md\">VALIDATION-MATRIX.md</a>. This page is the quick visual version for fast review."
+  "footer_html": "Source of truth for status details remains <a href=\"../RENOVATION.md\">RENOVATION.md</a> and <a href=\"../VALIDATION-MATRIX.md\">VALIDATION-MATRIX.md</a>. This page is the quick visual version for fast review.",
+  "public_footer_html": "Source of truth for status details remains <a href=\"https://github.com/sgwoods/phd-renovation/blob/main/RENOVATION.md\">RENOVATION.md</a> and <a href=\"https://github.com/sgwoods/phd-renovation/blob/main/VALIDATION-MATRIX.md\">VALIDATION-MATRIX.md</a>. Public summary page: <a href=\"phd-renovation.html\">phd-renovation.html</a>.",
+  "public_page": {
+    "eyebrow": "Public Project Page",
+    "title": "PhD Renovation",
+    "summary": "A living restoration of Steven Woods' PhD research code on automated program understanding via constraint satisfaction, rebuilt to run on modern SBCL while preserving the published thesis-result story and the broader historical solver lineage.",
+    "cards": [
+      {
+        "title": "Primary goal",
+        "summary": "Re-establish one integrated constraint-solver line that reproduces the PhD results, covers other historical result families, and can stand in as the gold-standard codebase."
+      },
+      {
+        "title": "What is already solid",
+        "summary": "All four maintained historical solver snapshots load on SBCL. The thesis ij2 / ij3 / ij4 validation path is executable and CI-protected. AO baseline assertions and ff provenance checks are part of the supported validation spine."
+      },
+      {
+        "title": "What M1 means",
+        "summary": "qcsp3 becomes the first real integrated line when it holds the PhD baseline, the asserted AO baseline, and the documented ff relationship under one supported executable story."
+      }
+    ],
+    "links": [
+      {
+        "label": "Open release dashboard",
+        "href": "phd-renovation-dashboard.html"
+      },
+      {
+        "label": "Open repository",
+        "href": "https://github.com/sgwoods/phd-renovation"
+      },
+      {
+        "label": "Roadmap",
+        "href": "https://github.com/sgwoods/phd-renovation/blob/main/RENOVATION.md"
+      },
+      {
+        "label": "Validation matrix",
+        "href": "https://github.com/sgwoods/phd-renovation/blob/main/VALIDATION-MATRIX.md"
+      }
+    ],
+    "footer": "Public summary synced to the repository status on March 21, 2026."
+  }
 }

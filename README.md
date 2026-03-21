@@ -31,7 +31,8 @@ families, and use the preserved snapshots as reference baselines while the
 future gold-standard line takes shape. See `RENOVATION.md` for the active
 roadmap, `VALIDATION-MATRIX.md` for the current domain/result coverage map, and
 [`docs/release-dashboard.html`](docs/release-dashboard.html) for the visual
-release dashboard.
+release dashboard. The same source data also drives the public-facing PhD
+project page so those two views stay in sync.
 
 ## Project Structure
 

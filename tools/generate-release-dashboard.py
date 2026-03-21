@@ -10,7 +10,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "docs" / "release-dashboard-data.json"
-OUTPUT_PATH = ROOT / "docs" / "release-dashboard.html"
+DASHBOARD_OUTPUT_PATH = ROOT / "docs" / "release-dashboard.html"
+PUBLIC_PAGE_OUTPUT_PATH = ROOT / "docs" / "public-phd-renovation.html"
+PUBLIC_SITE_DIR = Path("/Users/stevenwoods/GitPages/public")
+PUBLIC_SITE_DASHBOARD_PATH = PUBLIC_SITE_DIR / "phd-renovation-dashboard.html"
+PUBLIC_SITE_PAGE_PATH = PUBLIC_SITE_DIR / "phd-renovation.html"
 
 STATUS_CLASS = {
     "done": "done",
@@ -328,7 +332,28 @@ def render_legend(items: list[dict[str, str]]) -> str:
     return "\n".join(blocks)
 
 
-def build_page(data: dict[str, object]) -> str:
+def render_public_cards(items: list[dict[str, str]]) -> str:
+    blocks = []
+    for item in items:
+        blocks.append(
+            f"""                <article class="card">
+                    <h3>{escape(item["title"])}</h3>
+                    <p>{escape(item["summary"])}</p>
+                </article>"""
+        )
+    return "\n".join(blocks)
+
+
+def render_public_links(items: list[dict[str, str]]) -> str:
+    blocks = []
+    for item in items:
+        blocks.append(
+            f"""                <a class="button" href="{escape(item["href"], quote=True)}">{escape(item["label"])}</a>"""
+        )
+    return "\n".join(blocks)
+
+
+def build_page(data: dict[str, object], footer_html: str) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -362,7 +387,7 @@ def build_page(data: dict[str, object]) -> str:
         <div class="legendGrid">
 {render_legend(data["legend"])}
         </div>
-        <p class="footer">{data["footer_html"]}</p>
+        <p class="footer">{footer_html}</p>
       </section>
   </main>
 </body>
@@ -370,10 +395,269 @@ def build_page(data: dict[str, object]) -> str:
 """
 
 
+def build_public_page(data: dict[str, object]) -> str:
+    public = data["public_page"]
+    metrics = data["metrics"]
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{escape(data["title"])}</title>
+    <style>
+        :root {{
+            --bg: #07131f;
+            --bg2: #10253b;
+            --card: rgba(7, 19, 31, 0.72);
+            --line: rgba(135, 197, 255, 0.24);
+            --text: #eff7ff;
+            --muted: #9cc4df;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+        }}
+
+        * {{
+            box-sizing: border-box;
+        }}
+
+        body {{
+            margin: 0;
+            color: var(--text);
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(103, 230, 168, 0.18), transparent 26%),
+                radial-gradient(circle at top right, rgba(121, 184, 255, 0.22), transparent 32%),
+                linear-gradient(160deg, var(--bg), var(--bg2));
+            min-height: 100vh;
+        }}
+
+        a {{
+            color: #d9f7ff;
+        }}
+
+        .shell {{
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 72px;
+        }}
+
+        .hero,
+        .panel {{
+            border: 1px solid rgba(177, 222, 255, 0.18);
+            border-radius: 28px;
+            background:
+                linear-gradient(160deg, rgba(12, 34, 54, 0.88), rgba(7, 19, 31, 0.72)),
+                radial-gradient(circle at 20% 0%, rgba(103, 230, 168, 0.14), transparent 32%);
+            box-shadow: var(--shadow);
+        }}
+
+        .hero {{
+            padding: 36px 34px 32px;
+        }}
+
+        .eyebrow {{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #d7ecff;
+            font-size: 12px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }}
+
+        h1 {{
+            margin: 18px 0 10px;
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: .95;
+            letter-spacing: -0.04em;
+        }}
+
+        .hero p,
+        .panel p {{
+            color: var(--muted);
+            line-height: 1.6;
+        }}
+
+        .hero p {{
+            max-width: 760px;
+            font-size: 18px;
+        }}
+
+        .meta {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 28px;
+        }}
+
+        .metaCard {{
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }}
+
+        .metaLabel {{
+            display: block;
+            color: #8fb3cc;
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }}
+
+        .metaValue {{
+            font-size: 18px;
+            font-weight: 600;
+        }}
+
+        .metaNote {{
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.5;
+        }}
+
+        .panel {{
+            margin-top: 22px;
+            padding: 28px;
+            background: rgba(7, 19, 31, 0.68);
+        }}
+
+        .panel h2 {{
+            margin: 0 0 12px;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+        }}
+
+        .grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }}
+
+        .card {{
+            padding: 18px 18px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }}
+
+        .card h3 {{
+            margin: 0 0 8px;
+            font-size: 18px;
+        }}
+
+        .links {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }}
+
+        .button {{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 16px;
+            border-radius: 999px;
+            background: rgba(121, 184, 255, 0.18);
+            border: 1px solid rgba(121, 184, 255, 0.28);
+            color: #eff7ff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+        }}
+
+        .footer {{
+            margin-top: 18px;
+            color: #8db0c8;
+            font-size: 13px;
+            line-height: 1.6;
+        }}
+
+        @media (max-width: 720px) {{
+            .shell {{
+                padding: 20px 14px 54px;
+            }}
+
+            .hero,
+            .panel {{
+                padding: 24px 22px;
+            }}
+        }}
+    </style>
+</head>
+<body>
+    <!-- Generated by tools/generate-release-dashboard.py from docs/release-dashboard-data.json -->
+    <main class="shell">
+        <section class="hero">
+            <span class="eyebrow">{escape(public["eyebrow"])}</span>
+            <h1>{escape(public["title"])}</h1>
+            <p>{escape(public["summary"])}</p>
+            <div class="meta">
+                <div class="metaCard">
+                    <span class="metaLabel">{escape(metrics[0]["label"])}</span>
+                    <span class="metaValue">{escape(metrics[0]["value"])}</span>
+                    <div class="metaNote">{escape(metrics[0]["note"])}</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">{escape(metrics[2]["label"])}</span>
+                    <span class="metaValue">{escape(metrics[2]["value"])}</span>
+                    <div class="metaNote">{escape(metrics[2]["note"])}</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">{escape(metrics[1]["label"])}</span>
+                    <span class="metaValue">{escape(metrics[1]["value"])}</span>
+                    <div class="metaNote">{escape(metrics[1]["note"])}</div>
+                </div>
+                <div class="metaCard">
+                    <span class="metaLabel">{escape(metrics[3]["label"])}</span>
+                    <span class="metaValue">{escape(metrics[3]["value"])}</span>
+                    <div class="metaNote">{escape(metrics[3]["note"])}</div>
+                </div>
+            </div>
+            <div class="links">
+{render_public_links(public["links"][:2])}
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Current state</h2>
+            <div class="grid">
+{render_public_cards(public["cards"])}
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Where to look</h2>
+            <div class="links">
+{render_public_links(public["links"])}
+            </div>
+            <p class="footer">{escape(public["footer"])}</p>
+        </section>
+    </main>
+</body>
+</html>
+"""
+
+
 def main() -> None:
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    html = build_page(data)
-    OUTPUT_PATH.write_text(html, encoding="utf-8")
+    dashboard_html = build_page(data, data["footer_html"])
+    public_dashboard_html = build_page(data, data["public_footer_html"])
+    public_page_html = build_public_page(data)
+    DASHBOARD_OUTPUT_PATH.write_text(dashboard_html, encoding="utf-8")
+    PUBLIC_PAGE_OUTPUT_PATH.write_text(public_page_html, encoding="utf-8")
+    if PUBLIC_SITE_DIR.exists():
+        try:
+            PUBLIC_SITE_DASHBOARD_PATH.write_text(public_dashboard_html, encoding="utf-8")
+            PUBLIC_SITE_PAGE_PATH.write_text(public_page_html, encoding="utf-8")
+        except PermissionError:
+            # CI and sandboxed runs still validate the repo-local outputs.
+            pass
 
 
 if __name__ == "__main__":
