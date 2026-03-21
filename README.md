@@ -80,6 +80,8 @@ src/                        Entry point
   indexed, integrated, tested, and publication-validated.
 - `REPOSITORY-STRUCTURE-REVIEW.md` classifies the repo layout into supported
   systems, result archives, experiment workspaces, and archive-only material.
+- `DUPLICATES-REVIEW.md` records which reviewed historical overlaps are true
+  duplicates versus which still carry archive/provenance value.
 
 ## ASDF Systems
 
@@ -192,6 +194,7 @@ Directory guides:
 - `data/README.md`
 - `REPOSITORY-STATUS.md`
 - `REPOSITORY-STRUCTURE-REVIEW.md`
+- `DUPLICATES-REVIEW.md`
 
 ## License
 

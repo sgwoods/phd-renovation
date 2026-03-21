@@ -9,7 +9,7 @@ data remain in place and are cataloged here.
 | Directory | Origin | Files | Era | Description |
 |-----------|--------|------:|-----|-------------|
 | [sparc-archive/](sparc-archive/) | DataFind/ | 153 | 1993-1997 | Original SPARC workstation archive: directory listings, experiment metadata, 64 reference ADT situation files, 83 thesis-era result files |
-| [acl-experiments/](acl-experiments/) | Q-Batch/ | 676 | 1996 | ACL-era ij2/ij3/ij4 experiment results, scripts, and analysis |
+| [acl-experiments/](acl-experiments/) | Q-Batch/ | 676 | 1996 | Canonical ACL-era ij2/ij3/ij4 experiment baseline for the active thesis-validation path |
 | [csp-batch/](csp-batch/) | csp/Batch/ | 150 | 1993-1994 | Earliest batch experiments (T1-T6 series) for the base CSP solver |
 | [csp-adt-batch/](csp-adt-batch/) | csp/ADT-Batch/ | 893 | 1994-1995 | ADT domain batch experiments (ij1-ij4 series) |
 | [csp-save-results/](csp-save-results/) | csp/Save-Results/ | 15 | 1993 | Saved results from DREV memorandum experiments |
@@ -32,7 +32,7 @@ place to preserve snapshot integrity. Each is documented with a README.
 | Directory | Files | Format | Description |
 |-----------|------:|--------|-------------|
 | New-Batch/ | 755 | Mixed | ACL ij1-ij5 experiments + graph data + shell scripts |
-| Q-Batch/ | 676 | Mixed | Identical copy of data/acl-experiments/ (retained for snapshot integrity) |
+| Q-Batch/ | 676 | Mixed | Reviewed duplicate of `data/acl-experiments/` (retained for snapshot integrity, not the active canonical copy) |
 | NewData4a-Batch/ | 73 | Mixed | Extended experiment series 4a |
 | NewData4b-Batch/ | 62 | Mixed | Extended experiment series 4b |
 | NewData5-Batch/ | 304 | Mixed | Extended experiment series 5 |

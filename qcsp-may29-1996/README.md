@@ -49,7 +49,7 @@ This snapshot root mixes three kinds of material:
 | `NewData4b-Batch/` | 313 batch experiment results for the preserved `ff1` / `ff2` / `ff3` family (see `NewData4b-Batch/README.md`) |
 | `NewData5-Batch/` | 304 batch experiment results |
 | `NewData6-Batch/` | 324 batch experiment results |
-| `Q-Batch/` | 676 Q-solver batch experiment results |
+| `Q-Batch/` | 676 reviewed duplicate of `data/acl-experiments/`, preserved here for snapshot integrity |
 | `Q-Batch-Freeze/` | 416 frozen Q-solver batch results |
 
 ## AO (arc-oriented) files in extras/

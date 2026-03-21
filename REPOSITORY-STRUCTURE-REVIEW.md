@@ -86,6 +86,10 @@ For example, `qcsp-may29-1996/` contains source files alongside `Q-Batch/`,
 `NewData*` batches, `ADT-SituationMar96/`, and other embedded historical
 artifacts. That is historically faithful, but structurally mixed.
 
+One reviewed exception is now explicitly marked in-place:
+`qcsp-may29-1996/Q-Batch/` is a preserved duplicate of
+`data/acl-experiments/`, retained for snapshot integrity rather than active use.
+
 ### 3. Root-level legacy helper scripts are easy to overread
 
 Files like:

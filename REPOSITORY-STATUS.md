@@ -16,6 +16,7 @@ Short answer: **not entirely yet.**
   provenance, recovery, or context rather than active validation.
 
 Use this artifact as the repo-wide counterpart to `VALIDATION-MATRIX.md`.
+For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 
 ## Status Key
 

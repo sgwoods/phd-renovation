@@ -45,6 +45,11 @@ This suggests the archive likely sits very near the alex-era experiment and
 batch infrastructure, even though its solver and loader sources preserve extra
 variants not carried into the tracked snapshot.
 
+These exact matches should be read as **archive provenance overlaps**, not as
+"safe to delete" duplicates. The tracked alex tree remains the canonical
+in-repo snapshot for supported work; the archive copies remain useful because
+they help establish where that snapshot's batch and result material came from.
+
 ## What This Archive Adds
 
 The most valuable archive-only material appears to be:
