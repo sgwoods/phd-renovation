@@ -14,6 +14,11 @@ The codebase was originally written in Allegro Common Lisp on SPARC/Solaris
 on modern hardware. The renovation preserved algorithmic equivalence — verified
 by reproducing 1,800+ experiment runs with statistically matching results.
 
+The broader project goal now goes beyond renovation: use the preserved
+snapshots, tests, and result artifacts to converge on one gold-standard code
+line that can reproduce the PhD results and absorb the historically reported
+domains/results under a single validated umbrella.
+
 ## Architecture
 
 ### Four ASDF Systems
@@ -28,8 +33,9 @@ architecture but represent different development stages:
 | `:qcsp-may29-1996` | `PHD-QCSP-MAY29` | `qcsp-may29` | `qcsp-may29-1996/` | 13 | May 1996 |
 | `:qcsp-alex-sep16-1997` | `PHD-QCSP-ALEX` | `qcsp-alex` | `qcsp-alex-sep16-1997/` | 14 | Sep 1997 |
 
-**`:qcsp3` is the primary system.** The others are historical snapshots kept
-for comparison. All four load independently and cannot be loaded simultaneously
+**`:qcsp3` is the primary system and the leading integration target.** The
+others are historical snapshots kept for comparison, provenance, and regression
+anchoring. All four load independently and cannot be loaded simultaneously
 (they define overlapping function names in separate packages).
 
 ### Source File Roles

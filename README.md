@@ -16,16 +16,20 @@ Three CSP solving strategies are implemented and compared:
 
 ## Project Goal
 
-The renovation goal is not just to make the Lisp code run on modern hardware.
-It is to rebuild the thesis code, data, experiments, and historical artifacts
-into a reproducible research baseline that continuously validates the published
-results and gives future work a trustworthy starting point.
+The primary goal is not just to make the Lisp code run on modern hardware.
+It is to restore an integrated constraint-solver baseline that:
 
-Current focus: keep the supported thesis-validation path executable
-end-to-end, tighten regression coverage around the known baselines, and map the
-historical archives closely enough that any future extension can be tied back to
-documented provenance. See `RENOVATION.md` for the active roadmap and current
-position against that goal.
+1. reproduces the PhD-reported results,
+2. covers the other historical domains and reported result families preserved
+   in the repo and archive intake, and
+3. converges toward one gold-standard code line that can stand in for the
+   historical solver lineage with any remaining deltas explained.
+
+Current focus: keep the supported PhD-result validation path executable
+end-to-end, widen the validated umbrella to additional historical result
+families, and use the preserved snapshots as reference baselines while the
+future gold-standard line takes shape. See `RENOVATION.md` for the active
+roadmap and `VALIDATION-MATRIX.md` for the current domain/result coverage map.
 
 ## Project Structure
 
@@ -51,7 +55,8 @@ src/                        Entry point
 ## Where To Look
 
 - `qcsp3/` is the primary codebase for the supported thesis-validation
-  baseline; `csp/`, `qcsp-may29-1996/`, and `qcsp-alex-sep16-1997/` are the
+  baseline and the leading candidate for the future gold-standard integrated
+  solver; `csp/`, `qcsp-may29-1996/`, and `qcsp-alex-sep16-1997/` are the
   comparison snapshots.
 - `tests/` is the authoritative validation surface. It contains the Four
   FiveAM suites, the asserted AO runner, and the artifact/thesis-result
@@ -61,6 +66,8 @@ src/                        Entry point
 - `data/` holds preserved ACL/SPARC-era baselines and archive material.
 - `historical finds/` is archive intake and provenance work, not supported
   baseline code.
+- `VALIDATION-MATRIX.md` summarizes which historical domains and result
+  families are executable now, integrity-checkable now, or still reference-only.
 
 ## ASDF Systems
 

@@ -198,7 +198,8 @@ Guiding principle for the next phase: treat the published PhD thesis results,
 the preserved historical experiment artifacts, and the current regression
 suites as the foundation for every future change. New work should either
 preserve those published behaviors or explain any intentional deviation in a
-repeatable way.
+repeatable way, with the long-term aim of converging on one gold-standard code
+line rather than maintaining several disconnected runnable snapshots forever.
 
 ## Goal And Current Position
 
@@ -206,28 +207,32 @@ repeatable way.
 
 Bring the thesis codebase to a state where:
 
-1. the supported solver snapshots run cleanly on modern SBCL,
-2. the published thesis-result story is continuously validated from a fresh
-   checkout,
-3. recovered historical artifacts have documented provenance, and
-4. new research can branch from that baseline with any deltas measured and
-   explained.
+1. the integrated constraint solver reproduces the PhD-reported results from a
+   fresh checkout,
+2. the other historical domains and reported result families are either
+   executable, integrity-checkable, or explicitly classified as provenance-only,
+3. one gold-standard code line can stand in for the historical solver lineage
+   with snapshot-specific differences documented, and
+4. new research can branch from that validated baseline with any deltas
+   measured and explained.
 
-In short: renovate the codebase into a trustworthy, reproducible research
-platform, not just a modernized copy of legacy Lisp.
+In short: turn the renovated snapshots, preserved data, and recovered archives
+into one trustworthy integrated research platform, not just a modernized copy
+of legacy Lisp.
 
 ### Where we are against that goal
 
 | Area | Status | Current position |
 |---|---|---|
-| Modern runnable codebase | **Strong** | All four ASDF systems load and the supported FiveAM suites pass on SBCL. |
+| Reference snapshots runnable | **Strong** | All four ASDF systems load and the supported FiveAM suites pass on SBCL. |
 | Core regression baseline | **Strong** | Deterministic metric assertions exist for standard and confused queens across all four systems. |
 | AO / `test4` validation | **Good** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline; broader AO coverage is still open. |
-| Thesis artifact pipeline | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
+| PhD-result validation path | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
 | Warning hygiene | **Improving** | Repeated core and AO warning families have been reduced substantially, but a small residual tail remains. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Good and advancing** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, and the `ff1`/`ff2`/`ff3` family is now grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree. |
-| Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` research platform claim. |
+| Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but it does not yet cover every historically relevant domain/result family under one supported executable umbrella. |
+| Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. |
 
 ### Current roadmap position
 
@@ -250,20 +255,23 @@ platform, not just a modernized copy of legacy Lisp.
 
 ### Recommended next steps
 
-1. Recover the missing provenance bridge for `data/sparc-archive/PrevResults/ff1.ci`,
-   `ff2.ci`, and `ff3.ci` has largely shifted into documenting and validating
-   the preserved `qcsp-may29-1996/NewData4b-Batch/` lineage rather than
-   searching for an unknown source tree.
-2. Decide whether to extend CI with a light provenance check asserting that the
-   `NewData4b-Batch/Graph/ff*.ci` files match the `PrevResults/ff*.ci`
-   carry-forward, or keep that relationship documented but not executable.
-3. Continue shrinking the remaining warning tail so validation logs become a
+1. Keep the PhD-result validation spine green: `tests/run.lisp`,
+   `tests/validate-artifacts.sh`, and `tests/validate-ao.sh` remain the merge
+   gate for the supported baseline.
+2. Expand the validated umbrella to the older `ff1` / `ff2` / `ff3` family by
+   deciding whether to add a lightweight provenance check asserting that
+   `qcsp-may29-1996/NewData4b-Batch/Graph/ff*.ci` matches
+   `data/sparc-archive/PrevResults/ff*.ci`.
+3. Build out the validation matrix further: for each historical domain/result
+   family, mark whether it is executable now, integrity-checkable now, or
+   provenance-only for now.
+4. Continue shrinking the remaining warning tail so validation logs become a
    clearer signal channel for real regressions.
-4. Finish the `0.3.x` documentation lane by adding docstrings and clearer
+5. Finish the `0.3.x` documentation lane by adding docstrings and clearer
    entry-point explanations for the major algorithms and supported workflows.
-5. Only after the baseline and provenance work are tighter, begin controlled
-   research-readiness experiments such as alex DFA-option isolation against the
-   validated snapshot.
+6. Only after the baseline and provenance work are tighter, begin controlled
+   integration and research-readiness experiments such as alex DFA-option
+   isolation against the validated snapshot.
 
 ### Phase / Release Alignment
 
