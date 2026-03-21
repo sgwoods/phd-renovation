@@ -171,9 +171,16 @@
     ],
     "footer": "Public summary synced to the repository status on March 21, 2026."
   },
-  "public_index": {
-    "site_note_label": "Repository work last updated",
-    "entry_title": "PhD renovation project",
-    "entry_label_template": "Public project page for the restored PhD program-understanding codebase. Last repo update: {date}. Current build line: {build}. Dashboard: phd-renovation-dashboard.html."
+  "public_status": {
+    "schema_version": "1.0",
+    "project_id": "phd-renovation",
+    "active": true,
+    "display_name": "PhD renovation project",
+    "project_page_path": "phd-renovation.html",
+    "repo_url": "https://github.com/sgwoods/phd-renovation",
+    "dashboard_url": "https://sgwoods.github.io/public/phd-renovation-dashboard.html",
+    "experience_url": null,
+    "status_label": "Current build line",
+    "focus_label": "Current focus"
   }
 }

@@ -11,7 +11,7 @@ required_inputs=(
   "tools/generate-release-dashboard.py"
   "docs/release-dashboard.html"
   "docs/public-phd-renovation.html"
-  "docs/public-index-phd-snippet.html"
+  "docs/public-status-phd-renovation.json"
 )
 
 for path in "${required_inputs[@]}"; do
@@ -27,7 +27,7 @@ trap 'rm -rf "$tmp_dir"' EXIT
 generated_outputs=(
   "docs/release-dashboard.html"
   "docs/public-phd-renovation.html"
-  "docs/public-index-phd-snippet.html"
+  "docs/public-status-phd-renovation.json"
 )
 
 for path in "${generated_outputs[@]}"; do
@@ -49,7 +49,7 @@ if [[ "$stale_outputs" -ne 0 ]]; then
   echo "Regenerate it with: python3 tools/generate-release-dashboard.py" >&2
   diff -u "$tmp_dir/release-dashboard.html" docs/release-dashboard.html >&2 || true
   diff -u "$tmp_dir/public-phd-renovation.html" docs/public-phd-renovation.html >&2 || true
-  diff -u "$tmp_dir/public-index-phd-snippet.html" docs/public-index-phd-snippet.html >&2 || true
+  diff -u "$tmp_dir/public-status-phd-renovation.json" docs/public-status-phd-renovation.json >&2 || true
   exit 1
 fi
 
@@ -63,8 +63,13 @@ if ! rg -q "Open release dashboard" docs/public-phd-renovation.html; then
   exit 1
 fi
 
-if ! rg -q "0.2.x-M1" docs/public-index-phd-snippet.html; then
-  echo "Public index snippet output is missing the current build line." >&2
+if ! rg -q '"project_id": "phd-renovation"' docs/public-status-phd-renovation.json; then
+  echo "Public status manifest is missing the project id." >&2
+  exit 1
+fi
+
+if ! rg -q '"status_value": "0.2.x-M1"' docs/public-status-phd-renovation.json; then
+  echo "Public status manifest is missing the current build line." >&2
   exit 1
 fi
 
