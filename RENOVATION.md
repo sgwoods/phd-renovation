@@ -245,7 +245,7 @@ For the current phase, the practical subgoals are:
 | Warning hygiene | **Strong and improving** | The repeated alex/core STYLE-WARNING tail has now been cleared from the supported validation path, and the AO harness redefinition chatter has been trimmed from both CI and the manual `run-test4*.lisp` flows. The remaining routine noise is now down to a small alex `adt-setup` note and similar minor legacy leftovers. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check, and both the older ADT batch archive and the earliest DREV-era `T1`-`T6` family have moved from provenance-only to integrity-checkable. |
-| Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but the project has not yet defined and satisfied the first explicit milestone for saying it covers the PhD baseline, AO baseline, and preserved historical result families under one supported umbrella. |
+| Gold-standard integration target | **Emerging, with M1 defined** | `qcsp3/` is the leading candidate, and Milestone M1 now gives the project an explicit first gate for saying it covers the PhD baseline, AO baseline, and preserved `ff*` relationship under one supported umbrella. That milestone is now clearly scoped, but not yet declared satisfied. |
 | Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. |
 
 ### First `qcsp3/` integration milestone
@@ -289,8 +289,9 @@ anchors rather than co-equal supported workflows.
 - **Phase 2 / `0.2.x` Verification**: active and substantially advanced. This
   now includes stronger regression assertions, AO asserted coverage, automated
   thesis-comparison checks, `ff*` integrity/provenance validation, and
-  incremental warning cleanup. This is now a late verification phase rather
-  than an early baseline-repair phase.
+  incremental warning cleanup. This is now a late verification phase focused
+  on closing or explicitly bounding the remaining M1 questions rather than an
+  early baseline-repair phase.
 - **Phase 3 / `0.3.x` Documentation**: started, but not complete. High-level
   docs are much stronger, the code/test/results roots are now easier to
   navigate, but core algorithm docstrings and operator-facing workflow polish
@@ -308,19 +309,19 @@ anchors rather than co-equal supported workflows.
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
-2. Drive toward Milestone M1 for `qcsp3/`: keep the supported PhD baseline,
-   the asserted AO baseline, and the documented `ff*` relationship under one
-   coherent integrated-solver story, with the remaining snapshot deltas tracked
-   in `INTEGRATION-DELTAS.md`.
+2. Decide whether the current bounded AO baseline is sufficient to call
+   Milestone M1 ready, or whether one more AO widening step should land first.
+   The gate and its remaining deltas are now explicit in `M1-READINESS.md` and
+   `INTEGRATION-DELTAS.md`.
 3. Finish the remaining validation-log cleanup so the merge gate stays a
    clearer signal channel for real regressions. The biggest remaining routine
    noise is now small legacy leftovers like the alex `adt-setup` note rather
    than the old AO redefinition chatter or alex ADT/simple STYLE-WARNING tail.
-4. Keep building out the validation matrix: for each historical domain/result
-   family, mark whether it is executable now, integrity-checkable now, or
-   provenance-only for now, and identify which family should move next.
-5. Finish the `0.3.x` documentation lane by adding docstrings and clearer
+4. Finish the `0.3.x` documentation lane by adding docstrings and clearer
    entry-point explanations for the major algorithms and supported workflows.
+5. Keep building out the validation matrix when useful, but with the main
+   archive-heavy families now mapped or integrity-checked, avoid widening the
+   supported umbrella casually before M1 is called.
 6. Only after the baseline, warning surface, and provenance work are tighter,
    begin controlled integration and research-readiness experiments such as
    alex DFA-option isolation against the validated snapshot.

@@ -60,10 +60,9 @@ The short gate summary for this milestone lives in `M1-READINESS.md`.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Finish shrinking the remaining routine validation-log noise so the
+2. Decide whether the current bounded AO baseline is sufficient to call
+   Milestone M1 ready, or whether one more AO widening step should land first.
+3. Finish shrinking the remaining routine validation-log noise so the
    validation spine stays a high-signal merge gate.
-3. Drive `qcsp3/` toward Milestone M1 by keeping the PhD baseline, AO
-   baseline, and preserved `ff*` relationship aligned under one supported
-   integrated story.
-4. Keep moving families from `Provenance-only` to `Integrity-checkable` or
-   `Executable now`.
+4. Use the matrix to support M1 decisions and later expansion, but avoid
+   widening the supported umbrella casually before M1 is explicitly called.
