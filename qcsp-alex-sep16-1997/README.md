@@ -7,6 +7,12 @@ solving, ADT/MPR domains, and Quilici's constraint-ordered search.
 Loaded via ASDF system `:qcsp-alex-sep16-1997` (defined in
 `qcsp-alex-sep16-1997.asd` at the repository root).
 
+This snapshot root also mixes three kinds of material:
+
+- source files that define the Sep 1997 solver snapshot,
+- runtime-generated ADT/MPR working data, and
+- preserved historical experiment/tooling trees retained for provenance.
+
 ## Core ASDF files (13)
 
 | File | Role |

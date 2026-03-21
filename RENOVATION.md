@@ -307,6 +307,8 @@ anchors rather than co-equal supported workflows.
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
+   Keep `REPOSITORY-STATUS.md` and `REPOSITORY-STRUCTURE-REVIEW.md` in sync as
+   the broader repo surface changes.
 2. Push the `0.3.x` documentation lane: add docstrings and clearer entry-point
    explanations for the major algorithms and supported workflows.
 3. Finish the remaining validation-log cleanup so the merge gate stays a

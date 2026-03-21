@@ -29,7 +29,9 @@ Current focus: keep the supported PhD-result validation path executable
 end-to-end, widen the validated umbrella to additional historical result
 families, and use the preserved snapshots as reference baselines while the
 future gold-standard line takes shape. See `RENOVATION.md` for the active
-roadmap, `VALIDATION-MATRIX.md` for the current domain/result coverage map, and
+roadmap, `VALIDATION-MATRIX.md` for the current domain/result coverage map,
+`REPOSITORY-STATUS.md` for the repo-wide integration/testing/publication status
+table, `REPOSITORY-STRUCTURE-REVIEW.md` for the filesystem clarity review, and
 [`docs/release-dashboard.html`](docs/release-dashboard.html) for the visual
 release dashboard. The same source data also drives the public-facing PhD
 project page so those two views stay in sync.
@@ -70,8 +72,14 @@ src/                        Entry point
 - `data/` holds preserved ACL/SPARC-era baselines and archive material.
 - `historical finds/` is archive intake and provenance work, not supported
   baseline code.
+- Root `run-test4*.lisp`, `run-csp-tests.lisp`, and `renovate.lisp` are
+  manual compatibility helpers, not the primary supported workflow.
 - `VALIDATION-MATRIX.md` summarizes which historical domains and result
   families are executable now, integrity-checkable now, or still reference-only.
+- `REPOSITORY-STATUS.md` answers the broader repo-wide question: what is
+  indexed, integrated, tested, and publication-validated.
+- `REPOSITORY-STRUCTURE-REVIEW.md` classifies the repo layout into supported
+  systems, result archives, experiment workspaces, and archive-only material.
 
 ## ASDF Systems
 
@@ -182,6 +190,8 @@ Directory guides:
 - `Q-Batch-SBCL/README.md`
 - `tests/README.md`
 - `data/README.md`
+- `REPOSITORY-STATUS.md`
+- `REPOSITORY-STRUCTURE-REVIEW.md`
 
 ## License
 

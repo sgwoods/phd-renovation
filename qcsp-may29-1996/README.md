@@ -7,6 +7,12 @@ constraint-ordered search, and arc-oriented (AO) constraint propagation.
 Loaded via ASDF system `:qcsp-may29-1996` (defined in
 `qcsp-may29-1996.asd` at the repository root).
 
+This snapshot root mixes three kinds of material:
+
+- source files that define the May 1996 solver snapshot,
+- runtime-generated ADT/MPR working data, and
+- preserved historical batch/result trees kept in place for provenance.
+
 ## Core ASDF files (13)
 
 | File | Role |

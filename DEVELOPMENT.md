@@ -19,6 +19,13 @@ snapshots, tests, and result artifacts to converge on one gold-standard code
 line that can reproduce the PhD results and absorb the historically reported
 domains/results under a single validated umbrella.
 
+Two top-level status artifacts now help answer broader repo questions quickly:
+
+- `REPOSITORY-STATUS.md`: repo-wide indexing/integration/testing/publication
+  status table
+- `REPOSITORY-STRUCTURE-REVIEW.md`: filesystem clarity review and
+  classification guide
+
 ## Architecture
 
 ### Four ASDF Systems
