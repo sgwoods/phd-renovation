@@ -31,6 +31,7 @@ This is the first practical step toward one gold-standard code line. It is not
 yet the final "everything historical is unified" finish line.
 
 The current delta ledger for this milestone lives in `INTEGRATION-DELTAS.md`.
+The short gate summary for this milestone lives in `M1-READINESS.md`.
 
 ## Status Key
 

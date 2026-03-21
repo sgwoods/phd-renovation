@@ -48,3 +48,6 @@ Milestone M1 is satisfied when:
 So M1 does **not** mean "all historical families are unified already."
 It means the repo has crossed from "best-supported candidate" to "first
 explicitly integrated validated line."
+
+For the short operational answer to "what still blocks M1 right now?", see
+`M1-READINESS.md`.

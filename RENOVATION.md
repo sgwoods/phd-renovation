@@ -272,6 +272,8 @@ when all of the following are true:
    snapshots are documented as intentional, bounded, or still-open gaps.
 
 The active delta list for this is now centralized in `INTEGRATION-DELTAS.md`.
+The short gate-by-gate answer to "what still blocks M1?" now lives in
+`M1-READINESS.md`.
 
 M1 is intentionally narrower than a final "gold-standard achieved" claim. It
 does not require every historical family to be fully executable through
