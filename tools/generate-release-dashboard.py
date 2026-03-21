@@ -403,7 +403,7 @@ def build_public_page(data: dict[str, object]) -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{escape(data["title"])}</title>
+    <title>{escape(public["browser_title"])}</title>
     <style>
         :root {{
             --bg: #07131f;
