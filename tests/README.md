@@ -11,6 +11,9 @@ start here.
   baseline across qcsp3, may29, and alex.
 - `validate-artifacts.sh`: rebuilds SBCL graph artifacts, regenerates overlay
   plots, and checks the current thesis-result pipeline.
+- `validate-ff-provenance.sh`: checks that the preserved `NewData4b-Batch`
+  `ff*` graph summaries match their `PrevResults/` carry-forward copies and
+  that the supporting raw/count lineage is present.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.
@@ -31,6 +34,7 @@ Run these from the repository root:
 ```bash
 sbcl --non-interactive --load "tests/run.lisp"
 bash tests/validate-artifacts.sh
+bash tests/validate-ff-provenance.sh
 bash tests/validate-ao.sh
 ```
 

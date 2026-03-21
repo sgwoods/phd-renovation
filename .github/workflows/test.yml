@@ -39,5 +39,8 @@ jobs:
       - name: Validate thesis-result artifact pipeline
         run: bash tests/validate-artifacts.sh
 
+      - name: Validate ff provenance carry-forward
+        run: bash tests/validate-ff-provenance.sh
+
       - name: Run AO regression validation
         run: bash tests/validate-ao.sh

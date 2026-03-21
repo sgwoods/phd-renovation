@@ -131,6 +131,7 @@ sbcl --non-interactive --load "run-test4-alex.lisp"
 
 # Full supported validation spine
 bash tests/validate-artifacts.sh
+bash tests/validate-ff-provenance.sh
 bash tests/validate-ao.sh
 
 # Run experiments (takes hours — generates 200 data points each)
@@ -147,9 +148,10 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py   # reads ACL baselines from d
 ### CI
 
 GitHub Actions runs `tests/run.lisp`, the artifact validation smoke test
-(`tests/validate-artifacts.sh`), and the asserted AO regression validation
-(`tests/validate-ao.sh`, backed by `tests/ao-run.lisp`) on every push to
-`main` and on PRs.
+(`tests/validate-artifacts.sh`), the preserved `ff*` provenance check
+(`tests/validate-ff-provenance.sh`), and the asserted AO regression validation
+(`tests/validate-ao.sh`, backed by `tests/ao-run.lisp`) on every push to `main`
+and on PRs.
 See `.github/workflows/test.yml`.
 
 ### Test Architecture
@@ -164,6 +166,7 @@ and day-to-day confidence checks should flow through:
 - `tests/run.lisp`
 - `tests/ao-run.lisp`
 - `tests/validate-artifacts.sh`
+- `tests/validate-ff-provenance.sh`
 - `tests/validate-ao.sh`
 - `tests/validate-thesis-comparison.py`
 
@@ -212,6 +215,7 @@ tests/                         FiveAM test suites
   alex-suite.lisp              Alex tests (5 tests)
   ao-run.lisp                  Asserted AO regression runner
   validate-artifacts.sh        Thesis artifact regeneration/validation
+  validate-ff-provenance.sh    NewData4b/PrevResults integrity check
   validate-ao.sh               AO validation wrapper
   validate-thesis-comparison.py ACL-vs-SBCL thesis baseline check
 src/main.lisp                  REPL entry point

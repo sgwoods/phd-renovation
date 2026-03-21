@@ -26,7 +26,7 @@ has not yet earned that status across the full historical surface.
 | Confused queens metrics | same four snapshots | Executable now | `tests/run.lisp` | Covered as deterministic regression anchor |
 | AO / `test4` baseline | root `run-test4*.lisp`, snapshot extras | Executable now | `tests/ao-run.lisp`, `tests/validate-ao.sh` | Partially covered; broader AO scope still open |
 | PhD `ij2` / `ij3` / `ij4` reported trend story | `data/acl-experiments/Graph/`, thesis plots, SBCL reruns | Executable now | `tests/validate-artifacts.sh`, `tests/validate-thesis-comparison.py`, `Q-Batch-SBCL/` | Covered for the current supported baseline; central gate for the integrated line |
-| Older `ff1` / `ff2` / `ff3` FCDR distribution family | `qcsp-may29-1996/NewData4b-Batch/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | Byte-identical `ff*.ci` carry-forward; modern CI check not added yet | Not yet covered by the integrated line |
+| Older `ff1` / `ff2` / `ff3` FCDR distribution family | `qcsp-may29-1996/NewData4b-Batch/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | `tests/validate-ff-provenance.sh` | Not yet covered by the integrated line |
 | Early `exp-1` / `exp-2` / `exp-3` result families | `historical finds/yj-sun/Csp/testdata/Results/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | Crosswalk documented in `historical finds/yj-sun/Csp/RESULTS-CROSSWALK.md` | Not yet covered by the integrated line |
 | ADT batch archives (`ij1`-`ij4` era before SBCL replication) | `data/csp-adt-batch/`, snapshot batch trees | Provenance-only for now | Preserved data present, but no supported modern validation path | Open |
 | Earliest CSP batch families (`T1`-`T6`) | `data/csp-batch/` | Provenance-only for now | Preserved data present | Open |
@@ -37,8 +37,7 @@ has not yet earned that status across the full historical surface.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Add a lightweight integrity/provenance check for `ff1` / `ff2` / `ff3`.
-3. Keep moving families from `Provenance-only` to `Integrity-checkable` or
+2. Keep moving families from `Provenance-only` to `Integrity-checkable` or
    `Executable now`.
-4. Use that widening validated surface to judge when `qcsp3/` is ready to be
+3. Use that widening validated surface to judge when `qcsp3/` is ready to be
    called the gold-standard code line.

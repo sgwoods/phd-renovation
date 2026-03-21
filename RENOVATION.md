@@ -230,7 +230,7 @@ of legacy Lisp.
 | PhD-result validation path | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
 | Warning hygiene | **Improving** | Repeated core and AO warning families have been reduced substantially, but a small residual tail remains. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
-| Historical provenance | **Good and advancing** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, and the `ff1`/`ff2`/`ff3` family is now grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree. |
+| Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, and the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check. |
 | Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but it does not yet cover every historically relevant domain/result family under one supported executable umbrella. |
 | Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. |
 
@@ -255,21 +255,17 @@ of legacy Lisp.
 
 ### Recommended next steps
 
-1. Keep the PhD-result validation spine green: `tests/run.lisp`,
-   `tests/validate-artifacts.sh`, and `tests/validate-ao.sh` remain the merge
-   gate for the supported baseline.
-2. Expand the validated umbrella to the older `ff1` / `ff2` / `ff3` family by
-   deciding whether to add a lightweight provenance check asserting that
-   `qcsp-may29-1996/NewData4b-Batch/Graph/ff*.ci` matches
-   `data/sparc-archive/PrevResults/ff*.ci`.
-3. Build out the validation matrix further: for each historical domain/result
+1. Keep the current validation spine green: `tests/run.lisp`,
+   `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
+   `tests/validate-ao.sh` remain the merge gate for the supported baseline.
+2. Build out the validation matrix further: for each historical domain/result
    family, mark whether it is executable now, integrity-checkable now, or
    provenance-only for now.
-4. Continue shrinking the remaining warning tail so validation logs become a
+3. Continue shrinking the remaining warning tail so validation logs become a
    clearer signal channel for real regressions.
-5. Finish the `0.3.x` documentation lane by adding docstrings and clearer
+4. Finish the `0.3.x` documentation lane by adding docstrings and clearer
    entry-point explanations for the major algorithms and supported workflows.
-6. Only after the baseline and provenance work are tighter, begin controlled
+5. Only after the baseline and provenance work are tighter, begin controlled
    integration and research-readiness experiments such as alex DFA-option
    isolation against the validated snapshot.
 
