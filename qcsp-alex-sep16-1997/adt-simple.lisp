@@ -604,17 +604,19 @@ ALL arc constraints in the curent template between ts1 and ts2 ?
 
 ;; **************************************************
 ;;
-(defun get-constraint-max-level (constraint ck-var)
+(defun get-constraint-max-level (constraint-or-ck-var &optional ck-var)
 "
 ADT version.
 "
-  (let (
-	(levels 
-	 (mapcar #'(lambda (x) (list-element-pos *var-order* x))
-	       (remove ck-var (get-affected-list constraint))) )
-	)
-	(if (null levels) (setq levels (list 1)));;yongjun added this statement  
-    (apply 'max levels) ))
+  (if (null ck-var)
+      (list-element-pos *var-order* constraint-or-ck-var)
+    (let (
+	  (levels 
+	   (mapcar #'(lambda (x) (list-element-pos *var-order* x))
+		   (remove ck-var (get-affected-list constraint-or-ck-var))) )
+	  )
+	  (if (null levels) (setq levels (list 1)));;yongjun added this statement  
+      (apply 'max levels) )))
 
 ;; **************************************************
 ;;

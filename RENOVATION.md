@@ -220,6 +220,20 @@ In short: turn the renovated snapshots, preserved data, and recovered archives
 into one trustworthy integrated research platform, not just a modernized copy
 of legacy Lisp.
 
+### Current subgoals
+
+For the current phase, the practical subgoals are:
+
+1. keep the supported validation spine green from a fresh checkout,
+2. keep widening the validated umbrella beyond the main thesis `ij2`/`ij3`/`ij4`
+   path,
+3. reduce warning noise enough that validation logs act as a reliable
+   regression signal,
+4. make the historical result families legible enough that they can be judged
+   for eventual inclusion under one integrated solver line, and
+5. define the first concrete milestone that `qcsp3/` would have to satisfy to
+   earn "gold-standard" status.
+
 ### Where we are against that goal
 
 | Area | Status | Current position |
@@ -228,10 +242,10 @@ of legacy Lisp.
 | Core regression baseline | **Strong** | Deterministic metric assertions exist for standard and confused queens across all four systems. |
 | AO / `test4` validation | **Good** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline; broader AO coverage is still open. |
 | PhD-result validation path | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
-| Warning hygiene | **Improving** | Repeated core and AO warning families have been reduced substantially, but a small residual tail remains. |
+| Warning hygiene | **Good and improving** | Repeated core and AO warning families have been reduced substantially. The remaining tail is now narrower and concentrated mostly in alex-specific ADT code and a few legacy redefinition patterns. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, and the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check. |
-| Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but it does not yet cover every historically relevant domain/result family under one supported executable umbrella. |
+| Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but the project has not yet defined and satisfied the first explicit milestone for saying it covers the PhD baseline, AO baseline, and preserved historical result families under one supported umbrella. |
 | Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. |
 
 ### Current roadmap position
@@ -241,7 +255,9 @@ of legacy Lisp.
   are in place.
 - **Phase 2 / `0.2.x` Verification**: active and substantially advanced. This
   now includes stronger regression assertions, AO asserted coverage, automated
-  thesis-comparison checks, and incremental warning cleanup.
+  thesis-comparison checks, `ff*` integrity/provenance validation, and
+  incremental warning cleanup. This is now a late verification phase rather
+  than an early baseline-repair phase.
 - **Phase 3 / `0.3.x` Documentation**: started, but not complete. High-level
   docs are much stronger, the code/test/results roots are now easier to
   navigate, but core algorithm docstrings and operator-facing workflow polish
@@ -251,23 +267,31 @@ of legacy Lisp.
   broader experimental changes until the baseline is tighter.
 - **Phase 5 / Archive Recovery**: active in parallel. The `historical finds/`
   intake is now classified, `yj-sun/Csp` has loader/result provenance notes,
-  and archive-to-`PrevResults` mapping has begun.
+  and archive-to-`PrevResults` mapping has begun. This lane is now supporting
+  integration planning, not just intake triage.
 
 ### Recommended next steps
 
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
-2. Build out the validation matrix further: for each historical domain/result
+2. Finish the remaining warning tail reduction so validation logs become a
+   clearer signal channel for real regressions. The current highest-value tail
+   is the small alex ADT/simple cluster and the last cross-domain legacy
+   redefinition noise.
+3. Define the first concrete `qcsp3/` integration milestone: what exactly must
+   be true before it can be called the leading executable line rather than just
+   the leading candidate. A good first milestone is coverage of the supported
+   PhD baseline, the asserted AO baseline, and an explicit documented
+   relationship to the preserved `ff*` family.
+4. Keep building out the validation matrix: for each historical domain/result
    family, mark whether it is executable now, integrity-checkable now, or
-   provenance-only for now.
-3. Continue shrinking the remaining warning tail so validation logs become a
-   clearer signal channel for real regressions.
-4. Finish the `0.3.x` documentation lane by adding docstrings and clearer
+   provenance-only for now, and identify which family should move next.
+5. Finish the `0.3.x` documentation lane by adding docstrings and clearer
    entry-point explanations for the major algorithms and supported workflows.
-5. Only after the baseline and provenance work are tighter, begin controlled
-   integration and research-readiness experiments such as alex DFA-option
-   isolation against the validated snapshot.
+6. Only after the baseline, warning surface, and provenance work are tighter,
+   begin controlled integration and research-readiness experiments such as
+   alex DFA-option isolation against the validated snapshot.
 
 ### Phase / Release Alignment
 

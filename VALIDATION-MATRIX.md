@@ -37,7 +37,10 @@ has not yet earned that status across the full historical surface.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Keep moving families from `Provenance-only` to `Integrity-checkable` or
+2. Finish shrinking the remaining warning tail so the validation spine stays a
+   high-signal merge gate.
+3. Define the first explicit `qcsp3/` integration milestone for the
+   gold-standard path: PhD baseline, AO baseline, and documented coverage or
+   relationship for the preserved `ff*` family.
+4. Keep moving families from `Provenance-only` to `Integrity-checkable` or
    `Executable now`.
-3. Use that widening validated surface to judge when `qcsp3/` is ready to be
-   called the gold-standard code line.

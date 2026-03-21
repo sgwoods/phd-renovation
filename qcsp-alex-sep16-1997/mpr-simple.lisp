@@ -449,16 +449,18 @@ constraint-list
 
 ;; **************************************************
 ;;
-(defun get-constraint-max-level (constraint ck-var)
+(defun get-constraint-max-level (constraint-or-ck-var &optional ck-var)
 "
 MPR version.
 "
-  (let (
-	(levels 
-	 (mapcar #'(lambda (x) (list-element-pos *var-order* x))
-	       (remove ck-var (get-affected-list constraint))) )
-	)
-    (apply 'max levels) ))
+  (if (null ck-var)
+      (list-element-pos *var-order* constraint-or-ck-var)
+    (let (
+	  (levels 
+	   (mapcar #'(lambda (x) (list-element-pos *var-order* x))
+		   (remove ck-var (get-affected-list constraint-or-ck-var))) )
+	  )
+      (apply 'max levels) )))
 
 ;; **************************************************
 ;;

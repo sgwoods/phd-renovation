@@ -207,10 +207,11 @@ the instantiation of SYMBOL2 with VALUE2.
 
 ;; **************************************************
 ;;
-(defun get-constraint-max-level ( ck-var )
+(defun get-constraint-max-level ( ck-var &optional ignored-constraint )
 "
 Queens version.
 "
+(declare (ignore ignored-constraint))
 (list-element-pos *var-order* ck-var) )
 
 ;; **************************************************
