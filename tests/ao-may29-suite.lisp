@@ -98,6 +98,22 @@
                      '(("V0" ("E1")) ("V1" ("A2")) ("V2" ("B3")))))
       (5am:is (= qcsp-may29::*constraint-count* 35)))))
 
+(5am:test may29-ao-wrapper-step
+  "May29 test4s wrapper should preserve the historical nil revise summary."
+  (with-may29-ao-paths
+    (qcsp-may29::test4s)
+    (5am:is (equal (list qcsp-may29::ao1 qcsp-may29::ao2 qcsp-may29::ao3)
+                   '(nil nil nil)))
+    (5am:is (= qcsp-may29::*constraint-count* 35))))
+
+(5am:test may29-ao-wrapper-aggressive
+  "May29 test4a wrapper should preserve the historical nil revise summary."
+  (with-may29-ao-paths
+    (qcsp-may29::test4a)
+    (5am:is (equal (list qcsp-may29::ao1 qcsp-may29::ao2 qcsp-may29::ao3)
+                   '(nil nil nil)))
+    (5am:is (= qcsp-may29::*constraint-count* 35))))
+
 (format t "~&~%;; ===== AO May29 Test Suite =====~%~%")
 (let ((result (5am:run! 'ao-may29-tests)))
   (sb-ext:exit :code (if result 0 1)))

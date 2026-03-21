@@ -21,12 +21,35 @@ for path in "${required_inputs[@]}"; do
   fi
 done
 
+tmp_dir="$(mktemp -d)"
+trap 'rm -rf "$tmp_dir"' EXIT
+
+generated_outputs=(
+  "docs/release-dashboard.html"
+  "docs/public-phd-renovation.html"
+  "docs/public-index-phd-snippet.html"
+)
+
+for path in "${generated_outputs[@]}"; do
+  cp "$path" "$tmp_dir/$(basename "$path")"
+done
+
 python3 tools/generate-release-dashboard.py
 
-if ! git diff --quiet -- docs/release-dashboard.html docs/public-phd-renovation.html docs/public-index-phd-snippet.html; then
+stale_outputs=0
+for path in "${generated_outputs[@]}"; do
+  if ! cmp -s "$path" "$tmp_dir/$(basename "$path")"; then
+    stale_outputs=1
+    break
+  fi
+done
+
+if [[ "$stale_outputs" -ne 0 ]]; then
   echo "Dashboard-generated HTML is out of date with its source data." >&2
   echo "Regenerate it with: python3 tools/generate-release-dashboard.py" >&2
-  git diff -- docs/release-dashboard.html docs/public-phd-renovation.html docs/public-index-phd-snippet.html >&2 || true
+  diff -u "$tmp_dir/release-dashboard.html" docs/release-dashboard.html >&2 || true
+  diff -u "$tmp_dir/public-phd-renovation.html" docs/public-phd-renovation.html >&2 || true
+  diff -u "$tmp_dir/public-index-phd-snippet.html" docs/public-index-phd-snippet.html >&2 || true
   exit 1
 fi
 

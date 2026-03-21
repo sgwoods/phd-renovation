@@ -11,8 +11,8 @@
     },
     {
       "label": "Current Focus",
-      "value": "M1 + warning tail",
-      "note": "Define the integrated line while keeping the logs quiet and trustworthy."
+      "value": "M1 + AO breadth",
+      "note": "Widen the integrated AO baseline while keeping the merge gate quiet and trustworthy."
     },
     {
       "label": "Build Line",
@@ -60,7 +60,7 @@
       "status_label": "In Progress",
       "phase": "Late 0.2",
       "title": "Warning tail reduction",
-      "summary": "Shared core and AO warning families are much quieter now, but a small alex ADT/simple cluster and a few legacy redefinition patterns still need cleanup."
+      "summary": "Shared core and AO warning families are much quieter now; the main remaining noise is legacy AO redefinition chatter rather than the old alex/core tail."
     },
     {
       "status": "active",
@@ -88,7 +88,7 @@
     {
       "label": "Parallel Lane",
       "title": "Archive recovery keeps feeding the plan",
-      "summary": "Archive work stays parallel to the mainline: classify new finds, strengthen provenance, and move preserved result families from reference-only toward integrity-checkable or executable."
+      "summary": "Archive work stays parallel to the mainline: classify new finds, strengthen provenance, and use leads like the newly identified Lacie1 terrain materials to recover blocked historical domains."
     },
     {
       "label": "Current Focus",
@@ -144,11 +144,11 @@
       },
       {
         "title": "What is already solid",
-        "summary": "All four maintained historical solver snapshots load on SBCL. The thesis ij2 / ij3 / ij4 validation path is executable and CI-protected. AO baseline assertions and ff provenance checks are part of the supported validation spine."
+        "summary": "All four maintained historical solver snapshots load on SBCL. The thesis ij2 / ij3 / ij4 validation path is executable and CI-protected. AO baseline assertions now include the legacy test4 wrappers, and ff provenance checks are part of the supported validation spine."
       },
       {
         "title": "What M1 means",
-        "summary": "qcsp3 becomes the first real integrated line when it holds the PhD baseline, the asserted AO baseline, and the documented ff relationship under one supported executable story."
+        "summary": "qcsp3 becomes the first real integrated line when it holds the PhD baseline, the asserted AO baseline, and the documented ff relationship under one supported executable story, with blocked terrain recovery tracked separately."
       }
     ],
     "links": [

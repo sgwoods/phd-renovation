@@ -190,7 +190,7 @@ See [GitHub Issues](https://github.com/sgwoods/phd-renovation/issues) for tracke
 
 ### Open
 
-4. **Investigate QCSP-nov96** — intermediate snapshot with unique terrain analysis code not in repo. Three source files completely lost (`terrain-setup.lisp`, `terrain-simple.lisp`, `closure.lisp`). Recovery depends on finding SPARC backup media. See `data/lost-datasets.md`. (Issue #4)
+4. **Investigate QCSP-nov96** — intermediate snapshot with unique terrain analysis code not in repo. Three source files remain unrecovered in the working tree (`terrain-setup.lisp`, `terrain-simple.lisp`, `closure.lisp`), but a newly identified `Lacie1` historical drive reportedly contains terrain data and the generator. Recovery is no longer just a generic backup-media search; the next concrete step is to sort that drive and compare it against `QCSP-nov96.dir`. See `data/lost-datasets.md`. (Issue #4)
 
 ## Next Phase Roadmap
 
@@ -240,7 +240,7 @@ For the current phase, the practical subgoals are:
 |---|---|---|
 | Reference snapshots runnable | **Strong** | All four ASDF systems load and the supported FiveAM suites pass on SBCL. |
 | Core regression baseline | **Strong** | Deterministic metric assertions exist for standard and confused queens across all four systems. |
-| AO / `test4` validation | **Good** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline; broader AO coverage is still open. |
+| AO / `test4` validation | **Good and improving** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline, now including the legacy `test4s` / `test4a` wrappers; broader AO case coverage is still open. |
 | PhD-result validation path | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
 | Warning hygiene | **Strong and improving** | The repeated alex/core STYLE-WARNING tail has now been cleared from the supported validation path. The remaining routine noise is mostly legacy redefinition chatter in the AO loads plus a small alex `adt-setup` note. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
@@ -306,14 +306,14 @@ anchors rather than co-equal supported workflows.
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
-2. Finish the remaining validation-log cleanup so the merge gate stays a
-   clearer signal channel for real regressions. The biggest remaining routine
-   noise is the legacy AO redefinition chatter rather than the old alex
-   ADT/simple STYLE-WARNING tail.
-3. Drive toward Milestone M1 for `qcsp3/`: keep the supported PhD baseline,
+2. Drive toward Milestone M1 for `qcsp3/`: keep the supported PhD baseline,
    the asserted AO baseline, and the documented `ff*` relationship under one
    coherent integrated-solver story, with the remaining snapshot deltas tracked
    in `INTEGRATION-DELTAS.md`.
+3. Finish the remaining validation-log cleanup so the merge gate stays a
+   clearer signal channel for real regressions. The biggest remaining routine
+   noise is the legacy AO redefinition chatter rather than the old alex
+   ADT/simple STYLE-WARNING tail.
 4. Keep building out the validation matrix: for each historical domain/result
    family, mark whether it is executable now, integrity-checkable now, or
    provenance-only for now, and identify which family should move next.
@@ -386,7 +386,8 @@ the owning phase in the release summary so future work stays tied to the plan.
 
 10. Continue the historical recovery track by unpacking/cataloging the legacy
     compressed archives and keeping watch for any media that could restore the
-    lost QCSP-nov96 terrain code and data.
+    lost QCSP-nov96 terrain code and data, with `Lacie1` now recorded as the
+    strongest recovery lead pending review.
 11. Treat newly recovered material under `historical finds/` as archive intake,
     not baseline code. The current intake appears to split into:
     `yj-sun/Csp` as a likely solver-lineage recovery candidate,

@@ -10,6 +10,14 @@ This snapshot was an intermediate version between `qcsp-may29-1996/` (May 1996)
 and `qcsp-alex-sep16-1997/` (September 1997). It contained unique terrain
 CSP domain code not found in any other snapshot.
 
+## New Recovery Lead (March 21, 2026)
+
+A historical drive labeled `Lacie1` reportedly contains terrain data and the
+terrain generator for this line. That material has not been sorted or imported
+yet, so the terrain domain is still treated as unrecovered in the validation
+matrix. It is now the strongest known recovery lead for Issue #4 and should be
+reviewed before assuming the nov96 terrain path is permanently lost.
+
 ### Unique Source Files (completely lost)
 
 | File | Purpose | Equivalent In Other Snapshots |
@@ -57,7 +65,8 @@ The .dir listing shows two .zoo archives in a `Bkp/` subdirectory:
 - `Bkp/Dec5b.zoo` -- December 5 backup (variant)
 
 These December 1996 backups might contain the terrain source code if
-recovered from the SPARC archive.
+recovered from the SPARC archive. The newly identified `Lacie1` drive may be a
+more direct recovery source and should be checked first.
 
 ### ADT/MPR Data Also Present
 
@@ -72,10 +81,11 @@ recovered from the SPARC archive.
 
 To recover the terrain CSP code, look for:
 
-1. **SPARC backup tapes** from the "monarch" workstation, late 1996
-2. **`.zoo` archives**: `dec5-bkp.zoo` and `Dec5b.zoo` from the Bkp/ directory
-3. **Files named**: `terrain-setup.lisp`, `terrain-simple.lisp`, `closure.lisp`
-4. **Directory named**: `QCSP-nov96/` or `QCSP/` dated November-December 1996
+1. **`Lacie1` historical drive contents** containing terrain data and the terrain generator
+2. **SPARC backup tapes** from the "monarch" workstation, late 1996
+3. **`.zoo` archives**: `dec5-bkp.zoo` and `Dec5b.zoo` from the Bkp/ directory
+4. **Files named**: `terrain-setup.lisp`, `terrain-simple.lisp`, `closure.lisp`
+5. **Directory named**: `QCSP-nov96/` or `QCSP/` dated November-December 1996
 
 The terrain domain was an exploratory extension for graph-based CSP problems.
 It was not used in the final thesis experiments (ij2/ij3/ij4 series) and was

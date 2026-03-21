@@ -46,7 +46,7 @@ The current delta ledger for this milestone lives in `INTEGRATION-DELTAS.md`.
 |---|---|---|---|---|
 | Core queens regressions | `csp/`, `qcsp3/`, `qcsp-may29-1996/`, `qcsp-alex-sep16-1997/` | Executable now | `tests/run.lisp` | Covered as reference baseline; should remain covered in the integrated line |
 | Confused queens metrics | same four snapshots | Executable now | `tests/run.lisp` | Covered as deterministic regression anchor |
-| AO / `test4` baseline | root `run-test4*.lisp`, snapshot extras | Executable now | `tests/ao-run.lisp`, `tests/validate-ao.sh` | In scope for M1; broader AO scope still open |
+| AO / `test4` baseline | root `run-test4*.lisp`, snapshot extras | Executable now | `tests/ao-run.lisp`, `tests/validate-ao.sh` | In scope for M1; case-1 graph reductions plus `test4s` / `test4a` wrappers asserted, broader AO case coverage still open |
 | PhD `ij2` / `ij3` / `ij4` reported trend story | `data/acl-experiments/Graph/`, thesis plots, SBCL reruns | Executable now | `tests/validate-artifacts.sh`, `tests/validate-thesis-comparison.py`, `Q-Batch-SBCL/` | In scope for M1; central gate for the integrated line |
 | Older `ff1` / `ff2` / `ff3` FCDR distribution family | `qcsp-may29-1996/NewData4b-Batch/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | `tests/validate-ff-provenance.sh` | In scope for M1 as a documented integrity-checked family |
 | Early `exp-1` / `exp-2` / `exp-3` result families | `historical finds/yj-sun/Csp/testdata/Results/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | Crosswalk documented in `historical finds/yj-sun/Csp/RESULTS-CROSSWALK.md` | Not yet covered by the integrated line |
@@ -54,7 +54,7 @@ The current delta ledger for this milestone lives in `INTEGRATION-DELTAS.md`.
 | Earliest CSP batch families (`T1`-`T6`) | `data/csp-batch/` | Provenance-only for now | Preserved data present | Open |
 | MPR domain behavior | source snapshots and runtime-generated situation/random files | Executable now at solver level | `tests/run.lisp` MPR assertions | Covered at regression level, but not yet tied to a broader historical result family |
 | Alex-specific DFA-related ADT behavior | `qcsp-alex-sep16-1997/` | Provenance-only for now | Diagnosed but not yet part of supported validation | Open research/integration item |
-| QCSP-nov96 terrain domain | `data/lost-datasets.md`, `QCSP-nov96.dir` | Provenance-only for now | Lost source/data; no runnable path | Blocked by missing artifacts |
+| QCSP-nov96 terrain domain | `data/lost-datasets.md`, `QCSP-nov96.dir`, `Lacie1` recovery lead | Provenance-only for now | No runnable path yet; `Lacie1` reportedly contains terrain data and generator but remains unsorted | Recovery lead identified, still outside M1 |
 
 ## Immediate Priorities
 

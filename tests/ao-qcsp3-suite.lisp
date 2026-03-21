@@ -98,6 +98,22 @@
                      '(("V0" ("E1")) ("V1" ("A2")) ("V2" ("B3")))))
       (5am:is (= qcsp3::*constraint-count* 35)))))
 
+(5am:test qcsp3-ao-wrapper-step
+  "Legacy qcsp3 test4s wrapper should preserve the historical nil revise summary."
+  (with-qcsp3-ao-paths
+    (qcsp3::test4s)
+    (5am:is (equal (list qcsp3::ao1 qcsp3::ao2 qcsp3::ao3)
+                   '(nil nil nil)))
+    (5am:is (= qcsp3::*constraint-count* 35))))
+
+(5am:test qcsp3-ao-wrapper-aggressive
+  "Legacy qcsp3 test4a wrapper should preserve the historical nil revise summary."
+  (with-qcsp3-ao-paths
+    (qcsp3::test4a)
+    (5am:is (equal (list qcsp3::ao1 qcsp3::ao2 qcsp3::ao3)
+                   '(nil nil nil)))
+    (5am:is (= qcsp3::*constraint-count* 35))))
+
 (format t "~&~%;; ===== AO QCSP3 Test Suite =====~%~%")
 (let ((result (5am:run! 'ao-qcsp3-tests)))
   (sb-ext:exit :code (if result 0 1)))

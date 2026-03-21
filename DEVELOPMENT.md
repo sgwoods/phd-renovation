@@ -320,8 +320,10 @@ the source directories. They're in `.gitignore`.
 ### What's Open
 
 - **Issue #4**: QCSP-nov96 terrain CSP code — 3 source files completely lost
-  (`terrain-setup.lisp`, `terrain-simple.lisp`, `closure.lisp`). Recovery
-  depends on finding SPARC backup media. See `data/lost-datasets.md`.
+  from the working tree (`terrain-setup.lisp`, `terrain-simple.lisp`,
+  `closure.lisp`). Recovery now has a concrete lead: a `Lacie1` historical
+  drive reportedly containing terrain data and the generator. See
+  `data/lost-datasets.md`.
 
 ### What Could Be Improved
 
@@ -347,8 +349,9 @@ See GitHub Issues for tracked items. Potential improvements:
    `dfa-rearrangement` parameters that default to nil. Enabling them in
    ij4 experiments might close the alex TCC divergence gap.
 
-6. **Recover QCSP-nov96** — if backup media is found, the terrain domain
-   could be renovated following the same ADT/MPR pattern.
+6. **Recover QCSP-nov96** — sort the `Lacie1` terrain/generator lead and any
+   late-1996 backup media so the terrain domain can move from blocked archive
+   lore toward a real validation family.
 
 ## File Modification Guidelines
 
