@@ -24,7 +24,8 @@
         (truename (merge-pathnames "qcsp3/extras/"
                    (make-pathname :name nil :type nil
                                   :defaults *load-pathname*)))))
-  (load "comment")
+  (unless (fboundp 'qcsp3:comment1)
+    (load "comment"))
   (load "compile-ao")
   (load "ac-graph")
   (load "hierarchy")
@@ -44,7 +45,7 @@
   (load "test4"))
 
 ;;; All test4 dependencies are already loaded; prevent re-loading
-(defun qcsp-alex::load-t4 () nil)
+(setf (symbol-function 'qcsp-alex::load-t4) (lambda () nil))
 
 ;;; Initialize *ao-debug* -- normally set by ao-ac3, but the alex tests
 ;;; call ao-revise directly, bypassing ao-ac3.

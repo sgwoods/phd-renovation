@@ -29,7 +29,8 @@
     (let ((*default-pathname-defaults*
             (truename (merge-pathnames "qcsp3/extras/" *project-root*)))
           (*standard-output* (make-broadcast-stream)))
-      (load "comment")
+      (unless (fboundp 'qcsp3:comment1)
+        (load "comment"))
       (load "compile-ao")
       (load "ac-graph")
       (load "hierarchy")

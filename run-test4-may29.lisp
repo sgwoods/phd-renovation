@@ -13,13 +13,14 @@
 (asdf:load-system :qcsp-may29-1996)
 
 ;;; Set default path to qcsp-may29-1996/ so test4's relative loads work
-(let ((*default-pathname-defaults*
+  (let ((*default-pathname-defaults*
         (truename (merge-pathnames "qcsp-may29-1996/extras/"
                    (make-pathname :name nil :type nil
                                   :defaults *load-pathname*)))))
 
   ;; Load test4 support files (what load-t4 would load)
-  (load "comment")
+  (unless (fboundp 'qcsp-may29:comment1)
+    (load "comment"))
   (load "compile-ao")
   (load "ac-graph")
   (load "hierarchy")
@@ -36,7 +37,7 @@
   (load "test4"))
 
 ;;; All test4 dependencies are already loaded; prevent re-loading
-(defun qcsp-may29::load-t4 () nil)
+(setf (symbol-function 'qcsp-may29::load-t4) (lambda () nil))
 
 ;;; Run all tests
 (format t "~&~%;; ===== test4 suite (qcsp-may29-1996) =====~%")

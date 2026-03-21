@@ -242,7 +242,7 @@ For the current phase, the practical subgoals are:
 | Core regression baseline | **Strong** | Deterministic metric assertions exist for standard and confused queens across all four systems. |
 | AO / `test4` validation | **Good and improving** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline, now including the legacy `test4s` / `test4a` wrappers; broader AO case coverage is still open. |
 | PhD-result validation path | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
-| Warning hygiene | **Strong and improving** | The repeated alex/core STYLE-WARNING tail has now been cleared from the supported validation path. The remaining routine noise is mostly legacy redefinition chatter in the AO loads plus a small alex `adt-setup` note. |
+| Warning hygiene | **Strong and improving** | The repeated alex/core STYLE-WARNING tail has now been cleared from the supported validation path, and the AO harness redefinition chatter has been trimmed from both CI and the manual `run-test4*.lisp` flows. The remaining routine noise is now down to a small alex `adt-setup` note and similar minor legacy leftovers. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, and the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check. |
 | Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but the project has not yet defined and satisfied the first explicit milestone for saying it covers the PhD baseline, AO baseline, and preserved historical result families under one supported umbrella. |
@@ -312,8 +312,8 @@ anchors rather than co-equal supported workflows.
    in `INTEGRATION-DELTAS.md`.
 3. Finish the remaining validation-log cleanup so the merge gate stays a
    clearer signal channel for real regressions. The biggest remaining routine
-   noise is the legacy AO redefinition chatter rather than the old alex
-   ADT/simple STYLE-WARNING tail.
+   noise is now small legacy leftovers like the alex `adt-setup` note rather
+   than the old AO redefinition chatter or alex ADT/simple STYLE-WARNING tail.
 4. Keep building out the validation matrix: for each historical domain/result
    family, mark whether it is executable now, integrity-checkable now, or
    provenance-only for now, and identify which family should move next.
