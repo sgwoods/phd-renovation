@@ -1423,6 +1423,7 @@ In objlist, return the sit-object indicated by ident.
 "
 Return sit objects in this rectangle.  TO BE DEFINED.
 "
+(declare (ignore fromx fromy tox toy))
 nil
 )
 

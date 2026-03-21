@@ -417,6 +417,7 @@ constraint-list )
 (defun test-constraint-2 (ts1 s1 ts2 s2 blist constraint)
 "
 "
+(declare (ignore blist))
 (let (
       (cons-type  (get-constraint-type      constraint))
       )
@@ -485,6 +486,7 @@ constraint-list )
 ;; ***************************************************************************
 
 (defun check-before-p (constraint t1 s1 t2 s2 )
+  (declare (ignore t2))
   (let* (
 	 (aflist   (get-affected-list constraint))
 	 (order    (if (eq t1 (first aflist)) 't1 't2))  ;; who is a, a < b
@@ -537,6 +539,7 @@ constraint-list )
 (defun check-close-to-p (constraint t1 s1 t2 s2 )
 "Two statements are close together if they are within some number of 
  statements as indicated in the constraint."
+(declare (ignore t1 t2))
 (let (
       (maxDist (third constraint))
       (s1Pos   (get-sit-obj-line-act s1))
@@ -548,6 +551,7 @@ constraint-list )
     )) )
 
 (defun check-same-type-p (constraint t1 s1 t2 s2)
+(declare (ignore constraint t1 s1 t2 s2))
 
   ;; Note that this is not completed.  How do we check types without any
   ;;  explicit instantiations or necessarily occuring decl statements? 

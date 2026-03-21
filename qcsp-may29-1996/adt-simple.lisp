@@ -534,6 +534,7 @@ ADT version.
 (defun test-constraint-2 (ts1 s1 ts2 s2 blist constraint)
 "
 "
+(declare (ignore blist))
 (let (
       (cons-type  (get-constraint-type      constraint))
       )
@@ -672,6 +673,7 @@ ADT version.
   ))
 
 (defun check-same-type-p (constraint t1 s1 t2 s2)
+(declare (ignore constraint t1 s1 t2 s2))
 
   ;; Note that this is not completed.  How do we check types without any
   ;;  explicit instantiations or necessarily occuring decl statements? 

@@ -160,6 +160,7 @@ size of the problem and has the same keywords as in BACKTRACKING.
 "
 Queens problem, not applicable.
 "
+(declare (ignore force))
 variable-list)
 
 ;; **************************************************
@@ -181,6 +182,7 @@ This is the n-Queens version.
 Optionally use q-queens or confused q-queens depending on dom.
  note that blist is not used in queens/confused.
 "
+(declare (ignore blist))
 
 (if *debug-consis* 
     (comment4 "Consistent-p <sym1 v1 sym2 v2 > ?"

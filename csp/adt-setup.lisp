@@ -368,7 +368,7 @@
 	 (inloop-stmt (generate-ran-Stmt
 		       other-sid other-sloc index basePair baseType))
 	)
-    (declare (ignore baseArray))
+    (declare (ignore baseArray end-sid end-sloc))
 
     (setq *current-block-list* (cons block-name *current-block-list*))
 
