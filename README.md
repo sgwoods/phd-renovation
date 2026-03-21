@@ -72,7 +72,9 @@ src/                        Entry point
   modern experiment drivers, generated run directories, and comparison plots.
 - `data/` holds preserved ACL/SPARC-era baselines and archive material.
 - `incoming/` is the first stop for newly found relevant code, data,
-  publications, or experiment artifacts before review and promotion.
+  publications, or experiment artifacts before review and promotion. Dump
+  names are fine; review can normalize the folder label later if the contents
+  reveal a better date/source name.
 - `historical finds/` is archive intake and provenance work, not supported
   baseline code.
 - Root `run-test4*.lisp`, `run-csp-tests.lisp`, and `renovate.lisp` are
@@ -194,6 +196,7 @@ Plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`.
 
 Directory guides:
 - `csp/README.md`
+- `qcsp3/README.md`
 - `Q-Batch-SBCL/README.md`
 - `tests/README.md`
 - `data/README.md`

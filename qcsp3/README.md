@@ -1,60 +1,137 @@
 # qcsp3
 
-Primary extended QCSP solver. Extends the base CSP solver (csp/) with
-memory-based constraint solving, ADT/MPR domains, GSAT local search,
-and Quilici's constraint-ordered search. This is the main system used
-for experiments.
+Primary integrated solver line and current operational center of the project.
+This directory backs the `:qcsp3` ASDF system and is the leading candidate for
+the eventual gold-standard codebase.
 
-Loaded via ASDF system `:qcsp3` (defined in `qcsp3.asd` at the
-repository root).
+Loaded via ASDF system `:qcsp3` (defined in `qcsp3.asd` at the repository
+root).
 
-## Core ASDF files (13)
+## Role
+
+`qcsp3/` is where the supported post-M1 solver story comes together:
+
+- the executable PhD-result baseline,
+- the main ADT and MPR entry points,
+- the two-phase memory-based search,
+- the preserved Quilici-style search implementation,
+- and the shared AO support used by the supported `test4` validation path.
+
+If you are trying to understand the active integrated line rather than the
+historical comparison snapshots, start here.
+
+## Core ASDF Files
 
 | File | Role |
-|------|------|
-| `package.lisp` | Package definition (`:phd-qcsp3`) |
+|---|---|
+| `package.lisp` | Package definition, exports, and shared special variables |
 | `bm.lisp` | BackMark search |
 | `bt.lisp` | BackTrack search |
 | `ct.lisp` | Constraint Techniques (AC-3) |
 | `gsat.lisp` | GSAT local search |
-| `utility.lisp` | Global state, utilities |
-| `queens.lisp` | N-Queens domain |
-| `mpr-simple.lisp` | MPR functionality |
-| `mpr-setup.lisp` | MPR template/situation data |
-| `quilici-search.lisp` | Constraint-ordered search |
-| `adt-simple.lisp` | ADT functionality |
-| `adt-setup.lisp` | ADT template/situation data |
-| `memory-csp.lisp` | Memory-based CSP (index + resolution) |
+| `utility.lisp` | Global setup, counters, reporting, and output formatting |
+| `queens.lisp` | Queens and confused-queens domains plus convenience wrappers |
+| `mpr-simple.lisp` | MPR domain entry point |
+| `mpr-setup.lisp` | MPR setup/data support |
+| `quilici-search.lisp` | Constraint-ordered Quilici-style search |
+| `adt-simple.lisp` | ADT domain entry point |
+| `adt-setup.lisp` | ADT setup/data support |
+| `memory-csp.lisp` | Two-phase memory-based search |
+
+## Main Public Entry Points
+
+| Entry point | Purpose |
+|---|---|
+| `qcsp3:q`, `qcsp3:qs`, `qcsp3:qc` | Standard queens variants |
+| `qcsp3:cq`, `qcsp3:cqs`, `qcsp3:cqc` | Confused-queens variants |
+| `qcsp3:adt` | Direct ADT matching |
+| `qcsp3:mpr` | Model Pattern Recognition |
+| `qcsp3:memory-search` | Two-phase memory-based search used in thesis experiments |
+| `qcsp3:quilici-search` | Earlier Quilici-style ordered search path |
+| `qcsp3:bm`, `qcsp3:backtracking`, `qcsp3:ac-3` | Core solver/search algorithms |
+| `qcsp3:set-globals`, `qcsp3:show-options`, `qcsp3:show-solution` | Shared setup/reporting helpers |
+
+The most common interactive load path is still:
+
+```bash
+sbcl --load "src/main.lisp"
+```
+
+## Directory Mix
+
+This directory contains three kinds of material:
+
+1. source files that define the supported `qcsp3` solver line,
+2. runtime-generated ADT/MPR working data, and
+3. a small amount of preserved experiment/output material.
+
+That means `qcsp3/` is mostly code, but not code-only.
 
 ## Subdirectories
 
-| Directory | Contents |
-|-----------|----------|
-| `extras/` | 13 non-ASDF .lisp files — AO (arc-oriented) solver variants and test4 integration suite |
-| `ADT-Batch/` | Generated ij4 experiment results (gitignored) |
-| `ADT-Random/` | Generated seed files (gitignored) |
-| `ADT-Situation/` | Generated ADT situations (gitignored) — Sit-quilici-i1-* |
-| `MPR-Random/` | Generated MPR seed files (gitignored) |
-| `MPR-Situation/` | Generated MPR situations (gitignored) |
+| Directory | Current role |
+|---|---|
+| `extras/` | AO helper files and legacy `test4` support not loaded by ASDF |
+| `ADT-Situation/` | Runtime-generated ADT situations |
+| `ADT-Random/` | Runtime-generated ADT random-state files |
+| `MPR-Situation/` | Runtime-generated MPR situations |
+| `MPR-Random/` | Runtime-generated MPR random-state files |
+| `ADT-Batch/` | Preserved/generated ADT batch-style output workspace tied to direct-matching runs |
 
-## AO (arc-oriented) files in extras/
+## AO Support In `extras/`
 
-The `extras/` directory contains the arc-oriented constraint propagation
-implementation, loaded by `run-test4.lisp` for integration testing.
-Also used by `run-test4-alex.lisp` (alex lacks its own AO files).
+The `extras/` directory is important, but it is not part of the ASDF system.
+It contains the arc-oriented support files used by:
+
+- `tests/ao-run.lisp`
+- `run-test4.lisp`
+- `run-test4-alex.lisp`
+
+Key files:
 
 | File | Role |
-|------|------|
-| `comment.lisp` | Comment/debug output functions |
-| `compile-ao.lisp` | AO compilation flags |
-| `ac-graph.lisp` | Arc consistency graph |
-| `hierarchy.lisp` | Variable/constraint ordering hierarchy |
-| `ao-ac3.lisp` | AO arc consistency (AC-3 variant) |
-| `ao-ac-new.lisp` | AO arc consistency (new variant) |
-| `ao-revise-fns.lisp` | AO revise helper functions |
-| `ao-revise.lisp` | AO revise (stub) |
-| `ao-revise-step.lisp` | AO revise step-by-step |
-| `ao-revise-aggressive.lisp` | AO revise aggressive |
-| `applyr.lisp` | Apply-reduce constraint propagation |
-| `example-extend.lisp` | Extended example data for AO tests |
-| `test4.lisp` | Test4 integration suite definitions |
+|---|---|
+| `ac-graph.lisp` | AO graph representation |
+| `hierarchy.lisp` | AO ordering hierarchy |
+| `ao-ac3.lisp` | AO AC-3 variant |
+| `ao-ac-new.lisp` | AO AC-new variant |
+| `ao-revise-step.lisp` | Stepwise AO revise |
+| `ao-revise-aggressive.lisp` | Aggressive AO revise |
+| `applyr.lisp` | Relation application / propagation helpers |
+| `example-extend.lisp` | Mutable example graph state used by `test4` |
+| `test4.lisp` | Legacy AO harness definitions |
+
+## Supported Validation Relationship
+
+`qcsp3/` is covered by the main supported validation spine through:
+
+- `tests/run.lisp`
+- `tests/validate-artifacts.sh`
+- `tests/validate-ao.sh`
+
+In practice that means:
+
+- queens, confused queens, ADT, MPR, and memory-search are regression-tested,
+- the supported thesis `ij2` / `ij3` / `ij4` story depends on this tree,
+- and the bounded AO baseline now asserts qcsp3 cases 1-3 plus the wrapper
+  path under `tests/ao-qcsp3-suite.lisp`.
+
+## What Is Not In This Directory
+
+- Canonical preserved thesis-era baselines live under `data/`, not here.
+- The modern batch experiment orchestration lives under `Q-Batch-SBCL/`, not
+  here.
+- Historical comparison snapshots live under `csp/`,
+  `qcsp-may29-1996/`, and `qcsp-alex-sep16-1997/`.
+
+## Practical Reading Order
+
+If you are orienting quickly:
+
+1. `package.lisp`
+2. `queens.lisp`
+3. `adt-simple.lisp`
+4. `mpr-simple.lisp`
+5. `memory-csp.lisp`
+6. `utility.lisp`
+7. `extras/` only if you are working on AO / `test4`
