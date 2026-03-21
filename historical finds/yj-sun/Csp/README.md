@@ -5,6 +5,12 @@ solver lineage behind this repository. It is not a drop-in replacement for any
  tracked snapshot, but it is clearly closest to the `qcsp-alex-sep16-1997`
 branch and preserves material that does not exist elsewhere in the repo.
 
+See also:
+
+- `RESULTS-CROSSWALK.md` for the current mapping from this archive's result
+  trees into `data/sparc-archive/PrevResults/` and the modern thesis-validation
+  pipeline.
+
 ## Current Assessment
 
 ### Closest tracked snapshot
