@@ -97,31 +97,55 @@ source for regression validation.
 
 ## 4. Relationship To `PrevResults/ff*.ci`
 
-The `ff1` / `ff2` / `ff3` family in `PrevResults/` is only partially mapped.
+The `ff1` / `ff2` / `ff3` family is now substantially better grounded than in
+the first crosswalk pass.
 
-What we can say confidently:
+What is now directly supported by archive metadata:
 
 - `ff1-ci.gp`, `ff2-ci.gp`, and `ff3-ci.gp` label the three series as
-  `Std Dist 1`, `Equal Dist 2`, and `Skewed Dist 3`.
-- `ff-PROBSIZE` and `ff-TIMING` show these are summarized distribution-based
-  comparison tables, not raw `exp-*` plots.
-- No byte-identical source files for `ff1.ci`, `ff2.ci`, `ff3.ci`,
-  `ff1.avg`, `ff2.avg`, `ff3.avg`, or `ff*.all` were found under
-  `historical finds/yj-sun/Csp/testdata/`.
+  `Std Dist 1`, `Equal Dist 2`, and `Skewed Dist 3`, and describe them as
+  `New-FCDR` runs with `2 Solns`.
+- `AA-INDEX` classifies `ff1`, `ff2`, and `ff3` as:
+  - strategy `FCDR`
+  - ordering `Srt`
+  - template `t1`
+  - instance `2, qi-2`
+  - distributions `1`, `2`, and `3`
+  - source location `NewData4b`
+- `qcsp.dir` records their original path as
+  `qcsp/NewData4b-Batch/Graph/`, and that directory listing includes:
+  - `ff1.all`, `ff2.all`, `ff3.all`
+  - `ff1.ci`, `ff2.ci`, `ff3.ci`
+  - `ff1.avg`, `ff2.avg`, `ff3.avg`
+  - raw/intermediate artifacts under `Graph/Orig/`, including
+    `ff1.raw`, `ff2.raw`, `ff3.raw`, `ff1.raw2`, `ff2.raw2`, `ff3.raw2`,
+    plus `grab-avg` and `grab-ci`
 
-What is still only an inference:
+This changes the picture materially:
 
-- The `exp-1` / `exp-2` / `exp-3` families are the most plausible upstream
-  source families for the three-way `ff*` comparison story, because they are
-  grouped together repeatedly in the archive and represent the main early
-  comparison set.
-- But there is not yet a located script or checked-in intermediate file that
-  proves `exp-*` was transformed into `ff*`.
+- `ff*` is not best understood as a derivative of
+  `historical finds/yj-sun/Csp/testdata/Results/exp-*`.
+- It is a separate, later qcsp-era experiment family from
+  `NewData4b-Batch`, preserved in `PrevResults/`.
+- It belongs to the direct ADT/FCDR lineage, not the `MyBatch` /
+  `bexp-*` experiment lane.
 
-So the current state is:
+What is still missing:
 
-- `exp-*` to `PrevResults/exp-*` and many `.ps` outputs: proven
-- `exp-*` to `PrevResults/ff*.ci`: plausible, but not yet proven
+- The actual `NewData4b-Batch` Lisp runner/source files are not present in the
+  repo.
+- We have the graph products and directory metadata, but not the checked-in
+  script that generated `ff*.all` or the raw `NewData4b` batch outputs.
+
+Best current interpretation:
+
+- `ff1` / `ff2` / `ff3` are thesis-era ADT FCDR + sorted-order comparisons over
+  three noise distributions.
+- They likely share lineage with the older `data/csp-adt-batch/` ADT batch
+  experiments because they use the same random-seed family and single-line
+  result style, but they are not the same dataset.
+- The strongest surviving provenance anchor is `qcsp/NewData4b-Batch/Graph`,
+  not `yj-sun/Csp/MyBatch`.
 
 ## 5. Relationship To The Current Thesis-Validation Pipeline
 
@@ -164,14 +188,18 @@ Current best mapping:
 
 ## 7. Best Next Step
 
-To close the remaining gap, the next highest-value search is for the script or
-intermediate artifact that generated `PrevResults/ff1.ci`, `ff2.ci`, and
-`ff3.ci` from one of:
+To close the remaining gap, the next highest-value search is now for the missing
+`NewData4b-Batch` generation path, not for a transform from `exp-*`.
 
-- the `exp-1` / `exp-2` / `exp-3` families
-- batch outputs in `MyBatch/`
-- archived result bundles such as `first-3-xy`, `first-3-cpu`, or related
-  experiment summaries
+The most promising next targets are:
+
+- any surviving `NewData4b-Batch` references elsewhere in the SPARC archive
+- notes such as `README.exper` or related experiment indexes
+- `Data/MvSit2/` situation names like `Sit-q-i2-dist{1,2,3}-*`, which may be
+  the static inputs behind the `qi-2` instance listed in `AA-INDEX`
+- the preserved `Graph/Orig/ff*.raw` / `ff*.raw2` lineage referenced by
+  `qcsp.dir`
 
 Until that bridge is found, `PrevResults/ff*.ci` should be treated as a
-historically important but only partially grounded comparison layer.
+historically important, substantially grounded comparison layer whose exact
+batch-generation source is still missing.

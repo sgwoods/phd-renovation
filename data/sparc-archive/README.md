@@ -56,6 +56,19 @@ was developed. The README.exper file notes that the source code for these
 experiments was "accidentally deleted" and changes to noise generation make
 them irreproducible.
 
+Archive metadata now grounds these files more specifically:
+
+- `AA-INDEX` identifies `ff1` / `ff2` / `ff3` as `FCDR` + `Srt` runs over
+  distributions 1, 2, and 3 for template `t1`, instance `2, qi-2`, under the
+  `NewData4b` experiment family.
+- `qcsp.dir` records their original location as
+  `qcsp/NewData4b-Batch/Graph/`, including preserved `ff*.all`, `ff*.ci`,
+  `ff*.avg`, and raw/intermediate `Graph/Orig/ff*.raw*` files.
+
+So while the generating batch Lisp is still missing, the `ff*` family is now
+better understood as a qcsp-era ADT/FCDR distribution-comparison dataset, not a
+direct precursor of the later `ij2` / `ij3` / `ij4` series.
+
 ### Other Files
 
 - `ff*-ci.gp` — Gnuplot scripts for plotting the CI data
