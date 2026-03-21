@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 from html import escape
 from pathlib import Path
 
@@ -12,9 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "docs" / "release-dashboard-data.json"
 DASHBOARD_OUTPUT_PATH = ROOT / "docs" / "release-dashboard.html"
 PUBLIC_PAGE_OUTPUT_PATH = ROOT / "docs" / "public-phd-renovation.html"
+PUBLIC_INDEX_SNIPPET_OUTPUT_PATH = ROOT / "docs" / "public-index-phd-snippet.html"
 PUBLIC_SITE_DIR = Path("/Users/stevenwoods/GitPages/public")
 PUBLIC_SITE_DASHBOARD_PATH = PUBLIC_SITE_DIR / "phd-renovation-dashboard.html"
 PUBLIC_SITE_PAGE_PATH = PUBLIC_SITE_DIR / "phd-renovation.html"
+PUBLIC_SITE_INDEX_PATH = PUBLIC_SITE_DIR / "index.html"
 
 STATUS_CLASS = {
     "done": "done",
@@ -353,6 +356,47 @@ def render_public_links(items: list[dict[str, str]]) -> str:
     return "\n".join(blocks)
 
 
+def build_public_index_snippet(data: dict[str, object]) -> str:
+    public_index = data["public_index"]
+    date_value = data["metrics"][3]["value"]
+    build_value = data["metrics"][2]["value"]
+    label = public_index["entry_label_template"].format(
+        date=date_value,
+        build=build_value,
+    )
+    return f"""        <li>
+            <a href="phd-renovation.html">{escape(public_index["entry_title"])}</a>
+            <span class="label">{escape(label)}</span>
+        </li>
+"""
+
+
+def update_public_index(data: dict[str, object], snippet_html: str) -> None:
+    if not PUBLIC_SITE_INDEX_PATH.exists():
+        return
+
+    date_value = data["metrics"][3]["value"]
+    public_index = data["public_index"]
+    note_html = (
+        f"""    <p class="note">\n"""
+        f"""        {escape(public_index["site_note_label"])}: {escape(date_value)}.\n"""
+        f"""    </p>"""
+    )
+    note_pattern = re.compile(
+        r'<p class="note">\s*Repository work last updated:.*?</p>',
+        re.S,
+    )
+    phd_pattern = re.compile(
+        r'<li>\s*<a href="phd-renovation\.html">PhD renovation project</a>.*?</li>',
+        re.S,
+    )
+
+    index_html = PUBLIC_SITE_INDEX_PATH.read_text(encoding="utf-8")
+    updated = note_pattern.sub(note_html, index_html, count=1)
+    updated = phd_pattern.sub(snippet_html.rstrip(), updated, count=1)
+    PUBLIC_SITE_INDEX_PATH.write_text(updated, encoding="utf-8")
+
+
 def build_page(data: dict[str, object], footer_html: str) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -649,12 +693,15 @@ def main() -> None:
     dashboard_html = build_page(data, data["footer_html"])
     public_dashboard_html = build_page(data, data["public_footer_html"])
     public_page_html = build_public_page(data)
+    public_index_snippet_html = build_public_index_snippet(data)
     DASHBOARD_OUTPUT_PATH.write_text(dashboard_html, encoding="utf-8")
     PUBLIC_PAGE_OUTPUT_PATH.write_text(public_page_html, encoding="utf-8")
+    PUBLIC_INDEX_SNIPPET_OUTPUT_PATH.write_text(public_index_snippet_html, encoding="utf-8")
     if PUBLIC_SITE_DIR.exists():
         try:
             PUBLIC_SITE_DASHBOARD_PATH.write_text(public_dashboard_html, encoding="utf-8")
             PUBLIC_SITE_PAGE_PATH.write_text(public_page_html, encoding="utf-8")
+            update_public_index(data, public_index_snippet_html)
         except PermissionError:
             # CI and sandboxed runs still validate the repo-local outputs.
             pass
