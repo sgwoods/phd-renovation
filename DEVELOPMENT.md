@@ -25,6 +25,8 @@ Two top-level status artifacts now help answer broader repo questions quickly:
   status table
 - `REPOSITORY-STRUCTURE-REVIEW.md`: filesystem clarity review and
   classification guide
+- `docs/project-handbook.html`: generated full readable handbook that pulls the
+  current core docs together into one indexed page
 
 New material intake now has one dedicated landing zone:
 

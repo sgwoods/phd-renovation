@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhD Renovation Handbook</title>
+  <style>
+
+:root{
+  --bg:#07131f;
+  --bg2:#10253b;
+  --card:rgba(7,19,31,0.76);
+  --card2:rgba(12,34,54,0.88);
+  --line:rgba(135,197,255,0.22);
+  --text:#eff7ff;
+  --muted:#9cc4df;
+  --done:#67e6a8;
+  --next:#79b8ff;
+  --focus:#ffd66b;
+  --shadow:0 18px 40px rgba(0,0,0,0.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--text);
+  font-family:"Avenir Next","Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(103,230,168,0.16), transparent 24%),
+    radial-gradient(circle at top right, rgba(121,184,255,0.2), transparent 30%),
+    linear-gradient(160deg, var(--bg), var(--bg2));
+  min-height:100vh;
+}
+a{color:#d9f7ff}
+code{
+  font-family:"SFMono-Regular","Menlo","Consolas",monospace;
+  background:rgba(255,255,255,0.08);
+  border-radius:8px;
+  padding:0.12rem 0.36rem;
+}
+pre{
+  overflow:auto;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(4,12,20,0.88);
+  border:1px solid rgba(255,255,255,0.08);
+}
+pre code{
+  background:transparent;
+  padding:0;
+  border-radius:0;
+}
+.shell{
+  max-width:1380px;
+  margin:0 auto;
+  padding:36px 20px 72px;
+}
+.hero{
+  padding:36px 34px 32px;
+  border:1px solid rgba(177,222,255,0.18);
+  border-radius:30px;
+  background:
+    linear-gradient(160deg, rgba(12,34,54,0.9), rgba(7,19,31,0.74)),
+    radial-gradient(circle at 20% 0%, rgba(103,230,168,0.14), transparent 32%);
+  box-shadow:var(--shadow);
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.08);
+  color:#d7ecff;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+h1{
+  margin:18px 0 10px;
+  font-size:clamp(36px,5vw,62px);
+  line-height:.95;
+  letter-spacing:-0.04em;
+}
+.hero p{
+  max-width:900px;
+  font-size:18px;
+  line-height:1.65;
+  color:var(--muted);
+}
+.meta{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin-top:28px;
+}
+.metaCard,.miniCard,.sectionCard,.toc,.noteCard{
+  border-radius:22px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:var(--shadow);
+}
+.metaCard{
+  padding:16px 18px;
+}
+.metaLabel{
+  display:block;
+  color:#8fb3cc;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.metaValue{
+  font-size:18px;
+  font-weight:600;
+}
+.metaNote{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+.quickGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:14px;
+  margin-top:22px;
+}
+.miniCard{
+  padding:18px;
+}
+.miniCard h2{
+  margin:10px 0 8px;
+  font-size:20px;
+}
+.miniCard p,.noteCard p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+}
+.contentLayout{
+  display:grid;
+  grid-template-columns:minmax(270px,320px) minmax(0,1fr);
+  gap:20px;
+  margin-top:24px;
+  align-items:start;
+}
+.toc{
+  position:sticky;
+  top:18px;
+  padding:22px 20px;
+  background:rgba(7,19,31,0.82);
+}
+.toc h2{
+  margin:0 0 12px;
+  font-size:22px;
+}
+.toc p{
+  margin:0 0 16px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.toc ul{
+  margin:0;
+  padding-left:18px;
+}
+.toc li{
+  margin:8px 0;
+  color:var(--muted);
+}
+.toc a{
+  text-decoration:none;
+}
+.toc .subtoc{
+  margin-top:6px;
+  padding-left:16px;
+}
+.mainContent{
+  display:grid;
+  gap:18px;
+}
+.sectionCard{
+  padding:24px;
+  background:var(--card);
+}
+.sectionHeader{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:14px;
+}
+.sectionTitleWrap h2{
+  margin:0 0 8px;
+  font-size:30px;
+  letter-spacing:-0.03em;
+}
+.sectionSummary{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+}
+.sectionMeta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(121,184,255,0.16);
+  border:1px solid rgba(121,184,255,0.28);
+  color:var(--text);
+  font-size:12px;
+  letter-spacing:.06em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.docBody{
+  color:#eef7ff;
+}
+.docBody h3,.docBody h4,.docBody h5,.docBody h6{
+  margin-top:1.6em;
+  margin-bottom:0.6em;
+  letter-spacing:-0.02em;
+}
+.docBody p,
+.docBody li,
+.docBody td,
+.docBody th{
+  line-height:1.7;
+}
+.docBody p,
+.docBody ul,
+.docBody ol,
+.docBody table,
+.docBody pre,
+.docBody blockquote{
+  margin-top:0.9em;
+  margin-bottom:0.9em;
+}
+.docBody ul,
+.docBody ol{
+  padding-left:22px;
+}
+.docBody blockquote{
+  margin-left:0;
+  padding:14px 16px;
+  border-left:4px solid rgba(121,184,255,0.45);
+  background:rgba(255,255,255,0.04);
+  border-radius:14px;
+  color:var(--muted);
+}
+.docBody table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+.docBody th,
+.docBody td{
+  padding:12px 14px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  text-align:left;
+  vertical-align:top;
+}
+.docBody th{
+  background:rgba(121,184,255,0.12);
+}
+.docBody tr:last-child td{
+  border-bottom:none;
+}
+.noteRow{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:14px;
+  margin-top:22px;
+}
+.noteCard{
+  padding:18px;
+}
+.noteCard h2{
+  margin:0 0 8px;
+  font-size:20px;
+}
+.footer{
+  margin-top:28px;
+  color:#8db0c8;
+  font-size:13px;
+  line-height:1.7;
+}
+@media (max-width: 980px){
+  .contentLayout{
+    grid-template-columns:1fr;
+  }
+  .toc{
+    position:static;
+  }
+}
+@media (max-width: 720px){
+  .shell{padding:20px 14px 54px}
+  .hero{padding:26px 22px 24px}
+  .sectionCard{padding:20px}
+  .sectionHeader{flex-direction:column}
+}
+
+  </style>
+</head>
+<body>
+  <!-- Generated by tools/generate-project-handbook.py -->
+  <main class="shell">
+    <section class="hero">
+      <span class="eyebrow">PhD Renovation • Complete Handbook</span>
+      <h1>Readable handbook for the full project state.</h1>
+      <p>
+        This page gathers the project's core documentation into one indexed,
+        linkable handbook. It is meant to be the human-readable companion to the
+        dashboard: architecture, status, workflows, validation scope, integration
+        targets, archive posture, and roadmap live here in one place.
+      </p>
+      <div class="meta">
+        <div class="metaCard">
+          <span class="metaLabel">Current Track</span>
+          <span class="metaValue">0.3.x</span>
+          <div class="metaNote">Milestone M1 is accepted; documentation and operator clarity are now the active front.</div>
+        </div>
+        <div class="metaCard">
+          <span class="metaLabel">Build Line</span>
+          <span class="metaValue">0.3.x-docs</span>
+          <div class="metaNote">Post-M1 documentation and operator-clarity builds.</div>
+        </div>
+        <div class="metaCard">
+          <span class="metaLabel">Current Focus</span>
+          <span class="metaValue">Operator docs</span>
+          <div class="metaNote">Operator docs are stronger, and the first csp-based ADT batch bridge probe now exists; it currently diverges from the preserved ij2 metrics, which is the next concrete investigation target.</div>
+        </div>
+        <div class="metaCard">
+          <span class="metaLabel">Updated</span>
+          <span class="metaValue">March 21, 2026</span>
+          <div class="metaNote">Dashboard now generated as part of the regular validation flow.</div>
+        </div>
+      </div>
+      <div class="quickGrid">
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-project-overview">Project Overview</a></h2>
+        <p>High-level purpose, structure, supported workflows, and active experiment story.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-repository-status">Repository Status</a></h2>
+        <p>Repo-wide answer to what is indexed, integrated, automated, and publication-validated.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-validation-matrix">Validation Matrix</a></h2>
+        <p>Current historical domain and result-family coverage against the project&#x27;s main goals.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-development-guide">Development Guide</a></h2>
+        <p>Architecture, pitfalls, build commands, and day-to-day maintenance guidance.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-workflows">Workflows</a></h2>
+        <p>Operator-facing workflow map: validation, experiments, docs sync, and intake.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-adt-batch-integration">ADT Batch Integration</a></h2>
+        <p>Current bridge strategy and investigation state for the next post-M1 integration target.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-repository-structure-review">Repository Structure Review</a></h2>
+        <p>Filesystem review: supported line, reference snapshots, archives, and mixed-purpose areas.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-renovation-roadmap">Renovation Roadmap</a></h2>
+        <p>Migration history, current phase, roadmap, and long-form status narrative.</p>
+      </article>
+      </div>
+      <div class="noteRow">
+        <article class="noteCard">
+          <h2>What this includes</h2>
+          <p>
+            The handbook assembles the repo overview, status matrix, validation
+            scope, workflows, development guide, integration notes, structure
+            review, duplication policy, and long-form roadmap into one page.
+          </p>
+        </article>
+        <article class="noteCard">
+          <h2>How it stays current</h2>
+          <p>
+            This page is generated during the same docs/status build cadence as
+            the release dashboard and public project page. Updating the source
+            docs and regenerating the project docs refreshes the handbook too.
+          </p>
+        </article>
+        <article class="noteCard">
+          <h2>Fast links</h2>
+          <p>
+            <a href="release-dashboard.html">Release dashboard</a>,
+            <a href="public-phd-renovation.html">project page</a>,
+            <a href="public-phd-renovation-handbook.html">public handbook</a>,
+            <a href="../README.md">repository root</a>.
+          </p>
+        </article>
+      </div>
+    </section>
+    <div class="contentLayout">
+      <aside class="toc">
+        <h2>Table of contents</h2>
+        <p>
+          Use this index to jump through the current documentation set without
+          losing the relationship between status, code, experiments, and archive
+          material.
+        </p>
+        <ul>
+        <li>
+          <a href="#section-project-overview">Project Overview</a>
+          <ul class="subtoc"><li><a href="#section-project-overview-what-this-is">What This Is</a></li><li><a href="#section-project-overview-project-goal">Project Goal</a></li><li><a href="#section-project-overview-project-structure">Project Structure</a></li><li><a href="#section-project-overview-where-to-look">Where To Look</a></li><li><a href="#section-project-overview-asdf-systems">ASDF Systems</a></li><li><a href="#section-project-overview-quick-start">Quick Start</a></li><li><a href="#section-project-overview-experiments">Experiments</a></li><li><a href="#section-project-overview-running-experiments">Running experiments</a></li><li><a href="#section-project-overview-generating-comparison-plots">Generating comparison plots</a></li><li><a href="#section-project-overview-results">Results</a></li><li><a href="#section-project-overview-license">License</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-repository-status">Repository Status</a>
+          <ul class="subtoc"><li><a href="#section-repository-status-status-key">Status Key</a></li><li><a href="#section-repository-status-executive-read">Executive Read</a></li><li><a href="#section-repository-status-repository-wide-coverage-table">Repository-Wide Coverage Table</a></li><li><a href="#section-repository-status-what-this-means">What This Means</a></li><li><a href="#section-repository-status-deliberate-next-integration-target">Deliberate Next Integration Target</a></li><li><a href="#section-repository-status-maintenance-rule">Maintenance Rule</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-validation-matrix">Validation Matrix</a>
+          <ul class="subtoc"><li><a href="#section-validation-matrix-first-integration-milestone">First Integration Milestone</a></li><li><a href="#section-validation-matrix-status-key">Status Key</a></li><li><a href="#section-validation-matrix-current-matrix">Current Matrix</a></li><li><a href="#section-validation-matrix-immediate-priorities">Immediate Priorities</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-m1-readiness">M1 Readiness</a>
+          <ul class="subtoc"><li><a href="#section-m1-readiness-m1-gate-checklist">M1 Gate Checklist</a></li><li><a href="#section-m1-readiness-non-blocking-for-m1">Non-Blocking For M1</a></li><li><a href="#section-m1-readiness-explicitly-outside-m1">Explicitly Outside M1</a></li><li><a href="#section-m1-readiness-practical-m1-reading">Practical M1 Reading</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-integration-deltas">Integration Deltas</a>
+          <ul class="subtoc"><li><a href="#section-integration-deltas-how-to-read-this">How To Read This</a></li><li><a href="#section-integration-deltas-current-delta-table">Current Delta Table</a></li><li><a href="#section-integration-deltas-what-m1-now-means-in-practice">What M1 Now Means In Practice</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-development-guide">Development Guide</a>
+          <ul class="subtoc"><li><a href="#section-development-guide-what-this-project-is">What This Project Is</a></li><li><a href="#section-development-guide-architecture">Architecture</a></li><li><a href="#section-development-guide-four-asdf-systems">Four ASDF Systems</a></li><li><a href="#section-development-guide-source-file-roles">Source File Roles</a></li><li><a href="#section-development-guide-key-entry-points">Key Entry Points</a></li><li><a href="#section-development-guide-domain-switching-load-calls">Domain-Switching Load Calls</a></li><li><a href="#section-development-guide-cross-package-symbol-comparison">Cross-Package Symbol Comparison</a></li><li><a href="#section-development-guide-package-exports">Package Exports</a></li><li><a href="#section-development-guide-build-and-test-commands">Build and Test Commands</a></li><li><a href="#section-development-guide-ci">CI</a></li><li><a href="#section-development-guide-test-architecture">Test Architecture</a></li><li><a href="#section-development-guide-what-the-tests-assert">What the Tests Assert</a></li><li><a href="#section-development-guide-project-layout">Project Layout</a></li><li><a href="#section-development-guide-known-pitfalls">Known Pitfalls</a></li><li><a href="#section-development-guide-1-defconstant-with-mutable-values">1. defconstant with mutable values</a></li><li><a href="#section-development-guide-2-domain-switching-load-calls">2. Domain-switching (load ...) calls</a></li><li><a href="#section-development-guide-3-domain-loaded-gets-overwritten">3. *domain-loaded* gets overwritten</a></li><li><a href="#section-development-guide-4-set-globals-argument-counts-differ">4. set-globals argument counts differ</a></li><li><a href="#section-development-guide-5-cross-package-symbol-identity">5. Cross-package symbol identity</a></li><li><a href="#section-development-guide-6-sbcl-eval-accepts-only-single-expressions">6. SBCL --eval accepts only single expressions</a></li><li><a href="#section-development-guide-7-generated-data-directories-must-exist-before-tests">7. Generated data directories must exist before tests</a></li><li><a href="#section-development-guide-8-alex-adt-is-limited">8. Alex ADT is limited</a></li><li><a href="#section-development-guide-9-return-values-differ-between-systems">9. Return values differ between systems</a></li><li><a href="#section-development-guide-10-stale-fasl-files">10. Stale .fasl files</a></li><li><a href="#section-development-guide-current-state-march-2026">Current State (March 2026)</a></li><li><a href="#section-development-guide-what-s-complete">What&#x27;s Complete</a></li><li><a href="#section-development-guide-what-s-open">What&#x27;s Open</a></li><li><a href="#section-development-guide-what-could-be-improved">What Could Be Improved</a></li><li><a href="#section-development-guide-file-modification-guidelines">File Modification Guidelines</a></li><li><a href="#section-development-guide-dependencies">Dependencies</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-workflows">Workflows</a>
+          <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-new-material-intake">5. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-manual-helpers">Manual Helpers</a>
+          <ul class="subtoc"><li><a href="#section-manual-helpers-supported-mainline-alternatives">Supported Mainline Alternatives</a></li><li><a href="#section-manual-helpers-root-helper-scripts">Root Helper Scripts</a></li><li><a href="#section-manual-helpers-run-test4-lisp">`run-test4.lisp`</a></li><li><a href="#section-manual-helpers-run-test4-may29-lisp">`run-test4-may29.lisp`</a></li><li><a href="#section-manual-helpers-run-test4-alex-lisp">`run-test4-alex.lisp`</a></li><li><a href="#section-manual-helpers-run-csp-tests-lisp">`run-csp-tests.lisp`</a></li><li><a href="#section-manual-helpers-renovate-lisp">`renovate.lisp`</a></li><li><a href="#section-manual-helpers-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-adt-batch-integration">ADT Batch Integration</a>
+          <ul class="subtoc"><li><a href="#section-adt-batch-integration-why-this-family-first">Why This Family First</a></li><li><a href="#section-adt-batch-integration-preserved-family">Preserved Family</a></li><li><a href="#section-adt-batch-integration-preserved-driver-inventory">Preserved Driver Inventory</a></li><li><a href="#section-adt-batch-integration-current-state">Current State</a></li><li><a href="#section-adt-batch-integration-first-investigation-result">First Investigation Result</a></li><li><a href="#section-adt-batch-integration-bridge-strategy">Bridge Strategy</a></li><li><a href="#section-adt-batch-integration-candidate-executable-mapping">Candidate Executable Mapping</a></li><li><a href="#section-adt-batch-integration-first-host-recommendation">First Host Recommendation</a></li><li><a href="#section-adt-batch-integration-first-concrete-deliverables">First Concrete Deliverables</a></li><li><a href="#section-adt-batch-integration-non-goal">Non-Goal</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-repository-structure-review">Repository Structure Review</a>
+          <ul class="subtoc"><li><a href="#section-repository-structure-review-top-level-classification">Top-Level Classification</a></li><li><a href="#section-repository-structure-review-what-is-already-clear">What Is Already Clear</a></li><li><a href="#section-repository-structure-review-primary-system-artifacts">Primary System Artifacts</a></li><li><a href="#section-repository-structure-review-domain-definitions">Domain Definitions</a></li><li><a href="#section-repository-structure-review-preserved-results-vs-active-validation">Preserved Results vs Active Validation</a></li><li><a href="#section-repository-structure-review-where-the-structure-is-still-doing-too-much-work">Where The Structure Is Still Doing Too Much Work</a></li><li><a href="#section-repository-structure-review-1-q-batch-sbcl-mixes-code-tracked-outputs-and-scratch-data">1. `Q-Batch-SBCL/` mixes code, tracked outputs, and scratch data</a></li><li><a href="#section-repository-structure-review-2-historical-snapshot-roots-mix-source-generated-runtime-data-and-preserved-archives">2. Historical snapshot roots mix source, generated runtime data, and preserved archives</a></li><li><a href="#section-repository-structure-review-3-root-level-legacy-helper-scripts-are-easy-to-overread">3. Root-level legacy helper scripts are easy to overread</a></li><li><a href="#section-repository-structure-review-4-some-directory-names-are-historically-accurate-but-semantically-opaque">4. Some directory names are historically accurate but semantically opaque</a></li><li><a href="#section-repository-structure-review-5-historical-finds-is-accurate-but-awkward-as-a-pathname">5. `historical finds/` is accurate but awkward as a pathname</a></li><li><a href="#section-repository-structure-review-recommended-classification-model">Recommended Classification Model</a></li><li><a href="#section-repository-structure-review-a-supported-integrated-line">A. Supported integrated line</a></li><li><a href="#section-repository-structure-review-b-reference-snapshots">B. Reference snapshots</a></li><li><a href="#section-repository-structure-review-c-preserved-result-families">C. Preserved result families</a></li><li><a href="#section-repository-structure-review-d-archive-recovery-provenance-intake">D. Archive recovery / provenance intake</a></li><li><a href="#section-repository-structure-review-e-manual-compatibility-helpers">E. Manual compatibility helpers</a></li><li><a href="#section-repository-structure-review-recommendations">Recommendations</a></li><li><a href="#section-repository-structure-review-low-risk-do-now-documentation-moves">Low-risk, do-now documentation moves</a></li><li><a href="#section-repository-structure-review-medium-risk-defer-until-worth-it-structure-moves">Medium-risk, defer-until-worth-it structure moves</a></li><li><a href="#section-repository-structure-review-do-not-do-casually">Do not do casually</a></li><li><a href="#section-repository-structure-review-bottom-line">Bottom Line</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-duplicates-review">Duplicates Review</a>
+          <ul class="subtoc"><li><a href="#section-duplicates-review-status-key">Status Key</a></li><li><a href="#section-duplicates-review-reviewed-items">Reviewed Items</a></li><li><a href="#section-duplicates-review-practical-rule">Practical Rule</a></li><li><a href="#section-duplicates-review-current-canonical-copy-rules">Current Canonical Copy Rules</a></li><li><a href="#section-duplicates-review-maintenance-rule">Maintenance Rule</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-renovation-roadmap">Renovation Roadmap</a>
+          <ul class="subtoc"><li><a href="#section-renovation-roadmap-overview">Overview</a></li><li><a href="#section-renovation-roadmap-what-changed">What Changed</a></li><li><a href="#section-renovation-roadmap-build-system">Build system</a></li><li><a href="#section-renovation-roadmap-franz-isms-removed">Franz-isms removed</a></li><li><a href="#section-renovation-roadmap-dead-code-removed">Dead code removed</a></li><li><a href="#section-renovation-roadmap-bug-fixes-found-during-renovation">Bug fixes found during renovation</a></li><li><a href="#section-renovation-roadmap-return-value-normalization">Return value normalization</a></li><li><a href="#section-renovation-roadmap-warning-suppression">Warning suppression</a></li><li><a href="#section-renovation-roadmap-what-did-not-change">What Did NOT Change</a></li><li><a href="#section-renovation-roadmap-verification">Verification</a></li><li><a href="#section-renovation-roadmap-unit-tests">Unit tests</a></li><li><a href="#section-renovation-roadmap-integration-tests">Integration tests</a></li><li><a href="#section-renovation-roadmap-experiment-replication">Experiment replication</a></li><li><a href="#section-renovation-roadmap-key-experimental-findings">Key experimental findings</a></li><li><a href="#section-renovation-roadmap-batch-experiment-issues-encountered-and-resolved">Batch experiment issues encountered and resolved</a></li><li><a href="#section-renovation-roadmap-datafind-archive-audit">DataFind Archive Audit</a></li><li><a href="#section-renovation-roadmap-remaining-work">Remaining Work</a></li><li><a href="#section-renovation-roadmap-completed">Completed</a></li><li><a href="#section-renovation-roadmap-open">Open</a></li><li><a href="#section-renovation-roadmap-next-phase-roadmap">Next Phase Roadmap</a></li><li><a href="#section-renovation-roadmap-goal-and-current-position">Goal And Current Position</a></li><li><a href="#section-renovation-roadmap-overall-project-goal">Overall project goal</a></li><li><a href="#section-renovation-roadmap-current-subgoals">Current subgoals</a></li><li><a href="#section-renovation-roadmap-where-we-are-against-that-goal">Where we are against that goal</a></li><li><a href="#section-renovation-roadmap-first-qcsp3-integration-milestone">First `qcsp3/` integration milestone</a></li><li><a href="#section-renovation-roadmap-current-roadmap-position">Current roadmap position</a></li><li><a href="#section-renovation-roadmap-recommended-next-steps">Recommended next steps</a></li><li><a href="#section-renovation-roadmap-phase-release-alignment">Phase / Release Alignment</a></li><li><a href="#section-renovation-roadmap-phase-1-stability">Phase 1: Stability</a></li><li><a href="#section-renovation-roadmap-phase-2-verification">Phase 2: Verification</a></li><li><a href="#section-renovation-roadmap-phase-3-documentation">Phase 3: Documentation</a></li><li><a href="#section-renovation-roadmap-phase-4-research-readiness">Phase 4: Research Readiness</a></li><li><a href="#section-renovation-roadmap-phase-5-archive-recovery">Phase 5: Archive Recovery</a></li><li><a href="#section-renovation-roadmap-commit-history">Commit History</a></li></ul>
+        </li>
+        </ul>
+      </aside>
+      <div class="mainContent">
+      <section class="sectionCard" id="section-project-overview">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Project Overview</h2>
+            <p class="sectionSummary">High-level purpose, structure, supported workflows, and active experiment story.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Modernized codebase from the PhD thesis <em>&quot;A Method of Program Understanding using Constraint Satisfaction&quot;</em> (Steven Woods, University of Waterloo, CS-96-33).</p>
+<p>Originally developed in Allegro Common Lisp on SPARC, renovated for SBCL on modern hardware.</p>
+<h3 id="section-project-overview-what-this-is">What This Is</h3>
+<p>A constraint satisfaction approach to automated program understanding. Given a program&#x27;s abstract syntax, the system matches it against a library of programming plans (templates) using CSP techniques to identify algorithmic patterns.</p>
+<p>Three CSP solving strategies are implemented and compared:</p>
+<ul><li><strong>MAP-CSP</strong> (<code>adt</code>): Direct CSP matching with backtracking, forward checking, and dynamic rearrangement</li><li><strong>Memory-CSP</strong> (<code>memory-search</code>): Two-phase approach using a memory of previously solved problems to guide search</li><li><strong>Quilici Search</strong>: Memory-based retrieval with similarity metrics</li></ul>
+<h3 id="section-project-overview-project-goal">Project Goal</h3>
+<p>The primary goal is not just to make the Lisp code run on modern hardware. It is to restore an integrated constraint-solver baseline that:</p>
+<ol><li>reproduces the PhD-reported results,</li><li>covers the other historical domains and reported result families preserved</li></ol>
+<p>in the repo and archive intake, and</p>
+<ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
+<p>historical solver lineage with any remaining deltas explained.</p>
+<p>Current focus: keep the supported PhD-result validation path executable end-to-end, widen the validated umbrella to additional historical result families, and use the preserved snapshots as reference baselines while the future gold-standard line takes shape. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync.</p>
+<h3 id="section-project-overview-project-structure">Project Structure</h3>
+<pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
+qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
+qcsp-may29-1996/            Historical snapshot (May 1996, includes embedded batch data)
+qcsp-alex-sep16-1997/       Historical snapshot (Sep 1997, with extended adt)
+data/                       Consolidated data directory (see data/README.md)
+  sparc-archive/            Original SPARC archive listings and thesis-era data
+  acl-experiments/          Original ACL experiment results (ij2/ij3/ij4)
+  csp-batch/                Earliest batch experiments (T1-T6, 1993-1994)
+  csp-adt-batch/            ADT domain batch experiments (ij1-ij4)
+  motors-releases/          MOTORS solver releases (.tar.Z, 1993)
+  motors-backups/           MOTORS solver backups (.zoo, 1994)
+  thesis/                   PhD thesis PDF
+Q-Batch-SBCL/               Replicated experiments (SBCL, M4 Mac)
+  Graph/                    4-way comparison plots (ACL vs qcsp3 vs alex vs may29)
+incoming/                   Single intake bucket for newly found relevant material
+tests/                      FiveAM test suites
+src/                        Entry point</code></pre>
+<h3 id="section-project-overview-where-to-look">Where To Look</h3>
+<ul><li><code>qcsp3/</code> is the primary codebase for the supported thesis-validation</li></ul>
+<p>baseline and the leading candidate for the future gold-standard integrated solver; <code>csp/</code>, <code>qcsp-may29-1996/</code>, and <code>qcsp-alex-sep16-1997/</code> are the comparison snapshots.</p>
+<ul><li><code>tests/</code> is the authoritative validation surface. It contains the Four</li></ul>
+<p>FiveAM suites, the asserted AO runner, and the artifact/thesis-result validation scripts that CI uses. The AO runner now covers the bounded M1 AO surface: qcsp3/may29 cases 1-3 plus wrappers, and the alex revise baseline.</p>
+<ul><li><code>Q-Batch-SBCL/</code> is the runnable SBCL experiment workspace. It holds the</li></ul>
+<p>modern experiment drivers, generated run directories, and comparison plots.</p>
+<ul><li><code>data/</code> holds preserved ACL/SPARC-era baselines and archive material.</li><li><code>incoming/</code> is the first stop for newly found relevant code, data,</li></ul>
+<p>publications, or experiment artifacts before review and promotion. Dump names are fine; review can normalize the folder label later if the contents reveal a better date/source name.</p>
+<ul><li><code>historical finds/</code> is archive intake and provenance work, not supported</li></ul>
+<p>baseline code.</p>
+<ul><li>Root <code>run-test4*.lisp</code>, <code>run-csp-tests.lisp</code>, and <code>renovate.lisp</code> are</li></ul>
+<p>manual compatibility helpers, not the primary supported workflow.</p>
+<ul><li><code>VALIDATION-MATRIX.md</code> summarizes which historical domains and result</li></ul>
+<p>families are executable now, integrity-checkable now, or still reference-only.</p>
+<ul><li><code>REPOSITORY-STATUS.md</code> answers the broader repo-wide question: what is</li></ul>
+<p>indexed, integrated, tested, and publication-validated.</p>
+<ul><li><code>WORKFLOWS.md</code> maps the primary supported operator workflows and the</li></ul>
+<p>secondary/manual ones.</p>
+<ul><li><code>docs/project-handbook.html</code> is the full generated human-readable handbook</li></ul>
+<p>that gathers the major status, roadmap, workflow, and architecture docs into one indexed page.</p>
+<ul><li><code>MANUAL-HELPERS.md</code> explains the repo-root helper scripts and how they</li></ul>
+<p>relate to the supported operator flow.</p>
+<ul><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code> classifies the repo layout into supported</li></ul>
+<p>systems, result archives, experiment workspaces, and archive-only material.</p>
+<ul><li><code>DUPLICATES-REVIEW.md</code> records which reviewed historical overlaps are true</li></ul>
+<p>duplicates versus which still carry archive/provenance value.</p>
+<ul><li><code>incoming/README.md</code> and <code>incoming/INDEX.md</code> define and track the intake flow</li></ul>
+<p>for future finds.</p>
+<h3 id="section-project-overview-asdf-systems">ASDF Systems</h3>
+<table><thead><tr><th>System</th><th>Directory</th><th>Description</th></tr></thead><tbody><tr><td><code>:phd-research</code></td><td><code>csp/</code></td><td>Base CSP solver with queens, ADT, MPR domains</td></tr><tr><td><code>:qcsp3</code></td><td><code>qcsp3/</code></td><td>Extended solver with memory-CSP and Quilici search</td></tr><tr><td><code>:qcsp-may29-1996</code></td><td><code>qcsp-may29-1996/</code></td><td>Historical snapshot (May 1996)</td></tr><tr><td><code>:qcsp-alex-sep16-1997</code></td><td><code>qcsp-alex-sep16-1997/</code></td><td>Historical snapshot (Sep 1997)</td></tr></tbody></table>
+<h3 id="section-project-overview-quick-start">Quick Start</h3>
+<p>Requires <a href="http://www.sbcl.org/">SBCL</a> and <a href="https://www.quicklisp.org/">Quicklisp</a>.</p>
+<pre><code class="language-bash"># Interactive REPL
+sbcl --load &quot;src/main.lisp&quot;
+
+# Run all FiveAM test suites (CSP, QCSP3, May29, Alex)
+sbcl --non-interactive --load &quot;tests/run.lisp&quot;
+
+# Run asserted AO regression coverage
+sbcl --non-interactive --load &quot;tests/ao-run.lisp&quot;
+
+# Run individual suites
+sbcl --non-interactive --load &quot;tests/csp-suite.lisp&quot;
+sbcl --non-interactive --load &quot;tests/qcsp3-suite.lisp&quot;
+sbcl --non-interactive --load &quot;tests/may29-suite.lisp&quot;
+sbcl --non-interactive --load &quot;tests/alex-suite.lisp&quot;
+
+# Run the validation spine used by CI
+bash tests/validate-artifacts.sh
+bash tests/validate-dashboard.sh
+bash tests/validate-ff-provenance.sh
+bash tests/validate-adt-batch.sh
+bash tests/validate-csp-batch.sh
+bash tests/validate-ao.sh
+
+# Run legacy/manual AO harnesses
+sbcl --non-interactive --load &quot;run-test4.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-may29.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-alex.lisp&quot;
+
+# Try it interactively
+# (qc 4)              ;; 4-Queens
+# (qc 8)              ;; 8-Queens
+# (adt)               ;; ADT pattern recognition
+# (memory-search)     ;; Two-phase memory-based search</code></pre>
+<h3 id="section-project-overview-experiments">Experiments</h3>
+<p>Three experiment series evaluate CSP search efficiency under increasing noise (50-1000 extraneous program statements):</p>
+<table><thead><tr><th>Series</th><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>ij2</td><td><code>memory-search</code></td><td>Baseline: phase 1 uses BT only</td></tr><tr><td>ij3</td><td><code>memory-search</code></td><td>Both phases with FC/DR and advance sort</td></tr><tr><td>ij4</td><td><code>adt</code> (direct)</td><td>Direct matching with FC/DR and advance sort</td></tr></tbody></table>
+<p>Each series: 20 noise levels x 10 random seeds = 200 runs per snapshot.</p>
+<h4 id="section-project-overview-running-experiments">Running experiments</h4>
+<pre><code class="language-bash"># qcsp3 (primary system)
+bash Q-Batch-SBCL/ij2.sh &amp;&amp; bash Q-Batch-SBCL/ij3.sh &amp;&amp; bash Q-Batch-SBCL/ij4.sh
+
+# Historical snapshots
+bash Q-Batch-SBCL/run-alex-all.sh      # alex (Sep 1997)
+bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
+<h4 id="section-project-overview-generating-comparison-plots">Generating comparison plots</h4>
+<pre><code class="language-bash">python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # 4-way overlay plots (uses data/acl-experiments/Graph)</code></pre>
+<h4 id="section-project-overview-results">Results</h4>
+<p>The supported SBCL baseline preserves the published ACL/SPARC experimental story for <code>ij2</code>, <code>ij3</code>, and <code>ij4</code>: the regenerated CI curves stay highly correlated with the thesis-era ACL curves, preserve the same efficiency ordering, and remain within stable per-series ratio bands. Exact magnitudes are not identical across platforms, so the repo validates historical trend preservation rather than claiming point-for-point statistical identity.</p>
+<p>The older ADT <code>ij1</code>-<code>ij4</code> archive family is now integrity-checkable through <code>tests/validate-adt-batch.sh</code>, which validates the preserved raw file grids and historical CI summaries without claiming a full modern rerun path.</p>
+<p>The earliest DREV-era <code>T1</code>-<code>T6</code> family is now integrity-checkable through <code>tests/validate-csp-batch.sh</code>, which validates the preserved summary layer in <code>data/csp-save-results/</code> against the historical batch tree and its known archive quirks.</p>
+<p>Key findings:</p>
+<ul><li>Direct CSP matching (ij4) is 10-100x more efficient than the two-phase memory approach (ij2) in constraint checks, but the memory approach provides adaptability benefits not captured by this metric.</li><li>The alex snapshot shows significantly higher TCC in ij4 because its</li></ul>
+<p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
+<p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
+<p>Directory guides:</p>
+<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<h3 id="section-project-overview-license">License</h3>
+<p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-repository-status">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Repository Status</h2>
+            <p class="sectionSummary">Repo-wide answer to what is indexed, integrated, automated, and publication-validated.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../REPOSITORY-STATUS.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file answers a broader question than <code>VALIDATION-MATRIX.md</code>:</p>
+<p><strong>Is the entire repository indexed and, where practical, integrated, tested, and validated against published or historically reported results?</strong></p>
+<p>Short answer: <strong>not entirely yet.</strong></p>
+<ul><li>The primary solver line, reference snapshots, main thesis-result pipeline,</li></ul>
+<p>bounded AO baseline, and several preserved result families are now indexed and either executable or integrity-checkable.</p>
+<ul><li>Large portions of the archive are documented and classified, but are not yet</li></ul>
+<p>part of the supported integrated line.</p>
+<ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
+<p>provenance, recovery, or context rather than active validation.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>.</p>
+<h3 id="section-repository-status-status-key">Status Key</h3>
+<ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
+<p>reported results, either executable or integrity-checkable.</p>
+<h3 id="section-repository-status-executive-read">Executive Read</h3>
+<table><thead><tr><th>Question</th><th>Current answer</th></tr></thead><tbody><tr><td>Is the whole repo indexed?</td><td>Mostly for primary systems, validation surfaces, and major archives; not exhaustively for every recovered intake subtree or legacy side directory.</td></tr><tr><td>Is the whole repo integrated?</td><td>No. <code>qcsp3/</code> plus the supported validation spine are integrated; most historical/result archives remain reference or integrity-check layers.</td></tr><tr><td>Is the whole repo tested?</td><td>No. The supported solver line and bounded AO baseline are tested and currently clean in fresh validation runs; many historical batches are integrity-checked instead of rerun.</td></tr><tr><td>Is the whole repo publication-validated?</td><td>Partially. The main thesis <code>ij2</code>/<code>ij3</code>/<code>ij4</code> story is executable and validated; several older result families are tied to publications/reports as preserved artifacts, but not all are modern reruns.</td></tr></tbody></table>
+<h3 id="section-repository-status-repository-wide-coverage-table">Repository-Wide Coverage Table</h3>
+<table><thead><tr><th>Area</th><th>Kind</th><th>Indexed</th><th>Integrated</th><th>Automated</th><th>Publication / report validation</th><th>Current read</th></tr></thead><tbody><tr><td><code>qcsp3/</code></td><td>Primary solver line</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Operational center of the supported post-M1 baseline.</td></tr><tr><td><code>csp/</code></td><td>Reference solver snapshot</td><td>Yes</td><td>Reference-only</td><td>Yes</td><td>Indirectly</td><td>Covered by regression tests and used as a comparison anchor.</td></tr><tr><td><code>qcsp-may29-1996/</code></td><td>Reference solver snapshot + embedded batches</td><td>Yes</td><td>Partly</td><td>Yes</td><td>Yes, partly</td><td>Core solver snapshot is tested; embedded batch/result trees are partly integrity-checked.</td></tr><tr><td><code>qcsp-alex-sep16-1997/</code></td><td>Reference solver snapshot + archive-heavy extras</td><td>Yes</td><td>Partly</td><td>Yes</td><td>Partly</td><td>Core snapshot is tested; some experiment/result material remains provenance-only.</td></tr><tr><td><code>tests/</code></td><td>Validation spine</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Authoritative supported validation surface.</td></tr><tr><td><code>Q-Batch-SBCL/</code></td><td>Modern experiment workspace</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Main executable thesis-result replication path, but mixes tracked infra and generated outputs.</td></tr><tr><td><code>data/acl-experiments/</code></td><td>ACL thesis-era baseline results</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Direct baseline for the supported <code>ij2</code>/<code>ij3</code>/<code>ij4</code> comparison checks.</td></tr><tr><td><code>data/sparc-archive/PrevResults/</code></td><td>Thesis-era / SPARC preserved results</td><td>Yes</td><td>Partly</td><td>Partly</td><td>Yes</td><td>Some families are integrity-checked; others are mapped but not rerun.</td></tr><tr><td><code>qcsp-may29-1996/NewData4b-Batch/</code></td><td>Preserved <code>ff*</code> family source tree</td><td>Yes</td><td>Partly</td><td>Yes</td><td>Yes</td><td><code>ff1</code>/<code>ff2</code>/<code>ff3</code> are now integrity-checked, not fully rerunnable through <code>qcsp3/</code>.</td></tr><tr><td><code>data/csp-adt-batch/</code></td><td>Preserved ADT batch results</td><td>Yes</td><td>No, but bridge investigation started</td><td>Yes</td><td>Report-linked</td><td>Integrity-checkable preserved family; the first narrow <code>csp</code>-based <code>ij2</code> bridge now runs, but it still diverges from preserved non-timing metrics.</td></tr><tr><td><code>data/csp-batch/</code> + <code>data/csp-save-results/</code></td><td>Earliest DREV-era batch family</td><td>Yes</td><td>No</td><td>Yes</td><td>Report-linked</td><td>Integrity-checkable preserved family; outside the integrated executable line.</td></tr><tr><td><code>historical finds/yj-sun/Csp/</code></td><td>Archive recovery candidate</td><td>Yes</td><td>No</td><td>No</td><td>Indirectly</td><td>Strong provenance value; not part of the supported line.</td></tr><tr><td><code>historical finds/yj-sun/Gen++/</code></td><td>Upstream toolchain archive</td><td>Partly</td><td>No</td><td>No</td><td>Indirectly</td><td>Important context for historical input generation, but not integrated.</td></tr><tr><td>Other <code>historical finds/</code> subtrees</td><td>Archive/context intake</td><td>Partly</td><td>No</td><td>No</td><td>Unclear / indirect</td><td>Preserved as recovery/context material rather than validated code or data.</td></tr><tr><td><code>data/motors-releases/</code> + <code>data/motors-backups/</code></td><td>Compressed external solver archives</td><td>Yes</td><td>No</td><td>No</td><td>Historical context</td><td>Cataloged but not unpacked into a validated path yet.</td></tr><tr><td><code>data/thesis/</code></td><td>Publication artifact</td><td>Yes</td><td>Reference-only</td><td>No</td><td>Yes</td><td>Thesis PDF is preserved as the publication anchor, not a generated artifact.</td></tr><tr><td><code>data/lost-datasets.md</code> + terrain references</td><td>Missing historical domain</td><td>Yes</td><td>No</td><td>No</td><td>Historically relevant</td><td>Explicitly tracked as the major blocked lane outside the current integrated line.</td></tr><tr><td>Root <code>run-test4*.lisp</code></td><td>Manual AO harnesses</td><td>Yes</td><td>Partly</td><td>No</td><td>Indirectly</td><td>Preserved for manual/historical use; supported AO confidence now flows through <code>tests/ao-run.lisp</code>.</td></tr><tr><td>Root <code>run-csp-tests.lisp</code> / <code>renovate.lisp</code></td><td>Legacy/manual loader helpers</td><td>Partly</td><td>No</td><td>No</td><td>No</td><td>Still usable, but secondary to <code>src/main.lisp</code> and <code>tests/</code>.</td></tr><tr><td><code>docs/</code></td><td>Generated/public status outputs</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Project-status, not research publication</td><td>First-class operator/public status artifacts driven from one source file.</td></tr></tbody></table>
+<h3 id="section-repository-status-what-this-means">What This Means</h3>
+<p>The repository now has three broad zones:</p>
+<ol><li><code>Supported integrated baseline</code></li></ol>
+<p><code>qcsp3/</code>, the validation spine in <code>tests/</code>, the modern experiment workspace in <code>Q-Batch-SBCL/</code>, and the thesis-era ACL baselines under <code>data/</code>.</p>
+<ol><li><code>Reference and integrity-check layers</code></li></ol>
+<p>Historical snapshots and preserved result families that are documented and checked, but not yet folded into one executable gold-standard line.</p>
+<ol><li><code>Archive, recovery, and context material</code></li></ol>
+<p>Recovered historical finds, compressed legacy archives, and missing-domain trackers that matter to the long-term story but are not yet integrated.</p>
+<ol><li><code>Incoming review queue</code></li></ol>
+<p>Newly found relevant material should land in <code>incoming/</code> first, then be reviewed and promoted into one of the three zones above.</p>
+<h3 id="section-repository-status-deliberate-next-integration-target">Deliberate Next Integration Target</h3>
+<p>The next post-M1 integration target should be:</p>
+<p><strong>ADT batch archives (<code>ij1</code>-<code>ij4</code> era before the SBCL replication line)</strong></p>
+<p>Why this family is the best next step:</p>
+<ol><li>it is already integrity-checkable through <code>tests/validate-adt-batch.sh</code>,</li><li>it sits closest to the direct-matching ADT solver line that <code>qcsp3/</code></li></ol>
+<p>already supports,</p>
+<ol><li>it extends historical coverage without depending on the still-blocked</li></ol>
+<p>terrain lane, and</p>
+<ol><li>it is a better post-M1 bridge than the earlier <code>T1</code>-<code>T6</code> family, which is</li></ol>
+<p>historically valuable but further away from the current integrated solver story.</p>
+<p>That means the current recommended order is:</p>
+<ol><li>finish the <code>0.3.x</code> operator-docs pass,</li><li>use the ADT batch family as the next integration experiment,</li><li>keep <code>T1</code>-<code>T6</code> as a later preserved-family target,</li><li>keep terrain as the major deferred recovery lane.</li></ol>
+<p>The current bridge note for this target lives in <code>ADT-BATCH-INTEGRATION.md</code>. Current recommendation: use <code>csp/</code> as the first executable bridge host for this family, then compare that bridge against <code>qcsp3/</code>.</p>
+<h3 id="section-repository-status-maintenance-rule">Maintenance Rule</h3>
+<p>Keep this file in sync whenever one of these changes happens:</p>
+<ol><li>a directory or result family moves from provenance-only to</li></ol>
+<p>integrity-checkable or executable,</p>
+<ol><li>a new top-level archive or workspace is added,</li><li>a previously manual workflow becomes part of the supported line, or</li><li>a result family becomes publication-validated in a stronger way than before.</li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-validation-matrix">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Validation Matrix</h2>
+            <p class="sectionSummary">Current historical domain and result-family coverage against the project&#x27;s main goals.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../VALIDATION-MATRIX.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file tracks the historical domains and result families that matter to the project&#x27;s primary goal:</p>
+<ol><li>validate the integrated solver against the PhD-reported results,</li><li>validate it against other historically reported domains/results, and</li><li>converge on one gold-standard code line that can cover that validated scope.</li></ol>
+<p><code>qcsp3/</code> is currently the leading candidate for that gold-standard line. It has now cleared Milestone M1, but it has not yet earned that status across the full historical surface.</p>
+<h3 id="section-validation-matrix-first-integration-milestone">First Integration Milestone</h3>
+<p>The first explicit gate for <code>qcsp3/</code> is:</p>
+<p><strong>Milestone M1: integrated validated baseline</strong></p>
+<p>To satisfy M1, <code>qcsp3/</code> must:</p>
+<ol><li>stay green across the current validation spine,</li><li>remain the default executable path for the supported PhD <code>ij2</code>/<code>ij3</code>/<code>ij4</code></li></ol>
+<p>story,</p>
+<ol><li>include the asserted AO baseline as part of the supported integrated line,</li><li>carry an explicit documented relationship to the preserved <code>ff*</code> family,</li></ol>
+<p>even if that family is still integrity-checkable rather than rerunnable through <code>qcsp3/</code>, and</p>
+<ol><li>document any remaining meaningful deltas versus the historical snapshots.</li></ol>
+<p>This is the first practical step toward one gold-standard code line. M1 is now accepted, but it is not the final &quot;everything historical is unified&quot; finish line.</p>
+<p>The current delta ledger for this milestone lives in <code>INTEGRATION-DELTAS.md</code>. The short gate summary for this milestone lives in <code>M1-READINESS.md</code>. The current bridge note for the next deliberate integration target lives in <code>ADT-BATCH-INTEGRATION.md</code>.</p>
+<h3 id="section-validation-matrix-status-key">Status Key</h3>
+<ul><li><code>Executable now</code>: we have a supported runnable validation path today.</li><li><code>Integrity-checkable now</code>: the preserved artifacts can be checked or compared</li></ul>
+<p>reliably, even if we do not yet have a clean modern rerun path.</p>
+<ul><li><code>Provenance-only for now</code>: the family is historically meaningful, but the</li></ul>
+<p>executable or integrity story is not yet strong enough.</p>
+<h3 id="section-validation-matrix-current-matrix">Current Matrix</h3>
+<table><thead><tr><th>Domain / result family</th><th>Historical source</th><th>Current validation status</th><th>Current executable/check path</th><th>Gold-standard target status</th></tr></thead><tbody><tr><td>Core queens regressions</td><td><code>csp/</code>, <code>qcsp3/</code>, <code>qcsp-may29-1996/</code>, <code>qcsp-alex-sep16-1997/</code></td><td>Executable now</td><td><code>tests/run.lisp</code></td><td>Covered as reference baseline; should remain covered in the integrated line</td></tr><tr><td>Confused queens metrics</td><td>same four snapshots</td><td>Executable now</td><td><code>tests/run.lisp</code></td><td>Covered as deterministic regression anchor</td></tr><tr><td>AO / <code>test4</code> baseline</td><td>root <code>run-test4*.lisp</code>, snapshot extras</td><td>Executable now</td><td><code>tests/ao-run.lisp</code>, <code>tests/validate-ao.sh</code></td><td>In scope for M1; qcsp3 and May29 now assert AO cases 1-3 across the reduction families plus <code>test4s</code> / <code>test4a</code>, while alex keeps its revise baseline</td></tr><tr><td>PhD <code>ij2</code> / <code>ij3</code> / <code>ij4</code> reported trend story</td><td><code>data/acl-experiments/Graph/</code>, thesis plots, SBCL reruns</td><td>Executable now</td><td><code>tests/validate-artifacts.sh</code>, <code>tests/validate-thesis-comparison.py</code>, <code>Q-Batch-SBCL/</code></td><td>In scope for M1; central gate for the integrated line</td></tr><tr><td>Older <code>ff1</code> / <code>ff2</code> / <code>ff3</code> FCDR distribution family</td><td><code>qcsp-may29-1996/NewData4b-Batch/</code>, <code>data/sparc-archive/PrevResults/</code></td><td>Integrity-checkable now</td><td><code>tests/validate-ff-provenance.sh</code></td><td>In scope for M1 as a documented integrity-checked family</td></tr><tr><td>Early <code>exp-1</code> / <code>exp-2</code> / <code>exp-3</code> result families</td><td><code>historical finds/yj-sun/Csp/testdata/Results/</code>, <code>data/sparc-archive/PrevResults/</code></td><td>Integrity-checkable now</td><td>Crosswalk documented in <code>historical finds/yj-sun/Csp/RESULTS-CROSSWALK.md</code></td><td>Not yet covered by the integrated line</td></tr><tr><td>ADT batch archives (<code>ij1</code>-<code>ij4</code> era before SBCL replication)</td><td><code>data/csp-adt-batch/</code>, snapshot batch trees</td><td>Integrity-checkable now; executable investigation started</td><td><code>tests/validate-adt-batch.sh</code>, <code>tests/investigate-adt-batch-bridge.sh</code></td><td>Chosen as the next deliberate post-M1 integration target; first <code>csp</code>-based <code>ij2</code> bridge case now runs but diverges from preserved non-timing metrics</td></tr><tr><td>Earliest CSP batch families (<code>T1</code>-<code>T6</code>)</td><td><code>data/csp-batch/</code>, <code>data/csp-save-results/</code></td><td>Integrity-checkable now</td><td><code>tests/validate-csp-batch.sh</code></td><td>Preserved DREV-era archive now checkable; still outside the integrated executable line</td></tr><tr><td>MPR domain behavior</td><td>source snapshots and runtime-generated situation/random files</td><td>Executable now at solver level</td><td><code>tests/run.lisp</code> MPR assertions</td><td>Covered at regression level, but not yet tied to a broader historical result family</td></tr><tr><td>Alex-specific DFA-related ADT behavior</td><td><code>qcsp-alex-sep16-1997/</code></td><td>Provenance-only for now</td><td>Diagnosed but not yet part of supported validation</td><td>Open research/integration item</td></tr><tr><td>QCSP-nov96 terrain domain</td><td><code>data/lost-datasets.md</code>, <code>QCSP-nov96.dir</code>, <code>Lacie1</code> recovery lead</td><td>Provenance-only for now</td><td>No runnable path yet; <code>Lacie1</code> reportedly contains terrain data and generator but remains unsorted</td><td>Recovery lead identified, still outside M1</td></tr></tbody></table>
+<h3 id="section-validation-matrix-immediate-priorities">Immediate Priorities</h3>
+<ol><li>Keep the currently executable PhD-result path green.</li><li>Use the current matrix to guide the post-M1 documentation and integration</li></ol>
+<p>work rather than widening the supported umbrella casually.</p>
+<ol><li>Treat the ADT batch <code>ij1</code>-<code>ij4</code> family as the next deliberate post-M1</li></ol>
+<p>integration target.</p>
+<ol><li>Keep the supported validation spine warning-clean and treat any new log</li></ol>
+<p>noise in that path as a regression signal.</p>
+<ol><li>Move the next clearly supported family or workflow only when it helps the</li></ol>
+<p>post-M1 integrated line more than it increases maintenance surface.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-m1-readiness">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>M1 Readiness</h2>
+            <p class="sectionSummary">Accepted first integration gate for the validated solver line.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../M1-READINESS.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file answers one narrow question:</p>
+<p><strong>What still matters for Milestone M1, and are any remaining non-terrain historical families still blocking it?</strong></p>
+<p>Short answer: <strong>no additional non-terrain family is currently an undisclosed M1 blocker.</strong> The only explicitly blocked major historical lane remains the terrain domain, and that is outside M1 by design.</p>
+<p>Project decision as of March 21, 2026: <strong>Milestone M1 is accepted.</strong></p>
+<h3 id="section-m1-readiness-m1-gate-checklist">M1 Gate Checklist</h3>
+<table><thead><tr><th>Gate</th><th>Current status</th><th>Evidence</th><th>M1 read</th></tr></thead><tbody><tr><td>Supported FiveAM/core baseline</td><td>Met</td><td><code>tests/run.lisp</code></td><td>Core solver baseline is already part of the validated line.</td></tr><tr><td>Supported PhD <code>ij2</code> / <code>ij3</code> / <code>ij4</code> trend story</td><td>Met</td><td><code>tests/validate-artifacts.sh</code>, <code>tests/validate-thesis-comparison.py</code></td><td>This is the central executable thesis baseline and remains the main gate.</td></tr><tr><td>Asserted AO baseline</td><td>Met for bounded scope</td><td><code>tests/ao-run.lisp</code>, <code>tests/validate-ao.sh</code></td><td>M1 accepts the current honest AO boundary: qcsp3 and May29 now assert AO cases 1-3 across the reduction families plus <code>test4s</code> / <code>test4a</code>, while alex keeps its revise baseline. Broader AO breadth can stay post-M1.</td></tr><tr><td>Preserved <code>ff1</code> / <code>ff2</code> / <code>ff3</code> relationship</td><td>Met as integrity-checked</td><td><code>tests/validate-ff-provenance.sh</code></td><td>M1 does not require <code>ff*</code> to be rerunnable through <code>qcsp3/</code>; it requires the family to stay explicitly connected and checked.</td></tr><tr><td>Meaningful snapshot deltas documented</td><td>Met</td><td><code>INTEGRATION-DELTAS.md</code></td><td>The remaining snapshot differences are now explicit rather than folklore.</td></tr><tr><td>Validation/dashboard/public status flow</td><td>Met</td><td><code>tests/validate-dashboard.sh</code>, <code>docs/public-status-phd-renovation.json</code></td><td>Operator/public status outputs are now part of the maintained baseline flow.</td></tr></tbody></table>
+<h3 id="section-m1-readiness-non-blocking-for-m1">Non-Blocking For M1</h3>
+<p>These matter historically, but they are <strong>not</strong> first-gate blockers for M1:</p>
+<table><thead><tr><th>Family / lane</th><th>Current state</th><th>Why it does not block M1</th></tr></thead><tbody><tr><td>Early <code>exp-1</code> / <code>exp-2</code> / <code>exp-3</code> families</td><td>Integrity-checkable/documented lineage</td><td>Useful for broader historical coverage, but not required for the first integrated validated line.</td></tr><tr><td>ADT batch archive (<code>ij1</code>-<code>ij4</code>)</td><td>Integrity-checkable</td><td>Important archive family, but outside the minimum M1 executable story.</td></tr><tr><td>Earliest DREV-era <code>T1</code>-<code>T6</code> family</td><td>Integrity-checkable</td><td>Historically meaningful, but also outside the minimum M1 executable story.</td></tr><tr><td>Alex DFA-option behavior</td><td>Diagnosed but not promoted into supported validation</td><td>This is a research-readiness lane, not a first integrated-baseline gate.</td></tr><tr><td>Remaining minor log noise</td><td>Small leftovers only</td><td>Worth trimming, but not strong enough to block M1 once bounded and documented.</td></tr></tbody></table>
+<h3 id="section-m1-readiness-explicitly-outside-m1">Explicitly Outside M1</h3>
+<table><thead><tr><th>Family / lane</th><th>Current state</th><th>Why it is outside M1</th></tr></thead><tbody><tr><td>QCSP-nov96 terrain domain</td><td>Provenance-only, recovery lead exists</td><td>Missing runnable artifacts still prevent inclusion; this is the one major historical gap that remains blocked outside M1.</td></tr></tbody></table>
+<h3 id="section-m1-readiness-practical-m1-reading">Practical M1 Reading</h3>
+<p>M1 is ready when we can say all of the following with a straight face:</p>
+<ol><li><code>qcsp3/</code> is the operational center of the supported thesis-result story.</li><li>The current validation spine stays green from a fresh checkout.</li><li>AO support is asserted and honestly bounded rather than hand-waved.</li><li><code>ff*</code> stays connected to the integrated line as a checked preserved family.</li><li>The remaining archive-heavy families are explicitly <em>post-M1</em> rather than</li></ol>
+<p>silently missing.</p>
+<p>That means the question is no longer &quot;what other non-terrain archive family must be pulled in before M1?&quot; M1 has been accepted, and the active question is now &quot;what documentation and operator-facing cleanup best prepares the repo for the next integration step?&quot;</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-integration-deltas">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Integration Deltas</h2>
+            <p class="sectionSummary">Ledger of meaningful remaining differences between the integrated line and preserved snapshots.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../INTEGRATION-DELTAS.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file records the remaining meaningful differences between <code>qcsp3/</code> and the historical reference snapshots that matter for Milestone M1 and the eventual gold-standard integrated solver line.</p>
+<p>It is not a changelog of every historical quirk. It is the short list of currently relevant deltas that future work should either:</p>
+<ol><li>accept and document,</li><li>reduce and validate, or</li><li>treat as an explicit blocker.</li></ol>
+<h3 id="section-integration-deltas-how-to-read-this">How To Read This</h3>
+<ul><li><code>Accept for M1</code>: documented and bounded; not a blocker for the first</li></ul>
+<p>integrated validated baseline.</p>
+<ul><li><code>Reduce after M1</code>: real gap, but not a first-gate blocker once the boundary</li></ul>
+<p>is explicit.</p>
+<ul><li><code>Blocker outside M1</code>: important, but outside the first integrated-baseline</li></ul>
+<p>target because artifacts or coverage are still missing.</p>
+<h3 id="section-integration-deltas-current-delta-table">Current Delta Table</h3>
+<table><thead><tr><th>Delta area</th><th><code>qcsp3/</code> position</th><th>Reference snapshot(s)</th><th>Why it matters</th><th>Current handling</th><th>M1 status</th></tr></thead><tbody><tr><td>Supported PhD <code>ij2</code> / <code>ij3</code> / <code>ij4</code> baseline</td><td><code>qcsp3/</code> is the default supported executable path</td><td><code>csp/</code>, <code>qcsp-may29-1996/</code>, <code>qcsp-alex-sep16-1997/</code></td><td>This is the central thesis-result story and the main modern validation gate.</td><td>CI regenerates the SBCL artifacts and checks ACL-vs-SBCL trend preservation through <code>tests/validate-artifacts.sh</code> and <code>tests/validate-thesis-comparison.py</code>.</td><td>Accept for M1</td></tr><tr><td>Alex <code>ij4</code> divergence</td><td><code>qcsp3/</code> and may29 track the supported direct-matching baseline; alex diverges sharply upward</td><td><code>qcsp-alex-sep16-1997/</code></td><td>This is the most visible solver-behavior difference among the maintained snapshots.</td><td>Root cause is documented: alex simplified <code>ts-matches-type</code>, likely expecting DFA-related options to compensate; <code>Q-Batch-SBCL/diagnose-ij4.sh</code> reproduces the effect.</td><td>Accept for M1, but keep documented</td></tr><tr><td>AO baseline breadth</td><td><code>qcsp3/</code> has asserted AO coverage for the supported deterministic baseline</td><td>AO extras / <code>run-test4*.lisp</code> paths across snapshots</td><td>AO is part of the integrated story, but the full historical AO surface is broader than the bounded supported baseline.</td><td><code>tests/ao-run.lisp</code> and <code>tests/validate-ao.sh</code> now cover qcsp3 and May29 cases 1-3 across the AO reduction families plus the legacy <code>test4s</code> / <code>test4a</code> wrappers, with alex retaining its revise baseline. Further AO expansion is now a post-M1 choice rather than a missing first-gate check.</td><td>Acceptable for M1</td></tr><tr><td><code>ff1</code> / <code>ff2</code> / <code>ff3</code> family</td><td><code>qcsp3/</code> does not yet rerun this family directly</td><td><code>qcsp-may29-1996/NewData4b-Batch/</code>, <code>data/sparc-archive/PrevResults/</code></td><td>This family is historically important and explicitly in scope for M1.</td><td>The lineage and aggregation path are documented, and <code>tests/validate-ff-provenance.sh</code> integrity-checks the preserved carry-forward artifacts.</td><td>Accept for M1 as integrity-checked, not executable</td></tr><tr><td>Early <code>exp-1</code> / <code>exp-2</code> / <code>exp-3</code> families</td><td>not yet under the integrated executable umbrella</td><td><code>historical finds/yj-sun/Csp/testdata/Results/</code>, <code>data/sparc-archive/PrevResults/</code></td><td>These help explain earlier experiment/result layers, but they are not yet part of the supported modern rerun path.</td><td>Crosswalk documented in <code>historical finds/yj-sun/Csp/RESULTS-CROSSWALK.md</code>.</td><td>Reduce after M1</td></tr><tr><td>ADT batch archives before the SBCL replication line</td><td>not yet under a modern executable path, but now structurally validated</td><td><code>data/csp-adt-batch/</code>, historical batch trees</td><td>These likely contain useful historical coverage, but they are still archive-heavy and workflow-light.</td><td><code>tests/validate-adt-batch.sh</code> now checks the preserved <code>ij1</code>-<code>ij4</code> raw grids and CI summary tables; the family is integrity-checkable rather than executable.</td><td>Reduce after M1</td></tr><tr><td>Earliest CSP batch families (<code>T1</code>-<code>T6</code>)</td><td>not yet tied to the integrated executable line, but now structurally validated</td><td><code>data/csp-batch/</code>, <code>data/csp-save-results/</code></td><td>Historically meaningful and useful as an early baseline layer, but still outside the modern executable path.</td><td><code>tests/validate-csp-batch.sh</code> now checks the preserved DREV-era summary layer and batch-tree structure, including known archive quirks.</td><td>Reduce after M1</td></tr><tr><td>QCSP-nov96 terrain domain</td><td>missing from the runnable line, but with a new recovery lead</td><td><code>QCSP-nov96.dir</code>, <code>data/lost-datasets.md</code>, <code>Lacie1</code> drive lead</td><td>This is the clearest missing historical domain, but source/data loss still prevents current integration.</td><td>Documented as outside M1, with <code>Lacie1</code> now recorded as the strongest recovery lead pending review.</td><td>Blocker outside M1</td></tr><tr><td>Validation-log noise</td><td><code>qcsp3/</code> baseline is now much quieter; the AO harness redefinition chatter is trimmed, leaving only small legacy leftovers like the alex <code>adt-setup</code> note</td><td>mostly alex setup and small historical harness leftovers</td><td>A noisy merge gate makes regressions harder to notice, even when behavior is correct.</td><td>The large alex/core STYLE-WARNING tail is cleared, and the AO/manual harness chatter has been reduced; what remains is mostly cosmetic but still worth trimming.</td><td>Reduce after M1</td></tr></tbody></table>
+<h3 id="section-integration-deltas-what-m1-now-means-in-practice">What M1 Now Means In Practice</h3>
+<p>Milestone M1 is satisfied when:</p>
+<ol><li><code>qcsp3/</code> remains the operational center of the supported thesis-result path,</li><li>the current validation spine stays green,</li><li>AO baseline support is asserted and honestly bounded,</li><li>the <code>ff*</code> family remains explicitly connected to the integrated line even if</li></ol>
+<p>it is still integrity-check-only, and</p>
+<ol><li>the deltas above remain documented instead of being implicit lore.</li></ol>
+<p>So M1 does <strong>not</strong> mean &quot;all historical families are unified already.&quot; It means the repo has crossed from &quot;best-supported candidate&quot; to &quot;first explicitly integrated validated line.&quot;</p>
+<p>For the short operational answer to &quot;what still blocks M1 right now?&quot;, see <code>M1-READINESS.md</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-development-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Development Guide</h2>
+            <p class="sectionSummary">Architecture, pitfalls, build commands, and day-to-day maintenance guidance.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../DEVELOPMENT.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Onboarding guide for AI assistants and developers working on this project.</p>
+<h3 id="section-development-guide-what-this-project-is">What This Project Is</h3>
+<p>A 1990s PhD research codebase (Common Lisp) that solves program understanding as a constraint satisfaction problem. Given a program&#x27;s abstract syntax, the solver matches it against a library of programming plans (templates) to identify algorithmic patterns like sorting, searching, or data structure operations.</p>
+<p>The codebase was originally written in Allegro Common Lisp on SPARC/Solaris (1993-1997) and has been renovated to run on SBCL (Steel Bank Common Lisp) on modern hardware. The renovation preserved algorithmic equivalence — verified by reproducing 1,800+ experiment runs with statistically matching results.</p>
+<p>The broader project goal now goes beyond renovation: use the preserved snapshots, tests, and result artifacts to converge on one gold-standard code line that can reproduce the PhD results and absorb the historically reported domains/results under a single validated umbrella.</p>
+<p>Two top-level status artifacts now help answer broader repo questions quickly:</p>
+<ul><li><code>REPOSITORY-STATUS.md</code>: repo-wide indexing/integration/testing/publication</li></ul>
+<p>status table</p>
+<ul><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code>: filesystem clarity review and</li></ul>
+<p>classification guide</p>
+<ul><li><code>docs/project-handbook.html</code>: generated full readable handbook that pulls the</li></ul>
+<p>current core docs together into one indexed page</p>
+<p>New material intake now has one dedicated landing zone:</p>
+<ul><li><code>incoming/</code>: single bucket for newly found relevant code, data,</li></ul>
+<p>publications, and experiment artifacts before review and promotion</p>
+<h3 id="section-development-guide-architecture">Architecture</h3>
+<h4 id="section-development-guide-four-asdf-systems">Four ASDF Systems</h4>
+<p>The project contains four independent ASDF systems that share the same architecture but represent different development stages:</p>
+<table><thead><tr><th>System</th><th>Package</th><th>Nickname</th><th>Directory</th><th>Files</th><th>Era</th></tr></thead><tbody><tr><td><code>:phd-research</code></td><td><code>PHD-CSP</code></td><td><code>csp</code></td><td><code>csp/</code></td><td>14</td><td>1993-1994</td></tr><tr><td><code>:qcsp3</code></td><td><code>PHD-QCSP3</code></td><td><code>qcsp3</code></td><td><code>qcsp3/</code></td><td>13</td><td>1996 (primary)</td></tr><tr><td><code>:qcsp-may29-1996</code></td><td><code>PHD-QCSP-MAY29</code></td><td><code>qcsp-may29</code></td><td><code>qcsp-may29-1996/</code></td><td>13</td><td>May 1996</td></tr><tr><td><code>:qcsp-alex-sep16-1997</code></td><td><code>PHD-QCSP-ALEX</code></td><td><code>qcsp-alex</code></td><td><code>qcsp-alex-sep16-1997/</code></td><td>14</td><td>Sep 1997</td></tr></tbody></table>
+<p><strong><code>:qcsp3</code> is the primary system and the leading integration target.</strong> The others are historical snapshots kept for comparison, provenance, and regression anchoring. All four load independently and cannot be loaded simultaneously (they define overlapping function names in separate packages).</p>
+<h4 id="section-development-guide-source-file-roles">Source File Roles</h4>
+<p>Each system has the same core files (loaded in this order via ASDF <code>:serial t</code>):</p>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody><tr><td><code>package.lisp</code></td><td>Package definition, all <code>defvar</code> declarations, exports</td></tr><tr><td><code>bm.lisp</code></td><td>BackMark search algorithm</td></tr><tr><td><code>bt.lisp</code></td><td>BackTrack search (main solver entry point)</td></tr><tr><td><code>ct.lisp</code></td><td>Constraint Techniques — AC-3 arc consistency</td></tr><tr><td><code>gsat.lisp</code></td><td>GSAT local search (qcsp3/may29/alex only)</td></tr><tr><td><code>utility.lisp</code></td><td>Output formatting, global state management, <code>set-globals</code></td></tr><tr><td><code>queens.lisp</code></td><td>N-Queens problem domain — <code>q</code>, <code>qs</code>, <code>qc</code>, <code>cq</code>, <code>cqs</code>, <code>cqc</code></td></tr><tr><td><code>mpr-simple.lisp</code></td><td>Model Pattern Recognition constraints</td></tr><tr><td><code>mpr-setup.lisp</code></td><td>MPR template/situation data and <code>save-situation</code></td></tr><tr><td><code>quilici-search.lisp</code></td><td>Constraint-ordered search (qcsp3/may29/alex only)</td></tr><tr><td><code>adt-simple.lisp</code></td><td>Abstract Data Type recognition constraints</td></tr><tr><td><code>adt-setup.lisp</code></td><td>ADT template/situation data and <code>save-situation</code></td></tr><tr><td><code>memory-csp.lisp</code></td><td>Two-phase memory-based search (qcsp3/may29/alex only)</td></tr></tbody></table>
+<h4 id="section-development-guide-key-entry-points">Key Entry Points</h4>
+<pre><code class="language-lisp">;; N-Queens (deterministic, good for testing)
+(qcsp3:qc 4)          ; 4-Queens with AC-3 → :complete
+(qcsp3:qc 8)          ; 8-Queens with AC-3 → :complete
+
+;; ADT recognition (uses random seed for noise generation)
+(qcsp3:adt :random-ident &quot;unique&quot;)
+
+;; MPR recognition
+(qcsp3:mpr :random-ident &quot;unique&quot;)
+
+;; Two-phase memory-based search
+(qcsp3:memory-search &quot;quilici-t1-index&quot; &quot;quilici-t1&quot;
+  :sit-noise 0 :random-ident &quot;unique&quot;)</code></pre>
+<h4 id="section-development-guide-domain-switching-load-calls">Domain-Switching Load Calls</h4>
+<p><strong>CRITICAL:</strong> The <code>queens.lisp</code>, <code>adt-setup.lisp</code>, and <code>mpr-setup.lisp</code> files contain runtime <code>(load ...)</code> calls that reload domain-specific function definitions when switching between queens/ADT/MPR domains. These are NOT dead code and MUST NOT be removed. They exist because the same function names (e.g., constraint checkers) are redefined per domain.</p>
+<h4 id="section-development-guide-cross-package-symbol-comparison">Cross-Package Symbol Comparison</h4>
+<p>All four systems use <code>(string-equal random-ident &quot;unique&quot;)</code> instead of <code>(eq random-ident &#x27;unique)</code> because <code>&#x27;unique</code> resolves to different symbols in different packages. Any new cross-package symbol comparisons should use <code>string-equal</code> or compare via <code>symbol-name</code>.</p>
+<h4 id="section-development-guide-package-exports">Package Exports</h4>
+<p>All four packages export:</p>
+<pre><code>q qs qc cq cqs cqc queens adt mpr bm backtracking ac-3
+set-globals show-solution show-options comment1 *unix*
+*constraint-cks* *node-consistency-checks*
+*backtrack-nodes-created* *nodes-visited*</code></pre>
+<p>qcsp3/may29/alex additionally export:</p>
+<pre><code>adt-gsat memory-search quilici-search</code></pre>
+<h3 id="section-development-guide-build-and-test-commands">Build and Test Commands</h3>
+<pre><code class="language-bash"># Load into REPL
+sbcl --load &quot;src/main.lisp&quot;
+
+# Run all FiveAM test suites (4 systems, 25 tests, ~90 assertions)
+sbcl --non-interactive --load &quot;tests/run.lisp&quot;
+
+# Run asserted AO coverage
+sbcl --non-interactive --load &quot;tests/ao-run.lisp&quot;
+
+# Run individual suites
+sbcl --non-interactive --load &quot;tests/csp-suite.lisp&quot;
+sbcl --non-interactive --load &quot;tests/qcsp3-suite.lisp&quot;
+sbcl --non-interactive --load &quot;tests/may29-suite.lisp&quot;
+sbcl --non-interactive --load &quot;tests/alex-suite.lisp&quot;
+
+# Legacy/manual AO harnesses
+sbcl --non-interactive --load &quot;run-test4.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-may29.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-alex.lisp&quot;
+
+# Full supported validation spine
+bash tests/validate-artifacts.sh
+bash tests/validate-ff-provenance.sh
+bash tests/validate-ao.sh
+
+# Run experiments (takes hours — generates 200 data points each)
+bash Q-Batch-SBCL/ij2.sh
+bash Q-Batch-SBCL/ij3.sh
+bash Q-Batch-SBCL/ij4.sh
+bash Q-Batch-SBCL/run-may29-all.sh
+bash Q-Batch-SBCL/run-alex-all.sh
+
+# Generate comparison plots (requires matplotlib)
+python3 Q-Batch-SBCL/Graph/compare-all-overlay.py   # reads ACL baselines from data/acl-experiments/Graph</code></pre>
+<h4 id="section-development-guide-ci">CI</h4>
+<p>GitHub Actions runs <code>tests/run.lisp</code>, the artifact validation smoke test (<code>tests/validate-artifacts.sh</code>), the preserved <code>ff*</code> provenance check (<code>tests/validate-ff-provenance.sh</code>), and the asserted AO regression validation (<code>tests/validate-ao.sh</code>, backed by <code>tests/ao-run.lisp</code>) on every push to <code>main</code> and on PRs. See <code>.github/workflows/test.yml</code>.</p>
+<h4 id="section-development-guide-test-architecture">Test Architecture</h4>
+<p>Tests run in separate SBCL processes (one per suite) because the four systems cannot coexist in a single Lisp image. <code>tests/run.lisp</code> orchestrates this.</p>
+<p><code>tests/</code> is the authoritative supported validation surface. The repo-root <code>run-test4*.lisp</code> scripts remain useful historical/manual harnesses, but CI and day-to-day confidence checks should flow through:</p>
+<ul><li><code>tests/run.lisp</code></li><li><code>tests/ao-run.lisp</code></li><li><code>tests/validate-artifacts.sh</code></li><li><code>tests/validate-ff-provenance.sh</code></li><li><code>tests/validate-ao.sh</code></li><li><code>tests/validate-thesis-comparison.py</code></li></ul>
+<p>Each suite:</p>
+<ol><li>Loads Quicklisp and FiveAM</li><li>Registers the project root with ASDF</li><li>Loads one ASDF system</li><li>Runs FiveAM tests with exact metric assertions</li><li>Exits with code 0 (pass) or 1 (fail)</li></ol>
+<h4 id="section-development-guide-what-the-tests-assert">What the Tests Assert</h4>
+<ul><li><strong>Queens</strong> (deterministic): exact TCC, backtrack count, nodes visited</li><li><strong>ADT/MPR</strong> (random seed <code>&quot;unique&quot;</code>): exact NCC, TCC upper-bound ceiling</li><li><strong>Memory-search</strong>: exact NCC, TCC upper-bound ceiling</li><li>Return values: <code>:complete</code>, <code>consp</code> (for memory-search results)</li></ul>
+<h3 id="section-development-guide-project-layout">Project Layout</h3>
+<pre><code>csp/                           Base CSP solver (14 source .lisp files)
+  README.md                    Snapshot guide and file-role orientation
+qcsp3/                         Extended solver (13 source files + extras/)
+qcsp-may29-1996/               May 1996 snapshot (13 source + extras/ + batch data)
+qcsp-alex-sep16-1997/          Sep 1997 snapshot (14 source + extras/ + testdata/)
+data/                          Consolidated data directory (see data/README.md)
+  sparc-archive/               Original SPARC archive listings (1993-1997)
+  acl-experiments/             ACL-era ij2/ij3/ij4 experiment results
+  csp-batch/                   Earliest batch experiments (T1-T6)
+  csp-adt-batch/               ADT domain batch experiments
+  csp-save-results/            DREV memorandum results (1993)
+  csp-misc/                    C source, parsers, docs, utility scripts
+  motors-releases/             MOTORS solver releases (.tar.Z, 1993)
+  motors-backups/              MOTORS solver backups (.zoo, 1994)
+  thesis/                      PhD thesis PDF
+  lost-datasets.md             QCSP-nov96 terrain/TCSP recovery guide
+Q-Batch-SBCL/                  SBCL experiment infrastructure
+  README.md                    Experiment/workspace guide
+  Graph/                       Analysis scripts and comparison plots
+tests/                         FiveAM test suites
+  README.md                    Validation entry points and coverage guide
+  run.lisp                     Test orchestrator (runs all 4 suites)
+  csp-suite.lisp               CSP tests (4 tests)
+  qcsp3-suite.lisp             QCSP3 tests (8 tests)
+  may29-suite.lisp             May29 tests (5 tests)
+  alex-suite.lisp              Alex tests (5 tests)
+  ao-run.lisp                  Asserted AO regression runner
+  validate-artifacts.sh        Thesis artifact regeneration/validation
+  validate-ff-provenance.sh    NewData4b/PrevResults integrity check
+  validate-ao.sh               AO validation wrapper
+  validate-thesis-comparison.py ACL-vs-SBCL thesis baseline check
+src/main.lisp                  REPL entry point
+*.asd                          ASDF system definitions (4 files)
+run-test4*.lisp                Legacy/manual AO harnesses (3 files)</code></pre>
+<h3 id="section-development-guide-known-pitfalls">Known Pitfalls</h3>
+<p>These are hard-won lessons from the ACL-to-SBCL renovation. Any AI assistant working on this code should be aware of them.</p>
+<h4 id="section-development-guide-1-defconstant-with-mutable-values">1. defconstant with mutable values</h4>
+<p>SBCL enforces <code>defconstant</code> semantics strictly. If a constant is defined with a list value, reloading the file fails because the new list is not <code>eql</code> to the old one. Use <code>defparameter</code> instead for any non-numeric, non-character, non-symbol constant.</p>
+<h4 id="section-development-guide-2-domain-switching-load-calls">2. Domain-switching (load ...) calls</h4>
+<p>The <code>(load ...)</code> calls in queens.lisp, adt-setup.lisp, and mpr-setup.lisp are <strong>runtime domain switches</strong>, not build-time includes. They reload constraint definitions when switching problem domains. Do not remove them or convert them to ASDF dependencies.</p>
+<h4 id="section-development-guide-3-domain-loaded-gets-overwritten">3. <em>domain-loaded</em> gets overwritten</h4>
+<p>ASDF loads files in serial order. If queens.lisp sets <code>*domain-loaded*</code> to <code>&#x27;queens</code>, then adt-simple.lisp (loaded later) overwrites it to <code>&#x27;adt</code>. The runtime <code>(load ...)</code> calls reset it correctly when a domain is actually invoked.</p>
+<h4 id="section-development-guide-4-set-globals-argument-counts-differ">4. set-globals argument counts differ</h4>
+<p><code>set-globals</code> takes different numbers of parameters across systems:</p>
+<ul><li>csp/qcsp3: 16 parameters</li><li>may29: 18 parameters</li><li>alex: 20 parameters</li></ul>
+<p>Callers in queens.lisp were fixed to pass the correct count with nil placeholders. If you modify <code>set-globals</code>, check all callers.</p>
+<h4 id="section-development-guide-5-cross-package-symbol-identity">5. Cross-package symbol identity</h4>
+<p><code>(eq random-ident &#x27;unique)</code> fails across packages because <code>&#x27;unique</code> is <code>PHD-QCSP3::UNIQUE</code> in one package but <code>KEYWORD:UNIQUE</code> or <code>CL-USER::UNIQUE</code> in the caller. Always use <code>string-equal</code> for cross-package comparisons.</p>
+<h4 id="section-development-guide-6-sbcl-eval-accepts-only-single-expressions">6. SBCL --eval accepts only single expressions</h4>
+<p><code>sbcl --eval &quot;(form1) (form2)&quot;</code> fails with &quot;Multiple expressions in --eval option.&quot; Write a temporary .lisp file and use <code>--load</code> instead, or chain multiple <code>--eval</code> flags.</p>
+<h4 id="section-development-guide-7-generated-data-directories-must-exist-before-tests">7. Generated data directories must exist before tests</h4>
+<p>The solver writes to <code>ADT-Random/</code>, <code>ADT-Situation/</code>, <code>MPR-Random/</code>, <code>MPR-Situation/</code> relative to the working directory. On CI (clean checkout), these don&#x27;t exist. Test suites use <code>(ensure-directories-exist &quot;DIR/dummy&quot;)</code> to create them. If you add a new test that writes data, include this call.</p>
+<h4 id="section-development-guide-8-alex-adt-is-limited">8. Alex ADT is limited</h4>
+<p>Alex&#x27;s <code>adt-setup.lisp</code> has <code>*template-object-list*</code> commented out — it loads template data from external files not included in the repository. Alex ADT tests must explicitly pass <code>:situation-id &quot;quilici-i1&quot; :template-id &quot;quilici-t1&quot;</code> to use the inline Quilici data. The alex ADT-Situation/ directory is permanently empty.</p>
+<h4 id="section-development-guide-9-return-values-differ-between-systems">9. Return values differ between systems</h4>
+<p>csp and qcsp3 bt.lisp return <code>:complete</code> (keyword). The original may29 and alex bt.lisp returned <code>&#x27;complete</code> (package-internal symbol). This was normalized to <code>:complete</code> during renovation, but tests use <code>string=</code> on <code>symbol-name</code> as an extra safety net.</p>
+<h4 id="section-development-guide-10-stale-fasl-files">10. Stale .fasl files</h4>
+<p>SBCL compiles .lisp to .fasl. If you modify a source file but a stale .fasl exists, SBCL may warn &quot;object file is older than source.&quot; Delete <code>*.fasl</code> in the source directories. They&#x27;re in <code>.gitignore</code>.</p>
+<h3 id="section-development-guide-current-state-march-2026">Current State (March 2026)</h3>
+<h4 id="section-development-guide-what-s-complete">What&#x27;s Complete</h4>
+<ul><li><strong>ACL-to-SBCL migration</strong>: All 4 systems compile and run cleanly on SBCL</li><li><strong>Package isolation</strong>: Each system in its own package with proper exports</li><li><strong>ASDF build system</strong>: 4 <code>.asd</code> files replacing manual load chains</li><li><strong>FiveAM test suites</strong>: 25 tests with TCC/NCC regression assertions</li><li><strong>GitHub Actions CI</strong>: Automated testing on push/PR</li><li><strong>Experiment replication</strong>: ij2/ij3/ij4 across qcsp3, may29, and alex</li></ul>
+<p>with ACL-vs-SBCL comparison plots and automated thesis-trend validation</p>
+<ul><li><strong>Integration tests</strong>: Arc-oriented (AO) solver tests for qcsp3, may29, alex</li><li><strong>Data consolidation</strong>: All datasets cataloged in <code>data/</code> with READMEs</li><li><strong>Warning cleanup</strong>: 0 WARNING conditions across all systems (only</li></ul>
+<p>intentional STYLE-WARNINGs from domain function redefinitions)</p>
+<ul><li><strong>Bug fixes</strong>: 8+ latent bugs found and fixed during renovation</li><li><strong>Documentation</strong>: README, RENOVATION.md, DEVELOPMENT.md, data/README.md</li></ul>
+<h4 id="section-development-guide-what-s-open">What&#x27;s Open</h4>
+<ul><li><strong>Issue #4</strong>: QCSP-nov96 terrain CSP code — 3 source files completely lost</li></ul>
+<p>from the working tree (<code>terrain-setup.lisp</code>, <code>terrain-simple.lisp</code>, <code>closure.lisp</code>). Recovery now has a concrete lead: a <code>Lacie1</code> historical drive reportedly containing terrain data and the generator. See <code>data/lost-datasets.md</code>.</p>
+<h4 id="section-development-guide-what-could-be-improved">What Could Be Improved</h4>
+<p>See GitHub Issues for tracked items. Potential improvements:</p>
+<ol><li><strong>Suppress remaining STYLE-WARNINGs</strong> — intentional domain-switching</li></ol>
+<p>redefinitions still emit ~20 STYLE-WARNINGs per system load. Could be muffled with <code>sb-ext:muffle-conditions</code> in the redefinition sites.</p>
+<ol><li><strong>Add confused-queens metric assertions</strong> — <code>cqc</code> (confused N-Queens)</li></ol>
+<p>tests only assert <code>:complete</code>, not specific TCC/BT counts.</p>
+<ol><li><strong>Extend thesis-results comparison further back</strong> — CI now checks the</li></ol>
+<p>supported ACL <code>ij2</code>/<code>ij3</code>/<code>ij4</code> baselines against regenerated SBCL tables. A later improvement would tie the older <code>data/sparc-archive/PrevResults/ff*.ci</code> family to a documented modern mapping.</p>
+<ol><li><strong>Code documentation</strong> — the core algorithms (backtracking, AC-3, memory-CSP)</li></ol>
+<p>have minimal inline comments. Adding docstrings to key functions would help future understanding.</p>
+<ol><li><strong>Explore alex DFA features</strong> — alex has <code>node-type-consis</code> and</li></ol>
+<p><code>dfa-rearrangement</code> parameters that default to nil. Enabling them in ij4 experiments might close the alex TCC divergence gap.</p>
+<ol><li><strong>Recover QCSP-nov96</strong> — sort the <code>Lacie1</code> terrain/generator lead and any</li></ol>
+<p>late-1996 backup media so the terrain domain can move from blocked archive lore toward a real validation family.</p>
+<h3 id="section-development-guide-file-modification-guidelines">File Modification Guidelines</h3>
+<ul><li><strong>Do not modify core algorithm files</strong> (bm.lisp, bt.lisp, ct.lisp) unless</li></ul>
+<p>fixing a verified bug. The renovation deliberately preserved algorithmic behavior.</p>
+<ul><li><strong>Test after every change</strong>: <code>sbcl --non-interactive --load &quot;tests/run.lisp&quot;</code></li><li><strong>Queens tests are deterministic</strong> — if queens metrics change, something</li></ul>
+<p>is wrong with the core search.</p>
+<ul><li><strong>ADT/MPR NCC is deterministic</strong> with <code>random-ident &quot;unique&quot;</code>. TCC varies</li></ul>
+<p>due to random noise generation but should stay within the test ceilings.</p>
+<ul><li>All test suites must pass before committing.</li></ul>
+<h3 id="section-development-guide-dependencies">Dependencies</h3>
+<ul><li><strong>SBCL</strong> (any recent version, 2.4+)</li><li><strong>Quicklisp</strong> (for FiveAM test framework only — no other external deps)</li><li><strong>Python 3 + matplotlib</strong> (optional, for generating comparison plots)</li><li><strong>Gnuplot</strong> (optional, for legacy plot scripts)</li></ul>
+<p>The solver itself has zero external dependencies beyond Common Lisp.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-workflows">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Workflows</h2>
+            <p class="sectionSummary">Operator-facing workflow map: validation, experiments, docs sync, and intake.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../WORKFLOWS.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the short map of the repo&#x27;s main operator-facing workflows.</p>
+<p>Use it when the question is not &quot;what does this directory contain?&quot; but &quot;what do I run for the task in front of me?&quot;</p>
+<h3 id="section-workflows-supported-primary-workflows">Supported Primary Workflows</h3>
+<h4 id="section-workflows-1-interactive-solver-use">1. Interactive Solver Use</h4>
+<p>Use this when you want a REPL with the primary integrated solver line loaded.</p>
+<pre><code class="language-bash">sbcl --load &quot;src/main.lisp&quot;</code></pre>
+<p>Best for:</p>
+<ul><li>trying <code>qcsp3:</code> entry points by hand,</li><li>exploring queens, ADT, MPR, or memory search interactively,</li><li>quick operator checks that do not need the full regression spine.</li></ul>
+<p>Main guide: <code>src/README.md</code></p>
+<h4 id="section-workflows-2-full-validation-spine">2. Full Validation Spine</h4>
+<p>Use this when you want the supported confidence check for the repo.</p>
+<pre><code class="language-bash">sbcl --non-interactive --load &quot;tests/run.lisp&quot;
+bash tests/validate-artifacts.sh
+bash tests/validate-dashboard.sh
+bash tests/validate-ff-provenance.sh
+bash tests/validate-adt-batch.sh
+bash tests/validate-csp-batch.sh
+bash tests/validate-ao.sh</code></pre>
+<p>Best for:</p>
+<ul><li>pre-merge confidence,</li><li>post-change regression checks,</li><li>confirming the supported thesis-validation baseline and status outputs.</li></ul>
+<p>Main guide: <code>tests/README.md</code></p>
+<h4 id="section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</h4>
+<p>Use this when you want to regenerate the supported SBCL experiment families.</p>
+<pre><code class="language-bash">bash Q-Batch-SBCL/ij2.sh
+bash Q-Batch-SBCL/ij3.sh
+bash Q-Batch-SBCL/ij4.sh
+bash Q-Batch-SBCL/run-may29-all.sh
+bash Q-Batch-SBCL/run-alex-all.sh</code></pre>
+<p>Best for:</p>
+<ul><li>regenerating the modern experiment workspace,</li><li>comparing qcsp3, may29, alex, and preserved ACL baselines,</li><li>rebuilding the plotted thesis-result story.</li></ul>
+<p>Main guide: <code>Q-Batch-SBCL/README.md</code></p>
+<h4 id="section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</h4>
+<p>Use this when plan/status wording changes.</p>
+<pre><code class="language-bash">python3 tools/generate-release-dashboard.py
+bash tests/validate-dashboard.sh</code></pre>
+<p>Best for:</p>
+<ul><li>keeping the release dashboard, full handbook, public project page, and</li></ul>
+<p>status manifest in sync,</p>
+<ul><li>validating that generated docs/status outputs match the structured source</li></ul>
+<p>data and tracked markdown sources.</p>
+<p>Main sources:</p>
+<ul><li><code>docs/release-dashboard-data.json</code></li><li><code>tools/generate-release-dashboard.py</code></li></ul>
+<h4 id="section-workflows-5-new-material-intake">5. New Material Intake</h4>
+<p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
+<ol><li>Drop the material under <code>incoming/</code> using any convenient dump name.</li><li>Review it.</li><li>Normalize the intake folder label if the contents reveal a better date/source.</li><li>Update <code>incoming/INDEX.md</code>.</li><li>Promote it into <code>data/</code>, <code>historical finds/</code>, a snapshot tree, or</li></ol>
+<p><code>DUPLICATES-REVIEW.md</code>.</p>
+<p>Main guides:</p>
+<ul><li><code>incoming/README.md</code></li><li><code>incoming/INDEX.md</code></li></ul>
+<h3 id="section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</h3>
+<p>These are still useful, but they are not the main supported operator path.</p>
+<h4 id="section-workflows-manual-ao-harnesses">Manual AO Harnesses</h4>
+<pre><code class="language-bash">sbcl --non-interactive --load &quot;run-test4.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-may29.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-alex.lisp&quot;</code></pre>
+<p>Use these for:</p>
+<ul><li>historical/manual AO checking,</li><li>understanding the legacy <code>test4</code> loaders,</li><li>comparing the manual harnesses to the asserted AO runner.</li></ul>
+<p>Supported AO confidence still comes from <code>tests/ao-run.lisp</code>.</p>
+<h4 id="section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</h4>
+<ul><li><code>run-csp-tests.lisp</code></li><li><code>renovate.lisp</code></li></ul>
+<p>These remain part of the repo&#x27;s historical/operator context, but they are not the primary supported flow for current work.</p>
+<h3 id="section-workflows-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the task is about confidence, use <code>tests/</code>.</p>
+<p>If the task is about interactive solver use, use <code>src/main.lisp</code>.</p>
+<p>If the task is about the thesis-result experiment story, use <code>Q-Batch-SBCL/</code>.</p>
+<p>If the task is about new finds, use <code>incoming/</code> first.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-manual-helpers">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Manual Helpers</h2>
+            <p class="sectionSummary">Role of the root helper scripts and how they differ from the supported workflows.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../MANUAL-HELPERS.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file explains the repo-root helper scripts that are still useful but are not the primary supported workflow.</p>
+<p>Use this when you are looking at the top-level <code>.lisp</code> files and want to know which ones are historical/manual helpers versus which ones define the mainline operator path.</p>
+<h3 id="section-manual-helpers-supported-mainline-alternatives">Supported Mainline Alternatives</h3>
+<p>If your goal is one of these tasks, prefer the supported mainline entry points:</p>
+<table><thead><tr><th>Task</th><th>Preferred path</th></tr></thead><tbody><tr><td>Interactive solver use</td><td><code>sbcl --load &quot;src/main.lisp&quot;</code></td></tr><tr><td>Full confidence check</td><td><code>tests/run.lisp</code> plus the <code>tests/validate-*.sh</code> spine</td></tr><tr><td>AO baseline validation</td><td><code>tests/ao-run.lisp</code> / <code>tests/validate-ao.sh</code></td></tr><tr><td>Thesis experiment replication</td><td><code>Q-Batch-SBCL/</code></td></tr></tbody></table>
+<h3 id="section-manual-helpers-root-helper-scripts">Root Helper Scripts</h3>
+<h4 id="section-manual-helpers-run-test4-lisp"><code>run-test4.lisp</code></h4>
+<p>Manual qcsp3 AO loader and runner for the legacy <code>test4</code> harness.</p>
+<p>Use it when:</p>
+<ul><li>you want to see the historical manual AO flow,</li><li>you want the printed manual harness output,</li><li>or you are comparing the manual path against the asserted AO baseline.</li></ul>
+<p>Preferred supported counterpart:</p>
+<ul><li><code>tests/ao-run.lisp</code></li><li><code>tests/validate-ao.sh</code></li></ul>
+<h4 id="section-manual-helpers-run-test4-may29-lisp"><code>run-test4-may29.lisp</code></h4>
+<p>Manual AO harness for the <code>qcsp-may29-1996</code> snapshot.</p>
+<p>Use it for manual/historical comparison work, not as the main confidence gate.</p>
+<h4 id="section-manual-helpers-run-test4-alex-lisp"><code>run-test4-alex.lisp</code></h4>
+<p>Manual AO harness for the alex snapshot.</p>
+<p>This one is especially historical in flavor because alex reuses AO support from <code>qcsp3/extras/</code> rather than carrying a self-contained AO tree of its own.</p>
+<h4 id="section-manual-helpers-run-csp-tests-lisp"><code>run-csp-tests.lisp</code></h4>
+<p>Manual loader that runs a small base-snapshot smoke pass in <code>csp/</code>.</p>
+<p>Useful for:</p>
+<ul><li>quick manual comparison against the older base snapshot,</li><li>historical orientation,</li><li>checking the older loader style.</li></ul>
+<p>Preferred supported counterpart:</p>
+<ul><li><code>tests/run.lisp</code></li></ul>
+<h4 id="section-manual-helpers-renovate-lisp"><code>renovate.lisp</code></h4>
+<p>Minimal bootstrap loader for <code>:phd-research</code>.</p>
+<p>Useful for:</p>
+<ul><li>historical renovation/bootstrap context,</li><li>loading the earliest maintained solver line directly.</li></ul>
+<p>Preferred interactive counterpart:</p>
+<ul><li><code>src/main.lisp</code></li></ul>
+<h3 id="section-manual-helpers-rule-of-thumb">Rule Of Thumb</h3>
+<p>These root helpers are worth keeping because they preserve historical usage and manual comparison paths.</p>
+<p>They are not the repo&#x27;s primary operator surface.</p>
+<p>If you are choosing where to start today:</p>
+<ol><li>use <code>src/main.lisp</code> for interactive work,</li><li>use <code>tests/</code> for confidence,</li><li>use <code>Q-Batch-SBCL/</code> for experiments,</li><li>use the root helpers only when you specifically want the historical/manual</li></ol>
+<p>path.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-adt-batch-integration">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>ADT Batch Integration</h2>
+            <p class="sectionSummary">Current bridge strategy and investigation state for the next post-M1 integration target.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../ADT-BATCH-INTEGRATION.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file defines the first deliberate post-M1 integration target:</p>
+<p><strong>bring the preserved ADT batch <code>ij1</code>-<code>ij4</code> family closer to the integrated solver line in a controlled, explainable way.</strong></p>
+<p>It does not claim that the family is executable through <code>qcsp3/</code> yet. It defines how to get there without blurring archive provenance and supported baseline behavior.</p>
+<h3 id="section-adt-batch-integration-why-this-family-first">Why This Family First</h3>
+<p>The ADT batch family is the best next integration target because:</p>
+<ol><li>it is already integrity-checkable through <code>tests/validate-adt-batch.sh</code>,</li><li>it sits close to the direct ADT matching line that still exists in the</li></ol>
+<p>maintained solver trees,</p>
+<ol><li>it extends historical coverage without depending on blocked terrain</li></ol>
+<p>recovery, and</p>
+<ol><li>it is a more natural bridge than the earlier <code>T1</code>-<code>T6</code> family, which is</li></ol>
+<p>historically valuable but farther from the current integrated solver story.</p>
+<h3 id="section-adt-batch-integration-preserved-family">Preserved Family</h3>
+<p>Current preserved source of truth:</p>
+<ul><li><code>data/csp-adt-batch/</code></li></ul>
+<p>Current integrity check:</p>
+<ul><li><code>tests/validate-adt-batch.sh</code></li></ul>
+<p>The preserved family contains four direct-CSP ADT experiment lines:</p>
+<table><thead><tr><th>Family</th><th>Historical method</th><th>Current bridge reading</th></tr></thead><tbody><tr><td><code>ij1</code></td><td>Backtracking only</td><td>ADT direct match with BT-style settings</td></tr><tr><td><code>ij2</code></td><td>FCDR</td><td>ADT direct match with FC + DR</td></tr><tr><td><code>ij3</code></td><td>AC-3 + BT</td><td>ADT direct match with AC-3 preprocessing plus BT</td></tr><tr><td><code>ij4</code></td><td>AC-3 + FCDR</td><td>ADT direct match with AC-3 preprocessing plus FC + DR</td></tr></tbody></table>
+<p>Important note:</p>
+<p>These <code>ij1</code>-<code>ij4</code> names are <strong>not</strong> the same family as the later thesis <code>ij2</code> / <code>ij3</code> / <code>ij4</code> memory-CSP line under <code>Q-Batch-SBCL/</code>.</p>
+<h3 id="section-adt-batch-integration-preserved-driver-inventory">Preserved Driver Inventory</h3>
+<p>The preserved archive does not use one driver file per family. It uses a small set of batch-part driver files plus shell wrappers:</p>
+<table><thead><tr><th>Family</th><th>Preserved driver files</th><th>Preserved shell wrapper</th><th>Historical knob pattern</th></tr></thead><tbody><tr><td><code>ij1</code></td><td><code>ij1-5-bt.lisp</code> and earlier sibling parts referenced by <code>ij1-bt.sh</code></td><td><code>ij1-bt.sh</code></td><td>plain <code>adt</code> with noise/template/random/output knobs only</td></tr><tr><td><code>ij2</code></td><td><code>ij2-1-fcdr.lisp</code> through <code>ij2-5-fcdr.lisp</code></td><td><code>ij2-fcdr.sh</code></td><td><code>adt</code> plus <code>:forward-checking t</code> and <code>:dynamic-rearrangement t</code></td></tr><tr><td><code>ij3</code></td><td><code>ij3-1-ac.lisp</code> through <code>ij3-5-ac.lisp</code></td><td><code>ij3-ac.sh</code></td><td><code>adt</code> plus <code>:arc-consis &#x27;before</code></td></tr><tr><td><code>ij4</code></td><td><code>ij4-1-acfcdr.lisp</code> and sibling parts referenced by <code>ij4-acfcdr.sh</code></td><td><code>ij4-acfcdr.sh</code></td><td><code>adt</code> plus <code>:arc-consis &#x27;before</code>, <code>:forward-checking t</code>, and <code>:dynamic-rearrangement t</code></td></tr></tbody></table>
+<p>Shared preserved facts across those drivers:</p>
+<ol><li>they all call <code>adt</code> directly,</li><li>they all use <code>:situation-id &quot;adt-t2-1&quot;</code> and <code>:template-id &quot;adt-t2&quot;</code>,</li><li>they all vary <code>:sit-noise</code>, <code>:random-ident</code>, and <code>:output-file</code>,</li><li>they all depend on the old <code>load</code> chain rooted in the base <code>csp</code> tree,</li><li>and the shell wrappers all run from historical <code>/u/sgwoods/csp</code>.</li></ol>
+<h3 id="section-adt-batch-integration-current-state">Current State</h3>
+<p>What is already true:</p>
+<ul><li>the archive structure is preserved,</li><li>the raw result grids are present,</li><li>the historical CI summaries are present,</li><li>the family is automated as an integrity check,</li><li>and the repo now treats it as the next post-M1 bridge.</li></ul>
+<p>What is not true yet:</p>
+<ul><li>there is no supported modern rerun workflow for this family,</li><li>there is no normalized qcsp3-era driver for these experiment modes,</li><li>and there is no published equivalence claim between a modern rerun and the</li></ul>
+<p>preserved ADT batch summaries.</p>
+<h3 id="section-adt-batch-integration-first-investigation-result">First Investigation Result</h3>
+<p>The first narrow executable bridge now exists for one preserved case:</p>
+<ul><li>family: <code>ij2</code></li><li>case: <code>noise 50</code>, <code>random-ident &quot;default&quot;</code></li><li>host: <code>csp:adt</code></li></ul>
+<p>Current result:</p>
+<ul><li>the bridge runs successfully through <code>csp:adt</code>,</li><li>it reproduces the expected knob pattern (<code>BT</code>, node consistency on, no AC,</li></ul>
+<p><code>FC</code>, <code>DR</code>, <code>random-ident default</code>, <code>RANDOM</code> ordering),</p>
+<ul><li>but it does <strong>not</strong> yet reproduce the preserved non-timing metrics.</li></ul>
+<p>Current observed divergence versus preserved <code>ij2-050.1</code>:</p>
+<table><thead><tr><th>Metric</th><th>Preserved</th><th>Current bridge</th></tr></thead><tbody><tr><td>Average domain size</td><td>10.8</td><td>14.6</td></tr><tr><td>NCC</td><td>450</td><td>525</td></tr><tr><td>TCC</td><td>269</td><td>884</td></tr><tr><td>BT / visited</td><td>13 / 16</td><td>25 / 28</td></tr><tr><td>FC cost</td><td>366</td><td>890</td></tr><tr><td>DR cost</td><td>18</td><td>50</td></tr></tbody></table>
+<p>That means the first bridge is already useful: it has moved the ADT batch family from &quot;pure archive&quot; to &quot;executable investigation,&quot; but it has not yet crossed into reproduction.</p>
+<h3 id="section-adt-batch-integration-bridge-strategy">Bridge Strategy</h3>
+<p>The safest bridge is:</p>
+<ol><li>keep <code>data/csp-adt-batch/</code> as the preserved historical source,</li><li>document the experiment-to-search-mode mapping clearly,</li><li>identify which maintained solver line is the best executable stand-in for</li></ol>
+<p>each family,</p>
+<ol><li>create a modern reproduction harness only after that mapping is stable, and</li><li>compare modern outputs against the preserved archive without rewriting the</li></ol>
+<p>archive itself.</p>
+<h3 id="section-adt-batch-integration-candidate-executable-mapping">Candidate Executable Mapping</h3>
+<p>Working hypothesis:</p>
+<table><thead><tr><th>Preserved family</th><th>Closest maintained executable line</th></tr></thead><tbody><tr><td><code>ij1</code></td><td><code>csp:adt</code> or <code>qcsp3:adt</code> with BT-oriented settings</td></tr><tr><td><code>ij2</code></td><td><code>csp:adt</code> or <code>qcsp3:adt</code> with FC + DR</td></tr><tr><td><code>ij3</code></td><td><code>csp:adt</code> or <code>qcsp3:adt</code> with AC-3 + BT</td></tr><tr><td><code>ij4</code></td><td><code>csp:adt</code> or <code>qcsp3:adt</code> with AC-3 + FC + DR</td></tr></tbody></table>
+<p>This mapping is the bridge hypothesis, not a finished validation claim.</p>
+<h3 id="section-adt-batch-integration-first-host-recommendation">First Host Recommendation</h3>
+<p>For the <strong>first executable bridge</strong>, the better host is:</p>
+<p><strong><code>csp/</code> first, then compare against <code>qcsp3/</code> later if useful.</strong></p>
+<p>Why <code>csp/</code> is the better first bridge host:</p>
+<ol><li>the preserved drivers are clearly rooted in the historical base solver tree</li></ol>
+<p>(<code>/u/sgwoods/csp</code>) rather than a later integrated line,</p>
+<ol><li><code>csp:adt</code> already matches the preserved default IDs</li></ol>
+<p>(<code>&quot;adt-t2-1&quot;</code> / <code>&quot;adt-t2&quot;</code>),</p>
+<ol><li>the preserved driver knobs map directly onto the simpler <code>csp:adt</code></li></ol>
+<p>interface without having to neutralize qcsp3-specific defaults,</p>
+<ol><li><code>qcsp3:adt</code> adds later integrated-line features and different defaults</li></ol>
+<p>(for example the Quilici-oriented defaults and extra override/suppression controls), which make it a stronger long-term target but a noisier first reproduction surface,</p>
+<ol><li>and a first successful <code>csp</code> bridge will give us a cleaner historical</li></ol>
+<p>reference point before we ask whether <code>qcsp3</code> can stand in for the same family.</p>
+<p>So the recommended sequence is:</p>
+<ol><li>build the first narrow rerun harness against <code>csp:adt</code>,</li><li>validate that it reproduces the preserved family shape credibly,</li><li>then investigate whether <code>qcsp3:adt</code> can inherit or absorb that bridge.</li></ol>
+<h3 id="section-adt-batch-integration-first-concrete-deliverables">First Concrete Deliverables</h3>
+<p>The next useful steps for this bridge are:</p>
+<ol><li>inventory the preserved <code>ij*.lisp</code>, shell runners, and summary scripts under</li></ol>
+<p><code>data/csp-adt-batch/</code>,</p>
+<ol><li>map their knobs onto the maintained ADT entry points,</li><li>define the first narrow <code>csp:adt</code> rerun harness for one family,</li><li>define what &quot;success&quot; means for that first rerun:</li></ol>
+<p>exact file-shape match, trend match, or bounded metric match,</p>
+<ol><li>only then decide how and whether <code>qcsp3</code> should absorb the bridge.</li></ol>
+<p>The first three steps are now complete at investigation level. The next live question is whether the current divergence comes from:</p>
+<ol><li>changed random-state lineage,</li><li>changed ADT situation/template data,</li><li>solver-behavior drift in <code>csp/</code>,</li><li>or a difference between preserved batch-output conventions and the current</li></ol>
+<p>base solver reporting path.</p>
+<h3 id="section-adt-batch-integration-non-goal">Non-Goal</h3>
+<p>This bridge does <strong>not</strong> mean:</p>
+<ul><li>rewriting the preserved historical files,</li><li>moving the archive under <code>qcsp3/</code>,</li><li>or claiming the family is already integrated just because it is now a named</li></ul>
+<p>target.</p>
+<p>The goal is to turn an integrity-checkable preserved family into the next deliberate integration experiment, with provenance still intact.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-repository-structure-review">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Repository Structure Review</h2>
+            <p class="sectionSummary">Filesystem review: supported line, reference snapshots, archives, and mixed-purpose areas.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../REPOSITORY-STRUCTURE-REVIEW.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file reviews whether the repository layout makes it clear:</p>
+<ol><li>what the primary system artifacts are,</li><li>what defines domains and example generation,</li><li>what counts as outputs, preserved results, and graphs, and</li><li>what remains non-tested, non-integrated, or archive-only.</li></ol>
+<p>Short answer: <strong>the repo is much clearer than it was, but a few mixed-purpose areas still require insider knowledge.</strong></p>
+<h3 id="section-repository-structure-review-top-level-classification">Top-Level Classification</h3>
+<table><thead><tr><th>Path</th><th>Primary role</th><th>Current clarity</th></tr></thead><tbody><tr><td><code>qcsp3/</code></td><td>Primary integrated solver candidate</td><td>Good</td></tr><tr><td><code>csp/</code></td><td>Earliest reference snapshot</td><td>Good</td></tr><tr><td><code>qcsp-may29-1996/</code></td><td>Reference snapshot plus embedded historical experiment trees</td><td>Mixed</td></tr><tr><td><code>qcsp-alex-sep16-1997/</code></td><td>Reference snapshot plus archive-heavy experiment/tooling material</td><td>Mixed</td></tr><tr><td><code>tests/</code></td><td>Supported validation spine</td><td>Strong</td></tr><tr><td><code>Q-Batch-SBCL/</code></td><td>Modern experiment drivers plus generated outputs</td><td>Mixed</td></tr><tr><td><code>incoming/</code></td><td>Single intake bucket for newly found relevant material</td><td>Strong</td></tr><tr><td><code>data/</code></td><td>Consolidated preserved data/results/publications</td><td>Strong</td></tr><tr><td><code>historical finds/</code></td><td>Archive intake and recovery staging</td><td>Good</td></tr><tr><td><code>docs/</code></td><td>Generated status/dashboard/public-page outputs</td><td>Good</td></tr><tr><td><code>src/</code></td><td>Modern interactive entry point</td><td>Strong</td></tr><tr><td>Root helper scripts</td><td>Legacy/manual entry points and bootstrap helpers</td><td>Mixed</td></tr></tbody></table>
+<h3 id="section-repository-structure-review-what-is-already-clear">What Is Already Clear</h3>
+<h4 id="section-repository-structure-review-primary-system-artifacts">Primary System Artifacts</h4>
+<p>These are reasonably easy to identify now:</p>
+<table><thead><tr><th>Area</th><th>Why it is clear</th></tr></thead><tbody><tr><td><code>qcsp3/</code>, <code>csp/</code>, <code>qcsp-may29-1996/</code>, <code>qcsp-alex-sep16-1997/</code></td><td>Snapshot names, ASDF files, and README coverage make the solver lineage visible.</td></tr><tr><td><code>tests/</code></td><td>Clearly framed as the supported validation surface.</td></tr><tr><td><code>src/main.lisp</code></td><td>Clear REPL-oriented entry point.</td></tr><tr><td><code>data/</code></td><td>Consolidated preserved data/results catalog with a strong README.</td></tr></tbody></table>
+<h4 id="section-repository-structure-review-domain-definitions">Domain Definitions</h4>
+<p>Within each solver snapshot, the domain split is mostly legible:</p>
+<table><thead><tr><th>File family</th><th>Meaning</th></tr></thead><tbody><tr><td><code>queens.lisp</code></td><td>Queens / confused-queens domain</td></tr><tr><td><code>adt-simple.lisp</code> + <code>adt-setup.lisp</code></td><td>ADT matching domain and its data/setup</td></tr><tr><td><code>mpr-simple.lisp</code> + <code>mpr-setup.lisp</code></td><td>MPR domain and its data/setup</td></tr><tr><td><code>memory-csp.lisp</code>, <code>quilici-search.lisp</code>, <code>bm.lisp</code>, <code>bt.lisp</code></td><td>Solver/search strategies rather than domain definitions</td></tr></tbody></table>
+<h4 id="section-repository-structure-review-preserved-results-vs-active-validation">Preserved Results vs Active Validation</h4>
+<p>This is now understandable at a high level:</p>
+<table><thead><tr><th>Area</th><th>Meaning</th></tr></thead><tbody><tr><td><code>Q-Batch-SBCL/</code></td><td>Active modern experiment control surface</td></tr><tr><td><code>data/acl-experiments/</code></td><td>Preserved ACL thesis-era baseline</td></tr><tr><td><code>data/csp-adt-batch/</code>, <code>data/csp-batch/</code>, <code>data/csp-save-results/</code></td><td>Preserved historical result families</td></tr><tr><td><code>historical finds/</code></td><td>Recovered archive material, not yet promoted</td></tr></tbody></table>
+<h3 id="section-repository-structure-review-where-the-structure-is-still-doing-too-much-work">Where The Structure Is Still Doing Too Much Work</h3>
+<h4 id="section-repository-structure-review-1-q-batch-sbcl-mixes-code-tracked-outputs-and-scratch-data">1. <code>Q-Batch-SBCL/</code> mixes code, tracked outputs, and scratch data</h4>
+<p>This directory is useful but not self-evident at a glance because it contains:</p>
+<ul><li>tracked experiment drivers,</li><li>tracked graph scripts,</li><li>tracked comparison PNGs,</li><li>and runtime-generated run directories and extracted graph tables.</li></ul>
+<p>The README explains this, but the directory still behaves like both <code>experiments/</code> and <code>artifacts/</code> at once.</p>
+<h4 id="section-repository-structure-review-2-historical-snapshot-roots-mix-source-generated-runtime-data-and-preserved-archives">2. Historical snapshot roots mix source, generated runtime data, and preserved archives</h4>
+<p>This is especially true in:</p>
+<ul><li><code>qcsp-may29-1996/</code></li><li><code>qcsp-alex-sep16-1997/</code></li></ul>
+<p>For example, <code>qcsp-may29-1996/</code> contains source files alongside <code>Q-Batch/</code>, <code>NewData*</code> batches, <code>ADT-SituationMar96/</code>, and other embedded historical artifacts. That is historically faithful, but structurally mixed.</p>
+<p>One reviewed exception is now explicitly marked in-place: <code>qcsp-may29-1996/Q-Batch/</code> is a preserved duplicate of <code>data/acl-experiments/</code>, retained for snapshot integrity rather than active use.</p>
+<h4 id="section-repository-structure-review-3-root-level-legacy-helper-scripts-are-easy-to-overread">3. Root-level legacy helper scripts are easy to overread</h4>
+<p>Files like:</p>
+<ul><li><code>run-test4.lisp</code></li><li><code>run-test4-may29.lisp</code></li><li><code>run-test4-alex.lisp</code></li><li><code>run-csp-tests.lisp</code></li><li><code>renovate.lisp</code></li></ul>
+<p>are still valuable, but they look more “primary” than they really are. In the current repo they are secondary/manual helpers, not the main supported flow.</p>
+<h4 id="section-repository-structure-review-4-some-directory-names-are-historically-accurate-but-semantically-opaque">4. Some directory names are historically accurate but semantically opaque</h4>
+<p>Examples:</p>
+<ul><li><code>Q-Batch-SBCL/</code></li><li><code>NewData4a-Batch/</code>, <code>NewData4b-Batch/</code>, <code>NewData5-Batch/</code></li><li><code>Q-Batch-Freeze/</code></li><li><code>MyBatch/</code></li><li><code>artifacts/</code> inside snapshots</li></ul>
+<p>These names preserve provenance, which is good, but they do not explain their role without documentation.</p>
+<h4 id="section-repository-structure-review-5-historical-finds-is-accurate-but-awkward-as-a-pathname">5. <code>historical finds/</code> is accurate but awkward as a pathname</h4>
+<p>The name is understandable to humans, but the space in the directory name adds friction for shell work and scripting.</p>
+<h3 id="section-repository-structure-review-recommended-classification-model">Recommended Classification Model</h3>
+<p>Going forward, read the repo through these buckets:</p>
+<h4 id="section-repository-structure-review-a-supported-integrated-line">A. Supported integrated line</h4>
+<ul><li><code>qcsp3/</code></li><li><code>tests/</code></li><li><code>Q-Batch-SBCL/</code></li><li>active status outputs in <code>docs/</code></li><li>thesis baseline inputs under <code>data/acl-experiments/</code></li></ul>
+<h4 id="section-repository-structure-review-b-reference-snapshots">B. Reference snapshots</h4>
+<ul><li><code>csp/</code></li><li><code>qcsp-may29-1996/</code></li><li><code>qcsp-alex-sep16-1997/</code></li></ul>
+<h4 id="section-repository-structure-review-c-preserved-result-families">C. Preserved result families</h4>
+<ul><li><code>data/csp-adt-batch/</code></li><li><code>data/csp-batch/</code></li><li><code>data/csp-save-results/</code></li><li><code>data/sparc-archive/PrevResults/</code></li><li>embedded batch trees such as <code>qcsp-may29-1996/NewData4b-Batch/</code></li></ul>
+<h4 id="section-repository-structure-review-d-archive-recovery-provenance-intake">D. Archive recovery / provenance intake</h4>
+<ul><li><code>incoming/</code></li><li><code>historical finds/</code></li><li><code>data/motors-releases/</code></li><li><code>data/motors-backups/</code></li><li><code>data/lost-datasets.md</code></li></ul>
+<h4 id="section-repository-structure-review-e-manual-compatibility-helpers">E. Manual compatibility helpers</h4>
+<ul><li>root <code>run-test4*.lisp</code></li><li><code>run-csp-tests.lisp</code></li><li><code>renovate.lisp</code></li></ul>
+<h3 id="section-repository-structure-review-recommendations">Recommendations</h3>
+<h4 id="section-repository-structure-review-low-risk-do-now-documentation-moves">Low-risk, do-now documentation moves</h4>
+<ol><li>Keep <code>REPOSITORY-STATUS.md</code> and this file linked from <code>README.md</code>.</li><li>Add one short top-level note in <code>README.md</code> that root <code>run-test4*.lisp</code>,</li></ol>
+<p><code>run-csp-tests.lisp</code>, and <code>renovate.lisp</code> are manual compatibility helpers.</p>
+<ol><li>Add one short note in snapshot READMEs clarifying which subdirectories are:</li></ol>
+<p>source, runtime-generated data, preserved results, and archive/context.</p>
+<ol><li>Keep all new finds landing in <code>incoming/</code> first, then promote them only</li></ol>
+<p>after review.</p>
+<h4 id="section-repository-structure-review-medium-risk-defer-until-worth-it-structure-moves">Medium-risk, defer-until-worth-it structure moves</h4>
+<ol><li>Consider an eventual rename or alias scheme for mixed workspaces such as</li></ol>
+<p><code>Q-Batch-SBCL/</code> only if the historical name stops paying its way.</p>
+<ol><li>Consider a future <code>manual/</code> or <code>compat/</code> home for root helper scripts, but</li></ol>
+<p>only if that does not break established references or provenance.</p>
+<ol><li>Consider a future no-space alias for <code>historical finds/</code> if automation</li></ol>
+<p>pressure grows.</p>
+<h4 id="section-repository-structure-review-do-not-do-casually">Do not do casually</h4>
+<ol><li>Do not flatten embedded historical batch trees out of snapshot directories</li></ol>
+<p>just to make the layout prettier.</p>
+<ol><li>Do not rename historically meaningful directories like <code>NewData4b-Batch/</code></li></ol>
+<p>unless the repo adds a carefully documented alias/mapping layer.</p>
+<ol><li>Do not mix archive-intake material into the supported integrated line</li></ol>
+<p>without first promoting it through validation/provenance work.</p>
+<h3 id="section-repository-structure-review-bottom-line">Bottom Line</h3>
+<p>The repository already tells a coherent story if you know where to start: <code>qcsp3/</code>, <code>tests/</code>, <code>Q-Batch-SBCL/</code>, <code>data/</code>, and the roadmap files.</p>
+<p>What remains structurally confusing is not the solver core. It is the historical overlap between:</p>
+<ul><li>source vs embedded results inside snapshot roots,</li><li>tracked experiment infrastructure vs generated outputs,</li><li>and manual compatibility helpers vs supported workflows.</li></ul>
+<p>That means the next best improvements are documentation and labeling, not aggressive directory surgery.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-duplicates-review">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Duplicates Review</h2>
+            <p class="sectionSummary">Which reviewed historical overlaps are duplicates versus preserved provenance layers.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../DUPLICATES-REVIEW.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file records historical data and files that have been reviewed for redundancy.</p>
+<p>Its purpose is to separate two different cases clearly:</p>
+<ol><li><strong>Reviewed duplicate / redundant for the active main project</strong></li></ol>
+<p>The repo already has a canonical copy elsewhere, and the duplicate is kept only for snapshot integrity or provenance.</p>
+<ol><li><strong>Looks duplicate, but still has go-forward value</strong></li></ol>
+<p>The material overlaps another tree, but still matters for lineage, historical context, or recovery work.</p>
+<h3 id="section-duplicates-review-status-key">Status Key</h3>
+<ul><li><code>Canonical elsewhere</code>: do not treat this copy as the active source of truth.</li><li><code>Retain for provenance</code>: keep it, but do not build new supported workflows on it.</li><li><code>Still go-forward valuable</code>: overlapping material still has a distinct role.</li></ul>
+<h3 id="section-duplicates-review-reviewed-items">Reviewed Items</h3>
+<table><thead><tr><th>Area</th><th>Review result</th><th>Canonical / active path</th><th>Why kept</th><th>Go-forward read</th></tr></thead><tbody><tr><td><code>qcsp-may29-1996/Q-Batch/</code></td><td>Reviewed duplicate</td><td><code>data/acl-experiments/</code></td><td>Preserved inside the May 1996 snapshot for historical integrity</td><td>Not needed as a separate active dataset in the main project</td></tr><tr><td><code>qcsp-may29-1996/Q-Batch/Graph/ij2-ci.dat</code>, <code>ij3-ci.dat</code>, <code>ij4-ci.dat</code></td><td>Verified duplicate by content</td><td><code>data/acl-experiments/Graph/ij2-ci.dat</code>, <code>ij3-ci.dat</code>, <code>ij4-ci.dat</code></td><td>Snapshot-local preserved copy</td><td>Canonical validation should use <code>data/acl-experiments/Graph/</code></td></tr><tr><td><code>historical finds/yj-sun/Csp/MyBatch/</code> vs <code>qcsp-alex-sep16-1997/MyBatch/</code></td><td>Exact-match overlap exists</td><td><code>qcsp-alex-sep16-1997/MyBatch/</code> for tracked snapshot use</td><td>Archive copy helps provenance and recovery analysis</td><td>Still useful for archive lineage, not an active duplicate to prune casually</td></tr><tr><td><code>historical finds/yj-sun/Csp/SteveBkps/bt.lisp</code> vs alex backup copy</td><td>Exact-match overlap exists</td><td><code>qcsp-alex-sep16-1997/SteveBkps/bt.lisp</code></td><td>Archive provenance</td><td>No separate active role, but harmless as archive evidence</td></tr><tr><td><code>historical finds/yj-sun/Csp/testdata/Results/PS/*</code> vs <code>data/sparc-archive/PrevResults/*</code> carry-forwards</td><td>Partial exact carry-forward overlap</td><td><code>data/sparc-archive/PrevResults/</code> for tracked thesis-era preserved results</td><td>Archive source tree explains where many carry-forwards came from</td><td>Still valuable for provenance, not redundant enough to treat as disposable</td></tr><tr><td><code>qcsp-may29-1996/NewData4b-Batch/Graph/ff*</code> vs <code>data/sparc-archive/PrevResults/ff*</code></td><td>Overlapping preserved family, not redundant</td><td>Both matter</td><td>One is the stronger source-tree provenance anchor, the other is the preserved thesis-era carry-forward layer</td><td>Still go-forward valuable as a paired provenance story</td></tr></tbody></table>
+<h3 id="section-duplicates-review-practical-rule">Practical Rule</h3>
+<p>If a reviewed duplicate is needed for:</p>
+<ul><li>snapshot integrity,</li><li>thesis/result provenance,</li><li>or archive-recovery explanation,</li></ul>
+<p>keep it, but mark its canonical active counterpart clearly.</p>
+<p>If it is a true duplicate for day-to-day supported workflows, point users to the canonical location and avoid expanding the supported validation flow around the duplicate copy.</p>
+<h3 id="section-duplicates-review-current-canonical-copy-rules">Current Canonical Copy Rules</h3>
+<ol><li>For the active ACL thesis-result baseline, prefer <code>data/acl-experiments/</code></li></ol>
+<p>over <code>qcsp-may29-1996/Q-Batch/</code>.</p>
+<ol><li>For the active preserved <code>ff*</code> lineage, treat</li></ol>
+<p><code>qcsp-may29-1996/NewData4b-Batch/</code> and <code>data/sparc-archive/PrevResults/ff*</code> as paired provenance layers rather than competing duplicates.</p>
+<ol><li>For archive intake under <code>historical finds/</code>, do not assume exact-match</li></ol>
+<p>overlap means “safe to discard.” Many such copies still help explain how the tracked snapshot was assembled.</p>
+<h3 id="section-duplicates-review-maintenance-rule">Maintenance Rule</h3>
+<p>Update this file whenever:</p>
+<ol><li>a new duplicate tree is positively identified,</li><li>a canonical active copy is chosen for a preserved family,</li><li>an archive overlap is reviewed and judged to still have provenance value, or</li><li>a previously ambiguous overlap is reclassified as truly redundant.</li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-renovation-roadmap">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Renovation Roadmap</h2>
+            <p class="sectionSummary">Migration history, current phase, roadmap, and long-form status narrative.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../RENOVATION.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This document describes the migration of the PhD research codebase from Allegro Common Lisp (SPARC, 1993-1997) to Steel Bank Common Lisp (macOS ARM64, 2026).</p>
+<h3 id="section-renovation-roadmap-overview">Overview</h3>
+<table><thead><tr><th></th><th>Original</th><th>Renovated</th></tr></thead><tbody><tr><td><strong>Lisp</strong></td><td>Allegro CL 4.x (Franz Inc.)</td><td>SBCL 2.6.x</td></tr><tr><td><strong>Platform</strong></td><td>SPARC / Solaris</td><td>Apple M4 / macOS</td></tr><tr><td><strong>Build</strong></td><td>Manual <code>(load &quot;load&quot;)</code> chains</td><td>ASDF 3 with <code>.asd</code> system definitions</td></tr><tr><td><strong>Packages</strong></td><td>Everything in <code>CL-USER</code></td><td><code>PHD-CSP</code>, <code>PHD-QCSP3</code>, <code>PHD-QCSP-MAY29</code>, <code>PHD-QCSP-ALEX</code></td></tr><tr><td><strong>Tests</strong></td><td>None</td><td>FiveAM suites + integration runners</td></tr><tr><td><strong>Files</strong></td><td><code>.cl</code> extension</td><td><code>.lisp</code> extension</td></tr></tbody></table>
+<p>Four systems were modernized covering 49 source files:</p>
+<ul><li><code>:phd-research</code> (csp/) -- base CSP solver</li><li><code>:qcsp3</code> (qcsp3/) -- extended solver with memory-CSP and Quilici search</li><li><code>:qcsp-may29-1996</code> -- historical snapshot (May 1996)</li><li><code>:qcsp-alex-sep16-1997</code> -- historical snapshot (Sep 1997)</li></ul>
+<h3 id="section-renovation-roadmap-what-changed">What Changed</h3>
+<h4 id="section-renovation-roadmap-build-system">Build system</h4>
+<p>Replaced Allegro CL&#x27;s manual load chains with ASDF system definitions. Each system got a <code>package.lisp</code> with <code>defpackage</code>/<code>in-package</code>, isolating symbols into their own packages instead of polluting <code>CL-USER</code>.</p>
+<h4 id="section-renovation-roadmap-franz-isms-removed">Franz-isms removed</h4>
+<ul><li><code>excl:*</code> and <code>sys:*</code> calls (Allegro-specific extensions)</li><li><code>#p(...)</code> reader macros (Allegro pathname literals)</li><li><code>.clinit.cl</code> initialization files</li><li>Hardcoded Mac OS 9 paths (<code>&quot;Macintosh HD:Languages:...&quot;</code>)</li></ul>
+<h4 id="section-renovation-roadmap-dead-code-removed">Dead code removed</h4>
+<ul><li>Backup artifacts (<code>.bkp</code>, <code>.bak</code>, <code>*~</code> files)</li><li>Mac OS 9 code branches and path logic</li><li>Duplicate/unreachable function definitions</li><li><code>.DS_Store</code> files</li></ul>
+<h4 id="section-renovation-roadmap-bug-fixes-found-during-renovation">Bug fixes found during renovation</h4>
+<p>These are latent bugs in the original code that were discovered and fixed:</p>
+<table><thead><tr><th>Bug</th><th>File(s)</th><th>Fix</th></tr></thead><tbody><tr><td><code>defconstant</code> with list values fails on SBCL reload</td><td>multiple</td><td>Changed to <code>defparameter</code></td></tr><tr><td><code>:mode</code> keyword passed where <code>:arc-consis</code> expected</td><td>queens.lisp</td><td>Changed to <code>:arc-consis</code></td></tr><tr><td><code>LENGTH</code> variable shadows CL built-in</td><td>bm.lisp</td><td>Renamed to <code>num-vals</code></td></tr><tr><td><code>*current-situation</code> typo (missing <code>*</code>)</td><td>utility.lisp</td><td>Fixed to <code>*current-situation*</code></td></tr><tr><td>Duplicate <code>defun get-templ-constraints</code></td><td>mpr-simple.lisp</td><td>Removed duplicate</td></tr><tr><td>Extra close paren creating unreachable code</td><td>csp/bt.lisp</td><td>Removed</td></tr><tr><td><code>set-globals</code> caller passes 18 args, callee expects 20</td><td>alex/mpr-simple.lisp</td><td>Added 2 missing <code>nil</code> args</td></tr><tr><td><code>eq</code> used on strings (identity vs equality)</td><td>may29+alex/mpr-simple.lisp</td><td>Changed to <code>string-equal</code></td></tr><tr><td>Unconditional <code>concatenate</code> on non-string <code>output-file</code></td><td>qcsp3/utility.lisp</td><td>Moved inside string-only branch</td></tr></tbody></table>
+<h4 id="section-renovation-roadmap-return-value-normalization">Return value normalization</h4>
+<p>Changed <code>&#x27;complete</code>, <code>&#x27;error</code>, <code>&#x27;time-bound</code> (package-internal symbols) to <code>:complete</code>, <code>:error</code>, <code>:time-bound</code> (keywords) across all four bt.lisp files. Keywords are self-evaluating and package-independent, making cross-package test assertions reliable.</p>
+<h4 id="section-renovation-roadmap-warning-suppression">Warning suppression</h4>
+<p>SBCL emits <code>redefinition-warning</code> when a function is defined in one file and intentionally redefined in another (e.g., <code>mpr-simple.lisp</code> defines stubs that <code>mpr-setup.lisp</code> overrides). Added <code>sb-ext:muffle-conditions</code> declarations around the 16 files that participate in this pattern, bringing the warning count from ~60 per system to 0.</p>
+<h3 id="section-renovation-roadmap-what-did-not-change">What Did NOT Change</h3>
+<p>The core algorithms are untouched:</p>
+<ul><li>Backtracking search with chronological and intelligent backjumping</li><li>Forward checking (FC) and dynamic variable rearrangement (DR)</li><li>AC-3 arc consistency</li><li>Advance sort heuristic</li><li>Memory-CSP two-phase search (index + resolution)</li><li>Quilici similarity-based retrieval</li><li>Template and situation data structures</li><li>All CSP constraint formulations</li></ul>
+<p>This was verified by running the same experiment (ij2, noise=50, seed=default) on both the pre-cleanup and post-cleanup code. The results were identical:</p>
+<pre><code>            Pre-cleanup    Post-cleanup
+NCC         284            284
+TCC         281            281
+BT          38             38</code></pre>
+<h3 id="section-renovation-roadmap-verification">Verification</h3>
+<h4 id="section-renovation-roadmap-unit-tests">Unit tests</h4>
+<p>FiveAM test suites cover all four systems:</p>
+<pre><code class="language-bash">sbcl --non-interactive --load &quot;tests/run.lisp&quot;</code></pre>
+<h4 id="section-renovation-roadmap-integration-tests">Integration tests</h4>
+<p>Arc-oriented (AO) solver integration tests:</p>
+<pre><code class="language-bash">sbcl --non-interactive --load &quot;run-test4.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-may29.lisp&quot;
+sbcl --non-interactive --load &quot;run-test4-alex.lisp&quot;</code></pre>
+<h4 id="section-renovation-roadmap-experiment-replication">Experiment replication</h4>
+<p>Three experiment series compare CSP search efficiency under increasing noise (50-1000 extraneous program statements), each with 20 noise levels and 10 random seeds (200 runs per series):</p>
+<table><thead><tr><th>Series</th><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>ij2</td><td><code>memory-search</code></td><td>Baseline: phase 1 uses BT only</td></tr><tr><td>ij3</td><td><code>memory-search</code></td><td>Both phases use FC + DR + advance sort</td></tr><tr><td>ij4</td><td><code>adt</code> (direct)</td><td>Direct matching with FC + DR + advance sort</td></tr></tbody></table>
+<p>Experiments were run across all four code snapshots:</p>
+<pre><code class="language-bash"># qcsp3 (primary)
+bash Q-Batch-SBCL/ij2.sh &amp;&amp; bash Q-Batch-SBCL/ij3.sh &amp;&amp; bash Q-Batch-SBCL/ij4.sh
+
+# alex (Sep 1997 snapshot)
+bash Q-Batch-SBCL/run-alex-all.sh
+
+# may29 (May 1996 snapshot)
+bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
+<p>Results are compared against the original Allegro CL runs (now stored in <code>data/acl-experiments/</code>) using 95% confidence intervals. The CI bands overlap at every noise level for all three series across all snapshots, confirming algorithmic equivalence despite different random number generators (ACL&#x27;s proprietary PRNG vs SBCL&#x27;s Mersenne Twister).</p>
+<pre><code class="language-bash">python3 Q-Batch-SBCL/Graph/compare-all-overlay.py    # Generate 4-way plots (requires matplotlib)</code></pre>
+<p>Comparison plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>. Each plot shows four series: ACL (SPARC), SBCL qcsp3, SBCL alex, and SBCL may29.</p>
+<h4 id="section-renovation-roadmap-key-experimental-findings">Key experimental findings</h4>
+<ul><li><strong>ij2/ij3</strong>: All four series (ACL, qcsp3, alex, may29) track closely with overlapping CI bands, confirming algorithmic equivalence across all snapshots.</li><li><strong>ij4</strong>: The alex snapshot diverges sharply upward (~6x higher TCC than the others). Root cause: Yongjun Zhang simplified the <code>ts-matches-type</code> function in alex&#x27;s <code>adt-simple.lisp</code> (line 1296), commenting out the detailed type-matching logic (Decl array/range checking, parameter-count matching for Zero/Assign/Print/Check/Increment/Not-Equals). The simplified version only checks statement type name equality, which allows more domain values to survive node consistency:</li></ul>
+<table><thead><tr><th>Metric (noise=500, seed=default)</th><th>qcsp3</th><th>may29</th><th>alex</th></tr></thead><tbody><tr><td>Avg domain size after NC</td><td>43.0</td><td>42.0</td><td><strong>67.7</strong></td></tr><tr><td>TCC</td><td>1,904</td><td>1,759</td><td><strong>11,919</strong></td></tr><tr><td>Backtracks / Visited</td><td>22/23</td><td>22/23</td><td><strong>86/87</strong></td></tr></tbody></table>
+<p>The causal chain: simplified <code>ts-matches-type</code> → ~1.6x larger domains → ~4x more backtracks → ~6.5x higher TCC. This was intentional — the simplified NC was likely paired with alex&#x27;s DFA-based features (<code>node-type-consis</code>, <code>dfa-rearrangement</code>) which would compensate, but those features default to nil and are not enabled in the standard ij4 experiments. A diagnostic script at <code>Q-Batch-SBCL/diagnose-ij4.sh</code> reproduces these results.</p>
+<h4 id="section-renovation-roadmap-batch-experiment-issues-encountered-and-resolved">Batch experiment issues encountered and resolved</h4>
+<table><thead><tr><th>Issue</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>Alex TCC=0 for all experiments</td><td>Noise injection variable <code>*noise-count*</code> not incremented (local shadow)</td><td>Restored <code>*noise-count*</code> global in alex&#x27;s <code>adt-setup.lisp</code></td></tr><tr><td>May29 TCC=0 for all experiments</td><td>Pre-generated <code>ADT-Situation/Sit-q-i1-*</code> files from old ACL runs were trivially solvable</td><td>Deleted stale situation files to force fresh generation</td></tr><tr><td>May29 ij4 &quot;Situation not found&quot;</td><td><code>adt</code> called with <code>:situation-id &quot;quilici-i1&quot;</code> but may29 uses <code>&quot;q-i1&quot;</code></td><td>Changed to <code>:situation-id &quot;q-i1&quot;</code> in may29-ij4-run.lisp</td></tr><tr><td>CRLF line endings in shell scripts</td><td><code>Write</code> tool produced CRLF on macOS</td><td>Regenerated with <code>printf</code> and verified with <code>xxd</code></td></tr></tbody></table>
+<h3 id="section-renovation-roadmap-datafind-archive-audit">DataFind Archive Audit</h3>
+<p>The <code>data/sparc-archive/</code> directory (formerly <code>DataFind/</code>) contains <code>.dir</code> files — original directory listings from the SPARC archive. An audit compared these against the current repo:</p>
+<table><thead><tr><th>.dir file</th><th>Maps to</th><th>Status</th></tr></thead><tbody><tr><td><code>csp.dir</code></td><td><code>csp/</code></td><td>All core solver files present. <code>unify.lisp</code> recovered from <code>qcsp-may29-1996/Keep/</code>. Still missing: <code>adt-test2.lisp</code>, <code>adt-test3.lisp</code>, <code>compile-set.lisp</code></td></tr><tr><td><code>qcsp.dir</code></td><td><code>qcsp3/</code></td><td>All core files present. Missing: <code>compile.lisp</code>, <code>compile-set.lisp</code>, <code>gsat-test.lisp</code>, <code>load.lisp</code> (all superseded by ASDF)</td></tr><tr><td><code>qcsp3.dir</code></td><td><code>qcsp3/</code></td><td>Identical file list to <code>qcsp.dir</code> (confirms same codebase)</td></tr><tr><td><code>qcsp-alex.dir</code></td><td><code>qcsp-alex-sep16-1997/</code></td><td>Core files present. Non-core files organized into <code>extras/</code> (34 .lisp) and <code>artifacts/</code> (15 result/output files). Missing same 4 ACL build files</td></tr><tr><td><code>QCSP-nov96.dir</code></td><td><strong>Not in repo</strong></td><td>Intermediate snapshot with unique terrain analysis code</td></tr></tbody></table>
+<p>Files consistently missing across all snapshots (<code>compile.lisp</code>, <code>compile-set.lisp</code>, <code>load.lisp</code>) are old ACL build infrastructure superseded by ASDF. The <code>package.lisp</code> files added during renovation are consistently &quot;extra&quot; (expected).</p>
+<h3 id="section-renovation-roadmap-remaining-work">Remaining Work</h3>
+<p>See <a href="https://github.com/sgwoods/phd-renovation/issues">GitHub Issues</a> for tracked items. Summary:</p>
+<h4 id="section-renovation-roadmap-completed">Completed</h4>
+<ol><li>~~<strong>Clean up alex snapshot</strong>~~ — Done: 34 non-core <code>.lisp</code> files moved to <code>extras/</code>, 15 result/output files moved to <code>artifacts/</code>, 7 ephemeral files deleted, 83 generated seed files untracked. README added. (Issue #1)</li><li>~~<strong>Investigate alex ij4 divergence</strong>~~ — Done: root cause is simplified <code>ts-matches-type</code> in alex&#x27;s <code>adt-simple.lisp</code> (detailed type-matching commented out by Yongjun Zhang). This was intentional, paired with DFA-based extensions not enabled in standard experiments. Diagnostic script at <code>Q-Batch-SBCL/diagnose-ij4.sh</code>. (Issue #2)</li><li>~~<strong>Recover missing files</strong>~~ — Done: <code>csp/unify.lisp</code> recovered from <code>qcsp-may29-1996/Keep/</code> with <code>defconstant</code>→<code>defparameter</code> fix. <code>adt-test2.lisp</code>, <code>adt-test3.lisp</code>, <code>gsat-test.lisp</code> are truly lost (not in any snapshot). <code>compile-set.lisp</code> superseded by ASDF. (Issue #3)</li><li>~~<strong>Untrack remaining generated data</strong>~~ — Done: all <code>ADT-Random/</code> and <code>ADT-Situation/</code> directories across all four systems are untracked and in <code>.gitignore</code>. (Issue #7)</li></ol>
+<ol><li>~~<strong>Clean up DataFind/</strong>~~ — Done: documented PrevResults, organized archives, created <code>DataFind/README.md</code>. Later consolidated into <code>data/sparc-archive/</code>. (Issue #5)</li><li>~~<strong>Expand test coverage</strong>~~ — Done: added TCC/NCC/BT regression assertions to 25 tests across 4 suites. Standard and confused queens get exact metrics; ADT/MPR get exact NCC + TCC ceilings. (Issue #6)</li><li>~~<strong>CI/CD</strong>~~ — Done: GitHub Actions workflow at <code>.github/workflows/test.yml</code> runs all FiveAM suites on push/PR. (Issue #8)</li></ol>
+<h4 id="section-renovation-roadmap-open">Open</h4>
+<ol><li><strong>Investigate QCSP-nov96</strong> — intermediate snapshot with unique terrain analysis code not in repo. Three source files remain unrecovered in the working tree (<code>terrain-setup.lisp</code>, <code>terrain-simple.lisp</code>, <code>closure.lisp</code>), but a newly identified <code>Lacie1</code> historical drive reportedly contains terrain data and the generator. Recovery is no longer just a generic backup-media search; the next concrete step is to sort that drive and compare it against <code>QCSP-nov96.dir</code>. See <code>data/lost-datasets.md</code>. (Issue #4)</li></ol>
+<h3 id="section-renovation-roadmap-next-phase-roadmap">Next Phase Roadmap</h3>
+<p>Guiding principle for the next phase: treat the published PhD thesis results, the preserved historical experiment artifacts, and the current regression suites as the foundation for every future change. New work should either preserve those published behaviors or explain any intentional deviation in a repeatable way, with the long-term aim of converging on one gold-standard code line rather than maintaining several disconnected runnable snapshots forever.</p>
+<h3 id="section-renovation-roadmap-goal-and-current-position">Goal And Current Position</h3>
+<h4 id="section-renovation-roadmap-overall-project-goal">Overall project goal</h4>
+<p>Bring the thesis codebase to a state where:</p>
+<ol><li>the integrated constraint solver reproduces the PhD-reported results from a</li></ol>
+<p>fresh checkout,</p>
+<ol><li>the other historical domains and reported result families are either</li></ol>
+<p>executable, integrity-checkable, or explicitly classified as provenance-only,</p>
+<ol><li>one gold-standard code line can stand in for the historical solver lineage</li></ol>
+<p>with snapshot-specific differences documented, and</p>
+<ol><li>new research can branch from that validated baseline with any deltas</li></ol>
+<p>measured and explained.</p>
+<p>In short: turn the renovated snapshots, preserved data, and recovered archives into one trustworthy integrated research platform, not just a modernized copy of legacy Lisp.</p>
+<h4 id="section-renovation-roadmap-current-subgoals">Current subgoals</h4>
+<p>For the current phase, the practical subgoals are:</p>
+<ol><li>keep the supported validation spine green from a fresh checkout,</li><li>keep widening the validated umbrella beyond the main thesis <code>ij2</code>/<code>ij3</code>/<code>ij4</code></li></ol>
+<p>path,</p>
+<ol><li>reduce warning noise enough that validation logs act as a reliable</li></ol>
+<p>regression signal,</p>
+<ol><li>make the historical result families legible enough that they can be judged</li></ol>
+<p>for eventual inclusion under one integrated solver line, and</p>
+<ol><li>define the first concrete milestone that <code>qcsp3/</code> would have to satisfy to</li></ol>
+<p>earn &quot;gold-standard&quot; status.</p>
+<h4 id="section-renovation-roadmap-where-we-are-against-that-goal">Where we are against that goal</h4>
+<table><thead><tr><th>Area</th><th>Status</th><th>Current position</th></tr></thead><tbody><tr><td>Reference snapshots runnable</td><td><strong>Strong</strong></td><td>All four ASDF systems load and the supported FiveAM suites pass on SBCL.</td></tr><tr><td>Core regression baseline</td><td><strong>Strong</strong></td><td>Deterministic metric assertions exist for standard and confused queens across all four systems.</td></tr><tr><td>AO / <code>test4</code> validation</td><td><strong>Strong for bounded M1 scope</strong></td><td>AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline. qcsp3 and May29 now cover AO cases 1-3 across the reduction families plus the legacy <code>test4s</code> / <code>test4a</code> wrappers, while alex keeps its revise baseline.</td></tr><tr><td>PhD-result validation path</td><td><strong>Strong</strong></td><td>CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL <code>ij2</code>/<code>ij3</code>/<code>ij4</code> trend story.</td></tr><tr><td>Warning hygiene</td><td><strong>Strong for the supported path</strong></td><td>The repeated alex/core STYLE-WARNING tail has been cleared from the supported validation path, and the AO harness redefinition chatter has been trimmed from both CI and the manual <code>run-test4*.lisp</code> flows. Fresh March 21, 2026 runs of <code>tests/run.lisp</code> and <code>tests/validate-ao.sh</code> are clean for the supported gate; any remaining legacy notes are now outside that mainline signal.</td></tr><tr><td>Documentation and onboarding</td><td><strong>Good and improving</strong></td><td>The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk.</td></tr><tr><td>Historical provenance</td><td><strong>Strong</strong></td><td><code>historical finds/yj-sun/Csp</code> is now tied to the alex-era line, many <code>PrevResults</code> artifacts are mapped, the <code>ff1</code>/<code>ff2</code>/<code>ff3</code> family is grounded in the preserved <code>qcsp-may29-1996/NewData4b-Batch/</code> tree with an active integrity check, and both the older ADT batch archive and the earliest DREV-era <code>T1</code>-<code>T6</code> family have moved from provenance-only to integrity-checkable.</td></tr><tr><td>Gold-standard integration target</td><td><strong>Emerging, with M1 accepted</strong></td><td><code>qcsp3/</code> is the leading candidate, and Milestone M1 is now accepted as the first gate showing it can carry the PhD baseline, AO baseline, and preserved <code>ff*</code> relationship under one supported umbrella. The repo is now moving beyond &quot;is M1 ready?&quot; into post-M1 documentation and integration work.</td></tr><tr><td>Research-readiness for new experiments</td><td><strong>Not there yet</strong></td><td>The baseline is much firmer than before, but not yet complete enough for a <code>1.0.0</code> integrated research platform claim.</td></tr></tbody></table>
+<h4 id="section-renovation-roadmap-first-qcsp3-integration-milestone">First <code>qcsp3/</code> integration milestone</h4>
+<p>The first concrete milestone for <code>qcsp3/</code> is:</p>
+<p><strong>Milestone M1: integrated validated baseline</strong></p>
+<p><code>qcsp3/</code> can be treated as the project&#x27;s first real integrated solver line when all of the following are true:</p>
+<ol><li>the current validation spine passes from a fresh checkout:</li></ol>
+<p><code>tests/run.lisp</code>, <code>tests/validate-artifacts.sh</code>, <code>tests/validate-ao.sh</code>, and <code>tests/validate-ff-provenance.sh</code>,</p>
+<ol><li><code>qcsp3/</code> remains the default executable path for the supported</li></ol>
+<p>thesis-result story, especially the ACL-vs-SBCL <code>ij2</code>/<code>ij3</code>/<code>ij4</code> comparison workflow,</p>
+<ol><li>the supported AO baseline is asserted and documented as part of the</li></ol>
+<p>integrated line rather than treated as a separate historical annex,</p>
+<ol><li>the preserved <code>ff1</code>/<code>ff2</code>/<code>ff3</code> family has an explicit documented</li></ol>
+<p>relationship to the integrated line, even if that family is still integrity-checkable rather than fully rerunnable through <code>qcsp3/</code>, and</p>
+<ol><li>any remaining meaningful differences between <code>qcsp3/</code> and the reference</li></ol>
+<p>snapshots are documented as intentional, bounded, or still-open gaps.</p>
+<p>The active delta list for this is now centralized in <code>INTEGRATION-DELTAS.md</code>. The short gate-by-gate answer that supported the M1 decision now lives in <code>M1-READINESS.md</code>.</p>
+<p>M1 is intentionally narrower than a final &quot;gold-standard achieved&quot; claim. It does not require every historical family to be fully executable through <code>qcsp3/</code> yet. It does require that <code>qcsp3/</code> become the clear operational center of the validated baseline, with the historical snapshots serving as reference anchors rather than co-equal supported workflows.</p>
+<h4 id="section-renovation-roadmap-current-roadmap-position">Current roadmap position</h4>
+<ul><li><strong>Phase 1 / <code>0.1.x</code> Stability</strong>: effectively complete for the supported</li></ul>
+<p>artifact pipeline. Fresh-checkout plot regeneration and artifact validation are in place.</p>
+<ul><li><strong>Phase 2 / <code>0.2.x</code> Verification</strong>: effectively complete for the M1</li></ul>
+<p>baseline. This phase delivered stronger regression assertions, AO asserted coverage, automated thesis-comparison checks, <code>ff*</code> integrity/provenance validation, and incremental warning cleanup.</p>
+<ul><li><strong>Phase 3 / <code>0.3.x</code> Documentation</strong>: active. High-level docs are much</li></ul>
+<p>stronger, the code/test/results roots are easier to navigate, and the next push is core algorithm docstrings, clearer operator-facing workflow polish, and leaving the next post-M1 integration target explicit rather than implied.</p>
+<ul><li><strong>Phase 4 / Research Readiness</strong>: not yet active as the main lane. We have</li></ul>
+<p>diagnosed alex&#x27;s <code>ij4</code> divergence, but we are intentionally holding off on broader experimental changes until the baseline is tighter.</p>
+<ul><li><strong>Phase 5 / Archive Recovery</strong>: active in parallel. The <code>historical finds/</code></li></ul>
+<p>intake is now classified, <code>yj-sun/Csp</code> has loader/result provenance notes, and archive-to-<code>PrevResults</code> mapping has begun. This lane is now supporting integration planning, not just intake triage.</p>
+<h4 id="section-renovation-roadmap-recommended-next-steps">Recommended next steps</h4>
+<ol><li>Keep the current validation spine green: <code>tests/run.lisp</code>,</li></ol>
+<p><code>tests/validate-artifacts.sh</code>, <code>tests/validate-ff-provenance.sh</code>, and <code>tests/validate-ao.sh</code> remain the merge gate for the supported baseline. Keep <code>REPOSITORY-STATUS.md</code> and <code>REPOSITORY-STRUCTURE-REVIEW.md</code> in sync as the broader repo surface changes.</p>
+<ol><li>Push the <code>0.3.x</code> documentation lane: add docstrings and clearer entry-point</li></ol>
+<p>explanations for the major algorithms and supported workflows.</p>
+<ol><li>Use the ADT batch <code>ij1</code>-<code>ij4</code> archive family as the next deliberate</li></ol>
+<p>post-M1 integration target, because it is already integrity-checkable and sits closest to the current ADT solver line. The current bridge note for that target now lives in <code>ADT-BATCH-INTEGRATION.md</code>. Current recommendation: start the first executable bridge in <code>csp/</code>, not <code>qcsp3/</code>, because the preserved drivers are rooted in the historical base solver contract. That first narrow bridge now exists for the preserved <code>ij2</code> family and currently diverges from the archived non-timing metrics, which gives us a concrete next investigation target instead of a hypothetical one.</p>
+<ol><li>Keep the supported validation gate clean and high-signal; treat new warning</li></ol>
+<p>output in <code>tests/run.lisp</code> or <code>tests/validate-ao.sh</code> as regression noise to investigate, not normal background.</p>
+<ol><li>Keep building out the validation matrix when useful, but with the main</li></ol>
+<p>archive-heavy families now mapped or integrity-checked, avoid widening the supported umbrella casually without a clear post-M1 benefit.</p>
+<ol><li>Only after the baseline, warning surface, and provenance work are tighter,</li></ol>
+<p>begin controlled integration and research-readiness experiments such as alex DFA-option isolation against the validated snapshot.</p>
+<h4 id="section-renovation-roadmap-phase-release-alignment">Phase / Release Alignment</h4>
+<p>Keep the repo on <code>0.x</code> releases until the thesis-validation baseline is stable enough that a fresh checkout can reproduce the supported historical results and the docs accurately describe that supported path.</p>
+<ul><li><strong><code>0.1.x</code> Stability builds</strong>: artifact paths, reproducible plot generation,</li></ul>
+<p>and baseline environment setup.</p>
+<ul><li><strong><code>0.2.x</code> Verification builds</strong>: stronger asserted regression coverage around</li></ul>
+<p>the thesis-era baselines. This milestone track now culminates in accepted M1.</p>
+<ul><li><strong><code>0.3.x</code> Documentation / research-readiness builds</strong>: clearer operator docs,</li></ul>
+<p>explicit supported workflows, and guarded extension points for new research.</p>
+<ul><li><strong><code>1.0.0</code> target</strong>: phases 1-3 are complete, CI continuously validates the</li></ul>
+<p>supported thesis-result baseline, and release notes can describe deviations from the thesis as intentional rather than accidental.</p>
+<p>Increment the internal build number once per completed roadmap cycle and note the owning phase in the release summary so future work stays tied to the plan.</p>
+<h4 id="section-renovation-roadmap-phase-1-stability">Phase 1: Stability</h4>
+<ol><li>Keep the artifact pipeline executable from a fresh checkout. The repo should</li></ol>
+<p>always be able to regenerate CI summaries and comparison plots from the checked-in ACL and SBCL experiment artifacts.</p>
+<ol><li>Reduce the remaining warning noise during normal loads so new regressions are</li></ol>
+<p>easier to spot. Treat a quieter load/test log as a reliability feature, not cosmetic cleanup.</p>
+<h4 id="section-renovation-roadmap-phase-2-verification">Phase 2: Verification</h4>
+<ol><li>Strengthen regression coverage around deterministic baselines, starting with</li></ol>
+<p>confused-queens metric assertions and other low-risk cases where exact behavior can be pinned down.</p>
+<ol><li>Finish converting the AO/test4 path into supported asserted coverage. CI now</li></ol>
+<p>checks qcsp3 and may29 AO cases 1-3 across the reduction families, retains the legacy <code>test4s</code>/<code>test4a</code> wrappers, and keeps alex&#x27;s revise baseline in the supported AO line. That bounded AO surface now supports the accepted M1 call without pretending the full historical AO space is already unified.</p>
+<ol><li>Keep the thesis-era versus modern results comparison executable. CI now</li></ol>
+<p>checks that regenerated SBCL <code>ij2</code>/<code>ij3</code>/<code>ij4</code> tables preserve the ACL baseline ordering, correlation, and bounded ratio bands; next work should connect the older <code>PrevResults/ff*.ci</code> family once the exact experiment mapping is recovered.</p>
+<h4 id="section-renovation-roadmap-phase-3-documentation">Phase 3: Documentation</h4>
+<ol><li>Add docstrings and targeted explanations to the core entry points and major</li></ol>
+<p>algorithms so future work can build on a clearer map of the code.</p>
+<ol><li>Keep the top-level docs synchronized with the actual executable state of the</li></ol>
+<p>repo, especially around CI coverage, warning state, and experiment tooling.</p>
+<h4 id="section-renovation-roadmap-phase-4-research-readiness">Phase 4: Research Readiness</h4>
+<ol><li>Explore alex&#x27;s DFA-related options (<code>node-type-consis</code>,</li></ol>
+<p><code>dfa-rearrangement</code>) in isolated experiments to determine whether they close the known ij4 gap without disturbing the validated baseline path.</p>
+<ol><li>Define a repeatable workflow for post-renovation research: establish the</li></ol>
+<p>baseline snapshot, rerun validation, record deltas against thesis-era results, and only then evaluate new hypotheses or extensions.</p>
+<h4 id="section-renovation-roadmap-phase-5-archive-recovery">Phase 5: Archive Recovery</h4>
+<ol><li>Continue the historical recovery track by unpacking/cataloging the legacy</li></ol>
+<p>compressed archives and keeping watch for any media that could restore the lost QCSP-nov96 terrain code and data, with <code>Lacie1</code> now recorded as the strongest recovery lead pending review.</p>
+<ol><li>Treat newly recovered material under <code>historical finds/</code> as archive intake,</li></ol>
+<p>not baseline code. The current intake appears to split into: <code>yj-sun/Csp</code> as a likely solver-lineage recovery candidate, <code>yj-sun/Gen++</code> as a likely upstream analyzer-generation toolchain, and <code>Unravel/</code> / <code>Refine/</code> as adjacent program-understanding context that should stay reference-only until a direct thesis-validation role is proven.</p>
+<ol><li>Prioritize archive work that strengthens the validated research story:</li></ol>
+<p>first compare <code>historical finds/yj-sun/Csp</code> against the current snapshots and experiment artifacts, then map any unique batch/results material to the thesis-era <code>PrevResults/ff*.ci</code> family, and only after that spend time on broader adjacent-tool recovery.</p>
+<h3 id="section-renovation-roadmap-commit-history">Commit History</h3>
+<pre><code>959dd69  BASE: Original Allegro CL PhD source and publications
+b6761e8  Modernize legacy ACL project for SBCL with ASDF build system
+a905d9b  Modernize qcsp-may29-1996 and qcsp-alex-sep16-1997 for SBCL
+ffbeb16  Add test4 runner and fix missing rfn variable in qcsp3
+2f37012  Add test4 runners for qcsp-may29-1996 and qcsp-alex-sep16-1997
+764e19e  Add csp test runner and fix queens arc-consis value
+38d181a  Add Q-Batch-SBCL experiment infrastructure for SBCL replication
+15aadf8  Fix ij4 output paths and add data extraction/comparison pipeline
+83f4a54  Add README, FiveAM tests, entry point, and cleanup dead code
+78facc4  Add defpackage/in-package to csp/ and qcsp3/ systems
+e1b6c18  Fix LENGTH variable bug in bm.lisp and *current-situation typo
+3918f1f  Remove dead files, backup artifacts, and Mac OS 9 code branches
+89552a1  Modernize older snapshots and remove Mac OS 9 dead code
+d8b8650  Add FiveAM tests for older snapshots and fix latent bugs
+992fb02  Normalize return keywords, fix MPR bugs, muffle redefinition warnings
+48d6607  Add ACL vs SBCL comparison plots and seed generator
+b8ea6d4  Add renovation docs, expand tests, fix output-file concatenation bug
+c780cc5  Re-run ij3 and ij4 experiments fresh with regenerated seeds
+afe6666  Add date/time and git version stamp to comparison plots
+88da35f  Fix alex ADT/memory-search by restoring Quilici data and polymorphic accessors
+2427d96  Restore alex noise injection and run batch experiments
+80d72c6  Add may29 batch experiments, 4-way comparison plots, and consolidate gitignore
+ff95fae  Update README and RENOVATION docs with may29 results and .dir audit
+f4c4d51  Clean up alex snapshot and recover unify.lisp
+0474e79  Update docs to reflect alex cleanup and closed issues
+fdd5ceb  Replace MvSit2.tar.Z with extracted ADT situation files
+09a0d3b  Clean up may29 snapshot and fix test4 runner paths
+76df23d  Clean up qcsp3 snapshot and untrack generated MPR situation data
+251fc6f  Document alex ij4 TCC divergence root cause (Issue #2)
+188e4a6  Add TCC/NCC regression assertions and GitHub Actions CI
+afa377f  Fix CSP MPR test failure on CI — create MPR-Situation directory
+7ff62ff  Document DataFind/ archive structure (closes #5)
+a0de660  Consolidate all datasets into normalized data/ directory</code></pre>
+        </div>
+      </section>
+      </div>
+    </div>
+    <p class="footer">
+      Repository handbook generated from tracked markdown sources under the project
+      root and <code>docs/release-dashboard-data.json</code>. Regenerate with
+      <code>python3 tools/generate-release-dashboard.py</code>.
+    </p>
+  </main>
+</body>
+</html>

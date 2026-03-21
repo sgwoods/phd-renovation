@@ -13,9 +13,9 @@ start here.
 - `validate-artifacts.sh`: rebuilds SBCL graph artifacts, regenerates overlay
   plots, and checks the current thesis-result pipeline.
 - `validate-dashboard.sh`: regenerates the visual release dashboard and the
-  public-facing PhD project page plus this repo's public status manifest from
-  their shared structured source file, and fails if the checked-in outputs are
-  out of sync.
+  full readable handbook plus the public-facing PhD project page and this
+  repo's public status manifest from their shared status/doc sources, and
+  fails if the checked-in outputs are out of sync.
 - `validate-ff-provenance.sh`: checks that the preserved `NewData4b-Batch`
   `ff*` graph summaries match their `PrevResults/` carry-forward copies and
   that the supporting raw/count lineage is present.

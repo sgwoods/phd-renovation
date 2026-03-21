@@ -33,8 +33,12 @@ roadmap, `VALIDATION-MATRIX.md` for the current domain/result coverage map,
 `REPOSITORY-STATUS.md` for the repo-wide integration/testing/publication status
 table, `REPOSITORY-STRUCTURE-REVIEW.md` for the filesystem clarity review, and
 [`docs/release-dashboard.html`](docs/release-dashboard.html) for the visual
-release dashboard. The same source data also drives the public-facing PhD
-project page so those two views stay in sync.
+release dashboard. A full generated handbook now lives at
+[`docs/project-handbook.html`](docs/project-handbook.html), with the public
+readable copy at
+<https://sgwoods.github.io/public/phd-renovation-handbook.html>. The same
+source data and doc-refresh build now drive the handbook, dashboard, and
+public-facing PhD project page so those views stay in sync.
 
 ## Project Structure
 
@@ -85,6 +89,9 @@ src/                        Entry point
   indexed, integrated, tested, and publication-validated.
 - `WORKFLOWS.md` maps the primary supported operator workflows and the
   secondary/manual ones.
+- `docs/project-handbook.html` is the full generated human-readable handbook
+  that gathers the major status, roadmap, workflow, and architecture docs into
+  one indexed page.
 - `MANUAL-HELPERS.md` explains the repo-root helper scripts and how they
   relate to the supported operator flow.
 - `REPOSITORY-STRUCTURE-REVIEW.md` classifies the repo layout into supported

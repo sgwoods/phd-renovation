@@ -65,7 +65,7 @@ Best for:
 
 Main guide: `Q-Batch-SBCL/README.md`
 
-### 4. Status, Dashboard, And Public Page Sync
+### 4. Status, Dashboard, Handbook, And Public Page Sync
 
 Use this when plan/status wording changes.
 
@@ -76,8 +76,10 @@ bash tests/validate-dashboard.sh
 
 Best for:
 
-- keeping the release dashboard, public project page, and status manifest in sync,
-- validating that docs/status outputs match the structured source data.
+- keeping the release dashboard, full handbook, public project page, and
+  status manifest in sync,
+- validating that generated docs/status outputs match the structured source
+  data and tracked markdown sources.
 
 Main sources:
 

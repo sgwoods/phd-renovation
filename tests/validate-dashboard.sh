@@ -9,8 +9,11 @@ echo "== Release dashboard validation =="
 required_inputs=(
   "docs/release-dashboard-data.json"
   "tools/generate-release-dashboard.py"
+  "tools/generate_project_handbook.py"
   "docs/release-dashboard.html"
+  "docs/project-handbook.html"
   "docs/public-phd-renovation.html"
+  "docs/public-phd-renovation-handbook.html"
   "docs/public-status-phd-renovation.json"
 )
 
@@ -26,7 +29,9 @@ trap 'rm -rf "$tmp_dir"' EXIT
 
 generated_outputs=(
   "docs/release-dashboard.html"
+  "docs/project-handbook.html"
   "docs/public-phd-renovation.html"
+  "docs/public-phd-renovation-handbook.html"
   "docs/public-status-phd-renovation.json"
 )
 
@@ -60,6 +65,16 @@ fi
 
 if ! rg -q "Open release dashboard" docs/public-phd-renovation.html; then
   echo "Public project page output is missing the dashboard link." >&2
+  exit 1
+fi
+
+if ! rg -q "Table of contents" docs/project-handbook.html; then
+  echo "Project handbook output is missing the table of contents." >&2
+  exit 1
+fi
+
+if ! rg -q "Readable handbook for the full project state" docs/public-phd-renovation-handbook.html; then
+  echo "Public handbook output is missing the handbook hero copy." >&2
   exit 1
 fi
 

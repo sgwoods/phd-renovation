@@ -7,6 +7,8 @@ import json
 from html import escape
 from pathlib import Path
 
+from generate_project_handbook import generate_handbook_outputs
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "docs" / "release-dashboard-data.json"
@@ -674,6 +676,7 @@ def main() -> None:
     public_dashboard_html = build_page(data, data["public_footer_html"])
     public_page_html = build_public_page(data)
     public_status_manifest = build_public_status_manifest(data)
+    generate_handbook_outputs(data)
     DASHBOARD_OUTPUT_PATH.write_text(dashboard_html, encoding="utf-8")
     PUBLIC_PAGE_OUTPUT_PATH.write_text(public_page_html, encoding="utf-8")
     PUBLIC_STATUS_OUTPUT_PATH.write_text(public_status_manifest, encoding="utf-8")
