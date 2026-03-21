@@ -25,6 +25,9 @@ start here.
 - `validate-csp-batch.sh`: checks that the preserved `data/csp-batch/` and
   `data/csp-save-results/` DREV-era T1-T6 archive still matches its historical
   summary layout and known row-count quirks.
+- `investigate-adt-batch-bridge.sh`: runs the first narrow executable bridge
+  case for the preserved ADT batch `ij2` family and reports whether the
+  current `csp:adt` output matches or diverges from the preserved archive.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.
@@ -58,6 +61,10 @@ after code changes. Fresh March 21, 2026 validation runs of
 `tests/run.lisp` and `tests/validate-ao.sh` are currently clean for the
 supported path, so any new warning output in those flows should be treated as a
 potential regression signal.
+
+`investigate-adt-batch-bridge.sh` is intentionally outside that supported gate
+for now. It is an executable research/integration probe, not yet a passing
+baseline check.
 
 ## Legacy AO Harnesses
 

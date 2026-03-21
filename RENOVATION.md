@@ -319,6 +319,9 @@ anchors rather than co-equal supported workflows.
    Current recommendation: start the first executable bridge in `csp/`, not
    `qcsp3/`, because the preserved drivers are rooted in the historical base
    solver contract.
+   That first narrow bridge now exists for the preserved `ij2` family and
+   currently diverges from the archived non-timing metrics, which gives us a
+   concrete next investigation target instead of a hypothetical one.
 4. Keep the supported validation gate clean and high-signal; treat new warning
    output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
    investigate, not normal background.

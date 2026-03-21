@@ -82,6 +82,36 @@ What is not true yet:
 - and there is no published equivalence claim between a modern rerun and the
   preserved ADT batch summaries.
 
+## First Investigation Result
+
+The first narrow executable bridge now exists for one preserved case:
+
+- family: `ij2`
+- case: `noise 50`, `random-ident "default"`
+- host: `csp:adt`
+
+Current result:
+
+- the bridge runs successfully through `csp:adt`,
+- it reproduces the expected knob pattern (`BT`, node consistency on, no AC,
+  `FC`, `DR`, `random-ident default`, `RANDOM` ordering),
+- but it does **not** yet reproduce the preserved non-timing metrics.
+
+Current observed divergence versus preserved `ij2-050.1`:
+
+| Metric | Preserved | Current bridge |
+|---|---:|---:|
+| Average domain size | 10.8 | 14.6 |
+| NCC | 450 | 525 |
+| TCC | 269 | 884 |
+| BT / visited | 13 / 16 | 25 / 28 |
+| FC cost | 366 | 890 |
+| DR cost | 18 | 50 |
+
+That means the first bridge is already useful: it has moved the ADT batch
+family from "pure archive" to "executable investigation," but it has not yet
+crossed into reproduction.
+
 ## Bridge Strategy
 
 The safest bridge is:
@@ -146,6 +176,15 @@ The next useful steps for this bridge are:
 4. define what "success" means for that first rerun:
    exact file-shape match, trend match, or bounded metric match,
 5. only then decide how and whether `qcsp3` should absorb the bridge.
+
+The first three steps are now complete at investigation level.
+The next live question is whether the current divergence comes from:
+
+1. changed random-state lineage,
+2. changed ADT situation/template data,
+3. solver-behavior drift in `csp/`,
+4. or a difference between preserved batch-output conventions and the current
+   base solver reporting path.
 
 ## Non-Goal
 
