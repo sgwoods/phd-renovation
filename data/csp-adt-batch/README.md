@@ -38,3 +38,8 @@ timing metrics.
 The ij1-ij4 naming in this directory is NOT the same as the ij2/ij3/ij4
 series in `data/acl-experiments/`. The ACL experiments (Q-Batch) use the
 later memory-CSP methodology, while these use direct CSP search.
+
+The preserved `Graphical/*.ci` summaries are historically uneven: `ij1`
+keeps CC points through 500 statements but SEC points only through 450, and
+`ij3` stops at 950. `tests/validate-adt-batch.sh` treats those truncations as
+part of the preserved archive contract rather than as missing modern data.

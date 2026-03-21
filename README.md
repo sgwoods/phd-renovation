@@ -105,6 +105,7 @@ sbcl --non-interactive --load "tests/alex-suite.lisp"
 bash tests/validate-artifacts.sh
 bash tests/validate-dashboard.sh
 bash tests/validate-ff-provenance.sh
+bash tests/validate-adt-batch.sh
 bash tests/validate-ao.sh
 
 # Run legacy/manual AO harnesses
@@ -156,6 +157,10 @@ correlated with the thesis-era ACL curves, preserve the same efficiency
 ordering, and remain within stable per-series ratio bands. Exact magnitudes are
 not identical across platforms, so the repo validates historical trend
 preservation rather than claiming point-for-point statistical identity.
+
+The older ADT `ij1`-`ij4` archive family is now integrity-checkable through
+`tests/validate-adt-batch.sh`, which validates the preserved raw file grids and
+historical CI summaries without claiming a full modern rerun path.
 
 Key findings:
 - Direct CSP matching (ij4) is 10-100x more efficient than the two-phase memory approach (ij2) in constraint checks, but the memory approach provides adaptability benefits not captured by this metric.

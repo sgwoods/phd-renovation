@@ -18,6 +18,9 @@ start here.
 - `validate-ff-provenance.sh`: checks that the preserved `NewData4b-Batch`
   `ff*` graph summaries match their `PrevResults/` carry-forward copies and
   that the supporting raw/count lineage is present.
+- `validate-adt-batch.sh`: checks that the preserved `data/csp-adt-batch/`
+  `ij1`-`ij4` raw file grids and historically uneven CI summary tables still
+  line up as expected.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.
@@ -40,6 +43,7 @@ sbcl --non-interactive --load "tests/run.lisp"
 bash tests/validate-artifacts.sh
 bash tests/validate-dashboard.sh
 bash tests/validate-ff-provenance.sh
+bash tests/validate-adt-batch.sh
 bash tests/validate-ao.sh
 ```
 

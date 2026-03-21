@@ -45,5 +45,8 @@ jobs:
       - name: Validate ff provenance carry-forward
         run: bash tests/validate-ff-provenance.sh
 
+      - name: Validate ADT batch archive structure
+        run: bash tests/validate-adt-batch.sh
+
       - name: Run AO regression validation
         run: bash tests/validate-ao.sh
