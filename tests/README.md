@@ -54,7 +54,10 @@ bash tests/validate-ao.sh
 ```
 
 This is the baseline CI path and the best local confidence check before or
-after code changes.
+after code changes. Fresh March 21, 2026 validation runs of
+`tests/run.lisp` and `tests/validate-ao.sh` are currently clean for the
+supported path, so any new warning output in those flows should be treated as a
+potential regression signal.
 
 ## Legacy AO Harnesses
 

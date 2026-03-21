@@ -11,8 +11,8 @@
     },
     {
       "label": "Current Focus",
-      "value": "Core docstrings",
-      "note": "The baseline is stable enough to improve entry-point docs, workflow clarity, and handoff quality."
+      "value": "Operator docs",
+      "note": "The supported validation gate is now clean enough that local guides, entry-point docs, and handoff clarity are the active front."
     },
     {
       "label": "Build Line",
@@ -60,7 +60,7 @@
       "status_label": "Completed",
       "phase": "Late 0.2",
       "title": "Warning tail reduction",
-      "summary": "Shared core and AO warning families are much quieter now; the AO harness chatter is trimmed and the remaining noise is down to a few small legacy leftovers."
+      "summary": "Shared core and AO warning families were reduced until the supported validation gate now runs cleanly; remaining legacy notes sit outside that mainline path."
     },
     {
       "status": "done",
@@ -74,7 +74,7 @@
       "status_label": "In Progress",
       "phase": "Phase 0.3",
       "title": "Docs, operator clarity, and entry points",
-      "summary": "Core docstrings, workflow docs, and clearer entry-point maps should make the solver easier to operate and safer to extend."
+      "summary": "Local guides, workflow docs, and clearer entry-point maps are making the validated solver line easier to operate and safer to extend."
     },
     {
       "status": "pending",
@@ -115,7 +115,7 @@
     },
     {
       "title": "Warning tail reduction",
-      "summary": "Quiet the logs so new regressions stand out quickly."
+      "summary": "Keep the supported validation gate quiet so new regressions stand out quickly."
     },
     {
       "title": "M1: integrated validated baseline",

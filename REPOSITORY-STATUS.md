@@ -32,7 +32,7 @@ For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 |---|---|
 | Is the whole repo indexed? | Mostly for primary systems, validation surfaces, and major archives; not exhaustively for every recovered intake subtree or legacy side directory. |
 | Is the whole repo integrated? | No. `qcsp3/` plus the supported validation spine are integrated; most historical/result archives remain reference or integrity-check layers. |
-| Is the whole repo tested? | No. The supported solver line and bounded AO baseline are tested; many historical batches are integrity-checked instead of rerun. |
+| Is the whole repo tested? | No. The supported solver line and bounded AO baseline are tested and currently clean in fresh validation runs; many historical batches are integrity-checked instead of rerun. |
 | Is the whole repo publication-validated? | Partially. The main thesis `ij2`/`ij3`/`ij4` story is executable and validated; several older result families are tied to publications/reports as preserved artifacts, but not all are modern reruns. |
 
 ## Repository-Wide Coverage Table

@@ -63,7 +63,7 @@ The short gate summary for this milestone lives in `M1-READINESS.md`.
 1. Keep the currently executable PhD-result path green.
 2. Use the current matrix to guide the post-M1 documentation and integration
    work rather than widening the supported umbrella casually.
-3. Finish shrinking the remaining routine validation-log noise so the
-   validation spine stays a high-signal merge gate.
+3. Keep the supported validation spine warning-clean and treat any new log
+   noise in that path as a regression signal.
 4. Move the next clearly supported family or workflow only when it helps the
    post-M1 integrated line more than it increases maintenance surface.
