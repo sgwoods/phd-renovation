@@ -107,6 +107,8 @@ That means the current recommended order is:
 4. keep terrain as the major deferred recovery lane.
 
 The current bridge note for this target lives in `ADT-BATCH-INTEGRATION.md`.
+Current recommendation: use `csp/` as the first executable bridge host for
+this family, then compare that bridge against `qcsp3/`.
 
 ## Maintenance Rule
 

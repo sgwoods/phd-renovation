@@ -316,6 +316,9 @@ anchors rather than co-equal supported workflows.
    sits closest to the current ADT solver line.
    The current bridge note for that target now lives in
    `ADT-BATCH-INTEGRATION.md`.
+   Current recommendation: start the first executable bridge in `csp/`, not
+   `qcsp3/`, because the preserved drivers are rooted in the historical base
+   solver contract.
 4. Keep the supported validation gate clean and high-signal; treat new warning
    output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
    investigate, not normal background.
