@@ -22,6 +22,7 @@
 (defstruct (AC-Graph
 	    (:print-function
 	     (lambda ( p s k )
+	       (declare (ignore k))
 	       (format s "AC-Graph  <~A, vars=~A, arcs=~A>"
 		       (AC-Graph-Name p)
 		       (variable-list-to-names (AC-Graph-CVariableList p))
@@ -59,7 +60,6 @@ Returns list of variables Vs where Vs is a source for a relation between
 	 (srclist  (remove-if 
 		    #'(lambda (x) 
 			(let (
-			      (srcV  (first x))
 			      (Vlist (second x)) )
 			  (not (member thisTarget Vlist)) ))
 		    arclist))

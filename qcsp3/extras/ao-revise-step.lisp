@@ -253,6 +253,7 @@
   Since xi was used to justify others, and xi has changed, these
   justifications need to be re-verified.
 "
+  (declare (ignore xi-var))
   (if *ao-debug* (comment1 "\n KEEPSrcValPropagateStep ... " xi ))
 
   (let* (

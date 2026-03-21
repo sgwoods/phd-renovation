@@ -29,6 +29,7 @@
 (defstruct (CVariable
 	    (:print-function
 	     (lambda ( p s k )
+	       (declare (ignore k))
 	       (format s "CVariable <~A, dom=~A>"
 		       (CVariable-Name p)
 		       (domval-list-to-names (CVariable-DomainValueList p))
@@ -45,6 +46,7 @@
 (defstruct (DomVal
 	    (:print-function
 	     (lambda ( p s k )
+	       (declare (ignore k))
        (format s "DomVal <~A,  hasL=~A, targBy=~A>"
 		       (DomVal-Name p)
 		       (show-targeted (DomVal-HasLinks p))
@@ -80,6 +82,7 @@
 (defstruct (Link
 	    (:print-function
 	    (lambda ( p s k )
+	      (declare (ignore k))
 	      (format s "Link < src=~A, tlist=~A, status=~A >"
 		      (if (DomVal-p (Link-Source p))
 			  (DomVal-Name (Link-Source p)) 

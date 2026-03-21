@@ -47,7 +47,7 @@
       (load "test4"))
     (setf *alex-ao-loaded* t)
     (setf (symbol-function 'qcsp-alex::load-t4) (lambda () nil))
-    (setf qcsp3::*ao-debug* nil)))
+    (setf (symbol-value (find-symbol "*AO-DEBUG*" :phd-qcsp3)) nil)))
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (ensure-alex-ao-loaded))

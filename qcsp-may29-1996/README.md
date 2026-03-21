@@ -40,7 +40,7 @@ Loaded via ASDF system `:qcsp-may29-1996` (defined in
 | `MPR-Situation/` | Generated MPR situations (gitignored) |
 | `New-Batch/` | 756 batch experiment results |
 | `NewData4a-Batch/` | 209 batch experiment results |
-| `NewData4b-Batch/` | 313 batch experiment results |
+| `NewData4b-Batch/` | 313 batch experiment results for the preserved `ff1` / `ff2` / `ff3` family (see `NewData4b-Batch/README.md`) |
 | `NewData5-Batch/` | 304 batch experiment results |
 | `NewData6-Batch/` | 324 batch experiment results |
 | `Q-Batch/` | 676 Q-solver batch experiment results |

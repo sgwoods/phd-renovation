@@ -68,6 +68,8 @@ Archive metadata now grounds these files more specifically:
   - `Count/fcdr-dist{1,2,3}-*` per-seed result files
   - batch driver stubs such as `f1-0100.lsp` showing direct `adt` runs over
     `q-i2` / `quilici-t1` with FC + DR across the thesis seed family
+  - local documentation in `qcsp-may29-1996/NewData4b-Batch/README.md`
+    explaining the preserved `Count/ -> ff*.all -> ff*.avg / ff*.ci` path
 
 So the `ff*` family is now better understood as a preserved qcsp-era
 ADT/FCDR distribution-comparison dataset, not a direct precursor of the later

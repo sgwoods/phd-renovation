@@ -200,7 +200,7 @@
 
 			(if (fail3-p re-assert)   ;; re-assert necc failed ?
 			    (progn     ;; failed re-assertion
-   	            (comment "Warn DSVPa: Unexp re-asrt fail: linkSrcD last-xi"
+   	            (comment2 "Warn DSVPa: Unexp re-asrt fail: linkSrcD last-xi"
 				       linkSrcD last-xi) 
 
 			      (free-storage-link TL)			      
@@ -272,6 +272,7 @@
  returned for later use as targets in revisions - thus the output of
  deleteSrcValPropagate is a list of variables.
 "
+  (declare (ignore xi-var))
 
   (if *ao-debug* (comment1 "\n KEEPSrcValPropagateAggr ... " xi ))
 
