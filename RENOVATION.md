@@ -200,6 +200,69 @@ suites as the foundation for every future change. New work should either
 preserve those published behaviors or explain any intentional deviation in a
 repeatable way.
 
+## Goal And Current Position
+
+### Overall project goal
+
+Bring the thesis codebase to a state where:
+
+1. the supported solver snapshots run cleanly on modern SBCL,
+2. the published thesis-result story is continuously validated from a fresh
+   checkout,
+3. recovered historical artifacts have documented provenance, and
+4. new research can branch from that baseline with any deltas measured and
+   explained.
+
+In short: renovate the codebase into a trustworthy, reproducible research
+platform, not just a modernized copy of legacy Lisp.
+
+### Where we are against that goal
+
+| Area | Status | Current position |
+|---|---|---|
+| Modern runnable codebase | **Strong** | All four ASDF systems load and the supported FiveAM suites pass on SBCL. |
+| Core regression baseline | **Strong** | Deterministic metric assertions exist for standard and confused queens across all four systems. |
+| AO / `test4` validation | **Good** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline; broader AO coverage is still open. |
+| Thesis artifact pipeline | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
+| Warning hygiene | **Improving** | Repeated core and AO warning families have been reduced substantially, but a small residual tail remains. |
+| Documentation and onboarding | **Good** | `README.md`, `DEVELOPMENT.md`, `RENOVATION.md`, and archive notes now describe the project and current workflow much more accurately. |
+| Historical provenance | **Partial but advancing** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, and many `PrevResults` artifacts are mapped, but the `ff1`/`ff2`/`ff3` generation bridge is still unresolved. |
+| Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` research platform claim. |
+
+### Current roadmap position
+
+- **Phase 1 / `0.1.x` Stability**: effectively complete for the supported
+  artifact pipeline. Fresh-checkout plot regeneration and artifact validation
+  are in place.
+- **Phase 2 / `0.2.x` Verification**: active and substantially advanced. This
+  now includes stronger regression assertions, AO asserted coverage, automated
+  thesis-comparison checks, and incremental warning cleanup.
+- **Phase 3 / `0.3.x` Documentation**: started, but not complete. High-level
+  docs are much stronger; core algorithm docstrings and operator-facing
+  workflow polish still remain.
+- **Phase 4 / Research Readiness**: not yet active as the main lane. We have
+  diagnosed alex's `ij4` divergence, but we are intentionally holding off on
+  broader experimental changes until the baseline is tighter.
+- **Phase 5 / Archive Recovery**: active in parallel. The `historical finds/`
+  intake is now classified, `yj-sun/Csp` has loader/result provenance notes,
+  and archive-to-`PrevResults` mapping has begun.
+
+### Recommended next steps
+
+1. Recover the missing provenance bridge for `data/sparc-archive/PrevResults/ff1.ci`,
+   `ff2.ci`, and `ff3.ci`, starting with `historical finds/yj-sun/Csp/MyBatch/`,
+   `first-3-xy`, `first-3-cpu`, and related archive summaries.
+2. Once that bridge is understood, decide whether to extend CI with a light
+   provenance check for the `ff*` family or keep it documented as a historical
+   comparison layer outside the active executable baseline.
+3. Continue shrinking the remaining warning tail so validation logs become a
+   clearer signal channel for real regressions.
+4. Finish the `0.3.x` documentation lane by adding docstrings and clearer
+   entry-point explanations for the major algorithms and supported workflows.
+5. Only after the baseline and provenance work are tighter, begin controlled
+   research-readiness experiments such as alex DFA-option isolation against the
+   validated snapshot.
+
 ### Phase / Release Alignment
 
 Keep the repo on `0.x` releases until the thesis-validation baseline is stable

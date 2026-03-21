@@ -14,6 +14,19 @@ Three CSP solving strategies are implemented and compared:
 - **Memory-CSP** (`memory-search`): Two-phase approach using a memory of previously solved problems to guide search
 - **Quilici Search**: Memory-based retrieval with similarity metrics
 
+## Project Goal
+
+The renovation goal is not just to make the Lisp code run on modern hardware.
+It is to rebuild the thesis code, data, experiments, and historical artifacts
+into a reproducible research baseline that continuously validates the published
+results and gives future work a trustworthy starting point.
+
+Current focus: keep the supported thesis-validation path executable
+end-to-end, tighten regression coverage around the known baselines, and map the
+historical archives closely enough that any future extension can be tied back to
+documented provenance. See `RENOVATION.md` for the active roadmap and current
+position against that goal.
+
 ## Project Structure
 
 ```
