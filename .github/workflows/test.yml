@@ -48,5 +48,8 @@ jobs:
       - name: Validate ADT batch archive structure
         run: bash tests/validate-adt-batch.sh
 
+      - name: Validate CSP batch archive structure
+        run: bash tests/validate-csp-batch.sh
+
       - name: Run AO regression validation
         run: bash tests/validate-ao.sh

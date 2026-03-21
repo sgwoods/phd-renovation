@@ -25,3 +25,9 @@ and `.sh` shell runners.
 From the original CSP solver on the SPARC workstation. The T1-T6 naming
 corresponds to the 8 cases described in the DREV memorandum (Aug 1993).
 See also `data/csp-save-results/` for the summarized results from these runs.
+
+The preserved archive is uneven in ways that appear historical rather than
+accidental: `T1` has a denser summary file than `T2`/`T3`, `T4` and `T5`
+summary files are stubs, and the `t6-*.out` files in `data/csp-save-results/`
+include a few row-count anomalies. `tests/validate-csp-batch.sh` treats those
+quirks as part of the archive contract instead of trying to normalize them away.

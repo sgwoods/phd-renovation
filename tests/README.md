@@ -21,6 +21,9 @@ start here.
 - `validate-adt-batch.sh`: checks that the preserved `data/csp-adt-batch/`
   `ij1`-`ij4` raw file grids and historically uneven CI summary tables still
   line up as expected.
+- `validate-csp-batch.sh`: checks that the preserved `data/csp-batch/` and
+  `data/csp-save-results/` DREV-era T1-T6 archive still matches its historical
+  summary layout and known row-count quirks.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.
@@ -44,6 +47,7 @@ bash tests/validate-artifacts.sh
 bash tests/validate-dashboard.sh
 bash tests/validate-ff-provenance.sh
 bash tests/validate-adt-batch.sh
+bash tests/validate-csp-batch.sh
 bash tests/validate-ao.sh
 ```
 
