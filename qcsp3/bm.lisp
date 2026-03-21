@@ -40,6 +40,11 @@
 ;; ***************************************************************************
 
 (defun bm ( variables-list &optional (consistent-p #'consistent-p) )
+  "Run the historical BackMark search on VARIABLES-LIST.
+
+This is qcsp3's preserved backmarking implementation. It shares the common
+reporting counters with the rest of the solver but does not support the full
+set of AC/SCH options used by backtracking."
   (let (
 	(U        1)
 	(F        (create-initial-F   variables-list))

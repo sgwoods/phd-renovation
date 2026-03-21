@@ -257,6 +257,7 @@ the instantiation of SYMBOL2 with VALUE2.
 
 ;; Default Queens
 (defun q (n &optional (flag nil) (debug nil))
+  "Solve standard N-Queens with the default qcsp3 search configuration."
   (if (eq flag t)
       (setq out-f "test-output.q")
       (setq out-f t))
@@ -266,6 +267,7 @@ the instantiation of SYMBOL2 with VALUE2.
 
 ;; Simplified Queens
 (defun qs (n &optional (flag nil) (debug nil))
+  "Solve standard N-Queens with the simplified historical configuration."
   (if (eq flag t)
       (setq out-f "test-output.qs")
       (setq out-f t))
@@ -277,6 +279,7 @@ the instantiation of SYMBOL2 with VALUE2.
 
 ;; CSP First Queens
 (defun qc (n &optional (flag nil) (debug nil))
+  "Solve standard N-Queens with pre-search arc consistency enabled."
   (if (eq flag t)
       (setq out-f "test-output.qc")
       (setq out-f t))
@@ -290,6 +293,7 @@ the instantiation of SYMBOL2 with VALUE2.
 
 ;; Default C Queens
 (defun cq (n &optional (flag nil) (debug nil))
+  "Solve the confused-queens variant with the default qcsp3 configuration."
   (if (eq flag t)
       (setq out-f "test-confused.q")
       (setq out-f t))
@@ -300,6 +304,7 @@ the instantiation of SYMBOL2 with VALUE2.
 
 ;; Simplified C Queens
 (defun cqs (n &optional (flag nil) (debug nil))
+  "Solve confused queens with the simplified historical configuration."
   (if (eq flag t)
       (setq out-f "test-confused.qs")
       (setq out-f t))
@@ -312,6 +317,7 @@ the instantiation of SYMBOL2 with VALUE2.
 
 ;; CSP First C Queens
 (defun cqc (n &optional (flag nil) (debug nil))
+  "Solve confused queens with pre-search arc consistency enabled."
   (if (eq flag t)
       (setq out-f "test-confused.qc")
       (setq out-f t))

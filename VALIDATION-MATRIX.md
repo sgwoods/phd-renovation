@@ -7,8 +7,9 @@ project's primary goal:
 2. validate it against other historically reported domains/results, and
 3. converge on one gold-standard code line that can cover that validated scope.
 
-`qcsp3/` is currently the leading candidate for that gold-standard line, but it
-has not yet earned that status across the full historical surface.
+`qcsp3/` is currently the leading candidate for that gold-standard line. It has
+now cleared Milestone M1, but it has not yet earned that status across the
+full historical surface.
 
 ## First Integration Milestone
 
@@ -27,8 +28,8 @@ To satisfy M1, `qcsp3/` must:
    through `qcsp3/`, and
 5. document any remaining meaningful deltas versus the historical snapshots.
 
-This is the first practical step toward one gold-standard code line. It is not
-yet the final "everything historical is unified" finish line.
+This is the first practical step toward one gold-standard code line. M1 is now
+accepted, but it is not the final "everything historical is unified" finish line.
 
 The current delta ledger for this milestone lives in `INTEGRATION-DELTAS.md`.
 The short gate summary for this milestone lives in `M1-READINESS.md`.
@@ -60,9 +61,9 @@ The short gate summary for this milestone lives in `M1-READINESS.md`.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Decide whether the current bounded AO baseline is now sufficient to call
-   Milestone M1 ready, or whether to do one final closeout pass before doing so.
+2. Use the current matrix to guide the post-M1 documentation and integration
+   work rather than widening the supported umbrella casually.
 3. Finish shrinking the remaining routine validation-log noise so the
    validation spine stays a high-signal merge gate.
-4. Use the matrix to support M1 decisions and later expansion, but avoid
-   widening the supported umbrella casually before M1 is explicitly called.
+4. Move the next clearly supported family or workflow only when it helps the
+   post-M1 integrated line more than it increases maintenance surface.

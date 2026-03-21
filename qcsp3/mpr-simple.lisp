@@ -39,6 +39,10 @@
 "
 Example program to solve the MPR problem.  Takes no required args, but
 it is assumed we will use the default situation and template values.
+
+Use this entry point for the spatial/model-pattern-recognition domain. The
+keywords control the preserved situation/template pair, the optional cohesion
+heuristic, and the search/reporting settings for one run.
 "
 
 (setq *check* 1)

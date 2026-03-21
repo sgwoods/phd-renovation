@@ -47,6 +47,10 @@
 "
 Example program to solve the ADT problem.  Takes no required args, but
 it is assumed we will use the default situation and template values.
+
+This is the primary qcsp3 entry point for plan recognition over ADT-style
+program situations. The keyword arguments select the situation/template pair,
+search regime, constraint ordering, and reporting mode used for one run.
 "
 
 (setq *check* 1)

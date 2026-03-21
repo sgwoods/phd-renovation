@@ -25,6 +25,11 @@
 		     debug-csp 
 		     debug-node
 		     output-file )
+  "Initialize the shared solver globals for one problem run.
+
+RAW-VARIABLES is the starting variable/domain alist, DOM names the active
+domain, and the remaining arguments mirror the historical search and output
+flags accepted by the top-level entry points."
 
   ;; **********************************************************************
   ;; Parameter globals
@@ -404,6 +409,7 @@ Return node consistent rejection if it exists for ts1 assigned s1.
   (setq *last-node* val) )
 
 (defun show-options ()
+  "Print the current problem and solver configuration to *OUTPUT-STREAM*."
 
   (if (not (or (eq *output-stream* nil) *single-line-override*))
       (let ()
@@ -672,6 +678,11 @@ Return node consistent rejection if it exists for ts1 assigned s1.
 				(replace-values  nil)
 				(memory-key      nil)
 				)
+  "Render a solver result summary in either single-line or detailed form.
+
+SOLUTION-SET defaults to *SOLUTION-SET*. REPLACE-VALUES reloads saved
+measurement snapshots used by memory-csp reporting, and MEMORY-KEY enables
+the compact two-phase output format."
   
   (let (
 	(override-output (or *single-line-override* memory-key))

@@ -23,7 +23,10 @@
 " Reimplementation of overall strategy using a specific constraint driven
   approach and an open list of current boundary states which represent
   partial solutions still in consideration.  Quilici as the source, this
-  particular algorithm is used in a joint paper."
+  particular algorithm is used in a joint paper.
+
+VARSET is the variable/domain alist to search and CSET is the ordered
+constraint list that drives the historical Quilici-style expansion."
 
  (if (null varset)
      nil

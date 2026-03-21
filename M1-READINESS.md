@@ -9,6 +9,8 @@ Short answer: **no additional non-terrain family is currently an undisclosed
 M1 blocker.** The only explicitly blocked major historical lane remains the
 terrain domain, and that is outside M1 by design.
 
+Project decision as of March 21, 2026: **Milestone M1 is accepted.**
+
 ## M1 Gate Checklist
 
 | Gate | Current status | Evidence | M1 read |
@@ -49,7 +51,7 @@ M1 is ready when we can say all of the following with a straight face:
 5. The remaining archive-heavy families are explicitly *post-M1* rather than
    silently missing.
 
-That means the current question is no longer "what other non-terrain archive
-family must be pulled in before M1?" It is "are we ready to call M1, or do we
-want one more closeout pass on the small operational/documentation leftovers
-before doing so?"
+That means the question is no longer "what other non-terrain archive family
+must be pulled in before M1?" M1 has been accepted, and the active question is
+now "what documentation and operator-facing cleanup best prepares the repo for
+the next integration step?"

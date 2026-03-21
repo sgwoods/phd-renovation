@@ -68,7 +68,15 @@ if ! rg -q '"project_id": "phd-renovation"' docs/public-status-phd-renovation.js
   exit 1
 fi
 
-if ! rg -q '"status_value": "0.2.x-M1"' docs/public-status-phd-renovation.json; then
+expected_status_value="$(python3 - <<'PY'
+import json
+from pathlib import Path
+data = json.loads(Path("docs/release-dashboard-data.json").read_text())
+print(data["metrics"][2]["value"])
+PY
+)"
+
+if ! rg -q "\"status_value\": \"$expected_status_value\"" docs/public-status-phd-renovation.json; then
   echo "Public status manifest is missing the current build line." >&2
   exit 1
 fi

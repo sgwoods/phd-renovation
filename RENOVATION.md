@@ -245,7 +245,7 @@ For the current phase, the practical subgoals are:
 | Warning hygiene | **Strong and improving** | The repeated alex/core STYLE-WARNING tail has now been cleared from the supported validation path, and the AO harness redefinition chatter has been trimmed from both CI and the manual `run-test4*.lisp` flows. The remaining routine noise is now down to a small alex `adt-setup` note and similar minor legacy leftovers. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check, and both the older ADT batch archive and the earliest DREV-era `T1`-`T6` family have moved from provenance-only to integrity-checkable. |
-| Gold-standard integration target | **Emerging, with M1 defined** | `qcsp3/` is the leading candidate, and Milestone M1 now gives the project an explicit first gate for saying it covers the PhD baseline, AO baseline, and preserved `ff*` relationship under one supported umbrella. That milestone is now clearly scoped, but not yet declared satisfied. |
+| Gold-standard integration target | **Emerging, with M1 accepted** | `qcsp3/` is the leading candidate, and Milestone M1 is now accepted as the first gate showing it can carry the PhD baseline, AO baseline, and preserved `ff*` relationship under one supported umbrella. The repo is now moving beyond "is M1 ready?" into post-M1 documentation and integration work. |
 | Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. |
 
 ### First `qcsp3/` integration milestone
@@ -272,7 +272,7 @@ when all of the following are true:
    snapshots are documented as intentional, bounded, or still-open gaps.
 
 The active delta list for this is now centralized in `INTEGRATION-DELTAS.md`.
-The short gate-by-gate answer to "what still blocks M1?" now lives in
+The short gate-by-gate answer that supported the M1 decision now lives in
 `M1-READINESS.md`.
 
 M1 is intentionally narrower than a final "gold-standard achieved" claim. It
@@ -286,16 +286,14 @@ anchors rather than co-equal supported workflows.
 - **Phase 1 / `0.1.x` Stability**: effectively complete for the supported
   artifact pipeline. Fresh-checkout plot regeneration and artifact validation
   are in place.
-- **Phase 2 / `0.2.x` Verification**: active and substantially advanced. This
-  now includes stronger regression assertions, AO asserted coverage, automated
-  thesis-comparison checks, `ff*` integrity/provenance validation, and
-  incremental warning cleanup. This is now a late verification phase focused
-  on closing or explicitly bounding the remaining M1 questions rather than an
-  early baseline-repair phase.
-- **Phase 3 / `0.3.x` Documentation**: started, but not complete. High-level
-  docs are much stronger, the code/test/results roots are now easier to
-  navigate, but core algorithm docstrings and operator-facing workflow polish
-  still remain.
+- **Phase 2 / `0.2.x` Verification**: effectively complete for the M1
+  baseline. This phase delivered stronger regression assertions, AO asserted
+  coverage, automated thesis-comparison checks, `ff*` integrity/provenance
+  validation, and incremental warning cleanup.
+- **Phase 3 / `0.3.x` Documentation**: active. High-level docs are much
+  stronger, the code/test/results roots are easier to navigate, and the next
+  push is core algorithm docstrings plus clearer operator-facing workflow
+  polish.
 - **Phase 4 / Research Readiness**: not yet active as the main lane. We have
   diagnosed alex's `ij4` divergence, but we are intentionally holding off on
   broader experimental changes until the baseline is tighter.
@@ -309,20 +307,16 @@ anchors rather than co-equal supported workflows.
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
-2. Decide whether the current bounded AO baseline is now sufficient to call
-   Milestone M1 ready, or whether to do one final closeout pass before doing
-   so. The gate and its remaining deltas are now explicit in
-   `M1-READINESS.md` and `INTEGRATION-DELTAS.md`.
+2. Push the `0.3.x` documentation lane: add docstrings and clearer entry-point
+   explanations for the major algorithms and supported workflows.
 3. Finish the remaining validation-log cleanup so the merge gate stays a
    clearer signal channel for real regressions. The biggest remaining routine
    noise is now small legacy leftovers like the alex `adt-setup` note rather
    than the old AO redefinition chatter or alex ADT/simple STYLE-WARNING tail.
-4. Finish the `0.3.x` documentation lane by adding docstrings and clearer
-   entry-point explanations for the major algorithms and supported workflows.
-5. Keep building out the validation matrix when useful, but with the main
+4. Keep building out the validation matrix when useful, but with the main
    archive-heavy families now mapped or integrity-checked, avoid widening the
-   supported umbrella casually before M1 is called.
-6. Only after the baseline, warning surface, and provenance work are tighter,
+   supported umbrella casually without a clear post-M1 benefit.
+5. Only after the baseline, warning surface, and provenance work are tighter,
    begin controlled integration and research-readiness experiments such as
    alex DFA-option isolation against the validated snapshot.
 
@@ -335,7 +329,7 @@ the docs accurately describe that supported path.
 - **`0.1.x` Stability builds**: artifact paths, reproducible plot generation,
   and baseline environment setup.
 - **`0.2.x` Verification builds**: stronger asserted regression coverage around
-  the thesis-era baselines. This is the current active track.
+  the thesis-era baselines. This milestone track now culminates in accepted M1.
 - **`0.3.x` Documentation / research-readiness builds**: clearer operator docs,
   explicit supported workflows, and guarded extension points for new research.
 - **`1.0.0` target**: phases 1-3 are complete, CI continuously validates the
@@ -362,9 +356,8 @@ the owning phase in the release summary so future work stays tied to the plan.
 4. Finish converting the AO/test4 path into supported asserted coverage. CI now
    checks qcsp3 and may29 AO cases 1-3 across the reduction families, retains
    the legacy `test4s`/`test4a` wrappers, and keeps alex's revise baseline in
-   the supported AO line. Next work should focus on deciding whether that
-   bounded AO surface is enough to call M1 ready, not on pretending the full
-   historical AO space is already unified.
+   the supported AO line. That bounded AO surface now supports the accepted M1
+   call without pretending the full historical AO space is already unified.
 5. Keep the thesis-era versus modern results comparison executable. CI now
    checks that regenerated SBCL `ij2`/`ij3`/`ij4` tables preserve the ACL
    baseline ordering, correlation, and bounded ratio bands; next work should

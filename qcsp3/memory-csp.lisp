@@ -51,7 +51,11 @@
 		      (2-one-solution-only       nil)  
 		      
 		      ) 
-" Two-Phase Memory-Based Mapping CSP.  "
+  "Run the two-phase memory-based CSP search used in the thesis experiments.
+
+INDEX-TEMPLATE-ID selects the smaller indexing template for phase 1 and
+WHOLE-TEMPLATE-ID selects the full template for phase 2. The 1-* and 2-*
+keyword groups configure the search behavior of those two phases separately."
 
  (let* (
 	(partial-solution-set nil)
