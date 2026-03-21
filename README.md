@@ -53,6 +53,7 @@ data/                       Consolidated data directory (see data/README.md)
   thesis/                   PhD thesis PDF
 Q-Batch-SBCL/               Replicated experiments (SBCL, M4 Mac)
   Graph/                    4-way comparison plots (ACL vs qcsp3 vs alex vs may29)
+incoming/                   Single intake bucket for newly found relevant material
 tests/                      FiveAM test suites
 src/                        Entry point
 ```
@@ -70,6 +71,8 @@ src/                        Entry point
 - `Q-Batch-SBCL/` is the runnable SBCL experiment workspace. It holds the
   modern experiment drivers, generated run directories, and comparison plots.
 - `data/` holds preserved ACL/SPARC-era baselines and archive material.
+- `incoming/` is the first stop for newly found relevant code, data,
+  publications, or experiment artifacts before review and promotion.
 - `historical finds/` is archive intake and provenance work, not supported
   baseline code.
 - Root `run-test4*.lisp`, `run-csp-tests.lisp`, and `renovate.lisp` are
@@ -82,6 +85,8 @@ src/                        Entry point
   systems, result archives, experiment workspaces, and archive-only material.
 - `DUPLICATES-REVIEW.md` records which reviewed historical overlaps are true
   duplicates versus which still carry archive/provenance value.
+- `incoming/README.md` and `incoming/INDEX.md` define and track the intake flow
+  for future finds.
 
 ## ASDF Systems
 
@@ -192,6 +197,7 @@ Directory guides:
 - `Q-Batch-SBCL/README.md`
 - `tests/README.md`
 - `data/README.md`
+- `incoming/README.md`
 - `REPOSITORY-STATUS.md`
 - `REPOSITORY-STRUCTURE-REVIEW.md`
 - `DUPLICATES-REVIEW.md`

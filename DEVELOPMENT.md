@@ -26,6 +26,11 @@ Two top-level status artifacts now help answer broader repo questions quickly:
 - `REPOSITORY-STRUCTURE-REVIEW.md`: filesystem clarity review and
   classification guide
 
+New material intake now has one dedicated landing zone:
+
+- `incoming/`: single bucket for newly found relevant code, data,
+  publications, and experiment artifacts before review and promotion
+
 ## Architecture
 
 ### Four ASDF Systems

@@ -20,6 +20,7 @@ areas still require insider knowledge.**
 | `qcsp-alex-sep16-1997/` | Reference snapshot plus archive-heavy experiment/tooling material | Mixed |
 | `tests/` | Supported validation spine | Strong |
 | `Q-Batch-SBCL/` | Modern experiment drivers plus generated outputs | Mixed |
+| `incoming/` | Single intake bucket for newly found relevant material | Strong |
 | `data/` | Consolidated preserved data/results/publications | Strong |
 | `historical finds/` | Archive intake and recovery staging | Good |
 | `docs/` | Generated status/dashboard/public-page outputs | Good |
@@ -149,6 +150,7 @@ Going forward, read the repo through these buckets:
 
 ### D. Archive recovery / provenance intake
 
+- `incoming/`
 - `historical finds/`
 - `data/motors-releases/`
 - `data/motors-backups/`
@@ -169,6 +171,8 @@ Going forward, read the repo through these buckets:
    `run-csp-tests.lisp`, and `renovate.lisp` are manual compatibility helpers.
 3. Add one short note in snapshot READMEs clarifying which subdirectories are:
    source, runtime-generated data, preserved results, and archive/context.
+4. Keep all new finds landing in `incoming/` first, then promote them only
+   after review.
 
 ### Medium-risk, defer-until-worth-it structure moves
 

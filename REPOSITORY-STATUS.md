@@ -76,6 +76,10 @@ The repository now has three broad zones:
    Recovered historical finds, compressed legacy archives, and missing-domain
    trackers that matter to the long-term story but are not yet integrated.
 
+4. `Incoming review queue`
+   Newly found relevant material should land in `incoming/` first, then be
+   reviewed and promoted into one of the three zones above.
+
 ## Maintenance Rule
 
 Keep this file in sync whenever one of these changes happens:

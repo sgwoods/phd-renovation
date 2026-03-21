@@ -4,6 +4,11 @@ This directory is a staging area for newly recovered historical material that
 appears related to the PhD renovation project, but is not yet part of the
 validated thesis-result baseline.
 
+New finds should land in `incoming/` first. Move material into
+`historical finds/` only after review shows that it belongs here as
+archive/recovery material rather than as canonical data, supported code, or a
+reviewed duplicate.
+
 Treat everything here as archive intake first, source-of-truth second. Nothing
 in this directory should be assumed to define supported behavior until it has
 been cataloged, compared against the tracked snapshots, and either promoted
