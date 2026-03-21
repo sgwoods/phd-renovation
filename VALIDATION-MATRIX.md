@@ -47,7 +47,7 @@ The short gate summary for this milestone lives in `M1-READINESS.md`.
 |---|---|---|---|---|
 | Core queens regressions | `csp/`, `qcsp3/`, `qcsp-may29-1996/`, `qcsp-alex-sep16-1997/` | Executable now | `tests/run.lisp` | Covered as reference baseline; should remain covered in the integrated line |
 | Confused queens metrics | same four snapshots | Executable now | `tests/run.lisp` | Covered as deterministic regression anchor |
-| AO / `test4` baseline | root `run-test4*.lisp`, snapshot extras | Executable now | `tests/ao-run.lisp`, `tests/validate-ao.sh` | In scope for M1; case-1 graph reductions plus `test4s` / `test4a` wrappers asserted, broader AO case coverage still open |
+| AO / `test4` baseline | root `run-test4*.lisp`, snapshot extras | Executable now | `tests/ao-run.lisp`, `tests/validate-ao.sh` | In scope for M1; qcsp3 and May29 now assert AO cases 1-3 across the reduction families plus `test4s` / `test4a`, while alex keeps its revise baseline |
 | PhD `ij2` / `ij3` / `ij4` reported trend story | `data/acl-experiments/Graph/`, thesis plots, SBCL reruns | Executable now | `tests/validate-artifacts.sh`, `tests/validate-thesis-comparison.py`, `Q-Batch-SBCL/` | In scope for M1; central gate for the integrated line |
 | Older `ff1` / `ff2` / `ff3` FCDR distribution family | `qcsp-may29-1996/NewData4b-Batch/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | `tests/validate-ff-provenance.sh` | In scope for M1 as a documented integrity-checked family |
 | Early `exp-1` / `exp-2` / `exp-3` result families | `historical finds/yj-sun/Csp/testdata/Results/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | Crosswalk documented in `historical finds/yj-sun/Csp/RESULTS-CROSSWALK.md` | Not yet covered by the integrated line |
@@ -60,8 +60,8 @@ The short gate summary for this milestone lives in `M1-READINESS.md`.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Decide whether the current bounded AO baseline is sufficient to call
-   Milestone M1 ready, or whether one more AO widening step should land first.
+2. Decide whether the current bounded AO baseline is now sufficient to call
+   Milestone M1 ready, or whether to do one final closeout pass before doing so.
 3. Finish shrinking the remaining routine validation-log noise so the
    validation spine stays a high-signal merge gate.
 4. Use the matrix to support M1 decisions and later expansion, but avoid

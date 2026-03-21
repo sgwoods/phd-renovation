@@ -53,6 +53,11 @@
          (*standard-output* (make-broadcast-stream)))
      ,@body))
 
+(defun reset-qcsp3-ao-state ()
+  "Reload the mutable AO example state so each regression starts fresh."
+  (with-qcsp3-ao-paths
+    (load "example-extend")))
+
 (defun qcsp3-graph-summary (graph)
   (mapcar (lambda (var)
             (list (symbol-name (qcsp3::cvariable-name var))
@@ -60,6 +65,13 @@
                             (symbol-name (qcsp3::domval-name domval)))
                           (qcsp3::cvariable-domainvaluelist var))))
           (qcsp3::graph-variable-list graph)))
+
+(defun assert-qcsp3-case (fn case expected-graph expected-count)
+  "Assert one historical AO graph-reduction case for qcsp3."
+  (reset-qcsp3-ao-state)
+  (let ((result (funcall fn case)))
+    (5am:is (equal (qcsp3-graph-summary result) expected-graph))
+    (5am:is (= qcsp3::*constraint-count* expected-count))))
 
 (5am:def-suite ao-qcsp3-tests
   :description "AO/test4 regression checks for qcsp3 extras")
@@ -97,6 +109,38 @@
       (5am:is (equal (qcsp3-graph-summary result)
                      '(("V0" ("E1")) ("V1" ("A2")) ("V2" ("B3")))))
       (5am:is (= qcsp3::*constraint-count* 35)))))
+
+(5am:test qcsp3-ao-case-2-family
+  "Legacy qcsp3 AO case 2 should stay aligned across AC-3 and AC-new modes."
+  (with-qcsp3-ao-paths
+    (assert-qcsp3-case #'qcsp3::testacs 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       215)
+    (assert-qcsp3-case #'qcsp3::testaca 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       226)
+    (assert-qcsp3-case #'qcsp3::testacns 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       173)
+    (assert-qcsp3-case #'qcsp3::testacna 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       201)))
+
+(5am:test qcsp3-ao-case-3-family
+  "Legacy qcsp3 AO case 3 should stay aligned across AC-3 and AC-new modes."
+  (with-qcsp3-ao-paths
+    (assert-qcsp3-case #'qcsp3::testacs 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       218)
+    (assert-qcsp3-case #'qcsp3::testaca 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       307)
+    (assert-qcsp3-case #'qcsp3::testacns 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       183)
+    (assert-qcsp3-case #'qcsp3::testacna 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       272)))
 
 (5am:test qcsp3-ao-wrapper-step
   "Legacy qcsp3 test4s wrapper should preserve the historical nil revise summary."

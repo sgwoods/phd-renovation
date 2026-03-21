@@ -240,7 +240,7 @@ For the current phase, the practical subgoals are:
 |---|---|---|
 | Reference snapshots runnable | **Strong** | All four ASDF systems load and the supported FiveAM suites pass on SBCL. |
 | Core regression baseline | **Strong** | Deterministic metric assertions exist for standard and confused queens across all four systems. |
-| AO / `test4` validation | **Good and improving** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline, now including the legacy `test4s` / `test4a` wrappers; broader AO case coverage is still open. |
+| AO / `test4` validation | **Strong for bounded M1 scope** | AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline. qcsp3 and May29 now cover AO cases 1-3 across the reduction families plus the legacy `test4s` / `test4a` wrappers, while alex keeps its revise baseline. |
 | PhD-result validation path | **Strong** | CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL `ij2`/`ij3`/`ij4` trend story. |
 | Warning hygiene | **Strong and improving** | The repeated alex/core STYLE-WARNING tail has now been cleared from the supported validation path, and the AO harness redefinition chatter has been trimmed from both CI and the manual `run-test4*.lisp` flows. The remaining routine noise is now down to a small alex `adt-setup` note and similar minor legacy leftovers. |
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
@@ -309,10 +309,10 @@ anchors rather than co-equal supported workflows.
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
-2. Decide whether the current bounded AO baseline is sufficient to call
-   Milestone M1 ready, or whether one more AO widening step should land first.
-   The gate and its remaining deltas are now explicit in `M1-READINESS.md` and
-   `INTEGRATION-DELTAS.md`.
+2. Decide whether the current bounded AO baseline is now sufficient to call
+   Milestone M1 ready, or whether to do one final closeout pass before doing
+   so. The gate and its remaining deltas are now explicit in
+   `M1-READINESS.md` and `INTEGRATION-DELTAS.md`.
 3. Finish the remaining validation-log cleanup so the merge gate stays a
    clearer signal channel for real regressions. The biggest remaining routine
    noise is now small legacy leftovers like the alex `adt-setup` note rather
@@ -360,9 +360,11 @@ the owning phase in the release summary so future work stays tied to the plan.
    confused-queens metric assertions and other low-risk cases where exact
    behavior can be pinned down.
 4. Finish converting the AO/test4 path into supported asserted coverage. CI now
-   checks deterministic case-1 AO outcomes for qcsp3, may29, and alex; next
-   work should either widen that asserted coverage or clearly document any
-   remaining manual-only AO paths.
+   checks qcsp3 and may29 AO cases 1-3 across the reduction families, retains
+   the legacy `test4s`/`test4a` wrappers, and keeps alex's revise baseline in
+   the supported AO line. Next work should focus on deciding whether that
+   bounded AO surface is enough to call M1 ready, not on pretending the full
+   historical AO space is already unified.
 5. Keep the thesis-era versus modern results comparison executable. CI now
    checks that regenerated SBCL `ij2`/`ij3`/`ij4` tables preserve the ACL
    baseline ordering, correlation, and bounded ratio bands; next work should

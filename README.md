@@ -63,7 +63,8 @@ src/                        Entry point
   comparison snapshots.
 - `tests/` is the authoritative validation surface. It contains the Four
   FiveAM suites, the asserted AO runner, and the artifact/thesis-result
-  validation scripts that CI uses.
+  validation scripts that CI uses. The AO runner now covers the bounded M1 AO
+  surface: qcsp3/may29 cases 1-3 plus wrappers, and the alex revise baseline.
 - `Q-Batch-SBCL/` is the runnable SBCL experiment workspace. It holds the
   modern experiment drivers, generated run directories, and comparison plots.
 - `data/` holds preserved ACL/SPARC-era baselines and archive material.

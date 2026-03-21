@@ -11,8 +11,8 @@
     },
     {
       "label": "Current Focus",
-      "value": "M1 readiness",
-      "note": "Sharpen the integrated baseline so Milestone M1 is explicit, honest, and easy to assess."
+      "value": "M1 closeout",
+      "note": "The bounded AO baseline is now much stronger; the next choice is whether to call M1 or do one last closeout pass."
     },
     {
       "label": "Build Line",
@@ -67,7 +67,7 @@
       "status_label": "Active Milestone",
       "phase": "Integration gate",
       "title": "M1: integrated validated baseline",
-      "summary": "qcsp3 must hold the PhD baseline, AO baseline, and documented ff relationship together under one supported integrated story. The remaining question is whether the current bounded AO scope is already enough to call M1 ready."
+      "summary": "qcsp3 must hold the PhD baseline, AO baseline, and documented ff relationship together under one supported integrated story. The AO gate now includes cases 1-3 in qcsp3 and May29 plus the legacy wrappers, so the remaining question is mostly whether to call M1 or do one last closeout pass."
     },
     {
       "status": "pending",
@@ -144,7 +144,7 @@
       },
       {
         "title": "What is already solid",
-        "summary": "All four maintained historical solver snapshots load on SBCL. The thesis ij2 / ij3 / ij4 validation path is executable and CI-protected. AO baseline assertions include the legacy test4 wrappers, ff provenance is checked, and both the older ADT archive and the earliest DREV-era T-series archive are now integrity-checkable."
+        "summary": "All four maintained historical solver snapshots load on SBCL. The thesis ij2 / ij3 / ij4 validation path is executable and CI-protected. AO baseline assertions now cover qcsp3 and May29 cases 1-3 plus the legacy test4 wrappers, alex keeps its revise baseline, ff provenance is checked, and both the older ADT archive and the earliest DREV-era T-series archive are integrity-checkable."
       },
       {
         "title": "What M1 means",

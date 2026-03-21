@@ -54,6 +54,11 @@
          (*standard-output* (make-broadcast-stream)))
      ,@body))
 
+(defun reset-may29-ao-state ()
+  "Reload the mutable AO example state so each regression starts fresh."
+  (with-may29-ao-paths
+    (load "example-extend")))
+
 (defun may29-graph-summary (graph)
   (mapcar (lambda (var)
             (list (symbol-name (qcsp-may29::cvariable-name var))
@@ -61,6 +66,13 @@
                             (symbol-name (qcsp-may29::domval-name domval)))
                           (qcsp-may29::cvariable-domainvaluelist var))))
           (qcsp-may29::graph-variable-list graph)))
+
+(defun assert-may29-case (fn case expected-graph expected-count)
+  "Assert one historical AO graph-reduction case for qcsp-may29."
+  (reset-may29-ao-state)
+  (let ((result (funcall fn case)))
+    (5am:is (equal (may29-graph-summary result) expected-graph))
+    (5am:is (= qcsp-may29::*constraint-count* expected-count))))
 
 (5am:def-suite ao-may29-tests
   :description "AO/test4 regression checks for qcsp-may29 extras")
@@ -98,6 +110,38 @@
       (5am:is (equal (may29-graph-summary result)
                      '(("V0" ("E1")) ("V1" ("A2")) ("V2" ("B3")))))
       (5am:is (= qcsp-may29::*constraint-count* 35)))))
+
+(5am:test may29-ao-case-2-family
+  "May29 AO case 2 should stay aligned across AC-3 and AC-new modes."
+  (with-may29-ao-paths
+    (assert-may29-case #'qcsp-may29::testacs 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       215)
+    (assert-may29-case #'qcsp-may29::testaca 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       226)
+    (assert-may29-case #'qcsp-may29::testacns 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       173)
+    (assert-may29-case #'qcsp-may29::testacna 2
+                       '(("V2" ("B3")) ("V0" ("E1")) ("V1" ("A2")))
+                       201)))
+
+(5am:test may29-ao-case-3-family
+  "May29 AO case 3 should stay aligned across AC-3 and AC-new modes."
+  (with-may29-ao-paths
+    (assert-may29-case #'qcsp-may29::testacs 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       218)
+    (assert-may29-case #'qcsp-may29::testaca 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       307)
+    (assert-may29-case #'qcsp-may29::testacns 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       183)
+    (assert-may29-case #'qcsp-may29::testacna 3
+                       '(("V1" ("A2")) ("V2" ("B3")) ("V0" ("E1")))
+                       272)))
 
 (5am:test may29-ao-wrapper-step
   "May29 test4s wrapper should preserve the historical nil revise summary."

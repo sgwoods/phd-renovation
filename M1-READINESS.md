@@ -15,7 +15,7 @@ terrain domain, and that is outside M1 by design.
 |---|---|---|---|
 | Supported FiveAM/core baseline | Met | `tests/run.lisp` | Core solver baseline is already part of the validated line. |
 | Supported PhD `ij2` / `ij3` / `ij4` trend story | Met | `tests/validate-artifacts.sh`, `tests/validate-thesis-comparison.py` | This is the central executable thesis baseline and remains the main gate. |
-| Asserted AO baseline | Met for bounded scope | `tests/ao-run.lisp`, `tests/validate-ao.sh` | M1 accepts the current honest AO boundary: asserted case-1 reductions plus `test4s` / `test4a`, with broader AO breadth deferred. |
+| Asserted AO baseline | Met for bounded scope | `tests/ao-run.lisp`, `tests/validate-ao.sh` | M1 accepts the current honest AO boundary: qcsp3 and May29 now assert AO cases 1-3 across the reduction families plus `test4s` / `test4a`, while alex keeps its revise baseline. Broader AO breadth can stay post-M1. |
 | Preserved `ff1` / `ff2` / `ff3` relationship | Met as integrity-checked | `tests/validate-ff-provenance.sh` | M1 does not require `ff*` to be rerunnable through `qcsp3/`; it requires the family to stay explicitly connected and checked. |
 | Meaningful snapshot deltas documented | Met | `INTEGRATION-DELTAS.md` | The remaining snapshot differences are now explicit rather than folklore. |
 | Validation/dashboard/public status flow | Met | `tests/validate-dashboard.sh`, `docs/public-status-phd-renovation.json` | Operator/public status outputs are now part of the maintained baseline flow. |
@@ -50,5 +50,6 @@ M1 is ready when we can say all of the following with a straight face:
    silently missing.
 
 That means the current question is no longer "what other non-terrain archive
-family must be pulled in before M1?" It is "do we want to widen AO or tighten
-the last small operational/documentation gaps before calling M1 ready?"
+family must be pulled in before M1?" It is "are we ready to call M1, or do we
+want one more closeout pass on the small operational/documentation leftovers
+before doing so?"

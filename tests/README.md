@@ -8,7 +8,8 @@ start here.
 
 - `run.lisp`: orchestrates the Four FiveAM suites in separate SBCL processes.
 - `ao-run.lisp`: asserted AO regression runner for the supported `test4`
-  baseline across qcsp3, may29, and alex.
+  baseline across qcsp3, may29, and alex, now covering qcsp3/may29 AO cases
+  1-3 plus the legacy wrappers and alex's revise baseline.
 - `validate-artifacts.sh`: rebuilds SBCL graph artifacts, regenerates overlay
   plots, and checks the current thesis-result pipeline.
 - `validate-dashboard.sh`: regenerates the visual release dashboard and the
@@ -35,7 +36,8 @@ start here.
 - `may29-suite.lisp`: May 29 1996 snapshot regression metrics.
 - `alex-suite.lisp`: Sep 16 1997 alex snapshot regression metrics.
 - `ao-qcsp3-suite.lisp`, `ao-may29-suite.lisp`, `ao-alex-suite.lisp`:
-  deterministic AO assertions for the supported `test4` path.
+  deterministic AO assertions for the supported `test4` path, including the
+  bounded M1 AO surface.
 
 ## Supported Validation Spine
 
