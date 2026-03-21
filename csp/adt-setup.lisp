@@ -260,6 +260,7 @@
 (defun generate-ran-Zero (sid sloc &optional 
 		      (index (get-rand-int))
 		      (basePair  (random-element *current-array-list*)) )
+  (declare (ignore index))
   (if (eq (random 2) 1)
       (let* (
 	     (baseArray (first basePair))
