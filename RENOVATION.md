@@ -248,6 +248,35 @@ For the current phase, the practical subgoals are:
 | Gold-standard integration target | **Emerging** | `qcsp3/` is the leading candidate, but the project has not yet defined and satisfied the first explicit milestone for saying it covers the PhD baseline, AO baseline, and preserved historical result families under one supported umbrella. |
 | Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. |
 
+### First `qcsp3/` integration milestone
+
+The first concrete milestone for `qcsp3/` is:
+
+**Milestone M1: integrated validated baseline**
+
+`qcsp3/` can be treated as the project's first real integrated solver line
+when all of the following are true:
+
+1. the current validation spine passes from a fresh checkout:
+   `tests/run.lisp`, `tests/validate-artifacts.sh`,
+   `tests/validate-ao.sh`, and `tests/validate-ff-provenance.sh`,
+2. `qcsp3/` remains the default executable path for the supported
+   thesis-result story, especially the ACL-vs-SBCL `ij2`/`ij3`/`ij4`
+   comparison workflow,
+3. the supported AO baseline is asserted and documented as part of the
+   integrated line rather than treated as a separate historical annex,
+4. the preserved `ff1`/`ff2`/`ff3` family has an explicit documented
+   relationship to the integrated line, even if that family is still
+   integrity-checkable rather than fully rerunnable through `qcsp3/`, and
+5. any remaining meaningful differences between `qcsp3/` and the reference
+   snapshots are documented as intentional, bounded, or still-open gaps.
+
+M1 is intentionally narrower than a final "gold-standard achieved" claim. It
+does not require every historical family to be fully executable through
+`qcsp3/` yet. It does require that `qcsp3/` become the clear operational center
+of the validated baseline, with the historical snapshots serving as reference
+anchors rather than co-equal supported workflows.
+
 ### Current roadmap position
 
 - **Phase 1 / `0.1.x` Stability**: effectively complete for the supported
@@ -279,11 +308,9 @@ For the current phase, the practical subgoals are:
    clearer signal channel for real regressions. The current highest-value tail
    is the small alex ADT/simple cluster and the last cross-domain legacy
    redefinition noise.
-3. Define the first concrete `qcsp3/` integration milestone: what exactly must
-   be true before it can be called the leading executable line rather than just
-   the leading candidate. A good first milestone is coverage of the supported
-   PhD baseline, the asserted AO baseline, and an explicit documented
-   relationship to the preserved `ff*` family.
+3. Drive toward Milestone M1 for `qcsp3/`: keep the supported PhD baseline,
+   the asserted AO baseline, and the documented `ff*` relationship under one
+   coherent integrated-solver story.
 4. Keep building out the validation matrix: for each historical domain/result
    family, mark whether it is executable now, integrity-checkable now, or
    provenance-only for now, and identify which family should move next.
