@@ -32,11 +32,12 @@ See MAKE-INITIAL-BT-STATE for more information.
 
 (defun make-initial-bt-state (variables-list)
 "
-Contructor of initial state of a backtracking process.
-Input: An a-list of 'variables'.  Each entry has its car the name of a
-       variable and its cdr a list of domain value for that variable.
-Output: A bt-state for initiating the backtracking process.
-MPR VERSION
+Construct the root BT-STATE for a fresh backtracking run.
+
+VARIABLES-LIST is the historical variable/domain alist used throughout the
+solver. Each element has the variable identifier in its car and the current
+domain values in its cdr. The returned BT-STATE is the object callers should
+pass to BACKTRACKING when starting a new search from scratch.
 "
     (when variables-list
         (make-bt-state  
@@ -61,28 +62,20 @@ MPR VERSION
 				(sch-c                nil)
 				)
 "
-Generic backtracking routine.
-Input: CURRENT-STATE is an internal state of a backtracking process 
-       from which the backtracking is to start.  To initiate a new
-       backtracking process, use MAKE-INITIAL-BT-STATE to create the 
-       initial state.   CONSISTENT-P is a function as specified in
-       the documentation of CONSISTENT-P.
-Output: Two values are returned.  The first is the list of solution
-        found.  The list will contain only one solution if keyword
-        :ONE-SOLUTION-ONLY is true, otherwise, it will contain all the
-        solution found by the backtracking process starting in the 
-        given state.  A solution is structured as a list of variable-
-        value pairs (a list of 2 elements).  The first element of the
-        pair is a variable symbol, and the second is the value instantiated
-        to the variable.  The second returned value is the next state
-        of the backtracking process.  It can be passed back to the 
-        function to resume backtracking so that more solution can be
-        collected.  If the second returned value is NIL then the 
-        backtracking process terminates.
-Keyword: :FORWARD-CHECKING and :DYNAMIC-REARRANGEMENT indicate if the
-         backtracking process will applies forward-checking and dynamic-
-         rearrangement to speed up the search.  :ONE-SOLUTION-ONLY specifies
-         if only one solution needed.  All flags are default to be true.
+Run the core chronological backtracking search from CURRENT-STATE.
+
+Use MAKE-INITIAL-BT-STATE to build CURRENT-STATE for a new run. CONSISTENT-P
+must accept the historical variable/value/partial-solution calling convention
+used across the solver domains.
+
+Two values are returned:
+1. the solution set collected from this run segment, and
+2. the next BT-STATE to resume from, or NIL when the search is exhausted.
+
+FORWARD-CHECKING and DYNAMIC-REARRANGEMENT enable the classic pruning and
+reordering heuristics. ONE-SOLUTION-ONLY keeps the run in the common
+single-answer mode used by many of the higher-level entry
+points.
 "
     (let
         (

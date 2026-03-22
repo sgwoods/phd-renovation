@@ -3,8 +3,8 @@
 ;;;; Usage:
 ;;;;   sbcl --load "src/main.lisp"
 ;;;;
-;;;; Loads both ASDF systems (:phd-research and :qcsp3) and drops
-;;;; into a REPL with the CWD set to qcsp3/ for interactive use.
+;;;; Loads the primary ASDF system (:qcsp3) and drops into a REPL
+;;;; with the CWD set to qcsp3/ for interactive use.
 ;;;;
 ;;;; Available entry points after loading:
 ;;;;   (qcsp3:qc N)             -- N-Queens with AC-3
@@ -12,6 +12,8 @@
 ;;;;   (qcsp3:adt ...)          -- Abstract Data Type recognition
 ;;;;   (qcsp3:mpr ...)          -- Model Pattern Recognition
 ;;;;   (qcsp3:memory-search ..) -- Two-phase memory-based CSP search
+;;;;   (documentation 'qcsp3:backtracking 'function)
+;;;;                           -- inspect the in-code docstring for an entry point
 ;;;;
 ;;;; For batch experiments, see Q-Batch-SBCL/*.sh
 

@@ -47,6 +47,21 @@ After loading:
 - `(qcsp3:mpr)` for MPR
 - `(qcsp3:memory-search)` for the two-phase memory-based path
 
+## Using In-Code Docs
+
+The `0.3.x` docs lane is also pushing more guidance directly into the Lisp
+entry points. From the REPL you can inspect those docstrings with:
+
+```lisp
+(documentation 'qcsp3:backtracking 'function)
+(documentation 'qcsp3:ac-3 'function)
+(documentation 'qcsp3:memory-search 'function)
+(documentation 'qcsp3:quilici-search 'function)
+```
+
+This is the fastest way to see what an entry point expects without leaving the
+interactive session.
+
 ## Relationship To The Repo
 
 If `qcsp3/` is the main solver line and `tests/` is the validation gate,

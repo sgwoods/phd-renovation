@@ -522,6 +522,7 @@ Return node consistent rejection if it exists for ts1 assigned s1.
 ;;
 
 (defun show-bt-state (bt-state)
+  "Pretty-print one BT-STATE for manual debugging or trace inspection."
   (show-state        
    :node-id           (bt-state-node-id bt-state)
    :prev-node-id      (bt-state-prev-node-id bt-state)
@@ -548,6 +549,7 @@ Return node consistent rejection if it exists for ts1 assigned s1.
 			(max-fail-level nil)
 			(parent-state nil)
 			(where 'nowhere))
+  "Pretty-print a generic solver state snapshot to *OUTPUT-STREAM*."
 
   (if (not (eq *output-stream* nil))
       (let ()

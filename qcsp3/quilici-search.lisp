@@ -20,13 +20,15 @@
 			cset
 			&optional (debug-q *debug-q*)
 			) 
-" Reimplementation of overall strategy using a specific constraint driven
-  approach and an open list of current boundary states which represent
-  partial solutions still in consideration.  Quilici as the source, this
-  particular algorithm is used in a joint paper.
+"
+Run the preserved Quilici-style ordered search routine.
 
 VARSET is the variable/domain alist to search and CSET is the ordered
-constraint list that drives the historical Quilici-style expansion."
+constraint list that drives expansion. Unlike MEMORY-SEARCH, this path keeps
+the ordering discipline directly in the search frontier and is best treated as
+the earlier, more literal Quilici-inspired experiment line rather than the
+main thesis baseline.
+"
 
  (if (null varset)
      nil

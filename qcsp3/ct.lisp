@@ -3,12 +3,12 @@
 
 (defun revise (symbol1 domain1 symbol2 domain2 consistent-p partial-solution )
 "
-The REVISE routine by Mackworth.
-SYMBOL and SYMBOL2 are two variable names.
-DOMAIN1 and DOMAIN2 are their domain respectively.
-CONSISTENT-P is a function as specfied in the backtracking routine to check
-for the consistency of two instantiations.
-The function returns a new domain for SYMBOL1.
+Mackworth's REVISE step for AC-3.
+
+SYMBOL1 and SYMBOL2 are variable identifiers, DOMAIN1 and DOMAIN2 are their
+current domains, and CONSISTENT-P is the domain-specific binary consistency
+predicate. Returns two values: the filtered domain for SYMBOL1 and a flag
+showing whether any value was deleted.
 "
     (let (
 	  (delete-p nil) 
@@ -47,13 +47,12 @@ The function returns a new domain for SYMBOL1.
 
 (defun ac-3 (variable-list arc-p consistent-p partial-solution)
 "
-The AC-3 routine by Mackworth.
-VARIABLE-LIST is a list of variables as specified in the backtracking routine.
-It is a list of sublists, each has its car a variable symbol and its cdr a
-list of all possible domain values for that variable.
-ARC-P is a function as described in ARC-P.
-CONSISTENT-P is a function as described in CONSISTENT-P.
-The function returns a new variable list which is arc-consistent.
+Run Mackworth's AC-3 preprocessing or in-search pruning pass.
+
+VARIABLE-LIST is the standard variable/domain alist, ARC-P identifies which
+pairs of variables participate in binary constraints, and CONSISTENT-P is the
+domain-specific compatibility predicate. The return value is a copied variable
+list whose domains have been made arc-consistent.
 "
     (let* (
 	   (arc-list (get-all-arcs variable-list arc-p)) 
@@ -115,10 +114,10 @@ The function returns a new variable list which is arc-consistent.
 
 (defun get-all-arcs (variable-list arc-p)
 "
-Create a list of all the existing arcs.
-Input: VARIABLE-LIST is a list of sublist, each has its car a variable symbol
-       and its cdr a list of domain values for that variable.  ARC-P is
-       a function as defined in ARC-P.
+Create the full directed arc list implied by VARIABLE-LIST and ARC-P.
+
+VARIABLE-LIST is the standard variable/domain alist. ARC-P is the
+domain-specific adjacency predicate used by AC-3 and ordering helpers.
 "
    (let (
 	 arc-list 

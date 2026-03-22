@@ -51,6 +51,16 @@ historical comparison snapshots, start here.
 | `qcsp3:bm`, `qcsp3:backtracking`, `qcsp3:ac-3` | Core solver/search algorithms |
 | `qcsp3:set-globals`, `qcsp3:show-options`, `qcsp3:show-solution` | Shared setup/reporting helpers |
 
+Recent `0.3.x` work is also pushing more operator guidance into the code
+itself. In a REPL you can inspect the active docstrings directly:
+
+```lisp
+(documentation 'qcsp3:backtracking 'function)
+(documentation 'qcsp3:ac-3 'function)
+(documentation 'qcsp3:memory-search 'function)
+(documentation 'qcsp3:quilici-search 'function)
+```
+
 The most common interactive load path is still:
 
 ```bash

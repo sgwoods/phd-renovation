@@ -63,6 +63,32 @@ HANDBOOK_SOURCES = [
         "Architecture, pitfalls, build commands, and day-to-day maintenance guidance.",
     ),
     HandbookSource(
+        "qcsp3 Guide",
+        "qcsp3/README.md",
+        "Local guide to the primary integrated solver line, its entry points, and its AO support role.",
+    ),
+    HandbookSource(
+        "src Guide",
+        "src/README.md",
+        "Interactive entry-point guide for loading the primary solver line in a REPL.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "tests Guide",
+        "tests/README.md",
+        "Authoritative validation-surface guide for the supported confidence gate.",
+    ),
+    HandbookSource(
+        "Experiment Workspace Guide",
+        "Q-Batch-SBCL/README.md",
+        "How the modern experiment workspace, overlay plots, and generated run assets fit together.",
+    ),
+    HandbookSource(
+        "data Guide",
+        "data/README.md",
+        "Catalog of preserved datasets, baseline results, thesis artifacts, and archive holdings.",
+    ),
+    HandbookSource(
         "Workflows",
         "WORKFLOWS.md",
         "Operator-facing workflow map: validation, experiments, docs sync, and intake.",
