@@ -87,6 +87,8 @@ src/                        Entry point
   families are executable now, integrity-checkable now, or still reference-only.
 - `REPOSITORY-STATUS.md` answers the broader repo-wide question: what is
   indexed, integrated, tested, and publication-validated.
+- `DOCS-COVERAGE-REVIEW.md` records what parts of the repo are now well
+  documented, what still feels thin, and where the next docs passes should go.
 - `WORKFLOWS.md` maps the primary supported operator workflows and the
   secondary/manual ones.
 - `docs/project-handbook.html` is the full generated human-readable handbook
@@ -247,6 +249,7 @@ Directory guides:
 - `historical finds/README.md`
 - `REPOSITORY-STATUS.md`
 - `REPOSITORY-STRUCTURE-REVIEW.md`
+- `DOCS-COVERAGE-REVIEW.md`
 - `DUPLICATES-REVIEW.md`
 - `ADT-BATCH-INTEGRATION.md`
 

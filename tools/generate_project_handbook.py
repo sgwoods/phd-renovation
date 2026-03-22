@@ -272,6 +272,11 @@ HANDBOOK_SOURCES = [
         "Filesystem review: supported line, reference snapshots, archives, and mixed-purpose areas.",
     ),
     HandbookSource(
+        "Documentation Coverage Review",
+        "DOCS-COVERAGE-REVIEW.md",
+        "Repo-wide read on what is now well documented, what still feels thin, and where the next documentation passes should go.",
+    ),
+    HandbookSource(
         "Duplicates Review",
         "DUPLICATES-REVIEW.md",
         "Which reviewed historical overlaps are duplicates versus preserved provenance layers.",

@@ -403,6 +403,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-documentation-coverage-review">Documentation Coverage Review</a></h2>
+        <p>Repo-wide read on what is now well documented, what still feels thin, and where the next documentation passes should go.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-renovation-roadmap">Renovation Roadmap</a></h2>
         <p>Migration history, current phase, roadmap, and long-form status narrative.</p>
       </article>
@@ -613,6 +618,10 @@ h1{
           <ul class="subtoc"><li><a href="#section-repository-structure-review-top-level-classification">Top-Level Classification</a></li><li><a href="#section-repository-structure-review-what-is-already-clear">What Is Already Clear</a></li><li><a href="#section-repository-structure-review-primary-system-artifacts">Primary System Artifacts</a></li><li><a href="#section-repository-structure-review-domain-definitions">Domain Definitions</a></li><li><a href="#section-repository-structure-review-preserved-results-vs-active-validation">Preserved Results vs Active Validation</a></li><li><a href="#section-repository-structure-review-where-the-structure-is-still-doing-too-much-work">Where The Structure Is Still Doing Too Much Work</a></li><li><a href="#section-repository-structure-review-1-q-batch-sbcl-mixes-code-tracked-outputs-and-scratch-data">1. `Q-Batch-SBCL/` mixes code, tracked outputs, and scratch data</a></li><li><a href="#section-repository-structure-review-2-historical-snapshot-roots-mix-source-generated-runtime-data-and-preserved-archives">2. Historical snapshot roots mix source, generated runtime data, and preserved archives</a></li><li><a href="#section-repository-structure-review-3-root-level-legacy-helper-scripts-are-easy-to-overread">3. Root-level legacy helper scripts are easy to overread</a></li><li><a href="#section-repository-structure-review-4-some-directory-names-are-historically-accurate-but-semantically-opaque">4. Some directory names are historically accurate but semantically opaque</a></li><li><a href="#section-repository-structure-review-5-historical-finds-is-accurate-but-awkward-as-a-pathname">5. `historical finds/` is accurate but awkward as a pathname</a></li><li><a href="#section-repository-structure-review-recommended-classification-model">Recommended Classification Model</a></li><li><a href="#section-repository-structure-review-a-supported-integrated-line">A. Supported integrated line</a></li><li><a href="#section-repository-structure-review-b-reference-snapshots">B. Reference snapshots</a></li><li><a href="#section-repository-structure-review-c-preserved-result-families">C. Preserved result families</a></li><li><a href="#section-repository-structure-review-d-archive-recovery-provenance-intake">D. Archive recovery / provenance intake</a></li><li><a href="#section-repository-structure-review-e-manual-compatibility-helpers">E. Manual compatibility helpers</a></li><li><a href="#section-repository-structure-review-recommendations">Recommendations</a></li><li><a href="#section-repository-structure-review-low-risk-do-now-documentation-moves">Low-risk, do-now documentation moves</a></li><li><a href="#section-repository-structure-review-medium-risk-defer-until-worth-it-structure-moves">Medium-risk, defer-until-worth-it structure moves</a></li><li><a href="#section-repository-structure-review-do-not-do-casually">Do not do casually</a></li><li><a href="#section-repository-structure-review-bottom-line">Bottom Line</a></li></ul>
         </li>
         <li>
+          <a href="#section-documentation-coverage-review">Documentation Coverage Review</a>
+          <ul class="subtoc"><li><a href="#section-documentation-coverage-review-current-read">Current Read</a></li><li><a href="#section-documentation-coverage-review-coverage-levels">Coverage Levels</a></li><li><a href="#section-documentation-coverage-review-strong">Strong</a></li><li><a href="#section-documentation-coverage-review-good-but-still-mixed">Good But Still Mixed</a></li><li><a href="#section-documentation-coverage-review-still-thin">Still Thin</a></li><li><a href="#section-documentation-coverage-review-what-improved-in-this-pass">What Improved In This Pass</a></li><li><a href="#section-documentation-coverage-review-main-remaining-risks">Main Remaining Risks</a></li><li><a href="#section-documentation-coverage-review-recommended-next-documentation-moves">Recommended Next Documentation Moves</a></li><li><a href="#section-documentation-coverage-review-maintenance-rule">Maintenance Rule</a></li></ul>
+        </li>
+        <li>
           <a href="#section-duplicates-review">Duplicates Review</a>
           <ul class="subtoc"><li><a href="#section-duplicates-review-status-key">Status Key</a></li><li><a href="#section-duplicates-review-reviewed-items">Reviewed Items</a></li><li><a href="#section-duplicates-review-practical-rule">Practical Rule</a></li><li><a href="#section-duplicates-review-current-canonical-copy-rules">Current Canonical Copy Rules</a></li><li><a href="#section-duplicates-review-maintenance-rule">Maintenance Rule</a></li></ul>
         </li>
@@ -683,6 +692,8 @@ src/                        Entry point</code></pre>
 <p>families are executable now, integrity-checkable now, or still reference-only.</p>
 <ul><li><code>REPOSITORY-STATUS.md</code> answers the broader repo-wide question: what is</li></ul>
 <p>indexed, integrated, tested, and publication-validated.</p>
+<ul><li><code>DOCS-COVERAGE-REVIEW.md</code> records what parts of the repo are now well</li></ul>
+<p>documented, what still feels thin, and where the next docs passes should go.</p>
 <ul><li><code>WORKFLOWS.md</code> maps the primary supported operator workflows and the</li></ul>
 <p>secondary/manual ones.</p>
 <ul><li><code>docs/project-handbook.html</code> is the full generated human-readable handbook</li></ul>
@@ -760,7 +771,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>csp/ADT-Random/README.md</code></li><li><code>csp/MPR-Random/README.md</code></li><li><code>csp/MPR-Situation/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>qcsp3/ADT-Random/README.md</code></li><li><code>qcsp3/ADT-Situation/README.md</code></li><li><code>qcsp3/MPR-Random/README.md</code></li><li><code>qcsp3/MPR-Situation/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>qcsp-may29-1996/extras/README.md</code></li><li><code>qcsp-may29-1996/ADT-Random/README.md</code></li><li><code>qcsp-may29-1996/ADT-Situation/README.md</code></li><li><code>qcsp-may29-1996/ADT-SituationMar96/README.md</code></li><li><code>qcsp-may29-1996/MPR-Random/README.md</code></li><li><code>qcsp-may29-1996/MPR-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MyBatch/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Situation/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>csp/ADT-Random/README.md</code></li><li><code>csp/MPR-Random/README.md</code></li><li><code>csp/MPR-Situation/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>qcsp3/ADT-Random/README.md</code></li><li><code>qcsp3/ADT-Situation/README.md</code></li><li><code>qcsp3/MPR-Random/README.md</code></li><li><code>qcsp3/MPR-Situation/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>qcsp-may29-1996/extras/README.md</code></li><li><code>qcsp-may29-1996/ADT-Random/README.md</code></li><li><code>qcsp-may29-1996/ADT-Situation/README.md</code></li><li><code>qcsp-may29-1996/ADT-SituationMar96/README.md</code></li><li><code>qcsp-may29-1996/MPR-Random/README.md</code></li><li><code>qcsp-may29-1996/MPR-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MyBatch/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Situation/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DOCS-COVERAGE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -786,7 +797,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>part of the supported integrated line.</p>
 <ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
 <p>provenance, recovery, or context rather than active validation.</p>
-<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>.</p>
 <h3 id="section-repository-status-status-key">Status Key</h3>
 <ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
 <p>reported results, either executable or integrity-checkable.</p>
@@ -2686,7 +2697,9 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li>root <code>run-test4*.lisp</code></li><li><code>run-csp-tests.lisp</code></li><li><code>renovate.lisp</code></li></ul>
 <h3 id="section-repository-structure-review-recommendations">Recommendations</h3>
 <h4 id="section-repository-structure-review-low-risk-do-now-documentation-moves">Low-risk, do-now documentation moves</h4>
-<ol><li>Keep <code>REPOSITORY-STATUS.md</code> and this file linked from <code>README.md</code>.</li><li>Add one short top-level note in <code>README.md</code> that root <code>run-test4*.lisp</code>,</li></ol>
+<ol><li>Keep <code>REPOSITORY-STATUS.md</code> and this file linked from <code>README.md</code>.</li><li>Keep <code>DOCS-COVERAGE-REVIEW.md</code> current as the explicit record of what is</li></ol>
+<p>now well-covered versus still thin.</p>
+<ol><li>Add one short top-level note in <code>README.md</code> that root <code>run-test4*.lisp</code>,</li></ol>
 <p><code>run-csp-tests.lisp</code>, and <code>renovate.lisp</code> are manual compatibility helpers.</p>
 <ol><li>Add one short note in snapshot READMEs clarifying which subdirectories are:</li></ol>
 <p>source, runtime-generated data, preserved results, and archive/context.</p>
@@ -2711,6 +2724,63 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>What remains structurally confusing is not the solver core. It is the historical overlap between:</p>
 <ul><li>source vs embedded results inside snapshot roots,</li><li>tracked experiment infrastructure vs generated outputs,</li><li>and manual compatibility helpers vs supported workflows.</li></ul>
 <p>That means the next best improvements are documentation and labeling, not aggressive directory surgery.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-documentation-coverage-review">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Documentation Coverage Review</h2>
+            <p class="sectionSummary">Repo-wide read on what is now well documented, what still feels thin, and where the next documentation passes should go.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/DOCS-COVERAGE-REVIEW.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file records the current state of documentation coverage across the repo:</p>
+<ol><li>what is already well explained,</li><li>what still needs insider knowledge,</li><li>and what the next documentation passes should target.</li></ol>
+<p>Use it as the documentation-focused counterpart to:</p>
+<ul><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>WORKFLOWS.md</code></li></ul>
+<h3 id="section-documentation-coverage-review-current-read">Current Read</h3>
+<p>Short answer:</p>
+<p><strong>documentation coverage is now strong for the primary solver line, the validation spine, the main preserved result families, and the major historical snapshot workspaces.</strong></p>
+<p>What remains thinner is no longer the core architecture. It is mostly:</p>
+<ul><li>a few deeper archive/context subtrees,</li><li>some historical/tooling side areas that are preserved but not central,</li><li>and in-code/operator explanation depth inside specific Lisp files rather than</li></ul>
+<p>top-level repo navigation.</p>
+<h3 id="section-documentation-coverage-review-coverage-levels">Coverage Levels</h3>
+<h4 id="section-documentation-coverage-review-strong">Strong</h4>
+<p>These areas now explain themselves clearly either in place, from the top-level docs, or both:</p>
+<table><thead><tr><th>Area</th><th>Current read</th></tr></thead><tbody><tr><td><code>README.md</code></td><td>Strong top-level orientation for goals, workflows, and guide entry points.</td></tr><tr><td><code>DEVELOPMENT.md</code></td><td>Strong architecture and maintenance guide.</td></tr><tr><td><code>WORKFLOWS.md</code></td><td>Strong operator-facing map of what to run.</td></tr><tr><td><code>tests/</code></td><td>Strong validation-surface guidance.</td></tr><tr><td><code>docs/</code> + <code>tools/</code></td><td>Strong generated-doc/status build guidance.</td></tr><tr><td><code>qcsp3/</code></td><td>Strong coverage across solver role, mixed workspaces, AO layer, and generated data areas.</td></tr><tr><td><code>csp/</code></td><td>Strong enough for the earliest snapshot, including its lighter working-state scaffolding.</td></tr><tr><td><code>qcsp-may29-1996/</code></td><td>Stronger now, especially around AO support and working-state vs preserved batch/result trees.</td></tr><tr><td><code>qcsp-alex-sep16-1997/</code></td><td>Stronger now, especially around <code>MyBatch/</code>, <code>testdata/</code>, and working-state areas.</td></tr><tr><td><code>data/</code></td><td>Strong preserved-data catalog and archive/result-family orientation.</td></tr><tr><td><code>incoming/</code> + <code>historical finds/</code></td><td>Strong intake/review/provenance separation.</td></tr><tr><td><code>docs/project-handbook.html</code></td><td>Strong readable index for human review and onboarding.</td></tr></tbody></table>
+<h4 id="section-documentation-coverage-review-good-but-still-mixed">Good But Still Mixed</h4>
+<p>These areas are understandable, but still rely on historical naming or mixed contents that no amount of README text can fully hide:</p>
+<table><thead><tr><th>Area</th><th>Why it is still mixed</th></tr></thead><tbody><tr><td><code>Q-Batch-SBCL/</code></td><td>It still mixes tracked experiment infrastructure, generated run outputs, extracted tables, and tracked overlay images.</td></tr><tr><td><code>qcsp-may29-1996/NewData*</code> and <code>Q-Batch*</code> trees</td><td>Historically meaningful naming and embedded result trees remain inherently mixed with the source snapshot.</td></tr><tr><td><code>qcsp-alex-sep16-1997/testdata/</code></td><td>Better explained than before, but still a large preserved experiment/data tree with multiple subfamilies.</td></tr><tr><td><code>historical finds/yj-sun/</code></td><td>Valuable provenance, but still archive-heavy and not fully normalized into a simplified reading path.</td></tr></tbody></table>
+<h4 id="section-documentation-coverage-review-still-thin">Still Thin</h4>
+<p>These are the most likely next documentation targets if we keep going:</p>
+<table><thead><tr><th>Area</th><th>What feels thin</th></tr></thead><tbody><tr><td><code>qcsp-alex-sep16-1997/testdata/Results*</code> and sibling subtrees</td><td>The top-level <code>testdata/README.md</code> exists, but the deeper result-family subareas are still more cataloged than narrated.</td></tr><tr><td><code>historical finds/Refine</code>, <code>historical finds/Unravel</code>, <code>historical finds/Unravel-changes</code></td><td>These are classified as archive/context material, but their internal roles are still light.</td></tr><tr><td>Root helper scripts as a set</td><td><code>MANUAL-HELPERS.md</code> helps, but the repo root still visually elevates them more than their current importance warrants.</td></tr><tr><td>In-code entry-point documentation in the historical snapshots</td><td>The repo-level docs are stronger than the remaining function-level guidance in some snapshot files.</td></tr></tbody></table>
+<h3 id="section-documentation-coverage-review-what-improved-in-this-pass">What Improved In This Pass</h3>
+<p>The biggest change over the recent cycles is that the repo no longer relies on tribal knowledge for:</p>
+<ol><li>intake versus historical-provenance flow,</li><li>snapshot-local AO layers,</li><li>snapshot-local batch/workspace trees,</li><li>working-state random/situation directories across the solver lineage,</li><li>and the generated handbook/public readable copy as the main human-friendly</li></ol>
+<p>overview.</p>
+<p>That is a real shift from &quot;the docs exist if you know where to look&quot; to &quot;the repo can orient a new reader from several likely entry points.&quot;</p>
+<h3 id="section-documentation-coverage-review-main-remaining-risks">Main Remaining Risks</h3>
+<p>The largest documentation risks now are subtle rather than catastrophic:</p>
+<ol><li>a reader may still overread preserved batch/result trees as supported active</li></ol>
+<p>workflows just because they sit inside snapshot roots,</p>
+<ol><li>a reader may still overread root helper scripts as primary entry points,</li><li>and the large archive-heavy trees may still feel deeper than their</li></ol>
+<p>supporting narrative.</p>
+<p>Those are now &quot;clarity polish&quot; risks more than &quot;the repo is unreadable&quot; risks.</p>
+<h3 id="section-documentation-coverage-review-recommended-next-documentation-moves">Recommended Next Documentation Moves</h3>
+<p>If the project keeps investing in the <code>0.3.x</code> documentation lane, the best next steps are:</p>
+<ol><li>deepen <code>qcsp-alex-sep16-1997/testdata/</code> result-family guidance,</li><li>add one small pass over the archive-only <code>historical finds/</code> subtrees that</li></ol>
+<p>still feel opaque,</p>
+<ol><li>continue in-code docstrings/operator guidance in the most-used maintained</li></ol>
+<p>solver files,</p>
+<ol><li>and only then consider whether the root helper scripts need structural</li></ol>
+<p>relocation rather than more explanation.</p>
+<h3 id="section-documentation-coverage-review-maintenance-rule">Maintenance Rule</h3>
+<p>Update this file whenever:</p>
+<ol><li>a previously confusing subtree gains a local guide,</li><li>the handbook adds a significant new coverage layer,</li><li>a mixed workspace becomes materially clearer or materially more confusing,</li><li>or the recommended next documentation targets change.</li></ol>
         </div>
       </section>
       <section class="sectionCard" id="section-duplicates-review">

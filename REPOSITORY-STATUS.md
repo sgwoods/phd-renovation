@@ -19,6 +19,7 @@ Use this artifact as the repo-wide counterpart to `VALIDATION-MATRIX.md`.
 For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
 For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
+For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
 
 ## Status Key
 

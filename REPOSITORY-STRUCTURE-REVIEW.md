@@ -167,11 +167,13 @@ Going forward, read the repo through these buckets:
 ### Low-risk, do-now documentation moves
 
 1. Keep `REPOSITORY-STATUS.md` and this file linked from `README.md`.
-2. Add one short top-level note in `README.md` that root `run-test4*.lisp`,
+2. Keep `DOCS-COVERAGE-REVIEW.md` current as the explicit record of what is
+   now well-covered versus still thin.
+3. Add one short top-level note in `README.md` that root `run-test4*.lisp`,
    `run-csp-tests.lisp`, and `renovate.lisp` are manual compatibility helpers.
-3. Add one short note in snapshot READMEs clarifying which subdirectories are:
+4. Add one short note in snapshot READMEs clarifying which subdirectories are:
    source, runtime-generated data, preserved results, and archive/context.
-4. Keep all new finds landing in `incoming/` first, then promote them only
+5. Keep all new finds landing in `incoming/` first, then promote them only
    after review.
 
 ### Medium-risk, defer-until-worth-it structure moves
