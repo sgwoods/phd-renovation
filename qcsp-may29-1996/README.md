@@ -76,3 +76,11 @@ implementation, loaded by `run-test4-may29.lisp` for integration testing:
 Local guide:
 
 - `extras/README.md`
+
+Working-state data guides:
+
+- `ADT-Random/README.md`
+- `ADT-Situation/README.md`
+- `ADT-SituationMar96/README.md`
+- `MPR-Random/README.md`
+- `MPR-Situation/README.md`

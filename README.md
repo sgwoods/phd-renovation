@@ -225,7 +225,16 @@ Directory guides:
 - `Q-Batch-SBCL/Graph/README.md`
 - `tests/README.md`
 - `qcsp-may29-1996/extras/README.md`
+- `qcsp-may29-1996/ADT-Random/README.md`
+- `qcsp-may29-1996/ADT-Situation/README.md`
+- `qcsp-may29-1996/ADT-SituationMar96/README.md`
+- `qcsp-may29-1996/MPR-Random/README.md`
+- `qcsp-may29-1996/MPR-Situation/README.md`
 - `qcsp-alex-sep16-1997/MyBatch/README.md`
+- `qcsp-alex-sep16-1997/ADT-Random/README.md`
+- `qcsp-alex-sep16-1997/ADT-Situation/README.md`
+- `qcsp-alex-sep16-1997/MPR-Random/README.md`
+- `qcsp-alex-sep16-1997/MPR-Situation/README.md`
 - `WORKFLOWS.md`
 - `MANUAL-HELPERS.md`
 - `docs/README.md`

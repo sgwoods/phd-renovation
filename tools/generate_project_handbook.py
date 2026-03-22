@@ -110,9 +110,63 @@ HANDBOOK_SOURCES = [
         include_in_quick_index=False,
     ),
     HandbookSource(
+        "May29 ADT-Random Guide",
+        "qcsp-may29-1996/ADT-Random/README.md",
+        "Local guide to the May29 snapshot's direct-ADT seed workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "May29 ADT-Situation Guide",
+        "qcsp-may29-1996/ADT-Situation/README.md",
+        "Local guide to the May29 snapshot's generated ADT situation workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "May29 ADT-SituationMar96 Guide",
+        "qcsp-may29-1996/ADT-SituationMar96/README.md",
+        "Local guide to the older preserved March 1996 ADT situation layer carried beside the May29 workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "May29 MPR-Random Guide",
+        "qcsp-may29-1996/MPR-Random/README.md",
+        "Local guide to the May29 snapshot's MPR seed workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "May29 MPR-Situation Guide",
+        "qcsp-may29-1996/MPR-Situation/README.md",
+        "Local guide to the May29 snapshot's generated MPR situation workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "Alex MyBatch Guide",
         "qcsp-alex-sep16-1997/MyBatch/README.md",
         "Local guide to the Alex snapshot's preserved batch orchestration tree and why it remains provenance-only.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Alex ADT-Random Guide",
+        "qcsp-alex-sep16-1997/ADT-Random/README.md",
+        "Local guide to the Alex snapshot's direct-ADT seed workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Alex ADT-Situation Guide",
+        "qcsp-alex-sep16-1997/ADT-Situation/README.md",
+        "Local guide to the Alex snapshot's direct-ADT situation workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Alex MPR-Random Guide",
+        "qcsp-alex-sep16-1997/MPR-Random/README.md",
+        "Local guide to the Alex snapshot's MPR seed workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Alex MPR-Situation Guide",
+        "qcsp-alex-sep16-1997/MPR-Situation/README.md",
+        "Local guide to the Alex snapshot's generated MPR situation workspace.",
         include_in_quick_index=False,
     ),
     HandbookSource(

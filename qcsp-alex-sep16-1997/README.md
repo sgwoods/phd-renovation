@@ -60,3 +60,7 @@ Local guides:
 
 - `MyBatch/README.md`
 - `testdata/README.md`
+- `ADT-Random/README.md`
+- `ADT-Situation/README.md`
+- `MPR-Random/README.md`
+- `MPR-Situation/README.md`
