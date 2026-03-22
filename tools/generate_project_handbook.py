@@ -95,6 +95,18 @@ HANDBOOK_SOURCES = [
         "Catalog of preserved datasets, baseline results, thesis artifacts, and archive holdings.",
     ),
     HandbookSource(
+        "ACL Baseline Guide",
+        "data/acl-experiments/README.md",
+        "How the preserved ACL experiment baseline feeds the supported thesis-result validation path.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Thesis Guide",
+        "data/thesis/README.md",
+        "How the thesis PDF relates to the repo's supported validation and publication goals.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "Workflows",
         "WORKFLOWS.md",
         "Operator-facing workflow map: validation, experiments, docs sync, and intake.",

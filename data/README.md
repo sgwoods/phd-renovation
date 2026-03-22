@@ -20,6 +20,15 @@ data remain in place and are cataloged here.
 
 See also: [lost-datasets.md](lost-datasets.md) for the Nov 1996 snapshot (terrain CSP data, never recovered).
 
+Local guides worth using in place:
+
+- `acl-experiments/README.md` explains the canonical ACL baseline used by the
+  supported thesis-validation path.
+- `sparc-archive/README.md` explains the older SPARC-era preserved result
+  families and archive indexes.
+- `thesis/README.md` explains how the thesis PDF relates to the active
+  validation story.
+
 ---
 
 ## Snapshot-Embedded Data (left in place)

@@ -493,6 +493,14 @@ h1{
           <ul class="subtoc"><li><a href="#section-data-guide-consolidated-datasets">Consolidated Datasets</a></li><li><a href="#section-data-guide-snapshot-embedded-data-left-in-place">Snapshot-Embedded Data (left in place)</a></li><li><a href="#section-data-guide-qcsp-may29-1996-2-550-data-files">qcsp-may29-1996/ (2,550+ data files)</a></li><li><a href="#section-data-guide-qcsp-alex-sep16-1997-564-data-files">qcsp-alex-sep16-1997/ (564 data files)</a></li><li><a href="#section-data-guide-active-experiment-infrastructure">Active Experiment Infrastructure</a></li><li><a href="#section-data-guide-q-batch-sbcl-not-moved-uses-relative-paths">Q-Batch-SBCL/ (not moved -- uses relative paths)</a></li><li><a href="#section-data-guide-runtime-generated-data-gitignored">Runtime-Generated Data (gitignored)</a></li><li><a href="#section-data-guide-compressed-binary-files">Compressed/Binary Files</a></li><li><a href="#section-data-guide-missing-lost-datasets">Missing/Lost Datasets</a></li></ul>
         </li>
         <li>
+          <a href="#section-acl-baseline-guide">ACL Baseline Guide</a>
+          <ul class="subtoc"><li><a href="#section-acl-baseline-guide-why-this-directory-matters">Why This Directory Matters</a></li><li><a href="#section-acl-baseline-guide-experiment-series">Experiment Series</a></li><li><a href="#section-acl-baseline-guide-structure">Structure</a></li><li><a href="#section-acl-baseline-guide-canonical-vs-preserved-duplicate">Canonical vs Preserved Duplicate</a></li><li><a href="#section-acl-baseline-guide-result-file-shape">Result File Shape</a></li><li><a href="#section-acl-baseline-guide-graph-layer">Graph Layer</a></li><li><a href="#section-acl-baseline-guide-relationship-to-the-modern-sbcl-workspace">Relationship To The Modern SBCL Workspace</a></li><li><a href="#section-acl-baseline-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-thesis-guide">Thesis Guide</a>
+          <ul class="subtoc"><li><a href="#section-thesis-guide-file">File</a></li><li><a href="#section-thesis-guide-why-this-matters">Why This Matters</a></li><li><a href="#section-thesis-guide-what-the-thesis-covers">What The Thesis Covers</a></li><li><a href="#section-thesis-guide-practical-repo-relationship">Practical Repo Relationship</a></li><li><a href="#section-thesis-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-workflows">Workflows</a>
           <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-new-material-intake">5. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
@@ -1298,6 +1306,13 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <h3 id="section-data-guide-consolidated-datasets">Consolidated Datasets</h3>
 <table><thead><tr><th>Directory</th><th>Origin</th><th>Files</th><th>Era</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/sparc-archive">sparc-archive/</a></td><td>DataFind/</td><td>153</td><td>1993-1997</td><td>Original SPARC workstation archive: directory listings, experiment metadata, 64 reference ADT situation files, 83 thesis-era result files</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/acl-experiments">acl-experiments/</a></td><td>Q-Batch/</td><td>676</td><td>1996</td><td>Canonical ACL-era ij2/ij3/ij4 experiment baseline for the active thesis-validation path</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/csp-batch">csp-batch/</a></td><td>csp/Batch/</td><td>150</td><td>1993-1994</td><td>Earliest batch experiments (T1-T6 series) for the base CSP solver</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/csp-adt-batch">csp-adt-batch/</a></td><td>csp/ADT-Batch/</td><td>893</td><td>1994-1995</td><td>ADT domain batch experiments (ij1-ij4 series)</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/csp-save-results">csp-save-results/</a></td><td>csp/Save-Results/</td><td>15</td><td>1993</td><td>Saved results from DREV memorandum experiments</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/csp-misc">csp-misc/</a></td><td>csp/ (various)</td><td>65</td><td>1993-1995</td><td>Non-core development artifacts: C source, parser, docs, scripts</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/motors-releases">motors-releases/</a></td><td>csp/Releases/</td><td>5</td><td>1993</td><td>MOTORS solver releases v0.5-v1.01 (.tar.Z <strong>COMPRESSED</strong>)</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/motors-backups">motors-backups/</a></td><td>csp/Bak/</td><td>3</td><td>1994</td><td>MOTORS solver backups (.zoo <strong>COMPRESSED</strong>, obsolete format)</td></tr><tr><td><a href="https://github.com/sgwoods/phd-renovation/blob/main/data/thesis">thesis/</a></td><td>Publications/</td><td>1</td><td>1996</td><td>PhD thesis PDF (CS-96-33)</td></tr></tbody></table>
 <p>See also: <a href="https://github.com/sgwoods/phd-renovation/blob/main/data/lost-datasets.md">lost-datasets.md</a> for the Nov 1996 snapshot (terrain CSP data, never recovered).</p>
+<p>Local guides worth using in place:</p>
+<ul><li><code>acl-experiments/README.md</code> explains the canonical ACL baseline used by the</li></ul>
+<p>supported thesis-validation path.</p>
+<ul><li><code>sparc-archive/README.md</code> explains the older SPARC-era preserved result</li></ul>
+<p>families and archive indexes.</p>
+<ul><li><code>thesis/README.md</code> explains how the thesis PDF relates to the active</li></ul>
+<p>validation story.</p>
 <p>---</p>
 <h3 id="section-data-guide-snapshot-embedded-data-left-in-place">Snapshot-Embedded Data (left in place)</h3>
 <p>These datasets are embedded within historical code snapshots and are left in place to preserve snapshot integrity. Each is documented with a README.</p>
@@ -1331,6 +1346,91 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>See <a href="https://github.com/sgwoods/phd-renovation/blob/main/data/lost-datasets.md">lost-datasets.md</a> for a full inventory of the November 1996 snapshot, which contained unique terrain CSP code and data that was never recovered from the original SPARC archive.</p>
 <p>Key losses:</p>
 <ul><li><code>terrain-setup.lisp</code>, <code>terrain-simple.lisp</code>, <code>closure.lisp</code> -- terrain CSP source</li><li><code>TCSP-Situation/</code>, <code>TCSP-Random/</code> -- terrain CSP data files</li><li>Entire Nov 1996 snapshot source code</li></ul>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-acl-baseline-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>ACL Baseline Guide</h2>
+            <p class="sectionSummary">How the preserved ACL experiment baseline feeds the supported thesis-result validation path.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/data/acl-experiments/data/acl-experiments/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory is the canonical preserved ACL/SPARC-era baseline for the supported thesis-result validation path.</p>
+<p>It contains the historical <code>ij2</code> / <code>ij3</code> / <code>ij4</code> experiment families used as the reference side of the repo&#x27;s modern ACL-vs-SBCL comparison checks.</p>
+<h3 id="section-acl-baseline-guide-why-this-directory-matters">Why This Directory Matters</h3>
+<p>If the question is &quot;what published result story does the repo actively protect?&quot;, this directory is part of the answer.</p>
+<p>The supported validation path:</p>
+<ol><li>regenerates SBCL <code>ij2</code> / <code>ij3</code> / <code>ij4</code> summaries in <code>Q-Batch-SBCL/Graph/</code>,</li><li>compares them against the preserved ACL baseline here,</li><li>and checks that the thesis-era trend story is still preserved.</li></ol>
+<p>That means this directory is not just archival context. It is one of the main live reference baselines used by <code>tests/validate-artifacts.sh</code> and <code>tests/validate-thesis-comparison.py</code>.</p>
+<h3 id="section-acl-baseline-guide-experiment-series">Experiment Series</h3>
+<p>Three preserved experiment series compare CSP search strategies for program understanding:</p>
+<table><thead><tr><th>Series</th><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>ij2</code></td><td>2-phase Memory-CSP</td><td>Backtracking phase 1, FCDR phase 2 baseline</td></tr><tr><td><code>ij3</code></td><td>Memory-CSP + heuristics</td><td>Both phases use FC + dynamic rearrangement + advance sort</td></tr><tr><td><code>ij4</code></td><td>Direct ADT CSP</td><td>Direct constraint satisfaction with FC/DR/advance sort</td></tr></tbody></table>
+<p>Each series tests 20 noise levels (<code>50</code>-<code>1000</code> in steps of <code>50</code>) with 10 random seeds per level, for 200 attempted data points per series.</p>
+<h3 id="section-acl-baseline-guide-structure">Structure</h3>
+<pre><code class="language-text">acl-experiments/
+├── ij2/            raw ACL result files
+├── ij3/            raw ACL result files
+├── ij4/            raw ACL result files
+├── Graph/          preserved graph data, gnuplot scripts, PostScript plots
+├── ij*.lisp        ACL-era experiment definition scripts
+├── ij*.out         console output logs
+└── ij*.sh          ACL-era shell runner scripts</code></pre>
+<h3 id="section-acl-baseline-guide-canonical-vs-preserved-duplicate">Canonical vs Preserved Duplicate</h3>
+<p>This is the canonical active copy of the ACL baseline.</p>
+<p><code>qcsp-may29-1996/Q-Batch/</code> is a reviewed duplicate retained only for snapshot integrity. The supported modern validation path should read from <code>data/acl-experiments/</code>, not from the embedded May29 duplicate.</p>
+<h3 id="section-acl-baseline-guide-result-file-shape">Result File Shape</h3>
+<p>Each raw result file (for example <code>ij2/ij2-250.3</code>) is a whitespace-separated single-line summary. Important fields include:</p>
+<ul><li><code>Size</code>: noise level</li><li><code>Dsize</code>: average domain size</li><li><code>NCC</code>: node consistency checks</li><li><code>TCC</code>: total constraint checks</li><li><code>BT/V</code>: backtracks / nodes visited</li></ul>
+<p>The raw ACL files are historical artifacts; the supported modern comparison path does not require every raw file to be perfect or complete. It uses the preserved graph summaries and shared noise-level overlap to validate the thesis story responsibly.</p>
+<h3 id="section-acl-baseline-guide-graph-layer">Graph Layer</h3>
+<p><code>Graph/</code> contains the preserved ACL analysis layer:</p>
+<ul><li><code>ij*-ci.dat</code>: confidence interval tables</li><li><code>ij*-raw.*</code>: older aggregated raw summaries</li><li><code>*.gp</code>: gnuplot scripts</li><li><code>*.ps</code>: PostScript output</li><li><code>Makefile</code>, <code>Bad/</code>, <code>Heuristic-Errs/</code>, <code>Util/</code>: historical support material</li></ul>
+<p>This preserved graph layer is the ACL side of the modern comparison against <code>Q-Batch-SBCL/Graph/</code>.</p>
+<h3 id="section-acl-baseline-guide-relationship-to-the-modern-sbcl-workspace">Relationship To The Modern SBCL Workspace</h3>
+<p>The modern experiment workspace lives in <code>Q-Batch-SBCL/</code>.</p>
+<p>The normal supported flow is:</p>
+<pre><code class="language-bash">bash tests/validate-artifacts.sh</code></pre>
+<p>That path:</p>
+<ol><li>extracts fresh SBCL <code>ij2</code> / <code>ij3</code> / <code>ij4</code> summaries,</li><li>rebuilds the overlay plots,</li><li>compares those summaries to this ACL baseline,</li><li>and checks that the published efficiency ordering and trend shape still hold.</li></ol>
+<p>The repo validates historical trend preservation, not point-for-point numerical identity across platforms.</p>
+<h3 id="section-acl-baseline-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If you are working on the active thesis-result validation story, this directory is a primary reference input.</p>
+<p>If you are studying ACL-era runner mechanics, it is also a preserved source tree, but not the place from which the modern repo executes experiments.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-thesis-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Thesis Guide</h2>
+            <p class="sectionSummary">How the thesis PDF relates to the repo&#x27;s supported validation and publication goals.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/data/thesis/data/thesis/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory holds the thesis document that the repo is trying to make continuously checkable.</p>
+<h3 id="section-thesis-guide-file">File</h3>
+<ul><li><code>Woods PHD CS-96-33 A Method of Program Understanding using Constraint Satisfaction.pdf</code></li></ul>
+<h3 id="section-thesis-guide-why-this-matters">Why This Matters</h3>
+<p>The thesis is not just background reading in this project. It is the main publication target behind the supported validation story.</p>
+<p>The repo&#x27;s primary goal is to keep the solver, preserved baselines, and reproduction harnesses aligned tightly enough that the thesis-result story remains explainable from a fresh checkout.</p>
+<h3 id="section-thesis-guide-what-the-thesis-covers">What The Thesis Covers</h3>
+<p>At a high level, the thesis:</p>
+<ul><li>presents program understanding as a constraint-satisfaction problem,</li><li>uses ADT recognition as the central application domain,</li><li>introduces the memory-CSP two-phase search methodology,</li><li>and compares it against direct CSP matching and related search variants</li></ul>
+<p>under increasing noise.</p>
+<h3 id="section-thesis-guide-practical-repo-relationship">Practical Repo Relationship</h3>
+<p>These repo areas are the closest operational companions to the thesis:</p>
+<table><thead><tr><th>Repo area</th><th>Role</th></tr></thead><tbody><tr><td><code>data/acl-experiments/</code></td><td>Preserved ACL/SPARC baseline for the main thesis <code>ij2</code> / <code>ij3</code> / <code>ij4</code> story</td></tr><tr><td><code>Q-Batch-SBCL/</code></td><td>Modern SBCL rerun workspace for that same supported comparison story</td></tr><tr><td><code>tests/validate-artifacts.sh</code></td><td>Main executable thesis-artifact validation path</td></tr><tr><td><code>tests/validate-thesis-comparison.py</code></td><td>Thesis-story comparison check between regenerated SBCL summaries and preserved ACL curves</td></tr><tr><td><code>data/sparc-archive/PrevResults/</code></td><td>Earlier thesis-era and pre-thesis result families that provide historical context but are not the same as the main <code>ij2</code> / <code>ij3</code> / <code>ij4</code> story</td></tr></tbody></table>
+<h3 id="section-thesis-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If you want the publication narrative, start with the thesis PDF.</p>
+<p>If you want the supported executable approximation of that narrative, start with <code>data/acl-experiments/</code>, <code>Q-Batch-SBCL/</code>, and <code>tests/validate-artifacts.sh</code>.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-workflows">
