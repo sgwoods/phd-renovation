@@ -63,8 +63,8 @@ The current ADT batch investigation note lives in `ADT-BATCH-INTEGRATION.md`.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Use the current matrix to guide the post-M1 documentation, intake review,
-   and integration work rather than widening the supported umbrella casually.
+2. Use the current matrix to guide intake review, de-duplication, and
+   categorization as new material lands in `incoming/`.
 3. Treat ADT batch as an explained snapshot-specific family unless a future
    project phase explicitly chooses to emulate its older noise semantics.
 4. Keep the supported validation spine warning-clean and treat any new log
@@ -72,7 +72,9 @@ The current ADT batch investigation note lives in `ADT-BATCH-INTEGRATION.md`.
 5. As new material lands in `incoming/`, classify it deliberately as
    executable, integrity-checkable, provenance-only, or duplicate before
    promoting it into the main repo story.
-6. Move the next clearly supported family or workflow only when it helps the
-   post-M1 integrated line more than it increases maintenance surface.
-7. Treat `Hanoi-4` as explicitly bounded for `1.0`: maintain a clear status
+6. Use `1.0.1` for remaining STYLE-WARNING cleanup outside the supported
+   release gate rather than letting that noise blur intake or release work.
+7. Move the next clearly supported family or workflow only when it helps the
+   post-`1.0.0` integrated line more than it increases maintenance surface.
+8. Treat `Hanoi-4` as explicitly bounded for `1.x`: maintain a clear status
    record, but defer full behavior/repeatability understanding to `2.0`.

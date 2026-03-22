@@ -290,12 +290,9 @@ anchors rather than co-equal supported workflows.
   baseline. This phase delivered stronger regression assertions, AO asserted
   coverage, automated thesis-comparison checks, `ff*` integrity/provenance
   validation, and incremental warning cleanup.
-- **Phase 3 / `0.3.x` Documentation**: active and now late-stage. High-level
+- **Phase 3 / `0.3.x` Documentation**: complete enough for `1.0.0`. High-level
   docs are much stronger, the code/test/results roots are easier to navigate,
-  and the next push is selective in-code docstrings, keeping the status and
-  handbook artifacts current, and closing the `1.0.0` release-hardening
-  checklist while preserving clarity as `incoming/` likely becomes the next
-  heavier work lane after release.
+  and the status/handbook/public artifacts are now part of the release flow.
 - **Phase 4 / Research Readiness**: not yet active as the main lane. We have
   diagnosed alex's `ij4` divergence, but we are intentionally holding off on
   broader experimental changes until the baseline is tighter.
@@ -311,14 +308,16 @@ anchors rather than co-equal supported workflows.
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
    Keep `REPOSITORY-STATUS.md`, `REPOSITORY-STRUCTURE-REVIEW.md`, and
    `DOCS-COVERAGE-REVIEW.md` in sync as the broader repo surface changes.
-2. Turn `RELEASE-1.0-CHECKLIST.md` into the active punch list for the first
-   release candidate.
-3. Treat the `0.3.x` documentation lane as late-stage: keep adding selective
-   docstrings and operator-facing clarifications, but focus on maintaining the
-   now-strong docs/handbook/status surface rather than broad new README waves.
-4. Prepare for heavier `incoming/` intake and review work. New materials are
-   likely to be the next major source of project movement, so keep the intake,
-   promotion, duplicate review, and archive classification flow disciplined.
+2. Make `incoming/` intake, de-duplication, and categorization the next major
+   work lane. New materials are likely to be the main source of project
+   movement after `1.0.0`, so keep the intake, promotion, duplicate review,
+   and archive classification flow disciplined.
+3. Target `1.0.1` for STYLE-WARNING cleanup outside the supported release gate,
+   especially the remaining `gsat` lexical-special warnings and legacy helper
+   path warnings.
+4. Treat the documentation lane as maintenance now: keep adding selective
+   clarifications when useful, but focus on keeping the docs/handbook/status
+   surface accurate rather than broad new README waves.
 5. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
    documented, but treat it as snapshot-specific for now rather than as a
    required post-M1 integration target.
@@ -331,14 +330,13 @@ anchors rather than co-equal supported workflows.
    investigate, not normal background.
 7. Keep building out the validation matrix when useful, but with the main
    archive-heavy families now mapped or integrity-checked, avoid widening the
-   supported umbrella casually without a clear post-M1 or intake-review
+   supported umbrella casually without a clear post-`1.0.0` or intake-review
    benefit.
 8. Only after the baseline, warning surface, provenance work, release
-   hardening, and intake flow
-   are tighter,
-   begin controlled integration and research-readiness experiments such as
-   alex DFA-option isolation against the validated snapshot.
-9. Treat `Hanoi-4` explicitly as a phased lane: for `1.0`, keep a clear record
+   maintenance, and intake flow are tighter, begin controlled integration and
+   research-readiness experiments such as alex DFA-option isolation against the
+   validated snapshot.
+9. Treat `Hanoi-4` explicitly as a phased lane: for `1.x`, keep a clear record
    of the situation, artifacts, and any ingested references; for `2.0`, pursue
    actual behavioral/repeatability understanding once the material exists.
    Seed that future analysis with later Towers of Hanoi encoding literature
@@ -358,10 +356,13 @@ the docs accurately describe that supported path.
   the thesis-era baselines. This milestone track now culminates in accepted M1.
 - **`0.3.x` Documentation / research-readiness builds**: clearer operator docs,
   explicit supported workflows, and guarded extension points for new research.
-- **`1.0.0` target**: phases 1-3 are complete, CI continuously validates the
+- **`1.0.0` released**: phases 1-3 are complete, CI continuously validates the
   supported thesis-result baseline, release notes can describe deviations from
   the thesis as intentional rather than accidental, and deferred lanes like
   `Hanoi-4` are clearly documented rather than silently unresolved.
+- **`1.0.1` target**: keep the `1.0.0` baseline stable while reducing the
+  remaining STYLE-WARNING noise outside the supported release gate and keeping
+  newly ingested material classified cleanly.
 - **`2.0.0` target**: the integrated line is stable enough to absorb deeper
   historical/research-readiness questions, including explicit behavioral and
   repeatability analysis for lanes like `Hanoi-4`.

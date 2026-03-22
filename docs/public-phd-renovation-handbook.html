@@ -357,18 +357,18 @@ h1{
       <div class="meta">
         <div class="metaCard">
           <span class="metaLabel">Current Track</span>
-          <span class="metaValue">0.3.x</span>
-          <div class="metaNote">Milestone M1 is accepted; documentation is now late-stage, and intake readiness is becoming the next practical front.</div>
+          <span class="metaValue">1.x</span>
+          <div class="metaNote">Version 1.0.0 is published; the supported integrated baseline is now the stable reference point.</div>
         </div>
         <div class="metaCard">
           <span class="metaLabel">Build Line</span>
-          <span class="metaValue">0.3.x-docs</span>
-          <div class="metaNote">Post-M1 documentation and operator-clarity builds.</div>
+          <span class="metaValue">1.0.0</span>
+          <div class="metaNote">First stable integrated release.</div>
         </div>
         <div class="metaCard">
           <span class="metaLabel">Current Focus</span>
-          <span class="metaValue">Release hardening</span>
-          <div class="metaNote">Operator docs are broadly strong. The active front is now closing the 1.0 release checklist while keeping incoming readiness and deferred lanes clearly bounded.</div>
+          <span class="metaValue">Intake + cleanup</span>
+          <div class="metaNote">The active front is now ingestion, de-duplication, and categorization of found material, with 1.0.1 warning cleanup as the main maintenance target.</div>
         </div>
         <div class="metaCard">
           <span class="metaLabel">Updated</span>
@@ -729,7 +729,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus: keep the supported PhD-result validation path executable end-to-end, widen the validated umbrella to additional historical result families, and use the preserved snapshots as reference baselines while the future gold-standard line takes shape. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync.</p>
 <h3 id="section-project-overview-project-structure">Project Structure</h3>
 <pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
@@ -899,15 +899,17 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <ol><li><code>Deferred research-readiness lanes</code></li></ol>
 <p>Topics like <code>Hanoi-4</code> that are important enough to track explicitly, but whose current <code>1.0</code> requirement is documentation and bounded scope rather than full behavioral closure.</p>
 <h3 id="section-repository-status-deliberate-mainline-priority">Deliberate Mainline Priority</h3>
-<p>The current post-M1 mainline priority is release hardening for <code>1.0.0</code>.</p>
+<p>The current post-<code>1.0.0</code> mainline priority is intake hardening and release maintenance.</p>
 <p>That means the current recommended order is:</p>
-<ol><li>finish the <code>0.3.x</code> operator-docs pass,</li><li>keep the supported validation spine green and the repo status artifacts</li></ol>
+<ol><li>keep the supported validation spine green and the repo status artifacts</li></ol>
 <p>current,</p>
-<ol><li>close the items in <code>RELEASE-1.0-CHECKLIST.md</code>,</li><li>treat ADT batch as a snapshot-specific preserved family rather than an</li></ol>
+<ol><li>make <code>incoming/</code> review, de-duplication, and categorization the next major</li></ol>
+<p>operational lane,</p>
+<ol><li>target <code>1.0.1</code> for remaining STYLE-WARNING cleanup outside the supported</li></ol>
+<p>release gate,</p>
+<ol><li>treat ADT batch as a snapshot-specific preserved family rather than an</li></ol>
 <p>active integration obligation,</p>
-<ol><li>prepare for heavier <code>incoming/</code> review work after the <code>1.0</code> surface is</li></ol>
-<p>clearly frozen,</p>
-<ol><li>keep terrain as the major deferred recovery lane, and</li><li>treat <code>Hanoi-4</code> as a documented <code>1.0</code>-bounded lane and a <code>2.0</code></li></ol>
+<ol><li>keep terrain as the major deferred recovery lane, and</li><li>treat <code>Hanoi-4</code> as a documented <code>1.x</code> lane and a <code>2.0</code></li></ol>
 <p>research/repeatability goal.</p>
 <p>The current ADT batch note lives in <code>ADT-BATCH-INTEGRATION.md</code>. Current recommendation: keep the preserved wrapper mapping and bridge probes as historical explanation, but do not require the maintained integrated line to absorb the family.</p>
 <h3 id="section-repository-status-maintenance-rule">Maintenance Rule</h3>
@@ -951,17 +953,19 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <h3 id="section-validation-matrix-current-matrix">Current Matrix</h3>
 <table><thead><tr><th>Domain / result family</th><th>Historical source</th><th>Current validation status</th><th>Current executable/check path</th><th>Gold-standard target status</th></tr></thead><tbody><tr><td>Core queens regressions</td><td><code>csp/</code>, <code>qcsp3/</code>, <code>qcsp-may29-1996/</code>, <code>qcsp-alex-sep16-1997/</code></td><td>Executable now</td><td><code>tests/run.lisp</code></td><td>Covered as reference baseline; should remain covered in the integrated line</td></tr><tr><td>Confused queens metrics</td><td>same four snapshots</td><td>Executable now</td><td><code>tests/run.lisp</code></td><td>Covered as deterministic regression anchor</td></tr><tr><td>AO / <code>test4</code> baseline</td><td>root <code>run-test4*.lisp</code>, snapshot extras</td><td>Executable now</td><td><code>tests/ao-run.lisp</code>, <code>tests/validate-ao.sh</code></td><td>In scope for M1; qcsp3 and May29 now assert AO cases 1-3 across the reduction families plus <code>test4s</code> / <code>test4a</code>, while alex keeps its revise baseline</td></tr><tr><td>PhD <code>ij2</code> / <code>ij3</code> / <code>ij4</code> reported trend story</td><td><code>data/acl-experiments/Graph/</code>, thesis plots, SBCL reruns</td><td>Executable now</td><td><code>tests/validate-artifacts.sh</code>, <code>tests/validate-thesis-comparison.py</code>, <code>Q-Batch-SBCL/</code></td><td>In scope for M1; central gate for the integrated line</td></tr><tr><td>Older <code>ff1</code> / <code>ff2</code> / <code>ff3</code> FCDR distribution family</td><td><code>qcsp-may29-1996/NewData4b-Batch/</code>, <code>data/sparc-archive/PrevResults/</code></td><td>Integrity-checkable now</td><td><code>tests/validate-ff-provenance.sh</code></td><td>In scope for M1 as a documented integrity-checked family</td></tr><tr><td>Early <code>exp-1</code> / <code>exp-2</code> / <code>exp-3</code> result families</td><td><code>historical finds/yj-sun/Csp/testdata/Results/</code>, <code>data/sparc-archive/PrevResults/</code></td><td>Integrity-checkable now</td><td>Crosswalk documented in <code>historical finds/yj-sun/Csp/RESULTS-CROSSWALK.md</code></td><td>Not yet covered by the integrated line</td></tr><tr><td>ADT batch archives (<code>ij1</code>-<code>ij4</code> era before SBCL replication)</td><td><code>data/csp-adt-batch/</code>, snapshot batch trees</td><td>Integrity-checkable now; executable investigation documented</td><td><code>tests/validate-adt-batch.sh</code>, <code>tests/investigate-adt-batch-bridge.sh</code>, <code>tests/investigate-adt-batch-random-lineage.sh</code>, <code>tests/investigate-adt-batch-input-shape.sh</code>, <code>tests/investigate-adt-batch-source-drift.sh</code>, <code>tests/investigate-adt-batch-structure-drift.sh</code>, <code>tests/investigate-adt-batch-generator-drift.sh</code>, <code>tests/investigate-adt-batch-qcsp3-bridge.sh</code>, <code>tests/investigate-adt-batch-qcsp3-old-dist1-bridge.sh</code></td><td>Snapshot-specific preserved family; integrity-checkable and explained, but not a required reproduction target for the integrated <code>qcsp3</code> line</td></tr><tr><td>Earliest CSP batch families (<code>T1</code>-<code>T6</code>)</td><td><code>data/csp-batch/</code>, <code>data/csp-save-results/</code></td><td>Integrity-checkable now</td><td><code>tests/validate-csp-batch.sh</code></td><td>Preserved DREV-era archive now checkable; still outside the integrated executable line</td></tr><tr><td>MPR domain behavior</td><td>source snapshots and runtime-generated situation/random files</td><td>Executable now at solver level</td><td><code>tests/run.lisp</code> MPR assertions</td><td>Covered at regression level, but not yet tied to a broader historical result family</td></tr><tr><td>Alex-specific DFA-related ADT behavior</td><td><code>qcsp-alex-sep16-1997/</code></td><td>Provenance-only for now</td><td>Diagnosed but not yet part of supported validation</td><td>Open research/integration item</td></tr><tr><td>QCSP-nov96 terrain domain</td><td><code>data/lost-datasets.md</code>, <code>QCSP-nov96.dir</code>, <code>Lacie1</code> recovery lead</td><td>Provenance-only for now</td><td>No runnable path yet; <code>Lacie1</code> reportedly contains terrain data and generator but remains unsorted</td><td>Recovery lead identified, still outside M1</td></tr><tr><td>Hanoi-4 domain / repeatability lane</td><td>currently tracked through <code>HANOI-4-STATUS.md</code> and future <code>incoming/</code> finds</td><td>Provenance-only for now</td><td>No indexed executable or integrity-check path yet</td><td>Not a <code>1.0</code> blocker; document the situation for <code>1.0</code>, treat clear behavioral understanding as a <code>2.0</code> goal</td></tr></tbody></table>
 <h3 id="section-validation-matrix-immediate-priorities">Immediate Priorities</h3>
-<ol><li>Keep the currently executable PhD-result path green.</li><li>Use the current matrix to guide the post-M1 documentation, intake review,</li></ol>
-<p>and integration work rather than widening the supported umbrella casually.</p>
+<ol><li>Keep the currently executable PhD-result path green.</li><li>Use the current matrix to guide intake review, de-duplication, and</li></ol>
+<p>categorization as new material lands in <code>incoming/</code>.</p>
 <ol><li>Treat ADT batch as an explained snapshot-specific family unless a future</li></ol>
 <p>project phase explicitly chooses to emulate its older noise semantics.</p>
 <ol><li>Keep the supported validation spine warning-clean and treat any new log</li></ol>
 <p>noise in that path as a regression signal.</p>
 <ol><li>As new material lands in <code>incoming/</code>, classify it deliberately as</li></ol>
 <p>executable, integrity-checkable, provenance-only, or duplicate before promoting it into the main repo story.</p>
+<ol><li>Use <code>1.0.1</code> for remaining STYLE-WARNING cleanup outside the supported</li></ol>
+<p>release gate rather than letting that noise blur intake or release work.</p>
 <ol><li>Move the next clearly supported family or workflow only when it helps the</li></ol>
-<p>post-M1 integrated line more than it increases maintenance surface.</p>
-<ol><li>Treat <code>Hanoi-4</code> as explicitly bounded for <code>1.0</code>: maintain a clear status</li></ol>
+<p>post-<code>1.0.0</code> integrated line more than it increases maintenance surface.</p>
+<ol><li>Treat <code>Hanoi-4</code> as explicitly bounded for <code>1.x</code>: maintain a clear status</li></ol>
 <p>record, but defer full behavior/repeatability understanding to <code>2.0</code>.</p>
         </div>
       </section>
@@ -3362,8 +3366,8 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <p>artifact pipeline. Fresh-checkout plot regeneration and artifact validation are in place.</p>
 <ul><li><strong>Phase 2 / <code>0.2.x</code> Verification</strong>: effectively complete for the M1</li></ul>
 <p>baseline. This phase delivered stronger regression assertions, AO asserted coverage, automated thesis-comparison checks, <code>ff*</code> integrity/provenance validation, and incremental warning cleanup.</p>
-<ul><li><strong>Phase 3 / <code>0.3.x</code> Documentation</strong>: active and now late-stage. High-level</li></ul>
-<p>docs are much stronger, the code/test/results roots are easier to navigate, and the next push is selective in-code docstrings, keeping the status and handbook artifacts current, and closing the <code>1.0.0</code> release-hardening checklist while preserving clarity as <code>incoming/</code> likely becomes the next heavier work lane after release.</p>
+<ul><li><strong>Phase 3 / <code>0.3.x</code> Documentation</strong>: complete enough for <code>1.0.0</code>. High-level</li></ul>
+<p>docs are much stronger, the code/test/results roots are easier to navigate, and the status/handbook/public artifacts are now part of the release flow.</p>
 <ul><li><strong>Phase 4 / Research Readiness</strong>: not yet active as the main lane. We have</li></ul>
 <p>diagnosed alex&#x27;s <code>ij4</code> divergence, but we are intentionally holding off on broader experimental changes until the baseline is tighter.</p>
 <ul><li><strong>Phase 5 / Archive Recovery</strong>: active in parallel. The <code>historical finds/</code></li></ul>
@@ -3371,21 +3375,21 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <h4 id="section-renovation-roadmap-recommended-next-steps">Recommended next steps</h4>
 <ol><li>Keep the current validation spine green: <code>tests/run.lisp</code>,</li></ol>
 <p><code>tests/validate-artifacts.sh</code>, <code>tests/validate-ff-provenance.sh</code>, and <code>tests/validate-ao.sh</code> remain the merge gate for the supported baseline. Keep <code>REPOSITORY-STATUS.md</code>, <code>REPOSITORY-STRUCTURE-REVIEW.md</code>, and <code>DOCS-COVERAGE-REVIEW.md</code> in sync as the broader repo surface changes.</p>
-<ol><li>Turn <code>RELEASE-1.0-CHECKLIST.md</code> into the active punch list for the first</li></ol>
-<p>release candidate.</p>
-<ol><li>Treat the <code>0.3.x</code> documentation lane as late-stage: keep adding selective</li></ol>
-<p>docstrings and operator-facing clarifications, but focus on maintaining the now-strong docs/handbook/status surface rather than broad new README waves.</p>
-<ol><li>Prepare for heavier <code>incoming/</code> intake and review work. New materials are</li></ol>
-<p>likely to be the next major source of project movement, so keep the intake, promotion, duplicate review, and archive classification flow disciplined.</p>
+<ol><li>Make <code>incoming/</code> intake, de-duplication, and categorization the next major</li></ol>
+<p>work lane. New materials are likely to be the main source of project movement after <code>1.0.0</code>, so keep the intake, promotion, duplicate review, and archive classification flow disciplined.</p>
+<ol><li>Target <code>1.0.1</code> for STYLE-WARNING cleanup outside the supported release gate,</li></ol>
+<p>especially the remaining <code>gsat</code> lexical-special warnings and legacy helper path warnings.</p>
+<ol><li>Treat the documentation lane as maintenance now: keep adding selective</li></ol>
+<p>clarifications when useful, but focus on keeping the docs/handbook/status surface accurate rather than broad new README waves.</p>
 <ol><li>Keep the ADT batch <code>ij1</code>-<code>ij4</code> archive family integrity-checkable and</li></ol>
 <p>documented, but treat it as snapshot-specific for now rather than as a required post-M1 integration target. The investigation note for that family lives in <code>ADT-BATCH-INTEGRATION.md</code>. Current recommendation: preserve the bridge probes and the explanation of the maintained <code>csp</code> / <code>qcsp3</code> noise-model split, but do not require the integrated line to reproduce this family.</p>
 <ol><li>Keep the supported validation gate clean and high-signal; treat new warning</li></ol>
 <p>output in <code>tests/run.lisp</code> or <code>tests/validate-ao.sh</code> as regression noise to investigate, not normal background.</p>
 <ol><li>Keep building out the validation matrix when useful, but with the main</li></ol>
-<p>archive-heavy families now mapped or integrity-checked, avoid widening the supported umbrella casually without a clear post-M1 or intake-review benefit.</p>
+<p>archive-heavy families now mapped or integrity-checked, avoid widening the supported umbrella casually without a clear post-<code>1.0.0</code> or intake-review benefit.</p>
 <ol><li>Only after the baseline, warning surface, provenance work, release</li></ol>
-<p>hardening, and intake flow are tighter, begin controlled integration and research-readiness experiments such as alex DFA-option isolation against the validated snapshot.</p>
-<ol><li>Treat <code>Hanoi-4</code> explicitly as a phased lane: for <code>1.0</code>, keep a clear record</li></ol>
+<p>maintenance, and intake flow are tighter, begin controlled integration and research-readiness experiments such as alex DFA-option isolation against the validated snapshot.</p>
+<ol><li>Treat <code>Hanoi-4</code> explicitly as a phased lane: for <code>1.x</code>, keep a clear record</li></ol>
 <p>of the situation, artifacts, and any ingested references; for <code>2.0</code>, pursue actual behavioral/repeatability understanding once the material exists. Seed that future analysis with later Towers of Hanoi encoding literature such as Martins and Lynce (2008), which may help frame hierarchical setup, problem encodings, and repeatability questions more productively than the original 1998 context alone.</p>
 <h4 id="section-renovation-roadmap-phase-release-alignment">Phase / Release Alignment</h4>
 <p>Keep the repo on <code>0.x</code> releases until the thesis-validation baseline is stable enough that a fresh checkout can reproduce the supported historical results and the docs accurately describe that supported path.</p>
@@ -3395,8 +3399,10 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <p>the thesis-era baselines. This milestone track now culminates in accepted M1.</p>
 <ul><li><strong><code>0.3.x</code> Documentation / research-readiness builds</strong>: clearer operator docs,</li></ul>
 <p>explicit supported workflows, and guarded extension points for new research.</p>
-<ul><li><strong><code>1.0.0</code> target</strong>: phases 1-3 are complete, CI continuously validates the</li></ul>
+<ul><li><strong><code>1.0.0</code> released</strong>: phases 1-3 are complete, CI continuously validates the</li></ul>
 <p>supported thesis-result baseline, release notes can describe deviations from the thesis as intentional rather than accidental, and deferred lanes like <code>Hanoi-4</code> are clearly documented rather than silently unresolved.</p>
+<ul><li><strong><code>1.0.1</code> target</strong>: keep the <code>1.0.0</code> baseline stable while reducing the</li></ul>
+<p>remaining STYLE-WARNING noise outside the supported release gate and keeping newly ingested material classified cleanly.</p>
 <ul><li><strong><code>2.0.0</code> target</strong>: the integrated line is stable enough to absorb deeper</li></ul>
 <p>historical/research-readiness questions, including explicit behavioral and repeatability analysis for lanes like <code>Hanoi-4</code>.</p>
 <p>Increment the internal build number once per completed roadmap cycle and note the owning phase in the release summary so future work stays tied to the plan.</p>

@@ -25,11 +25,11 @@ It is to restore an integrated constraint-solver baseline that:
 3. converges toward one gold-standard code line that can stand in for the
    historical solver lineage with any remaining deltas explained.
 
-Current focus: keep the supported PhD-result validation path executable
-end-to-end, widen the validated umbrella to additional historical result
-families, and use the preserved snapshots as reference baselines while the
-future gold-standard line takes shape. See `RENOVATION.md` for the active
-roadmap, `VALIDATION-MATRIX.md` for the current domain/result coverage map,
+Current focus after `1.0.0`: keep the supported PhD-result validation path
+green, use the integrated baseline as the stable reference point, and make the
+next major effort the ingestion, de-duplication, and categorization of newly
+found relevant material. See `RENOVATION.md` for the active roadmap,
+`VALIDATION-MATRIX.md` for the current domain/result coverage map,
 `REPOSITORY-STATUS.md` for the repo-wide integration/testing/publication status
 table, `REPOSITORY-STRUCTURE-REVIEW.md` for the filesystem clarity review, and
 [`docs/release-dashboard.html`](docs/release-dashboard.html) for the visual
