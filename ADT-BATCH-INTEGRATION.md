@@ -257,6 +257,30 @@ The next useful bridge step is therefore likely a dedicated `qcsp3`-side
 batch-style runner, or an isolated repair of the carried
 `old-dist1-pre-quilici` entry so it can be compared fairly.
 
+That dedicated `qcsp3`-side runner now exists as
+`tests/investigate-adt-batch-qcsp3-bridge.sh` /
+`tests/run-adt-batch-bridge-qcsp3-ij2.lisp`. Using the same surviving
+`qcsp3/ADT-Random/Rnddefault` bundle, it currently produces:
+
+| Metric | Preserved `ij2-050.1` | `csp` bridge | `qcsp3` bridge |
+|---|---:|---:|---:|
+| Average domain size | 10.8 | 14.0 | 8.4 |
+| NCC | 450 | 520 | 435 |
+| TCC | 269 | 383 | 221 |
+| BT / visited | 13 / 16 | 14 / 17 | 14 / 18 |
+| Number of solutions | 3 | 3 | 4 |
+| FC cost | 366 | 563 | 300 |
+| DR cost | 18 | 23 | 18 |
+
+That does **not** make `qcsp3` a reproduction yet, but it does change the
+bridge recommendation: the maintained `qcsp3` line is now the closer
+executable host for the first narrow `ij2` ADT batch bridge than the
+maintained `csp` line.
+
+The strongest next step is no longer "can `qcsp3` run the case at all?".
+It is now "why does `qcsp3` still differ on the remaining bounded metrics,
+especially solution count and the pre-search `Dsize` / `NCC` / `TCC` surface?"
+
 ## Non-Goal
 
 This bridge does **not** mean:
