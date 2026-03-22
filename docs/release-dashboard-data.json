@@ -12,7 +12,7 @@
     {
       "label": "Current Focus",
       "value": "Operator docs",
-      "note": "Operator docs are stronger, and the ADT batch bridge is now localized further: qcsp3 is closer than csp, old-dist1 is worse, and the remaining drift points to qcsp3's smaller noise layer and a heavy t2-c domain squeeze."
+      "note": "Operator docs are stronger, and the ADT batch bridge is now localized further: qcsp3 is closer than csp, old-dist1 is worse, and the remaining drift points to a real ADT noise-model split between maintained csp and qcsp3."
     },
     {
       "label": "Build Line",
@@ -174,7 +174,7 @@
       },
       {
         "title": "What comes next",
-        "summary": "The current mainline is still 0.3.x operator documentation and handoff polish, but the ADT batch bridge has now narrowed to a clearer blocker: qcsp3 is the better maintained host, old-dist1 is a dead end, and the remaining mismatch appears in qcsp3's smaller noise layer and the strong t2-c domain squeeze. Tracing that preprocessing drift is the next concrete integration task."
+        "summary": "The current mainline is still 0.3.x operator documentation and handoff polish, but the ADT batch bridge has now narrowed to a clearer blocker: qcsp3 is the better maintained host, old-dist1 is a dead end, and the remaining mismatch appears to come from a real ADT noise-model split between maintained csp and qcsp3. The next concrete task is deciding whether to emulate the older csp noise semantics in a qcsp3 bridge or document the family as snapshot-specific."
       }
     ],
     "links": [

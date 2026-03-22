@@ -306,6 +306,29 @@ maintained `qcsp3` path is generating a smaller, differently shaped noise
 surface for the same random bundle, and why that especially compresses the
 `t2-c` candidate domain.
 
+`tests/investigate-adt-batch-generator-drift.sh` now compares the maintained
+source definitions directly. It confirms that the preprocessing drift is not
+just about random-state lineage:
+
+- `csp/dist1` and `qcsp3/dist1` are different distributions, not just the same
+  label carried forward. `qcsp3/dist1` adds `while`, `increment`, and
+  `not-equals`, increases `block`, `assign`, `decl`, and `check` weight, and
+  no longer matches the original equal-weight seven-family `csp/dist1`.
+- `qcsp3` also changed the generator behavior, not just the weights. It uses
+  `get-line-number` / `get-specific-line` instead of `random-position`,
+  supports saved-situation reload, names `for` blocks explicitly, and allows an
+  extra `increment` branch inside generated loop bodies.
+- The normalized `old-dist1-pre-quilici` probe shows that restoring the old
+  weight family alone is not enough. The maintained `qcsp3` generator semantics
+  still differ materially from the older `csp` path.
+
+That narrows the post-M1 design choice:
+
+1. either emulate the older `csp` ADT noise semantics inside a controlled
+   `qcsp3` bridge harness when reproducing ADT batch results,
+2. or treat the ADT batch family as snapshot-specific and document the bounded
+   divergence rather than forcing the modern integrated line to mimic it.
+
 ## Non-Goal
 
 This bridge does **not** mean:

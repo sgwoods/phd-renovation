@@ -61,6 +61,11 @@ start here.
   result is that `qcsp3` builds a smaller noise layer with fewer `begin`/`end`
   statements, more `check` statements, and the largest domain squeeze on
   `t2-c`.
+- `investigate-adt-batch-generator-drift.sh`:
+  compares the maintained `csp` and `qcsp3` ADT source definitions directly.
+  The current result is that `csp/dist1` and `qcsp3/dist1` are different noise
+  distributions, and `qcsp3` also changed generator behavior beyond the raw
+  weights.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.
