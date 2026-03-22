@@ -473,6 +473,18 @@ h1{
           <ul class="subtoc"><li><a href="#section-qcsp3-guide-role">Role</a></li><li><a href="#section-qcsp3-guide-core-asdf-files">Core ASDF Files</a></li><li><a href="#section-qcsp3-guide-main-public-entry-points">Main Public Entry Points</a></li><li><a href="#section-qcsp3-guide-directory-mix">Directory Mix</a></li><li><a href="#section-qcsp3-guide-subdirectories">Subdirectories</a></li><li><a href="#section-qcsp3-guide-ao-support-in-extras">AO Support In `extras/`</a></li><li><a href="#section-qcsp3-guide-supported-validation-relationship">Supported Validation Relationship</a></li><li><a href="#section-qcsp3-guide-what-is-not-in-this-directory">What Is Not In This Directory</a></li><li><a href="#section-qcsp3-guide-practical-reading-order">Practical Reading Order</a></li></ul>
         </li>
         <li>
+          <a href="#section-csp-adt-random-guide">csp ADT-Random Guide</a>
+          <ul class="subtoc"><li><a href="#section-csp-adt-random-guide-role">Role</a></li><li><a href="#section-csp-adt-random-guide-important-distinction">Important Distinction</a></li><li><a href="#section-csp-adt-random-guide-relationship-to-other-areas">Relationship To Other Areas</a></li><li><a href="#section-csp-adt-random-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-csp-mpr-random-guide">csp MPR-Random Guide</a>
+          <ul class="subtoc"><li><a href="#section-csp-mpr-random-guide-role">Role</a></li><li><a href="#section-csp-mpr-random-guide-relationship-to-other-areas">Relationship To Other Areas</a></li><li><a href="#section-csp-mpr-random-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-csp-mpr-situation-guide">csp MPR-Situation Guide</a>
+          <ul class="subtoc"><li><a href="#section-csp-mpr-situation-guide-role">Role</a></li><li><a href="#section-csp-mpr-situation-guide-current-shape">Current Shape</a></li><li><a href="#section-csp-mpr-situation-guide-relationship-to-other-areas">Relationship To Other Areas</a></li><li><a href="#section-csp-mpr-situation-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-qcsp3-extras-guide">qcsp3 extras Guide</a>
           <ul class="subtoc"><li><a href="#section-qcsp3-extras-guide-role">Role</a></li><li><a href="#section-qcsp3-extras-guide-what-loads-it">What Loads It</a></li><li><a href="#section-qcsp3-extras-guide-file-roles">File Roles</a></li><li><a href="#section-qcsp3-extras-guide-supported-status">Supported Status</a></li><li><a href="#section-qcsp3-extras-guide-practical-reading-order">Practical Reading Order</a></li><li><a href="#section-qcsp3-extras-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-qcsp3-extras-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
@@ -748,7 +760,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>qcsp3/ADT-Random/README.md</code></li><li><code>qcsp3/ADT-Situation/README.md</code></li><li><code>qcsp3/MPR-Random/README.md</code></li><li><code>qcsp3/MPR-Situation/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>qcsp-may29-1996/extras/README.md</code></li><li><code>qcsp-may29-1996/ADT-Random/README.md</code></li><li><code>qcsp-may29-1996/ADT-Situation/README.md</code></li><li><code>qcsp-may29-1996/ADT-SituationMar96/README.md</code></li><li><code>qcsp-may29-1996/MPR-Random/README.md</code></li><li><code>qcsp-may29-1996/MPR-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MyBatch/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Situation/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>csp/ADT-Random/README.md</code></li><li><code>csp/MPR-Random/README.md</code></li><li><code>csp/MPR-Situation/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>qcsp3/ADT-Random/README.md</code></li><li><code>qcsp3/ADT-Situation/README.md</code></li><li><code>qcsp3/MPR-Random/README.md</code></li><li><code>qcsp3/MPR-Situation/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>qcsp-may29-1996/extras/README.md</code></li><li><code>qcsp-may29-1996/ADT-Random/README.md</code></li><li><code>qcsp-may29-1996/ADT-Situation/README.md</code></li><li><code>qcsp-may29-1996/ADT-SituationMar96/README.md</code></li><li><code>qcsp-may29-1996/MPR-Random/README.md</code></li><li><code>qcsp-may29-1996/MPR-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MyBatch/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Situation/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -1175,6 +1187,85 @@ run-test4*.lisp                Legacy/manual AO harnesses (3 files)</code></pre>
 <h3 id="section-qcsp3-guide-practical-reading-order">Practical Reading Order</h3>
 <p>If you are orienting quickly:</p>
 <ol><li><code>package.lisp</code></li><li><code>queens.lisp</code></li><li><code>adt-simple.lisp</code></li><li><code>mpr-simple.lisp</code></li><li><code>memory-csp.lisp</code></li><li><code>utility.lisp</code></li><li><code>extras/</code> only if you are working on AO / <code>test4</code></li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-csp-adt-random-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>csp ADT-Random Guide</h2>
+            <p class="sectionSummary">Local guide to the earliest tracked solver root&#x27;s direct-ADT seed workspace.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/csp/ADT-Random/csp/ADT-Random/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the base <code>csp</code> snapshot&#x27;s direct-ADT random-seed workspace.</p>
+<h3 id="section-csp-adt-random-guide-role">Role</h3>
+<p><code>csp/ADT-Random/</code> stores seed files used by the earliest tracked solver root for direct ADT generation and replay.</p>
+<p>These are:</p>
+<ul><li>base-snapshot working-state artifacts,</li><li>useful for lineage and comparison,</li><li>but not a canonical preserved results family.</li></ul>
+<h3 id="section-csp-adt-random-guide-important-distinction">Important Distinction</h3>
+<p>Unlike later snapshots, the tracked base <code>csp/</code> tree does <strong>not</strong> also carry a full adjacent <code>ADT-Situation/</code> workspace. That difference is meaningful: the earliest root preserves the seed side more clearly than the later regenerated situation side.</p>
+<h3 id="section-csp-adt-random-guide-relationship-to-other-areas">Relationship To Other Areas</h3>
+<ul><li>Later snapshots (<code>qcsp-may29-1996/</code>, <code>qcsp-alex-sep16-1997/</code>, <code>qcsp3/</code>)</li></ul>
+<p>carry fuller ADT working-state layouts.</p>
+<ul><li><code>data/csp-adt-batch/</code> is the preserved canonical ADT batch archive.</li></ul>
+<h3 id="section-csp-adt-random-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If you need the earliest tracked ADT seed lineage, start here.</p>
+<p>If you need preserved batch outputs, use <code>data/</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-csp-mpr-random-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>csp MPR-Random Guide</h2>
+            <p class="sectionSummary">Local guide to the earliest tracked solver root&#x27;s MPR seed workspace.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/csp/MPR-Random/csp/MPR-Random/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the base <code>csp</code> snapshot&#x27;s MPR random-seed workspace.</p>
+<h3 id="section-csp-mpr-random-guide-role">Role</h3>
+<p><code>csp/MPR-Random/</code> stores seed files for generated MPR situations in the earliest tracked solver root.</p>
+<p>These files are:</p>
+<ul><li>working-state reproducibility inputs,</li><li>useful for understanding the earliest MPR generation lineage,</li><li>not a standalone preserved publication/result family.</li></ul>
+<h3 id="section-csp-mpr-random-guide-relationship-to-other-areas">Relationship To Other Areas</h3>
+<ul><li><code>csp/MPR-Situation/</code> contains the paired generated MPR situation files.</li><li>Later snapshots preserve similar directories with expanded solver behavior.</li></ul>
+<h3 id="section-csp-mpr-random-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If you need the base snapshot&#x27;s MPR seed lineage, start here.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-csp-mpr-situation-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>csp MPR-Situation Guide</h2>
+            <p class="sectionSummary">Local guide to the earliest tracked solver root&#x27;s generated MPR situation workspace.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/csp/MPR-Situation/csp/MPR-Situation/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the base <code>csp</code> snapshot&#x27;s generated MPR situation workspace.</p>
+<h3 id="section-csp-mpr-situation-guide-role">Role</h3>
+<p><code>csp/MPR-Situation/</code> contains generated MPR situation files for the earliest tracked solver root.</p>
+<p>This is working-state input data, not a canonical preserved results archive.</p>
+<h3 id="section-csp-mpr-situation-guide-current-shape">Current Shape</h3>
+<p>Like later snapshots, this directory uses multi-part hidden situation files such as:</p>
+<ul><li><code>.Sit-test-1-ddist-0007241891-0.g</code></li><li><code>.Sit-test-1-ddist-0007241891-0.p</code></li><li><code>.Sit-test-1-ddist-0007241891-0.r</code></li><li><code>.Sit-test-1-ddist-0007241891-0.y</code></li></ul>
+<p>There is also a nested <code>Keep/</code> area, which should be read as preserved local holdover material rather than the primary active workspace surface.</p>
+<h3 id="section-csp-mpr-situation-guide-relationship-to-other-areas">Relationship To Other Areas</h3>
+<ul><li><code>csp/MPR-Random/</code> provides the paired seed lineage.</li><li>Later snapshots (<code>qcsp-may29-1996/</code>, <code>qcsp-alex-sep16-1997/</code>, <code>qcsp3/</code>)</li></ul>
+<p>carry parallel MPR working-state directories with more surrounding infrastructure.</p>
+<h3 id="section-csp-mpr-situation-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If you need to inspect the earliest tracked MPR input state, use this directory.</p>
+<p>If you need validated preserved results, use the archive/data guides instead.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-qcsp3-extras-guide">

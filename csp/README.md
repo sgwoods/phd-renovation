@@ -28,3 +28,14 @@ reference point when comparing later qcsp-era extensions.
 These are legacy ACL-era helper entry points retained for historical context.
 The supported modern load path is the ASDF system, typically via
 `src/main.lisp` or the regression suites under `tests/`.
+
+## Working-State Data Areas
+
+The base snapshot also carries a small amount of working-state domain data:
+
+- `ADT-Random/README.md`
+- `MPR-Random/README.md`
+- `MPR-Situation/README.md`
+
+This is the earliest and sparsest version of the random/situation scaffolding
+that becomes more explicit in the later `qcsp-*` trees.

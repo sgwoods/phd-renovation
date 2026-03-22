@@ -68,6 +68,24 @@ HANDBOOK_SOURCES = [
         "Local guide to the primary integrated solver line, its entry points, and its AO support role.",
     ),
     HandbookSource(
+        "csp ADT-Random Guide",
+        "csp/ADT-Random/README.md",
+        "Local guide to the earliest tracked solver root's direct-ADT seed workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "csp MPR-Random Guide",
+        "csp/MPR-Random/README.md",
+        "Local guide to the earliest tracked solver root's MPR seed workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "csp MPR-Situation Guide",
+        "csp/MPR-Situation/README.md",
+        "Local guide to the earliest tracked solver root's generated MPR situation workspace.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "qcsp3 extras Guide",
         "qcsp3/extras/README.md",
         "Local guide to the bounded AO / test4 support layer that sits alongside the integrated solver line.",
