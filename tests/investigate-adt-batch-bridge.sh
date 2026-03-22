@@ -17,8 +17,12 @@ for path in csp/*.lisp; do
   ln -s "$ROOT_DIR/$path" "$bridge_dir/$(basename "$path")"
 done
 
-cp "$ROOT_DIR/qcsp-may29-1996/ADT-Random/Rnddefault" \
-  "$bridge_dir/ADT-Random/Rnddefault"
+random_source="${PHD_ADT_BRIDGE_RANDOM_SOURCE:-$ROOT_DIR/qcsp3/ADT-Random/Rnddefault}"
+cp "$random_source" "$bridge_dir/ADT-Random/Rnddefault"
+random_sha="$(shasum -a 256 "$random_source" | awk '{print substr($1,1,12)}')"
+
+echo "Using Rnddefault source: $random_source"
+echo "Rnddefault sha: $random_sha"
 
 output_file="$tmp_dir/ij2-050.1"
 cache_dir="$tmp_dir/cache"

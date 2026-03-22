@@ -28,6 +28,9 @@ start here.
 - `investigate-adt-batch-bridge.sh`: runs the first narrow executable bridge
   case for the preserved ADT batch `ij2` family and reports whether the
   current `csp:adt` output matches or diverges from the preserved archive.
+  It now defaults to the closer surviving `qcsp3` `Rnddefault` bundle, and
+  `PHD_ADT_BRIDGE_RANDOM_SOURCE=...` can override that seed source for
+  comparison runs.
 - `investigate-adt-batch-random-lineage.sh`: reruns that same `ij2` bridge
   case against the surviving `Rnddefault` bundles from may29, qcsp3, alex,
   and `historical finds/yj-sun/Csp` to test whether random-state lineage is

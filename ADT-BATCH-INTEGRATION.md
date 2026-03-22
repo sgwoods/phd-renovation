@@ -101,12 +101,12 @@ Current observed divergence versus preserved `ij2-050.1`:
 
 | Metric | Preserved | Current bridge |
 |---|---:|---:|
-| Average domain size | 10.8 | 14.6 |
-| NCC | 450 | 525 |
-| TCC | 269 | 884 |
-| BT / visited | 13 / 16 | 25 / 28 |
-| FC cost | 366 | 890 |
-| DR cost | 18 | 50 |
+| Average domain size | 10.8 | 14.0 |
+| NCC | 450 | 520 |
+| TCC | 269 | 383 |
+| BT / visited | 13 / 16 | 14 / 17 |
+| FC cost | 366 | 563 |
+| DR cost | 18 | 23 |
 
 That means the first bridge is already useful: it has moved the ADT batch
 family from "pure archive" to "executable investigation," but it has not yet
@@ -207,6 +207,17 @@ That does not prove random lineage is the entire story, but it does move the
 investigation from "generic random-state suspicion" to a concrete next read:
 the base `csp` bridge is much closer when seeded from the surviving qcsp3
 default bundle than when seeded from the may29 or alex copies.
+
+Because of that, the narrow bridge probe in
+`tests/investigate-adt-batch-bridge.sh` now defaults to the surviving
+`qcsp3/ADT-Random/Rnddefault` bundle rather than the May29 copy. The script
+still accepts `PHD_ADT_BRIDGE_RANDOM_SOURCE=...` when we want to compare other
+surviving seed bundles on purpose.
+
+That default change materially improved the first `ij2` bridge reading:
+the bridge still diverges, but it now stays much closer to the preserved
+archive on NCC, TCC, BT/visited, and FC/DR cost than the earlier May29-seeded
+probe did.
 
 ## Non-Goal
 
