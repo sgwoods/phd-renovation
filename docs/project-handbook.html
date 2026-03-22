@@ -508,7 +508,7 @@ h1{
         </li>
         <li>
           <a href="#section-1-0-0-release-notes-draft">1.0.0 Release Notes Draft</a>
-          <ul class="subtoc"><li><a href="#section-1-0-0-release-notes-draft-summary">Summary</a></li><li><a href="#section-1-0-0-release-notes-draft-what-this-release-guarantees">What This Release Guarantees</a></li><li><a href="#section-1-0-0-release-notes-draft-validation-in-the-release-gate">Validation In The Release Gate</a></li><li><a href="#section-1-0-0-release-notes-draft-historical-coverage-status">Historical Coverage Status</a></li><li><a href="#section-1-0-0-release-notes-draft-executable-now">Executable now</a></li><li><a href="#section-1-0-0-release-notes-draft-integrity-checkable-now">Integrity-checkable now</a></li><li><a href="#section-1-0-0-release-notes-draft-snapshot-specific-or-deferred">Snapshot-specific or deferred</a></li><li><a href="#section-1-0-0-release-notes-draft-important-boundaries">Important Boundaries</a></li><li><a href="#section-1-0-0-release-notes-draft-meaningful-remaining-deltas">Meaningful Remaining Deltas</a></li><li><a href="#section-1-0-0-release-notes-draft-documentation-operator-improvements">Documentation / Operator Improvements</a></li><li><a href="#section-1-0-0-release-notes-draft-suggested-release-announcement-line">Suggested Release Announcement Line</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-1-0-0-release-notes-draft-summary">Summary</a></li><li><a href="#section-1-0-0-release-notes-draft-what-this-release-guarantees">What This Release Guarantees</a></li><li><a href="#section-1-0-0-release-notes-draft-validation-gate">Validation Gate</a></li><li><a href="#section-1-0-0-release-notes-draft-historical-coverage">Historical Coverage</a></li><li><a href="#section-1-0-0-release-notes-draft-executable-now">Executable now</a></li><li><a href="#section-1-0-0-release-notes-draft-integrity-checkable-now">Integrity-checkable now</a></li><li><a href="#section-1-0-0-release-notes-draft-snapshot-specific-or-deferred">Snapshot-specific or deferred</a></li><li><a href="#section-1-0-0-release-notes-draft-important-boundaries">Important Boundaries</a></li><li><a href="#section-1-0-0-release-notes-draft-meaningful-remaining-deltas">Meaningful Remaining Deltas</a></li><li><a href="#section-1-0-0-release-notes-draft-documentation-and-operator-improvements">Documentation And Operator Improvements</a></li><li><a href="#section-1-0-0-release-notes-draft-suggested-announcement-line">Suggested Announcement Line</a></li></ul>
         </li>
         <li>
           <a href="#section-hanoi-4-status">Hanoi-4 Status</a>
@@ -1041,7 +1041,7 @@ bash tests/validate-dashboard.sh</code></pre>
         <div class="docBody">
 <h3 id="section-1-0-0-release-notes-draft-summary">Summary</h3>
 <p><code>1.0.0</code> marks the first stable integrated release of the PhD renovation project.</p>
-<p>The repo now supports a clear, reproducible thesis-result baseline on modern SBCL, keeps the major preserved historical families explicitly classified, and ships with synchronized status, handbook, dashboard, and public project pages.</p>
+<p>This release establishes a clear, reproducible thesis-result baseline on modern SBCL, classifies the major preserved historical families honestly, and ships with synchronized status, handbook, dashboard, and public project pages.</p>
 <h3 id="section-1-0-0-release-notes-draft-what-this-release-guarantees">What This Release Guarantees</h3>
 <ul><li><code>qcsp3/</code> is the operational center of the supported integrated solver line.</li><li>The supported thesis <code>ij2</code> / <code>ij3</code> / <code>ij4</code> result story is executable from a</li></ul>
 <p>fresh checkout.</p>
@@ -1049,10 +1049,10 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>vague archive material; they are documented and integrity-checkable where appropriate.</p>
 <ul><li>The project’s supported scope, deferred lanes, and historical deltas are</li></ul>
 <p>documented explicitly rather than left as implicit lore.</p>
-<h3 id="section-1-0-0-release-notes-draft-validation-in-the-release-gate">Validation In The Release Gate</h3>
+<h3 id="section-1-0-0-release-notes-draft-validation-gate">Validation Gate</h3>
 <p><code>1.0.0</code> is backed by the supported validation spine:</p>
 <ul><li><code>tests/run.lisp</code></li><li><code>tests/validate-artifacts.sh</code></li><li><code>tests/validate-ff-provenance.sh</code></li><li><code>tests/validate-adt-batch.sh</code></li><li><code>tests/validate-csp-batch.sh</code></li><li><code>tests/validate-ao.sh</code></li><li><code>tests/validate-dashboard.sh</code></li></ul>
-<h3 id="section-1-0-0-release-notes-draft-historical-coverage-status">Historical Coverage Status</h3>
+<h3 id="section-1-0-0-release-notes-draft-historical-coverage">Historical Coverage</h3>
 <h4 id="section-1-0-0-release-notes-draft-executable-now">Executable now</h4>
 <ul><li>core queens regressions across the maintained snapshots</li><li>confused-queens deterministic metrics</li><li>bounded AO baseline</li><li>PhD <code>ij2</code> / <code>ij3</code> / <code>ij4</code> trend-validation path</li><li>solver-level MPR regression surface</li></ul>
 <h4 id="section-1-0-0-release-notes-draft-integrity-checkable-now">Integrity-checkable now</h4>
@@ -1075,12 +1075,12 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li>ADT batch remains preserved and investigated, but not absorbed into the</li></ul>
 <p>integrated line</p>
 <ul><li>some legacy STYLE-WARNING noise remains outside the main release gate</li></ul>
-<h3 id="section-1-0-0-release-notes-draft-documentation-operator-improvements">Documentation / Operator Improvements</h3>
+<h3 id="section-1-0-0-release-notes-draft-documentation-and-operator-improvements">Documentation And Operator Improvements</h3>
 <p>This release also establishes:</p>
 <ul><li>a generated project handbook,</li><li>a generated release dashboard,</li><li>a generated public project page and public handbook,</li><li>a synchronized public status manifest,</li><li>stronger local README coverage across the active solver line and historical</li></ul>
 <p>snapshots,</p>
 <ul><li>and a first-class release checklist for future tags.</li></ul>
-<h3 id="section-1-0-0-release-notes-draft-suggested-release-announcement-line">Suggested Release Announcement Line</h3>
+<h3 id="section-1-0-0-release-notes-draft-suggested-announcement-line">Suggested Announcement Line</h3>
 <p><code>1.0.0</code> is the first release where the renovated solver line, thesis-result validation path, preserved historical family classification, and public-facing status/documentation story all line up cleanly enough to treat the project as stable and trustworthy to build on.</p>
         </div>
       </section>

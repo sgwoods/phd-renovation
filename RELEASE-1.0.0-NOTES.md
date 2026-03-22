@@ -1,12 +1,12 @@
-# 1.0.0 Release Notes Draft
+# 1.0.0 Release Notes
 
 ## Summary
 
 `1.0.0` marks the first stable integrated release of the PhD renovation
 project.
 
-The repo now supports a clear, reproducible thesis-result baseline on modern
-SBCL, keeps the major preserved historical families explicitly classified, and
+This release establishes a clear, reproducible thesis-result baseline on
+modern SBCL, classifies the major preserved historical families honestly, and
 ships with synchronized status, handbook, dashboard, and public project pages.
 
 ## What This Release Guarantees
@@ -21,7 +21,7 @@ ships with synchronized status, handbook, dashboard, and public project pages.
 - The project’s supported scope, deferred lanes, and historical deltas are
   documented explicitly rather than left as implicit lore.
 
-## Validation In The Release Gate
+## Validation Gate
 
 `1.0.0` is backed by the supported validation spine:
 
@@ -33,7 +33,7 @@ ships with synchronized status, handbook, dashboard, and public project pages.
 - `tests/validate-ao.sh`
 - `tests/validate-dashboard.sh`
 
-## Historical Coverage Status
+## Historical Coverage
 
 ### Executable now
 
@@ -79,7 +79,7 @@ Instead, it claims a trustworthy supported baseline with explicit boundaries.
   integrated line
 - some legacy STYLE-WARNING noise remains outside the main release gate
 
-## Documentation / Operator Improvements
+## Documentation And Operator Improvements
 
 This release also establishes:
 
@@ -91,7 +91,7 @@ This release also establishes:
   snapshots,
 - and a first-class release checklist for future tags.
 
-## Suggested Release Announcement Line
+## Suggested Announcement Line
 
 `1.0.0` is the first release where the renovated solver line, thesis-result
 validation path, preserved historical family classification, and public-facing
