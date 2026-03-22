@@ -80,6 +80,18 @@ HANDBOOK_SOURCES = [
         include_in_quick_index=False,
     ),
     HandbookSource(
+        "May29 extras Guide",
+        "qcsp-may29-1996/extras/README.md",
+        "Local guide to the May29 snapshot's AO / test4 support layer and its role in the bounded AO baseline.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Alex MyBatch Guide",
+        "qcsp-alex-sep16-1997/MyBatch/README.md",
+        "Local guide to the Alex snapshot's preserved batch orchestration tree and why it remains provenance-only.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "src Guide",
         "src/README.md",
         "Interactive entry-point guide for loading the primary solver line in a REPL.",

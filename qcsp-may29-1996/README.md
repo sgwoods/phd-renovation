@@ -72,3 +72,7 @@ implementation, loaded by `run-test4-may29.lisp` for integration testing:
 | `applyr.lisp` | Apply-reduce constraint propagation |
 | `example-extend.lisp` | Extended example data for AO tests |
 | `test4.lisp` | Test4 integration suite definitions |
+
+Local guide:
+
+- `extras/README.md`

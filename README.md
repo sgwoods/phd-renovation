@@ -220,6 +220,8 @@ Directory guides:
 - `Q-Batch-SBCL/README.md`
 - `Q-Batch-SBCL/Graph/README.md`
 - `tests/README.md`
+- `qcsp-may29-1996/extras/README.md`
+- `qcsp-alex-sep16-1997/MyBatch/README.md`
 - `WORKFLOWS.md`
 - `MANUAL-HELPERS.md`
 - `docs/README.md`

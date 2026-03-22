@@ -481,6 +481,14 @@ h1{
           <ul class="subtoc"><li><a href="#section-qcsp3-adt-batch-guide-role">Role</a></li><li><a href="#section-qcsp3-adt-batch-guide-canonical-versus-local">Canonical Versus Local</a></li><li><a href="#section-qcsp3-adt-batch-guide-current-shape">Current Shape</a></li><li><a href="#section-qcsp3-adt-batch-guide-relationship-to-the-current-roadmap">Relationship To The Current Roadmap</a></li><li><a href="#section-qcsp3-adt-batch-guide-if-you-are-investigating-adt-batch-again">If You Are Investigating ADT Batch Again</a></li><li><a href="#section-qcsp3-adt-batch-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
+          <a href="#section-may29-extras-guide">May29 extras Guide</a>
+          <ul class="subtoc"><li><a href="#section-may29-extras-guide-role">Role</a></li><li><a href="#section-may29-extras-guide-what-loads-it">What Loads It</a></li><li><a href="#section-may29-extras-guide-file-roles">File Roles</a></li><li><a href="#section-may29-extras-guide-supported-status">Supported Status</a></li><li><a href="#section-may29-extras-guide-relationship-to-qcsp3-extras">Relationship To qcsp3/extras</a></li><li><a href="#section-may29-extras-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-may29-extras-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-alex-mybatch-guide">Alex MyBatch Guide</a>
+          <ul class="subtoc"><li><a href="#section-alex-mybatch-guide-role">Role</a></li><li><a href="#section-alex-mybatch-guide-current-shape">Current Shape</a></li><li><a href="#section-alex-mybatch-guide-relationship-to-other-areas">Relationship To Other Areas</a></li><li><a href="#section-alex-mybatch-guide-supported-status">Supported Status</a></li><li><a href="#section-alex-mybatch-guide-what-this-directory-is-good-for">What This Directory Is Good For</a></li><li><a href="#section-alex-mybatch-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-alex-mybatch-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-src-guide">src Guide</a>
           <ul class="subtoc"><li><a href="#section-src-guide-purpose">Purpose</a></li><li><a href="#section-src-guide-supported-load-path">Supported Load Path</a></li><li><a href="#section-src-guide-what-this-is-not">What This Is Not</a></li><li><a href="#section-src-guide-typical-next-commands">Typical Next Commands</a></li><li><a href="#section-src-guide-using-in-code-docs">Using In-Code Docs</a></li><li><a href="#section-src-guide-relationship-to-the-repo">Relationship To The Repo</a></li></ul>
         </li>
@@ -688,7 +696,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>qcsp-may29-1996/extras/README.md</code></li><li><code>qcsp-alex-sep16-1997/MyBatch/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -1200,6 +1208,91 @@ run-test4*.lisp                Legacy/manual AO harnesses (3 files)</code></pre>
 <h3 id="section-qcsp3-adt-batch-guide-rule-of-thumb">Rule Of Thumb</h3>
 <p>If you want the preserved historical ADT batch archive, go to <code>data/</code>.</p>
 <p>If you want the <code>qcsp3</code> snapshot&#x27;s own batch-style output workspace, use this directory.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-may29-extras-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>May29 extras Guide</h2>
+            <p class="sectionSummary">Local guide to the May29 snapshot&#x27;s AO / test4 support layer and its role in the bounded AO baseline.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/qcsp-may29-1996/extras/qcsp-may29-1996/extras/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the May 29, 1996 snapshot&#x27;s AO / <code>test4</code> support layer.</p>
+<h3 id="section-may29-extras-guide-role">Role</h3>
+<p><code>qcsp-may29-1996/extras/</code> contains the non-ASDF AO support files used by the May29 snapshot. This is the May29 counterpart to <code>qcsp3/extras/</code>.</p>
+<p>It matters because:</p>
+<ul><li>the supported AO validation spine still exercises this snapshot,</li><li>the files preserve the mid-lineage AO implementation state,</li><li>and they help explain the historical relationship between May29 and the</li></ul>
+<p>later integrated <code>qcsp3</code> AO surface.</p>
+<h3 id="section-may29-extras-guide-what-loads-it">What Loads It</h3>
+<p>The main current entry points are:</p>
+<ul><li><code>tests/ao-run.lisp</code></li><li><code>run-test4-may29.lisp</code></li></ul>
+<p>These files are not part of the <code>:qcsp-may29-1996</code> ASDF system by default.</p>
+<h3 id="section-may29-extras-guide-file-roles">File Roles</h3>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody><tr><td><code>ac-graph.lisp</code></td><td>AO graph representation and graph-level helpers</td></tr><tr><td><code>hierarchy.lisp</code></td><td>AO ordering hierarchy and relation layering</td></tr><tr><td><code>ao-ac3.lisp</code></td><td>AO AC-3 style propagation path</td></tr><tr><td><code>ao-ac-new.lisp</code></td><td>Alternate AO propagation path</td></tr><tr><td><code>ao-revise.lisp</code></td><td>Shared revise support / preserved stub</td></tr><tr><td><code>ao-revise-step.lisp</code></td><td>Step-oriented AO revise implementation</td></tr><tr><td><code>ao-revise-aggressive.lisp</code></td><td>Aggressive AO revise implementation</td></tr><tr><td><code>ao-revise-fns.lisp</code></td><td>Shared revise helper functions</td></tr><tr><td><code>applyr.lisp</code></td><td>Relation application / propagation helpers</td></tr><tr><td><code>example-extend.lisp</code></td><td>Mutable example graph setup used by the legacy harness</td></tr><tr><td><code>test4.lisp</code></td><td>Legacy AO harness definitions and wrapper entry points</td></tr><tr><td><code>comment.lisp</code></td><td>Preserved AO comments / historical context file</td></tr><tr><td><code>compile-ao.lisp</code></td><td>Historical compile helper for the AO layer</td></tr></tbody></table>
+<h3 id="section-may29-extras-guide-supported-status">Supported Status</h3>
+<p>This directory participates in the supported validation umbrella only through the bounded AO path:</p>
+<ul><li><code>tests/ao-may29-suite.lisp</code></li><li><code>bash tests/validate-ao.sh</code></li></ul>
+<p>That means it is:</p>
+<ul><li>supported for the asserted legacy AO baseline,</li><li>historically meaningful beyond that,</li><li>but not part of the main May29 ASDF load used by the core solver suites.</li></ul>
+<h3 id="section-may29-extras-guide-relationship-to-qcsp3-extras">Relationship To qcsp3/extras</h3>
+<p>This directory and <code>qcsp3/extras/</code> are intentionally similar.</p>
+<p>In practice:</p>
+<ul><li>May29 preserves the earlier snapshot-local AO layer,</li><li><code>qcsp3/extras/</code> is the later integrated line&#x27;s AO counterpart,</li><li>and the current supported AO baseline compares them through the shared</li></ul>
+<p>asserted harness.</p>
+<h3 id="section-may29-extras-guide-what-this-directory-is-not">What This Directory Is Not</h3>
+<ul><li>It is not the canonical home of the main May29 solver APIs.</li><li>It is not part of the thesis <code>ij2</code> / <code>ij3</code> / <code>ij4</code> artifact pipeline.</li><li>It is not a general utility directory for the rest of the snapshot.</li></ul>
+<h3 id="section-may29-extras-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the task is about May29 AO behavior or <code>run-test4-may29.lisp</code>, start here.</p>
+<p>If the task is about the May29 snapshot&#x27;s main solver line, start one level up in <code>qcsp-may29-1996/</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-alex-mybatch-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Alex MyBatch Guide</h2>
+            <p class="sectionSummary">Local guide to the Alex snapshot&#x27;s preserved batch orchestration tree and why it remains provenance-only.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/qcsp-alex-sep16-1997/MyBatch/qcsp-alex-sep16-1997/MyBatch/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the Alex snapshot&#x27;s preserved batch orchestration tree.</p>
+<h3 id="section-alex-mybatch-guide-role">Role</h3>
+<p><code>qcsp-alex-sep16-1997/MyBatch/</code> is a preserved Allegro-era batch runner workspace. It is not part of the supported modern validation spine, but it is valuable for provenance because it preserves how large experiment families were scripted under the Alex snapshot.</p>
+<p>Use it as:</p>
+<ul><li>a historical runner/orchestration archive,</li><li>a clue to how thesis-era or near-thesis-era batch work was staged,</li><li>and a reference when comparing the later maintained experiment workspace to</li></ul>
+<p>preserved historical tooling.</p>
+<h3 id="section-alex-mybatch-guide-current-shape">Current Shape</h3>
+<p>The tree has two main layers:</p>
+<ul><li><code>batch-0.lisp</code> through <code>batch-23.lisp</code></li><li><code>old-batch/</code> with older <code>batch-exe-*</code>, <code>exp-*</code>, and <code>run-exp-*</code> drivers</li></ul>
+<p>There are also a few shell/helper files such as:</p>
+<ul><li><code>run-batch</code></li><li><code>run-batch-yk</code></li><li><code>one-more</code></li></ul>
+<p>This mix strongly suggests a preserved execution/control surface rather than a single coherent modern workflow.</p>
+<h3 id="section-alex-mybatch-guide-relationship-to-other-areas">Relationship To Other Areas</h3>
+<p>This directory is related to, but not the same as:</p>
+<ul><li><code>Q-Batch-SBCL/</code> for the supported modern experiment workspace,</li><li><code>historical finds/yj-sun/Csp/</code> for related recovered orchestration/provenance</li></ul>
+<p>material,</p>
+<ul><li><code>qcsp-alex-sep16-1997/testdata/</code> for the preserved result/data side of the</li></ul>
+<p>Alex snapshot.</p>
+<h3 id="section-alex-mybatch-guide-supported-status">Supported Status</h3>
+<p><code>MyBatch/</code> is currently treated as:</p>
+<ul><li>preserved historical tooling,</li><li>useful for provenance and reconstruction,</li><li>but not part of the supported current build or validation gate.</li></ul>
+<p>The repo does <strong>not</strong> currently claim that these batch drivers can be rerun cleanly on the maintained modern path.</p>
+<h3 id="section-alex-mybatch-guide-what-this-directory-is-good-for">What This Directory Is Good For</h3>
+<p>This tree is especially useful for:</p>
+<ul><li>understanding how experiment families were chunked,</li><li>identifying old experiment naming conventions,</li><li>tracing possible generator/runner lineage for preserved result trees,</li><li>and supporting archive interpretation work.</li></ul>
+<h3 id="section-alex-mybatch-guide-what-this-directory-is-not">What This Directory Is Not</h3>
+<ul><li>It is not the canonical active experiment workspace.</li><li>It is not the source of truth for supported current CI checks.</li><li>It is not a maintained operator-facing workflow for day-to-day use.</li></ul>
+<h3 id="section-alex-mybatch-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the task is about preserved Alex-era batch orchestration, use this directory.</p>
+<p>If the task is about running supported experiments today, use <code>Q-Batch-SBCL/</code> instead.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-src-guide">

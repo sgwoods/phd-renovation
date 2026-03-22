@@ -55,3 +55,8 @@ The simplified NC was likely paired with the DFA features to compensate, but tho
 | `ADT-Situation/` | Generated ADT situations (gitignored) |
 | `MPR-Random/` | MPR domain random data |
 | `MPR-Situation/` | MPR domain situation data |
+
+Local guides:
+
+- `MyBatch/README.md`
+- `testdata/README.md`
