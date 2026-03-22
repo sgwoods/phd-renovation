@@ -32,6 +32,7 @@ These matter historically, but they are **not** first-gate blockers for M1:
 | ADT batch archive (`ij1`-`ij4`) | Integrity-checkable | Important archive family, but outside the minimum M1 executable story. |
 | Earliest DREV-era `T1`-`T6` family | Integrity-checkable | Historically meaningful, but also outside the minimum M1 executable story. |
 | Alex DFA-option behavior | Diagnosed but not promoted into supported validation | This is a research-readiness lane, not a first integrated-baseline gate. |
+| Hanoi-4 behavior / repeatability | Explicitly tracked, but not yet indexed as a runnable family | For `1.0`, a clear status statement is sufficient; full understanding is deferred to `2.0`. |
 | Remaining minor log noise | Small leftovers only | Worth trimming, but not strong enough to block M1 once bounded and documented. |
 
 ## Explicitly Outside M1

@@ -81,7 +81,14 @@
       "status_label": "Future",
       "phase": "1.0 target",
       "title": "Gold-standard integrated solver line",
-      "summary": "One trusted code path covers the validated historical surface, with remaining deltas explained rather than accidental."
+      "summary": "One trusted code path covers the validated historical surface, with remaining deltas explained rather than accidental and deferred lanes like Hanoi-4 clearly bounded."
+    },
+    {
+      "status": "pending",
+      "status_label": "Future",
+      "phase": "2.0 target",
+      "title": "Deeper research-repeatability closure",
+      "summary": "Post-1.0 work can then absorb harder historical questions like Hanoi-4 behavior and repeatability once the relevant artifacts and references are ingested."
     }
   ],
   "parallel_cards": [
@@ -149,7 +156,11 @@
     },
     {
       "title": "Gold-standard integrated solver line",
-      "summary": "One code line covers the validated historical surface with bounded, explained deltas."
+      "summary": "One code line covers the validated historical surface with bounded, explained deltas and no hidden blockers."
+    },
+    {
+      "title": "Deeper research-repeatability closure",
+      "summary": "Post-1.0 work can then tackle harder lanes like Hanoi-4 behavior once their artifacts and references are properly ingested."
     }
   ],
   "footer_html": "Source of truth for status details remains <a href=\"../RENOVATION.md\">RENOVATION.md</a> and <a href=\"../VALIDATION-MATRIX.md\">VALIDATION-MATRIX.md</a>. This page is the quick visual version for fast review.",
@@ -174,7 +185,7 @@
       },
       {
         "title": "What comes next",
-        "summary": "The current mainline is still 0.3.x documentation and handoff polish, but that lane is now late-stage. ADT batch is explicitly treated as a snapshot-specific preserved family, and the next likely source of movement is heavier incoming archive and data intake while terrain and future recovery remain deferred."
+        "summary": "The current mainline is still 0.3.x documentation and handoff polish, but that lane is now late-stage. ADT batch is explicitly treated as a snapshot-specific preserved family, incoming archive and data intake is the next likely source of movement, and Hanoi-4 is now documented for 1.0 while full behavior and repeatability understanding is deferred to 2.0."
       }
     ],
     "links": [

@@ -246,7 +246,7 @@ For the current phase, the practical subgoals are:
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check, and both the older ADT batch archive and the earliest DREV-era `T1`-`T6` family have moved from provenance-only to integrity-checkable. |
 | Gold-standard integration target | **Emerging, with M1 accepted** | `qcsp3/` is the leading candidate, and Milestone M1 is now accepted as the first gate showing it can carry the PhD baseline, AO baseline, and preserved `ff*` relationship under one supported umbrella. The repo is now moving beyond "is M1 ready?" into post-M1 documentation and integration work. |
-| Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. |
+| Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. A clear `Hanoi-4` status statement is sufficient for `1.0`; full `Hanoi-4` behavioral/repeatability understanding is now explicitly a `2.0` goal. |
 
 ### First `qcsp3/` integration milestone
 
@@ -334,6 +334,9 @@ anchors rather than co-equal supported workflows.
    are tighter,
    begin controlled integration and research-readiness experiments such as
    alex DFA-option isolation against the validated snapshot.
+8. Treat `Hanoi-4` explicitly as a phased lane: for `1.0`, keep a clear record
+   of the situation, artifacts, and any ingested references; for `2.0`, pursue
+   actual behavioral/repeatability understanding once the material exists.
 
 ### Phase / Release Alignment
 
@@ -348,8 +351,12 @@ the docs accurately describe that supported path.
 - **`0.3.x` Documentation / research-readiness builds**: clearer operator docs,
   explicit supported workflows, and guarded extension points for new research.
 - **`1.0.0` target**: phases 1-3 are complete, CI continuously validates the
-  supported thesis-result baseline, and release notes can describe deviations
-  from the thesis as intentional rather than accidental.
+  supported thesis-result baseline, release notes can describe deviations from
+  the thesis as intentional rather than accidental, and deferred lanes like
+  `Hanoi-4` are clearly documented rather than silently unresolved.
+- **`2.0.0` target**: the integrated line is stable enough to absorb deeper
+  historical/research-readiness questions, including explicit behavioral and
+  repeatability analysis for lanes like `Hanoi-4`.
 
 Increment the internal build number once per completed roadmap cycle and note
 the owning phase in the release summary so future work stays tied to the plan.

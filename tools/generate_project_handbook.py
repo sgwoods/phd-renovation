@@ -46,6 +46,12 @@ HANDBOOK_SOURCES = [
         "Current historical domain and result-family coverage against the project's main goals.",
     ),
     HandbookSource(
+        "Hanoi-4 Status",
+        "HANOI-4-STATUS.md",
+        "Bounded status record for the deferred Hanoi-4 lane: documented for 1.0, behaviorally unresolved for 2.0.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "M1 Readiness",
         "M1-READINESS.md",
         "Accepted first integration gate for the validated solver line.",

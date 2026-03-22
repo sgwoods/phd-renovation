@@ -20,6 +20,7 @@ For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
 For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
+For the current bounded `Hanoi-4` position, see `HANOI-4-STATUS.md`.
 
 ## Status Key
 
@@ -59,6 +60,7 @@ For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
 | `data/motors-releases/` + `data/motors-backups/` | Compressed external solver archives | Yes | No | No | Historical context | Cataloged but not unpacked into a validated path yet. |
 | `data/thesis/` | Publication artifact | Yes | Reference-only | No | Yes | Thesis PDF is preserved as the publication anchor, not a generated artifact. |
 | `data/lost-datasets.md` + terrain references | Missing historical domain | Yes | No | No | Historically relevant | Explicitly tracked as the major blocked lane outside the current integrated line. |
+| `HANOI-4-STATUS.md` + future `incoming/` finds | Deferred historical/research lane | Yes | No | No | Not yet | Explicitly documented as a `2.0` behavior/repeatability goal; `1.0` only requires a clear statement of the situation, artifacts, and references once they are ingested. |
 | Root `run-test4*.lisp` | Manual AO harnesses | Yes | Partly | No | Indirectly | Preserved for manual/historical use; supported AO confidence now flows through `tests/ao-run.lisp`. |
 | Root `run-csp-tests.lisp` / `renovate.lisp` | Legacy/manual loader helpers | Partly | No | No | No | Still usable, but secondary to `src/main.lisp` and `tests/`. |
 | `docs/` | Generated/public status outputs | Yes | Yes | Yes | Project-status, not research publication | First-class operator/public status artifacts driven from one source file. |
@@ -83,6 +85,11 @@ The repository now has three broad zones:
    Newly found relevant material should land in `incoming/` first, then be
    reviewed and promoted into one of the three zones above.
 
+5. `Deferred research-readiness lanes`
+   Topics like `Hanoi-4` that are important enough to track explicitly, but
+   whose current `1.0` requirement is documentation and bounded scope rather
+   than full behavioral closure.
+
 ## Deliberate Mainline Priority
 
 The current post-M1 mainline priority should be:
@@ -92,9 +99,12 @@ That means the current recommended order is:
 1. finish the `0.3.x` operator-docs pass,
 2. keep the supported validation spine green and the repo status artifacts
    current,
-3. treat ADT batch as a snapshot-specific preserved family rather than an
+3. prepare for heavier `incoming/` review work,
+4. treat ADT batch as a snapshot-specific preserved family rather than an
    active integration obligation,
-4. keep terrain as the major deferred recovery lane.
+5. keep terrain as the major deferred recovery lane, and
+6. treat `Hanoi-4` as a documented `1.0`-bounded lane and a `2.0`
+   research/repeatability goal.
 
 The current ADT batch note lives in `ADT-BATCH-INTEGRATION.md`.
 Current recommendation: keep the preserved wrapper mapping and bridge probes as

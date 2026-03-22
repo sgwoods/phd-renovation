@@ -58,6 +58,7 @@ The current ADT batch investigation note lives in `ADT-BATCH-INTEGRATION.md`.
 | MPR domain behavior | source snapshots and runtime-generated situation/random files | Executable now at solver level | `tests/run.lisp` MPR assertions | Covered at regression level, but not yet tied to a broader historical result family |
 | Alex-specific DFA-related ADT behavior | `qcsp-alex-sep16-1997/` | Provenance-only for now | Diagnosed but not yet part of supported validation | Open research/integration item |
 | QCSP-nov96 terrain domain | `data/lost-datasets.md`, `QCSP-nov96.dir`, `Lacie1` recovery lead | Provenance-only for now | No runnable path yet; `Lacie1` reportedly contains terrain data and generator but remains unsorted | Recovery lead identified, still outside M1 |
+| Hanoi-4 domain / repeatability lane | currently tracked through `HANOI-4-STATUS.md` and future `incoming/` finds | Provenance-only for now | No indexed executable or integrity-check path yet | Not a `1.0` blocker; document the situation for `1.0`, treat clear behavioral understanding as a `2.0` goal |
 
 ## Immediate Priorities
 
@@ -73,3 +74,5 @@ The current ADT batch investigation note lives in `ADT-BATCH-INTEGRATION.md`.
    promoting it into the main repo story.
 6. Move the next clearly supported family or workflow only when it helps the
    post-M1 integrated line more than it increases maintenance surface.
+7. Treat `Hanoi-4` as explicitly bounded for `1.0`: maintain a clear status
+   record, but defer full behavior/repeatability understanding to `2.0`.
