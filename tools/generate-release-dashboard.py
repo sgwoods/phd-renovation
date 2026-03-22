@@ -486,18 +486,19 @@ def build_public_page(data: dict[str, object]) -> str:
             align-items: flex-start;
             justify-content: space-between;
             gap: 16px;
+            margin-bottom: 18px;
         }}
 
         .eyebrow {{
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 7px 12px;
+            padding: 16px 24px;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.08);
             color: #d7ecff;
-            font-size: 12px;
-            letter-spacing: .14em;
+            font-size: 13px;
+            letter-spacing: .16em;
             text-transform: uppercase;
         }}
 
@@ -505,16 +506,17 @@ def build_public_page(data: dict[str, object]) -> str:
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 9px 14px;
+            padding: 16px 28px;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.12);
             color: #d7ecff;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 13px;
             letter-spacing: .12em;
             text-transform: uppercase;
             white-space: nowrap;
+            box-shadow: inset 0 0 0 1px rgba(177, 222, 255, 0.06);
         }}
 
         h1 {{
