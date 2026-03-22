@@ -95,6 +95,18 @@ HANDBOOK_SOURCES = [
         "Catalog of preserved datasets, baseline results, thesis artifacts, and archive holdings.",
     ),
     HandbookSource(
+        "incoming Guide",
+        "incoming/README.md",
+        "How new finds enter the repo safely before review, promotion, or duplicate classification.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Historical Finds Guide",
+        "historical finds/README.md",
+        "How reviewed archive/recovery material is separated from canonical data and the supported baseline.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "ACL Baseline Guide",
         "data/acl-experiments/README.md",
         "How the preserved ACL experiment baseline feeds the supported thesis-result validation path.",

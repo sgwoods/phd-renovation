@@ -66,6 +66,30 @@ Every reviewed intake should end in one of these states:
 - `reference-only`: preserved, but not integrated
 - `pending`: still under review
 
+## Promotion Destinations
+
+The usual destinations mean:
+
+| Destination | Use when |
+|---|---|
+| `data/` | The material is a canonical preserved dataset, publication, or baseline result family |
+| `historical finds/` | The material has archive/recovery value but is not part of the supported baseline |
+| solver snapshot tree | The material clearly belongs to one historical code line and keeping it there helps snapshot integrity |
+| `DUPLICATES-REVIEW.md` | Review shows the material is redundant with a canonical active copy elsewhere |
+| stay in `incoming/` | The material is not understood well enough yet to classify safely |
+
+## Relation To The Rest Of The Repo
+
+`incoming/` is the only place where "unreviewed but relevant" material should
+accumulate.
+
+That keeps three other zones clearer:
+
+1. `data/` means preserved/canonical results or publications,
+2. `historical finds/` means reviewed archive/recovery material,
+3. the solver trees mean code or snapshot-local artifacts that already have a
+   justified home.
+
 ## Rule Of Thumb
 
 If the right home or the right date label is not obvious yet, it belongs in

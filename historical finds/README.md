@@ -75,6 +75,30 @@ one broader historical workflow.
 4. When promoting anything out of this directory, document why it matters to
    thesis-result validation or to archive recovery.
 
+## What This Directory Is Not
+
+This directory is not:
+
+- the main solver line,
+- the canonical preserved baseline data area,
+- or a dumping ground for unreviewed finds.
+
+New material should enter through `incoming/` first. Material only belongs here
+after review has established that it is best treated as archive/recovery or
+reference context.
+
+## Typical Outcomes After Review
+
+Material reviewed here usually ends in one of these states:
+
+| Outcome | Meaning |
+|---|---|
+| kept in `historical finds/` | archive/recovery value remains, but it is not part of the supported line |
+| promoted into `data/` | the material proves to be a canonical preserved result/publication family |
+| promoted into a snapshot tree | it clearly belongs to one historical code line |
+| recorded in `DUPLICATES-REVIEW.md` | it overlaps a canonical copy and is only needed for provenance |
+| reference-only | useful context, but not something the main project needs to build around |
+
 ## Suggested Recovery Order
 
 1. Compare `yj-sun/Csp` against the tracked solver snapshots to identify unique
@@ -87,3 +111,9 @@ one broader historical workflow.
    minimum subset needed to explain `.component` / `.control` generation.
 4. Leave `Unravel/`, `Refine/`, and the note files as reference/context until a
    direct dependency on thesis validation is established.
+
+## Rule Of Thumb
+
+If the material helps explain how the historical project was assembled, but not
+what the current supported baseline should execute, this is probably the right
+place for it.

@@ -104,6 +104,8 @@ src/                        Entry point
   duplicates versus which still carry archive/provenance value.
 - `incoming/README.md` and `incoming/INDEX.md` define and track the intake flow
   for future finds.
+- `historical finds/README.md` explains the reviewed archive/recovery lane and
+  how it differs from both `incoming/` and the supported baseline.
 
 ## ASDF Systems
 
@@ -222,6 +224,7 @@ Directory guides:
 - `tools/README.md`
 - `data/README.md`
 - `incoming/README.md`
+- `historical finds/README.md`
 - `REPOSITORY-STATUS.md`
 - `REPOSITORY-STRUCTURE-REVIEW.md`
 - `DUPLICATES-REVIEW.md`

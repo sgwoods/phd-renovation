@@ -493,6 +493,14 @@ h1{
           <ul class="subtoc"><li><a href="#section-data-guide-consolidated-datasets">Consolidated Datasets</a></li><li><a href="#section-data-guide-snapshot-embedded-data-left-in-place">Snapshot-Embedded Data (left in place)</a></li><li><a href="#section-data-guide-qcsp-may29-1996-2-550-data-files">qcsp-may29-1996/ (2,550+ data files)</a></li><li><a href="#section-data-guide-qcsp-alex-sep16-1997-564-data-files">qcsp-alex-sep16-1997/ (564 data files)</a></li><li><a href="#section-data-guide-active-experiment-infrastructure">Active Experiment Infrastructure</a></li><li><a href="#section-data-guide-q-batch-sbcl-not-moved-uses-relative-paths">Q-Batch-SBCL/ (not moved -- uses relative paths)</a></li><li><a href="#section-data-guide-runtime-generated-data-gitignored">Runtime-Generated Data (gitignored)</a></li><li><a href="#section-data-guide-compressed-binary-files">Compressed/Binary Files</a></li><li><a href="#section-data-guide-missing-lost-datasets">Missing/Lost Datasets</a></li></ul>
         </li>
         <li>
+          <a href="#section-incoming-guide">incoming Guide</a>
+          <ul class="subtoc"><li><a href="#section-incoming-guide-purpose">Purpose</a></li><li><a href="#section-incoming-guide-intake-workflow">Intake Workflow</a></li><li><a href="#section-incoming-guide-review-outcomes">Review Outcomes</a></li><li><a href="#section-incoming-guide-promotion-destinations">Promotion Destinations</a></li><li><a href="#section-incoming-guide-relation-to-the-rest-of-the-repo">Relation To The Rest Of The Repo</a></li><li><a href="#section-incoming-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-historical-finds-guide">Historical Finds Guide</a>
+          <ul class="subtoc"><li><a href="#section-historical-finds-guide-current-intake">Current Intake</a></li><li><a href="#section-historical-finds-guide-yj-sun">`yj-sun/`</a></li><li><a href="#section-historical-finds-guide-unravel">`Unravel/`</a></li><li><a href="#section-historical-finds-guide-refine">`Refine/`</a></li><li><a href="#section-historical-finds-guide-surga-info-and-unravel-changes">`SurgA-Info` and `Unravel-changes/`</a></li><li><a href="#section-historical-finds-guide-handling-rules">Handling Rules</a></li><li><a href="#section-historical-finds-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-historical-finds-guide-typical-outcomes-after-review">Typical Outcomes After Review</a></li><li><a href="#section-historical-finds-guide-suggested-recovery-order">Suggested Recovery Order</a></li><li><a href="#section-historical-finds-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-acl-baseline-guide">ACL Baseline Guide</a>
           <ul class="subtoc"><li><a href="#section-acl-baseline-guide-why-this-directory-matters">Why This Directory Matters</a></li><li><a href="#section-acl-baseline-guide-experiment-series">Experiment Series</a></li><li><a href="#section-acl-baseline-guide-structure">Structure</a></li><li><a href="#section-acl-baseline-guide-canonical-vs-preserved-duplicate">Canonical vs Preserved Duplicate</a></li><li><a href="#section-acl-baseline-guide-result-file-shape">Result File Shape</a></li><li><a href="#section-acl-baseline-guide-graph-layer">Graph Layer</a></li><li><a href="#section-acl-baseline-guide-relationship-to-the-modern-sbcl-workspace">Relationship To The Modern SBCL Workspace</a></li><li><a href="#section-acl-baseline-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
@@ -611,6 +619,8 @@ src/                        Entry point</code></pre>
 <p>duplicates versus which still carry archive/provenance value.</p>
 <ul><li><code>incoming/README.md</code> and <code>incoming/INDEX.md</code> define and track the intake flow</li></ul>
 <p>for future finds.</p>
+<ul><li><code>historical finds/README.md</code> explains the reviewed archive/recovery lane and</li></ul>
+<p>how it differs from both <code>incoming/</code> and the supported baseline.</p>
 <h3 id="section-project-overview-asdf-systems">ASDF Systems</h3>
 <table><thead><tr><th>System</th><th>Directory</th><th>Description</th></tr></thead><tbody><tr><td><code>:phd-research</code></td><td><code>csp/</code></td><td>Base CSP solver with queens, ADT, MPR domains</td></tr><tr><td><code>:qcsp3</code></td><td><code>qcsp3/</code></td><td>Extended solver with memory-CSP and Quilici search</td></tr><tr><td><code>:qcsp-may29-1996</code></td><td><code>qcsp-may29-1996/</code></td><td>Historical snapshot (May 1996)</td></tr><tr><td><code>:qcsp-alex-sep16-1997</code></td><td><code>qcsp-alex-sep16-1997/</code></td><td>Historical snapshot (Sep 1997)</td></tr></tbody></table>
 <h3 id="section-project-overview-quick-start">Quick Start</h3>
@@ -670,7 +680,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -1346,6 +1356,116 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>See <a href="../data/lost-datasets.md">lost-datasets.md</a> for a full inventory of the November 1996 snapshot, which contained unique terrain CSP code and data that was never recovered from the original SPARC archive.</p>
 <p>Key losses:</p>
 <ul><li><code>terrain-setup.lisp</code>, <code>terrain-simple.lisp</code>, <code>closure.lisp</code> -- terrain CSP source</li><li><code>TCSP-Situation/</code>, <code>TCSP-Random/</code> -- terrain CSP data files</li><li>Entire Nov 1996 snapshot source code</li></ul>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-incoming-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>incoming Guide</h2>
+            <p class="sectionSummary">How new finds enter the repo safely before review, promotion, or duplicate classification.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../incoming/incoming/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory is the <strong>single intake bucket</strong> for newly found material that may be relevant to the project:</p>
+<ul><li>source trees</li><li>datasets</li><li>experiment outputs</li><li>publications</li><li>notes</li><li>recovered archives</li></ul>
+<p>Think of this as the shell-friendly implementation of:</p>
+<p><code>new relevant information to integrate</code></p>
+<h3 id="section-incoming-guide-purpose">Purpose</h3>
+<p>Use <code>incoming/</code> first whenever new material arrives and its final home is not yet settled.</p>
+<p>Do <strong>not</strong> drop new finds directly into:</p>
+<ul><li><code>qcsp3/</code></li><li><code>csp/</code></li><li><code>qcsp-may29-1996/</code></li><li><code>qcsp-alex-sep16-1997/</code></li><li><code>data/</code></li><li><code>historical finds/</code></li></ul>
+<p>until that material has been reviewed.</p>
+<h3 id="section-incoming-guide-intake-workflow">Intake Workflow</h3>
+<ol><li>Add the new material under any convenient subdirectory name.</li></ol>
+<p>If you already know the likely date/source, a dated name is helpful, for example:</p>
+<ul><li><code>incoming/2026-03-21-lacie1/</code></li><li><code>incoming/2026-04-02-sparc-cdrom/</code></li><li><code>incoming/2026-04-10-paper-scan/</code></li></ul>
+<p>If not, a rough dump name is fine:</p>
+<ul><li><code>incoming/lacie-drive-dump/</code></li><li><code>incoming/old-sparc-stuff/</code></li><li><code>incoming/misc-papers/</code></li></ul>
+<ol><li>Add a short note describing:</li></ol>
+<ul><li>where it came from,</li><li>what it appears to contain,</li><li>and whether it looks like code, data, publication, or mixed material.</li></ul>
+<ol><li>During review, normalize the folder label if the contents reveal a better</li></ol>
+<p>date/source naming scheme than the original dump name.</p>
+<ol><li>Update <code>incoming/INDEX.md</code> with one row for the new intake.</li><li>Review the intake before promoting anything out of <code>incoming/</code>.</li><li>After review, move or classify it into one of these destinations:</li></ol>
+<ul><li><code>data/</code> for canonical preserved datasets/publications</li><li><code>historical finds/</code> for archive/recovery material</li><li>a solver snapshot tree if it clearly belongs there</li><li><code>DUPLICATES-REVIEW.md</code> if it is a reviewed duplicate/redundant copy</li></ul>
+<h3 id="section-incoming-guide-review-outcomes">Review Outcomes</h3>
+<p>Every reviewed intake should end in one of these states:</p>
+<ul><li><code>promoted</code>: moved into the main repo structure</li><li><code>historical</code>: retained under <code>historical finds/</code></li><li><code>duplicate</code>: documented as redundant/canonical elsewhere</li><li><code>reference-only</code>: preserved, but not integrated</li><li><code>pending</code>: still under review</li></ul>
+<h3 id="section-incoming-guide-promotion-destinations">Promotion Destinations</h3>
+<p>The usual destinations mean:</p>
+<table><thead><tr><th>Destination</th><th>Use when</th></tr></thead><tbody><tr><td><code>data/</code></td><td>The material is a canonical preserved dataset, publication, or baseline result family</td></tr><tr><td><code>historical finds/</code></td><td>The material has archive/recovery value but is not part of the supported baseline</td></tr><tr><td>solver snapshot tree</td><td>The material clearly belongs to one historical code line and keeping it there helps snapshot integrity</td></tr><tr><td><code>DUPLICATES-REVIEW.md</code></td><td>Review shows the material is redundant with a canonical active copy elsewhere</td></tr><tr><td>stay in <code>incoming/</code></td><td>The material is not understood well enough yet to classify safely</td></tr></tbody></table>
+<h3 id="section-incoming-guide-relation-to-the-rest-of-the-repo">Relation To The Rest Of The Repo</h3>
+<p><code>incoming/</code> is the only place where &quot;unreviewed but relevant&quot; material should accumulate.</p>
+<p>That keeps three other zones clearer:</p>
+<ol><li><code>data/</code> means preserved/canonical results or publications,</li><li><code>historical finds/</code> means reviewed archive/recovery material,</li><li>the solver trees mean code or snapshot-local artifacts that already have a</li></ol>
+<p>justified home.</p>
+<h3 id="section-incoming-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the right home or the right date label is not obvious yet, it belongs in <code>incoming/</code> first.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-historical-finds-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Historical Finds Guide</h2>
+            <p class="sectionSummary">How reviewed archive/recovery material is separated from canonical data and the supported baseline.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../historical finds/historical finds/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory is a staging area for newly recovered historical material that appears related to the PhD renovation project, but is not yet part of the validated thesis-result baseline.</p>
+<p>New finds should land in <code>incoming/</code> first. Move material into <code>historical finds/</code> only after review shows that it belongs here as archive/recovery material rather than as canonical data, supported code, or a reviewed duplicate.</p>
+<p>Treat everything here as archive intake first, source-of-truth second. Nothing in this directory should be assumed to define supported behavior until it has been cataloged, compared against the tracked snapshots, and either promoted into a documented recovery path or left as reference-only context.</p>
+<h3 id="section-historical-finds-guide-current-intake">Current Intake</h3>
+<h4 id="section-historical-finds-guide-yj-sun"><code>yj-sun/</code></h4>
+<p>Most likely the highest-value recovery lead in this intake.</p>
+<ul><li><code>Csp/</code> looks like a direct relative of the current Lisp solver lineage. It</li></ul>
+<p>contains many familiar files (<code>adt-simple.lisp</code>, <code>mpr-setup.lisp</code>, <code>memory-csp.lisp</code>, <code>general-exp.lisp</code>, <code>test4.lisp</code>, <code>template.txt</code>, <code>testdata/Results/</code>, <code>MyBatch/</code>, etc.) plus older variants and backups that are not all present in the modernized repo.</p>
+<ul><li><code>Gen++/</code> appears to be the C/C++ analyzer generator toolchain used to produce</li></ul>
+<p>component/control representations for the plan-recognition experiments. It includes documentation, example queries, rule-checker code, and a <code>mylisp/</code> area that may explain part of the historical input pipeline.</p>
+<p>Working assumption: <code>yj-sun/Csp</code> is a recovery candidate for Phase 5 archive work, while <code>yj-sun/Gen++</code> is an upstream toolchain archive that may help us understand how historical <code>.component</code> / <code>.control</code> inputs were produced.</p>
+<p>See also: <code>yj-sun/Csp/README.md</code> for the first comparison pass against the tracked solver snapshots.</p>
+<h4 id="section-historical-finds-guide-unravel"><code>Unravel/</code></h4>
+<p>This looks like an external NIST release of the Unravel slicing tool, including source archives and two technical reports (<code>NIST-IR-5691</code> volumes 1 and 2).</p>
+<p>Working assumption: this is important context for neighboring program-analysis work, but it should remain reference-only unless we find direct evidence that it formed part of the thesis validation pipeline for this repo.</p>
+<h4 id="section-historical-finds-guide-refine"><code>Refine/</code></h4>
+<p>This currently contains a small set of <code>.pob</code> artifacts under <code>Progs/</code>, with mostly empty companion directories.</p>
+<p>Working assumption: these are likely historical tool outputs or snapshots worth preserving, but they are not yet understood well enough to integrate further.</p>
+<h4 id="section-historical-finds-guide-surga-info-and-unravel-changes"><code>SurgA-Info</code> and <code>Unravel-changes/</code></h4>
+<p>These are small but useful provenance clues:</p>
+<ul><li><code>SurgA-Info</code> links <code>SurgeonsA</code>, <code>tkXsurgeon</code>, and <code>unravel</code></li><li><code>Unravel-changes/SteveLog</code> contains notes about parser output, variable type</li></ul>
+<p>extensions, and dataflow representation needs</p>
+<p>These notes may help connect <code>Gen++</code>, <code>Unravel</code>, and the Lisp experiments into one broader historical workflow.</p>
+<h3 id="section-historical-finds-guide-handling-rules">Handling Rules</h3>
+<ol><li>Do not mix files from this directory into the validated baseline casually.</li><li>Preserve original filenames, directory layout, and timestamps where</li></ol>
+<p>possible.</p>
+<ol><li>Prefer cataloging and diffing text sources before touching binaries,</li></ol>
+<p>executables, or generated outputs.</p>
+<ol><li>When promoting anything out of this directory, document why it matters to</li></ol>
+<p>thesis-result validation or to archive recovery.</p>
+<h3 id="section-historical-finds-guide-what-this-directory-is-not">What This Directory Is Not</h3>
+<p>This directory is not:</p>
+<ul><li>the main solver line,</li><li>the canonical preserved baseline data area,</li><li>or a dumping ground for unreviewed finds.</li></ul>
+<p>New material should enter through <code>incoming/</code> first. Material only belongs here after review has established that it is best treated as archive/recovery or reference context.</p>
+<h3 id="section-historical-finds-guide-typical-outcomes-after-review">Typical Outcomes After Review</h3>
+<p>Material reviewed here usually ends in one of these states:</p>
+<table><thead><tr><th>Outcome</th><th>Meaning</th></tr></thead><tbody><tr><td>kept in <code>historical finds/</code></td><td>archive/recovery value remains, but it is not part of the supported line</td></tr><tr><td>promoted into <code>data/</code></td><td>the material proves to be a canonical preserved result/publication family</td></tr><tr><td>promoted into a snapshot tree</td><td>it clearly belongs to one historical code line</td></tr><tr><td>recorded in <code>DUPLICATES-REVIEW.md</code></td><td>it overlaps a canonical copy and is only needed for provenance</td></tr><tr><td>reference-only</td><td>useful context, but not something the main project needs to build around</td></tr></tbody></table>
+<h3 id="section-historical-finds-guide-suggested-recovery-order">Suggested Recovery Order</h3>
+<ol><li>Compare <code>yj-sun/Csp</code> against the tracked solver snapshots to identify unique</li></ol>
+<p>source variants, missing helpers, and older experiment drivers.</p>
+<ol><li>Keep separating result families cleanly: <code>yj-sun/Csp/testdata/Results/</code></li></ol>
+<p>explains part of <code>PrevResults/</code>, while the <code>ff1</code> / <code>ff2</code> / <code>ff3</code> family now appears to belong to the qcsp-era <code>NewData4b-Batch</code> lineage rather than the older <code>MyBatch</code> lane.</p>
+<ol><li>Catalog <code>yj-sun/Gen++</code> as an upstream toolchain archive and identify the</li></ol>
+<p>minimum subset needed to explain <code>.component</code> / <code>.control</code> generation.</p>
+<ol><li>Leave <code>Unravel/</code>, <code>Refine/</code>, and the note files as reference/context until a</li></ol>
+<p>direct dependency on thesis validation is established.</p>
+<h3 id="section-historical-finds-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the material helps explain how the historical project was assembled, but not what the current supported baseline should execute, this is probably the right place for it.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-acl-baseline-guide">
