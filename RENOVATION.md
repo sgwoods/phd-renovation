@@ -337,6 +337,10 @@ anchors rather than co-equal supported workflows.
 8. Treat `Hanoi-4` explicitly as a phased lane: for `1.0`, keep a clear record
    of the situation, artifacts, and any ingested references; for `2.0`, pursue
    actual behavioral/repeatability understanding once the material exists.
+   Seed that future analysis with later Towers of Hanoi encoding literature
+   such as Martins and Lynce (2008), which may help frame hierarchical setup,
+   problem encodings, and repeatability questions more productively than the
+   original 1998 context alone.
 
 ### Phase / Release Alignment
 

@@ -48,6 +48,32 @@ For the eventual `2.0` research-readiness goal, the requirement becomes:
 5. decide whether `Hanoi-4` should become executable, integrity-checkable, or
    remain a documented research-only family.
 
+## Future Research References
+
+The future `Hanoi-4` lane should not start from scratch. Once actual
+`Hanoi-4` artifacts are ingested, this lane should explicitly review later
+planning/encoding work that may suggest better problem formulations than the
+historical 1998 framing.
+
+Initial seeded reference:
+
+- Ruben Martins and Ines Lynce, *Effective CNF Encodings for the Towers of
+  Hanoi* (LPAR 2008 / EasyChair proceedings).
+  URL: <https://sat.inesc-id.pt/~ines/publications/lpar08-sp.pdf>
+  Why it matters here:
+  - it surveys stronger SAT/CNF encodings for Towers of Hanoi,
+  - it encodes structural properties like recursive move sequence, disk parity,
+    and disk cycle behavior,
+  - and it gives us a concrete later-era reference point for thinking about
+    hierarchical setup, problem encoding choices, and whether repeatability
+    questions may partly be encoding questions rather than only solver
+    questions.
+
+This does **not** mean the repo is adopting SAT-based Hanoi work as part of the
+current integrated Lisp baseline. It means future `Hanoi-4` analysis should be
+informed by later literature instead of treating the 1998 state as the only
+conceptual frame.
+
 ## Current Artifact / Reference Status
 
 | Item | Current state |

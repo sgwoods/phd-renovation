@@ -494,7 +494,7 @@ h1{
         </li>
         <li>
           <a href="#section-hanoi-4-status">Hanoi-4 Status</a>
-          <ul class="subtoc"><li><a href="#section-hanoi-4-status-current-read">Current Read</a></li><li><a href="#section-hanoi-4-status-1-0-position">`1.0` Position</a></li><li><a href="#section-hanoi-4-status-2-0-position">`2.0` Position</a></li><li><a href="#section-hanoi-4-status-current-artifact-reference-status">Current Artifact / Reference Status</a></li><li><a href="#section-hanoi-4-status-intake-rule">Intake Rule</a></li><li><a href="#section-hanoi-4-status-planning-rule">Planning Rule</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-hanoi-4-status-current-read">Current Read</a></li><li><a href="#section-hanoi-4-status-1-0-position">`1.0` Position</a></li><li><a href="#section-hanoi-4-status-2-0-position">`2.0` Position</a></li><li><a href="#section-hanoi-4-status-future-research-references">Future Research References</a></li><li><a href="#section-hanoi-4-status-current-artifact-reference-status">Current Artifact / Reference Status</a></li><li><a href="#section-hanoi-4-status-intake-rule">Intake Rule</a></li><li><a href="#section-hanoi-4-status-planning-rule">Planning Rule</a></li></ul>
         </li>
         <li>
           <a href="#section-m1-readiness">M1 Readiness</a>
@@ -979,6 +979,16 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>whether they vary materially across runs, environments, or solver variants,</p>
 <ol><li>explain any observed repeatability variation with evidence, and</li><li>decide whether <code>Hanoi-4</code> should become executable, integrity-checkable, or</li></ol>
 <p>remain a documented research-only family.</p>
+<h3 id="section-hanoi-4-status-future-research-references">Future Research References</h3>
+<p>The future <code>Hanoi-4</code> lane should not start from scratch. Once actual <code>Hanoi-4</code> artifacts are ingested, this lane should explicitly review later planning/encoding work that may suggest better problem formulations than the historical 1998 framing.</p>
+<p>Initial seeded reference:</p>
+<ul><li>Ruben Martins and Ines Lynce, *Effective CNF Encodings for the Towers of</li></ul>
+<p>Hanoi* (LPAR 2008 / EasyChair proceedings). URL: &lt;https://sat.inesc-id.pt/~ines/publications/lpar08-sp.pdf&gt; Why it matters here:</p>
+<ul><li>it surveys stronger SAT/CNF encodings for Towers of Hanoi,</li><li>it encodes structural properties like recursive move sequence, disk parity,</li></ul>
+<p>and disk cycle behavior,</p>
+<ul><li>and it gives us a concrete later-era reference point for thinking about</li></ul>
+<p>hierarchical setup, problem encoding choices, and whether repeatability questions may partly be encoding questions rather than only solver questions.</p>
+<p>This does <strong>not</strong> mean the repo is adopting SAT-based Hanoi work as part of the current integrated Lisp baseline. It means future <code>Hanoi-4</code> analysis should be informed by later literature instead of treating the 1998 state as the only conceptual frame.</p>
 <h3 id="section-hanoi-4-status-current-artifact-reference-status">Current Artifact / Reference Status</h3>
 <table><thead><tr><th>Item</th><th>Current state</th></tr></thead><tbody><tr><td>Indexed code</td><td>None currently indexed in the supported repo surface</td></tr><tr><td>Indexed datasets</td><td>None currently indexed in the supported repo surface</td></tr><tr><td>Indexed preserved outputs</td><td>None currently indexed in the supported repo surface</td></tr><tr><td>Indexed literature / notes</td><td>None currently indexed in the supported repo surface</td></tr><tr><td>Repeatability assessment</td><td>Not yet possible from the currently indexed material</td></tr></tbody></table>
 <h3 id="section-hanoi-4-status-intake-rule">Intake Rule</h3>
@@ -3219,7 +3229,7 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <ol><li>Only after the baseline, warning surface, provenance work, and intake flow</li></ol>
 <p>are tighter, begin controlled integration and research-readiness experiments such as alex DFA-option isolation against the validated snapshot.</p>
 <ol><li>Treat <code>Hanoi-4</code> explicitly as a phased lane: for <code>1.0</code>, keep a clear record</li></ol>
-<p>of the situation, artifacts, and any ingested references; for <code>2.0</code>, pursue actual behavioral/repeatability understanding once the material exists.</p>
+<p>of the situation, artifacts, and any ingested references; for <code>2.0</code>, pursue actual behavioral/repeatability understanding once the material exists. Seed that future analysis with later Towers of Hanoi encoding literature such as Martins and Lynce (2008), which may help frame hierarchical setup, problem encodings, and repeatability questions more productively than the original 1998 context alone.</p>
 <h4 id="section-renovation-roadmap-phase-release-alignment">Phase / Release Alignment</h4>
 <p>Keep the repo on <code>0.x</code> releases until the thesis-validation baseline is stable enough that a fresh checkout can reproduce the supported historical results and the docs accurately describe that supported path.</p>
 <ul><li><strong><code>0.1.x</code> Stability builds</strong>: artifact paths, reproducible plot generation,</li></ul>
