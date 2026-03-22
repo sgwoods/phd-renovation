@@ -283,6 +283,29 @@ The strongest next step is no longer "can `qcsp3` run the case at all?".
 It is now "why does `qcsp3` still differ on the remaining bounded metrics,
 especially solution count and the pre-search `Dsize` / `NCC` / `TCC` surface?"
 
+`tests/investigate-adt-batch-structure-drift.sh` now drills into that
+pre-search surface directly for maintained `csp/dist1` versus `qcsp3/dist1`.
+The current result is that the drift is visible in both the generated noise
+mix and the per-variable node-consistent domains:
+
+| Probe | Base size | Total size | Noise size | Node avg domain | Node checks |
+|---|---:|---:|---:|---:|---:|
+| `csp/dist1` | 15 | 104 | 89 | 14.0 | 520 |
+| `qcsp3/dist1` | 15 | 87 | 72 | 8.4 | 435 |
+
+Key structural differences from that probe:
+
+- `qcsp3/dist1` currently generates 17 fewer noise statements than `csp/dist1`.
+- The largest statement-mix deltas are fewer `begin` / `end` noise blocks and
+  more `check` noise statements under `qcsp3`.
+- The node-domain squeeze is not evenly distributed. The largest drop is on
+  `t2-c`, which falls from 32 candidates under `csp` to 13 under `qcsp3`.
+
+That makes the next investigation target much sharper: compare why the
+maintained `qcsp3` path is generating a smaller, differently shaped noise
+surface for the same random bundle, and why that especially compresses the
+`t2-c` candidate domain.
+
 ## Non-Goal
 
 This bridge does **not** mean:

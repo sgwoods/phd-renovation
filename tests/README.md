@@ -55,6 +55,12 @@ start here.
   is that the preserved pre-Quilici label is runnable in isolation, but it
   lands farther from the preserved `ij2-050.1` metrics than maintained
   `qcsp3/dist1`.
+- `investigate-adt-batch-structure-drift.sh`:
+  compares the generated `ij2` situation profile and node-consistent domain
+  shape for maintained `csp/dist1` versus maintained `qcsp3/dist1`. The current
+  result is that `qcsp3` builds a smaller noise layer with fewer `begin`/`end`
+  statements, more `check` statements, and the largest domain squeeze on
+  `t2-c`.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.
