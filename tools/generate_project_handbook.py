@@ -51,6 +51,11 @@ HANDBOOK_SOURCES = [
         "Concrete release-hardening gate for the first 1.0 tag.",
     ),
     HandbookSource(
+        "1.0.0 Release Notes Draft",
+        "RELEASE-1.0.0-NOTES.md",
+        "Working draft of the first stable release notes.",
+    ),
+    HandbookSource(
         "Hanoi-4 Status",
         "HANOI-4-STATUS.md",
         "Bounded status record for the deferred Hanoi-4 lane: documented for 1.0, behaviorally unresolved for 2.0.",

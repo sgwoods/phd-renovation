@@ -84,6 +84,10 @@ bash tests/validate-dashboard.sh
 - which historically important lanes are deferred
 - which meaningful deltas remain documented
 
+Current draft:
+
+- `RELEASE-1.0.0-NOTES.md`
+
 ## Tag / Release Process
 
 1. Regenerate the status/docs outputs.
@@ -92,6 +96,12 @@ bash tests/validate-dashboard.sh
 4. Draft release notes from this checklist and the current roadmap.
 5. Tag the release.
 6. Push the tag and any synced public outputs.
+
+## Post-Release Reminder
+
+Target `1.0.1` to reduce the remaining STYLE-WARNING noise that still appears
+outside the supported release gate, especially older `gsat` lexical-special
+warnings and legacy helper-path warnings such as the `compile-all` reference.
 
 ## Current Best Read
 

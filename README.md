@@ -89,6 +89,7 @@ src/                        Entry point
   indexed, integrated, tested, and publication-validated.
 - `RELEASE-1.0-CHECKLIST.md` is the concrete release-hardening punch list for
   the first `1.0.0` tag.
+- `RELEASE-1.0.0-NOTES.md` is the working draft of the first release notes.
 - `HANOI-4-STATUS.md` records the current bounded position on the `Hanoi-4`
   lane: documented for `1.0`, behaviorally unresolved as a `2.0` goal.
 - `DOCS-COVERAGE-REVIEW.md` records what parts of the repo are now well

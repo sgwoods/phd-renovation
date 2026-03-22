@@ -399,6 +399,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-1-0-0-release-notes-draft">1.0.0 Release Notes Draft</a></h2>
+        <p>Working draft of the first stable release notes.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-development-guide">Development Guide</a></h2>
         <p>Architecture, pitfalls, build commands, and day-to-day maintenance guidance.</p>
       </article>
@@ -499,7 +504,11 @@ h1{
         </li>
         <li>
           <a href="#section-1-0-release-checklist">1.0 Release Checklist</a>
-          <ul class="subtoc"><li><a href="#section-1-0-release-checklist-what-1-0-0-means">What `1.0.0` Means</a></li><li><a href="#section-1-0-release-checklist-in-scope-for-1-0-0">In Scope For `1.0.0`</a></li><li><a href="#section-1-0-release-checklist-explicitly-out-of-scope-for-1-0-0">Explicitly Out Of Scope For `1.0.0`</a></li><li><a href="#section-1-0-release-checklist-required-validation-gate">Required Validation Gate</a></li><li><a href="#section-1-0-release-checklist-required-status-docs-conditions">Required Status / Docs Conditions</a></li><li><a href="#section-1-0-release-checklist-required-scope-conditions">Required Scope Conditions</a></li><li><a href="#section-1-0-release-checklist-release-notes-must-state">Release Notes Must State</a></li><li><a href="#section-1-0-release-checklist-tag-release-process">Tag / Release Process</a></li><li><a href="#section-1-0-release-checklist-current-best-read">Current Best Read</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-1-0-release-checklist-what-1-0-0-means">What `1.0.0` Means</a></li><li><a href="#section-1-0-release-checklist-in-scope-for-1-0-0">In Scope For `1.0.0`</a></li><li><a href="#section-1-0-release-checklist-explicitly-out-of-scope-for-1-0-0">Explicitly Out Of Scope For `1.0.0`</a></li><li><a href="#section-1-0-release-checklist-required-validation-gate">Required Validation Gate</a></li><li><a href="#section-1-0-release-checklist-required-status-docs-conditions">Required Status / Docs Conditions</a></li><li><a href="#section-1-0-release-checklist-required-scope-conditions">Required Scope Conditions</a></li><li><a href="#section-1-0-release-checklist-release-notes-must-state">Release Notes Must State</a></li><li><a href="#section-1-0-release-checklist-tag-release-process">Tag / Release Process</a></li><li><a href="#section-1-0-release-checklist-post-release-reminder">Post-Release Reminder</a></li><li><a href="#section-1-0-release-checklist-current-best-read">Current Best Read</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-1-0-0-release-notes-draft">1.0.0 Release Notes Draft</a>
+          <ul class="subtoc"><li><a href="#section-1-0-0-release-notes-draft-summary">Summary</a></li><li><a href="#section-1-0-0-release-notes-draft-what-this-release-guarantees">What This Release Guarantees</a></li><li><a href="#section-1-0-0-release-notes-draft-validation-in-the-release-gate">Validation In The Release Gate</a></li><li><a href="#section-1-0-0-release-notes-draft-historical-coverage-status">Historical Coverage Status</a></li><li><a href="#section-1-0-0-release-notes-draft-executable-now">Executable now</a></li><li><a href="#section-1-0-0-release-notes-draft-integrity-checkable-now">Integrity-checkable now</a></li><li><a href="#section-1-0-0-release-notes-draft-snapshot-specific-or-deferred">Snapshot-specific or deferred</a></li><li><a href="#section-1-0-0-release-notes-draft-important-boundaries">Important Boundaries</a></li><li><a href="#section-1-0-0-release-notes-draft-meaningful-remaining-deltas">Meaningful Remaining Deltas</a></li><li><a href="#section-1-0-0-release-notes-draft-documentation-operator-improvements">Documentation / Operator Improvements</a></li><li><a href="#section-1-0-0-release-notes-draft-suggested-release-announcement-line">Suggested Release Announcement Line</a></li></ul>
         </li>
         <li>
           <a href="#section-hanoi-4-status">Hanoi-4 Status</a>
@@ -758,7 +767,7 @@ src/                        Entry point</code></pre>
 <p>indexed, integrated, tested, and publication-validated.</p>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code> is the concrete release-hardening punch list for</li></ul>
 <p>the first <code>1.0.0</code> tag.</p>
-<ul><li><code>HANOI-4-STATUS.md</code> records the current bounded position on the <code>Hanoi-4</code></li></ul>
+<ul><li><code>RELEASE-1.0.0-NOTES.md</code> is the working draft of the first release notes.</li><li><code>HANOI-4-STATUS.md</code> records the current bounded position on the <code>Hanoi-4</code></li></ul>
 <p>lane: documented for <code>1.0</code>, behaviorally unresolved as a <code>2.0</code> goal.</p>
 <ul><li><code>DOCS-COVERAGE-REVIEW.md</code> records what parts of the repo are now well</li></ul>
 <p>documented, what still feels thin, and where the next docs passes should go.</p>
@@ -1005,13 +1014,74 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li>[x] supported executable families are clearly identified</li><li>[x] integrity-checkable preserved families are clearly identified</li><li>[x] snapshot-specific preserved families are clearly identified</li><li>[x] deferred lanes are clearly identified</li><li>[x] no hidden <code>1.0</code> blockers remain in project docs</li></ul>
 <h3 id="section-1-0-release-checklist-release-notes-must-state">Release Notes Must State</h3>
 <ul><li>what the integrated line now guarantees</li><li>what validation is continuously exercised</li><li>which historical families are executable now</li><li>which historical families are integrity-checkable only</li><li>which historically important lanes are deferred</li><li>which meaningful deltas remain documented</li></ul>
+<p>Current draft:</p>
+<ul><li><code>RELEASE-1.0.0-NOTES.md</code></li></ul>
 <h3 id="section-1-0-release-checklist-tag-release-process">Tag / Release Process</h3>
 <ol><li>Regenerate the status/docs outputs.</li><li>Run the full validation gate.</li><li>Confirm the branch is clean.</li><li>Draft release notes from this checklist and the current roadmap.</li><li>Tag the release.</li><li>Push the tag and any synced public outputs.</li></ol>
+<h3 id="section-1-0-release-checklist-post-release-reminder">Post-Release Reminder</h3>
+<p>Target <code>1.0.1</code> to reduce the remaining STYLE-WARNING noise that still appears outside the supported release gate, especially older <code>gsat</code> lexical-special warnings and legacy helper-path warnings such as the <code>compile-all</code> reference.</p>
 <h3 id="section-1-0-release-checklist-current-best-read">Current Best Read</h3>
 <p>As of March 22, 2026, the project looks close enough to <code>1.0.0</code> that the main remaining work is <strong>release hardening</strong>, not broad new solver expansion.</p>
 <p>The most likely remaining pre-<code>1.0</code> work is:</p>
 <ol><li>final selective docstrings and operator-facing cleanup,</li><li>drafting the actual <code>1.0.0</code> release notes from the now-stable scope,</li><li>keeping docs/status/public outputs synchronized,</li><li>keeping the validation gate green,</li><li>and making sure deferred lanes like terrain and <code>Hanoi-4</code> stay explicit</li></ol>
 <p>rather than quietly becoming implied blockers.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-1-0-0-release-notes-draft">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>1.0.0 Release Notes Draft</h2>
+            <p class="sectionSummary">Working draft of the first stable release notes.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/RELEASE-1.0.0-NOTES.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<h3 id="section-1-0-0-release-notes-draft-summary">Summary</h3>
+<p><code>1.0.0</code> marks the first stable integrated release of the PhD renovation project.</p>
+<p>The repo now supports a clear, reproducible thesis-result baseline on modern SBCL, keeps the major preserved historical families explicitly classified, and ships with synchronized status, handbook, dashboard, and public project pages.</p>
+<h3 id="section-1-0-0-release-notes-draft-what-this-release-guarantees">What This Release Guarantees</h3>
+<ul><li><code>qcsp3/</code> is the operational center of the supported integrated solver line.</li><li>The supported thesis <code>ij2</code> / <code>ij3</code> / <code>ij4</code> result story is executable from a</li></ul>
+<p>fresh checkout.</p>
+<ul><li>The bounded AO / <code>test4</code> baseline is asserted rather than smoke-only.</li><li>The older <code>ff*</code>, ADT batch, and DREV-era <code>T1</code>-<code>T6</code> families are no longer</li></ul>
+<p>vague archive material; they are documented and integrity-checkable where appropriate.</p>
+<ul><li>The project’s supported scope, deferred lanes, and historical deltas are</li></ul>
+<p>documented explicitly rather than left as implicit lore.</p>
+<h3 id="section-1-0-0-release-notes-draft-validation-in-the-release-gate">Validation In The Release Gate</h3>
+<p><code>1.0.0</code> is backed by the supported validation spine:</p>
+<ul><li><code>tests/run.lisp</code></li><li><code>tests/validate-artifacts.sh</code></li><li><code>tests/validate-ff-provenance.sh</code></li><li><code>tests/validate-adt-batch.sh</code></li><li><code>tests/validate-csp-batch.sh</code></li><li><code>tests/validate-ao.sh</code></li><li><code>tests/validate-dashboard.sh</code></li></ul>
+<h3 id="section-1-0-0-release-notes-draft-historical-coverage-status">Historical Coverage Status</h3>
+<h4 id="section-1-0-0-release-notes-draft-executable-now">Executable now</h4>
+<ul><li>core queens regressions across the maintained snapshots</li><li>confused-queens deterministic metrics</li><li>bounded AO baseline</li><li>PhD <code>ij2</code> / <code>ij3</code> / <code>ij4</code> trend-validation path</li><li>solver-level MPR regression surface</li></ul>
+<h4 id="section-1-0-0-release-notes-draft-integrity-checkable-now">Integrity-checkable now</h4>
+<ul><li><code>ff1</code> / <code>ff2</code> / <code>ff3</code></li><li>early <code>exp-1</code> / <code>exp-2</code> / <code>exp-3</code> crosswalked result families</li><li>ADT batch archive (<code>ij1</code>-<code>ij4</code>)</li><li>earliest DREV-era <code>T1</code>-<code>T6</code> family</li></ul>
+<h4 id="section-1-0-0-release-notes-draft-snapshot-specific-or-deferred">Snapshot-specific or deferred</h4>
+<ul><li>ADT batch remains a documented snapshot-specific family rather than a</li></ul>
+<p>required <code>qcsp3</code> reproduction target</p>
+<ul><li>terrain remains a deferred recovery lane</li><li><code>Hanoi-4</code> is documented for <code>1.0</code>, with full behavioral and repeatability</li></ul>
+<p>understanding deferred to <code>2.0</code></p>
+<ul><li>alex DFA-option behavior remains a research-readiness lane rather than a</li></ul>
+<p><code>1.0</code> blocker</p>
+<h3 id="section-1-0-0-release-notes-draft-important-boundaries">Important Boundaries</h3>
+<p><code>1.0.0</code> does <strong>not</strong> claim:</p>
+<ul><li>complete recovery of all historical domains,</li><li>full rerun support for every preserved archive family,</li><li>or final closure on harder post-thesis research questions like terrain or</li></ul>
+<p><code>Hanoi-4</code> repeatability.</p>
+<p>Instead, it claims a trustworthy supported baseline with explicit boundaries.</p>
+<h3 id="section-1-0-0-release-notes-draft-meaningful-remaining-deltas">Meaningful Remaining Deltas</h3>
+<ul><li>alex <code>ij4</code> still diverges in the documented way tied to its simplified</li></ul>
+<p><code>ts-matches-type</code> behavior</p>
+<ul><li>ADT batch remains preserved and investigated, but not absorbed into the</li></ul>
+<p>integrated line</p>
+<ul><li>some legacy STYLE-WARNING noise remains outside the main release gate</li></ul>
+<h3 id="section-1-0-0-release-notes-draft-documentation-operator-improvements">Documentation / Operator Improvements</h3>
+<p>This release also establishes:</p>
+<ul><li>a generated project handbook,</li><li>a generated release dashboard,</li><li>a generated public project page and public handbook,</li><li>a synchronized public status manifest,</li><li>stronger local README coverage across the active solver line and historical</li></ul>
+<p>snapshots,</p>
+<ul><li>and a first-class release checklist for future tags.</li></ul>
+<h3 id="section-1-0-0-release-notes-draft-suggested-release-announcement-line">Suggested Release Announcement Line</h3>
+<p><code>1.0.0</code> is the first release where the renovated solver line, thesis-result validation path, preserved historical family classification, and public-facing status/documentation story all line up cleanly enough to treat the project as stable and trustworthy to build on.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-hanoi-4-status">
