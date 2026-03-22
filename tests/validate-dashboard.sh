@@ -68,6 +68,24 @@ if ! rg -q "Open release dashboard" docs/public-phd-renovation.html; then
   exit 1
 fi
 
+expected_build_line="$(python3 - <<'PY'
+import json
+from pathlib import Path
+data = json.loads(Path("docs/release-dashboard-data.json").read_text())
+print(data["metrics"][2]["value"])
+PY
+)"
+
+if ! rg -q "$expected_build_line" docs/public-phd-renovation.html; then
+  echo "Public project page output is missing the current build line." >&2
+  exit 1
+fi
+
+if ! rg -q "Steven Woods" docs/public-phd-renovation.html; then
+  echo "Public project page output is missing the parent-site link." >&2
+  exit 1
+fi
+
 if ! rg -q "Table of contents" docs/project-handbook.html; then
   echo "Project handbook output is missing the table of contents." >&2
   exit 1
@@ -78,20 +96,22 @@ if ! rg -q "Readable handbook for the full project state" docs/public-phd-renova
   exit 1
 fi
 
+if ! rg -q "PhD Renovation" docs/public-phd-renovation-handbook.html; then
+  echo "Public handbook output is missing the parent-page link." >&2
+  exit 1
+fi
+
+if ! rg -q "PhD Renovation" docs/release-dashboard.html; then
+  echo "Repository dashboard output is missing the parent-page link." >&2
+  exit 1
+fi
+
 if ! rg -q '"project_id": "phd-renovation"' docs/public-status-phd-renovation.json; then
   echo "Public status manifest is missing the project id." >&2
   exit 1
 fi
 
-expected_status_value="$(python3 - <<'PY'
-import json
-from pathlib import Path
-data = json.loads(Path("docs/release-dashboard-data.json").read_text())
-print(data["metrics"][2]["value"])
-PY
-)"
-
-if ! rg -q "\"status_value\": \"$expected_status_value\"" docs/public-status-phd-renovation.json; then
+if ! rg -q "\"status_value\": \"$expected_build_line\"" docs/public-status-phd-renovation.json; then
   echo "Public status manifest is missing the current build line." >&2
   exit 1
 fi

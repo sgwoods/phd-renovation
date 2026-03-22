@@ -290,10 +290,11 @@ anchors rather than co-equal supported workflows.
   baseline. This phase delivered stronger regression assertions, AO asserted
   coverage, automated thesis-comparison checks, `ff*` integrity/provenance
   validation, and incremental warning cleanup.
-- **Phase 3 / `0.3.x` Documentation**: active. High-level docs are much
-  stronger, the code/test/results roots are easier to navigate, and the next
-  push is core algorithm docstrings, clearer operator-facing workflow polish,
-  and leaving the next post-M1 integration target explicit rather than implied.
+- **Phase 3 / `0.3.x` Documentation**: active and now late-stage. High-level
+  docs are much stronger, the code/test/results roots are easier to navigate,
+  and the next push is selective in-code docstrings, keeping the status and
+  handbook artifacts current, and preserving clarity as `incoming/` likely
+  becomes the next heavier work lane.
 - **Phase 4 / Research Readiness**: not yet active as the main lane. We have
   diagnosed alex's `ij4` divergence, but we are intentionally holding off on
   broader experimental changes until the baseline is tighter.
@@ -307,24 +308,30 @@ anchors rather than co-equal supported workflows.
 1. Keep the current validation spine green: `tests/run.lisp`,
    `tests/validate-artifacts.sh`, `tests/validate-ff-provenance.sh`, and
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
-   Keep `REPOSITORY-STATUS.md` and `REPOSITORY-STRUCTURE-REVIEW.md` in sync as
-   the broader repo surface changes.
-2. Push the `0.3.x` documentation lane: add docstrings and clearer entry-point
-   explanations for the major algorithms and supported workflows.
-3. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
+   Keep `REPOSITORY-STATUS.md`, `REPOSITORY-STRUCTURE-REVIEW.md`, and
+   `DOCS-COVERAGE-REVIEW.md` in sync as the broader repo surface changes.
+2. Treat the `0.3.x` documentation lane as late-stage: keep adding selective
+   docstrings and operator-facing clarifications, but focus on maintaining the
+   now-strong docs/handbook/status surface rather than broad new README waves.
+3. Prepare for heavier `incoming/` intake and review work. New materials are
+   likely to be the next major source of project movement, so keep the intake,
+   promotion, duplicate review, and archive classification flow disciplined.
+4. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
    documented, but treat it as snapshot-specific for now rather than as a
    required post-M1 integration target.
    The investigation note for that family lives in `ADT-BATCH-INTEGRATION.md`.
    Current recommendation: preserve the bridge probes and the explanation of
    the maintained `csp` / `qcsp3` noise-model split, but do not require the
    integrated line to reproduce this family.
-4. Keep the supported validation gate clean and high-signal; treat new warning
+5. Keep the supported validation gate clean and high-signal; treat new warning
    output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
    investigate, not normal background.
-5. Keep building out the validation matrix when useful, but with the main
+6. Keep building out the validation matrix when useful, but with the main
    archive-heavy families now mapped or integrity-checked, avoid widening the
-   supported umbrella casually without a clear post-M1 benefit.
-6. Only after the baseline, warning surface, and provenance work are tighter,
+   supported umbrella casually without a clear post-M1 or intake-review
+   benefit.
+7. Only after the baseline, warning surface, provenance work, and intake flow
+   are tighter,
    begin controlled integration and research-readiness experiments such as
    alex DFA-option isolation against the validated snapshot.
 

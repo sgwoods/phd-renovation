@@ -62,11 +62,14 @@ The current ADT batch investigation note lives in `ADT-BATCH-INTEGRATION.md`.
 ## Immediate Priorities
 
 1. Keep the currently executable PhD-result path green.
-2. Use the current matrix to guide the post-M1 documentation and integration
-   work rather than widening the supported umbrella casually.
+2. Use the current matrix to guide the post-M1 documentation, intake review,
+   and integration work rather than widening the supported umbrella casually.
 3. Treat ADT batch as an explained snapshot-specific family unless a future
    project phase explicitly chooses to emulate its older noise semantics.
 4. Keep the supported validation spine warning-clean and treat any new log
    noise in that path as a regression signal.
-5. Move the next clearly supported family or workflow only when it helps the
+5. As new material lands in `incoming/`, classify it deliberately as
+   executable, integrity-checkable, provenance-only, or duplicate before
+   promoting it into the main repo story.
+6. Move the next clearly supported family or workflow only when it helps the
    post-M1 integrated line more than it increases maintenance surface.
