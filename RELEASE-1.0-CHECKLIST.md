@@ -54,26 +54,26 @@ bash tests/validate-dashboard.sh
 
 ## Required Status / Docs Conditions
 
-- [ ] `README.md`, `RENOVATION.md`, `VALIDATION-MATRIX.md`, and
+- [x] `README.md`, `RENOVATION.md`, `VALIDATION-MATRIX.md`, and
       `REPOSITORY-STATUS.md` agree on current scope
-- [ ] `M1-READINESS.md`, `INTEGRATION-DELTAS.md`, and
+- [x] `M1-READINESS.md`, `INTEGRATION-DELTAS.md`, and
       `HANOI-4-STATUS.md` reflect current accepted boundaries
-- [ ] `docs/release-dashboard-data.json` reflects the active release focus
-- [ ] generated outputs are current:
+- [x] `docs/release-dashboard-data.json` reflects the active release focus
+- [x] generated outputs are current:
       `docs/release-dashboard.html`,
       `docs/project-handbook.html`,
       `docs/public-phd-renovation.html`,
       `docs/public-phd-renovation-handbook.html`,
       `docs/public-status-phd-renovation.json`
-- [ ] public-facing wording matches repo-local wording
+- [x] public-facing wording matches repo-local wording
 
 ## Required Scope Conditions
 
-- [ ] supported executable families are clearly identified
-- [ ] integrity-checkable preserved families are clearly identified
-- [ ] snapshot-specific preserved families are clearly identified
-- [ ] deferred lanes are clearly identified
-- [ ] no hidden `1.0` blockers remain in project docs
+- [x] supported executable families are clearly identified
+- [x] integrity-checkable preserved families are clearly identified
+- [x] snapshot-specific preserved families are clearly identified
+- [x] deferred lanes are clearly identified
+- [x] no hidden `1.0` blockers remain in project docs
 
 ## Release Notes Must State
 
@@ -101,7 +101,8 @@ remaining work is **release hardening**, not broad new solver expansion.
 The most likely remaining pre-`1.0` work is:
 
 1. final selective docstrings and operator-facing cleanup,
-2. keeping docs/status/public outputs synchronized,
-3. keeping the validation gate green,
-4. and making sure deferred lanes like terrain and `Hanoi-4` stay explicit
+2. drafting the actual `1.0.0` release notes from the now-stable scope,
+3. keeping docs/status/public outputs synchronized,
+4. keeping the validation gate green,
+5. and making sure deferred lanes like terrain and `Hanoi-4` stay explicit
    rather than quietly becoming implied blockers.

@@ -2,8 +2,12 @@
 #+sbcl (declaim (sb-ext:muffle-conditions sb-kernel:redefinition-warning))
 ;; quilici-search.lisp
 ;;
-(defun cq () (compile-file "quilici-search") (load "quilici-search"))
-(defun lq () (load "quilici-search.lisp"))
+(defun cq ()
+  "Compile and reload quilici-search during manual historical investigation."
+  (compile-file "quilici-search") (load "quilici-search"))
+(defun lq ()
+  "Reload quilici-search.lisp during manual interactive work."
+  (load "quilici-search.lisp"))
 ;;
 ;; My first RE-implementation of something like 
 ;;    Quilici's approach to indexing, ordering etc 

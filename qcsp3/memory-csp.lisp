@@ -1,7 +1,11 @@
 (in-package #:phd-qcsp3)
 ;; memory-csp.lisp
-(defun cmcsp () (compile-file "memory-csp") (load "memory-csp"))
-(defun lmcsp () (load "memory-csp.lisp"))
+(defun cmcsp ()
+  "Compile and reload the historical memory-csp source during manual work."
+  (compile-file "memory-csp") (load "memory-csp"))
+(defun lmcsp ()
+  "Reload memory-csp.lisp during manual interactive work."
+  (load "memory-csp.lisp"))
 ;;
 ;; My SECOND implementation of Quilici's approach to indexing, ordering etc 
 ;;  this time decomposed into two P-CSP phases : index and resolution

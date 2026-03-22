@@ -994,15 +994,15 @@ bash tests/validate-csp-batch.sh
 bash tests/validate-ao.sh
 bash tests/validate-dashboard.sh</code></pre>
 <h3 id="section-1-0-release-checklist-required-status-docs-conditions">Required Status / Docs Conditions</h3>
-<ul><li>[ ] <code>README.md</code>, <code>RENOVATION.md</code>, <code>VALIDATION-MATRIX.md</code>, and</li></ul>
+<ul><li>[x] <code>README.md</code>, <code>RENOVATION.md</code>, <code>VALIDATION-MATRIX.md</code>, and</li></ul>
 <p><code>REPOSITORY-STATUS.md</code> agree on current scope</p>
-<ul><li>[ ] <code>M1-READINESS.md</code>, <code>INTEGRATION-DELTAS.md</code>, and</li></ul>
+<ul><li>[x] <code>M1-READINESS.md</code>, <code>INTEGRATION-DELTAS.md</code>, and</li></ul>
 <p><code>HANOI-4-STATUS.md</code> reflect current accepted boundaries</p>
-<ul><li>[ ] <code>docs/release-dashboard-data.json</code> reflects the active release focus</li><li>[ ] generated outputs are current:</li></ul>
+<ul><li>[x] <code>docs/release-dashboard-data.json</code> reflects the active release focus</li><li>[x] generated outputs are current:</li></ul>
 <p><code>docs/release-dashboard.html</code>, <code>docs/project-handbook.html</code>, <code>docs/public-phd-renovation.html</code>, <code>docs/public-phd-renovation-handbook.html</code>, <code>docs/public-status-phd-renovation.json</code></p>
-<ul><li>[ ] public-facing wording matches repo-local wording</li></ul>
+<ul><li>[x] public-facing wording matches repo-local wording</li></ul>
 <h3 id="section-1-0-release-checklist-required-scope-conditions">Required Scope Conditions</h3>
-<ul><li>[ ] supported executable families are clearly identified</li><li>[ ] integrity-checkable preserved families are clearly identified</li><li>[ ] snapshot-specific preserved families are clearly identified</li><li>[ ] deferred lanes are clearly identified</li><li>[ ] no hidden <code>1.0</code> blockers remain in project docs</li></ul>
+<ul><li>[x] supported executable families are clearly identified</li><li>[x] integrity-checkable preserved families are clearly identified</li><li>[x] snapshot-specific preserved families are clearly identified</li><li>[x] deferred lanes are clearly identified</li><li>[x] no hidden <code>1.0</code> blockers remain in project docs</li></ul>
 <h3 id="section-1-0-release-checklist-release-notes-must-state">Release Notes Must State</h3>
 <ul><li>what the integrated line now guarantees</li><li>what validation is continuously exercised</li><li>which historical families are executable now</li><li>which historical families are integrity-checkable only</li><li>which historically important lanes are deferred</li><li>which meaningful deltas remain documented</li></ul>
 <h3 id="section-1-0-release-checklist-tag-release-process">Tag / Release Process</h3>
@@ -1010,7 +1010,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <h3 id="section-1-0-release-checklist-current-best-read">Current Best Read</h3>
 <p>As of March 22, 2026, the project looks close enough to <code>1.0.0</code> that the main remaining work is <strong>release hardening</strong>, not broad new solver expansion.</p>
 <p>The most likely remaining pre-<code>1.0</code> work is:</p>
-<ol><li>final selective docstrings and operator-facing cleanup,</li><li>keeping docs/status/public outputs synchronized,</li><li>keeping the validation gate green,</li><li>and making sure deferred lanes like terrain and <code>Hanoi-4</code> stay explicit</li></ol>
+<ol><li>final selective docstrings and operator-facing cleanup,</li><li>drafting the actual <code>1.0.0</code> release notes from the now-stable scope,</li><li>keeping docs/status/public outputs synchronized,</li><li>keeping the validation gate green,</li><li>and making sure deferred lanes like terrain and <code>Hanoi-4</code> stay explicit</li></ol>
 <p>rather than quietly becoming implied blockers.</p>
         </div>
       </section>

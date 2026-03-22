@@ -33,17 +33,18 @@ showing whether any value was deleted.
 
 (defun compatible-p (symbol1 value1 symbol2 domain2 
 			     consistent-p partial-solution)
-    (dolist (value2 domain2 nil)
-        (when (first (funcall consistent-p 
-			      symbol1 
-			      value1 
-			      symbol2 
-			      value2
-			      partial-solution ))
-	  (return-from compatible-p t) )
-	)
-    ;; (comment4 "NOT COMPAT" symbol1 value1 symbol2 domain2)
+  "Return true when VALUE1 for SYMBOL1 matches some value in DOMAIN2."
+  (dolist (value2 domain2 nil)
+    (when (first (funcall consistent-p 
+			  symbol1 
+			  value1 
+			  symbol2 
+			  value2
+			  partial-solution ))
+      (return-from compatible-p t) )
     )
+  ;; (comment4 "NOT COMPAT" symbol1 value1 symbol2 domain2)
+  )
 
 (defun ac-3 (variable-list arc-p consistent-p partial-solution)
 "
@@ -85,6 +86,7 @@ list whose domains have been made arc-consistent.
 
 
 (defun get-incident-arcs (symbol1 symbol2 variable-list arc-p)
+  "Return arcs X->SYMBOL1 affected after revising SYMBOL1 against SYMBOL2."
     (let (
 	  (arc-list nil) 
 	  symbol
@@ -100,6 +102,7 @@ list whose domains have been made arc-consistent.
       ))
 
 (defun degree-of-node (symbol variable-list arc-p)
+  "Return the degree of SYMBOL under ARC-P, plus the matching arc list."
     (let (
 	  (arc-list nil) 
 	  symbol1

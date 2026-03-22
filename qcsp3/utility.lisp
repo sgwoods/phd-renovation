@@ -516,7 +516,9 @@ Return node consistent rejection if it exists for ts1 assigned s1.
 	)) )
 
 (defun rl () (load "load"))
-(defun doc (f) (documentation f 'function))
+(defun doc (f)
+  "Return the function docstring for F during an interactive qcsp3 session."
+  (documentation f 'function))
 
 ;; **********************************************************************
 ;;
@@ -656,9 +658,10 @@ Return node consistent rejection if it exists for ts1 assigned s1.
 	)) )
 
 (defun show-dist ()
-	(format *output-stream*	"~&~& Distributions    : ~&" )
-	(dolist (this *random-dist*) 
-	  (format *output-stream* "~A ~&" this))  )
+  "Print the currently loaded random-distribution weights to *OUTPUT-STREAM*."
+  (format *output-stream*	"~&~& Distributions    : ~&" )
+  (dolist (this *random-dist*) 
+    (format *output-stream* "~A ~&" this))  )
 
 ;         1         2         3         4         5         6         7         8         9         0         1         2         3         4         5         6
 
@@ -669,6 +672,7 @@ Return node consistent rejection if it exists for ts1 assigned s1.
 
 
 (defun write-single-header ()
+  "Print the historical single-line batch-results header."
   (format *output-stream* 
 	  "~A~9T~A/~12T~A/~16T~A/~20T~A/~24T~A~29T~A~41T~A~49T~A~57T~A~65T~A/~A~76T~A~84T~A~92T~A~101T~A~109T~A~114T~A/~A~124T~A~135T~A~144T~A/~A~156T~A~&" 
 	  "Size" "Mo" "NC" "AC" "FC" "DR" "Ident" "Dsize" "NCC" "TCC" "BT" "V" "AP" "S" "Total" "NumS" "BJ" "TypA" "B" "FCcost" "DRcost"  "AS" "AStime" "ConsSort") )
