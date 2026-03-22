@@ -1,25 +1,28 @@
-# ADT Batch Integration Bridge
+# ADT Batch Snapshot Note
 
-This file defines the first deliberate post-M1 integration target:
+This file records the investigation state for the preserved ADT batch family.
 
-**bring the preserved ADT batch `ij1`-`ij4` family closer to the integrated
-solver line in a controlled, explainable way.**
+Current project decision:
 
-It does not claim that the family is executable through `qcsp3/` yet.
-It defines how to get there without blurring archive provenance and supported
-baseline behavior.
+**treat the preserved ADT batch `ij1`-`ij4` family as a
+snapshot-specific, integrity-checkable historical family rather than a
+required reproduction target for the integrated `qcsp3` line.**
 
-## Why This Family First
+It remains historically important, and the repo keeps the bridge probes
+because they explain the divergence. But the family is no longer the default
+next integration target.
 
-The ADT batch family is the best next integration target because:
+## Why This Family Was Investigated
+
+The ADT batch family was investigated because:
 
 1. it is already integrity-checkable through `tests/validate-adt-batch.sh`,
 2. it sits close to the direct ADT matching line that still exists in the
    maintained solver trees,
 3. it extends historical coverage without depending on blocked terrain
    recovery, and
-4. it is a more natural bridge than the earlier `T1`-`T6` family, which is
-   historically valuable but farther from the current integrated solver story.
+4. it looked, at first, like a plausible post-M1 bridge into older direct-ADT
+   result families.
 
 ## Preserved Family
 
@@ -112,14 +115,14 @@ That means the first bridge is already useful: it has moved the ADT batch
 family from "pure archive" to "executable investigation," but it has not yet
 crossed into reproduction.
 
-## Bridge Strategy
+## Investigation Strategy
 
-The safest bridge is:
+The safest way to investigate the family was:
 
 1. keep `data/csp-adt-batch/` as the preserved historical source,
 2. document the experiment-to-search-mode mapping clearly,
 3. identify which maintained solver line is the best executable stand-in for
-   each family,
+   the family,
 4. create a modern reproduction harness only after that mapping is stable, and
 5. compare modern outputs against the preserved archive without rewriting the
    archive itself.
@@ -135,11 +138,11 @@ Working hypothesis:
 | `ij3` | `csp:adt` or `qcsp3:adt` with AC-3 + BT |
 | `ij4` | `csp:adt` or `qcsp3:adt` with AC-3 + FC + DR |
 
-This mapping is the bridge hypothesis, not a finished validation claim.
+This mapping remains a bridge hypothesis, not a finished validation claim.
 
-## First Host Recommendation
+## Host Comparison Result
 
-For the **first executable bridge**, the better host is:
+For the **narrow executable bridge probes**, the better maintained host is:
 
 **`csp/` first, then compare against `qcsp3/` later if useful.**
 
@@ -159,32 +162,62 @@ Why `csp/` is the better first bridge host:
    reference point before we ask whether `qcsp3` can stand in for the same
    family.
 
-So the recommended sequence is:
+That made `qcsp3` the better probe host, but not enough to justify folding the
+family into the integrated line.
 
-1. build the first narrow rerun harness against `csp:adt`,
-2. validate that it reproduces the preserved family shape credibly,
-3. then investigate whether `qcsp3:adt` can inherit or absorb that bridge.
+## Why It Is Now Snapshot-Specific
 
-## First Concrete Deliverables
+The current evidence points to a real model split rather than one missing file
+or one bad random seed:
 
-The next useful steps for this bridge are:
+1. the preserved ADT batch archive remains intact and integrity-checkable,
+2. the narrow `csp` and `qcsp3` bridge probes both run, but neither reproduces
+   the preserved `ij2` metrics,
+3. the normalized `old-dist1-pre-quilici` probe makes the fit worse, not
+   better,
+4. the structure probe shows `qcsp3` builds a smaller noise layer with the
+   strongest node-domain squeeze on `t2-c`,
+5. and the generator probe shows that maintained `csp/dist1` and
+   maintained `qcsp3/dist1` are different ADT noise models, not the same model
+   with minor drift.
+
+That combination makes the current project stance:
+
+- keep the family preserved and integrity-checkable,
+- keep the bridge notes as provenance and explanation,
+- but do **not** require `qcsp3` to reproduce this family as part of the
+  supported integrated baseline.
+
+## What Stays Useful
+
+Even with the snapshot-specific classification, the investigation work still
+matters because it established:
+
+1. where the divergence starts,
+2. which maintained line is closer,
+3. that old-dist restoration is not the missing key,
+4. and that the remaining gap is rooted in a different ADT noise model.
+
+## If Revisited Later
+
+If the project chooses to revisit ADT batch integration later, the right
+question is no longer "can `qcsp3` just rerun the family?" It is:
+
+1. should a dedicated legacy-ADT emulation harness exist for this archive, or
+2. is the current snapshot-specific classification sufficient for the
+   gold-standard line?
+
+## Concrete Deliverables Already In Place
+
+The useful deliverables from this investigation are now:
 
 1. inventory the preserved `ij*.lisp`, shell runners, and summary scripts under
    `data/csp-adt-batch/`,
 2. map their knobs onto the maintained ADT entry points,
-3. define the first narrow `csp:adt` rerun harness for one family,
-4. define what "success" means for that first rerun:
-   exact file-shape match, trend match, or bounded metric match,
-5. only then decide how and whether `qcsp3` should absorb the bridge.
-
-The first three steps are now complete at investigation level.
-The next live question is whether the current divergence comes from:
-
-1. changed random-state lineage,
-2. changed ADT situation/template data,
-3. solver-behavior drift in `csp/`,
-4. or a difference between preserved batch-output conventions and the current
-   base solver reporting path.
+3. define narrow `csp` and `qcsp3` rerun harnesses,
+4. isolate random-state, preprocessing, structure, and generator drift,
+5. and leave a clear explanation for why the family is being treated as
+   snapshot-specific.
 
 The current leading suspect is now **random-state lineage**. The surviving
 `Rnddefault` bundles in `qcsp-may29-1996/`, `qcsp3/`, `qcsp-alex-sep16-1997/`,

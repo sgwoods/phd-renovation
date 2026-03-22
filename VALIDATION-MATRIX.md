@@ -33,8 +33,7 @@ accepted, but it is not the final "everything historical is unified" finish line
 
 The current delta ledger for this milestone lives in `INTEGRATION-DELTAS.md`.
 The short gate summary for this milestone lives in `M1-READINESS.md`.
-The current bridge note for the next deliberate integration target lives in
-`ADT-BATCH-INTEGRATION.md`.
+The current ADT batch investigation note lives in `ADT-BATCH-INTEGRATION.md`.
 
 ## Status Key
 
@@ -54,7 +53,7 @@ The current bridge note for the next deliberate integration target lives in
 | PhD `ij2` / `ij3` / `ij4` reported trend story | `data/acl-experiments/Graph/`, thesis plots, SBCL reruns | Executable now | `tests/validate-artifacts.sh`, `tests/validate-thesis-comparison.py`, `Q-Batch-SBCL/` | In scope for M1; central gate for the integrated line |
 | Older `ff1` / `ff2` / `ff3` FCDR distribution family | `qcsp-may29-1996/NewData4b-Batch/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | `tests/validate-ff-provenance.sh` | In scope for M1 as a documented integrity-checked family |
 | Early `exp-1` / `exp-2` / `exp-3` result families | `historical finds/yj-sun/Csp/testdata/Results/`, `data/sparc-archive/PrevResults/` | Integrity-checkable now | Crosswalk documented in `historical finds/yj-sun/Csp/RESULTS-CROSSWALK.md` | Not yet covered by the integrated line |
-| ADT batch archives (`ij1`-`ij4` era before SBCL replication) | `data/csp-adt-batch/`, snapshot batch trees | Integrity-checkable now; executable investigation started | `tests/validate-adt-batch.sh`, `tests/investigate-adt-batch-bridge.sh`, `tests/investigate-adt-batch-random-lineage.sh`, `tests/investigate-adt-batch-input-shape.sh`, `tests/investigate-adt-batch-source-drift.sh`, `tests/investigate-adt-batch-structure-drift.sh`, `tests/investigate-adt-batch-generator-drift.sh`, `tests/investigate-adt-batch-qcsp3-bridge.sh`, `tests/investigate-adt-batch-qcsp3-old-dist1-bridge.sh` | Chosen as the next deliberate post-M1 integration target; the current `ij2` investigation shows the mismatch starts in preprocessing, `qcsp3` is materially closer than `csp`, the normalized `old-dist1-pre-quilici` probe worsens the fit, the structure probe localizes the biggest domain drift to `t2-c`, and the generator probe confirms the maintained `csp` and `qcsp3` lines now use different ADT noise models |
+| ADT batch archives (`ij1`-`ij4` era before SBCL replication) | `data/csp-adt-batch/`, snapshot batch trees | Integrity-checkable now; executable investigation documented | `tests/validate-adt-batch.sh`, `tests/investigate-adt-batch-bridge.sh`, `tests/investigate-adt-batch-random-lineage.sh`, `tests/investigate-adt-batch-input-shape.sh`, `tests/investigate-adt-batch-source-drift.sh`, `tests/investigate-adt-batch-structure-drift.sh`, `tests/investigate-adt-batch-generator-drift.sh`, `tests/investigate-adt-batch-qcsp3-bridge.sh`, `tests/investigate-adt-batch-qcsp3-old-dist1-bridge.sh` | Snapshot-specific preserved family; integrity-checkable and explained, but not a required reproduction target for the integrated `qcsp3` line |
 | Earliest CSP batch families (`T1`-`T6`) | `data/csp-batch/`, `data/csp-save-results/` | Integrity-checkable now | `tests/validate-csp-batch.sh` | Preserved DREV-era archive now checkable; still outside the integrated executable line |
 | MPR domain behavior | source snapshots and runtime-generated situation/random files | Executable now at solver level | `tests/run.lisp` MPR assertions | Covered at regression level, but not yet tied to a broader historical result family |
 | Alex-specific DFA-related ADT behavior | `qcsp-alex-sep16-1997/` | Provenance-only for now | Diagnosed but not yet part of supported validation | Open research/integration item |
@@ -65,8 +64,8 @@ The current bridge note for the next deliberate integration target lives in
 1. Keep the currently executable PhD-result path green.
 2. Use the current matrix to guide the post-M1 documentation and integration
    work rather than widening the supported umbrella casually.
-3. Treat the ADT batch `ij1`-`ij4` family as the next deliberate post-M1
-   integration target.
+3. Treat ADT batch as an explained snapshot-specific family unless a future
+   project phase explicitly chooses to emulate its older noise semantics.
 4. Keep the supported validation spine warning-clean and treat any new log
    noise in that path as a regression signal.
 5. Move the next clearly supported family or workflow only when it helps the

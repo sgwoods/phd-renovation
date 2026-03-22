@@ -82,35 +82,23 @@ The repository now has three broad zones:
    Newly found relevant material should land in `incoming/` first, then be
    reviewed and promoted into one of the three zones above.
 
-## Deliberate Next Integration Target
+## Deliberate Mainline Priority
 
-The next post-M1 integration target should be:
-
-**ADT batch archives (`ij1`-`ij4` era before the SBCL replication line)**
-
-Why this family is the best next step:
-
-1. it is already integrity-checkable through `tests/validate-adt-batch.sh`,
-2. it sits closest to the direct-matching ADT solver line that `qcsp3/`
-   already supports,
-3. it extends historical coverage without depending on the still-blocked
-   terrain lane, and
-4. it is a better post-M1 bridge than the earlier `T1`-`T6` family, which is
-   historically valuable but further away from the current integrated solver
-   story.
+The current post-M1 mainline priority should be:
 
 That means the current recommended order is:
 
 1. finish the `0.3.x` operator-docs pass,
-2. use the ADT batch family as the next integration experiment,
-3. keep `T1`-`T6` as a later preserved-family target,
+2. keep the supported validation spine green and the repo status artifacts
+   current,
+3. treat ADT batch as a snapshot-specific preserved family rather than an
+   active integration obligation,
 4. keep terrain as the major deferred recovery lane.
 
-The current bridge note for this target lives in `ADT-BATCH-INTEGRATION.md`.
-Current recommendation: treat the preserved wrapper mapping through `csp/` as
-valuable provenance, but use `qcsp3/` as the stronger maintained executable
-host for the next ADT batch bridge steps. The latest old-dist probe also
-points away from distribution-label recovery as the main missing piece.
+The current ADT batch note lives in `ADT-BATCH-INTEGRATION.md`.
+Current recommendation: keep the preserved wrapper mapping and bridge probes as
+historical explanation, but do not require the maintained integrated line to
+absorb the family.
 
 ## Maintenance Rule
 

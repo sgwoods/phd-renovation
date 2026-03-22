@@ -311,17 +311,13 @@ anchors rather than co-equal supported workflows.
    the broader repo surface changes.
 2. Push the `0.3.x` documentation lane: add docstrings and clearer entry-point
    explanations for the major algorithms and supported workflows.
-3. Use the ADT batch `ij1`-`ij4` archive family as the next deliberate
-   post-M1 integration target, because it is already integrity-checkable and
-   sits closest to the current ADT solver line.
-   The current bridge note for that target now lives in
-   `ADT-BATCH-INTEGRATION.md`.
-   Current recommendation: start the first executable bridge in `csp/`, not
-   `qcsp3/`, because the preserved drivers are rooted in the historical base
-   solver contract.
-   That first narrow bridge now exists for the preserved `ij2` family and
-   currently diverges from the archived non-timing metrics, which gives us a
-   concrete next investigation target instead of a hypothetical one.
+3. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
+   documented, but treat it as snapshot-specific for now rather than as a
+   required post-M1 integration target.
+   The investigation note for that family lives in `ADT-BATCH-INTEGRATION.md`.
+   Current recommendation: preserve the bridge probes and the explanation of
+   the maintained `csp` / `qcsp3` noise-model split, but do not require the
+   integrated line to reproduce this family.
 4. Keep the supported validation gate clean and high-signal; treat new warning
    output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
    investigate, not normal background.
