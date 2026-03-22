@@ -473,6 +473,14 @@ h1{
           <ul class="subtoc"><li><a href="#section-qcsp3-guide-role">Role</a></li><li><a href="#section-qcsp3-guide-core-asdf-files">Core ASDF Files</a></li><li><a href="#section-qcsp3-guide-main-public-entry-points">Main Public Entry Points</a></li><li><a href="#section-qcsp3-guide-directory-mix">Directory Mix</a></li><li><a href="#section-qcsp3-guide-subdirectories">Subdirectories</a></li><li><a href="#section-qcsp3-guide-ao-support-in-extras">AO Support In `extras/`</a></li><li><a href="#section-qcsp3-guide-supported-validation-relationship">Supported Validation Relationship</a></li><li><a href="#section-qcsp3-guide-what-is-not-in-this-directory">What Is Not In This Directory</a></li><li><a href="#section-qcsp3-guide-practical-reading-order">Practical Reading Order</a></li></ul>
         </li>
         <li>
+          <a href="#section-qcsp3-extras-guide">qcsp3 extras Guide</a>
+          <ul class="subtoc"><li><a href="#section-qcsp3-extras-guide-role">Role</a></li><li><a href="#section-qcsp3-extras-guide-what-loads-it">What Loads It</a></li><li><a href="#section-qcsp3-extras-guide-file-roles">File Roles</a></li><li><a href="#section-qcsp3-extras-guide-supported-status">Supported Status</a></li><li><a href="#section-qcsp3-extras-guide-practical-reading-order">Practical Reading Order</a></li><li><a href="#section-qcsp3-extras-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-qcsp3-extras-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-qcsp3-adt-batch-guide">qcsp3 ADT-Batch Guide</a>
+          <ul class="subtoc"><li><a href="#section-qcsp3-adt-batch-guide-role">Role</a></li><li><a href="#section-qcsp3-adt-batch-guide-canonical-versus-local">Canonical Versus Local</a></li><li><a href="#section-qcsp3-adt-batch-guide-current-shape">Current Shape</a></li><li><a href="#section-qcsp3-adt-batch-guide-relationship-to-the-current-roadmap">Relationship To The Current Roadmap</a></li><li><a href="#section-qcsp3-adt-batch-guide-if-you-are-investigating-adt-batch-again">If You Are Investigating ADT Batch Again</a></li><li><a href="#section-qcsp3-adt-batch-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-src-guide">src Guide</a>
           <ul class="subtoc"><li><a href="#section-src-guide-purpose">Purpose</a></li><li><a href="#section-src-guide-supported-load-path">Supported Load Path</a></li><li><a href="#section-src-guide-what-this-is-not">What This Is Not</a></li><li><a href="#section-src-guide-typical-next-commands">Typical Next Commands</a></li><li><a href="#section-src-guide-using-in-code-docs">Using In-Code Docs</a></li><li><a href="#section-src-guide-relationship-to-the-repo">Relationship To The Repo</a></li></ul>
         </li>
@@ -680,7 +688,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -1084,6 +1092,8 @@ run-test4*.lisp                Legacy/manual AO harnesses (3 files)</code></pre>
 <p>That means <code>qcsp3/</code> is mostly code, but not code-only.</p>
 <h3 id="section-qcsp3-guide-subdirectories">Subdirectories</h3>
 <table><thead><tr><th>Directory</th><th>Current role</th></tr></thead><tbody><tr><td><code>extras/</code></td><td>AO helper files and legacy <code>test4</code> support not loaded by ASDF</td></tr><tr><td><code>ADT-Situation/</code></td><td>Runtime-generated ADT situations</td></tr><tr><td><code>ADT-Random/</code></td><td>Runtime-generated ADT random-state files</td></tr><tr><td><code>MPR-Situation/</code></td><td>Runtime-generated MPR situations</td></tr><tr><td><code>MPR-Random/</code></td><td>Runtime-generated MPR random-state files</td></tr><tr><td><code>ADT-Batch/</code></td><td>Preserved/generated ADT batch-style output workspace tied to direct-matching runs</td></tr></tbody></table>
+<p>Local guides now exist for the two mixed-use subareas that most often confuse readers:</p>
+<ul><li><code>extras/README.md</code></li><li><code>ADT-Batch/README.md</code></li></ul>
 <h3 id="section-qcsp3-guide-ao-support-in-extras">AO Support In <code>extras/</code></h3>
 <p>The <code>extras/</code> directory is important, but it is not part of the ASDF system. It contains the arc-oriented support files used by:</p>
 <ul><li><code>tests/ao-run.lisp</code></li><li><code>run-test4.lisp</code></li><li><code>run-test4-alex.lisp</code></li></ul>
@@ -1103,6 +1113,93 @@ run-test4*.lisp                Legacy/manual AO harnesses (3 files)</code></pre>
 <h3 id="section-qcsp3-guide-practical-reading-order">Practical Reading Order</h3>
 <p>If you are orienting quickly:</p>
 <ol><li><code>package.lisp</code></li><li><code>queens.lisp</code></li><li><code>adt-simple.lisp</code></li><li><code>mpr-simple.lisp</code></li><li><code>memory-csp.lisp</code></li><li><code>utility.lisp</code></li><li><code>extras/</code> only if you are working on AO / <code>test4</code></li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-qcsp3-extras-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>qcsp3 extras Guide</h2>
+            <p class="sectionSummary">Local guide to the bounded AO / test4 support layer that sits alongside the integrated solver line.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/qcsp3/extras/qcsp3/extras/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the non-ASDF AO support layer under the primary integrated solver tree.</p>
+<h3 id="section-qcsp3-extras-guide-role">Role</h3>
+<p><code>qcsp3/extras/</code> is the preserved AO / <code>test4</code> support workspace used by the supported legacy AO validation path. It is important, but it is <strong>not</strong> part of the main <code>:qcsp3</code> ASDF load.</p>
+<p>Think of this directory as:</p>
+<ul><li>required for the bounded supported AO baseline,</li><li>historically tied to the <code>test4</code> family,</li><li>and separate from the core queens / ADT / MPR / memory-search line.</li></ul>
+<h3 id="section-qcsp3-extras-guide-what-loads-it">What Loads It</h3>
+<p>The main current entry points are:</p>
+<ul><li><code>tests/ao-run.lisp</code></li><li><code>run-test4.lisp</code></li><li><code>run-test4-may29.lisp</code></li><li><code>run-test4-alex.lisp</code></li></ul>
+<p>If you only load <code>src/main.lisp</code> or the <code>:qcsp3</code> ASDF system, these files are not loaded automatically.</p>
+<h3 id="section-qcsp3-extras-guide-file-roles">File Roles</h3>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody><tr><td><code>ac-graph.lisp</code></td><td>AO graph representation and graph-level helpers</td></tr><tr><td><code>hierarchy.lisp</code></td><td>AO ordering hierarchy and relation layering</td></tr><tr><td><code>ao-ac3.lisp</code></td><td>AO AC-3 style propagation path</td></tr><tr><td><code>ao-ac-new.lisp</code></td><td>Alternate AO propagation path</td></tr><tr><td><code>ao-revise.lisp</code></td><td>Shared revise support</td></tr><tr><td><code>ao-revise-step.lisp</code></td><td>Step-oriented AO revise implementation</td></tr><tr><td><code>ao-revise-aggressive.lisp</code></td><td>Aggressive AO revise implementation</td></tr><tr><td><code>ao-revise-fns.lisp</code></td><td>Shared revise helper functions</td></tr><tr><td><code>applyr.lisp</code></td><td>Relation application / propagation helpers</td></tr><tr><td><code>example-extend.lisp</code></td><td>Mutable example graph setup used by the legacy harness</td></tr><tr><td><code>test4.lisp</code></td><td>Legacy AO harness definitions and wrapper entry points</td></tr><tr><td><code>comment.lisp</code></td><td>Preserved AO comments / historical context file</td></tr><tr><td><code>compile-ao.lisp</code></td><td>Historical compile helper for the AO layer</td></tr></tbody></table>
+<h3 id="section-qcsp3-extras-guide-supported-status">Supported Status</h3>
+<p>This directory is inside the supported validation umbrella, but only through a bounded surface:</p>
+<ul><li><code>tests/ao-qcsp3-suite.lisp</code></li><li><code>tests/ao-may29-suite.lisp</code></li><li><code>tests/ao-alex-suite.lisp</code></li><li><code>bash tests/validate-ao.sh</code></li></ul>
+<p>That means the repo currently treats these files as:</p>
+<ul><li>supported enough for the asserted AO baseline,</li><li>historically valuable beyond that,</li><li>but not part of the main integrated solver line in the same way as</li></ul>
+<p><code>qcsp3/queens.lisp</code>, <code>qcsp3/adt-simple.lisp</code>, or <code>qcsp3/memory-csp.lisp</code>.</p>
+<h3 id="section-qcsp3-extras-guide-practical-reading-order">Practical Reading Order</h3>
+<p>If you need to understand or debug this layer, read in this order:</p>
+<ol><li><code>test4.lisp</code></li><li><code>example-extend.lisp</code></li><li><code>ac-graph.lisp</code></li><li><code>ao-ac3.lisp</code> and <code>ao-ac-new.lisp</code></li><li><code>ao-revise-step.lisp</code> and <code>ao-revise-aggressive.lisp</code></li><li><code>applyr.lisp</code></li><li><code>hierarchy.lisp</code></li></ol>
+<h3 id="section-qcsp3-extras-guide-what-this-directory-is-not">What This Directory Is Not</h3>
+<ul><li>It is not the canonical home of the main integrated solver APIs.</li><li>It is not part of the thesis <code>ij2</code> / <code>ij3</code> / <code>ij4</code> result pipeline.</li><li>It is not a general-purpose utility library for the rest of the repo.</li></ul>
+<h3 id="section-qcsp3-extras-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the task is about AO or <code>test4</code>, come here.</p>
+<p>If the task is about the integrated solver line, start one level up in <code>qcsp3/</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-qcsp3-adt-batch-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>qcsp3 ADT-Batch Guide</h2>
+            <p class="sectionSummary">Local guide to the qcsp3 snapshot&#x27;s direct-ADT batch-style workspace and how it differs from the canonical preserved archive.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/qcsp3/ADT-Batch/qcsp3/ADT-Batch/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the direct-ADT batch-style workspace under the primary solver tree.</p>
+<h3 id="section-qcsp3-adt-batch-guide-role">Role</h3>
+<p><code>qcsp3/ADT-Batch/</code> is a mixed preserved/generated workspace that captures direct ADT batch-style runs under the <code>qcsp3</code> snapshot. It is <strong>not</strong> the canonical preserved ADT batch archive for the project.</p>
+<p>Use this directory as:</p>
+<ul><li>a snapshot-local output/workspace area,</li><li>a clue to how <code>qcsp3</code> direct ADT runs were staged,</li><li>and a reference point when comparing the maintained line against preserved</li></ul>
+<p>batch-style families.</p>
+<h3 id="section-qcsp3-adt-batch-guide-canonical-versus-local">Canonical Versus Local</h3>
+<p>The project&#x27;s canonical preserved ADT batch family lives in:</p>
+<ul><li><code>data/csp-adt-batch/</code></li></ul>
+<p>That archive is integrity-checked by:</p>
+<ul><li><code>bash tests/validate-adt-batch.sh</code></li></ul>
+<p>This <code>qcsp3/ADT-Batch/</code> directory is different:</p>
+<ul><li>it belongs to the <code>qcsp3</code> snapshot tree,</li><li>it is useful for provenance and comparison,</li><li>but it is not the main source of truth for the preserved historical</li></ul>
+<p><code>ij1</code>-<code>ij4</code> ADT batch archive.</p>
+<h3 id="section-qcsp3-adt-batch-guide-current-shape">Current Shape</h3>
+<p>The workspace currently contains many single-run outputs with names like:</p>
+<ul><li><code>Test-ij4-050.1</code></li><li><code>Test-ij4-100.1</code></li><li><code>Test-ij4-1000.99</code></li></ul>
+<p>That naming pattern indicates:</p>
+<ul><li>direct ADT family <code>ij4</code>,</li><li>a noise level in the middle field,</li><li>and a per-run/random suffix in the final field.</li></ul>
+<p>These are useful as a snapshot-local run record, but they should not be treated as the authoritative batch archive without comparing them back to <code>data/csp-adt-batch/</code>.</p>
+<h3 id="section-qcsp3-adt-batch-guide-relationship-to-the-current-roadmap">Relationship To The Current Roadmap</h3>
+<p>The repo now treats the broader ADT batch family as:</p>
+<ul><li>historically important,</li><li>integrity-checkable,</li><li>but snapshot-specific rather than a required reproduction target for the</li></ul>
+<p>integrated <code>qcsp3</code> line.</p>
+<p>That means this directory has go-forward value mainly for:</p>
+<ul><li>provenance,</li><li>bridge investigation,</li><li>and snapshot comparison.</li></ul>
+<p>It is not part of the supported current validation spine.</p>
+<h3 id="section-qcsp3-adt-batch-guide-if-you-are-investigating-adt-batch-again">If You Are Investigating ADT Batch Again</h3>
+<p>Start with:</p>
+<ol><li><code>ADT-BATCH-INTEGRATION.md</code></li><li><code>data/csp-adt-batch/README.md</code></li><li><code>tests/README.md</code></li></ol>
+<p>Then use this directory only to answer snapshot-specific questions about <code>qcsp3</code> output shape or naming.</p>
+<h3 id="section-qcsp3-adt-batch-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If you want the preserved historical ADT batch archive, go to <code>data/</code>.</p>
+<p>If you want the <code>qcsp3</code> snapshot&#x27;s own batch-style output workspace, use this directory.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-src-guide">

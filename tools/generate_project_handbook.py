@@ -68,6 +68,18 @@ HANDBOOK_SOURCES = [
         "Local guide to the primary integrated solver line, its entry points, and its AO support role.",
     ),
     HandbookSource(
+        "qcsp3 extras Guide",
+        "qcsp3/extras/README.md",
+        "Local guide to the bounded AO / test4 support layer that sits alongside the integrated solver line.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "qcsp3 ADT-Batch Guide",
+        "qcsp3/ADT-Batch/README.md",
+        "Local guide to the qcsp3 snapshot's direct-ADT batch-style workspace and how it differs from the canonical preserved archive.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "src Guide",
         "src/README.md",
         "Interactive entry-point guide for loading the primary solver line in a REPL.",

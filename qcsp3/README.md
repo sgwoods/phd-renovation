@@ -88,6 +88,12 @@ That means `qcsp3/` is mostly code, but not code-only.
 | `MPR-Random/` | Runtime-generated MPR random-state files |
 | `ADT-Batch/` | Preserved/generated ADT batch-style output workspace tied to direct-matching runs |
 
+Local guides now exist for the two mixed-use subareas that most often confuse
+readers:
+
+- `extras/README.md`
+- `ADT-Batch/README.md`
+
 ## AO Support In `extras/`
 
 The `extras/` directory is important, but it is not part of the ASDF system.

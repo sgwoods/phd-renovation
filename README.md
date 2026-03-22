@@ -214,6 +214,8 @@ Plots are in `Q-Batch-SBCL/Graph/compare-*-overlay.png`.
 Directory guides:
 - `csp/README.md`
 - `qcsp3/README.md`
+- `qcsp3/extras/README.md`
+- `qcsp3/ADT-Batch/README.md`
 - `src/README.md`
 - `Q-Batch-SBCL/README.md`
 - `Q-Batch-SBCL/Graph/README.md`
