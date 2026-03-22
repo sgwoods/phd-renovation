@@ -293,8 +293,9 @@ anchors rather than co-equal supported workflows.
 - **Phase 3 / `0.3.x` Documentation**: active and now late-stage. High-level
   docs are much stronger, the code/test/results roots are easier to navigate,
   and the next push is selective in-code docstrings, keeping the status and
-  handbook artifacts current, and preserving clarity as `incoming/` likely
-  becomes the next heavier work lane.
+  handbook artifacts current, and closing the `1.0.0` release-hardening
+  checklist while preserving clarity as `incoming/` likely becomes the next
+  heavier work lane after release.
 - **Phase 4 / Research Readiness**: not yet active as the main lane. We have
   diagnosed alex's `ij4` divergence, but we are intentionally holding off on
   broader experimental changes until the baseline is tighter.
@@ -310,31 +311,34 @@ anchors rather than co-equal supported workflows.
    `tests/validate-ao.sh` remain the merge gate for the supported baseline.
    Keep `REPOSITORY-STATUS.md`, `REPOSITORY-STRUCTURE-REVIEW.md`, and
    `DOCS-COVERAGE-REVIEW.md` in sync as the broader repo surface changes.
-2. Treat the `0.3.x` documentation lane as late-stage: keep adding selective
+2. Turn `RELEASE-1.0-CHECKLIST.md` into the active punch list for the first
+   release candidate.
+3. Treat the `0.3.x` documentation lane as late-stage: keep adding selective
    docstrings and operator-facing clarifications, but focus on maintaining the
    now-strong docs/handbook/status surface rather than broad new README waves.
-3. Prepare for heavier `incoming/` intake and review work. New materials are
+4. Prepare for heavier `incoming/` intake and review work. New materials are
    likely to be the next major source of project movement, so keep the intake,
    promotion, duplicate review, and archive classification flow disciplined.
-4. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
+5. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
    documented, but treat it as snapshot-specific for now rather than as a
    required post-M1 integration target.
    The investigation note for that family lives in `ADT-BATCH-INTEGRATION.md`.
    Current recommendation: preserve the bridge probes and the explanation of
    the maintained `csp` / `qcsp3` noise-model split, but do not require the
    integrated line to reproduce this family.
-5. Keep the supported validation gate clean and high-signal; treat new warning
+6. Keep the supported validation gate clean and high-signal; treat new warning
    output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
    investigate, not normal background.
-6. Keep building out the validation matrix when useful, but with the main
+7. Keep building out the validation matrix when useful, but with the main
    archive-heavy families now mapped or integrity-checked, avoid widening the
    supported umbrella casually without a clear post-M1 or intake-review
    benefit.
-7. Only after the baseline, warning surface, provenance work, and intake flow
+8. Only after the baseline, warning surface, provenance work, release
+   hardening, and intake flow
    are tighter,
    begin controlled integration and research-readiness experiments such as
    alex DFA-option isolation against the validated snapshot.
-8. Treat `Hanoi-4` explicitly as a phased lane: for `1.0`, keep a clear record
+9. Treat `Hanoi-4` explicitly as a phased lane: for `1.0`, keep a clear record
    of the situation, artifacts, and any ingested references; for `2.0`, pursue
    actual behavioral/repeatability understanding once the material exists.
    Seed that future analysis with later Towers of Hanoi encoding literature

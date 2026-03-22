@@ -46,6 +46,11 @@ HANDBOOK_SOURCES = [
         "Current historical domain and result-family coverage against the project's main goals.",
     ),
     HandbookSource(
+        "1.0 Release Checklist",
+        "RELEASE-1.0-CHECKLIST.md",
+        "Concrete release-hardening gate for the first 1.0 tag.",
+    ),
+    HandbookSource(
         "Hanoi-4 Status",
         "HANOI-4-STATUS.md",
         "Bounded status record for the deferred Hanoi-4 lane: documented for 1.0, behaviorally unresolved for 2.0.",

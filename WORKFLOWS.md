@@ -89,7 +89,33 @@ Main sources:
 - `docs/README.md`
 - `tools/README.md`
 
-### 5. New Material Intake
+### 5. Release Hardening
+
+Use this when preparing a `1.0.0` release candidate.
+
+```bash
+python3 tools/generate-release-dashboard.py
+sbcl --non-interactive --load "tests/run.lisp"
+bash tests/validate-artifacts.sh
+bash tests/validate-ff-provenance.sh
+bash tests/validate-adt-batch.sh
+bash tests/validate-csp-batch.sh
+bash tests/validate-ao.sh
+bash tests/validate-dashboard.sh
+```
+
+Best for:
+
+- final release-candidate confidence,
+- making sure the public/status outputs are current,
+- checking the exact release gate in `RELEASE-1.0-CHECKLIST.md`.
+
+Main guides:
+
+- `RELEASE-1.0-CHECKLIST.md`
+- `RENOVATION.md`
+
+### 6. New Material Intake
 
 Use this when new code, data, papers, or experiment artifacts arrive.
 

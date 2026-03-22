@@ -367,8 +367,8 @@ h1{
         </div>
         <div class="metaCard">
           <span class="metaLabel">Current Focus</span>
-          <span class="metaValue">Docs + intake</span>
-          <div class="metaNote">Operator docs and handbook coverage are broadly strong. ADT batch is now bounded as snapshot-specific, and the next likely source of movement is heavier incoming archive and data review.</div>
+          <span class="metaValue">Release hardening</span>
+          <div class="metaNote">Operator docs are broadly strong. The active front is now closing the 1.0 release checklist while keeping incoming readiness and deferred lanes clearly bounded.</div>
         </div>
         <div class="metaCard">
           <span class="metaLabel">Updated</span>
@@ -391,6 +391,11 @@ h1{
         <span class="eyebrow">Included guide</span>
         <h2><a href="#section-validation-matrix">Validation Matrix</a></h2>
         <p>Current historical domain and result-family coverage against the project&#x27;s main goals.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-1-0-release-checklist">1.0 Release Checklist</a></h2>
+        <p>Concrete release-hardening gate for the first 1.0 tag.</p>
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
@@ -491,6 +496,10 @@ h1{
         <li>
           <a href="#section-validation-matrix">Validation Matrix</a>
           <ul class="subtoc"><li><a href="#section-validation-matrix-first-integration-milestone">First Integration Milestone</a></li><li><a href="#section-validation-matrix-status-key">Status Key</a></li><li><a href="#section-validation-matrix-current-matrix">Current Matrix</a></li><li><a href="#section-validation-matrix-immediate-priorities">Immediate Priorities</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-1-0-release-checklist">1.0 Release Checklist</a>
+          <ul class="subtoc"><li><a href="#section-1-0-release-checklist-what-1-0-0-means">What `1.0.0` Means</a></li><li><a href="#section-1-0-release-checklist-in-scope-for-1-0-0">In Scope For `1.0.0`</a></li><li><a href="#section-1-0-release-checklist-explicitly-out-of-scope-for-1-0-0">Explicitly Out Of Scope For `1.0.0`</a></li><li><a href="#section-1-0-release-checklist-required-validation-gate">Required Validation Gate</a></li><li><a href="#section-1-0-release-checklist-required-status-docs-conditions">Required Status / Docs Conditions</a></li><li><a href="#section-1-0-release-checklist-required-scope-conditions">Required Scope Conditions</a></li><li><a href="#section-1-0-release-checklist-release-notes-must-state">Release Notes Must State</a></li><li><a href="#section-1-0-release-checklist-tag-release-process">Tag / Release Process</a></li><li><a href="#section-1-0-release-checklist-current-best-read">Current Best Read</a></li></ul>
         </li>
         <li>
           <a href="#section-hanoi-4-status">Hanoi-4 Status</a>
@@ -650,7 +659,7 @@ h1{
         </li>
         <li>
           <a href="#section-workflows">Workflows</a>
-          <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-new-material-intake">5. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-release-hardening">5. Release Hardening</a></li><li><a href="#section-workflows-6-new-material-intake">6. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-docs-guide">docs Guide</a>
@@ -747,6 +756,8 @@ src/                        Entry point</code></pre>
 <p>families are executable now, integrity-checkable now, or still reference-only.</p>
 <ul><li><code>REPOSITORY-STATUS.md</code> answers the broader repo-wide question: what is</li></ul>
 <p>indexed, integrated, tested, and publication-validated.</p>
+<ul><li><code>RELEASE-1.0-CHECKLIST.md</code> is the concrete release-hardening punch list for</li></ul>
+<p>the first <code>1.0.0</code> tag.</p>
 <ul><li><code>HANOI-4-STATUS.md</code> records the current bounded position on the <code>Hanoi-4</code></li></ul>
 <p>lane: documented for <code>1.0</code>, behaviorally unresolved as a <code>2.0</code> goal.</p>
 <ul><li><code>DOCS-COVERAGE-REVIEW.md</code> records what parts of the repo are now well</li></ul>
@@ -858,7 +869,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>part of the supported integrated line.</p>
 <ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
 <p>provenance, recovery, or context rather than active validation.</p>
-<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>.</p>
 <h3 id="section-repository-status-status-key">Status Key</h3>
 <ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
 <p>reported results, either executable or integrity-checkable.</p>
@@ -879,12 +890,14 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <ol><li><code>Deferred research-readiness lanes</code></li></ol>
 <p>Topics like <code>Hanoi-4</code> that are important enough to track explicitly, but whose current <code>1.0</code> requirement is documentation and bounded scope rather than full behavioral closure.</p>
 <h3 id="section-repository-status-deliberate-mainline-priority">Deliberate Mainline Priority</h3>
-<p>The current post-M1 mainline priority should be:</p>
+<p>The current post-M1 mainline priority is release hardening for <code>1.0.0</code>.</p>
 <p>That means the current recommended order is:</p>
 <ol><li>finish the <code>0.3.x</code> operator-docs pass,</li><li>keep the supported validation spine green and the repo status artifacts</li></ol>
 <p>current,</p>
-<ol><li>prepare for heavier <code>incoming/</code> review work,</li><li>treat ADT batch as a snapshot-specific preserved family rather than an</li></ol>
+<ol><li>close the items in <code>RELEASE-1.0-CHECKLIST.md</code>,</li><li>treat ADT batch as a snapshot-specific preserved family rather than an</li></ol>
 <p>active integration obligation,</p>
+<ol><li>prepare for heavier <code>incoming/</code> review work after the <code>1.0</code> surface is</li></ol>
+<p>clearly frozen,</p>
 <ol><li>keep terrain as the major deferred recovery lane, and</li><li>treat <code>Hanoi-4</code> as a documented <code>1.0</code>-bounded lane and a <code>2.0</code></li></ol>
 <p>research/repeatability goal.</p>
 <p>The current ADT batch note lives in <code>ADT-BATCH-INTEGRATION.md</code>. Current recommendation: keep the preserved wrapper mapping and bridge probes as historical explanation, but do not require the maintained integrated line to absorb the family.</p>
@@ -941,6 +954,64 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>post-M1 integrated line more than it increases maintenance surface.</p>
 <ol><li>Treat <code>Hanoi-4</code> as explicitly bounded for <code>1.0</code>: maintain a clear status</li></ol>
 <p>record, but defer full behavior/repeatability understanding to <code>2.0</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-1-0-release-checklist">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>1.0 Release Checklist</h2>
+            <p class="sectionSummary">Concrete release-hardening gate for the first 1.0 tag.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/RELEASE-1.0-CHECKLIST.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the concrete punch list for the first <code>1.0.0</code> release.</p>
+<p>It turns the current roadmap into a release gate we can actually close.</p>
+<h3 id="section-1-0-release-checklist-what-1-0-0-means">What <code>1.0.0</code> Means</h3>
+<p><code>1.0.0</code> does <strong>not</strong> mean every preserved historical family is fully rerunnable through one code path.</p>
+<p>It means:</p>
+<ol><li>the supported thesis-result baseline is executable from a fresh checkout,</li><li>the supported integrated solver story is honest and bounded,</li><li>the major preserved historical families are either executable,</li></ol>
+<p>integrity-checkable, or explicitly deferred,</p>
+<ol><li>the repo/public documentation accurately describes that scope, and</li><li>release notes can explain remaining deltas as intentional rather than</li></ol>
+<p>accidental.</p>
+<h3 id="section-1-0-release-checklist-in-scope-for-1-0-0">In Scope For <code>1.0.0</code></h3>
+<ul><li><code>qcsp3/</code> as the operational center of the supported integrated line</li><li>supported thesis <code>ij2</code> / <code>ij3</code> / <code>ij4</code> validation path</li><li>bounded AO baseline</li><li><code>ff*</code> integrity/provenance relationship</li><li>ADT batch and DREV-era <code>T1</code>-<code>T6</code> as preserved integrity-checkable families</li><li>clear status artifacts, handbook, dashboard, and public project page</li><li>explicit deferred-lane documentation for terrain and <code>Hanoi-4</code></li></ul>
+<h3 id="section-1-0-release-checklist-explicitly-out-of-scope-for-1-0-0">Explicitly Out Of Scope For <code>1.0.0</code></h3>
+<ul><li>full terrain-domain recovery</li><li>full <code>Hanoi-4</code> behavior/repeatability closure</li><li>forcing snapshot-specific preserved families into <code>qcsp3/</code> when they are</li></ul>
+<p>better treated as documented archives</p>
+<ul><li>broader post-M1 research experiments such as alex DFA-option exploration as</li></ul>
+<p>a release blocker</p>
+<h3 id="section-1-0-release-checklist-required-validation-gate">Required Validation Gate</h3>
+<p>These must pass for a <code>1.0.0</code> release candidate:</p>
+<pre><code class="language-bash">sbcl --non-interactive --load &quot;tests/run.lisp&quot;
+bash tests/validate-artifacts.sh
+bash tests/validate-ff-provenance.sh
+bash tests/validate-adt-batch.sh
+bash tests/validate-csp-batch.sh
+bash tests/validate-ao.sh
+bash tests/validate-dashboard.sh</code></pre>
+<h3 id="section-1-0-release-checklist-required-status-docs-conditions">Required Status / Docs Conditions</h3>
+<ul><li>[ ] <code>README.md</code>, <code>RENOVATION.md</code>, <code>VALIDATION-MATRIX.md</code>, and</li></ul>
+<p><code>REPOSITORY-STATUS.md</code> agree on current scope</p>
+<ul><li>[ ] <code>M1-READINESS.md</code>, <code>INTEGRATION-DELTAS.md</code>, and</li></ul>
+<p><code>HANOI-4-STATUS.md</code> reflect current accepted boundaries</p>
+<ul><li>[ ] <code>docs/release-dashboard-data.json</code> reflects the active release focus</li><li>[ ] generated outputs are current:</li></ul>
+<p><code>docs/release-dashboard.html</code>, <code>docs/project-handbook.html</code>, <code>docs/public-phd-renovation.html</code>, <code>docs/public-phd-renovation-handbook.html</code>, <code>docs/public-status-phd-renovation.json</code></p>
+<ul><li>[ ] public-facing wording matches repo-local wording</li></ul>
+<h3 id="section-1-0-release-checklist-required-scope-conditions">Required Scope Conditions</h3>
+<ul><li>[ ] supported executable families are clearly identified</li><li>[ ] integrity-checkable preserved families are clearly identified</li><li>[ ] snapshot-specific preserved families are clearly identified</li><li>[ ] deferred lanes are clearly identified</li><li>[ ] no hidden <code>1.0</code> blockers remain in project docs</li></ul>
+<h3 id="section-1-0-release-checklist-release-notes-must-state">Release Notes Must State</h3>
+<ul><li>what the integrated line now guarantees</li><li>what validation is continuously exercised</li><li>which historical families are executable now</li><li>which historical families are integrity-checkable only</li><li>which historically important lanes are deferred</li><li>which meaningful deltas remain documented</li></ul>
+<h3 id="section-1-0-release-checklist-tag-release-process">Tag / Release Process</h3>
+<ol><li>Regenerate the status/docs outputs.</li><li>Run the full validation gate.</li><li>Confirm the branch is clean.</li><li>Draft release notes from this checklist and the current roadmap.</li><li>Tag the release.</li><li>Push the tag and any synced public outputs.</li></ol>
+<h3 id="section-1-0-release-checklist-current-best-read">Current Best Read</h3>
+<p>As of March 22, 2026, the project looks close enough to <code>1.0.0</code> that the main remaining work is <strong>release hardening</strong>, not broad new solver expansion.</p>
+<p>The most likely remaining pre-<code>1.0</code> work is:</p>
+<ol><li>final selective docstrings and operator-facing cleanup,</li><li>keeping docs/status/public outputs synchronized,</li><li>keeping the validation gate green,</li><li>and making sure deferred lanes like terrain and <code>Hanoi-4</code> stay explicit</li></ol>
+<p>rather than quietly becoming implied blockers.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-hanoi-4-status">
@@ -2596,7 +2667,21 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>data and tracked markdown sources.</p>
 <p>Main sources:</p>
 <ul><li><code>docs/release-dashboard-data.json</code></li><li><code>tools/generate-release-dashboard.py</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li></ul>
-<h4 id="section-workflows-5-new-material-intake">5. New Material Intake</h4>
+<h4 id="section-workflows-5-release-hardening">5. Release Hardening</h4>
+<p>Use this when preparing a <code>1.0.0</code> release candidate.</p>
+<pre><code class="language-bash">python3 tools/generate-release-dashboard.py
+sbcl --non-interactive --load &quot;tests/run.lisp&quot;
+bash tests/validate-artifacts.sh
+bash tests/validate-ff-provenance.sh
+bash tests/validate-adt-batch.sh
+bash tests/validate-csp-batch.sh
+bash tests/validate-ao.sh
+bash tests/validate-dashboard.sh</code></pre>
+<p>Best for:</p>
+<ul><li>final release-candidate confidence,</li><li>making sure the public/status outputs are current,</li><li>checking the exact release gate in <code>RELEASE-1.0-CHECKLIST.md</code>.</li></ul>
+<p>Main guides:</p>
+<ul><li><code>RELEASE-1.0-CHECKLIST.md</code></li><li><code>RENOVATION.md</code></li></ul>
+<h4 id="section-workflows-6-new-material-intake">6. New Material Intake</h4>
 <p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
 <ol><li>Drop the material under <code>incoming/</code> using any convenient dump name.</li><li>Review it.</li><li>Normalize the intake folder label if the contents reveal a better date/source.</li><li>Update <code>incoming/INDEX.md</code>.</li><li>Promote it into <code>data/</code>, <code>historical finds/</code>, a snapshot tree, or</li></ol>
 <p><code>DUPLICATES-REVIEW.md</code>.</p>
@@ -3208,7 +3293,7 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <ul><li><strong>Phase 2 / <code>0.2.x</code> Verification</strong>: effectively complete for the M1</li></ul>
 <p>baseline. This phase delivered stronger regression assertions, AO asserted coverage, automated thesis-comparison checks, <code>ff*</code> integrity/provenance validation, and incremental warning cleanup.</p>
 <ul><li><strong>Phase 3 / <code>0.3.x</code> Documentation</strong>: active and now late-stage. High-level</li></ul>
-<p>docs are much stronger, the code/test/results roots are easier to navigate, and the next push is selective in-code docstrings, keeping the status and handbook artifacts current, and preserving clarity as <code>incoming/</code> likely becomes the next heavier work lane.</p>
+<p>docs are much stronger, the code/test/results roots are easier to navigate, and the next push is selective in-code docstrings, keeping the status and handbook artifacts current, and closing the <code>1.0.0</code> release-hardening checklist while preserving clarity as <code>incoming/</code> likely becomes the next heavier work lane after release.</p>
 <ul><li><strong>Phase 4 / Research Readiness</strong>: not yet active as the main lane. We have</li></ul>
 <p>diagnosed alex&#x27;s <code>ij4</code> divergence, but we are intentionally holding off on broader experimental changes until the baseline is tighter.</p>
 <ul><li><strong>Phase 5 / Archive Recovery</strong>: active in parallel. The <code>historical finds/</code></li></ul>
@@ -3216,6 +3301,8 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <h4 id="section-renovation-roadmap-recommended-next-steps">Recommended next steps</h4>
 <ol><li>Keep the current validation spine green: <code>tests/run.lisp</code>,</li></ol>
 <p><code>tests/validate-artifacts.sh</code>, <code>tests/validate-ff-provenance.sh</code>, and <code>tests/validate-ao.sh</code> remain the merge gate for the supported baseline. Keep <code>REPOSITORY-STATUS.md</code>, <code>REPOSITORY-STRUCTURE-REVIEW.md</code>, and <code>DOCS-COVERAGE-REVIEW.md</code> in sync as the broader repo surface changes.</p>
+<ol><li>Turn <code>RELEASE-1.0-CHECKLIST.md</code> into the active punch list for the first</li></ol>
+<p>release candidate.</p>
 <ol><li>Treat the <code>0.3.x</code> documentation lane as late-stage: keep adding selective</li></ol>
 <p>docstrings and operator-facing clarifications, but focus on maintaining the now-strong docs/handbook/status surface rather than broad new README waves.</p>
 <ol><li>Prepare for heavier <code>incoming/</code> intake and review work. New materials are</li></ol>
@@ -3226,8 +3313,8 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <p>output in <code>tests/run.lisp</code> or <code>tests/validate-ao.sh</code> as regression noise to investigate, not normal background.</p>
 <ol><li>Keep building out the validation matrix when useful, but with the main</li></ol>
 <p>archive-heavy families now mapped or integrity-checked, avoid widening the supported umbrella casually without a clear post-M1 or intake-review benefit.</p>
-<ol><li>Only after the baseline, warning surface, provenance work, and intake flow</li></ol>
-<p>are tighter, begin controlled integration and research-readiness experiments such as alex DFA-option isolation against the validated snapshot.</p>
+<ol><li>Only after the baseline, warning surface, provenance work, release</li></ol>
+<p>hardening, and intake flow are tighter, begin controlled integration and research-readiness experiments such as alex DFA-option isolation against the validated snapshot.</p>
 <ol><li>Treat <code>Hanoi-4</code> explicitly as a phased lane: for <code>1.0</code>, keep a clear record</li></ol>
 <p>of the situation, artifacts, and any ingested references; for <code>2.0</code>, pursue actual behavioral/repeatability understanding once the material exists. Seed that future analysis with later Towers of Hanoi encoding literature such as Martins and Lynce (2008), which may help frame hierarchical setup, problem encodings, and repeatability questions more productively than the original 1998 context alone.</p>
 <h4 id="section-renovation-roadmap-phase-release-alignment">Phase / Release Alignment</h4>

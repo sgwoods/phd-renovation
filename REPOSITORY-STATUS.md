@@ -21,6 +21,7 @@ For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
 For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
 For the current bounded `Hanoi-4` position, see `HANOI-4-STATUS.md`.
+For the concrete `1.0.0` release gate, see `RELEASE-1.0-CHECKLIST.md`.
 
 ## Status Key
 
@@ -92,18 +93,20 @@ The repository now has three broad zones:
 
 ## Deliberate Mainline Priority
 
-The current post-M1 mainline priority should be:
+The current post-M1 mainline priority is release hardening for `1.0.0`.
 
 That means the current recommended order is:
 
 1. finish the `0.3.x` operator-docs pass,
 2. keep the supported validation spine green and the repo status artifacts
    current,
-3. prepare for heavier `incoming/` review work,
+3. close the items in `RELEASE-1.0-CHECKLIST.md`,
 4. treat ADT batch as a snapshot-specific preserved family rather than an
    active integration obligation,
-5. keep terrain as the major deferred recovery lane, and
-6. treat `Hanoi-4` as a documented `1.0`-bounded lane and a `2.0`
+5. prepare for heavier `incoming/` review work after the `1.0` surface is
+   clearly frozen,
+6. keep terrain as the major deferred recovery lane, and
+7. treat `Hanoi-4` as a documented `1.0`-bounded lane and a `2.0`
    research/repeatability goal.
 
 The current ADT batch note lives in `ADT-BATCH-INTEGRATION.md`.
