@@ -94,6 +94,13 @@ readers:
 - `extras/README.md`
 - `ADT-Batch/README.md`
 
+The active working-state data areas now also explain themselves locally:
+
+- `ADT-Random/README.md`
+- `ADT-Situation/README.md`
+- `MPR-Random/README.md`
+- `MPR-Situation/README.md`
+
 ## AO Support In `extras/`
 
 The `extras/` directory is important, but it is not part of the ASDF system.

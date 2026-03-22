@@ -80,6 +80,30 @@ HANDBOOK_SOURCES = [
         include_in_quick_index=False,
     ),
     HandbookSource(
+        "qcsp3 ADT-Random Guide",
+        "qcsp3/ADT-Random/README.md",
+        "Local guide to the maintained direct-ADT random-seed workspace and how it differs from preserved batch archives.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "qcsp3 ADT-Situation Guide",
+        "qcsp3/ADT-Situation/README.md",
+        "Local guide to the generated direct-ADT situation workspace used for maintained-line input state and bridge/debug analysis.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "qcsp3 MPR-Random Guide",
+        "qcsp3/MPR-Random/README.md",
+        "Local guide to the maintained MPR random-seed workspace and its role in reproducibility/debugging.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "qcsp3 MPR-Situation Guide",
+        "qcsp3/MPR-Situation/README.md",
+        "Local guide to the generated MPR situation workspace under the maintained solver line.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "May29 extras Guide",
         "qcsp-may29-1996/extras/README.md",
         "Local guide to the May29 snapshot's AO / test4 support layer and its role in the bounded AO baseline.",
