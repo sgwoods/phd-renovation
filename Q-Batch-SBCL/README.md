@@ -11,6 +11,7 @@ replication.
 - `ij2.sh`, `ij3.sh`, `ij4.sh`, `run-may29-all.sh`, `run-alex-all.sh`: runner
   scripts for the supported experiment families.
 - `Graph/`: data extraction, comparison plotting, and tracked overlay outputs.
+  See `Graph/README.md` for the local plotting/data-flow guide.
 
 ## Result Layout
 
@@ -46,3 +47,16 @@ bash tests/validate-artifacts.sh
 
 That validation path compares regenerated SBCL CI tables against the preserved
 ACL baseline under `data/acl-experiments/Graph/`.
+
+## Operator Split
+
+Use this directory in two ways:
+
+1. as the main experiment runner surface through the `ij*.sh` and
+   `run-*-all.sh` scripts,
+2. as the parent workspace for the plotting/comparison layer under `Graph/`.
+
+If the question is about rerunning experiment families, start here.
+
+If the question is about extracted tables, overlay PNGs, or comparison PDFs,
+drop into `Graph/README.md`.

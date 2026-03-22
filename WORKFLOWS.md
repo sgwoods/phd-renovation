@@ -64,6 +64,7 @@ Best for:
 - rebuilding the plotted thesis-result story.
 
 Main guide: `Q-Batch-SBCL/README.md`
+Plot/data-flow guide: `Q-Batch-SBCL/Graph/README.md`
 
 ### 4. Status, Dashboard, Handbook, And Public Page Sync
 

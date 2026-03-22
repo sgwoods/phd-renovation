@@ -482,7 +482,11 @@ h1{
         </li>
         <li>
           <a href="#section-experiment-workspace-guide">Experiment Workspace Guide</a>
-          <ul class="subtoc"><li><a href="#section-experiment-workspace-guide-what-lives-here">What Lives Here</a></li><li><a href="#section-experiment-workspace-guide-result-layout">Result Layout</a></li><li><a href="#section-experiment-workspace-guide-supported-workflow">Supported Workflow</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-experiment-workspace-guide-what-lives-here">What Lives Here</a></li><li><a href="#section-experiment-workspace-guide-result-layout">Result Layout</a></li><li><a href="#section-experiment-workspace-guide-supported-workflow">Supported Workflow</a></li><li><a href="#section-experiment-workspace-guide-operator-split">Operator Split</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-graph-workspace-guide">Graph Workspace Guide</a>
+          <ul class="subtoc"><li><a href="#section-graph-workspace-guide-what-lives-here">What Lives Here</a></li><li><a href="#section-graph-workspace-guide-tracked-plotting-control-files">Tracked plotting/control files</a></li><li><a href="#section-graph-workspace-guide-generated-comparison-tables">Generated comparison tables</a></li><li><a href="#section-graph-workspace-guide-generated-visual-outputs">Generated visual outputs</a></li><li><a href="#section-graph-workspace-guide-main-inputs">Main Inputs</a></li><li><a href="#section-graph-workspace-guide-supported-operator-flow">Supported Operator Flow</a></li><li><a href="#section-graph-workspace-guide-direct-script-use">Direct Script Use</a></li><li><a href="#section-graph-workspace-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-data-guide">data Guide</a>
@@ -658,7 +662,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -1205,6 +1209,7 @@ bash tests/validate-ao.sh</code></pre>
 <ul><li><code>ij2*.lisp</code>, <code>ij3*.lisp</code>, <code>ij4*.lisp</code>: generated per-noise experiment drivers.</li><li><code>ij2.sh</code>, <code>ij3.sh</code>, <code>ij4.sh</code>, <code>run-may29-all.sh</code>, <code>run-alex-all.sh</code>: runner</li></ul>
 <p>scripts for the supported experiment families.</p>
 <ul><li><code>Graph/</code>: data extraction, comparison plotting, and tracked overlay outputs.</li></ul>
+<p>See <code>Graph/README.md</code> for the local plotting/data-flow guide.</p>
 <h3 id="section-experiment-workspace-guide-result-layout">Result Layout</h3>
 <p>This directory mixes tracked experiment infrastructure with runtime-generated outputs:</p>
 <ul><li>Tracked: runner scripts, bootstrap/generator Lisp files, <code>Graph/*.py</code>,</li></ul>
@@ -1222,6 +1227,59 @@ bash Q-Batch-SBCL/run-alex-all.sh</code></pre>
 <p>Regenerate comparison artifacts:</p>
 <pre><code class="language-bash">bash tests/validate-artifacts.sh</code></pre>
 <p>That validation path compares regenerated SBCL CI tables against the preserved ACL baseline under <code>data/acl-experiments/Graph/</code>.</p>
+<h3 id="section-experiment-workspace-guide-operator-split">Operator Split</h3>
+<p>Use this directory in two ways:</p>
+<ol><li>as the main experiment runner surface through the <code>ij*.sh</code> and</li></ol>
+<p><code>run-*-all.sh</code> scripts,</p>
+<ol><li>as the parent workspace for the plotting/comparison layer under <code>Graph/</code>.</li></ol>
+<p>If the question is about rerunning experiment families, start here.</p>
+<p>If the question is about extracted tables, overlay PNGs, or comparison PDFs, drop into <code>Graph/README.md</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-graph-workspace-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Graph Workspace Guide</h2>
+            <p class="sectionSummary">Local guide to the extracted CI tables, comparison scripts, and tracked overlay outputs.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../Q-Batch-SBCL/Graph/Q-Batch-SBCL/Graph/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory is the thesis-result comparison and plotting surface for the modern SBCL experiment workspace.</p>
+<p>Use it when the question is:</p>
+<ul><li>where do the extracted CI tables come from,</li><li>which files are generated versus tracked,</li><li>and which scripts rebuild the plotted comparison story.</li></ul>
+<h3 id="section-graph-workspace-guide-what-lives-here">What Lives Here</h3>
+<h4 id="section-graph-workspace-guide-tracked-plotting-control-files">Tracked plotting/control files</h4>
+<ul><li><code>extract-data.py</code></li><li><code>compare-plots.py</code></li><li><code>compare-ij2-overlay.py</code></li><li><code>compare-all-overlay.py</code></li><li>the <code>*.gp</code> gnuplot helpers</li></ul>
+<p>These are maintained operator/build files.</p>
+<h4 id="section-graph-workspace-guide-generated-comparison-tables">Generated comparison tables</h4>
+<p>Examples:</p>
+<ul><li><code>ij2-ci.dat</code></li><li><code>ij3-ci.dat</code></li><li><code>ij4-ci.dat</code></li><li><code>ij2-ci-time.dat</code></li><li><code>ij3-other-ci.dat</code></li><li><code>ij*-raw.dat</code></li></ul>
+<p>These are regenerated from the checked-in SBCL experiment outputs by <code>tests/validate-artifacts.sh</code>.</p>
+<h4 id="section-graph-workspace-guide-generated-visual-outputs">Generated visual outputs</h4>
+<p>Examples:</p>
+<ul><li><code>compare-ij2-overlay.png</code></li><li><code>compare-ij3-overlay.png</code></li><li><code>compare-ij4-overlay.png</code></li><li><code>compare-all-overlay.png</code></li><li><code>compare-*.pdf</code></li></ul>
+<p>The overlay PNGs are tracked because they are part of the published/readable artifact surface for the repo. The PDF outputs are generated comparison artifacts.</p>
+<h3 id="section-graph-workspace-guide-main-inputs">Main Inputs</h3>
+<p>This directory combines:</p>
+<ol><li>regenerated SBCL summary tables from the local <code>Q-Batch-SBCL/</code> runs,</li><li>preserved ACL baseline tables from <code>data/acl-experiments/Graph/</code>,</li><li>comparison plotting scripts that overlay qcsp3, may29, alex, and ACL views.</li></ol>
+<h3 id="section-graph-workspace-guide-supported-operator-flow">Supported Operator Flow</h3>
+<p>If you want the supported rebuild path, run:</p>
+<pre><code class="language-bash">bash tests/validate-artifacts.sh</code></pre>
+<p>That path:</p>
+<ol><li>extracts fresh SBCL CI tables,</li><li>regenerates the tracked overlay PNGs,</li><li>rebuilds the comparison PDFs,</li><li>and runs the thesis-comparison check that protects the published trend story.</li></ol>
+<h3 id="section-graph-workspace-guide-direct-script-use">Direct Script Use</h3>
+<p>Use the Python scripts directly only when you want a narrower/manual refresh:</p>
+<pre><code class="language-bash">python3 Q-Batch-SBCL/Graph/compare-plots.py
+python3 Q-Batch-SBCL/Graph/compare-ij2-overlay.py
+python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
+<p>Use the gnuplot helpers when you specifically want the older plot path rather than the supported validation wrapper.</p>
+<h3 id="section-graph-workspace-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the task is confidence in the thesis-result story, use <code>tests/validate-artifacts.sh</code>.</p>
+<p>If the task is manual plot iteration or debugging one comparison layer, work directly in this directory.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-data-guide">
@@ -1317,7 +1375,7 @@ bash Q-Batch-SBCL/run-may29-all.sh
 bash Q-Batch-SBCL/run-alex-all.sh</code></pre>
 <p>Best for:</p>
 <ul><li>regenerating the modern experiment workspace,</li><li>comparing qcsp3, may29, alex, and preserved ACL baselines,</li><li>rebuilding the plotted thesis-result story.</li></ul>
-<p>Main guide: <code>Q-Batch-SBCL/README.md</code></p>
+<p>Main guide: <code>Q-Batch-SBCL/README.md</code> Plot/data-flow guide: <code>Q-Batch-SBCL/Graph/README.md</code></p>
 <h4 id="section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</h4>
 <p>Use this when plan/status wording changes.</p>
 <pre><code class="language-bash">python3 tools/generate-release-dashboard.py

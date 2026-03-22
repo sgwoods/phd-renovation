@@ -214,6 +214,7 @@ Directory guides:
 - `qcsp3/README.md`
 - `src/README.md`
 - `Q-Batch-SBCL/README.md`
+- `Q-Batch-SBCL/Graph/README.md`
 - `tests/README.md`
 - `WORKFLOWS.md`
 - `MANUAL-HELPERS.md`

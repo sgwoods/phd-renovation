@@ -84,6 +84,12 @@ HANDBOOK_SOURCES = [
         "How the modern experiment workspace, overlay plots, and generated run assets fit together.",
     ),
     HandbookSource(
+        "Graph Workspace Guide",
+        "Q-Batch-SBCL/Graph/README.md",
+        "Local guide to the extracted CI tables, comparison scripts, and tracked overlay outputs.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "data Guide",
         "data/README.md",
         "Catalog of preserved datasets, baseline results, thesis artifacts, and archive holdings.",
