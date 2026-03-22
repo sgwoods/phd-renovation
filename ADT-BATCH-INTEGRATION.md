@@ -186,6 +186,28 @@ The next live question is whether the current divergence comes from:
 4. or a difference between preserved batch-output conventions and the current
    base solver reporting path.
 
+The current leading suspect is now **random-state lineage**. The surviving
+`Rnddefault` bundles in `qcsp-may29-1996/`, `qcsp3/`, `qcsp-alex-sep16-1997/`,
+and `historical finds/yj-sun/Csp/` are not byte-identical, and the bridge was
+originally borrowing only the May29 copy. The new
+`tests/investigate-adt-batch-random-lineage.sh` probe exists to compare the
+same `ij2` bridge case across those surviving default bundles before we blame
+the core solver.
+
+Current result from that probe:
+
+| `Rnddefault` source | Tracked mismatches | Distance score | Current read |
+|---|---:|---:|---|
+| `qcsp3/ADT-Random/Rnddefault` | 6 | 391.2 | Closest surviving default bundle so far; still not a reproduction, but much nearer to the preserved `ij2-050.1` metrics than the others. |
+| `qcsp-may29-1996/ADT-Random/Rnddefault` | 6 | 1273.8 | Significantly further away than the qcsp3 bundle. |
+| `qcsp-alex-sep16-1997/ADT-Random/Rnddefault` | 6 | 1345.4 | Furthest successful surviving bundle among the maintained snapshots. |
+| `historical finds/yj-sun/Csp/ADT-Random/Rnddefault` | load failure | n/a | Does not currently load cleanly through the `csp` bridge path. |
+
+That does not prove random lineage is the entire story, but it does move the
+investigation from "generic random-state suspicion" to a concrete next read:
+the base `csp` bridge is much closer when seeded from the surviving qcsp3
+default bundle than when seeded from the may29 or alex copies.
+
 ## Non-Goal
 
 This bridge does **not** mean:
