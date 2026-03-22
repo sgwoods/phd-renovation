@@ -46,6 +46,10 @@ Working assumption: this is important context for neighboring program-analysis
 work, but it should remain reference-only unless we find direct evidence that
 it formed part of the thesis validation pipeline for this repo.
 
+Local guide:
+
+- `Unravel/README.md`
+
 ### `Refine/`
 
 This currently contains a small set of `.pob` artifacts under `Progs/`, with
@@ -53,6 +57,10 @@ mostly empty companion directories.
 
 Working assumption: these are likely historical tool outputs or snapshots worth
 preserving, but they are not yet understood well enough to integrate further.
+
+Local guide:
+
+- `Refine/README.md`
 
 ### `SurgA-Info` and `Unravel-changes/`
 
@@ -64,6 +72,10 @@ These are small but useful provenance clues:
 
 These notes may help connect `Gen++`, `Unravel`, and the Lisp experiments into
 one broader historical workflow.
+
+Local guide:
+
+- `Unravel-changes/README.md`
 
 ## Handling Rules
 

@@ -164,6 +164,18 @@ HANDBOOK_SOURCES = [
         include_in_quick_index=False,
     ),
     HandbookSource(
+        "Alex Results Guide",
+        "qcsp-alex-sep16-1997/testdata/Results/README.md",
+        "Local guide to the main preserved Alex result-family tree.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Alex Results-Loop Guide",
+        "qcsp-alex-sep16-1997/testdata/Results-Loop/README.md",
+        "Local guide to the preserved loop-analysis result subtree inside the Alex snapshot.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "Alex ADT-Random Guide",
         "qcsp-alex-sep16-1997/ADT-Random/README.md",
         "Local guide to the Alex snapshot's direct-ADT seed workspace.",
@@ -224,6 +236,24 @@ HANDBOOK_SOURCES = [
         "Historical Finds Guide",
         "historical finds/README.md",
         "How reviewed archive/recovery material is separated from canonical data and the supported baseline.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Refine Guide",
+        "historical finds/Refine/README.md",
+        "Local guide to the archive-only Refine subtree and its likely context role.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Unravel Guide",
+        "historical finds/Unravel/README.md",
+        "Local guide to the recovered external Unravel tool distribution and why it remains context-only.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "Unravel Changes Guide",
+        "historical finds/Unravel-changes/README.md",
+        "Local guide to the recovered Unravel-related notes subtree.",
         include_in_quick_index=False,
     ),
     HandbookSource(

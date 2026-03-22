@@ -108,6 +108,12 @@ src/                        Entry point
   for future finds.
 - `historical finds/README.md` explains the reviewed archive/recovery lane and
   how it differs from both `incoming/` and the supported baseline.
+- `qcsp-alex-sep16-1997/testdata/Results/README.md` and
+  `qcsp-alex-sep16-1997/testdata/Results-Loop/README.md` clarify the deeper
+  preserved Alex result families.
+- `historical finds/Refine/README.md`, `historical finds/Unravel/README.md`,
+  and `historical finds/Unravel-changes/README.md` provide local guidance for
+  the archive-only recovered tooling/context trees.
 
 ## ASDF Systems
 
@@ -240,6 +246,8 @@ Directory guides:
 - `qcsp-alex-sep16-1997/ADT-Situation/README.md`
 - `qcsp-alex-sep16-1997/MPR-Random/README.md`
 - `qcsp-alex-sep16-1997/MPR-Situation/README.md`
+- `qcsp-alex-sep16-1997/testdata/Results/README.md`
+- `qcsp-alex-sep16-1997/testdata/Results-Loop/README.md`
 - `WORKFLOWS.md`
 - `MANUAL-HELPERS.md`
 - `docs/README.md`
@@ -247,6 +255,9 @@ Directory guides:
 - `data/README.md`
 - `incoming/README.md`
 - `historical finds/README.md`
+- `historical finds/Refine/README.md`
+- `historical finds/Unravel/README.md`
+- `historical finds/Unravel-changes/README.md`
 - `REPOSITORY-STATUS.md`
 - `REPOSITORY-STRUCTURE-REVIEW.md`
 - `DOCS-COVERAGE-REVIEW.md`

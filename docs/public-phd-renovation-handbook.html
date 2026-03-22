@@ -542,6 +542,14 @@ h1{
           <ul class="subtoc"><li><a href="#section-alex-mybatch-guide-role">Role</a></li><li><a href="#section-alex-mybatch-guide-current-shape">Current Shape</a></li><li><a href="#section-alex-mybatch-guide-relationship-to-other-areas">Relationship To Other Areas</a></li><li><a href="#section-alex-mybatch-guide-supported-status">Supported Status</a></li><li><a href="#section-alex-mybatch-guide-what-this-directory-is-good-for">What This Directory Is Good For</a></li><li><a href="#section-alex-mybatch-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-alex-mybatch-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
+          <a href="#section-alex-results-guide">Alex Results Guide</a>
+          <ul class="subtoc"><li><a href="#section-alex-results-guide-role">Role</a></li><li><a href="#section-alex-results-guide-main-subfamilies">Main Subfamilies</a></li><li><a href="#section-alex-results-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-alex-results-loop-guide">Alex Results-Loop Guide</a>
+          <ul class="subtoc"><li><a href="#section-alex-results-loop-guide-role">Role</a></li><li><a href="#section-alex-results-loop-guide-current-shape">Current Shape</a></li><li><a href="#section-alex-results-loop-guide-relationship-to-other-areas">Relationship To Other Areas</a></li><li><a href="#section-alex-results-loop-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-alex-adt-random-guide">Alex ADT-Random Guide</a>
           <ul class="subtoc"><li><a href="#section-alex-adt-random-guide-role">Role</a></li><li><a href="#section-alex-adt-random-guide-relationship-to-other-areas">Relationship To Other Areas</a></li><li><a href="#section-alex-adt-random-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
@@ -584,6 +592,18 @@ h1{
         <li>
           <a href="#section-historical-finds-guide">Historical Finds Guide</a>
           <ul class="subtoc"><li><a href="#section-historical-finds-guide-current-intake">Current Intake</a></li><li><a href="#section-historical-finds-guide-yj-sun">`yj-sun/`</a></li><li><a href="#section-historical-finds-guide-unravel">`Unravel/`</a></li><li><a href="#section-historical-finds-guide-refine">`Refine/`</a></li><li><a href="#section-historical-finds-guide-surga-info-and-unravel-changes">`SurgA-Info` and `Unravel-changes/`</a></li><li><a href="#section-historical-finds-guide-handling-rules">Handling Rules</a></li><li><a href="#section-historical-finds-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-historical-finds-guide-typical-outcomes-after-review">Typical Outcomes After Review</a></li><li><a href="#section-historical-finds-guide-suggested-recovery-order">Suggested Recovery Order</a></li><li><a href="#section-historical-finds-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-refine-guide">Refine Guide</a>
+          <ul class="subtoc"><li><a href="#section-refine-guide-role">Role</a></li><li><a href="#section-refine-guide-current-read">Current Read</a></li><li><a href="#section-refine-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-unravel-guide">Unravel Guide</a>
+          <ul class="subtoc"><li><a href="#section-unravel-guide-role">Role</a></li><li><a href="#section-unravel-guide-current-read">Current Read</a></li><li><a href="#section-unravel-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-unravel-changes-guide">Unravel Changes Guide</a>
+          <ul class="subtoc"><li><a href="#section-unravel-changes-guide-role">Role</a></li><li><a href="#section-unravel-changes-guide-current-read">Current Read</a></li><li><a href="#section-unravel-changes-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-acl-baseline-guide">ACL Baseline Guide</a>
@@ -712,6 +732,10 @@ src/                        Entry point</code></pre>
 <p>for future finds.</p>
 <ul><li><code>historical finds/README.md</code> explains the reviewed archive/recovery lane and</li></ul>
 <p>how it differs from both <code>incoming/</code> and the supported baseline.</p>
+<ul><li><code>qcsp-alex-sep16-1997/testdata/Results/README.md</code> and</li></ul>
+<p><code>qcsp-alex-sep16-1997/testdata/Results-Loop/README.md</code> clarify the deeper preserved Alex result families.</p>
+<ul><li><code>historical finds/Refine/README.md</code>, <code>historical finds/Unravel/README.md</code>,</li></ul>
+<p>and <code>historical finds/Unravel-changes/README.md</code> provide local guidance for the archive-only recovered tooling/context trees.</p>
 <h3 id="section-project-overview-asdf-systems">ASDF Systems</h3>
 <table><thead><tr><th>System</th><th>Directory</th><th>Description</th></tr></thead><tbody><tr><td><code>:phd-research</code></td><td><code>csp/</code></td><td>Base CSP solver with queens, ADT, MPR domains</td></tr><tr><td><code>:qcsp3</code></td><td><code>qcsp3/</code></td><td>Extended solver with memory-CSP and Quilici search</td></tr><tr><td><code>:qcsp-may29-1996</code></td><td><code>qcsp-may29-1996/</code></td><td>Historical snapshot (May 1996)</td></tr><tr><td><code>:qcsp-alex-sep16-1997</code></td><td><code>qcsp-alex-sep16-1997/</code></td><td>Historical snapshot (Sep 1997)</td></tr></tbody></table>
 <h3 id="section-project-overview-quick-start">Quick Start</h3>
@@ -771,7 +795,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>csp/ADT-Random/README.md</code></li><li><code>csp/MPR-Random/README.md</code></li><li><code>csp/MPR-Situation/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>qcsp3/ADT-Random/README.md</code></li><li><code>qcsp3/ADT-Situation/README.md</code></li><li><code>qcsp3/MPR-Random/README.md</code></li><li><code>qcsp3/MPR-Situation/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>qcsp-may29-1996/extras/README.md</code></li><li><code>qcsp-may29-1996/ADT-Random/README.md</code></li><li><code>qcsp-may29-1996/ADT-Situation/README.md</code></li><li><code>qcsp-may29-1996/ADT-SituationMar96/README.md</code></li><li><code>qcsp-may29-1996/MPR-Random/README.md</code></li><li><code>qcsp-may29-1996/MPR-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MyBatch/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Situation/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DOCS-COVERAGE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>csp/ADT-Random/README.md</code></li><li><code>csp/MPR-Random/README.md</code></li><li><code>csp/MPR-Situation/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>qcsp3/extras/README.md</code></li><li><code>qcsp3/ADT-Batch/README.md</code></li><li><code>qcsp3/ADT-Random/README.md</code></li><li><code>qcsp3/ADT-Situation/README.md</code></li><li><code>qcsp3/MPR-Random/README.md</code></li><li><code>qcsp3/MPR-Situation/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>Q-Batch-SBCL/Graph/README.md</code></li><li><code>tests/README.md</code></li><li><code>qcsp-may29-1996/extras/README.md</code></li><li><code>qcsp-may29-1996/ADT-Random/README.md</code></li><li><code>qcsp-may29-1996/ADT-Situation/README.md</code></li><li><code>qcsp-may29-1996/ADT-SituationMar96/README.md</code></li><li><code>qcsp-may29-1996/MPR-Random/README.md</code></li><li><code>qcsp-may29-1996/MPR-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MyBatch/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/ADT-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Random/README.md</code></li><li><code>qcsp-alex-sep16-1997/MPR-Situation/README.md</code></li><li><code>qcsp-alex-sep16-1997/testdata/Results/README.md</code></li><li><code>qcsp-alex-sep16-1997/testdata/Results-Loop/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>historical finds/README.md</code></li><li><code>historical finds/Refine/README.md</code></li><li><code>historical finds/Unravel/README.md</code></li><li><code>historical finds/Unravel-changes/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DOCS-COVERAGE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -1738,6 +1762,55 @@ run-test4*.lisp                Legacy/manual AO harnesses (3 files)</code></pre>
 <p>If the task is about running supported experiments today, use <code>Q-Batch-SBCL/</code> instead.</p>
         </div>
       </section>
+      <section class="sectionCard" id="section-alex-results-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Alex Results Guide</h2>
+            <p class="sectionSummary">Local guide to the main preserved Alex result-family tree.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/qcsp-alex-sep16-1997/testdata/Results/qcsp-alex-sep16-1997/testdata/Results/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the main preserved results tree under the Alex snapshot&#x27;s <code>testdata/</code>.</p>
+<h3 id="section-alex-results-guide-role">Role</h3>
+<p><code>qcsp-alex-sep16-1997/testdata/Results/</code> is the broad preserved experiment results area for the Alex snapshot. It is historically important, but it is not part of the current supported validation spine.</p>
+<p>Use it as:</p>
+<ul><li>a preserved result-family archive,</li><li>a provenance source for Alex-era experiments,</li><li>and a reference when interpreting <code>testdata/</code> as a whole.</li></ul>
+<h3 id="section-alex-results-guide-main-subfamilies">Main Subfamilies</h3>
+<table><thead><tr><th>Subdirectory</th><th>Current read</th></tr></thead><tbody><tr><td><code>exp-1</code>, <code>exp-2</code>, <code>exp-3</code>, <code>exp-6</code>, <code>exp-9</code>, <code>exp-10</code></td><td>Preserved numbered experiment families.</td></tr><tr><td><code>bexp-2</code>, <code>bexp-10</code>, <code>bexp-ssa</code>, <code>bexp-y2k</code></td><td>Batch or batch-like experiment groupings preserved from the Alex era.</td></tr><tr><td><code>PS/</code></td><td>Plot/PostScript output layer for parts of the preserved result story.</td></tr><tr><td><code>Inter/</code></td><td>Intermediate or helper result material.</td></tr><tr><td><code>before-dec-30/</code></td><td>Older preserved pre-cutoff result layer.</td></tr><tr><td><code>exp-8-d/</code></td><td>Preserved special-case experiment family with its own nested <code>exp-8</code> subtree.</td></tr></tbody></table>
+<h3 id="section-alex-results-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If you need the broad Alex preserved result families, start here.</p>
+<p>If you need the supported modern experiment path, use <code>Q-Batch-SBCL/</code> instead.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-alex-results-loop-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Alex Results-Loop Guide</h2>
+            <p class="sectionSummary">Local guide to the preserved loop-analysis result subtree inside the Alex snapshot.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/qcsp-alex-sep16-1997/testdata/Results-Loop/qcsp-alex-sep16-1997/testdata/Results-Loop/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the loop-analysis result subtree under the Alex snapshot&#x27;s <code>testdata/</code>.</p>
+<h3 id="section-alex-results-loop-guide-role">Role</h3>
+<p><code>qcsp-alex-sep16-1997/testdata/Results-Loop/</code> preserves a specialized loop-focused result family that sits beside the broader <code>Results/</code> tree.</p>
+<p>This is archive/provenance material, not a supported active validation surface.</p>
+<h3 id="section-alex-results-loop-guide-current-shape">Current Shape</h3>
+<p>The tree includes:</p>
+<ul><li>loop-oriented preserved results,</li><li>and a <code>before-dec-30/</code> historical layer.</li></ul>
+<h3 id="section-alex-results-loop-guide-relationship-to-other-areas">Relationship To Other Areas</h3>
+<ul><li><code>testdata/Results/</code> is the broader preserved Alex results tree.</li><li><code>testdata/thesis-results/</code> is the publication-layout layer.</li><li><code>Q-Batch-SBCL/</code> is the supported modern experiment workspace.</li></ul>
+<h3 id="section-alex-results-loop-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>Use this directory when the question is specifically about preserved loop-analysis results, not when you want the main current experiment path.</p>
+        </div>
+      </section>
       <section class="sectionCard" id="section-alex-adt-random-guide">
         <div class="sectionHeader">
           <div class="sectionTitleWrap">
@@ -2164,14 +2237,20 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <h4 id="section-historical-finds-guide-unravel"><code>Unravel/</code></h4>
 <p>This looks like an external NIST release of the Unravel slicing tool, including source archives and two technical reports (<code>NIST-IR-5691</code> volumes 1 and 2).</p>
 <p>Working assumption: this is important context for neighboring program-analysis work, but it should remain reference-only unless we find direct evidence that it formed part of the thesis validation pipeline for this repo.</p>
+<p>Local guide:</p>
+<ul><li><code>Unravel/README.md</code></li></ul>
 <h4 id="section-historical-finds-guide-refine"><code>Refine/</code></h4>
 <p>This currently contains a small set of <code>.pob</code> artifacts under <code>Progs/</code>, with mostly empty companion directories.</p>
 <p>Working assumption: these are likely historical tool outputs or snapshots worth preserving, but they are not yet understood well enough to integrate further.</p>
+<p>Local guide:</p>
+<ul><li><code>Refine/README.md</code></li></ul>
 <h4 id="section-historical-finds-guide-surga-info-and-unravel-changes"><code>SurgA-Info</code> and <code>Unravel-changes/</code></h4>
 <p>These are small but useful provenance clues:</p>
 <ul><li><code>SurgA-Info</code> links <code>SurgeonsA</code>, <code>tkXsurgeon</code>, and <code>unravel</code></li><li><code>Unravel-changes/SteveLog</code> contains notes about parser output, variable type</li></ul>
 <p>extensions, and dataflow representation needs</p>
 <p>These notes may help connect <code>Gen++</code>, <code>Unravel</code>, and the Lisp experiments into one broader historical workflow.</p>
+<p>Local guide:</p>
+<ul><li><code>Unravel-changes/README.md</code></li></ul>
 <h3 id="section-historical-finds-guide-handling-rules">Handling Rules</h3>
 <ol><li>Do not mix files from this directory into the validated baseline casually.</li><li>Preserve original filenames, directory layout, and timestamps where</li></ol>
 <p>possible.</p>
@@ -2197,6 +2276,81 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>direct dependency on thesis validation is established.</p>
 <h3 id="section-historical-finds-guide-rule-of-thumb">Rule Of Thumb</h3>
 <p>If the material helps explain how the historical project was assembled, but not what the current supported baseline should execute, this is probably the right place for it.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-refine-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Refine Guide</h2>
+            <p class="sectionSummary">Local guide to the archive-only Refine subtree and its likely context role.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/historical finds/Refine/historical finds/Refine/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the <code>historical finds/Refine/</code> archive subtree.</p>
+<h3 id="section-refine-guide-role">Role</h3>
+<p>This directory appears to preserve auxiliary program/refinement material rather than a runnable mainline solver component.</p>
+<p>The current tracked contents are:</p>
+<ul><li><code>Progs/</code> with <code>.pob</code> program/object artifacts,</li><li><code>Reports/</code>,</li><li><code>Tmp/</code>.</li></ul>
+<h3 id="section-refine-guide-current-read">Current Read</h3>
+<p>The strongest current interpretation is:</p>
+<ul><li>useful archive/context material,</li><li>possibly tied to refinement or slicing workflows around the same era as</li></ul>
+<p>other recovered tooling,</p>
+<ul><li>but not part of the supported solver baseline or current validation spine.</li></ul>
+<h3 id="section-refine-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>Treat this directory as archive/context material unless a later provenance pass proves a tighter operational connection.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-unravel-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Unravel Guide</h2>
+            <p class="sectionSummary">Local guide to the recovered external Unravel tool distribution and why it remains context-only.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/historical finds/Unravel/historical finds/Unravel/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the recovered <code>Unravel</code> subtree.</p>
+<h3 id="section-unravel-guide-role">Role</h3>
+<p>This directory preserves an external program-slicing/tooling distribution, including:</p>
+<ul><li>NIST documentation volumes,</li><li>an upstream <code>README</code>,</li><li>and a large <code>unravel_r2.2+/</code> source/tool tree.</li></ul>
+<p>It is not part of the supported Lisp solver baseline.</p>
+<h3 id="section-unravel-guide-current-read">Current Read</h3>
+<p><code>Unravel/</code> is best read as:</p>
+<ul><li>a preserved external-tool dependency or context layer,</li><li>important for historical interpretation,</li><li>but not a maintained or integrated build target in this repo.</li></ul>
+<h3 id="section-unravel-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>Use this directory for provenance and external-tool context, not for current repo workflows.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-unravel-changes-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Unravel Changes Guide</h2>
+            <p class="sectionSummary">Local guide to the recovered Unravel-related notes subtree.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/historical finds/Unravel-changes/historical finds/Unravel-changes/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Local guide to the <code>historical finds/Unravel-changes/</code> notes subtree.</p>
+<h3 id="section-unravel-changes-guide-role">Role</h3>
+<p>This directory is primarily a note/log layer rather than a codebase.</p>
+<p>The key tracked item is:</p>
+<ul><li><code>SteveLog</code></li></ul>
+<h3 id="section-unravel-changes-guide-current-read">Current Read</h3>
+<p>These notes appear to capture observations about parser output, type handling, or related toolchain behavior around the Unravel/Gen++ side of the research environment.</p>
+<p>That makes this directory:</p>
+<ul><li>historically useful,</li><li>potentially important for provenance interpretation,</li><li>but not part of the supported integrated solver path.</li></ul>
+<h3 id="section-unravel-changes-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>Read this directory as explanatory notes that may connect recovered external tools to the Lisp-side experiments.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-acl-baseline-guide">

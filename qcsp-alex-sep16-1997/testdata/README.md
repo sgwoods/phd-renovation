@@ -17,6 +17,19 @@ solver for program understanding. This directory is part of the September
 | fmkfile/ | 8 | Makefile analysis results |
 | Results-Loop/ | 40 | Loop analysis results |
 
+Local guides:
+
+- `Results/README.md`
+- `Results-Loop/README.md`
+
+## Reading Hints
+
+- `Results/` is the broad preserved experiment-results tree.
+- `Results-Loop/` is a specialized loop-analysis result family.
+- `thesis-results/` is the publication-layout layer, not the broad raw archive.
+- `data-c/`, `data-d/`, and `data-y/` are preserved dependency/input-side
+  materials rather than the main result summaries.
+
 ## Top-Level Files
 
 | File | Description |
