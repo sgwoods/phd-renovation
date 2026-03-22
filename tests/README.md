@@ -43,13 +43,18 @@ start here.
 - `investigate-adt-batch-source-drift.sh` / `run-adt-batch-input-shape-generic.lisp`:
   compare that pre-search `ij2` shape across maintained source/dist variants.
   The current result is that `qcsp3/dist1` is materially closer to the
-  preserved `ij2-050.1` preprocessing metrics than `csp/dist1`, while the
-  carried `qcsp3` `old-dist1-pre-quilici` label is not currently runnable.
+  preserved `ij2-050.1` preprocessing metrics than `csp/dist1`.
 - `investigate-adt-batch-qcsp3-bridge.sh` / `run-adt-batch-bridge-qcsp3-ij2.lisp`:
   run the same narrow `ij2` bridge through maintained `qcsp3` using a
   legacy-compatible temporary workdir. The current result is still divergent,
   but materially closer to the preserved case than the maintained `csp`
   bridge on the tracked non-timing metrics.
+- `investigate-adt-batch-qcsp3-old-dist1-bridge.sh`:
+  reruns that same narrow `ij2` qcsp3 bridge through a temporary normalized
+  copy of the carried `old-dist1-pre-quilici` distribution. The current result
+  is that the preserved pre-Quilici label is runnable in isolation, but it
+  lands farther from the preserved `ij2-050.1` metrics than maintained
+  `qcsp3/dist1`.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.

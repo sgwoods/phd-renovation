@@ -11,11 +11,15 @@
   (or (uiop:getenv name)
       (error "Missing required environment variable: ~A" name)))
 
+(defun env-or (name fallback)
+  (or (uiop:getenv name) fallback))
+
 (let* ((project-root (make-pathname :directory (butlast (pathname-directory
                                                          (truename *load-pathname*)))
                                     :device (pathname-device (truename *load-pathname*))))
        (bridge-workdir (truename (required-env "PHD_ADT_QCSP3_WORKDIR")))
-       (output-file (required-env "PHD_ADT_QCSP3_OUTPUT")))
+       (output-file (required-env "PHD_ADT_QCSP3_OUTPUT"))
+       (dist-id (env-or "PHD_ADT_QCSP3_DIST_ID" "dist1")))
   (pushnew project-root asdf:*central-registry* :test #'equal)
   (asdf:load-system :qcsp3)
 
@@ -30,7 +34,7 @@
              :situation-id "adt-t2-1"
              :sit-noise 50
              :template-id "adt-t2"
-             :rand-dist "dist1"
+             :rand-dist dist-id
              :forward-checking t
              :dynamic-rearrangement t
              :single-line-override t

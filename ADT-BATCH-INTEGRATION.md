@@ -247,15 +247,17 @@ pre-search surface across maintained source/dist variants using the surviving
 |---|---:|---:|---:|---:|---|
 | `csp/dist1` | 104 | 104.0 | 14.0 | 520 | Current narrow bridge baseline |
 | `qcsp3/dist1` | 87 | 87.0 | 8.4 | 435 | Materially closer to preserved `ij2-050.1` on the pre-search `Dsize` / `NCC` pair |
-| `qcsp3/old-dist1-pre-quilici` | n/a | n/a | n/a | n/a | Probe currently fails because the carried distribution entry is malformed for the current generator path |
+| `qcsp3/old-dist1-pre-quilici` | 111 | 111.0 | 12.2 | 490 | Runs when the carried distribution is normalized inside a temporary bridge copy, but lands farther from the preserved `ij2-050.1` metrics than `qcsp3/dist1` |
 
 That means the source-definition question is now sharper:
 although the preserved wrappers look closer to the older `csp` tree, the
 maintained `qcsp3` ADT setup currently produces a preprocessing surface
-closer to the preserved `ij2` case than the maintained `csp` setup does.
-The next useful bridge step is therefore likely a dedicated `qcsp3`-side
-batch-style runner, or an isolated repair of the carried
-`old-dist1-pre-quilici` entry so it can be compared fairly.
+closer to the preserved `ij2` case than either the maintained `csp` setup
+or the normalized `old-dist1-pre-quilici` variant does.
+The next useful bridge step is therefore no longer "repair old-dist1 and see
+if that explains the preserved case." That probe now runs and makes the fit
+worse. The next step is to understand why the maintained `qcsp3/dist1`
+preprocessing surface is still offset from the preserved archive.
 
 That dedicated `qcsp3`-side runner now exists as
 `tests/investigate-adt-batch-qcsp3-bridge.sh` /

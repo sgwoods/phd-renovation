@@ -50,7 +50,7 @@ For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 | `data/acl-experiments/` | ACL thesis-era baseline results | Yes | Yes | Yes | Yes | Direct baseline for the supported `ij2`/`ij3`/`ij4` comparison checks. |
 | `data/sparc-archive/PrevResults/` | Thesis-era / SPARC preserved results | Yes | Partly | Partly | Yes | Some families are integrity-checked; others are mapped but not rerun. |
 | `qcsp-may29-1996/NewData4b-Batch/` | Preserved `ff*` family source tree | Yes | Partly | Yes | Yes | `ff1`/`ff2`/`ff3` are now integrity-checked, not fully rerunnable through `qcsp3/`. |
-| `data/csp-adt-batch/` | Preserved ADT batch results | Yes | No, but bridge investigation started | Yes | Report-linked | Integrity-checkable preserved family; the first narrow `ij2` bridges now run under both maintained `csp` and maintained `qcsp3`. The mismatch still starts in preprocessing, and the dedicated `qcsp3` bridge is materially closer to the preserved case than the `csp` bridge. |
+| `data/csp-adt-batch/` | Preserved ADT batch results | Yes | No, but bridge investigation started | Yes | Report-linked | Integrity-checkable preserved family; the first narrow `ij2` bridges now run under both maintained `csp` and maintained `qcsp3`. The mismatch still starts in preprocessing, `qcsp3` is materially closer than `csp`, and a normalized `old-dist1-pre-quilici` probe now shows that the carried pre-Quilici distribution is not the missing reproduction key. |
 | `data/csp-batch/` + `data/csp-save-results/` | Earliest DREV-era batch family | Yes | No | Yes | Report-linked | Integrity-checkable preserved family; outside the integrated executable line. |
 | `historical finds/yj-sun/Csp/` | Archive recovery candidate | Yes | No | No | Indirectly | Strong provenance value; not part of the supported line. |
 | `historical finds/yj-sun/Gen++/` | Upstream toolchain archive | Partly | No | No | Indirectly | Important context for historical input generation, but not integrated. |
@@ -109,7 +109,8 @@ That means the current recommended order is:
 The current bridge note for this target lives in `ADT-BATCH-INTEGRATION.md`.
 Current recommendation: treat the preserved wrapper mapping through `csp/` as
 valuable provenance, but use `qcsp3/` as the stronger maintained executable
-host for the next ADT batch bridge steps.
+host for the next ADT batch bridge steps. The latest old-dist probe also
+points away from distribution-label recovery as the main missing piece.
 
 ## Maintenance Rule
 
