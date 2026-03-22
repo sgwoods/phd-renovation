@@ -35,6 +35,11 @@ start here.
   case against the surviving `Rnddefault` bundles from may29, qcsp3, alex,
   and `historical finds/yj-sun/Csp` to test whether random-state lineage is
   driving the divergence.
+- `investigate-adt-batch-input-shape.sh`: inspects the generated `ij2`
+  situation and domain shape before search starts so we can tell whether the
+  bridge mismatch begins in preprocessing or only later in the search. Under
+  the current qcsp3-seeded bridge, it shows that `Dsize` and `NCC` already
+  diverge before backtracking starts.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.

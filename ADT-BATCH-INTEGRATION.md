@@ -219,6 +219,26 @@ the bridge still diverges, but it now stays much closer to the preserved
 archive on NCC, TCC, BT/visited, and FC/DR cost than the earlier May29-seeded
 probe did.
 
+The next probe also answered a more important question:
+`tests/investigate-adt-batch-input-shape.sh` shows that the divergence now
+starts **before search**, not inside backtracking. Under the closer qcsp3 seed
+bundle, the generated bridge input state currently reports:
+
+| Input-shape probe field | Current bridge value |
+|---|---:|
+| Situation size | 104 |
+| Raw variable count | 5 |
+| Raw average domain size | 104.0 |
+| Node-consistent average domain size | 14.0 |
+| Node-consistency checks | 520 |
+
+Those last two values exactly match the bridge line's `Dsize` and `NCC`
+columns (`14.0` and `520`). That means the remaining mismatch is already
+present by the time preprocessing finishes. The current highest-value next
+question is therefore not "why does search branch differently?" but
+"why does the generated situation / node-consistency surface differ from the
+preserved `ij2-050.1` case?"
+
 ## Non-Goal
 
 This bridge does **not** mean:
