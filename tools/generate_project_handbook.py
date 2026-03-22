@@ -94,6 +94,18 @@ HANDBOOK_SOURCES = [
         "Operator-facing workflow map: validation, experiments, docs sync, and intake.",
     ),
     HandbookSource(
+        "docs Guide",
+        "docs/README.md",
+        "Which generated docs/status files are authoritative inputs versus build outputs.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
+        "tools Guide",
+        "tools/README.md",
+        "Which generator scripts own the dashboard, handbook, public page, and status manifest.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "Manual Helpers",
         "MANUAL-HELPERS.md",
         "Role of the root helper scripts and how they differ from the supported workflows.",

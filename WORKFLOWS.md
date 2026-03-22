@@ -85,6 +85,8 @@ Main sources:
 
 - `docs/release-dashboard-data.json`
 - `tools/generate-release-dashboard.py`
+- `docs/README.md`
+- `tools/README.md`
 
 ### 5. New Material Intake
 

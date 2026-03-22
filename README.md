@@ -92,8 +92,12 @@ src/                        Entry point
 - `docs/project-handbook.html` is the full generated human-readable handbook
   that gathers the major status, roadmap, workflow, and architecture docs into
   one indexed page.
+- `docs/README.md` explains which files under `docs/` are authoritative source
+  data versus generated outputs.
 - `MANUAL-HELPERS.md` explains the repo-root helper scripts and how they
   relate to the supported operator flow.
+- `tools/README.md` explains the maintained generators that keep the dashboard,
+  handbook, public page, and status manifest synchronized.
 - `REPOSITORY-STRUCTURE-REVIEW.md` classifies the repo layout into supported
   systems, result archives, experiment workspaces, and archive-only material.
 - `DUPLICATES-REVIEW.md` records which reviewed historical overlaps are true
@@ -213,6 +217,8 @@ Directory guides:
 - `tests/README.md`
 - `WORKFLOWS.md`
 - `MANUAL-HELPERS.md`
+- `docs/README.md`
+- `tools/README.md`
 - `data/README.md`
 - `incoming/README.md`
 - `REPOSITORY-STATUS.md`

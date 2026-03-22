@@ -493,6 +493,14 @@ h1{
           <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-new-material-intake">5. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
+          <a href="#section-docs-guide">docs Guide</a>
+          <ul class="subtoc"><li><a href="#section-docs-guide-authoritative-source">Authoritative Source</a></li><li><a href="#section-docs-guide-generated-repo-outputs">Generated Repo Outputs</a></li><li><a href="#section-docs-guide-public-sync-role">Public Sync Role</a></li><li><a href="#section-docs-guide-normal-regeneration-flow">Normal Regeneration Flow</a></li><li><a href="#section-docs-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-tools-guide">tools Guide</a>
+          <ul class="subtoc"><li><a href="#section-tools-guide-primary-scripts">Primary Scripts</a></li><li><a href="#section-tools-guide-generate-release-dashboard-py">`generate-release-dashboard.py`</a></li><li><a href="#section-tools-guide-generate-project-handbook-py">`generate_project_handbook.py`</a></li><li><a href="#section-tools-guide-source-ownership">Source Ownership</a></li><li><a href="#section-tools-guide-validation-pair">Validation Pair</a></li><li><a href="#section-tools-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-manual-helpers">Manual Helpers</a>
           <ul class="subtoc"><li><a href="#section-manual-helpers-supported-mainline-alternatives">Supported Mainline Alternatives</a></li><li><a href="#section-manual-helpers-root-helper-scripts">Root Helper Scripts</a></li><li><a href="#section-manual-helpers-run-test4-lisp">`run-test4.lisp`</a></li><li><a href="#section-manual-helpers-run-test4-may29-lisp">`run-test4-may29.lisp`</a></li><li><a href="#section-manual-helpers-run-test4-alex-lisp">`run-test4-alex.lisp`</a></li><li><a href="#section-manual-helpers-run-csp-tests-lisp">`run-csp-tests.lisp`</a></li><li><a href="#section-manual-helpers-renovate-lisp">`renovate.lisp`</a></li><li><a href="#section-manual-helpers-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
@@ -579,8 +587,12 @@ src/                        Entry point</code></pre>
 <p>secondary/manual ones.</p>
 <ul><li><code>docs/project-handbook.html</code> is the full generated human-readable handbook</li></ul>
 <p>that gathers the major status, roadmap, workflow, and architecture docs into one indexed page.</p>
+<ul><li><code>docs/README.md</code> explains which files under <code>docs/</code> are authoritative source</li></ul>
+<p>data versus generated outputs.</p>
 <ul><li><code>MANUAL-HELPERS.md</code> explains the repo-root helper scripts and how they</li></ul>
 <p>relate to the supported operator flow.</p>
+<ul><li><code>tools/README.md</code> explains the maintained generators that keep the dashboard,</li></ul>
+<p>handbook, public page, and status manifest synchronized.</p>
 <ul><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code> classifies the repo layout into supported</li></ul>
 <p>systems, result archives, experiment workspaces, and archive-only material.</p>
 <ul><li><code>DUPLICATES-REVIEW.md</code> records which reviewed historical overlaps are true</li></ul>
@@ -646,7 +658,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>ts-matches-type</code> logic was simplified relative to the earlier snapshots; the dormant DFA options may be the missing compensating mechanism.</p>
 <p>Plots are in <code>Q-Batch-SBCL/Graph/compare-*-overlay.png</code>.</p>
 <p>Directory guides:</p>
-<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
+<ul><li><code>csp/README.md</code></li><li><code>qcsp3/README.md</code></li><li><code>src/README.md</code></li><li><code>Q-Batch-SBCL/README.md</code></li><li><code>tests/README.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>MANUAL-HELPERS.md</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li><li><code>data/README.md</code></li><li><code>incoming/README.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>ADT-BATCH-INTEGRATION.md</code></li></ul>
 <h3 id="section-project-overview-license">License</h3>
 <p>Academic research code. See <code>data/thesis/</code> for the thesis.</p>
         </div>
@@ -1316,7 +1328,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li>validating that generated docs/status outputs match the structured source</li></ul>
 <p>data and tracked markdown sources.</p>
 <p>Main sources:</p>
-<ul><li><code>docs/release-dashboard-data.json</code></li><li><code>tools/generate-release-dashboard.py</code></li></ul>
+<ul><li><code>docs/release-dashboard-data.json</code></li><li><code>tools/generate-release-dashboard.py</code></li><li><code>docs/README.md</code></li><li><code>tools/README.md</code></li></ul>
 <h4 id="section-workflows-5-new-material-intake">5. New Material Intake</h4>
 <p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
 <ol><li>Drop the material under <code>incoming/</code> using any convenient dump name.</li><li>Review it.</li><li>Normalize the intake folder label if the contents reveal a better date/source.</li><li>Update <code>incoming/INDEX.md</code>.</li><li>Promote it into <code>data/</code>, <code>historical finds/</code>, a snapshot tree, or</li></ol>
@@ -1340,6 +1352,81 @@ sbcl --non-interactive --load &quot;run-test4-alex.lisp&quot;</code></pre>
 <p>If the task is about interactive solver use, use <code>src/main.lisp</code>.</p>
 <p>If the task is about the thesis-result experiment story, use <code>Q-Batch-SBCL/</code>.</p>
 <p>If the task is about new finds, use <code>incoming/</code> first.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-docs-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>docs Guide</h2>
+            <p class="sectionSummary">Which generated docs/status files are authoritative inputs versus build outputs.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="docs/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory contains generated project-status and handbook outputs plus the structured source data that drives them.</p>
+<p>Use this guide when you want to answer:</p>
+<ul><li>which files here are authoritative inputs,</li><li>which ones are generated outputs,</li><li>and which ones are mirrored to the public Pages repo.</li></ul>
+<h3 id="section-docs-guide-authoritative-source">Authoritative Source</h3>
+<p><code>release-dashboard-data.json</code> is the main structured status source for the generated project views.</p>
+<p>It carries the current build line, focus, roadmap timeline, handbook refresh policy, and the short public-facing status story used across the generated outputs.</p>
+<p>If the roadmap meaningfully moves, the current blocker changes, the harness materially changes, or the release focus shifts, update this file and then regenerate the outputs.</p>
+<h3 id="section-docs-guide-generated-repo-outputs">Generated Repo Outputs</h3>
+<p>These files are generated from the structured status source and markdown docs:</p>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody><tr><td><code>release-dashboard.html</code></td><td>Repo-local visual roadmap dashboard</td></tr><tr><td><code>project-handbook.html</code></td><td>Full generated handbook for human-readable project state</td></tr><tr><td><code>public-phd-renovation.html</code></td><td>Repo-side source for the public project page</td></tr><tr><td><code>public-phd-renovation-handbook.html</code></td><td>Repo-side source for the public handbook</td></tr><tr><td><code>public-status-phd-renovation.json</code></td><td>Manifest export for the shared public status interface</td></tr></tbody></table>
+<p>Do not hand-edit the generated HTML or JSON here unless you are debugging the generator itself. The normal path is to update the markdown or <code>release-dashboard-data.json</code>, then regenerate.</p>
+<h3 id="section-docs-guide-public-sync-role">Public Sync Role</h3>
+<p>The repo build produces the PhD-owned public assets that are later copied into the public Pages repo:</p>
+<ul><li><code>phd-renovation.html</code></li><li><code>phd-renovation-handbook.html</code></li><li><code>phd-renovation-dashboard.html</code></li><li><code>data/projects/phd-renovation.json</code></li></ul>
+<p>The shared public <code>index.html</code> is no longer owned directly by this repo. Instead, this repo exports its project status through <code>public-status-phd-renovation.json</code> in the interface format.</p>
+<h3 id="section-docs-guide-normal-regeneration-flow">Normal Regeneration Flow</h3>
+<pre><code class="language-bash">python3 tools/generate-release-dashboard.py
+bash tests/validate-dashboard.sh</code></pre>
+<p>That regeneration step updates the dashboard, handbook, public page source, public handbook source, and status manifest together.</p>
+<h3 id="section-docs-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>If the question is &quot;what is the current official project status view?&quot;, start here.</p>
+<p>If the question is &quot;how are these generated?&quot;, see <code>tools/README.md</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-tools-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>tools Guide</h2>
+            <p class="sectionSummary">Which generator scripts own the dashboard, handbook, public page, and status manifest.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../tools/tools/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory contains the repo&#x27;s maintained documentation/status generators.</p>
+<p>Use this guide when you want to know which script owns the dashboard, handbook, public page, or status manifest.</p>
+<h3 id="section-tools-guide-primary-scripts">Primary Scripts</h3>
+<h4 id="section-tools-guide-generate-release-dashboard-py"><code>generate-release-dashboard.py</code></h4>
+<p>This is the top-level status/doc generation entry point.</p>
+<p>It regenerates the project-facing outputs that need to stay synchronized:</p>
+<ul><li><code>docs/release-dashboard.html</code></li><li><code>docs/public-phd-renovation.html</code></li><li><code>docs/public-status-phd-renovation.json</code></li><li><code>docs/project-handbook.html</code></li><li><code>docs/public-phd-renovation-handbook.html</code></li></ul>
+<p>Run this after any meaningful roadmap, blocker, harness, or release-focus change.</p>
+<h4 id="section-tools-guide-generate-project-handbook-py"><code>generate_project_handbook.py</code></h4>
+<p>This builds the long-form handbook from the repo&#x27;s source markdown documents.</p>
+<p>Normally you do not need to call it directly, because <code>generate-release-dashboard.py</code> already includes it as part of the regular docs/status build.</p>
+<p>Use it directly only when debugging handbook generation in isolation.</p>
+<h3 id="section-tools-guide-source-ownership">Source Ownership</h3>
+<p>The generators draw from:</p>
+<ul><li><code>docs/release-dashboard-data.json</code> for structured roadmap/status data</li><li>the tracked markdown documents listed in <code>generate_project_handbook.py</code></li></ul>
+<p>If a new guide should appear in the handbook, add it to the handbook source list in <code>generate_project_handbook.py</code>.</p>
+<h3 id="section-tools-guide-validation-pair">Validation Pair</h3>
+<p>The supported validation check for these scripts is:</p>
+<pre><code class="language-bash">python3 tools/generate-release-dashboard.py
+bash tests/validate-dashboard.sh</code></pre>
+<p>If validation fails after a source change, the generated files in <code>docs/</code> are out of date or inconsistent with the expected public/status outputs.</p>
+<h3 id="section-tools-guide-rule-of-thumb">Rule Of Thumb</h3>
+<p>Update source docs and status data first.</p>
+<p>Then regenerate through <code>generate-release-dashboard.py</code>.</p>
+<p>Then validate with <code>tests/validate-dashboard.sh</code>.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-manual-helpers">
