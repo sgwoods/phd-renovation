@@ -50,7 +50,7 @@ For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 | `data/acl-experiments/` | ACL thesis-era baseline results | Yes | Yes | Yes | Yes | Direct baseline for the supported `ij2`/`ij3`/`ij4` comparison checks. |
 | `data/sparc-archive/PrevResults/` | Thesis-era / SPARC preserved results | Yes | Partly | Partly | Yes | Some families are integrity-checked; others are mapped but not rerun. |
 | `qcsp-may29-1996/NewData4b-Batch/` | Preserved `ff*` family source tree | Yes | Partly | Yes | Yes | `ff1`/`ff2`/`ff3` are now integrity-checked, not fully rerunnable through `qcsp3/`. |
-| `data/csp-adt-batch/` | Preserved ADT batch results | Yes | No, but bridge investigation started | Yes | Report-linked | Integrity-checkable preserved family; the first narrow `csp`-based `ij2` bridge now runs, defaults to the closer surviving `qcsp3` `Rnddefault` bundle, and now appears to diverge already in preprocessing rather than only later in search. |
+| `data/csp-adt-batch/` | Preserved ADT batch results | Yes | No, but bridge investigation started | Yes | Report-linked | Integrity-checkable preserved family; the first narrow `ij2` bridge now runs, defaults to the closer surviving `qcsp3` `Rnddefault` bundle, appears to diverge already in preprocessing, and `qcsp3/dist1` is currently closer to the preserved pre-search surface than `csp/dist1`. |
 | `data/csp-batch/` + `data/csp-save-results/` | Earliest DREV-era batch family | Yes | No | Yes | Report-linked | Integrity-checkable preserved family; outside the integrated executable line. |
 | `historical finds/yj-sun/Csp/` | Archive recovery candidate | Yes | No | No | Indirectly | Strong provenance value; not part of the supported line. |
 | `historical finds/yj-sun/Gen++/` | Upstream toolchain archive | Partly | No | No | Indirectly | Important context for historical input generation, but not integrated. |
@@ -107,8 +107,9 @@ That means the current recommended order is:
 4. keep terrain as the major deferred recovery lane.
 
 The current bridge note for this target lives in `ADT-BATCH-INTEGRATION.md`.
-Current recommendation: use `csp/` as the first executable bridge host for
-this family, then compare that bridge against `qcsp3/`.
+Current recommendation: treat the preserved wrapper mapping through `csp/` as
+valuable provenance, but let the next executable bridge step test whether
+`qcsp3/` is actually the better maintained host for reproducing this family.
 
 ## Maintenance Rule
 

@@ -239,6 +239,24 @@ question is therefore not "why does search branch differently?" but
 "why does the generated situation / node-consistency surface differ from the
 preserved `ij2-050.1` case?"
 
+`tests/investigate-adt-batch-source-drift.sh` now compares that same
+pre-search surface across maintained source/dist variants using the surviving
+`qcsp3/ADT-Random/Rnddefault` bundle:
+
+| Probe | Situation size | Raw avg domain | Node avg domain | Node checks | Read |
+|---|---:|---:|---:|---:|---|
+| `csp/dist1` | 104 | 104.0 | 14.0 | 520 | Current narrow bridge baseline |
+| `qcsp3/dist1` | 87 | 87.0 | 8.4 | 435 | Materially closer to preserved `ij2-050.1` on the pre-search `Dsize` / `NCC` pair |
+| `qcsp3/old-dist1-pre-quilici` | n/a | n/a | n/a | n/a | Probe currently fails because the carried distribution entry is malformed for the current generator path |
+
+That means the source-definition question is now sharper:
+although the preserved wrappers look closer to the older `csp` tree, the
+maintained `qcsp3` ADT setup currently produces a preprocessing surface
+closer to the preserved `ij2` case than the maintained `csp` setup does.
+The next useful bridge step is therefore likely a dedicated `qcsp3`-side
+batch-style runner, or an isolated repair of the carried
+`old-dist1-pre-quilici` entry so it can be compared fairly.
+
 ## Non-Goal
 
 This bridge does **not** mean:

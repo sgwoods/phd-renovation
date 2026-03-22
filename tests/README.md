@@ -40,6 +40,11 @@ start here.
   bridge mismatch begins in preprocessing or only later in the search. Under
   the current qcsp3-seeded bridge, it shows that `Dsize` and `NCC` already
   diverge before backtracking starts.
+- `investigate-adt-batch-source-drift.sh` / `run-adt-batch-input-shape-generic.lisp`:
+  compare that pre-search `ij2` shape across maintained source/dist variants.
+  The current result is that `qcsp3/dist1` is materially closer to the
+  preserved `ij2-050.1` preprocessing metrics than `csp/dist1`, while the
+  carried `qcsp3` `old-dist1-pre-quilici` label is not currently runnable.
 - `validate-ao.sh`: shell wrapper that runs `ao-run.lisp`.
 - `validate-thesis-comparison.py`: checks that regenerated SBCL `ij2` / `ij3` /
   `ij4` CI tables preserve the supported ACL baseline story.
