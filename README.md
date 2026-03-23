@@ -39,6 +39,10 @@ readable copy at
 <https://sgwoods.github.io/public/phd-renovation-handbook.html>. The same
 source data and doc-refresh build now drive the handbook, dashboard, and
 public-facing PhD project page so those views stay in sync.
+The thesis itself is available from the project home surfaces in both
+[`docs/phd-renovation-thesis.pdf`](docs/phd-renovation-thesis.pdf) and
+[`docs/phd-renovation-thesis.ps`](docs/phd-renovation-thesis.ps) form, with
+the canonical source PDF preserved under `data/thesis/`.
 
 ## Project Structure
 
@@ -54,7 +58,7 @@ data/                       Consolidated data directory (see data/README.md)
   csp-adt-batch/            ADT domain batch experiments (ij1-ij4)
   motors-releases/          MOTORS solver releases (.tar.Z, 1993)
   motors-backups/           MOTORS solver backups (.zoo, 1994)
-  thesis/                   PhD thesis PDF
+  thesis/                   Canonical PhD thesis source PDF
 Q-Batch-SBCL/               Replicated experiments (SBCL, M4 Mac)
   Graph/                    4-way comparison plots (ACL vs qcsp3 vs alex vs may29)
 incoming/                   Single intake bucket for newly found relevant material
@@ -75,6 +79,9 @@ src/                        Entry point
 - `Q-Batch-SBCL/` is the runnable SBCL experiment workspace. It holds the
   modern experiment drivers, generated run directories, and comparison plots.
 - `data/` holds preserved ACL/SPARC-era baselines and archive material.
+- `data/thesis/` holds the canonical thesis PDF; the docs/status build exports
+  public-facing `docs/phd-renovation-thesis.pdf` and
+  `docs/phd-renovation-thesis.ps` copies from it.
 - `incoming/` is the first stop for newly found relevant code, data,
   publications, or experiment artifacts before review and promotion. Dump
   names are fine; review can normalize the folder label later if the contents

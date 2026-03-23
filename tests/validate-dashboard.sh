@@ -15,6 +15,7 @@ required_inputs=(
   "docs/public-phd-renovation.html"
   "docs/public-phd-renovation-handbook.html"
   "docs/public-status-phd-renovation.json"
+  "data/thesis/Woods PHD CS-96-33 A Method of Program Understanding using Constraint Satisfaction.pdf"
 )
 
 for path in "${required_inputs[@]}"; do
@@ -68,6 +69,16 @@ if ! rg -q "Open release dashboard" docs/public-phd-renovation.html; then
   exit 1
 fi
 
+if ! rg -q "phd-renovation-thesis.pdf" docs/public-phd-renovation.html; then
+  echo "Public project page output is missing the thesis PDF link." >&2
+  exit 1
+fi
+
+if ! rg -q "phd-renovation-thesis.ps" docs/public-phd-renovation.html; then
+  echo "Public project page output is missing the thesis PostScript link." >&2
+  exit 1
+fi
+
 expected_build_line="$(python3 - <<'PY'
 import json
 from pathlib import Path
@@ -75,6 +86,25 @@ data = json.loads(Path("docs/release-dashboard-data.json").read_text())
 print(data["metrics"][2]["value"])
 PY
 )"
+
+thesis_pdf="docs/phd-renovation-thesis.pdf"
+thesis_ps="docs/phd-renovation-thesis.ps"
+source_thesis_pdf="data/thesis/Woods PHD CS-96-33 A Method of Program Understanding using Constraint Satisfaction.pdf"
+
+if [[ ! -s "$thesis_pdf" ]]; then
+  echo "Generated thesis PDF is missing." >&2
+  exit 1
+fi
+
+if [[ ! -s "$thesis_ps" ]]; then
+  echo "Generated thesis PostScript is missing." >&2
+  exit 1
+fi
+
+if ! cmp -s "$source_thesis_pdf" "$thesis_pdf"; then
+  echo "Generated thesis PDF is out of sync with the canonical thesis source." >&2
+  exit 1
+fi
 
 if ! rg -q "$expected_build_line" docs/public-phd-renovation.html; then
   echo "Public project page output is missing the current build line." >&2

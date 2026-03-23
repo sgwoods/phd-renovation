@@ -3,9 +3,22 @@
 This directory holds the thesis document that the repo is trying to make
 continuously checkable.
 
-## File
+## Canonical Source File
 
 - `Woods PHD CS-96-33 A Method of Program Understanding using Constraint Satisfaction.pdf`
+
+## Generated Public Copies
+
+The docs/status build exports stable public-facing copies from the canonical
+PDF:
+
+- `docs/phd-renovation-thesis.pdf`
+- `docs/phd-renovation-thesis.ps`
+
+The PDF copy is a direct synchronized mirror of the canonical source file.
+The PostScript copy is generated from that same canonical PDF during the
+regular docs/status build so the project home page can link both formats from
+one stable place.
 
 ## Why This Matters
 

@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import json
+import shutil
+import subprocess
 from html import escape
 from pathlib import Path
 
@@ -15,10 +17,20 @@ DATA_PATH = ROOT / "docs" / "release-dashboard-data.json"
 DASHBOARD_OUTPUT_PATH = ROOT / "docs" / "release-dashboard.html"
 PUBLIC_PAGE_OUTPUT_PATH = ROOT / "docs" / "public-phd-renovation.html"
 PUBLIC_STATUS_OUTPUT_PATH = ROOT / "docs" / "public-status-phd-renovation.json"
+THESIS_SOURCE_PDF_PATH = (
+    ROOT
+    / "data"
+    / "thesis"
+    / "Woods PHD CS-96-33 A Method of Program Understanding using Constraint Satisfaction.pdf"
+)
+THESIS_OUTPUT_PDF_PATH = ROOT / "docs" / "phd-renovation-thesis.pdf"
+THESIS_OUTPUT_PS_PATH = ROOT / "docs" / "phd-renovation-thesis.ps"
 PUBLIC_SITE_DIR = Path("/Users/stevenwoods/GitPages/public")
 PUBLIC_SITE_DASHBOARD_PATH = PUBLIC_SITE_DIR / "phd-renovation-dashboard.html"
 PUBLIC_SITE_PAGE_PATH = PUBLIC_SITE_DIR / "phd-renovation.html"
 PUBLIC_SITE_STATUS_PATH = PUBLIC_SITE_DIR / "data" / "projects" / "phd-renovation.json"
+PUBLIC_SITE_THESIS_PDF_PATH = PUBLIC_SITE_DIR / THESIS_OUTPUT_PDF_PATH.name
+PUBLIC_SITE_THESIS_PS_PATH = PUBLIC_SITE_DIR / THESIS_OUTPUT_PS_PATH.name
 
 STATUS_CLASS = {
     "done": "done",
@@ -745,8 +757,59 @@ def build_public_page(data: dict[str, object]) -> str:
 """
 
 
+def sync_binary_file(source_path: Path, output_path: Path) -> None:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    if output_path.exists() and source_path.read_bytes() == output_path.read_bytes():
+        return
+    shutil.copyfile(source_path, output_path)
+
+
+def generate_postscript_from_pdf(pdf_path: Path, ps_path: Path) -> None:
+    ps_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = ps_path.with_suffix(ps_path.suffix + ".tmp")
+    try:
+        subprocess.run(
+            [
+                "gs",
+                "-q",
+                "-dNOPAUSE",
+                "-dBATCH",
+                "-sDEVICE=ps2write",
+                f"-sOutputFile={tmp_path}",
+                str(pdf_path),
+            ],
+            check=True,
+        )
+    except FileNotFoundError as exc:
+        raise RuntimeError("Ghostscript (gs) is required to generate the thesis PostScript.") from exc
+
+    if ps_path.exists() and tmp_path.read_bytes() == ps_path.read_bytes():
+        tmp_path.unlink()
+        return
+    tmp_path.replace(ps_path)
+
+
+def sync_thesis_assets() -> None:
+    if not THESIS_SOURCE_PDF_PATH.exists():
+        raise FileNotFoundError(
+            f"Canonical thesis PDF is missing: {THESIS_SOURCE_PDF_PATH}"
+        )
+
+    sync_binary_file(THESIS_SOURCE_PDF_PATH, THESIS_OUTPUT_PDF_PATH)
+    generate_postscript_from_pdf(THESIS_SOURCE_PDF_PATH, THESIS_OUTPUT_PS_PATH)
+
+    if PUBLIC_SITE_DIR.exists():
+        try:
+            sync_binary_file(THESIS_OUTPUT_PDF_PATH, PUBLIC_SITE_THESIS_PDF_PATH)
+            sync_binary_file(THESIS_OUTPUT_PS_PATH, PUBLIC_SITE_THESIS_PS_PATH)
+        except PermissionError:
+            # CI and sandboxed runs still validate the repo-local outputs.
+            pass
+
+
 def main() -> None:
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+    sync_thesis_assets()
     dashboard_html = build_page(
         data,
         data["footer_html"],

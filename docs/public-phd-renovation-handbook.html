@@ -372,7 +372,7 @@ h1{
         </div>
         <div class="metaCard">
           <span class="metaLabel">Updated</span>
-          <span class="metaValue">March 22, 2026</span>
+          <span class="metaValue">March 23, 2026</span>
           <div class="metaNote">Dashboard now generated as part of the regular validation flow.</div>
         </div>
       </div>
@@ -664,7 +664,7 @@ h1{
         </li>
         <li>
           <a href="#section-thesis-guide">Thesis Guide</a>
-          <ul class="subtoc"><li><a href="#section-thesis-guide-file">File</a></li><li><a href="#section-thesis-guide-why-this-matters">Why This Matters</a></li><li><a href="#section-thesis-guide-what-the-thesis-covers">What The Thesis Covers</a></li><li><a href="#section-thesis-guide-practical-repo-relationship">Practical Repo Relationship</a></li><li><a href="#section-thesis-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-thesis-guide-canonical-source-file">Canonical Source File</a></li><li><a href="#section-thesis-guide-generated-public-copies">Generated Public Copies</a></li><li><a href="#section-thesis-guide-why-this-matters">Why This Matters</a></li><li><a href="#section-thesis-guide-what-the-thesis-covers">What The Thesis Covers</a></li><li><a href="#section-thesis-guide-practical-repo-relationship">Practical Repo Relationship</a></li><li><a href="#section-thesis-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-workflows">Workflows</a>
@@ -729,7 +729,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-project-structure">Project Structure</h3>
 <pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
@@ -742,7 +742,7 @@ data/                       Consolidated data directory (see data/README.md)
   csp-adt-batch/            ADT domain batch experiments (ij1-ij4)
   motors-releases/          MOTORS solver releases (.tar.Z, 1993)
   motors-backups/           MOTORS solver backups (.zoo, 1994)
-  thesis/                   PhD thesis PDF
+  thesis/                   Canonical PhD thesis source PDF
 Q-Batch-SBCL/               Replicated experiments (SBCL, M4 Mac)
   Graph/                    4-way comparison plots (ACL vs qcsp3 vs alex vs may29)
 incoming/                   Single intake bucket for newly found relevant material
@@ -755,7 +755,9 @@ src/                        Entry point</code></pre>
 <p>FiveAM suites, the asserted AO runner, and the artifact/thesis-result validation scripts that CI uses. The AO runner now covers the bounded M1 AO surface: qcsp3/may29 cases 1-3 plus wrappers, and the alex revise baseline.</p>
 <ul><li><code>Q-Batch-SBCL/</code> is the runnable SBCL experiment workspace. It holds the</li></ul>
 <p>modern experiment drivers, generated run directories, and comparison plots.</p>
-<ul><li><code>data/</code> holds preserved ACL/SPARC-era baselines and archive material.</li><li><code>incoming/</code> is the first stop for newly found relevant code, data,</li></ul>
+<ul><li><code>data/</code> holds preserved ACL/SPARC-era baselines and archive material.</li><li><code>data/thesis/</code> holds the canonical thesis PDF; the docs/status build exports</li></ul>
+<p>public-facing <code>docs/phd-renovation-thesis.pdf</code> and <code>docs/phd-renovation-thesis.ps</code> copies from it.</p>
+<ul><li><code>incoming/</code> is the first stop for newly found relevant code, data,</li></ul>
 <p>publications, or experiment artifacts before review and promotion. Dump names are fine; review can normalize the folder label later if the contents reveal a better date/source name.</p>
 <ul><li><code>historical finds/</code> is archive intake and provenance work, not supported</li></ul>
 <p>baseline code.</p>
@@ -2670,8 +2672,12 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
         </div>
         <div class="docBody">
 <p>This directory holds the thesis document that the repo is trying to make continuously checkable.</p>
-<h3 id="section-thesis-guide-file">File</h3>
+<h3 id="section-thesis-guide-canonical-source-file">Canonical Source File</h3>
 <ul><li><code>Woods PHD CS-96-33 A Method of Program Understanding using Constraint Satisfaction.pdf</code></li></ul>
+<h3 id="section-thesis-guide-generated-public-copies">Generated Public Copies</h3>
+<p>The docs/status build exports stable public-facing copies from the canonical PDF:</p>
+<ul><li><code>docs/phd-renovation-thesis.pdf</code></li><li><code>docs/phd-renovation-thesis.ps</code></li></ul>
+<p>The PDF copy is a direct synchronized mirror of the canonical source file. The PostScript copy is generated from that same canonical PDF during the regular docs/status build so the project home page can link both formats from one stable place.</p>
 <h3 id="section-thesis-guide-why-this-matters">Why This Matters</h3>
 <p>The thesis is not just background reading in this project. It is the main publication target behind the supported validation story.</p>
 <p>The repo&#x27;s primary goal is to keep the solver, preserved baselines, and reproduction harnesses aligned tightly enough that the thesis-result story remains explainable from a fresh checkout.</p>
@@ -2801,16 +2807,16 @@ sbcl --non-interactive --load &quot;run-test4-alex.lisp&quot;</code></pre>
 <p>If the roadmap meaningfully moves, the current blocker changes, the harness materially changes, or the release focus shifts, update this file and then regenerate the outputs.</p>
 <h3 id="section-docs-guide-generated-repo-outputs">Generated Repo Outputs</h3>
 <p>These files are generated from the structured status source and markdown docs:</p>
-<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody><tr><td><code>release-dashboard.html</code></td><td>Repo-local visual roadmap dashboard</td></tr><tr><td><code>project-handbook.html</code></td><td>Full generated handbook for human-readable project state</td></tr><tr><td><code>public-phd-renovation.html</code></td><td>Repo-side source for the public project page</td></tr><tr><td><code>public-phd-renovation-handbook.html</code></td><td>Repo-side source for the public handbook</td></tr><tr><td><code>public-status-phd-renovation.json</code></td><td>Manifest export for the shared public status interface</td></tr></tbody></table>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody><tr><td><code>release-dashboard.html</code></td><td>Repo-local visual roadmap dashboard</td></tr><tr><td><code>project-handbook.html</code></td><td>Full generated handbook for human-readable project state</td></tr><tr><td><code>public-phd-renovation.html</code></td><td>Repo-side source for the public project page</td></tr><tr><td><code>public-phd-renovation-handbook.html</code></td><td>Repo-side source for the public handbook</td></tr><tr><td><code>public-status-phd-renovation.json</code></td><td>Manifest export for the shared public status interface</td></tr><tr><td><code>phd-renovation-thesis.pdf</code></td><td>Stable generated public copy of the canonical thesis PDF</td></tr><tr><td><code>phd-renovation-thesis.ps</code></td><td>Stable generated PostScript copy derived from the canonical thesis PDF</td></tr></tbody></table>
 <p>Do not hand-edit the generated HTML or JSON here unless you are debugging the generator itself. The normal path is to update the markdown or <code>release-dashboard-data.json</code>, then regenerate.</p>
 <h3 id="section-docs-guide-public-sync-role">Public Sync Role</h3>
 <p>The repo build produces the PhD-owned public assets that are later copied into the public Pages repo:</p>
-<ul><li><code>phd-renovation.html</code></li><li><code>phd-renovation-handbook.html</code></li><li><code>phd-renovation-dashboard.html</code></li><li><code>data/projects/phd-renovation.json</code></li></ul>
+<ul><li><code>phd-renovation.html</code></li><li><code>phd-renovation-handbook.html</code></li><li><code>phd-renovation-dashboard.html</code></li><li><code>phd-renovation-thesis.pdf</code></li><li><code>phd-renovation-thesis.ps</code></li><li><code>data/projects/phd-renovation.json</code></li></ul>
 <p>The shared public <code>index.html</code> is no longer owned directly by this repo. Instead, this repo exports its project status through <code>public-status-phd-renovation.json</code> in the interface format.</p>
 <h3 id="section-docs-guide-normal-regeneration-flow">Normal Regeneration Flow</h3>
 <pre><code class="language-bash">python3 tools/generate-release-dashboard.py
 bash tests/validate-dashboard.sh</code></pre>
-<p>That regeneration step updates the dashboard, handbook, public page source, public handbook source, and status manifest together.</p>
+<p>That regeneration step updates the dashboard, handbook, public page source, public handbook source, status manifest, and the stable thesis PDF/PS copies together.</p>
 <h3 id="section-docs-guide-rule-of-thumb">Rule Of Thumb</h3>
 <p>If the question is &quot;what is the current official project status view?&quot;, start here.</p>
 <p>If the question is &quot;how are these generated?&quot;, see <code>tools/README.md</code>.</p>
@@ -2834,7 +2840,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <h4 id="section-tools-guide-generate-release-dashboard-py"><code>generate-release-dashboard.py</code></h4>
 <p>This is the top-level status/doc generation entry point.</p>
 <p>It regenerates the project-facing outputs that need to stay synchronized:</p>
-<ul><li><code>docs/release-dashboard.html</code></li><li><code>docs/public-phd-renovation.html</code></li><li><code>docs/public-status-phd-renovation.json</code></li><li><code>docs/project-handbook.html</code></li><li><code>docs/public-phd-renovation-handbook.html</code></li></ul>
+<ul><li><code>docs/release-dashboard.html</code></li><li><code>docs/public-phd-renovation.html</code></li><li><code>docs/public-status-phd-renovation.json</code></li><li><code>docs/project-handbook.html</code></li><li><code>docs/public-phd-renovation-handbook.html</code></li><li><code>docs/phd-renovation-thesis.pdf</code></li><li><code>docs/phd-renovation-thesis.ps</code></li></ul>
 <p>Run this after any meaningful roadmap, blocker, harness, or release-focus change.</p>
 <h4 id="section-tools-guide-generate-project-handbook-py"><code>generate_project_handbook.py</code></h4>
 <p>This builds the long-form handbook from the repo&#x27;s source markdown documents.</p>
@@ -2848,7 +2854,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>The supported validation check for these scripts is:</p>
 <pre><code class="language-bash">python3 tools/generate-release-dashboard.py
 bash tests/validate-dashboard.sh</code></pre>
-<p>If validation fails after a source change, the generated files in <code>docs/</code> are out of date or inconsistent with the expected public/status outputs.</p>
+<p>If validation fails after a source change, the generated files in <code>docs/</code> are out of date or inconsistent with the expected public/status outputs and exported thesis assets.</p>
 <h3 id="section-tools-guide-rule-of-thumb">Rule Of Thumb</h3>
 <p>Update source docs and status data first.</p>
 <p>Then regenerate through <code>generate-release-dashboard.py</code>.</p>

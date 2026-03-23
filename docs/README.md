@@ -33,6 +33,8 @@ These files are generated from the structured status source and markdown docs:
 | `public-phd-renovation.html` | Repo-side source for the public project page |
 | `public-phd-renovation-handbook.html` | Repo-side source for the public handbook |
 | `public-status-phd-renovation.json` | Manifest export for the shared public status interface |
+| `phd-renovation-thesis.pdf` | Stable generated public copy of the canonical thesis PDF |
+| `phd-renovation-thesis.ps` | Stable generated PostScript copy derived from the canonical thesis PDF |
 
 Do not hand-edit the generated HTML or JSON here unless you are debugging the
 generator itself. The normal path is to update the markdown or
@@ -46,6 +48,8 @@ the public Pages repo:
 - `phd-renovation.html`
 - `phd-renovation-handbook.html`
 - `phd-renovation-dashboard.html`
+- `phd-renovation-thesis.pdf`
+- `phd-renovation-thesis.ps`
 - `data/projects/phd-renovation.json`
 
 The shared public `index.html` is no longer owned directly by this repo.
@@ -60,7 +64,8 @@ bash tests/validate-dashboard.sh
 ```
 
 That regeneration step updates the dashboard, handbook, public page source,
-public handbook source, and status manifest together.
+public handbook source, status manifest, and the stable thesis PDF/PS copies
+together.
 
 ## Rule Of Thumb
 

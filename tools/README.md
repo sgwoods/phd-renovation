@@ -18,6 +18,8 @@ It regenerates the project-facing outputs that need to stay synchronized:
 - `docs/public-status-phd-renovation.json`
 - `docs/project-handbook.html`
 - `docs/public-phd-renovation-handbook.html`
+- `docs/phd-renovation-thesis.pdf`
+- `docs/phd-renovation-thesis.ps`
 
 Run this after any meaningful roadmap, blocker, harness, or release-focus
 change.
@@ -52,7 +54,8 @@ bash tests/validate-dashboard.sh
 ```
 
 If validation fails after a source change, the generated files in `docs/` are
-out of date or inconsistent with the expected public/status outputs.
+out of date or inconsistent with the expected public/status outputs and
+exported thesis assets.
 
 ## Rule Of Thumb
 
