@@ -670,6 +670,10 @@ h1{
           <ul class="subtoc"><li><a href="#section-incoming-guide-purpose">Purpose</a></li><li><a href="#section-incoming-guide-intake-workflow">Intake Workflow</a></li><li><a href="#section-incoming-guide-review-outcomes">Review Outcomes</a></li><li><a href="#section-incoming-guide-promotion-destinations">Promotion Destinations</a></li><li><a href="#section-incoming-guide-relation-to-the-rest-of-the-repo">Relation To The Rest Of The Repo</a></li><li><a href="#section-incoming-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
+          <a href="#section-incoming-review-template">incoming Review Template</a>
+          <ul class="subtoc"><li><a href="#section-incoming-review-template-intake-summary">Intake Summary</a></li><li><a href="#section-incoming-review-template-apparent-contents">Apparent Contents</a></li><li><a href="#section-incoming-review-template-first-read">First Read</a></li><li><a href="#section-incoming-review-template-preservation-questions">Preservation Questions</a></li><li><a href="#section-incoming-review-template-classification">Classification</a></li><li><a href="#section-incoming-review-template-destination-decision">Destination Decision</a></li><li><a href="#section-incoming-review-template-relationship-to-current-project-plan">Relationship To Current Project Plan</a></li><li><a href="#section-incoming-review-template-next-actions">Next Actions</a></li><li><a href="#section-incoming-review-template-index-update">Index Update</a></li><li><a href="#section-incoming-review-template-rule-of-thumb">Rule Of Thumb</a></li></ul>
+        </li>
+        <li>
           <a href="#section-historical-finds-guide">Historical Finds Guide</a>
           <ul class="subtoc"><li><a href="#section-historical-finds-guide-current-intake">Current Intake</a></li><li><a href="#section-historical-finds-guide-yj-sun">`yj-sun/`</a></li><li><a href="#section-historical-finds-guide-unravel">`Unravel/`</a></li><li><a href="#section-historical-finds-guide-refine">`Refine/`</a></li><li><a href="#section-historical-finds-guide-surga-info-and-unravel-changes">`SurgA-Info` and `Unravel-changes/`</a></li><li><a href="#section-historical-finds-guide-handling-rules">Handling Rules</a></li><li><a href="#section-historical-finds-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-historical-finds-guide-typical-outcomes-after-review">Typical Outcomes After Review</a></li><li><a href="#section-historical-finds-guide-suggested-recovery-order">Suggested Recovery Order</a></li><li><a href="#section-historical-finds-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
@@ -827,6 +831,8 @@ src/                        Entry point</code></pre>
 <p>duplicates versus which still carry archive/provenance value.</p>
 <ul><li><code>incoming/README.md</code> and <code>incoming/INDEX.md</code> define and track the intake flow</li></ul>
 <p>for future finds.</p>
+<ul><li><code>incoming/REVIEW-TEMPLATE.md</code> is the concrete first-pass checklist for each</li></ul>
+<p>real intake batch.</p>
 <ul><li><code>INTAKE-ROADMAP.md</code> turns the post-<code>1.0.0</code> ingestion, de-duplication, and</li></ul>
 <p>promotion lane into an explicit operating plan.</p>
 <ul><li><code>historical finds/README.md</code> explains the reviewed archive/recovery lane and</li></ul>
@@ -1125,6 +1131,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <ol><li><code>reviewed</code></li></ol>
 <p>We identify what kinds of artifacts are present:</p>
 <ul><li>code</li><li>datasets</li><li>result/output trees</li><li>publications</li><li>notes</li><li>mixed archive bundles</li></ul>
+<p>Use <code>incoming/REVIEW-TEMPLATE.md</code> to keep the first-pass review consistent.</p>
 <ol><li><code>classified</code></li></ol>
 <p>The batch or its parts are labeled as:</p>
 <ul><li>supported baseline candidate</li><li>integrity-checkable archive</li><li>provenance-only</li><li>snapshot-specific</li><li>duplicate but valuable</li><li>duplicate and purely transient</li></ul>
@@ -2746,6 +2753,7 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <ul><li><code>data/</code> for canonical preserved datasets/publications</li><li><code>historical finds/</code> for archive/recovery material</li><li>a solver snapshot tree if it clearly belongs there</li><li><code>DUPLICATES-REVIEW.md</code> if it is a reviewed duplicate/redundant copy</li></ul>
 <ol><li>Do not discard the intake just because it is partial, messy, duplicated, or</li></ol>
 <p>not yet understood. If it may be useful later, preserve it and classify it.</p>
+<p>Use <code>incoming/REVIEW-TEMPLATE.md</code> to keep the first-pass review consistent.</p>
 <h3 id="section-incoming-guide-review-outcomes">Review Outcomes</h3>
 <p>Every reviewed intake should end in one of these states:</p>
 <ul><li><code>promoted</code>: moved into the main repo structure</li><li><code>historical</code>: retained under <code>historical finds/</code></li><li><code>duplicate</code>: documented as redundant/canonical elsewhere</li><li><code>reference-only</code>: preserved, but not integrated</li><li><code>pending</code>: still under review</li></ul>
@@ -2759,6 +2767,51 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>justified home.</p>
 <h3 id="section-incoming-guide-rule-of-thumb">Rule Of Thumb</h3>
 <p>If the right home or the right date label is not obvious yet, it belongs in <code>incoming/</code> first.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-incoming-review-template">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>incoming Review Template</h2>
+            <p class="sectionSummary">Concrete first-pass checklist for reviewing and classifying each newly landed intake batch.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/incoming/incoming/REVIEW-TEMPLATE.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>Use this template when a real intake batch lands in <code>incoming/</code>.</p>
+<p>Copy the headings into a batch-local note or adapt them into the review summary that accompanies promotion decisions.</p>
+<p>The point is not paperwork for its own sake. The point is to keep the big picture intact:</p>
+<ul><li>preserve everything potentially useful,</li><li>avoid losing provenance,</li><li>keep the supported baseline bounded,</li><li>and make future recovery possible without redoing interpretation work.</li></ul>
+<h3 id="section-incoming-review-template-intake-summary">Intake Summary</h3>
+<ul><li>Intake path:</li><li>Original dump name:</li><li>Reviewed name if renamed:</li><li>Review date:</li><li>Source / where it came from:</li><li>Reviewer:</li></ul>
+<h3 id="section-incoming-review-template-apparent-contents">Apparent Contents</h3>
+<p>Check all that apply and add short notes:</p>
+<ul><li>source code</li><li>datasets</li><li>experiment outputs</li><li>publications</li><li>notes</li><li>mixed archive bundle</li><li>other:</li></ul>
+<h3 id="section-incoming-review-template-first-read">First Read</h3>
+<ul><li>What does this batch appear to be?</li><li>What historical period or snapshot does it seem related to?</li><li>Does it appear complete, partial, or mixed?</li><li>Does it look unique or overlapping with material already in the repo?</li></ul>
+<h3 id="section-incoming-review-template-preservation-questions">Preservation Questions</h3>
+<ol><li>Is this the only known surviving copy?</li><li>If it overlaps existing material, what seems to be the canonical active copy?</li><li>Does the overlap still have provenance, lineage, or snapshot-integrity value?</li><li>Is any part of this batch too important to leave untracked locally?</li></ol>
+<h3 id="section-incoming-review-template-classification">Classification</h3>
+<p>For the batch as a whole, or for major subparts:</p>
+<ul><li>supported baseline candidate</li><li>integrity-checkable archive</li><li>provenance-only</li><li>snapshot-specific</li><li>duplicate but valuable</li><li>duplicate and purely transient</li><li>still pending / too unclear to classify safely</li></ul>
+<h3 id="section-incoming-review-template-destination-decision">Destination Decision</h3>
+<p>Where should the material go?</p>
+<ul><li>stay in <code>incoming/</code></li><li><code>data/</code></li><li><code>historical finds/</code></li><li>solver snapshot tree</li><li>documented in <code>DUPLICATES-REVIEW.md</code></li></ul>
+<p>If split across destinations, note the split clearly.</p>
+<h3 id="section-incoming-review-template-relationship-to-current-project-plan">Relationship To Current Project Plan</h3>
+<ul><li>Does this change any current blocker?</li><li>Does this strengthen or weaken recovery confidence?</li><li>Does this affect any roadmap lane, such as terrain, <code>Hanoi-4</code>, ADT batch,</li></ul>
+<p>thesis result families, or archive provenance?</p>
+<ul><li>Does it justify changing any dashboard/handbook/status wording?</li></ul>
+<h3 id="section-incoming-review-template-next-actions">Next Actions</h3>
+<ul><li>What should happen immediately?</li><li>What can wait?</li><li>What should be preserved but not touched yet?</li></ul>
+<h3 id="section-incoming-review-template-index-update">Index Update</h3>
+<p>After review, make sure <code>incoming/INDEX.md</code> reflects:</p>
+<ul><li>intake path</li><li>added date</li><li>source</li><li>apparent type</li><li>status</li><li>next action</li></ul>
+<h3 id="section-incoming-review-template-rule-of-thumb">Rule Of Thumb</h3>
+<p>If anything is unclear, preserve first and narrow later. Uncertainty is a reason to classify conservatively, not a reason to discard.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-historical-finds-guide">
@@ -3066,7 +3119,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <ol><li>Drop the material under <code>incoming/</code> using any convenient dump name.</li><li>Review it.</li><li>Normalize the intake folder label if the contents reveal a better date/source.</li><li>Update <code>incoming/INDEX.md</code>.</li><li>Promote it into <code>data/</code>, <code>historical finds/</code>, a snapshot tree, or</li></ol>
 <p><code>DUPLICATES-REVIEW.md</code>.</p>
 <p>Main guides:</p>
-<ul><li><code>incoming/README.md</code></li><li><code>incoming/INDEX.md</code></li></ul>
+<ul><li><code>incoming/README.md</code></li><li><code>incoming/INDEX.md</code></li><li><code>incoming/REVIEW-TEMPLATE.md</code></li><li><code>INTAKE-ROADMAP.md</code></li></ul>
 <h3 id="section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</h3>
 <p>These are still useful, but they are not the main supported operator path.</p>
 <h4 id="section-workflows-manual-ao-harnesses">Manual AO Harnesses</h4>

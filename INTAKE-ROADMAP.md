@@ -63,6 +63,7 @@ Each intake batch should move through these stages:
    - publications
    - notes
    - mixed archive bundles
+   Use `incoming/REVIEW-TEMPLATE.md` to keep the first-pass review consistent.
 
 4. `classified`
    The batch or its parts are labeled as:

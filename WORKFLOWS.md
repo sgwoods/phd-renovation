@@ -130,6 +130,8 @@ Main guides:
 
 - `incoming/README.md`
 - `incoming/INDEX.md`
+- `incoming/REVIEW-TEMPLATE.md`
+- `INTAKE-ROADMAP.md`
 
 ## Secondary / Manual Workflows
 

@@ -267,6 +267,12 @@ HANDBOOK_SOURCES = [
         include_in_quick_index=False,
     ),
     HandbookSource(
+        "incoming Review Template",
+        "incoming/REVIEW-TEMPLATE.md",
+        "Concrete first-pass checklist for reviewing and classifying each newly landed intake batch.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "Historical Finds Guide",
         "historical finds/README.md",
         "How reviewed archive/recovery material is separated from canonical data and the supported baseline.",

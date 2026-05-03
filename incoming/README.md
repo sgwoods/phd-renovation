@@ -62,6 +62,8 @@ until that material has been reviewed.
 7. Do not discard the intake just because it is partial, messy, duplicated, or
    not yet understood. If it may be useful later, preserve it and classify it.
 
+Use `incoming/REVIEW-TEMPLATE.md` to keep the first-pass review consistent.
+
 ## Review Outcomes
 
 Every reviewed intake should end in one of these states:
