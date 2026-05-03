@@ -12,8 +12,11 @@ date/source label than the original dump name.
 
 ## Status Values
 
+- `landed`
+- `indexed`
 - `pending`
 - `reviewed`
+- `classified`
 - `promoted`
 - `historical`
 - `duplicate`
@@ -22,3 +25,6 @@ date/source label than the original dump name.
 ## Update Rule
 
 Whenever `incoming/` changes, review this index too.
+
+If the batch changes the roadmap, blocker picture, or recovery confidence,
+update the broader status artifacts as part of the same pass.

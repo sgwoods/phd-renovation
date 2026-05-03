@@ -367,8 +367,8 @@ h1{
         </div>
         <div class="metaCard">
           <span class="metaLabel">Current Focus</span>
-          <span class="metaValue">Intake + continuity</span>
-          <div class="metaNote">The active front is disciplined intake of found material, continuity hardening, and 1.0.1 warning cleanup outside the supported release gate.</div>
+          <span class="metaValue">Intake triage</span>
+          <div class="metaNote">The active front is disciplined ingestion, de-duplication, categorization, and promotion of newly found material while continuity and 1.0.1 cleanup stay bounded.</div>
         </div>
         <div class="metaCard">
           <span class="metaLabel">Updated</span>
@@ -391,6 +391,11 @@ h1{
         <span class="eyebrow">Included guide</span>
         <h2><a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a></h2>
         <p>Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-intake-roadmap">Intake Roadmap</a></h2>
+        <p>Operational plan for post-1.0 ingestion, de-duplication, categorization, and promotion of newly found material.</p>
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
@@ -511,6 +516,10 @@ h1{
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
           <ul class="subtoc"><li><a href="#section-recovery-and-reproducibility-precise-goal">Precise Goal</a></li><li><a href="#section-recovery-and-reproducibility-current-project-state">Current Project State</a></li><li><a href="#section-recovery-and-reproducibility-status-read">Status Read</a></li><li><a href="#section-recovery-and-reproducibility-what-is-checked-in">What Is Checked In</a></li><li><a href="#section-recovery-and-reproducibility-core-source-and-snapshots">Core source and snapshots</a></li><li><a href="#section-recovery-and-reproducibility-validation-and-investigation-harnesses">Validation and investigation harnesses</a></li><li><a href="#section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</a></li><li><a href="#section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</a></li><li><a href="#section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</a></li><li><a href="#section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</a></li><li><a href="#section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</a></li><li><a href="#section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</a></li><li><a href="#section-recovery-and-reproducibility-can-the-work-be-recreated-on-a-new-machine">Can The Work Be Recreated On A New Machine?</a></li><li><a href="#section-recovery-and-reproducibility-for-the-main-repo-work-yes">For the main repo work: yes</a></li><li><a href="#section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</a></li><li><a href="#section-recovery-and-reproducibility-remaining-reproducibility-risks">Remaining Reproducibility Risks</a></li><li><a href="#section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</a></li><li><a href="#section-recovery-and-reproducibility-local-working-directory-convention">Local Working Directory Convention</a></li><li><a href="#section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-intake-roadmap">Intake Roadmap</a>
+          <ul class="subtoc"><li><a href="#section-intake-roadmap-why-this-is-the-next-main-effort">Why This Is The Next Main Effort</a></li><li><a href="#section-intake-roadmap-intake-objectives">Intake Objectives</a></li><li><a href="#section-intake-roadmap-operating-flow">Operating Flow</a></li><li><a href="#section-intake-roadmap-review-questions">Review Questions</a></li><li><a href="#section-intake-roadmap-priority-order-for-review">Priority Order For Review</a></li><li><a href="#section-intake-roadmap-what-counts-as-success">What Counts As Success</a></li><li><a href="#section-intake-roadmap-current-read">Current Read</a></li><li><a href="#section-intake-roadmap-recommended-next-steps">Recommended Next Steps</a></li></ul>
         </li>
         <li>
           <a href="#section-preservation-policy">Preservation Policy</a>
@@ -818,6 +827,8 @@ src/                        Entry point</code></pre>
 <p>duplicates versus which still carry archive/provenance value.</p>
 <ul><li><code>incoming/README.md</code> and <code>incoming/INDEX.md</code> define and track the intake flow</li></ul>
 <p>for future finds.</p>
+<ul><li><code>INTAKE-ROADMAP.md</code> turns the post-<code>1.0.0</code> ingestion, de-duplication, and</li></ul>
+<p>promotion lane into an explicit operating plan.</p>
 <ul><li><code>historical finds/README.md</code> explains the reviewed archive/recovery lane and</li></ul>
 <p>how it differs from both <code>incoming/</code> and the supported baseline.</p>
 <ul><li><code>qcsp-alex-sep16-1997/testdata/Results/README.md</code> and</li></ul>
@@ -909,7 +920,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>part of the supported integrated line.</p>
 <ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
 <p>provenance, recovery, or context rather than active validation.</p>
-<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the standing retention rule for useful historical material, see <code>PRESERVATION-POLICY.md</code>.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the post-<code>1.0.0</code> ingestion operating plan, see <code>INTAKE-ROADMAP.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the standing retention rule for useful historical material, see <code>PRESERVATION-POLICY.md</code>.</p>
 <h3 id="section-repository-status-status-key">Status Key</h3>
 <ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
 <p>reported results, either executable or integrity-checkable.</p>
@@ -943,6 +954,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>active integration obligation,</p>
 <ol><li>keep terrain as the major deferred recovery lane, and</li><li>treat <code>Hanoi-4</code> as a documented <code>1.x</code> lane and a <code>2.0</code></li></ol>
 <p>research/repeatability goal.</p>
+<p>The practical operating details for that lane now live in <code>INTAKE-ROADMAP.md</code>.</p>
 <p>The default-branch/recovery baseline should stay aligned with that supported state so a fresh clone can land on the durable project baseline directly.</p>
 <p>The current ADT batch note lives in <code>ADT-BATCH-INTEGRATION.md</code>. Current recommendation: keep the preserved wrapper mapping and bridge probes as historical explanation, but do not require the maintained integrated line to absorb the family.</p>
 <h3 id="section-repository-status-maintenance-rule">Maintenance Rule</h3>
@@ -1073,6 +1085,87 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>on this machine,</p>
 <ol><li>use <code>1.0.1</code> for STYLE-WARNING cleanup and small release-hardening polish,</li><li>and only then reopen larger deferred lanes like terrain recovery and</li></ol>
 <p><code>Hanoi-4</code> behavior work.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-intake-roadmap">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Intake Roadmap</h2>
+            <p class="sectionSummary">Operational plan for post-1.0 ingestion, de-duplication, categorization, and promotion of newly found material.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/INTAKE-ROADMAP.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file turns the post-<code>1.0.0</code> intake lane into an explicit operating plan.</p>
+<p>The big-picture goal is unchanged:</p>
+<ol><li>keep the integrated solver baseline trustworthy and recoverable,</li><li>preserve all potentially useful historical material,</li><li>and widen the long-term research platform deliberately rather than by</li></ol>
+<p>accidental accumulation.</p>
+<p>At this stage, the fastest way to damage that goal would be to let new finds arrive without a stable review path.</p>
+<p>So the next major lane is:</p>
+<p><strong>ingestion, de-duplication, categorization, and promotion of newly found material.</strong></p>
+<h3 id="section-intake-roadmap-why-this-is-the-next-main-effort">Why This Is The Next Main Effort</h3>
+<p>The repo now has:</p>
+<ul><li>a published <code>1.0.0</code> baseline,</li><li>a green supported validation spine,</li><li>clear recovery/new-machine guidance,</li><li>and explicit preservation policy.</li></ul>
+<p>What it does not yet have is a large-volume reviewed intake history.</p>
+<p>That means the next risk is not &quot;the code no longer runs.&quot; The next risk is &quot;useful new material appears faster than it can be understood, and the project loses track of what is canonical, historical, duplicative, or still pending.&quot;</p>
+<h3 id="section-intake-roadmap-intake-objectives">Intake Objectives</h3>
+<p>For the next phase, the intake lane should aim to:</p>
+<ol><li>preserve every potentially useful new find,</li><li>keep unreviewed material out of the supported baseline until its role is</li></ol>
+<p>understood,</p>
+<ol><li>make duplicate/canonical decisions explicit,</li><li>strengthen provenance for historical result families and missing domains,</li><li>and keep the durable recovery baseline easy to recreate from a fresh clone.</li></ol>
+<h3 id="section-intake-roadmap-operating-flow">Operating Flow</h3>
+<p>Each intake batch should move through these stages:</p>
+<ol><li><code>landed</code></li></ol>
+<p>Material arrives in <code>incoming/</code> under any convenient temporary name.</p>
+<ol><li><code>indexed</code></li></ol>
+<p>The batch is recorded in <code>incoming/INDEX.md</code> with source, rough contents, and next action.</p>
+<ol><li><code>reviewed</code></li></ol>
+<p>We identify what kinds of artifacts are present:</p>
+<ul><li>code</li><li>datasets</li><li>result/output trees</li><li>publications</li><li>notes</li><li>mixed archive bundles</li></ul>
+<ol><li><code>classified</code></li></ol>
+<p>The batch or its parts are labeled as:</p>
+<ul><li>supported baseline candidate</li><li>integrity-checkable archive</li><li>provenance-only</li><li>snapshot-specific</li><li>duplicate but valuable</li><li>duplicate and purely transient</li></ul>
+<ol><li><code>promoted</code></li></ol>
+<p>Material moves to the correct long-term home:</p>
+<ul><li><code>data/</code></li><li><code>historical finds/</code></li><li>a solver snapshot tree</li><li>or remains in <code>incoming/</code> if further review is still needed</li></ul>
+<ol><li><code>recorded</code></li></ol>
+<p>The relevant project records are updated:</p>
+<ul><li><code>incoming/INDEX.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>VALIDATION-MATRIX.md</code></li><li><code>RENOVATION.md</code></li><li>and handbook/dashboard/public status outputs if the roadmap or scope changes</li></ul>
+<h3 id="section-intake-roadmap-review-questions">Review Questions</h3>
+<p>Every non-trivial intake should answer these questions:</p>
+<ol><li>Is this the only known surviving copy?</li><li>Is it already represented somewhere else in the repo?</li><li>If it overlaps existing material, which copy is canonical for supported use?</li><li>Does it belong to the main solver line, a historical snapshot, <code>data/</code>, or</li></ol>
+<p><code>historical finds/</code>?</p>
+<ol><li>Is it executable, integrity-checkable, provenance-only, or still too</li></ol>
+<p>unclear to classify safely?</p>
+<ol><li>Does it change any current project blockers, roadmap assumptions, or</li></ol>
+<p>recovery confidence?</p>
+<h3 id="section-intake-roadmap-priority-order-for-review">Priority Order For Review</h3>
+<p>When large amounts of new material arrive, review in this order:</p>
+<ol><li>blocked-domain recovery leads</li></ol>
+<p>Example: terrain / <code>QCSP-nov96</code> / <code>Lacie1</code></p>
+<ol><li>publication and result-family anchors</li></ol>
+<p>Old result trees, thesis-era reports, preserved graphs, and experiment summaries</p>
+<ol><li>code snapshots and generators</li></ol>
+<p>Especially anything that explains missing workflows or result production</p>
+<ol><li>publications and notes that change interpretation</li></ol>
+<p>Papers, working notes, comments, and methodological explanations</p>
+<ol><li>context-only archives</li></ol>
+<p>Useful, but less urgent than material that changes the executable baseline</p>
+<h3 id="section-intake-roadmap-what-counts-as-success">What Counts As Success</h3>
+<p>The intake lane is succeeding when:</p>
+<ul><li><code>incoming/</code> stays understandable rather than becoming a dump,</li><li>new finds are preserved quickly,</li><li>canonical-vs-duplicate decisions are documented,</li><li>the supported baseline stays bounded,</li><li>and future recovery confidence rises rather than falls as more material is added.</li></ul>
+<h3 id="section-intake-roadmap-current-read">Current Read</h3>
+<p>Right now:</p>
+<ul><li>the intake lane is ready,</li><li>the policy and destination rules are documented,</li><li>but there are no active indexed batches yet.</li></ul>
+<p>That is good news. It means the process is being established before the next heavy intake wave, rather than after the repo is already confused.</p>
+<h3 id="section-intake-roadmap-recommended-next-steps">Recommended Next Steps</h3>
+<ol><li>Use this workflow on the first real post-<code>1.0.0</code> intake batch.</li><li>Update <code>incoming/INDEX.md</code> immediately when any new material lands.</li><li>Route duplicate/canonical decisions into <code>DUPLICATES-REVIEW.md</code>.</li><li>Promote high-value reviewed material into <code>data/</code>, <code>historical finds/</code>, or</li></ol>
+<p>snapshot trees deliberately.</p>
+<ol><li>Keep <code>1.0.1</code> reserved for warning cleanup and maintenance hardening while</li></ol>
+<p>the intake lane becomes the main discovery/review front.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-preservation-policy">
@@ -3551,16 +3644,16 @@ bash Q-Batch-SBCL/run-may29-all.sh</code></pre>
 <p>In short: turn the renovated snapshots, preserved data, and recovered archives into one trustworthy integrated research platform, not just a modernized copy of legacy Lisp.</p>
 <h4 id="section-renovation-roadmap-current-subgoals">Current subgoals</h4>
 <p>For the current phase, the practical subgoals are:</p>
-<ol><li>keep the supported validation spine green from a fresh checkout,</li><li>keep widening the validated umbrella beyond the main thesis <code>ij2</code>/<code>ij3</code>/<code>ij4</code></li></ol>
-<p>path,</p>
-<ol><li>reduce warning noise enough that validation logs act as a reliable</li></ol>
-<p>regression signal,</p>
-<ol><li>make the historical result families legible enough that they can be judged</li></ol>
-<p>for eventual inclusion under one integrated solver line, and</p>
-<ol><li>define the first concrete milestone that <code>qcsp3/</code> would have to satisfy to</li></ol>
-<p>earn &quot;gold-standard&quot; status.</p>
+<ol><li>keep the supported validation spine green from a fresh checkout,</li><li>make intake, de-duplication, and categorization of newly found material the</li></ol>
+<p>main operational lane,</p>
+<ol><li>keep widening the validated umbrella only when reviewed material justifies</li></ol>
+<p>it,</p>
+<ol><li>preserve recovery confidence as new archives, notes, data, and publications</li></ol>
+<p>arrive, and</p>
+<ol><li>reserve <code>1.0.1</code> for warning cleanup and maintenance hardening outside the</li></ol>
+<p>supported <code>1.0.0</code> gate.</p>
 <h4 id="section-renovation-roadmap-where-we-are-against-that-goal">Where we are against that goal</h4>
-<table><thead><tr><th>Area</th><th>Status</th><th>Current position</th></tr></thead><tbody><tr><td>Reference snapshots runnable</td><td><strong>Strong</strong></td><td>All four ASDF systems load and the supported FiveAM suites pass on SBCL.</td></tr><tr><td>Core regression baseline</td><td><strong>Strong</strong></td><td>Deterministic metric assertions exist for standard and confused queens across all four systems.</td></tr><tr><td>AO / <code>test4</code> validation</td><td><strong>Strong for bounded M1 scope</strong></td><td>AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline. qcsp3 and May29 now cover AO cases 1-3 across the reduction families plus the legacy <code>test4s</code> / <code>test4a</code> wrappers, while alex keeps its revise baseline.</td></tr><tr><td>PhD-result validation path</td><td><strong>Strong</strong></td><td>CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL <code>ij2</code>/<code>ij3</code>/<code>ij4</code> trend story.</td></tr><tr><td>Warning hygiene</td><td><strong>Strong for the supported path</strong></td><td>The repeated alex/core STYLE-WARNING tail has been cleared from the supported validation path, and the AO harness redefinition chatter has been trimmed from both CI and the manual <code>run-test4*.lisp</code> flows. Fresh March 21, 2026 runs of <code>tests/run.lisp</code> and <code>tests/validate-ao.sh</code> are clean for the supported gate; any remaining legacy notes are now outside that mainline signal.</td></tr><tr><td>Documentation and onboarding</td><td><strong>Good and improving</strong></td><td>The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk.</td></tr><tr><td>Historical provenance</td><td><strong>Strong</strong></td><td><code>historical finds/yj-sun/Csp</code> is now tied to the alex-era line, many <code>PrevResults</code> artifacts are mapped, the <code>ff1</code>/<code>ff2</code>/<code>ff3</code> family is grounded in the preserved <code>qcsp-may29-1996/NewData4b-Batch/</code> tree with an active integrity check, and both the older ADT batch archive and the earliest DREV-era <code>T1</code>-<code>T6</code> family have moved from provenance-only to integrity-checkable.</td></tr><tr><td>Gold-standard integration target</td><td><strong>Emerging, with M1 accepted</strong></td><td><code>qcsp3/</code> is the leading candidate, and Milestone M1 is now accepted as the first gate showing it can carry the PhD baseline, AO baseline, and preserved <code>ff*</code> relationship under one supported umbrella. The repo is now moving beyond &quot;is M1 ready?&quot; into post-M1 documentation and integration work.</td></tr><tr><td>Research-readiness for new experiments</td><td><strong>Not there yet</strong></td><td>The baseline is much firmer than before, but not yet complete enough for a <code>1.0.0</code> integrated research platform claim. A clear <code>Hanoi-4</code> status statement is sufficient for <code>1.0</code>; full <code>Hanoi-4</code> behavioral/repeatability understanding is now explicitly a <code>2.0</code> goal.</td></tr></tbody></table>
+<table><thead><tr><th>Area</th><th>Status</th><th>Current position</th></tr></thead><tbody><tr><td>Reference snapshots runnable</td><td><strong>Strong</strong></td><td>All four ASDF systems load and the supported FiveAM suites pass on SBCL.</td></tr><tr><td>Core regression baseline</td><td><strong>Strong</strong></td><td>Deterministic metric assertions exist for standard and confused queens across all four systems.</td></tr><tr><td>AO / <code>test4</code> validation</td><td><strong>Strong for bounded M1 scope</strong></td><td>AO coverage has moved from smoke-only into asserted deterministic coverage for the supported baseline. qcsp3 and May29 now cover AO cases 1-3 across the reduction families plus the legacy <code>test4s</code> / <code>test4a</code> wrappers, while alex keeps its revise baseline.</td></tr><tr><td>PhD-result validation path</td><td><strong>Strong</strong></td><td>CI regenerates SBCL graph artifacts and validates the supported ACL-vs-SBCL <code>ij2</code>/<code>ij3</code>/<code>ij4</code> trend story.</td></tr><tr><td>Warning hygiene</td><td><strong>Strong for the supported path</strong></td><td>The repeated alex/core STYLE-WARNING tail has been cleared from the supported validation path, and the AO harness redefinition chatter has been trimmed from both CI and the manual <code>run-test4*.lisp</code> flows. Fresh March 21, 2026 runs of <code>tests/run.lisp</code> and <code>tests/validate-ao.sh</code> are clean for the supported gate; any remaining legacy notes are now outside that mainline signal.</td></tr><tr><td>Documentation and onboarding</td><td><strong>Good and improving</strong></td><td>The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk.</td></tr><tr><td>Historical provenance</td><td><strong>Strong</strong></td><td><code>historical finds/yj-sun/Csp</code> is now tied to the alex-era line, many <code>PrevResults</code> artifacts are mapped, the <code>ff1</code>/<code>ff2</code>/<code>ff3</code> family is grounded in the preserved <code>qcsp-may29-1996/NewData4b-Batch/</code> tree with an active integrity check, and both the older ADT batch archive and the earliest DREV-era <code>T1</code>-<code>T6</code> family have moved from provenance-only to integrity-checkable.</td></tr><tr><td>Gold-standard integration target</td><td><strong>Emerging, with M1 accepted</strong></td><td><code>qcsp3/</code> is the leading candidate, and Milestone M1 is now accepted as the first gate showing it can carry the PhD baseline, AO baseline, and preserved <code>ff*</code> relationship under one supported umbrella. The repo is now moving beyond &quot;is M1 ready?&quot; into post-M1 documentation and integration work.</td></tr><tr><td>Intake and preservation discipline</td><td><strong>Ready, not yet exercised at scale</strong></td><td><code>incoming/</code>, <code>DUPLICATES-REVIEW.md</code>, the preservation policy, and the recovery docs are now aligned. The next big test is handling real post-<code>1.0.0</code> archive inflow without losing clarity or provenance.</td></tr><tr><td>Research-readiness for new experiments</td><td><strong>Bounded</strong></td><td>The baseline is now stable enough for <code>1.0.0</code>, but the next major effort is intake/review discipline rather than broader experimental expansion. A clear <code>Hanoi-4</code> status statement is sufficient for <code>1.x</code>; full <code>Hanoi-4</code> behavioral/repeatability understanding remains a <code>2.0</code> goal.</td></tr></tbody></table>
 <h4 id="section-renovation-roadmap-first-qcsp3-integration-milestone">First <code>qcsp3/</code> integration milestone</h4>
 <p>The first concrete milestone for <code>qcsp3/</code> is:</p>
 <p><strong>Milestone M1: integrated validated baseline</strong></p>

@@ -225,14 +225,14 @@ of legacy Lisp.
 For the current phase, the practical subgoals are:
 
 1. keep the supported validation spine green from a fresh checkout,
-2. keep widening the validated umbrella beyond the main thesis `ij2`/`ij3`/`ij4`
-   path,
-3. reduce warning noise enough that validation logs act as a reliable
-   regression signal,
-4. make the historical result families legible enough that they can be judged
-   for eventual inclusion under one integrated solver line, and
-5. define the first concrete milestone that `qcsp3/` would have to satisfy to
-   earn "gold-standard" status.
+2. make intake, de-duplication, and categorization of newly found material the
+   main operational lane,
+3. keep widening the validated umbrella only when reviewed material justifies
+   it,
+4. preserve recovery confidence as new archives, notes, data, and publications
+   arrive, and
+5. reserve `1.0.1` for warning cleanup and maintenance hardening outside the
+   supported `1.0.0` gate.
 
 ### Where we are against that goal
 
@@ -246,7 +246,8 @@ For the current phase, the practical subgoals are:
 | Documentation and onboarding | **Good and improving** | The top-level docs are aligned with the current validation spine, and local README coverage now makes the code/test/results layout easier to navigate from disk. |
 | Historical provenance | **Strong** | `historical finds/yj-sun/Csp` is now tied to the alex-era line, many `PrevResults` artifacts are mapped, the `ff1`/`ff2`/`ff3` family is grounded in the preserved `qcsp-may29-1996/NewData4b-Batch/` tree with an active integrity check, and both the older ADT batch archive and the earliest DREV-era `T1`-`T6` family have moved from provenance-only to integrity-checkable. |
 | Gold-standard integration target | **Emerging, with M1 accepted** | `qcsp3/` is the leading candidate, and Milestone M1 is now accepted as the first gate showing it can carry the PhD baseline, AO baseline, and preserved `ff*` relationship under one supported umbrella. The repo is now moving beyond "is M1 ready?" into post-M1 documentation and integration work. |
-| Research-readiness for new experiments | **Not there yet** | The baseline is much firmer than before, but not yet complete enough for a `1.0.0` integrated research platform claim. A clear `Hanoi-4` status statement is sufficient for `1.0`; full `Hanoi-4` behavioral/repeatability understanding is now explicitly a `2.0` goal. |
+| Intake and preservation discipline | **Ready, not yet exercised at scale** | `incoming/`, `DUPLICATES-REVIEW.md`, the preservation policy, and the recovery docs are now aligned. The next big test is handling real post-`1.0.0` archive inflow without losing clarity or provenance. |
+| Research-readiness for new experiments | **Bounded** | The baseline is now stable enough for `1.0.0`, but the next major effort is intake/review discipline rather than broader experimental expansion. A clear `Hanoi-4` status statement is sufficient for `1.x`; full `Hanoi-4` behavioral/repeatability understanding remains a `2.0` goal. |
 
 ### First `qcsp3/` integration milestone
 

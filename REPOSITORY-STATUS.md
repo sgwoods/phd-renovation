@@ -20,6 +20,7 @@ For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
 For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
+For the post-`1.0.0` ingestion operating plan, see `INTAKE-ROADMAP.md`.
 For the current bounded `Hanoi-4` position, see `HANOI-4-STATUS.md`.
 For the concrete `1.0.0` release gate, see `RELEASE-1.0-CHECKLIST.md`.
 For the recovery/new-machine continuity audit, see
@@ -117,6 +118,9 @@ That means the current recommended order is:
 5. keep terrain as the major deferred recovery lane, and
 6. treat `Hanoi-4` as a documented `1.x` lane and a `2.0`
    research/repeatability goal.
+
+The practical operating details for that lane now live in
+`INTAKE-ROADMAP.md`.
 
 The default-branch/recovery baseline should stay aligned with that supported
 state so a fresh clone can land on the durable project baseline directly.

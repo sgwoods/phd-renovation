@@ -49,6 +49,11 @@ HANDBOOK_SOURCES = [
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",
     ),
     HandbookSource(
+        "Intake Roadmap",
+        "INTAKE-ROADMAP.md",
+        "Operational plan for post-1.0 ingestion, de-duplication, categorization, and promotion of newly found material.",
+    ),
+    HandbookSource(
         "Preservation Policy",
         "PRESERVATION-POLICY.md",
         "Standing rule that potentially useful code, data, publications, notes, and archive finds should be classified and preserved rather than discarded.",

@@ -150,6 +150,8 @@ src/                        Entry point
   duplicates versus which still carry archive/provenance value.
 - `incoming/README.md` and `incoming/INDEX.md` define and track the intake flow
   for future finds.
+- `INTAKE-ROADMAP.md` turns the post-`1.0.0` ingestion, de-duplication, and
+  promotion lane into an explicit operating plan.
 - `historical finds/README.md` explains the reviewed archive/recovery lane and
   how it differs from both `incoming/` and the supported baseline.
 - `qcsp-alex-sep16-1997/testdata/Results/README.md` and
