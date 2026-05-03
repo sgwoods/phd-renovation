@@ -674,6 +674,10 @@ h1{
           <ul class="subtoc"><li><a href="#section-incoming-review-template-intake-summary">Intake Summary</a></li><li><a href="#section-incoming-review-template-apparent-contents">Apparent Contents</a></li><li><a href="#section-incoming-review-template-first-read">First Read</a></li><li><a href="#section-incoming-review-template-preservation-questions">Preservation Questions</a></li><li><a href="#section-incoming-review-template-classification">Classification</a></li><li><a href="#section-incoming-review-template-destination-decision">Destination Decision</a></li><li><a href="#section-incoming-review-template-relationship-to-current-project-plan">Relationship To Current Project Plan</a></li><li><a href="#section-incoming-review-template-next-actions">Next Actions</a></li><li><a href="#section-incoming-review-template-index-update">Index Update</a></li><li><a href="#section-incoming-review-template-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
+          <a href="#section-incoming-landing-guide">incoming Landing Guide</a>
+          <ul class="subtoc"><li><a href="#section-incoming-landing-guide-intended-use">Intended Use</a></li><li><a href="#section-incoming-landing-guide-what-to-do">What To Do</a></li><li><a href="#section-incoming-landing-guide-rule">Rule</a></li></ul>
+        </li>
+        <li>
           <a href="#section-historical-finds-guide">Historical Finds Guide</a>
           <ul class="subtoc"><li><a href="#section-historical-finds-guide-current-intake">Current Intake</a></li><li><a href="#section-historical-finds-guide-yj-sun">`yj-sun/`</a></li><li><a href="#section-historical-finds-guide-unravel">`Unravel/`</a></li><li><a href="#section-historical-finds-guide-refine">`Refine/`</a></li><li><a href="#section-historical-finds-guide-surga-info-and-unravel-changes">`SurgA-Info` and `Unravel-changes/`</a></li><li><a href="#section-historical-finds-guide-handling-rules">Handling Rules</a></li><li><a href="#section-historical-finds-guide-what-this-directory-is-not">What This Directory Is Not</a></li><li><a href="#section-historical-finds-guide-typical-outcomes-after-review">Typical Outcomes After Review</a></li><li><a href="#section-historical-finds-guide-suggested-recovery-order">Suggested Recovery Order</a></li><li><a href="#section-historical-finds-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
@@ -833,6 +837,8 @@ src/                        Entry point</code></pre>
 <p>for future finds.</p>
 <ul><li><code>incoming/REVIEW-TEMPLATE.md</code> is the concrete first-pass checklist for each</li></ul>
 <p>real intake batch.</p>
+<ul><li><code>incoming/_landing/README.md</code> defines the simplest raw-drop handoff point if</li></ul>
+<p>you want to place material first and have Codex do the intake setup after.</p>
 <ul><li><code>INTAKE-ROADMAP.md</code> turns the post-<code>1.0.0</code> ingestion, de-duplication, and</li></ul>
 <p>promotion lane into an explicit operating plan.</p>
 <ul><li><code>historical finds/README.md</code> explains the reviewed archive/recovery lane and</li></ul>
@@ -2734,6 +2740,8 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>Think of this as the shell-friendly implementation of:</p>
 <p><code>new relevant information to integrate</code></p>
 <p>It is also the main operational tool that enforces <code>PRESERVATION-POLICY.md</code>. If material may matter later and is not understood yet, <code>incoming/</code> is where we keep it safely until review catches up.</p>
+<p>If you want the lowest-friction handoff path, use the raw landing directory:</p>
+<p><code>/Users/stevenwoods/phd-renovation/incoming/_landing/</code></p>
 <h3 id="section-incoming-guide-purpose">Purpose</h3>
 <p>Use <code>incoming/</code> first whenever new material arrives and its final home is not yet settled.</p>
 <p>Do <strong>not</strong> drop new finds directly into:</p>
@@ -2741,7 +2749,7 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>until that material has been reviewed.</p>
 <h3 id="section-incoming-guide-intake-workflow">Intake Workflow</h3>
 <ol><li>Add the new material under any convenient subdirectory name.</li></ol>
-<p>If you already know the likely date/source, a dated name is helpful, for example:</p>
+<p>If you do not want to organize it first, you can simply drop it into <code>incoming/_landing/</code> and let Codex create the proper intake batch. If you already know the likely date/source, a dated name is helpful, for example:</p>
 <ul><li><code>incoming/2026-03-21-lacie1/</code></li><li><code>incoming/2026-04-02-sparc-cdrom/</code></li><li><code>incoming/2026-04-10-paper-scan/</code></li></ul>
 <p>If not, a rough dump name is fine:</p>
 <ul><li><code>incoming/lacie-drive-dump/</code></li><li><code>incoming/old-sparc-stuff/</code></li><li><code>incoming/misc-papers/</code></li></ul>
@@ -2816,6 +2824,31 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <ul><li>intake path</li><li>added date</li><li>source</li><li>apparent type</li><li>status</li><li>next action</li></ul>
 <h3 id="section-incoming-review-template-rule-of-thumb">Rule Of Thumb</h3>
 <p>If anything is unclear, preserve first and narrow later. Uncertainty is a reason to classify conservatively, not a reason to discard.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-incoming-landing-guide">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>incoming Landing Guide</h2>
+            <p class="sectionSummary">Simple raw-drop handoff point for newly found material before Codex creates a proper intake batch.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/incoming/_landing/incoming/_landing/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory is the easiest place to drop newly found material when you do not want to organize it first.</p>
+<p>Recommended path:</p>
+<p><code>/Users/stevenwoods/phd-renovation/incoming/_landing/</code></p>
+<h3 id="section-incoming-landing-guide-intended-use">Intended Use</h3>
+<p>Use this directory when:</p>
+<ul><li>you have a new batch of code, data, papers, notes, or archives,</li><li>you want to get the material into the repo quickly,</li><li>and you want Codex to do the naming, intake setup, and promotion work.</li></ul>
+<h3 id="section-incoming-landing-guide-what-to-do">What To Do</h3>
+<ol><li>Copy or move the raw material into this directory.</li><li>Tell Codex what you dropped there and, if known, where it came from.</li><li>Codex will:</li></ol>
+<ul><li>create a proper intake batch under <code>incoming/&lt;date-or-source&gt;/</code>,</li><li>register it in <code>incoming/INDEX.md</code>,</li><li>move the files out of <code>_landing/</code>,</li><li>and start the review/classification pass.</li></ul>
+<h3 id="section-incoming-landing-guide-rule">Rule</h3>
+<p>Do not treat <code>_landing/</code> as a permanent home. It is only a raw handoff area before the material is converted into a proper tracked intake batch.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-historical-finds-guide">
@@ -3120,7 +3153,13 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code></li><li><code>RENOVATION.md</code></li></ul>
 <h4 id="section-workflows-6-new-material-intake">6. New Material Intake</h4>
 <p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
-<ol><li>Drop the material under <code>incoming/</code> using any convenient dump name.</li></ol>
+<ol><li>Easiest path: drop the material into <code>incoming/_landing/</code>.</li></ol>
+<p>Codex can then create the proper intake batch and move it into place. Or, if you want to scaffold it yourself, run:</p>
+<pre><code class="language-bash">python3 tools/create_incoming_intake.py 2026-05-03-example \
+  --added 2026-05-03 \
+  --source &quot;Lacie1 drive&quot; \
+  --type &quot;mixed archive bundle&quot;</code></pre>
+<ol><li>More manual path: drop the material under <code>incoming/</code> using any convenient dump name.</li></ol>
 <p>Or scaffold the intake with:</p>
 <pre><code class="language-bash">python3 tools/create_incoming_intake.py 2026-05-03-example \
   --added 2026-05-03 \

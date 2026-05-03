@@ -152,6 +152,8 @@ src/                        Entry point
   for future finds.
 - `incoming/REVIEW-TEMPLATE.md` is the concrete first-pass checklist for each
   real intake batch.
+- `incoming/_landing/README.md` defines the simplest raw-drop handoff point if
+  you want to place material first and have Codex do the intake setup after.
 - `INTAKE-ROADMAP.md` turns the post-`1.0.0` ingestion, de-duplication, and
   promotion lane into an explicit operating plan.
 - `historical finds/README.md` explains the reviewed archive/recovery lane and

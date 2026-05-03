@@ -18,6 +18,10 @@ It is also the main operational tool that enforces `PRESERVATION-POLICY.md`.
 If material may matter later and is not understood yet, `incoming/` is where
 we keep it safely until review catches up.
 
+If you want the lowest-friction handoff path, use the raw landing directory:
+
+`/Users/stevenwoods/phd-renovation/incoming/_landing/`
+
 ## Purpose
 
 Use `incoming/` first whenever new material arrives and its final home is not
@@ -37,6 +41,8 @@ until that material has been reviewed.
 ## Intake Workflow
 
 1. Add the new material under any convenient subdirectory name.
+   If you do not want to organize it first, you can simply drop it into
+   `incoming/_landing/` and let Codex create the proper intake batch.
    If you already know the likely date/source, a dated name is helpful, for
    example:
    - `incoming/2026-03-21-lacie1/`

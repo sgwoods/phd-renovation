@@ -273,6 +273,12 @@ HANDBOOK_SOURCES = [
         include_in_quick_index=False,
     ),
     HandbookSource(
+        "incoming Landing Guide",
+        "incoming/_landing/README.md",
+        "Simple raw-drop handoff point for newly found material before Codex creates a proper intake batch.",
+        include_in_quick_index=False,
+    ),
+    HandbookSource(
         "Historical Finds Guide",
         "historical finds/README.md",
         "How reviewed archive/recovery material is separated from canonical data and the supported baseline.",
