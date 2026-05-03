@@ -389,6 +389,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-work-area-status">Work Area Status</a></h2>
+        <p>Quick map of what is current, reference, archive-only, or deprecated for day-to-day mainline use.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a></h2>
         <p>Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.</p>
       </article>
@@ -512,6 +517,10 @@ h1{
         <li>
           <a href="#section-repository-status">Repository Status</a>
           <ul class="subtoc"><li><a href="#section-repository-status-status-key">Status Key</a></li><li><a href="#section-repository-status-executive-read">Executive Read</a></li><li><a href="#section-repository-status-repository-wide-coverage-table">Repository-Wide Coverage Table</a></li><li><a href="#section-repository-status-what-this-means">What This Means</a></li><li><a href="#section-repository-status-deliberate-mainline-priority">Deliberate Mainline Priority</a></li><li><a href="#section-repository-status-maintenance-rule">Maintenance Rule</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-work-area-status">Work Area Status</a>
+          <ul class="subtoc"><li><a href="#section-work-area-status-status-key">Status Key</a></li><li><a href="#section-work-area-status-current-read">Current Read</a></li><li><a href="#section-work-area-status-practical-rule">Practical Rule</a></li><li><a href="#section-work-area-status-important-distinction">Important Distinction</a></li><li><a href="#section-work-area-status-recommended-next-step">Recommended Next Step</a></li></ul>
         </li>
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
@@ -827,6 +836,8 @@ src/                        Entry point</code></pre>
 <p>data versus generated outputs.</p>
 <ul><li><code>MANUAL-HELPERS.md</code> explains the repo-root helper scripts and how they</li></ul>
 <p>relate to the supported operator flow.</p>
+<ul><li><code>WORK-AREA-STATUS.md</code> is the quickest map of what is current, reference,</li></ul>
+<p>archive-only, or deprecated for day-to-day mainline use.</p>
 <ul><li><code>tools/README.md</code> explains the maintained generators that keep the dashboard,</li></ul>
 <p>handbook, public page, and status manifest synchronized.</p>
 <ul><li><code>REPOSITORY-STRUCTURE-REVIEW.md</code> classifies the repo layout into supported</li></ul>
@@ -974,6 +985,54 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <ol><li>a directory or result family moves from provenance-only to</li></ol>
 <p>integrity-checkable or executable,</p>
 <ol><li>a new top-level archive or workspace is added,</li><li>a previously manual workflow becomes part of the supported line, or</li><li>a result family becomes publication-validated in a stronger way than before.</li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-work-area-status">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Work Area Status</h2>
+            <p class="sectionSummary">Quick map of what is current, reference, archive-only, or deprecated for day-to-day mainline use.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../WORK-AREA-STATUS.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file answers a practical question:</p>
+<p><strong>Which parts of the repo are current working areas, which are reference or archive areas, and which should be treated as deprecated for day-to-day mainline use?</strong></p>
+<p>The goal is not to throw anything away. The goal is to keep the project easy to navigate without confusing:</p>
+<ul><li>active working surfaces,</li><li>preserved historical/reference surfaces,</li><li>archive-only material,</li><li>and older helper paths that still exist but should not be mistaken for the</li></ul>
+<p>primary supported workflow.</p>
+<h3 id="section-work-area-status-status-key">Status Key</h3>
+<ul><li><code>Current working area</code></li></ul>
+<p>The place we expect most active mainline work to happen now.</p>
+<ul><li><code>Supported validation area</code></li></ul>
+<p>Part of the trusted confidence gate for the current baseline.</p>
+<ul><li><code>Reference snapshot</code></li></ul>
+<p>A preserved historical code line that still matters, but is not the primary place for new integrated work.</p>
+<ul><li><code>Preserved results / provenance</code></li></ul>
+<p>Important historical data or result material kept for comparison, integrity-checking, or lineage.</p>
+<ul><li><code>Archive intake / pending review</code></li></ul>
+<p>Material that may matter, but is not yet promoted into a durable long-term home.</p>
+<ul><li><code>Deprecated for mainline use</code></li></ul>
+<p>Still preserved and usable when needed, but should not be treated as the default path for everyday supported work.</p>
+<h3 id="section-work-area-status-current-read">Current Read</h3>
+<table><thead><tr><th>Area</th><th>Status</th><th>How to treat it now</th></tr></thead><tbody><tr><td><code>qcsp3/</code></td><td>Current working area</td><td>Primary integrated solver line and default code surface for ongoing mainline work.</td></tr><tr><td><code>tests/</code></td><td>Supported validation area</td><td>Authoritative confidence gate for the current baseline.</td></tr><tr><td><code>src/</code></td><td>Current working area</td><td>Main interactive entry point for the supported solver line.</td></tr><tr><td><code>Q-Batch-SBCL/</code></td><td>Current working area</td><td>Main thesis-result experiment workspace, with mixed tracked/generated content.</td></tr><tr><td><code>docs/</code></td><td>Current working area</td><td>Generated status, handbook, and public-facing outputs that are part of the maintained build.</td></tr><tr><td><code>tools/</code></td><td>Current working area</td><td>Maintained helper scripts for docs/status generation and intake scaffolding.</td></tr><tr><td><code>incoming/</code></td><td>Archive intake / pending review</td><td>First stop for all newly found relevant material.</td></tr><tr><td><code>incoming/_landing/</code></td><td>Archive intake / pending review</td><td>Raw-drop handoff area before Codex converts material into a proper intake batch.</td></tr><tr><td><code>data/acl-experiments/</code></td><td>Preserved results / provenance</td><td>Canonical preserved ACL thesis-era baseline for active comparison checks.</td></tr><tr><td><code>data/thesis/</code></td><td>Preserved results / provenance</td><td>Canonical thesis source artifact.</td></tr><tr><td><code>data/csp-adt-batch/</code>, <code>data/csp-batch/</code>, <code>data/csp-save-results/</code></td><td>Preserved results / provenance</td><td>Historical result families kept for integrity checks and research context.</td></tr><tr><td><code>data/sparc-archive/</code></td><td>Preserved results / provenance</td><td>SPARC-era preserved archive and report/result carry-forward layer.</td></tr><tr><td><code>historical finds/</code></td><td>Preserved results / provenance</td><td>Reviewed archive/recovery material, not a supported execution surface.</td></tr><tr><td><code>csp/</code></td><td>Reference snapshot</td><td>Earliest preserved solver line; used for comparison and historical grounding.</td></tr><tr><td><code>qcsp-may29-1996/</code></td><td>Reference snapshot</td><td>Historical snapshot with embedded preserved experiment trees.</td></tr><tr><td><code>qcsp-alex-sep16-1997/</code></td><td>Reference snapshot</td><td>Historical snapshot with extended experiment/tooling context.</td></tr><tr><td>root <code>run-test4*.lisp</code></td><td>Deprecated for mainline use</td><td>Preserved manual compatibility helpers; useful historically, but not the supported AO gate.</td></tr><tr><td><code>run-csp-tests.lisp</code></td><td>Deprecated for mainline use</td><td>Historical/manual helper, secondary to <code>tests/</code>.</td></tr><tr><td><code>renovate.lisp</code></td><td>Deprecated for mainline use</td><td>Historical bootstrap/helper context, not a current working surface.</td></tr></tbody></table>
+<h3 id="section-work-area-status-practical-rule">Practical Rule</h3>
+<p>When in doubt:</p>
+<ol><li>do new integrated solver work in <code>qcsp3/</code>,</li><li>use <code>tests/</code> for confidence,</li><li>use <code>Q-Batch-SBCL/</code> for the thesis-result experiment story,</li><li>use <code>incoming/</code> first for anything newly found,</li><li>treat snapshots as reference material unless there is a specific historical</li></ol>
+<p>reason to work inside them,</p>
+<ol><li>and treat root helper scripts as deprecated for day-to-day mainline use.</li></ol>
+<h3 id="section-work-area-status-important-distinction">Important Distinction</h3>
+<p><code>Deprecated for mainline use</code> does <strong>not</strong> mean disposable.</p>
+<p>These areas are still preserved because they can be useful for:</p>
+<ul><li>historical comparison,</li><li>manual reconstruction of old workflows,</li><li>provenance,</li><li>or future recovery work.</li></ul>
+<p>The label only means:</p>
+<p><strong>do not mistake them for the default supported path going forward.</strong></p>
+<h3 id="section-work-area-status-recommended-next-step">Recommended Next Step</h3>
+<p>Keep this file current whenever a work area changes role, especially if:</p>
+<ol><li>an intake area becomes a promoted permanent home,</li><li>a snapshot-specific family becomes part of the supported baseline,</li><li>a manual helper becomes truly obsolete,</li><li>or a new archive/research lane becomes important enough to name explicitly.</li></ol>
         </div>
       </section>
       <section class="sectionCard" id="section-recovery-and-reproducibility">
@@ -3295,6 +3354,7 @@ bash tests/validate-dashboard.sh</code></pre>
         </div>
         <div class="docBody">
 <p>This file explains the repo-root helper scripts that are still useful but are not the primary supported workflow.</p>
+<p>Treat them as <strong>deprecated for day-to-day mainline use</strong>. That means they remain preserved and callable when we need historical/manual comparison paths, but they should not be mistaken for the default operator surface going forward.</p>
 <p>Use this when you are looking at the top-level <code>.lisp</code> files and want to know which ones are historical/manual helpers versus which ones define the mainline operator path.</p>
 <h3 id="section-manual-helpers-supported-mainline-alternatives">Supported Mainline Alternatives</h3>
 <p>If your goal is one of these tasks, prefer the supported mainline entry points:</p>
@@ -3495,6 +3555,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>This file reviews whether the repository layout makes it clear:</p>
 <ol><li>what the primary system artifacts are,</li><li>what defines domains and example generation,</li><li>what counts as outputs, preserved results, and graphs, and</li><li>what remains non-tested, non-integrated, or archive-only.</li></ol>
 <p>Short answer: <strong>the repo is much clearer than it was, but a few mixed-purpose areas still require insider knowledge.</strong></p>
+<p>For the shortest current/reference/archive/deprecated map, see <code>WORK-AREA-STATUS.md</code>.</p>
 <h3 id="section-repository-structure-review-top-level-classification">Top-Level Classification</h3>
 <table><thead><tr><th>Path</th><th>Primary role</th><th>Current clarity</th></tr></thead><tbody><tr><td><code>qcsp3/</code></td><td>Primary integrated solver candidate</td><td>Good</td></tr><tr><td><code>csp/</code></td><td>Earliest reference snapshot</td><td>Good</td></tr><tr><td><code>qcsp-may29-1996/</code></td><td>Reference snapshot plus embedded historical experiment trees</td><td>Mixed</td></tr><tr><td><code>qcsp-alex-sep16-1997/</code></td><td>Reference snapshot plus archive-heavy experiment/tooling material</td><td>Mixed</td></tr><tr><td><code>tests/</code></td><td>Supported validation spine</td><td>Strong</td></tr><tr><td><code>Q-Batch-SBCL/</code></td><td>Modern experiment drivers plus generated outputs</td><td>Mixed</td></tr><tr><td><code>incoming/</code></td><td>Single intake bucket for newly found relevant material</td><td>Strong</td></tr><tr><td><code>data/</code></td><td>Consolidated preserved data/results/publications</td><td>Strong</td></tr><tr><td><code>historical finds/</code></td><td>Archive intake and recovery staging</td><td>Good</td></tr><tr><td><code>docs/</code></td><td>Generated status/dashboard/public-page outputs</td><td>Good</td></tr><tr><td><code>src/</code></td><td>Modern interactive entry point</td><td>Strong</td></tr><tr><td>Root helper scripts</td><td>Legacy/manual entry points and bootstrap helpers</td><td>Mixed</td></tr></tbody></table>
 <h3 id="section-repository-structure-review-what-is-already-clear">What Is Already Clear</h3>

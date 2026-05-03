@@ -3,6 +3,11 @@
 This file explains the repo-root helper scripts that are still useful but are
 not the primary supported workflow.
 
+Treat them as **deprecated for day-to-day mainline use**.
+That means they remain preserved and callable when we need historical/manual
+comparison paths, but they should not be mistaken for the default operator
+surface going forward.
+
 Use this when you are looking at the top-level `.lisp` files and want to know
 which ones are historical/manual helpers versus which ones define the mainline
 operator path.

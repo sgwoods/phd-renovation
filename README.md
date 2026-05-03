@@ -142,6 +142,8 @@ src/                        Entry point
   data versus generated outputs.
 - `MANUAL-HELPERS.md` explains the repo-root helper scripts and how they
   relate to the supported operator flow.
+- `WORK-AREA-STATUS.md` is the quickest map of what is current, reference,
+  archive-only, or deprecated for day-to-day mainline use.
 - `tools/README.md` explains the maintained generators that keep the dashboard,
   handbook, public page, and status manifest synchronized.
 - `REPOSITORY-STRUCTURE-REVIEW.md` classifies the repo layout into supported

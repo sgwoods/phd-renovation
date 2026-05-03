@@ -10,6 +10,9 @@ This file reviews whether the repository layout makes it clear:
 Short answer: **the repo is much clearer than it was, but a few mixed-purpose
 areas still require insider knowledge.**
 
+For the shortest current/reference/archive/deprecated map, see
+`WORK-AREA-STATUS.md`.
+
 ## Top-Level Classification
 
 | Path | Primary role | Current clarity |

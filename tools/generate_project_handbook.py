@@ -44,6 +44,11 @@ HANDBOOK_SOURCES = [
         "Repo-wide answer to what is indexed, integrated, automated, and publication-validated.",
     ),
     HandbookSource(
+        "Work Area Status",
+        "WORK-AREA-STATUS.md",
+        "Quick map of what is current, reference, archive-only, or deprecated for day-to-day mainline use.",
+    ),
+    HandbookSource(
         "Recovery And Reproducibility",
         "RECOVERY-AND-REPRODUCIBILITY.md",
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",
