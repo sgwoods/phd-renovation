@@ -70,6 +70,8 @@ of the renovation work by hand:
 
 The fuller continuity/recovery audit lives in
 `RECOVERY-AND-REPRODUCIBILITY.md`.
+For the shortest different-Mac startup/handoff path, see
+`NEW-MAC-HANDOFF.md` and `scripts/start-codex-new-mac.sh`.
 
 ## Project Structure
 

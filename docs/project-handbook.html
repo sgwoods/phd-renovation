@@ -399,6 +399,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-new-mac-handoff">New Mac Handoff</a></h2>
+        <p>Shortest practical guide for standing the project up on a different Mac and retiring the current machine safely.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-intake-roadmap">Intake Roadmap</a></h2>
         <p>Operational plan for post-1.0 ingestion, de-duplication, categorization, and promotion of newly found material.</p>
       </article>
@@ -525,6 +530,10 @@ h1{
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
           <ul class="subtoc"><li><a href="#section-recovery-and-reproducibility-precise-goal">Precise Goal</a></li><li><a href="#section-recovery-and-reproducibility-current-project-state">Current Project State</a></li><li><a href="#section-recovery-and-reproducibility-status-read">Status Read</a></li><li><a href="#section-recovery-and-reproducibility-what-is-checked-in">What Is Checked In</a></li><li><a href="#section-recovery-and-reproducibility-core-source-and-snapshots">Core source and snapshots</a></li><li><a href="#section-recovery-and-reproducibility-validation-and-investigation-harnesses">Validation and investigation harnesses</a></li><li><a href="#section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</a></li><li><a href="#section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</a></li><li><a href="#section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</a></li><li><a href="#section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</a></li><li><a href="#section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</a></li><li><a href="#section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</a></li><li><a href="#section-recovery-and-reproducibility-can-the-work-be-recreated-on-a-new-machine">Can The Work Be Recreated On A New Machine?</a></li><li><a href="#section-recovery-and-reproducibility-for-the-main-repo-work-yes">For the main repo work: yes</a></li><li><a href="#section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</a></li><li><a href="#section-recovery-and-reproducibility-remaining-reproducibility-risks">Remaining Reproducibility Risks</a></li><li><a href="#section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</a></li><li><a href="#section-recovery-and-reproducibility-local-working-directory-convention">Local Working Directory Convention</a></li><li><a href="#section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-new-mac-handoff">New Mac Handoff</a>
+          <ul class="subtoc"><li><a href="#section-new-mac-handoff-current-portability-goal">Current Portability Goal</a></li><li><a href="#section-new-mac-handoff-current-local-state">Current Local State</a></li><li><a href="#section-new-mac-handoff-required-dependencies">Required Dependencies</a></li><li><a href="#section-new-mac-handoff-start-script">Start Script</a></li><li><a href="#section-new-mac-handoff-what-still-needs-deliberate-care">What Still Needs Deliberate Care</a></li><li><a href="#section-new-mac-handoff-deprecating-the-current-macbook">Deprecating The Current MacBook</a></li></ul>
         </li>
         <li>
           <a href="#section-intake-roadmap">Intake Roadmap</a>
@@ -712,7 +721,7 @@ h1{
         </li>
         <li>
           <a href="#section-workflows">Workflows</a>
-          <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-release-hardening">5. Release Hardening</a></li><li><a href="#section-workflows-6-new-material-intake">6. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-release-hardening">5. Release Hardening</a></li><li><a href="#section-workflows-5a-new-mac-startup-retirement-handoff">5a. New Mac Startup / Retirement Handoff</a></li><li><a href="#section-workflows-6-new-material-intake">6. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-docs-guide">docs Guide</a>
@@ -780,7 +789,7 @@ h1{
 <p><code>tests/run.lisp</code>, <code>tests/validate-artifacts.sh</code>, <code>tests/validate-ff-provenance.sh</code>, <code>tests/validate-adt-batch.sh</code>, <code>tests/validate-csp-batch.sh</code>, <code>tests/validate-ao.sh</code>, <code>tests/validate-dashboard.sh</code>,</p>
 <ol><li>clone the companion public repo if you need publication sync too, and point</li></ol>
 <p><code>PHD_PUBLIC_SITE_DIR</code> at it.</p>
-<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>.</p>
+<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the shortest different-Mac startup/handoff path, see <code>NEW-MAC-HANDOFF.md</code> and <code>scripts/start-codex-new-mac.sh</code>.</p>
 <h3 id="section-project-overview-project-structure">Project Structure</h3>
 <pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
@@ -1063,11 +1072,13 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>categorization of newly found material.</p>
 <h3 id="section-recovery-and-reproducibility-current-project-state">Current Project State</h3>
 <p>As of this recovery audit checkpoint:</p>
-<ul><li><code>v1.0.0</code> is the published first stable release marker.</li><li><code>main</code> should be treated as the durable recovery baseline once it is aligned</li></ul>
-<p>with the current working branch.</p>
-<ul><li><code>codex/fix-artifact-pipeline</code> remains the active working branch for ongoing</li></ul>
-<p>changes, but it should no longer be the only branch that contains the real project state.</p>
-<ul><li>The repo working tree is clean.</li><li>The public companion site is a separate repo:</li></ul>
+<ul><li><code>v1.0.0</code> is the published first stable release marker.</li><li><code>codex/fix-artifact-pipeline</code> is the active working branch for ongoing</li></ul>
+<p>changes.</p>
+<ul><li><code>main</code> must stay aligned with the durable current state if fresh clones are</li></ul>
+<p>expected to land on the right baseline directly.</p>
+<ul><li>The startup/handoff path for a different Mac is now documented in</li></ul>
+<p><code>NEW-MAC-HANDOFF.md</code> and implemented in <code>scripts/start-codex-new-mac.sh</code>.</p>
+<ul><li>The repo working tree should be kept clean at handoff checkpoints.</li><li>The public companion site is a separate repo:</li></ul>
 <p><code>https://github.com/sgwoods/public</code></p>
 <ul><li>The supported validation spine is the practical continuity gate:</li><li><code>tests/run.lisp</code></li><li><code>tests/validate-artifacts.sh</code></li><li><code>tests/validate-ff-provenance.sh</code></li><li><code>tests/validate-adt-batch.sh</code></li><li><code>tests/validate-csp-batch.sh</code></li><li><code>tests/validate-ao.sh</code></li><li><code>tests/validate-dashboard.sh</code></li></ul>
 <h3 id="section-recovery-and-reproducibility-status-read">Status Read</h3>
@@ -1160,6 +1171,47 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>on this machine,</p>
 <ol><li>use <code>1.0.1</code> for STYLE-WARNING cleanup and small release-hardening polish,</li><li>and only then reopen larger deferred lanes like terrain recovery and</li></ol>
 <p><code>Hanoi-4</code> behavior work.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-new-mac-handoff">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>New Mac Handoff</h2>
+            <p class="sectionSummary">Shortest practical guide for standing the project up on a different Mac and retiring the current machine safely.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../NEW-MAC-HANDOFF.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the shortest practical guide for bringing the project up on a different Mac and retiring the current machine safely.</p>
+<h3 id="section-new-mac-handoff-current-portability-goal">Current Portability Goal</h3>
+<p>We want to be able to:</p>
+<ol><li>clone the repo on a different Mac,</li><li>install or verify the required dependencies,</li><li>run one startup script,</li><li>validate the supported baseline,</li><li>and continue work without reconstructing local context by hand.</li></ol>
+<h3 id="section-new-mac-handoff-current-local-state">Current Local State</h3>
+<p>At the time this handoff guide was added:</p>
+<ul><li>the active working branch is <code>codex/fix-artifact-pipeline</code></li><li>that branch contains the current project state</li><li><code>main</code> must be kept aligned with it if we want fresh clones to land directly</li></ul>
+<p>on the durable baseline</p>
+<ul><li>the repo-local raw intake landing path is <code>incoming/_landing/</code></li><li>the preferred iCloud-backed raw intake path is:</li></ul>
+<p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/</code></p>
+<h3 id="section-new-mac-handoff-required-dependencies">Required Dependencies</h3>
+<p>The supported startup path expects:</p>
+<ul><li><code>git</code></li><li><code>sbcl</code></li><li><code>python3</code></li><li>Python <code>matplotlib</code></li><li><code>Ghostscript</code> (<code>gs</code>)</li><li><code>ripgrep</code> (<code>rg</code>)</li><li><code>curl</code></li><li><code>Quicklisp</code></li></ul>
+<h3 id="section-new-mac-handoff-start-script">Start Script</h3>
+<p>Use:</p>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
+<p>If Quicklisp is not installed yet:</p>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
+<p>The script:</p>
+<ol><li>checks required commands,</li><li>checks Python <code>matplotlib</code>,</li><li>creates the preferred iCloud intake path,</li><li>optionally installs Quicklisp,</li><li>detects the public Pages checkout if present,</li><li>and runs the full supported validation spine unless <code>--skip-validation</code> is</li></ol>
+<p>passed.</p>
+<h3 id="section-new-mac-handoff-what-still-needs-deliberate-care">What Still Needs Deliberate Care</h3>
+<ol><li>Keep the active working branch pushed.</li><li>Keep <code>main</code> aligned with the durable current state.</li><li>Keep the companion public repo pushed when public-facing outputs change.</li><li>Put all new finds through <code>incoming/</code> or the iCloud landing path.</li><li>Do not rely on ignored random/situation workspaces as if they were the only</li></ol>
+<p>surviving copy of anything important.</p>
+<h3 id="section-new-mac-handoff-deprecating-the-current-macbook">Deprecating The Current MacBook</h3>
+<p>Before retiring this MacBook, the safest minimum is:</p>
+<ol><li>push the active branch,</li><li>align and push <code>main</code>,</li><li>verify the startup script and validation spine on the new Mac,</li><li>verify the iCloud-backed intake path exists there,</li><li>and only then treat the old machine as non-authoritative.</li></ol>
         </div>
       </section>
       <section class="sectionCard" id="section-intake-roadmap">
@@ -1613,6 +1665,9 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>New material intake now has one dedicated landing zone:</p>
 <ul><li><code>incoming/</code>: single bucket for newly found relevant code, data,</li></ul>
 <p>publications, and experiment artifacts before review and promotion</p>
+<p>Different-Mac startup now also has one dedicated entry path:</p>
+<ul><li><code>scripts/start-codex-new-mac.sh</code>: dependency check, iCloud intake-path</li></ul>
+<p>creation, optional Quicklisp install, and full validation-spine run</p>
 <h3 id="section-development-guide-architecture">Architecture</h3>
 <h4 id="section-development-guide-four-asdf-systems">Four ASDF Systems</h4>
 <p>The project contains four independent ASDF systems that share the same architecture but represent different development stages:</p>
@@ -3217,6 +3272,13 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li>final release-candidate confidence,</li><li>making sure the public/status outputs are current,</li><li>checking the exact release gate in <code>RELEASE-1.0-CHECKLIST.md</code>.</li></ul>
 <p>Main guides:</p>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code></li><li><code>RENOVATION.md</code></li></ul>
+<h4 id="section-workflows-5a-new-mac-startup-retirement-handoff">5a. New Mac Startup / Retirement Handoff</h4>
+<p>Use this when you want to stand the project up on a different Mac and verify that the current machine can be retired safely.</p>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
+<p>If Quicklisp is not installed yet:</p>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
+<p>Main guides:</p>
+<ul><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
 <h4 id="section-workflows-6-new-material-intake">6. New Material Intake</h4>
 <p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
 <ol><li>Easiest path: drop the material into <code>incoming/_landing/</code>.</li></ol>

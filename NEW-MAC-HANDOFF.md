@@ -1,0 +1,82 @@
+# New Mac Handoff
+
+This file is the shortest practical guide for bringing the project up on a
+different Mac and retiring the current machine safely.
+
+## Current Portability Goal
+
+We want to be able to:
+
+1. clone the repo on a different Mac,
+2. install or verify the required dependencies,
+3. run one startup script,
+4. validate the supported baseline,
+5. and continue work without reconstructing local context by hand.
+
+## Current Local State
+
+At the time this handoff guide was added:
+
+- the active working branch is `codex/fix-artifact-pipeline`
+- that branch contains the current project state
+- `main` must be kept aligned with it if we want fresh clones to land directly
+  on the durable baseline
+- the repo-local raw intake landing path is `incoming/_landing/`
+- the preferred iCloud-backed raw intake path is:
+  `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/`
+
+## Required Dependencies
+
+The supported startup path expects:
+
+- `git`
+- `sbcl`
+- `python3`
+- Python `matplotlib`
+- `Ghostscript` (`gs`)
+- `ripgrep` (`rg`)
+- `curl`
+- `Quicklisp`
+
+## Start Script
+
+Use:
+
+```bash
+bash scripts/start-codex-new-mac.sh
+```
+
+If Quicklisp is not installed yet:
+
+```bash
+bash scripts/start-codex-new-mac.sh --install-quicklisp
+```
+
+The script:
+
+1. checks required commands,
+2. checks Python `matplotlib`,
+3. creates the preferred iCloud intake path,
+4. optionally installs Quicklisp,
+5. detects the public Pages checkout if present,
+6. and runs the full supported validation spine unless `--skip-validation` is
+   passed.
+
+## What Still Needs Deliberate Care
+
+1. Keep the active working branch pushed.
+2. Keep `main` aligned with the durable current state.
+3. Keep the companion public repo pushed when public-facing outputs change.
+4. Put all new finds through `incoming/` or the iCloud landing path.
+5. Do not rely on ignored random/situation workspaces as if they were the only
+   surviving copy of anything important.
+
+## Deprecating The Current MacBook
+
+Before retiring this MacBook, the safest minimum is:
+
+1. push the active branch,
+2. align and push `main`,
+3. verify the startup script and validation spine on the new Mac,
+4. verify the iCloud-backed intake path exists there,
+5. and only then treat the old machine as non-authoritative.

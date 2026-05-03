@@ -33,6 +33,11 @@ New material intake now has one dedicated landing zone:
 - `incoming/`: single bucket for newly found relevant code, data,
   publications, and experiment artifacts before review and promotion
 
+Different-Mac startup now also has one dedicated entry path:
+
+- `scripts/start-codex-new-mac.sh`: dependency check, iCloud intake-path
+  creation, optional Quicklisp install, and full validation-spine run
+
 ## Architecture
 
 ### Four ASDF Systems

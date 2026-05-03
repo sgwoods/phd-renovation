@@ -34,12 +34,13 @@ The project goal at this stage is:
 As of this recovery audit checkpoint:
 
 - `v1.0.0` is the published first stable release marker.
-- `main` should be treated as the durable recovery baseline once it is aligned
-  with the current working branch.
-- `codex/fix-artifact-pipeline` remains the active working branch for ongoing
-  changes, but it should no longer be the only branch that contains the real
-  project state.
-- The repo working tree is clean.
+- `codex/fix-artifact-pipeline` is the active working branch for ongoing
+  changes.
+- `main` must stay aligned with the durable current state if fresh clones are
+  expected to land on the right baseline directly.
+- The startup/handoff path for a different Mac is now documented in
+  `NEW-MAC-HANDOFF.md` and implemented in `scripts/start-codex-new-mac.sh`.
+- The repo working tree should be kept clean at handoff checkpoints.
 - The public companion site is a separate repo:
   `https://github.com/sgwoods/public`
 - The supported validation spine is the practical continuity gate:

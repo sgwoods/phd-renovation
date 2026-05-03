@@ -115,6 +115,26 @@ Main guides:
 - `RELEASE-1.0-CHECKLIST.md`
 - `RENOVATION.md`
 
+### 5a. New Mac Startup / Retirement Handoff
+
+Use this when you want to stand the project up on a different Mac and verify
+that the current machine can be retired safely.
+
+```bash
+bash scripts/start-codex-new-mac.sh
+```
+
+If Quicklisp is not installed yet:
+
+```bash
+bash scripts/start-codex-new-mac.sh --install-quicklisp
+```
+
+Main guides:
+
+- `NEW-MAC-HANDOFF.md`
+- `RECOVERY-AND-REPRODUCIBILITY.md`
+
 ### 6. New Material Intake
 
 Use this when new code, data, papers, or experiment artifacts arrive.
