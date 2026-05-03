@@ -112,6 +112,9 @@ That means the current recommended order is:
 6. treat `Hanoi-4` as a documented `1.x` lane and a `2.0`
    research/repeatability goal.
 
+The default-branch/recovery baseline should stay aligned with that supported
+state so a fresh clone can land on the durable project baseline directly.
+
 The current ADT batch note lives in `ADT-BATCH-INTEGRATION.md`.
 Current recommendation: keep the preserved wrapper mapping and bridge probes as
 historical explanation, but do not require the maintained integrated line to

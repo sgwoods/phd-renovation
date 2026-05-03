@@ -46,6 +46,28 @@ The thesis itself is available from the project home surfaces in both
 [`docs/phd-renovation-thesis.ps`](docs/phd-renovation-thesis.ps) form, with
 the canonical source PDF preserved under `data/thesis/`.
 
+## Fresh Checkout Recovery Quick Start
+
+If you need to resume this project on a new machine without reconstructing any
+of the renovation work by hand:
+
+1. clone `https://github.com/sgwoods/phd-renovation.git`,
+2. start from `main` as the durable baseline,
+3. install SBCL, Quicklisp, Python 3, `matplotlib`, and Ghostscript,
+4. run the supported validation spine:
+   `tests/run.lisp`,
+   `tests/validate-artifacts.sh`,
+   `tests/validate-ff-provenance.sh`,
+   `tests/validate-adt-batch.sh`,
+   `tests/validate-csp-batch.sh`,
+   `tests/validate-ao.sh`,
+   `tests/validate-dashboard.sh`,
+5. clone the companion public repo if you need publication sync too, and point
+   `PHD_PUBLIC_SITE_DIR` at it.
+
+The fuller continuity/recovery audit lives in
+`RECOVERY-AND-REPRODUCIBILITY.md`.
+
 ## Project Structure
 
 ```

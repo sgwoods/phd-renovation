@@ -312,31 +312,36 @@ anchors rather than co-equal supported workflows.
    work lane. New materials are likely to be the main source of project
    movement after `1.0.0`, so keep the intake, promotion, duplicate review,
    and archive classification flow disciplined.
-3. Target `1.0.1` for STYLE-WARNING cleanup outside the supported release gate,
+3. Keep `main` aligned with the durable supported baseline so a fresh clone
+   lands on the real project state rather than a stale checkpoint.
+4. Target `1.0.1` for STYLE-WARNING cleanup outside the supported release gate,
    especially the remaining `gsat` lexical-special warnings and legacy helper
    path warnings.
-4. Treat the documentation lane as maintenance now: keep adding selective
+5. Treat the documentation lane as maintenance now: keep adding selective
    clarifications when useful, but focus on keeping the docs/handbook/status
    surface accurate rather than broad new README waves.
-5. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
+6. Keep the ADT batch `ij1`-`ij4` archive family integrity-checkable and
    documented, but treat it as snapshot-specific for now rather than as a
    required post-M1 integration target.
    The investigation note for that family lives in `ADT-BATCH-INTEGRATION.md`.
    Current recommendation: preserve the bridge probes and the explanation of
    the maintained `csp` / `qcsp3` noise-model split, but do not require the
    integrated line to reproduce this family.
-6. Keep the supported validation gate clean and high-signal; treat new warning
+7. Keep the supported validation gate clean and high-signal; treat new warning
    output in `tests/run.lisp` or `tests/validate-ao.sh` as regression noise to
    investigate, not normal background.
-7. Keep building out the validation matrix when useful, but with the main
+8. Keep building out the validation matrix when useful, but with the main
    archive-heavy families now mapped or integrity-checked, avoid widening the
    supported umbrella casually without a clear post-`1.0.0` or intake-review
    benefit.
-8. Only after the baseline, warning surface, provenance work, release
+9. Once the baseline and branch/default-branch alignment are stable, prefer
+   future local working clones on this machine inside an iCloud-backed parent
+   folder for additional local continuity beyond git remotes.
+10. Only after the baseline, warning surface, provenance work, release
    maintenance, and intake flow are tighter, begin controlled integration and
    research-readiness experiments such as alex DFA-option isolation against the
    validated snapshot.
-9. Treat `Hanoi-4` explicitly as a phased lane: for `1.x`, keep a clear record
+11. Treat `Hanoi-4` explicitly as a phased lane: for `1.x`, keep a clear record
    of the situation, artifacts, and any ingested references; for `2.0`, pursue
    actual behavioral/repeatability understanding once the material exists.
    Seed that future analysis with later Towers of Hanoi encoding literature

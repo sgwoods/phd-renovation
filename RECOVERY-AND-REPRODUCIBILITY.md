@@ -5,18 +5,9 @@ This file answers a practical continuity question:
 **If this local working directory disappeared today, could the project be
 recreated on a new machine without redoing the work?**
 
-Short answer: **yes, with a few explicit rules and one important branch
-warning.**
-
-The key warning is this:
-
-- the durable working line is **not** `main`
-- the durable working line is the pushed branch
-  `codex/fix-artifact-pipeline`
-- `main` is still intentionally behind at the earlier onboarding checkpoint
-
-If someone clones only `main`, they will **not** recover the current project
-state.
+Short answer: **yes, if we keep treating the checked-in repo plus the companion
+public repo as the durable record and avoid relying on local-only generated
+state.**
 
 ## Precise Goal
 
@@ -35,12 +26,14 @@ The project goal at this stage is:
 
 ## Current Project State
 
-As of this recovery audit:
+As of this recovery audit checkpoint:
 
 - `v1.0.0` is the published first stable release marker.
-- The active working branch is `codex/fix-artifact-pipeline`.
-- The default branch `main` is still at the older onboarding-era checkpoint
-  and should **not** be treated as the current working baseline.
+- `main` should be treated as the durable recovery baseline once it is aligned
+  with the current working branch.
+- `codex/fix-artifact-pipeline` remains the active working branch for ongoing
+  changes, but it should no longer be the only branch that contains the real
+  project state.
 - The repo working tree is clean.
 - The public companion site is a separate repo:
   `https://github.com/sgwoods/public`
@@ -172,7 +165,8 @@ A new machine can recover the practical project state if it does all of the
 following:
 
 1. clone `https://github.com/sgwoods/phd-renovation.git`
-2. check out `codex/fix-artifact-pipeline` rather than stopping at `main`
+2. start from `main`, then check out the active working branch only if newer
+   unreleased work is needed
 3. install the required runtime tools:
    - SBCL
    - Quicklisp
@@ -206,20 +200,20 @@ also clone the public companion repo and point `PHD_PUBLIC_SITE_DIR` at it.
 
 The main risks are no longer "missing code" risks. They are workflow risks:
 
-1. **Wrong branch risk**
-   Resuming from `main` instead of `codex/fix-artifact-pipeline` would lose
-   the real current state.
-
-2. **Public companion repo risk**
+1. **Public companion repo risk**
    The deployed Pages site lives in `sgwoods/public`, not only here.
 
-3. **Generated-cache expectations**
+2. **Generated-cache expectations**
    Some ignored random/situation and experiment-output trees will need to be
    regenerated rather than recovered byte-for-byte from git.
 
-4. **Future incoming-material risk**
+3. **Future incoming-material risk**
    New finds that are only dropped locally and not promoted or documented in
    `incoming/INDEX.md` would be easy to lose.
+
+4. **Non-backed-up local working directory risk**
+   A clone that lives only in a non-backed-up local folder is still more
+   fragile than necessary even if the remote repos are current.
 
 ## What To Do To Be Confident
 
@@ -231,17 +225,36 @@ continuity checklist:
 3. put every new archival find through `incoming/`,
 4. keep `incoming/INDEX.md` and the status artifacts current,
 5. keep the validation spine green,
-6. and avoid relying on local generated caches as if they were canonical data.
+6. avoid relying on local generated caches as if they were canonical data, and
+7. prefer future local working clones inside an iCloud-backed parent folder on
+   this machine once the current baseline/branch layout is settled.
+
+## Local Working Directory Convention
+
+Going forward, the preferred local convention should be:
+
+1. keep the canonical git history in GitHub,
+2. keep the public-facing Pages artifacts in the companion public repo,
+3. and keep active local working directories on this machine inside an
+   iCloud-backed parent folder.
+
+That does **not** replace git. It is simply a second layer of local continuity
+for the working checkout itself.
+
+The practical time to adopt that convention is after the branch/default-branch
+alignment and current intake/status cleanup are complete, so the move does not
+interrupt active stabilization work.
 
 ## Recommended Next Steps
 
 From this recovery checkpoint, the best next steps are:
 
-1. decide whether `main` should be advanced to the current working baseline or
-   whether the branch-first workflow is intentional for a while longer,
+1. keep `main` aligned with the durable recovery baseline,
 2. make intake, de-duplication, and categorization the main active lane,
 3. add a short bootstrap/recovery checklist to the main project page for human
    operators,
-4. use `1.0.1` for STYLE-WARNING cleanup and small release-hardening polish,
-5. and only then reopen larger deferred lanes like terrain recovery and
+4. adopt the iCloud-backed local working-directory convention for future clones
+   on this machine,
+5. use `1.0.1` for STYLE-WARNING cleanup and small release-hardening polish,
+6. and only then reopen larger deferred lanes like terrain recovery and
    `Hanoi-4` behavior work.

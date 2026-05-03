@@ -11,8 +11,8 @@
     },
     {
       "label": "Current Focus",
-      "value": "Intake + cleanup",
-      "note": "The active front is now ingestion, de-duplication, and categorization of found material, with 1.0.1 warning cleanup as the main maintenance target."
+      "value": "Intake + continuity",
+      "note": "The active front is disciplined intake of found material, continuity hardening, and 1.0.1 warning cleanup outside the supported release gate."
     },
     {
       "label": "Build Line",
@@ -21,7 +21,7 @@
     },
     {
       "label": "Updated",
-      "value": "March 23, 2026",
+      "value": "May 3, 2026",
       "note": "Dashboard now generated as part of the regular validation flow."
     }
   ],
@@ -80,8 +80,8 @@
       "status": "active",
       "status_label": "In Progress",
       "phase": "1.0.1 track",
-      "title": "Ingestion, de-dup, and maintenance cleanup",
-      "summary": "With 1.0.0 published, the next mainline is disciplined intake of new materials plus cleanup of warning noise that still lives outside the supported release gate."
+      "title": "Ingestion, continuity, and maintenance cleanup",
+      "summary": "With 1.0.0 published, the next mainline is disciplined intake of new materials, keeping the durable baseline easy to recover from a fresh clone, and cleanup of warning noise that still lives outside the supported release gate."
     },
     {
       "status": "pending",
@@ -100,7 +100,7 @@
     {
       "label": "Current Focus",
       "title": "The mainline stays disciplined",
-      "summary": "Every new step still runs through the same validation spine so the published 1.0 baseline stays trustworthy while newly ingested materials are reviewed deliberately and post-release cleanup stays bounded."
+      "summary": "Every new step still runs through the same validation spine so the published 1.0 baseline stays trustworthy while newly ingested materials are reviewed deliberately, the durable recovery baseline stays aligned, and post-release cleanup stays bounded."
     }
   ],
   "handbook_refresh_policy": {
@@ -159,8 +159,8 @@
       "summary": "One code line now covers the validated historical surface with bounded, explained deltas and no hidden blockers."
     },
     {
-      "title": "Ingestion, de-dup, and maintenance cleanup",
-      "summary": "Post-1.0 work focuses on bringing in new material carefully while trimming the remaining warning noise outside the supported gate."
+      "title": "Ingestion, continuity, and maintenance cleanup",
+      "summary": "Post-1.0 work focuses on bringing in new material carefully, keeping the durable baseline easy to recover, and trimming the remaining warning noise outside the supported gate."
     },
     {
       "title": "Deeper research-repeatability closure",
@@ -189,7 +189,7 @@
       },
       {
         "title": "What comes next",
-        "summary": "The next major step after 1.0.0 is ingestion, de-duplication, and categorization of newly found code, data, publications, and experiment artifacts. ADT batch remains snapshot-specific, 1.0.1 is the right home for remaining STYLE-WARNING cleanup, and Hanoi-4 stays documented in 1.x while full behavior and repeatability understanding is deferred to 2.0."
+        "summary": "The next major step after 1.0.0 is ingestion, de-duplication, and categorization of newly found code, data, publications, and experiment artifacts while keeping the durable recovery baseline easy to recreate from a fresh clone. ADT batch remains snapshot-specific, 1.0.1 is the right home for remaining STYLE-WARNING cleanup, and Hanoi-4 stays documented in 1.x while full behavior and repeatability understanding is deferred to 2.0."
       }
     ],
     "links": [
@@ -222,7 +222,7 @@
         "href": "https://github.com/sgwoods/phd-renovation/blob/main/VALIDATION-MATRIX.md"
       }
     ],
-    "footer": "Public summary synced to the repository status on March 23, 2026."
+    "footer": "Public summary synced to the repository status on May 3, 2026."
   },
   "public_status": {
     "schema_version": "1.0",
@@ -233,8 +233,8 @@
     "repo_url": "https://github.com/sgwoods/phd-renovation",
     "dashboard_url": "https://sgwoods.github.io/public/phd-renovation-dashboard.html",
     "experience_url": null,
-    "repo_pushed_at": "2026-03-23T12:00:00Z",
-    "status_generated_at": "2026-03-23T12:00:00Z",
+    "repo_pushed_at": "2026-05-03T12:00:00Z",
+    "status_generated_at": "2026-05-03T12:00:00Z",
     "status_label": "Current build line",
     "focus_label": "Current focus"
   }

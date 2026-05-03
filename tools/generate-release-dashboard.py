@@ -7,6 +7,7 @@ import json
 import os
 import shutil
 import subprocess
+import tempfile
 from html import escape
 from pathlib import Path
 
@@ -770,7 +771,13 @@ def sync_binary_file(source_path: Path, output_path: Path) -> None:
 
 def generate_postscript_from_pdf(pdf_path: Path, ps_path: Path) -> None:
     ps_path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = ps_path.with_suffix(ps_path.suffix + ".tmp")
+    tmp_fd, tmp_name = tempfile.mkstemp(
+        prefix=f".{ps_path.stem}-",
+        suffix=ps_path.suffix,
+        dir=ps_path.parent,
+    )
+    os.close(tmp_fd)
+    tmp_path = Path(tmp_name)
     try:
         subprocess.run(
             [
@@ -785,6 +792,7 @@ def generate_postscript_from_pdf(pdf_path: Path, ps_path: Path) -> None:
             check=True,
         )
     except FileNotFoundError as exc:
+        tmp_path.unlink(missing_ok=True)
         raise RuntimeError("Ghostscript (gs) is required to generate the thesis PostScript.") from exc
 
     if ps_path.exists() and tmp_path.read_bytes() == ps_path.read_bytes():
