@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -801,7 +802,28 @@ def generate_postscript_from_pdf(pdf_path: Path, ps_path: Path) -> None:
     tmp_path.replace(ps_path)
 
 
-def sync_thesis_assets() -> None:
+def stable_postscript_creation_date(status_generated_at: str) -> str:
+    match = re.fullmatch(
+        r"(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z",
+        status_generated_at,
+    )
+    if not match:
+        raise ValueError(
+            f"Unsupported status_generated_at format for PostScript normalization: {status_generated_at}"
+        )
+    year, month, day, hour, minute, second = match.groups()
+    return f"%%CreationDate: D:{year}{month}{day}{hour}{minute}{second}+00'00'"
+
+
+def normalize_postscript_creation_date(ps_path: Path, status_generated_at: str) -> None:
+    normalized_line = stable_postscript_creation_date(status_generated_at)
+    text = ps_path.read_text(encoding="utf-8")
+    updated = re.sub(r"^%%CreationDate:.*$", normalized_line, text, flags=re.M)
+    if updated != text:
+        ps_path.write_text(updated, encoding="utf-8")
+
+
+def sync_thesis_assets(status_generated_at: str) -> None:
     if not THESIS_SOURCE_PDF_PATH.exists():
         raise FileNotFoundError(
             f"Canonical thesis PDF is missing: {THESIS_SOURCE_PDF_PATH}"
@@ -809,6 +831,7 @@ def sync_thesis_assets() -> None:
 
     sync_binary_file(THESIS_SOURCE_PDF_PATH, THESIS_OUTPUT_PDF_PATH)
     generate_postscript_from_pdf(THESIS_SOURCE_PDF_PATH, THESIS_OUTPUT_PS_PATH)
+    normalize_postscript_creation_date(THESIS_OUTPUT_PS_PATH, status_generated_at)
 
     if PUBLIC_SITE_DIR.exists():
         try:
@@ -821,7 +844,7 @@ def sync_thesis_assets() -> None:
 
 def main() -> None:
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    sync_thesis_assets()
+    sync_thesis_assets(data["public_status"]["status_generated_at"])
     dashboard_html = build_page(
         data,
         data["footer_html"],
