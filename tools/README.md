@@ -24,6 +24,11 @@ It regenerates the project-facing outputs that need to stay synchronized:
 Run this after any meaningful roadmap, blocker, harness, or release-focus
 change.
 
+If you want the generated public assets mirrored into a cloned copy of the
+companion Pages repo, set `PHD_PUBLIC_SITE_DIR` to that checkout path. If the
+variable is unset, the generator falls back to `~/GitPages/public` when that
+directory exists.
+
 ### `generate_project_handbook.py`
 
 This builds the long-form handbook from the repo's source markdown documents.

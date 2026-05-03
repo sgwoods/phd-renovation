@@ -56,6 +56,10 @@ The shared public `index.html` is no longer owned directly by this repo.
 Instead, this repo exports its project status through
 `public-status-phd-renovation.json` in the interface format.
 
+For a portable machine-to-machine workflow, set `PHD_PUBLIC_SITE_DIR` to the
+root of a cloned `sgwoods/public` checkout. If it is unset, the generators
+fall back to `~/GitPages/public` when present.
+
 ## Normal Regeneration Flow
 
 ```bash

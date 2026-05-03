@@ -22,6 +22,8 @@ For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
 For the current bounded `Hanoi-4` position, see `HANOI-4-STATUS.md`.
 For the concrete `1.0.0` release gate, see `RELEASE-1.0-CHECKLIST.md`.
+For the recovery/new-machine continuity audit, see
+`RECOVERY-AND-REPRODUCIBILITY.md`.
 
 ## Status Key
 

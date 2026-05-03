@@ -16,7 +16,10 @@ DOCS_DIR = ROOT / "docs"
 DATA_PATH = DOCS_DIR / "release-dashboard-data.json"
 HANDBOOK_OUTPUT_PATH = DOCS_DIR / "project-handbook.html"
 PUBLIC_HANDBOOK_OUTPUT_PATH = DOCS_DIR / "public-phd-renovation-handbook.html"
-PUBLIC_SITE_DIR = Path("/Users/stevenwoods/GitPages/public")
+DEFAULT_PUBLIC_SITE_DIR = Path.home() / "GitPages" / "public"
+PUBLIC_SITE_DIR = Path(
+    os.environ.get("PHD_PUBLIC_SITE_DIR", str(DEFAULT_PUBLIC_SITE_DIR))
+).expanduser()
 PUBLIC_SITE_HANDBOOK_PATH = PUBLIC_SITE_DIR / "phd-renovation-handbook.html"
 PUBLIC_REPO_BASE = "https://github.com/sgwoods/phd-renovation/blob/main/"
 
@@ -39,6 +42,11 @@ HANDBOOK_SOURCES = [
         "Repository Status",
         "REPOSITORY-STATUS.md",
         "Repo-wide answer to what is indexed, integrated, automated, and publication-validated.",
+    ),
+    HandbookSource(
+        "Recovery And Reproducibility",
+        "RECOVERY-AND-REPRODUCIBILITY.md",
+        "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",
     ),
     HandbookSource(
         "Validation Matrix",

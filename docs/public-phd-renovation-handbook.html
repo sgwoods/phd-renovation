@@ -389,6 +389,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a></h2>
+        <p>Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-validation-matrix">Validation Matrix</a></h2>
         <p>Current historical domain and result-family coverage against the project&#x27;s main goals.</p>
       </article>
@@ -497,6 +502,10 @@ h1{
         <li>
           <a href="#section-repository-status">Repository Status</a>
           <ul class="subtoc"><li><a href="#section-repository-status-status-key">Status Key</a></li><li><a href="#section-repository-status-executive-read">Executive Read</a></li><li><a href="#section-repository-status-repository-wide-coverage-table">Repository-Wide Coverage Table</a></li><li><a href="#section-repository-status-what-this-means">What This Means</a></li><li><a href="#section-repository-status-deliberate-mainline-priority">Deliberate Mainline Priority</a></li><li><a href="#section-repository-status-maintenance-rule">Maintenance Rule</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
+          <ul class="subtoc"><li><a href="#section-recovery-and-reproducibility-precise-goal">Precise Goal</a></li><li><a href="#section-recovery-and-reproducibility-current-project-state">Current Project State</a></li><li><a href="#section-recovery-and-reproducibility-status-read">Status Read</a></li><li><a href="#section-recovery-and-reproducibility-what-is-checked-in">What Is Checked In</a></li><li><a href="#section-recovery-and-reproducibility-core-source-and-snapshots">Core source and snapshots</a></li><li><a href="#section-recovery-and-reproducibility-validation-and-investigation-harnesses">Validation and investigation harnesses</a></li><li><a href="#section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</a></li><li><a href="#section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</a></li><li><a href="#section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</a></li><li><a href="#section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</a></li><li><a href="#section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</a></li><li><a href="#section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</a></li><li><a href="#section-recovery-and-reproducibility-can-the-work-be-recreated-on-a-new-machine">Can The Work Be Recreated On A New Machine?</a></li><li><a href="#section-recovery-and-reproducibility-for-the-main-repo-work-yes">For the main repo work: yes</a></li><li><a href="#section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</a></li><li><a href="#section-recovery-and-reproducibility-remaining-reproducibility-risks">Remaining Reproducibility Risks</a></li><li><a href="#section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</a></li><li><a href="#section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</a></li></ul>
         </li>
         <li>
           <a href="#section-validation-matrix">Validation Matrix</a>
@@ -729,7 +738,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-project-structure">Project Structure</h3>
 <pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
@@ -767,6 +776,8 @@ src/                        Entry point</code></pre>
 <p>families are executable now, integrity-checkable now, or still reference-only.</p>
 <ul><li><code>REPOSITORY-STATUS.md</code> answers the broader repo-wide question: what is</li></ul>
 <p>indexed, integrated, tested, and publication-validated.</p>
+<ul><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code> records the current branch/publication</li></ul>
+<p>reality, what is checked in versus intentionally ignored, and how to resume the project on a new machine.</p>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code> is the concrete release-hardening punch list for</li></ul>
 <p>the first <code>1.0.0</code> tag.</p>
 <ul><li><code>RELEASE-1.0.0-NOTES.md</code> is the working draft of the first release notes.</li><li><code>HANOI-4-STATUS.md</code> records the current bounded position on the <code>Hanoi-4</code></li></ul>
@@ -880,7 +891,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>part of the supported integrated line.</p>
 <ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
 <p>provenance, recovery, or context rather than active validation.</p>
-<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>.</p>
 <h3 id="section-repository-status-status-key">Status Key</h3>
 <ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
 <p>reported results, either executable or integrity-checkable.</p>
@@ -919,6 +930,118 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <ol><li>a directory or result family moves from provenance-only to</li></ol>
 <p>integrity-checkable or executable,</p>
 <ol><li>a new top-level archive or workspace is added,</li><li>a previously manual workflow becomes part of the supported line, or</li><li>a result family becomes publication-validated in a stronger way than before.</li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-recovery-and-reproducibility">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Recovery And Reproducibility</h2>
+            <p class="sectionSummary">Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/RECOVERY-AND-REPRODUCIBILITY.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file answers a practical continuity question:</p>
+<p><strong>If this local working directory disappeared today, could the project be recreated on a new machine without redoing the work?</strong></p>
+<p>Short answer: <strong>yes, with a few explicit rules and one important branch warning.</strong></p>
+<p>The key warning is this:</p>
+<ul><li>the durable working line is <strong>not</strong> <code>main</code></li><li>the durable working line is the pushed branch</li></ul>
+<p><code>codex/fix-artifact-pipeline</code></p>
+<ul><li><code>main</code> is still intentionally behind at the earlier onboarding checkpoint</li></ul>
+<p>If someone clones only <code>main</code>, they will <strong>not</strong> recover the current project state.</p>
+<h3 id="section-recovery-and-reproducibility-precise-goal">Precise Goal</h3>
+<p>The project goal at this stage is:</p>
+<ol><li>keep one integrated constraint-solver baseline that preserves the</li></ol>
+<p>PhD-reported <code>ij2</code> / <code>ij3</code> / <code>ij4</code> story,</p>
+<ol><li>keep the other historical domains and result families either executable,</li></ol>
+<p>integrity-checkable, or explicitly bounded as snapshot-specific / provenance-only,</p>
+<ol><li>maintain enough documentation, generated status artifacts, and preserved</li></ol>
+<p>data that the work can be resumed from a fresh checkout rather than from fragile local context, and</p>
+<ol><li>make the next major phase the disciplined intake, de-duplication, and</li></ol>
+<p>categorization of newly found material.</p>
+<h3 id="section-recovery-and-reproducibility-current-project-state">Current Project State</h3>
+<p>As of this recovery audit:</p>
+<ul><li><code>v1.0.0</code> is the published first stable release marker.</li><li>The active working branch is <code>codex/fix-artifact-pipeline</code>.</li><li>The default branch <code>main</code> is still at the older onboarding-era checkpoint</li></ul>
+<p>and should <strong>not</strong> be treated as the current working baseline.</p>
+<ul><li>The repo working tree is clean.</li><li>The public companion site is a separate repo:</li></ul>
+<p><code>https://github.com/sgwoods/public</code></p>
+<ul><li>The supported validation spine is the practical continuity gate:</li><li><code>tests/run.lisp</code></li><li><code>tests/validate-artifacts.sh</code></li><li><code>tests/validate-ff-provenance.sh</code></li><li><code>tests/validate-adt-batch.sh</code></li><li><code>tests/validate-csp-batch.sh</code></li><li><code>tests/validate-ao.sh</code></li><li><code>tests/validate-dashboard.sh</code></li></ul>
+<h3 id="section-recovery-and-reproducibility-status-read">Status Read</h3>
+<p>The project is now in a post-<code>1.0.0</code> hardening state:</p>
+<ul><li>the main solver line is stable,</li><li>the supported thesis-result baseline is executable,</li><li>major preserved historical families are either executable or</li></ul>
+<p>integrity-checkable,</p>
+<ul><li>the docs/dashboard/handbook/public-page stack is generated from tracked</li></ul>
+<p>source,</p>
+<ul><li>and the next major lane is intake review rather than solver rescue.</li></ul>
+<p>Recommended next steps from this point are:</p>
+<ol><li>treat <code>incoming/</code> as the main operational lane for newly found material,</li><li>classify each new find as executable, integrity-checkable,</li></ol>
+<p>provenance-only, or duplicate,</p>
+<ol><li>target <code>1.0.1</code> for remaining STYLE-WARNING cleanup outside the supported</li></ol>
+<p>release gate,</p>
+<ol><li>keep terrain and <code>Hanoi-4</code> explicitly bounded as deferred lanes,</li><li>and avoid widening the supported baseline casually.</li></ol>
+<h3 id="section-recovery-and-reproducibility-what-is-checked-in">What Is Checked In</h3>
+<p>The current repo already checks in the material needed to resume work on a new machine:</p>
+<h4 id="section-recovery-and-reproducibility-core-source-and-snapshots">Core source and snapshots</h4>
+<ul><li><code>csp/</code></li><li><code>qcsp3/</code></li><li><code>qcsp-may29-1996/</code></li><li><code>qcsp-alex-sep16-1997/</code></li><li><code>src/</code></li></ul>
+<h4 id="section-recovery-and-reproducibility-validation-and-investigation-harnesses">Validation and investigation harnesses</h4>
+<ul><li>the maintained regression suites under <code>tests/</code></li><li>the supported validation scripts</li><li>the ADT bridge investigation scripts and notes</li></ul>
+<h4 id="section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</h4>
+<ul><li><code>data/acl-experiments/</code></li><li><code>data/sparc-archive/</code></li><li><code>data/csp-adt-batch/</code></li><li><code>data/csp-batch/</code></li><li><code>data/csp-save-results/</code></li><li><code>data/thesis/</code> including the canonical thesis PDF</li></ul>
+<h4 id="section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</h4>
+<ul><li><code>docs/release-dashboard.html</code></li><li><code>docs/project-handbook.html</code></li><li><code>docs/public-phd-renovation.html</code></li><li><code>docs/public-phd-renovation-handbook.html</code></li><li><code>docs/public-status-phd-renovation.json</code></li><li><code>docs/phd-renovation-thesis.pdf</code></li><li><code>docs/phd-renovation-thesis.ps</code></li></ul>
+<h4 id="section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</h4>
+<ul><li><code>RENOVATION.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>VALIDATION-MATRIX.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>DOCS-COVERAGE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>HANOI-4-STATUS.md</code></li><li><code>RELEASE-1.0-CHECKLIST.md</code></li><li><code>RELEASE-1.0.0-NOTES.md</code></li><li>and the local README layer across the major directories</li></ul>
+<h3 id="section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</h3>
+<p>The repo also intentionally leaves a large amount of generated working state out of git.</p>
+<p>That is expected and, at this point, acceptable.</p>
+<h4 id="section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</h4>
+<p>From <code>.gitignore</code>, these are intentionally untracked:</p>
+<ul><li><code>csp/ADT-Random/</code></li><li><code>csp/MPR-Random/</code></li><li><code>csp/MPR-Situation/</code></li><li><code>qcsp3/ADT-Random/</code></li><li><code>qcsp3/ADT-Situation/</code></li><li><code>qcsp3/MPR-Random/</code></li><li><code>qcsp3/MPR-Situation/</code></li><li>the equivalent May29 and Alex random/situation workspaces</li><li><code>Q-Batch-SBCL/ij2/</code>, <code>ij3/</code>, <code>ij4/</code></li><li><code>Q-Batch-SBCL/alex-*</code> and <code>may29-*</code> run trees</li><li><code>Q-Batch-SBCL/*.out</code></li><li><code>Q-Batch-SBCL/Graph/*.dat</code>, <code>*.all</code>, <code>*.p1</code>, <code>*.pdf</code></li></ul>
+<p>These are rebuildable or intentionally treated as working-state caches rather than canonical source artifacts.</p>
+<h4 id="section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</h4>
+<p>Also intentionally untracked:</p>
+<ul><li><code>.venv/</code></li><li><code>.DS_Store</code></li><li><code>.claude/</code></li><li>compiled Lisp artifacts like <code>*.fasl</code></li></ul>
+<p>These are not part of the project baseline.</p>
+<h3 id="section-recovery-and-reproducibility-can-the-work-be-recreated-on-a-new-machine">Can The Work Be Recreated On A New Machine?</h3>
+<h4 id="section-recovery-and-reproducibility-for-the-main-repo-work-yes">For the main repo work: yes</h4>
+<p>A new machine can recover the practical project state if it does all of the following:</p>
+<ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code></li><li>check out <code>codex/fix-artifact-pipeline</code> rather than stopping at <code>main</code></li><li>install the required runtime tools:</li></ol>
+<ul><li>SBCL</li><li>Quicklisp</li><li>Python 3</li><li><code>matplotlib</code></li><li>Ghostscript (<code>gs</code>) for thesis PostScript export</li></ul>
+<ol><li>run the supported validation spine</li></ol>
+<p>That is enough to continue the main work without reconstructing the history by hand.</p>
+<h4 id="section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</h4>
+<p>Public publication is not stored only in this repo.</p>
+<p>It depends on the separate repo:</p>
+<ul><li><code>https://github.com/sgwoods/public</code></li></ul>
+<p>This project now supports a portable sync path:</p>
+<ul><li>if <code>PHD_PUBLIC_SITE_DIR</code> is set, the docs/status build will mirror the</li></ul>
+<p>generated public assets there</p>
+<ul><li>otherwise it falls back to <code>~/GitPages/public</code> if that directory exists</li><li>if neither exists, the repo-local generated outputs still build and validate</li></ul>
+<p>So a new machine can continue the public publishing workflow, but it should also clone the public companion repo and point <code>PHD_PUBLIC_SITE_DIR</code> at it.</p>
+<h3 id="section-recovery-and-reproducibility-remaining-reproducibility-risks">Remaining Reproducibility Risks</h3>
+<p>The main risks are no longer &quot;missing code&quot; risks. They are workflow risks:</p>
+<ol><li><strong>Wrong branch risk</strong></li></ol>
+<p>Resuming from <code>main</code> instead of <code>codex/fix-artifact-pipeline</code> would lose the real current state.</p>
+<ol><li><strong>Public companion repo risk</strong></li></ol>
+<p>The deployed Pages site lives in <code>sgwoods/public</code>, not only here.</p>
+<ol><li><strong>Generated-cache expectations</strong></li></ol>
+<p>Some ignored random/situation and experiment-output trees will need to be regenerated rather than recovered byte-for-byte from git.</p>
+<ol><li><strong>Future incoming-material risk</strong></li></ol>
+<p>New finds that are only dropped locally and not promoted or documented in <code>incoming/INDEX.md</code> would be easy to lose.</p>
+<h3 id="section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</h3>
+<p>To be confident that no work has to be redone, treat this as the minimum continuity checklist:</p>
+<ol><li>keep the working branch pushed,</li><li>keep the public companion repo pushed when public-facing assets change,</li><li>put every new archival find through <code>incoming/</code>,</li><li>keep <code>incoming/INDEX.md</code> and the status artifacts current,</li><li>keep the validation spine green,</li><li>and avoid relying on local generated caches as if they were canonical data.</li></ol>
+<h3 id="section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</h3>
+<p>From this recovery checkpoint, the best next steps are:</p>
+<ol><li>decide whether <code>main</code> should be advanced to the current working baseline or</li></ol>
+<p>whether the branch-first workflow is intentional for a while longer,</p>
+<ol><li>make intake, de-duplication, and categorization the main active lane,</li><li>add a short bootstrap/recovery checklist to the main project page for human</li></ol>
+<p>operators,</p>
+<ol><li>use <code>1.0.1</code> for STYLE-WARNING cleanup and small release-hardening polish,</li><li>and only then reopen larger deferred lanes like terrain recovery and</li></ol>
+<p><code>Hanoi-4</code> behavior work.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-validation-matrix">
@@ -2813,6 +2936,7 @@ sbcl --non-interactive --load &quot;run-test4-alex.lisp&quot;</code></pre>
 <p>The repo build produces the PhD-owned public assets that are later copied into the public Pages repo:</p>
 <ul><li><code>phd-renovation.html</code></li><li><code>phd-renovation-handbook.html</code></li><li><code>phd-renovation-dashboard.html</code></li><li><code>phd-renovation-thesis.pdf</code></li><li><code>phd-renovation-thesis.ps</code></li><li><code>data/projects/phd-renovation.json</code></li></ul>
 <p>The shared public <code>index.html</code> is no longer owned directly by this repo. Instead, this repo exports its project status through <code>public-status-phd-renovation.json</code> in the interface format.</p>
+<p>For a portable machine-to-machine workflow, set <code>PHD_PUBLIC_SITE_DIR</code> to the root of a cloned <code>sgwoods/public</code> checkout. If it is unset, the generators fall back to <code>~/GitPages/public</code> when present.</p>
 <h3 id="section-docs-guide-normal-regeneration-flow">Normal Regeneration Flow</h3>
 <pre><code class="language-bash">python3 tools/generate-release-dashboard.py
 bash tests/validate-dashboard.sh</code></pre>
@@ -2842,6 +2966,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>It regenerates the project-facing outputs that need to stay synchronized:</p>
 <ul><li><code>docs/release-dashboard.html</code></li><li><code>docs/public-phd-renovation.html</code></li><li><code>docs/public-status-phd-renovation.json</code></li><li><code>docs/project-handbook.html</code></li><li><code>docs/public-phd-renovation-handbook.html</code></li><li><code>docs/phd-renovation-thesis.pdf</code></li><li><code>docs/phd-renovation-thesis.ps</code></li></ul>
 <p>Run this after any meaningful roadmap, blocker, harness, or release-focus change.</p>
+<p>If you want the generated public assets mirrored into a cloned copy of the companion Pages repo, set <code>PHD_PUBLIC_SITE_DIR</code> to that checkout path. If the variable is unset, the generator falls back to <code>~/GitPages/public</code> when that directory exists.</p>
 <h4 id="section-tools-guide-generate-project-handbook-py"><code>generate_project_handbook.py</code></h4>
 <p>This builds the long-form handbook from the repo&#x27;s source markdown documents.</p>
 <p>Normally you do not need to call it directly, because <code>generate-release-dashboard.py</code> already includes it as part of the regular docs/status build.</p>

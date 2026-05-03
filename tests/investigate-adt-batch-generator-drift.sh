@@ -11,7 +11,7 @@ python3 - <<'PY'
 from pathlib import Path
 import re
 
-root = Path("/Users/stevenwoods/phd-renovation")
+root = Path.cwd()
 csp_text = (root / "csp/adt-setup.lisp").read_text()
 qcsp3_text = (root / "qcsp3/adt-setup.lisp").read_text()
 

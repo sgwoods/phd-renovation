@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 from html import escape
@@ -25,7 +26,10 @@ THESIS_SOURCE_PDF_PATH = (
 )
 THESIS_OUTPUT_PDF_PATH = ROOT / "docs" / "phd-renovation-thesis.pdf"
 THESIS_OUTPUT_PS_PATH = ROOT / "docs" / "phd-renovation-thesis.ps"
-PUBLIC_SITE_DIR = Path("/Users/stevenwoods/GitPages/public")
+DEFAULT_PUBLIC_SITE_DIR = Path.home() / "GitPages" / "public"
+PUBLIC_SITE_DIR = Path(
+    os.environ.get("PHD_PUBLIC_SITE_DIR", str(DEFAULT_PUBLIC_SITE_DIR))
+).expanduser()
 PUBLIC_SITE_DASHBOARD_PATH = PUBLIC_SITE_DIR / "phd-renovation-dashboard.html"
 PUBLIC_SITE_PAGE_PATH = PUBLIC_SITE_DIR / "phd-renovation.html"
 PUBLIC_SITE_STATUS_PATH = PUBLIC_SITE_DIR / "data" / "projects" / "phd-renovation.json"
