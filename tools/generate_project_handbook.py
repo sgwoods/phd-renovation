@@ -49,6 +49,11 @@ HANDBOOK_SOURCES = [
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",
     ),
     HandbookSource(
+        "Preservation Policy",
+        "PRESERVATION-POLICY.md",
+        "Standing rule that potentially useful code, data, publications, notes, and archive finds should be classified and preserved rather than discarded.",
+    ),
+    HandbookSource(
         "Validation Matrix",
         "VALIDATION-MATRIX.md",
         "Current historical domain and result-family coverage against the project's main goals.",

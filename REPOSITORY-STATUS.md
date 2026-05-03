@@ -24,6 +24,8 @@ For the current bounded `Hanoi-4` position, see `HANOI-4-STATUS.md`.
 For the concrete `1.0.0` release gate, see `RELEASE-1.0-CHECKLIST.md`.
 For the recovery/new-machine continuity audit, see
 `RECOVERY-AND-REPRODUCIBILITY.md`.
+For the standing retention rule for useful historical material, see
+`PRESERVATION-POLICY.md`.
 
 ## Status Key
 
@@ -92,6 +94,10 @@ The repository now has three broad zones:
    Topics like `Hanoi-4` that are important enough to track explicitly, but
    whose current `1.0` requirement is documentation and bounded scope rather
    than full behavioral closure.
+
+Across all five zones, the preservation rule is the same: potentially useful
+material should be classified and retained, not discarded simply because it is
+not yet integrated.
 
 ## Deliberate Mainline Priority
 

@@ -3,6 +3,10 @@
 This file records historical data and files that have been reviewed for
 redundancy.
 
+Its default stance is consistent with `PRESERVATION-POLICY.md`: overlapping
+historical material should be retained unless it is truly machine-noise or
+fully reproducible transient output with no independent value.
+
 Its purpose is to separate two different cases clearly:
 
 1. **Reviewed duplicate / redundant for the active main project**

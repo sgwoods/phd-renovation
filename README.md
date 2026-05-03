@@ -41,6 +41,9 @@ source data and doc-refresh build now drive the handbook, dashboard, and
 public-facing PhD project page so those views stay in sync.
 `RECOVERY-AND-REPRODUCIBILITY.md` is the explicit answer to "can we lose this
 directory and recover the work on a new machine without redoing it?"
+`PRESERVATION-POLICY.md` is the standing rule that potentially useful
+historical material should be classified and preserved, not discarded just
+because it is not yet integrated.
 The thesis itself is available from the project home surfaces in both
 [`docs/phd-renovation-thesis.pdf`](docs/phd-renovation-thesis.pdf) and
 [`docs/phd-renovation-thesis.ps`](docs/phd-renovation-thesis.ps) form, with
@@ -121,6 +124,8 @@ src/                        Entry point
 - `RECOVERY-AND-REPRODUCIBILITY.md` records the current branch/publication
   reality, what is checked in versus intentionally ignored, and how to resume
   the project on a new machine.
+- `PRESERVATION-POLICY.md` defines the preservation-first rule for code, data,
+  publications, notes, archive finds, and historically useful duplicates.
 - `RELEASE-1.0-CHECKLIST.md` is the concrete release-hardening punch list for
   the first `1.0.0` tag.
 - `RELEASE-1.0.0-NOTES.md` is the working draft of the first release notes.

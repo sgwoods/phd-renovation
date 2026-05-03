@@ -394,6 +394,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-preservation-policy">Preservation Policy</a></h2>
+        <p>Standing rule that potentially useful code, data, publications, notes, and archive finds should be classified and preserved rather than discarded.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-validation-matrix">Validation Matrix</a></h2>
         <p>Current historical domain and result-family coverage against the project&#x27;s main goals.</p>
       </article>
@@ -506,6 +511,10 @@ h1{
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
           <ul class="subtoc"><li><a href="#section-recovery-and-reproducibility-precise-goal">Precise Goal</a></li><li><a href="#section-recovery-and-reproducibility-current-project-state">Current Project State</a></li><li><a href="#section-recovery-and-reproducibility-status-read">Status Read</a></li><li><a href="#section-recovery-and-reproducibility-what-is-checked-in">What Is Checked In</a></li><li><a href="#section-recovery-and-reproducibility-core-source-and-snapshots">Core source and snapshots</a></li><li><a href="#section-recovery-and-reproducibility-validation-and-investigation-harnesses">Validation and investigation harnesses</a></li><li><a href="#section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</a></li><li><a href="#section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</a></li><li><a href="#section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</a></li><li><a href="#section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</a></li><li><a href="#section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</a></li><li><a href="#section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</a></li><li><a href="#section-recovery-and-reproducibility-can-the-work-be-recreated-on-a-new-machine">Can The Work Be Recreated On A New Machine?</a></li><li><a href="#section-recovery-and-reproducibility-for-the-main-repo-work-yes">For the main repo work: yes</a></li><li><a href="#section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</a></li><li><a href="#section-recovery-and-reproducibility-remaining-reproducibility-risks">Remaining Reproducibility Risks</a></li><li><a href="#section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</a></li><li><a href="#section-recovery-and-reproducibility-local-working-directory-convention">Local Working Directory Convention</a></li><li><a href="#section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-preservation-policy">Preservation Policy</a>
+          <ul class="subtoc"><li><a href="#section-preservation-policy-why-this-exists">Why This Exists</a></li><li><a href="#section-preservation-policy-preservation-classes">Preservation Classes</a></li><li><a href="#section-preservation-policy-intake-rule">Intake Rule</a></li><li><a href="#section-preservation-policy-duplicate-rule">Duplicate Rule</a></li><li><a href="#section-preservation-policy-what-may-still-be-ignored">What May Still Be Ignored</a></li><li><a href="#section-preservation-policy-current-compliance-read">Current Compliance Read</a></li><li><a href="#section-preservation-policy-maintenance-rule">Maintenance Rule</a></li></ul>
         </li>
         <li>
           <a href="#section-validation-matrix">Validation Matrix</a>
@@ -738,7 +747,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-fresh-checkout-recovery-quick-start">Fresh Checkout Recovery Quick Start</h3>
 <p>If you need to resume this project on a new machine without reconstructing any of the renovation work by hand:</p>
 <ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code>,</li><li>start from <code>main</code> as the durable baseline,</li><li>install SBCL, Quicklisp, Python 3, <code>matplotlib</code>, and Ghostscript,</li><li>run the supported validation spine:</li></ol>
@@ -785,6 +794,8 @@ src/                        Entry point</code></pre>
 <p>indexed, integrated, tested, and publication-validated.</p>
 <ul><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code> records the current branch/publication</li></ul>
 <p>reality, what is checked in versus intentionally ignored, and how to resume the project on a new machine.</p>
+<ul><li><code>PRESERVATION-POLICY.md</code> defines the preservation-first rule for code, data,</li></ul>
+<p>publications, notes, archive finds, and historically useful duplicates.</p>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code> is the concrete release-hardening punch list for</li></ul>
 <p>the first <code>1.0.0</code> tag.</p>
 <ul><li><code>RELEASE-1.0.0-NOTES.md</code> is the working draft of the first release notes.</li><li><code>HANOI-4-STATUS.md</code> records the current bounded position on the <code>Hanoi-4</code></li></ul>
@@ -898,7 +909,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>part of the supported integrated line.</p>
 <ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
 <p>provenance, recovery, or context rather than active validation.</p>
-<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the standing retention rule for useful historical material, see <code>PRESERVATION-POLICY.md</code>.</p>
 <h3 id="section-repository-status-status-key">Status Key</h3>
 <ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
 <p>reported results, either executable or integrity-checkable.</p>
@@ -918,6 +929,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>Newly found relevant material should land in <code>incoming/</code> first, then be reviewed and promoted into one of the three zones above.</p>
 <ol><li><code>Deferred research-readiness lanes</code></li></ol>
 <p>Topics like <code>Hanoi-4</code> that are important enough to track explicitly, but whose current <code>1.0</code> requirement is documentation and bounded scope rather than full behavioral closure.</p>
+<p>Across all five zones, the preservation rule is the same: potentially useful material should be classified and retained, not discarded simply because it is not yet integrated.</p>
 <h3 id="section-repository-status-deliberate-mainline-priority">Deliberate Mainline Priority</h3>
 <p>The current post-<code>1.0.0</code> mainline priority is intake hardening and release maintenance.</p>
 <p>That means the current recommended order is:</p>
@@ -955,6 +967,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>This file answers a practical continuity question:</p>
 <p><strong>If this local working directory disappeared today, could the project be recreated on a new machine without redoing the work?</strong></p>
 <p>Short answer: <strong>yes, if we keep treating the checked-in repo plus the companion public repo as the durable record and avoid relying on local-only generated state.</strong></p>
+<p>The guiding retention rule behind that answer is documented separately in <code>PRESERVATION-POLICY.md</code>: potentially useful project information should be classified and preserved, not discarded merely because it is not yet fully integrated.</p>
 <h3 id="section-recovery-and-reproducibility-precise-goal">Precise Goal</h3>
 <p>The project goal at this stage is:</p>
 <ol><li>keep one integrated constraint-solver baseline that preserves the</li></ol>
@@ -1038,9 +1051,13 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>New finds that are only dropped locally and not promoted or documented in <code>incoming/INDEX.md</code> would be easy to lose.</p>
 <ol><li><strong>Non-backed-up local working directory risk</strong></li></ol>
 <p>A clone that lives only in a non-backed-up local folder is still more fragile than necessary even if the remote repos are current.</p>
+<ol><li><strong>Preservation-discipline risk</strong></li></ol>
+<p>Future finds that are reviewed informally but not routed through <code>incoming/</code>, <code>DUPLICATES-REVIEW.md</code>, or another tracked destination would weaken the project&#x27;s long-term recoverability.</p>
 <h3 id="section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</h3>
 <p>To be confident that no work has to be redone, treat this as the minimum continuity checklist:</p>
-<ol><li>keep the working branch pushed,</li><li>keep the public companion repo pushed when public-facing assets change,</li><li>put every new archival find through <code>incoming/</code>,</li><li>keep <code>incoming/INDEX.md</code> and the status artifacts current,</li><li>keep the validation spine green,</li><li>avoid relying on local generated caches as if they were canonical data, and</li><li>prefer future local working clones inside an iCloud-backed parent folder on</li></ol>
+<ol><li>keep the working branch pushed,</li><li>keep the public companion repo pushed when public-facing assets change,</li><li>put every new archival find through <code>incoming/</code>,</li><li>keep <code>incoming/INDEX.md</code> and the status artifacts current,</li><li>keep the validation spine green,</li><li>avoid relying on local generated caches as if they were canonical data, and</li><li>keep potentially useful historical material under the preservation policy</li></ol>
+<p>rather than treating uncertainty as a reason to discard it, and</p>
+<ol><li>prefer future local working clones inside an iCloud-backed parent folder on</li></ol>
 <p>this machine once the current baseline/branch layout is settled.</p>
 <h3 id="section-recovery-and-reproducibility-local-working-directory-convention">Local Working Directory Convention</h3>
 <p>Going forward, the preferred local convention should be:</p>
@@ -1056,6 +1073,56 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>on this machine,</p>
 <ol><li>use <code>1.0.1</code> for STYLE-WARNING cleanup and small release-hardening polish,</li><li>and only then reopen larger deferred lanes like terrain recovery and</li></ol>
 <p><code>Hanoi-4</code> behavior work.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-preservation-policy">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Preservation Policy</h2>
+            <p class="sectionSummary">Standing rule that potentially useful code, data, publications, notes, and archive finds should be classified and preserved rather than discarded.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../PRESERVATION-POLICY.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This project keeps <strong>all potentially useful information</strong>.</p>
+<p>That includes:</p>
+<ul><li>source code</li><li>preserved datasets</li><li>experiment outputs</li><li>publications</li><li>notes</li><li>recovered archives</li><li>overlapping or duplicate historical copies that still help explain lineage</li><li>partially understood material that may become useful later</li></ul>
+<p>The default rule is:</p>
+<p><strong>classify, preserve, and document - do not discard merely because something is not yet integrated, fully understood, or immediately useful.</strong></p>
+<h3 id="section-preservation-policy-why-this-exists">Why This Exists</h3>
+<p>This repo is not only a runnable solver codebase. It is also a research-recovery and historical-provenance project.</p>
+<p>That means material can be valuable for more than one reason:</p>
+<ul><li>active execution or testing,</li><li>integrity-checkable historical evidence,</li><li>publication support,</li><li>reconstruction of lost workflows,</li><li>comparison against other snapshots,</li><li>or future research questions that are not yet mature enough to act on.</li></ul>
+<h3 id="section-preservation-policy-preservation-classes">Preservation Classes</h3>
+<p>Every meaningful artifact should end up in one of these classes:</p>
+<table><thead><tr><th>Class</th><th>Meaning</th></tr></thead><tbody><tr><td><code>supported baseline</code></td><td>Part of the actively supported solver, validation, or publication-validation flow</td></tr><tr><td><code>integrity-checkable</code></td><td>Preserved and checked against known historical artifacts, even if not rerun end-to-end</td></tr><tr><td><code>provenance-only</code></td><td>Valuable for lineage, context, or recovery, but not part of the supported baseline</td></tr><tr><td><code>snapshot-specific</code></td><td>Preserved as part of a historical branch of the solver story without requiring integration into the maintained line</td></tr><tr><td><code>duplicate but valuable</code></td><td>Overlaps a canonical copy but is retained for provenance, snapshot integrity, or historical explanation</td></tr><tr><td><code>incoming / pending review</code></td><td>Newly found material that has not yet been reviewed enough to classify safely</td></tr></tbody></table>
+<h3 id="section-preservation-policy-intake-rule">Intake Rule</h3>
+<p>If new material appears and its role is not yet clear:</p>
+<ol><li>keep it,</li><li>place it under <code>incoming/</code>,</li><li>record it in <code>incoming/INDEX.md</code>,</li><li>review it,</li><li>then promote or classify it deliberately.</li></ol>
+<p>Do not discard unreviewed material just because it looks messy, redundant, or unclear at first glance.</p>
+<h3 id="section-preservation-policy-duplicate-rule">Duplicate Rule</h3>
+<p>Duplicate does <strong>not</strong> mean disposable.</p>
+<p>If two trees overlap, the reviewed outcome should answer:</p>
+<ol><li>which copy is canonical for day-to-day supported work,</li><li>whether the other copy still matters for provenance or snapshot integrity,</li><li>and where that decision is documented.</li></ol>
+<p>Use <code>DUPLICATES-REVIEW.md</code> for those decisions.</p>
+<h3 id="section-preservation-policy-what-may-still-be-ignored">What May Still Be Ignored</h3>
+<p>This preservation-first rule does <strong>not</strong> require checking in every transient machine-generated cache.</p>
+<p>The repo may still ignore:</p>
+<ul><li>reproducible random/situation workspaces,</li><li>intermediate experiment run trees,</li><li>compiled Lisp outputs like <code>*.fasl</code>,</li><li>local environment noise such as <code>.DS_Store</code>, <code>.venv/</code>, and similar files.</li></ul>
+<p>Those are acceptable to ignore <strong>only</strong> when:</p>
+<ol><li>they are rebuildable from preserved inputs and tracked tooling, and</li><li>they are not the only surviving copy of potentially useful historical information.</li></ol>
+<h3 id="section-preservation-policy-current-compliance-read">Current Compliance Read</h3>
+<p>The repo is currently aligned with this policy:</p>
+<ul><li>major code, result, publication, and archive material is tracked,</li><li>newly found material has a defined intake lane in <code>incoming/</code>,</li><li>reviewed overlap decisions have a home in <code>DUPLICATES-REVIEW.md</code>,</li><li>and the main ignored surfaces are rebuildable workspaces or local machine noise.</li></ul>
+<p>The remaining risk is operational, not conceptual:</p>
+<ul><li>future finds must actually be routed through <code>incoming/</code>,</li><li>and potentially useful local-only material must not be left outside git or</li></ul>
+<p>outside documented companion repos.</p>
+<h3 id="section-preservation-policy-maintenance-rule">Maintenance Rule</h3>
+<p>Update this policy or the linked intake/duplicate/recovery docs whenever:</p>
+<ol><li>a new class of preserved artifact appears,</li><li>an ignore rule might hide historically useful material,</li><li>a new archive intake path is introduced,</li><li>or the project’s preservation boundary changes in a meaningful way.</li></ol>
         </div>
       </section>
       <section class="sectionCard" id="section-validation-matrix">
@@ -2566,6 +2633,7 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <ul><li>source trees</li><li>datasets</li><li>experiment outputs</li><li>publications</li><li>notes</li><li>recovered archives</li></ul>
 <p>Think of this as the shell-friendly implementation of:</p>
 <p><code>new relevant information to integrate</code></p>
+<p>It is also the main operational tool that enforces <code>PRESERVATION-POLICY.md</code>. If material may matter later and is not understood yet, <code>incoming/</code> is where we keep it safely until review catches up.</p>
 <h3 id="section-incoming-guide-purpose">Purpose</h3>
 <p>Use <code>incoming/</code> first whenever new material arrives and its final home is not yet settled.</p>
 <p>Do <strong>not</strong> drop new finds directly into:</p>
@@ -2583,6 +2651,8 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>date/source naming scheme than the original dump name.</p>
 <ol><li>Update <code>incoming/INDEX.md</code> with one row for the new intake.</li><li>Review the intake before promoting anything out of <code>incoming/</code>.</li><li>After review, move or classify it into one of these destinations:</li></ol>
 <ul><li><code>data/</code> for canonical preserved datasets/publications</li><li><code>historical finds/</code> for archive/recovery material</li><li>a solver snapshot tree if it clearly belongs there</li><li><code>DUPLICATES-REVIEW.md</code> if it is a reviewed duplicate/redundant copy</li></ul>
+<ol><li>Do not discard the intake just because it is partial, messy, duplicated, or</li></ol>
+<p>not yet understood. If it may be useful later, preserve it and classify it.</p>
 <h3 id="section-incoming-guide-review-outcomes">Review Outcomes</h3>
 <p>Every reviewed intake should end in one of these states:</p>
 <ul><li><code>promoted</code>: moved into the main repo structure</li><li><code>historical</code>: retained under <code>historical finds/</code></li><li><code>duplicate</code>: documented as redundant/canonical elsewhere</li><li><code>reference-only</code>: preserved, but not integrated</li><li><code>pending</code>: still under review</li></ul>
@@ -3358,6 +3428,7 @@ bash tests/validate-dashboard.sh</code></pre>
         </div>
         <div class="docBody">
 <p>This file records historical data and files that have been reviewed for redundancy.</p>
+<p>Its default stance is consistent with <code>PRESERVATION-POLICY.md</code>: overlapping historical material should be retained unless it is truly machine-noise or fully reproducible transient output with no independent value.</p>
 <p>Its purpose is to separate two different cases clearly:</p>
 <ol><li><strong>Reviewed duplicate / redundant for the active main project</strong></li></ol>
 <p>The repo already has a canonical copy elsewhere, and the duplicate is kept only for snapshot integrity or provenance.</p>

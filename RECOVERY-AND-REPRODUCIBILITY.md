@@ -9,6 +9,11 @@ Short answer: **yes, if we keep treating the checked-in repo plus the companion
 public repo as the durable record and avoid relying on local-only generated
 state.**
 
+The guiding retention rule behind that answer is documented separately in
+`PRESERVATION-POLICY.md`: potentially useful project information should be
+classified and preserved, not discarded merely because it is not yet fully
+integrated.
+
 ## Precise Goal
 
 The project goal at this stage is:
@@ -215,6 +220,11 @@ The main risks are no longer "missing code" risks. They are workflow risks:
    A clone that lives only in a non-backed-up local folder is still more
    fragile than necessary even if the remote repos are current.
 
+5. **Preservation-discipline risk**
+   Future finds that are reviewed informally but not routed through
+   `incoming/`, `DUPLICATES-REVIEW.md`, or another tracked destination would
+   weaken the project's long-term recoverability.
+
 ## What To Do To Be Confident
 
 To be confident that no work has to be redone, treat this as the minimum
@@ -226,7 +236,9 @@ continuity checklist:
 4. keep `incoming/INDEX.md` and the status artifacts current,
 5. keep the validation spine green,
 6. avoid relying on local generated caches as if they were canonical data, and
-7. prefer future local working clones inside an iCloud-backed parent folder on
+7. keep potentially useful historical material under the preservation policy
+   rather than treating uncertainty as a reason to discard it, and
+8. prefer future local working clones inside an iCloud-backed parent folder on
    this machine once the current baseline/branch layout is settled.
 
 ## Local Working Directory Convention

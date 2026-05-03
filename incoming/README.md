@@ -14,6 +14,10 @@ Think of this as the shell-friendly implementation of:
 
 `new relevant information to integrate`
 
+It is also the main operational tool that enforces `PRESERVATION-POLICY.md`.
+If material may matter later and is not understood yet, `incoming/` is where
+we keep it safely until review catches up.
+
 ## Purpose
 
 Use `incoming/` first whenever new material arrives and its final home is not
@@ -55,6 +59,8 @@ until that material has been reviewed.
    - `historical finds/` for archive/recovery material
    - a solver snapshot tree if it clearly belongs there
    - `DUPLICATES-REVIEW.md` if it is a reviewed duplicate/redundant copy
+7. Do not discard the intake just because it is partial, messy, duplicated, or
+   not yet understood. If it may be useful later, preserve it and classify it.
 
 ## Review Outcomes
 
