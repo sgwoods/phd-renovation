@@ -7,6 +7,28 @@ public page, or status manifest.
 
 ## Primary Scripts
 
+### `create_incoming_intake.py`
+
+This is the intake-lane scaffolding helper.
+
+It creates:
+
+- `incoming/<slug>/`
+- `incoming/<slug>/README.md`
+- and an initial row in `incoming/INDEX.md`
+
+Use it when new material lands and you want a consistent first-pass starting
+point before review and promotion.
+
+Example:
+
+```bash
+python3 tools/create_incoming_intake.py 2026-05-03-lacie1 \
+  --added 2026-05-03 \
+  --source "Lacie1 drive" \
+  --type "mixed archive bundle"
+```
+
 ### `generate-release-dashboard.py`
 
 This is the top-level status/doc generation entry point.

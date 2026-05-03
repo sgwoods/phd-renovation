@@ -63,6 +63,14 @@ until that material has been reviewed.
    not yet understood. If it may be useful later, preserve it and classify it.
 
 Use `incoming/REVIEW-TEMPLATE.md` to keep the first-pass review consistent.
+If you want the directory, starter note, and index row created together, use:
+
+```bash
+python3 tools/create_incoming_intake.py 2026-05-03-example \
+  --added 2026-05-03 \
+  --source "Lacie1 drive" \
+  --type "mixed archive bundle"
+```
 
 ## Review Outcomes
 

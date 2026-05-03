@@ -120,6 +120,15 @@ Main guides:
 Use this when new code, data, papers, or experiment artifacts arrive.
 
 1. Drop the material under `incoming/` using any convenient dump name.
+   Or scaffold the intake with:
+
+```bash
+python3 tools/create_incoming_intake.py 2026-05-03-example \
+  --added 2026-05-03 \
+  --source "Lacie1 drive" \
+  --type "mixed archive bundle"
+```
+
 2. Review it.
 3. Normalize the intake folder label if the contents reveal a better date/source.
 4. Update `incoming/INDEX.md`.
@@ -132,6 +141,7 @@ Main guides:
 - `incoming/INDEX.md`
 - `incoming/REVIEW-TEMPLATE.md`
 - `INTAKE-ROADMAP.md`
+- `tools/create_incoming_intake.py`
 
 ## Secondary / Manual Workflows
 

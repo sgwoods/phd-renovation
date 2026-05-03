@@ -707,7 +707,7 @@ h1{
         </li>
         <li>
           <a href="#section-tools-guide">tools Guide</a>
-          <ul class="subtoc"><li><a href="#section-tools-guide-primary-scripts">Primary Scripts</a></li><li><a href="#section-tools-guide-generate-release-dashboard-py">`generate-release-dashboard.py`</a></li><li><a href="#section-tools-guide-generate-project-handbook-py">`generate_project_handbook.py`</a></li><li><a href="#section-tools-guide-source-ownership">Source Ownership</a></li><li><a href="#section-tools-guide-validation-pair">Validation Pair</a></li><li><a href="#section-tools-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-tools-guide-primary-scripts">Primary Scripts</a></li><li><a href="#section-tools-guide-create-incoming-intake-py">`create_incoming_intake.py`</a></li><li><a href="#section-tools-guide-generate-release-dashboard-py">`generate-release-dashboard.py`</a></li><li><a href="#section-tools-guide-generate-project-handbook-py">`generate_project_handbook.py`</a></li><li><a href="#section-tools-guide-source-ownership">Source Ownership</a></li><li><a href="#section-tools-guide-validation-pair">Validation Pair</a></li><li><a href="#section-tools-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-manual-helpers">Manual Helpers</a>
@@ -2753,7 +2753,11 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <ul><li><code>data/</code> for canonical preserved datasets/publications</li><li><code>historical finds/</code> for archive/recovery material</li><li>a solver snapshot tree if it clearly belongs there</li><li><code>DUPLICATES-REVIEW.md</code> if it is a reviewed duplicate/redundant copy</li></ul>
 <ol><li>Do not discard the intake just because it is partial, messy, duplicated, or</li></ol>
 <p>not yet understood. If it may be useful later, preserve it and classify it.</p>
-<p>Use <code>incoming/REVIEW-TEMPLATE.md</code> to keep the first-pass review consistent.</p>
+<p>Use <code>incoming/REVIEW-TEMPLATE.md</code> to keep the first-pass review consistent. If you want the directory, starter note, and index row created together, use:</p>
+<pre><code class="language-bash">python3 tools/create_incoming_intake.py 2026-05-03-example \
+  --added 2026-05-03 \
+  --source &quot;Lacie1 drive&quot; \
+  --type &quot;mixed archive bundle&quot;</code></pre>
 <h3 id="section-incoming-guide-review-outcomes">Review Outcomes</h3>
 <p>Every reviewed intake should end in one of these states:</p>
 <ul><li><code>promoted</code>: moved into the main repo structure</li><li><code>historical</code>: retained under <code>historical finds/</code></li><li><code>duplicate</code>: documented as redundant/canonical elsewhere</li><li><code>reference-only</code>: preserved, but not integrated</li><li><code>pending</code>: still under review</li></ul>
@@ -3116,10 +3120,16 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code></li><li><code>RENOVATION.md</code></li></ul>
 <h4 id="section-workflows-6-new-material-intake">6. New Material Intake</h4>
 <p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
-<ol><li>Drop the material under <code>incoming/</code> using any convenient dump name.</li><li>Review it.</li><li>Normalize the intake folder label if the contents reveal a better date/source.</li><li>Update <code>incoming/INDEX.md</code>.</li><li>Promote it into <code>data/</code>, <code>historical finds/</code>, a snapshot tree, or</li></ol>
+<ol><li>Drop the material under <code>incoming/</code> using any convenient dump name.</li></ol>
+<p>Or scaffold the intake with:</p>
+<pre><code class="language-bash">python3 tools/create_incoming_intake.py 2026-05-03-example \
+  --added 2026-05-03 \
+  --source &quot;Lacie1 drive&quot; \
+  --type &quot;mixed archive bundle&quot;</code></pre>
+<ol><li>Review it.</li><li>Normalize the intake folder label if the contents reveal a better date/source.</li><li>Update <code>incoming/INDEX.md</code>.</li><li>Promote it into <code>data/</code>, <code>historical finds/</code>, a snapshot tree, or</li></ol>
 <p><code>DUPLICATES-REVIEW.md</code>.</p>
 <p>Main guides:</p>
-<ul><li><code>incoming/README.md</code></li><li><code>incoming/INDEX.md</code></li><li><code>incoming/REVIEW-TEMPLATE.md</code></li><li><code>INTAKE-ROADMAP.md</code></li></ul>
+<ul><li><code>incoming/README.md</code></li><li><code>incoming/INDEX.md</code></li><li><code>incoming/REVIEW-TEMPLATE.md</code></li><li><code>INTAKE-ROADMAP.md</code></li><li><code>tools/create_incoming_intake.py</code></li></ul>
 <h3 id="section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</h3>
 <p>These are still useful, but they are not the main supported operator path.</p>
 <h4 id="section-workflows-manual-ao-harnesses">Manual AO Harnesses</h4>
@@ -3191,6 +3201,16 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>This directory contains the repo&#x27;s maintained documentation/status generators.</p>
 <p>Use this guide when you want to know which script owns the dashboard, handbook, public page, or status manifest.</p>
 <h3 id="section-tools-guide-primary-scripts">Primary Scripts</h3>
+<h4 id="section-tools-guide-create-incoming-intake-py"><code>create_incoming_intake.py</code></h4>
+<p>This is the intake-lane scaffolding helper.</p>
+<p>It creates:</p>
+<ul><li><code>incoming/&lt;slug&gt;/</code></li><li><code>incoming/&lt;slug&gt;/README.md</code></li><li>and an initial row in <code>incoming/INDEX.md</code></li></ul>
+<p>Use it when new material lands and you want a consistent first-pass starting point before review and promotion.</p>
+<p>Example:</p>
+<pre><code class="language-bash">python3 tools/create_incoming_intake.py 2026-05-03-lacie1 \
+  --added 2026-05-03 \
+  --source &quot;Lacie1 drive&quot; \
+  --type &quot;mixed archive bundle&quot;</code></pre>
 <h4 id="section-tools-guide-generate-release-dashboard-py"><code>generate-release-dashboard.py</code></h4>
 <p>This is the top-level status/doc generation entry point.</p>
 <p>It regenerates the project-facing outputs that need to stay synchronized:</p>
