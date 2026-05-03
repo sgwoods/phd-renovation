@@ -1087,6 +1087,10 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>Going forward, the preferred local convention should be:</p>
 <ol><li>keep the canonical git history in GitHub,</li><li>keep the public-facing Pages artifacts in the companion public repo,</li><li>and keep active local working directories on this machine inside an</li></ol>
 <p>iCloud-backed parent folder.</p>
+<p>The preferred project-specific iCloud path for new local intake work is:</p>
+<p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/</code></p>
+<p>with the raw-drop handoff directory at:</p>
+<p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/</code></p>
 <p>That does <strong>not</strong> replace git. It is simply a second layer of local continuity for the working checkout itself.</p>
 <p>The practical time to adopt that convention is after the branch/default-branch alignment and current intake/status cleanup are complete, so the move does not interrupt active stabilization work.</p>
 <h3 id="section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</h3>
@@ -2742,6 +2746,9 @@ python3 Q-Batch-SBCL/Graph/compare-all-overlay.py</code></pre>
 <p>It is also the main operational tool that enforces <code>PRESERVATION-POLICY.md</code>. If material may matter later and is not understood yet, <code>incoming/</code> is where we keep it safely until review catches up.</p>
 <p>If you want the lowest-friction handoff path, use the raw landing directory:</p>
 <p><code>/Users/stevenwoods/phd-renovation/incoming/_landing/</code></p>
+<p>For future local machine safety, the preferred iCloud-backed companion landing path is:</p>
+<p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/</code></p>
+<p>That path is useful when you want a backed-up raw drop zone before or alongside moving material into the repo-local <code>incoming/_landing/</code>.</p>
 <h3 id="section-incoming-guide-purpose">Purpose</h3>
 <p>Use <code>incoming/</code> first whenever new material arrives and its final home is not yet settled.</p>
 <p>Do <strong>not</strong> drop new finds directly into:</p>

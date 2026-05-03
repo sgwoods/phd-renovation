@@ -22,6 +22,14 @@ If you want the lowest-friction handoff path, use the raw landing directory:
 
 `/Users/stevenwoods/phd-renovation/incoming/_landing/`
 
+For future local machine safety, the preferred iCloud-backed companion landing
+path is:
+
+`/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/`
+
+That path is useful when you want a backed-up raw drop zone before or alongside
+moving material into the repo-local `incoming/_landing/`.
+
 ## Purpose
 
 Use `incoming/` first whenever new material arrives and its final home is not

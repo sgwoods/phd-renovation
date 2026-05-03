@@ -250,6 +250,14 @@ Going forward, the preferred local convention should be:
 3. and keep active local working directories on this machine inside an
    iCloud-backed parent folder.
 
+The preferred project-specific iCloud path for new local intake work is:
+
+`/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/`
+
+with the raw-drop handoff directory at:
+
+`/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/`
+
 That does **not** replace git. It is simply a second layer of local continuity
 for the working checkout itself.
 
