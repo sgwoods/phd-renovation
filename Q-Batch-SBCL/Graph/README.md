@@ -21,7 +21,7 @@ Use it when the question is:
 
 These are maintained operator/build files.
 
-### Generated comparison tables
+### Tracked comparison tables and summaries
 
 Examples:
 
@@ -32,10 +32,12 @@ Examples:
 - `ij3-other-ci.dat`
 - `ij*-raw.dat`
 
-These are regenerated from the checked-in SBCL experiment outputs by
-`tests/validate-artifacts.sh`.
+These are canonical tracked thesis-result artifacts. In a full local rebuild
+they are regenerated from preserved SBCL experiment outputs by
+`tests/validate-artifacts.sh`; on a fresh clone they remain available as the
+checked-in comparison baseline.
 
-### Generated visual outputs
+### Tracked visual outputs
 
 Examples:
 
@@ -45,9 +47,9 @@ Examples:
 - `compare-all-overlay.png`
 - `compare-*.pdf`
 
-The overlay PNGs are tracked because they are part of the published/readable
-artifact surface for the repo. The PDF outputs are generated comparison
-artifacts.
+The overlay PNGs and comparison PDFs are tracked because they are part of the
+published/readable artifact surface for the repo and are needed for honest
+fresh-clone validation.
 
 ## Main Inputs
 

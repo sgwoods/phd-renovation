@@ -111,6 +111,8 @@ machine:
 - `docs/public-status-phd-renovation.json`
 - `docs/phd-renovation-thesis.pdf`
 - `docs/phd-renovation-thesis.ps`
+- the tracked thesis-result graph tables and visual outputs under
+  `Q-Batch-SBCL/Graph/`
 
 ### Tracked project-state documentation
 
@@ -147,7 +149,6 @@ From `.gitignore`, these are intentionally untracked:
 - `Q-Batch-SBCL/ij2/`, `ij3/`, `ij4/`
 - `Q-Batch-SBCL/alex-*` and `may29-*` run trees
 - `Q-Batch-SBCL/*.out`
-- `Q-Batch-SBCL/Graph/*.dat`, `*.all`, `*.p1`, `*.pdf`
 
 These are rebuildable or intentionally treated as working-state caches rather
 than canonical source artifacts.

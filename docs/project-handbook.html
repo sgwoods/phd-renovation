@@ -677,7 +677,7 @@ h1{
         </li>
         <li>
           <a href="#section-graph-workspace-guide">Graph Workspace Guide</a>
-          <ul class="subtoc"><li><a href="#section-graph-workspace-guide-what-lives-here">What Lives Here</a></li><li><a href="#section-graph-workspace-guide-tracked-plotting-control-files">Tracked plotting/control files</a></li><li><a href="#section-graph-workspace-guide-generated-comparison-tables">Generated comparison tables</a></li><li><a href="#section-graph-workspace-guide-generated-visual-outputs">Generated visual outputs</a></li><li><a href="#section-graph-workspace-guide-main-inputs">Main Inputs</a></li><li><a href="#section-graph-workspace-guide-supported-operator-flow">Supported Operator Flow</a></li><li><a href="#section-graph-workspace-guide-direct-script-use">Direct Script Use</a></li><li><a href="#section-graph-workspace-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-graph-workspace-guide-what-lives-here">What Lives Here</a></li><li><a href="#section-graph-workspace-guide-tracked-plotting-control-files">Tracked plotting/control files</a></li><li><a href="#section-graph-workspace-guide-tracked-comparison-tables-and-summaries">Tracked comparison tables and summaries</a></li><li><a href="#section-graph-workspace-guide-tracked-visual-outputs">Tracked visual outputs</a></li><li><a href="#section-graph-workspace-guide-main-inputs">Main Inputs</a></li><li><a href="#section-graph-workspace-guide-supported-operator-flow">Supported Operator Flow</a></li><li><a href="#section-graph-workspace-guide-direct-script-use">Direct Script Use</a></li><li><a href="#section-graph-workspace-guide-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-data-guide">data Guide</a>
@@ -1104,7 +1104,8 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <h4 id="section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</h4>
 <ul><li><code>data/acl-experiments/</code></li><li><code>data/sparc-archive/</code></li><li><code>data/csp-adt-batch/</code></li><li><code>data/csp-batch/</code></li><li><code>data/csp-save-results/</code></li><li><code>data/thesis/</code> including the canonical thesis PDF</li></ul>
 <h4 id="section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</h4>
-<ul><li><code>docs/release-dashboard.html</code></li><li><code>docs/project-handbook.html</code></li><li><code>docs/public-phd-renovation.html</code></li><li><code>docs/public-phd-renovation-handbook.html</code></li><li><code>docs/public-status-phd-renovation.json</code></li><li><code>docs/phd-renovation-thesis.pdf</code></li><li><code>docs/phd-renovation-thesis.ps</code></li></ul>
+<ul><li><code>docs/release-dashboard.html</code></li><li><code>docs/project-handbook.html</code></li><li><code>docs/public-phd-renovation.html</code></li><li><code>docs/public-phd-renovation-handbook.html</code></li><li><code>docs/public-status-phd-renovation.json</code></li><li><code>docs/phd-renovation-thesis.pdf</code></li><li><code>docs/phd-renovation-thesis.ps</code></li><li>the tracked thesis-result graph tables and visual outputs under</li></ul>
+<p><code>Q-Batch-SBCL/Graph/</code></p>
 <h4 id="section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</h4>
 <ul><li><code>RENOVATION.md</code></li><li><code>REPOSITORY-STATUS.md</code></li><li><code>VALIDATION-MATRIX.md</code></li><li><code>WORKFLOWS.md</code></li><li><code>DOCS-COVERAGE-REVIEW.md</code></li><li><code>DUPLICATES-REVIEW.md</code></li><li><code>HANOI-4-STATUS.md</code></li><li><code>RELEASE-1.0-CHECKLIST.md</code></li><li><code>RELEASE-1.0.0-NOTES.md</code></li><li>and the local README layer across the major directories</li></ul>
 <h3 id="section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</h3>
@@ -1112,7 +1113,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>That is expected and, at this point, acceptable.</p>
 <h4 id="section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</h4>
 <p>From <code>.gitignore</code>, these are intentionally untracked:</p>
-<ul><li><code>csp/ADT-Random/</code></li><li><code>csp/MPR-Random/</code></li><li><code>csp/MPR-Situation/</code></li><li><code>qcsp3/ADT-Random/</code></li><li><code>qcsp3/ADT-Situation/</code></li><li><code>qcsp3/MPR-Random/</code></li><li><code>qcsp3/MPR-Situation/</code></li><li>the equivalent May29 and Alex random/situation workspaces</li><li><code>Q-Batch-SBCL/ij2/</code>, <code>ij3/</code>, <code>ij4/</code></li><li><code>Q-Batch-SBCL/alex-*</code> and <code>may29-*</code> run trees</li><li><code>Q-Batch-SBCL/*.out</code></li><li><code>Q-Batch-SBCL/Graph/*.dat</code>, <code>*.all</code>, <code>*.p1</code>, <code>*.pdf</code></li></ul>
+<ul><li><code>csp/ADT-Random/</code></li><li><code>csp/MPR-Random/</code></li><li><code>csp/MPR-Situation/</code></li><li><code>qcsp3/ADT-Random/</code></li><li><code>qcsp3/ADT-Situation/</code></li><li><code>qcsp3/MPR-Random/</code></li><li><code>qcsp3/MPR-Situation/</code></li><li>the equivalent May29 and Alex random/situation workspaces</li><li><code>Q-Batch-SBCL/ij2/</code>, <code>ij3/</code>, <code>ij4/</code></li><li><code>Q-Batch-SBCL/alex-*</code> and <code>may29-*</code> run trees</li><li><code>Q-Batch-SBCL/*.out</code></li></ul>
 <p>These are rebuildable or intentionally treated as working-state caches rather than canonical source artifacts.</p>
 <h4 id="section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</h4>
 <p>Also intentionally untracked:</p>
@@ -2763,14 +2764,14 @@ bash Q-Batch-SBCL/run-alex-all.sh</code></pre>
 <h4 id="section-graph-workspace-guide-tracked-plotting-control-files">Tracked plotting/control files</h4>
 <ul><li><code>extract-data.py</code></li><li><code>compare-plots.py</code></li><li><code>compare-ij2-overlay.py</code></li><li><code>compare-all-overlay.py</code></li><li>the <code>*.gp</code> gnuplot helpers</li></ul>
 <p>These are maintained operator/build files.</p>
-<h4 id="section-graph-workspace-guide-generated-comparison-tables">Generated comparison tables</h4>
+<h4 id="section-graph-workspace-guide-tracked-comparison-tables-and-summaries">Tracked comparison tables and summaries</h4>
 <p>Examples:</p>
 <ul><li><code>ij2-ci.dat</code></li><li><code>ij3-ci.dat</code></li><li><code>ij4-ci.dat</code></li><li><code>ij2-ci-time.dat</code></li><li><code>ij3-other-ci.dat</code></li><li><code>ij*-raw.dat</code></li></ul>
-<p>These are regenerated from the checked-in SBCL experiment outputs by <code>tests/validate-artifacts.sh</code>.</p>
-<h4 id="section-graph-workspace-guide-generated-visual-outputs">Generated visual outputs</h4>
+<p>These are canonical tracked thesis-result artifacts. In a full local rebuild they are regenerated from preserved SBCL experiment outputs by <code>tests/validate-artifacts.sh</code>; on a fresh clone they remain available as the checked-in comparison baseline.</p>
+<h4 id="section-graph-workspace-guide-tracked-visual-outputs">Tracked visual outputs</h4>
 <p>Examples:</p>
 <ul><li><code>compare-ij2-overlay.png</code></li><li><code>compare-ij3-overlay.png</code></li><li><code>compare-ij4-overlay.png</code></li><li><code>compare-all-overlay.png</code></li><li><code>compare-*.pdf</code></li></ul>
-<p>The overlay PNGs are tracked because they are part of the published/readable artifact surface for the repo. The PDF outputs are generated comparison artifacts.</p>
+<p>The overlay PNGs and comparison PDFs are tracked because they are part of the published/readable artifact surface for the repo and are needed for honest fresh-clone validation.</p>
 <h3 id="section-graph-workspace-guide-main-inputs">Main Inputs</h3>
 <p>This directory combines:</p>
 <ol><li>regenerated SBCL summary tables from the local <code>Q-Batch-SBCL/</code> runs,</li><li>preserved ACL baseline tables from <code>data/acl-experiments/Graph/</code>,</li><li>comparison plotting scripts that overlay qcsp3, may29, alex, and ACL views.</li></ol>
