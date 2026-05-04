@@ -64,6 +64,11 @@ HANDBOOK_SOURCES = [
         "Higher-level coordination map for classifying named projects as standalone repos, supporting repos, shared-public subprojects, or unknowns before migrating them into Projects-All.",
     ),
     HandbookSource(
+        "Cross-Project Reporting Coordination",
+        "CROSS-PROJECT-REPORTING-COORDINATION.md",
+        "Rulebook for preserving the shared Woods project-summary/reporting layer so standalone repos and shared-public subprojects still roll up into one common surface.",
+    ),
+    HandbookSource(
         "Recovery And Reproducibility",
         "RECOVERY-AND-REPRODUCIBILITY.md",
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",

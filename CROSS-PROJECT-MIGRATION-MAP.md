@@ -196,6 +196,9 @@ The current recommended migration order is:
    already have local modifications
 5. audit the remaining unknown/dangler projects after that
 
+For the shared reporting and one-place project-summary model that should remain
+intact across those moves, see `CROSS-PROJECT-REPORTING-COORDINATION.md`.
+
 ## Big-Picture Rule
 
 The point of this map is to prevent category mistakes.

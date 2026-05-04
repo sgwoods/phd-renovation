@@ -61,6 +61,9 @@ projects such as `mmath-renovation`.
 deciding which named projects are true standalone repos, which are supporting
 repos, and which are really subprojects inside the shared `public` repo before
 migrating them into `Projects-All`.
+`CROSS-PROJECT-REPORTING-COORDINATION.md` is the cross-project rulebook for
+keeping the shared Woods project-summary and reporting surface intact as those
+projects migrate and rejoin the common public layer.
 `PRESERVATION-POLICY.md` is the standing rule that potentially useful
 historical material should be classified and preserved, not discarded just
 because it is not yet integrated.

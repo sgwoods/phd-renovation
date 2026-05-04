@@ -7,6 +7,10 @@ source of truth.
 Use it when we want to migrate a sister project such as `mmath-renovation`
 without re-learning the same lessons from scratch.
 
+For the shared "one place to see project summaries and drill down into each
+project's docs/status" model that should survive those migrations, also see
+`CROSS-PROJECT-REPORTING-COORDINATION.md`.
+
 ## Core Operating Model
 
 The migration target is:

@@ -409,6 +409,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-cross-project-reporting-coordination">Cross-Project Reporting Coordination</a></h2>
+        <p>Rulebook for preserving the shared Woods project-summary/reporting layer so standalone repos and shared-public subprojects still roll up into one common surface.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a></h2>
         <p>Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.</p>
       </article>
@@ -573,6 +578,10 @@ h1{
         <li>
           <a href="#section-cross-project-migration-map">Cross-Project Migration Map</a>
           <ul class="subtoc"><li><a href="#section-cross-project-migration-map-current-migration-state">Current Migration State</a></li><li><a href="#section-cross-project-migration-map-core-rule">Core Rule</a></li><li><a href="#section-cross-project-migration-map-class-1-standalone-github-repos">Class 1: Standalone GitHub Repos</a></li><li><a href="#section-cross-project-migration-map-class-2-companion-supporting-repos">Class 2: Companion / Supporting Repos</a></li><li><a href="#section-cross-project-migration-map-class-3-shared-public-subprojects">Class 3: Shared-Public Subprojects</a></li><li><a href="#section-cross-project-migration-map-current-caution">Current caution</a></li><li><a href="#section-cross-project-migration-map-class-4-unknown-needs-audit-first">Class 4: Unknown / Needs Audit First</a></li><li><a href="#section-cross-project-migration-map-recommended-projects-all-layout">Recommended Projects-All Layout</a></li><li><a href="#section-cross-project-migration-map-migration-method-by-class">Migration Method By Class</a></li><li><a href="#section-cross-project-migration-map-standalone-github-repo">Standalone GitHub repo</a></li><li><a href="#section-cross-project-migration-map-companion-supporting-repo">Companion / supporting repo</a></li><li><a href="#section-cross-project-migration-map-shared-public-subproject">Shared-public subproject</a></li><li><a href="#section-cross-project-migration-map-unknown-local-only-project">Unknown / local-only project</a></li><li><a href="#section-cross-project-migration-map-recommended-next-order">Recommended Next Order</a></li><li><a href="#section-cross-project-migration-map-big-picture-rule">Big-Picture Rule</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-cross-project-reporting-coordination">Cross-Project Reporting Coordination</a>
+          <ul class="subtoc"><li><a href="#section-cross-project-reporting-coordination-default-starting-point">Default Starting Point</a></li><li><a href="#section-cross-project-reporting-coordination-core-coordination-rule">Core Coordination Rule</a></li><li><a href="#section-cross-project-reporting-coordination-reporting-surface-by-project-type">Reporting Surface By Project Type</a></li><li><a href="#section-cross-project-reporting-coordination-1-standalone-project-repo">1. Standalone project repo</a></li><li><a href="#section-cross-project-reporting-coordination-2-companion-supporting-repo">2. Companion/supporting repo</a></li><li><a href="#section-cross-project-reporting-coordination-3-shared-public-subproject">3. Shared-public subproject</a></li><li><a href="#section-cross-project-reporting-coordination-what-must-stay-intact-during-migration">What Must Stay Intact During Migration</a></li><li><a href="#section-cross-project-reporting-coordination-migration-checklist-add-on">Migration Checklist Add-On</a></li><li><a href="#section-cross-project-reporting-coordination-recommended-ongoing-model">Recommended Ongoing Model</a></li><li><a href="#section-cross-project-reporting-coordination-current-practical-read">Current Practical Read</a></li><li><a href="#section-cross-project-reporting-coordination-big-picture-rule">Big-Picture Rule</a></li></ul>
         </li>
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
@@ -845,7 +854,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PROJECT-STATUS.md</code> is the root-level quick status page for the folder itself, and <code>scripts/show-project-version.sh</code> is the live helper for checking the actual branch/commit/cleanliness of the current working copy. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PROJECT-MIGRATION-TEMPLATE.md</code> is the reusable migration playbook and Codex prompt template for applying this same machine-handoff strategy to sister projects such as <code>mmath-renovation</code>. <code>CROSS-PROJECT-MIGRATION-MAP.md</code> is the higher-level coordination map for deciding which named projects are true standalone repos, which are supporting repos, and which are really subprojects inside the shared <code>public</code> repo before migrating them into <code>Projects-All</code>. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PROJECT-STATUS.md</code> is the root-level quick status page for the folder itself, and <code>scripts/show-project-version.sh</code> is the live helper for checking the actual branch/commit/cleanliness of the current working copy. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PROJECT-MIGRATION-TEMPLATE.md</code> is the reusable migration playbook and Codex prompt template for applying this same machine-handoff strategy to sister projects such as <code>mmath-renovation</code>. <code>CROSS-PROJECT-MIGRATION-MAP.md</code> is the higher-level coordination map for deciding which named projects are true standalone repos, which are supporting repos, and which are really subprojects inside the shared <code>public</code> repo before migrating them into <code>Projects-All</code>. <code>CROSS-PROJECT-REPORTING-COORDINATION.md</code> is the cross-project rulebook for keeping the shared Woods project-summary and reporting surface intact as those projects migrate and rejoin the common public layer. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-fresh-checkout-recovery-quick-start">Fresh Checkout Recovery Quick Start</h3>
 <p>If you need to resume this project on a new machine without reconstructing any of the renovation work by hand:</p>
 <ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code>,</li><li>start from <code>main</code> as the durable baseline,</li><li>install SBCL, Quicklisp, Python 3, <code>matplotlib</code>, and Ghostscript,</li><li>run the supported validation spine:</li></ol>
@@ -1153,6 +1162,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
         <div class="docBody">
 <p>This file is the reusable migration playbook for moving one of our projects from an older machine to a newer one while keeping GitHub as the durable source of truth.</p>
 <p>Use it when we want to migrate a sister project such as <code>mmath-renovation</code> without re-learning the same lessons from scratch.</p>
+<p>For the shared &quot;one place to see project summaries and drill down into each project&#x27;s docs/status&quot; model that should survive those migrations, also see <code>CROSS-PROJECT-REPORTING-COORDINATION.md</code>.</p>
 <h3 id="section-project-migration-template-core-operating-model">Core Operating Model</h3>
 <p>The migration target is:</p>
 <ul><li>GitHub repo is the durable source of truth.</li><li><code>main</code> should land on the correct stable baseline.</li><li>The active working clone should live in a normal non-iCloud folder.</li><li>iCloud should be used for intake, backup-oriented material, and convenience</li></ul>
@@ -1395,11 +1405,91 @@ Please proceed step by step, keep the overall plan updated as we go, remind me o
 <ol><li>migrate <code>SciFi AI Dystopian Project</code> as the next standalone repo</li><li>review the shared-public subprojects one by one, starting with any that</li></ol>
 <p>already have local modifications</p>
 <ol><li>audit the remaining unknown/dangler projects after that</li></ol>
+<p>For the shared reporting and one-place project-summary model that should remain intact across those moves, see <code>CROSS-PROJECT-REPORTING-COORDINATION.md</code>.</p>
 <h3 id="section-cross-project-migration-map-big-picture-rule">Big-Picture Rule</h3>
 <p>The point of this map is to prevent category mistakes.</p>
 <p>We want:</p>
 <ul><li>GitHub to remain the durable source of truth,</li><li><code>Projects-All</code> to contain a clean set of active working clones,</li><li>iCloud to remain for intake and backup-oriented convenience,</li><li>and local project names to stop implying false independence when they are</li></ul>
 <p>really views into a shared repo.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-cross-project-reporting-coordination">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Cross-Project Reporting Coordination</h2>
+            <p class="sectionSummary">Rulebook for preserving the shared Woods project-summary/reporting layer so standalone repos and shared-public subprojects still roll up into one common surface.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../CROSS-PROJECT-REPORTING-COORDINATION.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file records the shared reporting and project-summary model we want to keep stable across Steven Woods projects as they move to the newer machine.</p>
+<p>The intent is simple:</p>
+<ul><li>there should be one default starting point for project summaries,</li><li>that starting point should link to each project&#x27;s deeper docs and status,</li><li>new ingestion and migration work should not break that shared view,</li><li>and every migrated project should rejoin the same reporting surface cleanly.</li></ul>
+<h3 id="section-cross-project-reporting-coordination-default-starting-point">Default Starting Point</h3>
+<p>The default starting point for cross-project status and summaries is the shared <code>sgwoods/public</code> site and repo.</p>
+<p>That shared surface is where we want to be able to see, in one place:</p>
+<ul><li>a project-level summary,</li><li>current status/build line/focus,</li><li>links to the detailed project page,</li><li>links to the dashboard,</li><li>links to the readable handbook or equivalent documentation,</li><li>and any other project-specific deeper references.</li></ul>
+<p>This is the coordination layer above any single repo.</p>
+<h3 id="section-cross-project-reporting-coordination-core-coordination-rule">Core Coordination Rule</h3>
+<p>Each standalone project should maintain:</p>
+<ol><li>its own durable GitHub repo as source of truth,</li><li>its own local status/version markers,</li><li>its own bootstrap and handoff documentation,</li><li>and its own public-facing exported status artifacts.</li></ol>
+<p>The shared <code>public</code> repo should then act as the common presentation layer that surfaces those per-project outputs in one place.</p>
+<p>That means:</p>
+<ul><li><strong>project repos own their own truth</strong></li><li><strong>the shared public repo owns the cross-project summary surface</strong></li></ul>
+<h3 id="section-cross-project-reporting-coordination-reporting-surface-by-project-type">Reporting Surface By Project Type</h3>
+<h4 id="section-cross-project-reporting-coordination-1-standalone-project-repo">1. Standalone project repo</h4>
+<p>Examples:</p>
+<ul><li><code>phd-renovation</code></li><li><code>mmath-renovation</code></li><li><code>sci-fi-ai-dystopian-project</code></li></ul>
+<p>Expected reporting pattern:</p>
+<ul><li>a tracked project-status source in the repo</li><li>generated local outputs such as:</li><li>dashboard</li><li>public project page</li><li>public status manifest</li><li>readable handbook, if used by that project</li><li>a sync path into the shared <code>public</code> repo</li></ul>
+<h4 id="section-cross-project-reporting-coordination-2-companion-supporting-repo">2. Companion/supporting repo</h4>
+<p>Examples:</p>
+<ul><li><code>public</code></li><li><code>abtweak-experiments-ui</code></li></ul>
+<p>Expected reporting pattern:</p>
+<ul><li>do not duplicate a fake standalone project-summary model unless the repo is</li></ul>
+<p>actually intended to present as its own project</p>
+<ul><li>document clearly which standalone projects depend on it</li></ul>
+<h4 id="section-cross-project-reporting-coordination-3-shared-public-subproject">3. Shared-public subproject</h4>
+<p>Examples:</p>
+<ul><li><code>canberra-research</code></li><li><code>google-canada-research</code></li><li><code>inovia-research</code></li><li><code>sei-pittsburgh-research</code></li><li><code>steven-woods-research</code></li><li><code>quack</code></li><li><code>kinitos-neoedge</code></li></ul>
+<p>Expected reporting pattern:</p>
+<ul><li>these are coordinated primarily through the shared <code>public</code> repo itself</li><li>they should not be treated automatically as full independent migration</li></ul>
+<p>targets unless we deliberately decide to split them into standalone repos</p>
+<ul><li>their summaries and pages should remain coherent within the shared public</li></ul>
+<p>navigation model</p>
+<h3 id="section-cross-project-reporting-coordination-what-must-stay-intact-during-migration">What Must Stay Intact During Migration</h3>
+<p>When a project is migrated to <code>Projects-All</code>, we must preserve all of:</p>
+<ol><li>repo-local truth</li><li>local bootstrap/startup/recovery clarity</li><li>public-facing status export</li><li>cross-project summary visibility</li><li>links from the summary layer to the detailed layer</li></ol>
+<p>In practice, for a standalone project, that means checking:</p>
+<ul><li>the repo can build and validate locally,</li><li>the local project page/dashboard/handbook generation still works,</li><li>the public export path is still understood,</li><li>and the shared public summary surface can still point to it.</li></ul>
+<h3 id="section-cross-project-reporting-coordination-migration-checklist-add-on">Migration Checklist Add-On</h3>
+<p>Use this extra checklist alongside the normal project migration process.</p>
+<p>For each migrated project, confirm:</p>
+<ol><li>What is the canonical public/project-summary entry point for this project?</li><li>Does the repo generate its own public-facing status artifacts?</li><li>Where do those artifacts sync into the shared <code>public</code> repo?</li><li>Does the shared public surface still link correctly to:</li></ol>
+<ul><li>the project page</li><li>the dashboard</li><li>the handbook or equivalent deep docs</li></ul>
+<ol><li>If the project is a shared-public subproject rather than a standalone repo,</li></ol>
+<p>should it stay that way or be split in the future?</p>
+<h3 id="section-cross-project-reporting-coordination-recommended-ongoing-model">Recommended Ongoing Model</h3>
+<p>Going forward:</p>
+<ul><li><code>Projects-All</code> should hold the canonical active clones:</li><li>standalone project repos</li><li>supporting repos like <code>public</code> and <code>abtweak-experiments-ui</code></li><li><code>public</code> should remain the one shared cross-project summary/presentation</li></ul>
+<p>layer</p>
+<ul><li>each standalone project migration should end with a quick reporting check to</li></ul>
+<p>ensure it has rejoined that shared surface</p>
+<h3 id="section-cross-project-reporting-coordination-current-practical-read">Current Practical Read</h3>
+<p>At this checkpoint:</p>
+<ul><li><code>phd-renovation</code> has a defined project page, dashboard, handbook, and public</li></ul>
+<p>status manifest flow</p>
+<ul><li><code>mmath-renovation</code> uses the shared <code>public</code> repo as part of its continuity</li></ul>
+<p>and release/public drill path</p>
+<ul><li>the shared-public research subprojects are still primarily <code>public</code>-repo</li></ul>
+<p>concerns rather than true standalone repos</p>
+<p>So the next reporting goal is not to invent a second coordination layer. It is to keep the shared <code>public</code> layer healthy while each standalone project becomes more portable and explicit.</p>
+<h3 id="section-cross-project-reporting-coordination-big-picture-rule">Big-Picture Rule</h3>
+<p>We want one stable pattern:</p>
+<ul><li>GitHub repo per true standalone project = durable project truth</li><li>shared <code>public</code> repo = durable cross-project summary and presentation layer</li><li>migration work must preserve both layers together</li></ul>
         </div>
       </section>
       <section class="sectionCard" id="section-recovery-and-reproducibility">
