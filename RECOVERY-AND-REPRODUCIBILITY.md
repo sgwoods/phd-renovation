@@ -40,6 +40,9 @@ As of this recovery audit checkpoint:
   expected to land on the right baseline directly.
 - The startup/handoff path for a different Mac is now documented in
   `NEW-MAC-HANDOFF.md` and implemented in `scripts/start-codex-new-mac.sh`.
+- A fresh-clone bootstrap proof has now passed from the iCloud-backed working
+  clone on this machine, using `main` plus the supported startup script and
+  full validation spine.
 - The repo working tree should be kept clean at handoff checkpoints.
 - The public companion site is a separate repo:
   `https://github.com/sgwoods/public`

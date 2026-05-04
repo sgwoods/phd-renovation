@@ -15,12 +15,12 @@ We want to be able to:
 
 ## Current Local State
 
-At the time this handoff guide was added:
+At the current portability checkpoint:
 
 - the active working branch is `codex/fix-artifact-pipeline`
-- that branch contains the current project state
-- `main` must be kept aligned with it if we want fresh clones to land directly
-  on the durable baseline
+- that branch and `main` are both aligned to the durable baseline
+- the full startup script has now been proven successfully from the
+  iCloud-backed working clone on this machine
 - the repo-local raw intake landing path is `incoming/_landing/`
 - the preferred iCloud-backed raw intake path is:
   `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/`
@@ -89,3 +89,7 @@ Before retiring this MacBook, the safest minimum is:
 3. verify the startup script and validation spine on the new Mac,
 4. verify the iCloud-backed intake path exists there,
 5. and only then treat the old machine as non-authoritative.
+
+That proof has now been completed once from the iCloud-backed working clone on
+this machine, which means the remaining retirement task is operational
+discipline rather than missing setup knowledge.

@@ -44,6 +44,7 @@ For the standing retention rule for useful historical material, see
 | Is the whole repo integrated? | No. `qcsp3/` plus the supported validation spine are integrated; most historical/result archives remain reference or integrity-check layers. |
 | Is the whole repo tested? | No. The supported solver line and bounded AO baseline are tested and currently clean in fresh validation runs; many historical batches are integrity-checked instead of rerun. |
 | Is the whole repo publication-validated? | Partially. The main thesis `ij2`/`ij3`/`ij4` story is executable and validated; several older result families are tied to publications/reports as preserved artifacts, but not all are modern reruns. |
+| Can a fresh clone resume the supported baseline? | Yes. `main` now includes the startup/handoff path, the fresh-clone-safe artifact validation flow, and the tracked graph artifact set needed to pass the supported new-Mac bootstrap on an iCloud-backed working copy. |
 
 ## Repository-Wide Coverage Table
 
