@@ -11,9 +11,6 @@ required_inputs=(
   "data/acl-experiments/Graph/ij2-ci.dat"
   "data/acl-experiments/Graph/ij3-ci.dat"
   "data/acl-experiments/Graph/ij4-ci.dat"
-  "Q-Batch-SBCL/ij2"
-  "Q-Batch-SBCL/ij3"
-  "qcsp3/ADT-Batch"
 )
 
 for path in "${required_inputs[@]}"; do
@@ -27,9 +24,36 @@ MPL_TMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/phd-renovation-mpl.XXXXXX")"
 trap 'rm -rf "$MPL_TMP_DIR"' EXIT
 export MPLCONFIGDIR="$MPL_TMP_DIR"
 
-python3 Q-Batch-SBCL/Graph/extract-data.py
-python3 Q-Batch-SBCL/Graph/compare-all-overlay.py
-python3 Q-Batch-SBCL/Graph/compare-plots.py
+full_regen_inputs=(
+  "Q-Batch-SBCL/ij2"
+  "Q-Batch-SBCL/ij3"
+  "qcsp3/ADT-Batch"
+  "Q-Batch-SBCL/alex-ij2"
+  "Q-Batch-SBCL/alex-ij3"
+  "Q-Batch-SBCL/alex-ij4"
+  "Q-Batch-SBCL/may29-ij2"
+  "Q-Batch-SBCL/may29-ij3"
+  "Q-Batch-SBCL/may29-ij4"
+)
+
+full_regen_mode=1
+for path in "${full_regen_inputs[@]}"; do
+  if [[ ! -e "$path" ]]; then
+    full_regen_mode=0
+    break
+  fi
+done
+
+if [[ "$full_regen_mode" -eq 1 ]]; then
+  echo "Mode: full regeneration from preserved experiment run trees."
+  python3 Q-Batch-SBCL/Graph/extract-data.py
+  python3 Q-Batch-SBCL/Graph/compare-all-overlay.py
+  python3 Q-Batch-SBCL/Graph/compare-plots.py
+else
+  echo "Mode: fresh-clone portability fallback."
+  echo "Ignored run-tree caches are absent, so this check validates the tracked graph tables and tracked overlay/report artifacts instead of re-extracting them."
+fi
+
 python3 tests/validate-thesis-comparison.py
 
 required_outputs=(

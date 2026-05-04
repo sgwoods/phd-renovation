@@ -10,8 +10,10 @@ start here.
 - `ao-run.lisp`: asserted AO regression runner for the supported `test4`
   baseline across qcsp3, may29, and alex, now covering qcsp3/may29 AO cases
   1-3 plus the legacy wrappers and alex's revise baseline.
-- `validate-artifacts.sh`: rebuilds SBCL graph artifacts, regenerates overlay
-  plots, and checks the current thesis-result pipeline.
+- `validate-artifacts.sh`: checks the current thesis-result pipeline. In full
+  mode it rebuilds SBCL graph artifacts and overlay plots; on a fresh clone it
+  falls back to validating the tracked graph tables and tracked
+  overlay/report artifacts honestly.
 - `validate-dashboard.sh`: regenerates the visual release dashboard and the
   full readable handbook plus the public-facing PhD project page and this
   repo's public status manifest from their shared status/doc sources, and

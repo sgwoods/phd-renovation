@@ -184,6 +184,11 @@ following:
 That is enough to continue the main work without reconstructing the history by
 hand.
 
+The artifact validator now supports a fresh-clone fallback mode: if ignored
+local experiment run trees are absent, it validates the tracked graph tables,
+tracked overlay/report artifacts, and thesis-comparison outputs instead of
+pretending it can re-extract from local caches that are not part of git.
+
 ### For the public site publication path: yes, but it is a companion repo
 
 Public publication is not stored only in this repo.

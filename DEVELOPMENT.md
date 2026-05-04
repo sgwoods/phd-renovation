@@ -192,6 +192,10 @@ and day-to-day confidence checks should flow through:
 - `tests/validate-ao.sh`
 - `tests/validate-thesis-comparison.py`
 
+`tests/validate-artifacts.sh` now supports a fresh-clone fallback mode when
+ignored local experiment run trees are absent, so a new machine can still
+validate the tracked thesis-result artifact set honestly.
+
 Each suite:
 1. Loads Quicklisp and FiveAM
 2. Registers the project root with ASDF

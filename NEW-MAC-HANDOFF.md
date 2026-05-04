@@ -66,6 +66,11 @@ The script:
 6. and runs the full supported validation spine unless `--skip-validation` is
    passed.
 
+The artifact-validation part of that spine now has two honest modes:
+
+- full regeneration mode when preserved local experiment run trees are present
+- fresh-clone portability mode when those ignored run-tree caches are absent
+
 ## What Still Needs Deliberate Care
 
 1. Keep the active working branch pushed.

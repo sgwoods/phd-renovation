@@ -68,6 +68,9 @@ of the renovation work by hand:
 5. clone the companion public repo if you need publication sync too, and point
    `PHD_PUBLIC_SITE_DIR` at it.
 
+`tests/validate-artifacts.sh` now supports a fresh-clone fallback mode when
+ignored local experiment run trees are absent.
+
 The fuller continuity/recovery audit lives in
 `RECOVERY-AND-REPRODUCIBILITY.md`.
 For the shortest different-Mac startup/handoff path, see
