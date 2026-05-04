@@ -26,6 +26,8 @@ At the current checkpoint:
   baseline.
 - the supported startup script has passed from the known-good working repo on
   this MacBook and from a local fresh clone.
+- a clean non-iCloud active clone has now been proven on the other Mac at:
+  `/Users/steven/Projects-all/phd-renovation-working`
 - the iCloud-backed intake landing path exists.
 - the thesis graph tables and comparison PDFs needed for fresh-clone artifact
   validation are now tracked.
@@ -56,6 +58,10 @@ Going forward, the preferred local working model is:
 - active Git clone outside iCloud
 - intake and backup-oriented paths inside iCloud
 
+The currently proven active clone path on the other Mac is:
+
+`/Users/steven/Projects-all/phd-renovation-working`
+
 The iCloud helper remains useful for maintaining a backup/reference clone:
 
 `scripts/use-icloud-working-copy.sh`
@@ -74,6 +80,10 @@ as:
 - a temporary convenience copy,
 - a place to verify nothing unexpected was left behind,
 - but not the source of truth for day-to-day continuation.
+
+The old iCloud live worktree experiment should likewise be treated as
+deprecated for day-to-day development because Git worktree inspection there
+was not reliable enough.
 
 ## Big-Picture Rule
 

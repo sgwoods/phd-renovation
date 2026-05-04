@@ -1002,7 +1002,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>part of the supported integrated line.</p>
 <ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
 <p>provenance, recovery, or context rather than active validation.</p>
-<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the practical machine-retirement gate and preferred iCloud local-home workflow, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the post-<code>1.0.0</code> ingestion operating plan, see <code>INTAKE-ROADMAP.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the standing retention rule for useful historical material, see <code>PRESERVATION-POLICY.md</code>.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the practical machine-retirement gate and preferred iCloud local-home workflow, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code>. The currently proven non-iCloud active clone path on the other Mac is: <code>/Users/steven/Projects-all/phd-renovation-working</code> For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the post-<code>1.0.0</code> ingestion operating plan, see <code>INTAKE-ROADMAP.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the standing retention rule for useful historical material, see <code>PRESERVATION-POLICY.md</code>.</p>
 <h3 id="section-repository-status-status-key">Status Key</h3>
 <ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
 <p>reported results, either executable or integrity-checkable.</p>
@@ -1028,8 +1028,8 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>That means the current recommended order is:</p>
 <ol><li>keep the supported validation spine green and the repo status artifacts</li></ol>
 <p>current,</p>
-<ol><li>keep this MacBook repo as the known-good active baseline until the next</li></ol>
-<p>machine has a clean non-iCloud active clone,</p>
+<ol><li>treat the proven non-iCloud other-Mac clone as a valid active working</li></ol>
+<p>baseline,</p>
 <ol><li>make <code>incoming/</code> review, de-duplication, and categorization the next major</li></ol>
 <p>operational lane,</p>
 <ol><li>target <code>1.0.1</code> for remaining STYLE-WARNING cleanup outside the supported</li></ol>
@@ -1158,6 +1158,8 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>NEW-MAC-HANDOFF.md</code> and implemented in <code>scripts/start-codex-new-mac.sh</code>.</p>
 <ul><li>A fresh-clone bootstrap proof has passed in non-iCloud form, while the</li></ul>
 <p>iCloud-backed working-clone experiment exposed Git worktree friction on a different Mac and should not currently be treated as the preferred active clone model.</p>
+<ul><li>A clean non-iCloud active clone is now proven on another Mac at:</li></ul>
+<p><code>/Users/steven/Projects-all/phd-renovation-working</code></p>
 <ul><li>The repo working tree should be kept clean at handoff checkpoints.</li><li>The public companion site is a separate repo:</li></ul>
 <p><code>https://github.com/sgwoods/public</code></p>
 <ul><li>The supported validation spine is the practical continuity gate:</li><li><code>tests/run.lisp</code></li><li><code>tests/validate-artifacts.sh</code></li><li><code>tests/validate-ff-provenance.sh</code></li><li><code>tests/validate-adt-batch.sh</code></li><li><code>tests/validate-csp-batch.sh</code></li><li><code>tests/validate-ao.sh</code></li><li><code>tests/validate-dashboard.sh</code></li></ul>
@@ -1169,9 +1171,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>source,</p>
 <ul><li>and the next major lane is intake review rather than solver rescue.</li></ul>
 <p>Recommended next steps from this point are:</p>
-<ol><li>keep this MacBook repo as the known-good active baseline until the next</li></ol>
-<p>machine has a clean non-iCloud working clone,</p>
-<ol><li>treat <code>incoming/</code> as the main operational lane for newly found material,</li><li>classify each new find as executable, integrity-checkable,</li></ol>
+<ol><li>treat the clean non-iCloud other-Mac clone as a valid active working home,</li><li>treat <code>incoming/</code> as the main operational lane for newly found material,</li><li>classify each new find as executable, integrity-checkable,</li></ol>
 <p>provenance-only, or duplicate,</p>
 <ol><li>target <code>1.0.1</code> for remaining STYLE-WARNING cleanup outside the supported</li></ol>
 <p>release gate,</p>
@@ -1482,6 +1482,10 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
 <p>At the current portability checkpoint:</p>
 <ul><li>the active working branch is <code>codex/fix-artifact-pipeline</code></li><li>that branch and <code>main</code> are both aligned to the durable baseline</li><li>the full startup script has been proven successfully from a fresh local</li></ul>
 <p>clone on this machine, but an iCloud-backed live worktree showed Git status hangs on another Mac and should not currently be treated as the preferred active-clone model</p>
+<ul><li>a clean non-iCloud active clone has now been proven on another Mac at:</li></ul>
+<p><code>/Users/steven/Projects-all/phd-renovation-working</code></p>
+<ul><li>routine bootstrap/startup checks now preserve the active branch and keep</li></ul>
+<p>that non-iCloud clone clean</p>
 <ul><li>the repo-local raw intake landing path is <code>incoming/_landing/</code></li><li>the preferred iCloud-backed raw intake path is:</li></ul>
 <p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/</code></p>
 <h3 id="section-new-mac-handoff-required-dependencies">Required Dependencies</h3>
@@ -1512,7 +1516,9 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
 <h3 id="section-new-mac-handoff-deprecating-the-current-macbook">Deprecating The Current MacBook</h3>
 <p>Before retiring this MacBook, the safest minimum is:</p>
 <ol><li>push the active branch,</li><li>align and push <code>main</code>,</li><li>verify the startup script and validation spine on the new Mac,</li><li>verify the iCloud-backed intake path exists there,</li><li>and only then treat the old machine as non-authoritative.</li></ol>
-<p>That proof has now been completed once from the iCloud-backed working clone on this machine, which means the remaining retirement task is operational discipline rather than missing setup knowledge.</p>
+<p>That proof has now been completed from a clean non-iCloud working clone on the other Mac at:</p>
+<p><code>/Users/steven/Projects-all/phd-renovation-working</code></p>
+<p>That means the remaining retirement task is operational discipline rather than missing setup knowledge. The older iCloud live clone should now be treated as a deprecated reference-only worktree, not the preferred active repo.</p>
 <p>The practical machine-retirement gate now lives in <code>MACHINE-DEPRECATION-CHECKLIST.md</code>, and the current portability caveats are recorded in <code>REPO-INVENTORY-AUDIT.md</code>.</p>
         </div>
       </section>
@@ -1586,6 +1592,8 @@ bash scripts/bootstrap-project-macos.sh --branch main</code></pre>
 <p>baseline.</p>
 <ul><li>the supported startup script has passed from the known-good working repo on</li></ul>
 <p>this MacBook and from a local fresh clone.</p>
+<ul><li>a clean non-iCloud active clone has now been proven on the other Mac at:</li></ul>
+<p><code>/Users/steven/Projects-all/phd-renovation-working</code></p>
 <ul><li>the iCloud-backed intake landing path exists.</li><li>the thesis graph tables and comparison PDFs needed for fresh-clone artifact</li></ul>
 <p>validation are now tracked.</p>
 <p>That means the current MacBook is no longer the only place where the project &quot;really works.&quot;</p>
@@ -1602,6 +1610,8 @@ bash scripts/bootstrap-project-macos.sh --branch main</code></pre>
 <h3 id="section-machine-deprecation-checklist-preferred-ongoing-local-home">Preferred Ongoing Local Home</h3>
 <p>Going forward, the preferred local working model is:</p>
 <ul><li>active Git clone outside iCloud</li><li>intake and backup-oriented paths inside iCloud</li></ul>
+<p>The currently proven active clone path on the other Mac is:</p>
+<p><code>/Users/steven/Projects-all/phd-renovation-working</code></p>
 <p>The iCloud helper remains useful for maintaining a backup/reference clone:</p>
 <p><code>scripts/use-icloud-working-copy.sh</code></p>
 <p>Use:</p>
@@ -1609,6 +1619,7 @@ bash scripts/bootstrap-project-macos.sh --branch main</code></pre>
 <h3 id="section-machine-deprecation-checklist-what-the-old-machine-still-matters-for">What The Old Machine Still Matters For</h3>
 <p>Once the retirement gate above is satisfied, the old machine should be treated as:</p>
 <ul><li>a temporary convenience copy,</li><li>a place to verify nothing unexpected was left behind,</li><li>but not the source of truth for day-to-day continuation.</li></ul>
+<p>The old iCloud live worktree experiment should likewise be treated as deprecated for day-to-day development because Git worktree inspection there was not reliable enough.</p>
 <h3 id="section-machine-deprecation-checklist-big-picture-rule">Big-Picture Rule</h3>
 <p>The project should remain:</p>
 <ul><li>git-backed,</li><li>iCloud-backed locally,</li><li>preservation-first,</li><li>and recoverable from a fresh checkout plus documented dependencies.</li></ul>

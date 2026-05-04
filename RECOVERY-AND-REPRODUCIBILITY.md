@@ -48,6 +48,8 @@ As of this recovery audit checkpoint:
   iCloud-backed working-clone experiment exposed Git worktree friction on a
   different Mac and should not currently be treated as the preferred active
   clone model.
+- A clean non-iCloud active clone is now proven on another Mac at:
+  `/Users/steven/Projects-all/phd-renovation-working`
 - The repo working tree should be kept clean at handoff checkpoints.
 - The public companion site is a separate repo:
   `https://github.com/sgwoods/public`
@@ -74,8 +76,7 @@ The project is now in a post-`1.0.0` hardening state:
 
 Recommended next steps from this point are:
 
-1. keep this MacBook repo as the known-good active baseline until the next
-   machine has a clean non-iCloud working clone,
+1. treat the clean non-iCloud other-Mac clone as a valid active working home,
 2. treat `incoming/` as the main operational lane for newly found material,
 3. classify each new find as executable, integrity-checkable,
    provenance-only, or duplicate,

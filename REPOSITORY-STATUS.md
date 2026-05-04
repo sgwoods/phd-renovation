@@ -20,6 +20,8 @@ For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
 For the practical machine-retirement gate and preferred iCloud local-home
 workflow, see `MACHINE-DEPRECATION-CHECKLIST.md`.
+The currently proven non-iCloud active clone path on the other Mac is:
+`/Users/steven/Projects-all/phd-renovation-working`
 For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
 For the post-`1.0.0` ingestion operating plan, see `INTAKE-ROADMAP.md`.
@@ -112,8 +114,8 @@ That means the current recommended order is:
 
 1. keep the supported validation spine green and the repo status artifacts
    current,
-2. keep this MacBook repo as the known-good active baseline until the next
-   machine has a clean non-iCloud active clone,
+2. treat the proven non-iCloud other-Mac clone as a valid active working
+   baseline,
 3. make `incoming/` review, de-duplication, and categorization the next major
    operational lane,
 4. target `1.0.1` for remaining STYLE-WARNING cleanup outside the supported

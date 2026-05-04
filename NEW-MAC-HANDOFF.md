@@ -26,6 +26,10 @@ At the current portability checkpoint:
   clone on this machine, but an iCloud-backed live worktree showed Git status
   hangs on another Mac and should not currently be treated as the preferred
   active-clone model
+- a clean non-iCloud active clone has now been proven on another Mac at:
+  `/Users/steven/Projects-all/phd-renovation-working`
+- routine bootstrap/startup checks now preserve the active branch and keep
+  that non-iCloud clone clean
 - the repo-local raw intake landing path is `incoming/_landing/`
 - the preferred iCloud-backed raw intake path is:
   `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/`
@@ -120,9 +124,14 @@ Before retiring this MacBook, the safest minimum is:
 4. verify the iCloud-backed intake path exists there,
 5. and only then treat the old machine as non-authoritative.
 
-That proof has now been completed once from the iCloud-backed working clone on
-this machine, which means the remaining retirement task is operational
-discipline rather than missing setup knowledge.
+That proof has now been completed from a clean non-iCloud working clone on the
+other Mac at:
+
+`/Users/steven/Projects-all/phd-renovation-working`
+
+That means the remaining retirement task is operational discipline rather than
+missing setup knowledge. The older iCloud live clone should now be treated as
+a deprecated reference-only worktree, not the preferred active repo.
 
 The practical machine-retirement gate now lives in
 `MACHINE-DEPRECATION-CHECKLIST.md`, and the current portability caveats are
