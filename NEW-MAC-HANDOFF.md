@@ -59,7 +59,9 @@ bash scripts/bootstrap-project-macos.sh
 
 That script can install the machine dependencies, create or refresh the
 recommended non-iCloud active clone, and then hand off to the validated startup
-path below.
+path below. If you run it from an existing project checkout, it now preserves
+that checkout's current branch unless you explicitly override it with
+`--branch`.
 
 The lower-level startup script remains:
 

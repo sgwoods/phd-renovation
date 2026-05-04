@@ -33,9 +33,10 @@ Use this when you want one script to:
 2. install the command-line dependencies,
 3. ensure Python has `matplotlib`,
 4. create or refresh the recommended non-iCloud active clone,
-5. optionally clone the companion public repo,
-6. install Quicklisp if needed, and
-7. hand off to the validated startup/validation path.
+5. preserve the caller's current branch unless `--branch` is explicitly given,
+6. optionally clone the companion public repo,
+7. install Quicklisp if needed, and
+8. hand off to the validated startup/validation path.
 
 Typical use:
 
@@ -50,6 +51,7 @@ bash scripts/bootstrap-project-macos.sh --clone-public
 bash scripts/bootstrap-project-macos.sh --target-dir "$HOME/Projects/phd-renovation-working"
 bash scripts/bootstrap-project-macos.sh --skip-validation
 bash scripts/bootstrap-project-macos.sh --install-homebrew
+bash scripts/bootstrap-project-macos.sh --branch main
 ```
 
 ### `start-codex-new-mac.sh`

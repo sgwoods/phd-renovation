@@ -15,6 +15,7 @@ INSTALL_HOMEBREW=0
 CLONE_PUBLIC=0
 SKIP_VALIDATION=0
 INSTALL_QUICKLISP=1
+BRANCH_EXPLICIT=0
 
 usage() {
   cat <<'EOF'
@@ -43,6 +44,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     --branch)
       BRANCH="$2"
+      BRANCH_EXPLICIT=1
       shift 2
       ;;
     --repo-url)
@@ -116,6 +118,20 @@ ensure_brew_package() {
   brew install "$package"
 }
 
+detect_default_branch() {
+  if [[ "$BRANCH_EXPLICIT" -eq 1 ]]; then
+    return 0
+  fi
+
+  if git -C "$(pwd)" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    local current_branch
+    current_branch="$(git -C "$(pwd)" branch --show-current 2>/dev/null || true)"
+    if [[ -n "$current_branch" ]]; then
+      BRANCH="$current_branch"
+    fi
+  fi
+}
+
 pick_bootstrap_python() {
   local candidates=()
   local prefix
@@ -152,8 +168,21 @@ ensure_matplotlib() {
     return 0
   fi
 
-  echo "Installing matplotlib for: $python_cmd"
-  "$python_cmd" -m pip install --user matplotlib
+  if brew list matplotlib >/dev/null 2>&1; then
+    echo "matplotlib package already installed via Homebrew"
+  else
+    echo "Installing matplotlib via Homebrew"
+    brew install matplotlib
+  fi
+
+  if "$python_cmd" -c 'import importlib.util, sys; sys.exit(0 if importlib.util.find_spec("matplotlib") else 1)' >/dev/null 2>&1; then
+    echo "matplotlib available via: $python_cmd"
+    return 0
+  fi
+
+  echo "matplotlib is still not visible to: $python_cmd" >&2
+  echo "Set PHD_PYTHON to the Python interpreter that has matplotlib." >&2
+  exit 1
 }
 
 clone_or_update_repo() {
@@ -175,6 +204,8 @@ clone_or_update_repo() {
 }
 
 main() {
+  detect_default_branch
+
   echo "== PhD Renovation macOS bootstrap =="
   echo "Target repo: $TARGET_DIR"
   echo "Branch: $BRANCH"

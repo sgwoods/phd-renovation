@@ -68,9 +68,11 @@ That script now:
 2. installs the command-line dependencies with Homebrew,
 3. ensures a Python interpreter with `matplotlib`,
 4. creates or refreshes the recommended non-iCloud active clone,
-5. optionally clones the companion public repo,
-6. installs Quicklisp if needed, and
-7. runs the supported startup/validation path.
+5. preserves the current branch if run from an existing repo checkout unless
+   `--branch` is given,
+6. optionally clones the companion public repo,
+7. installs Quicklisp if needed, and
+8. runs the supported startup/validation path.
 
 Useful options:
 
@@ -79,6 +81,7 @@ bash scripts/bootstrap-project-macos.sh --clone-public
 bash scripts/bootstrap-project-macos.sh --target-dir "$HOME/Projects/phd-renovation-working"
 bash scripts/bootstrap-project-macos.sh --skip-validation
 bash scripts/bootstrap-project-macos.sh --install-homebrew
+bash scripts/bootstrap-project-macos.sh --branch main
 ```
 
 ### Manual step-by-step path
