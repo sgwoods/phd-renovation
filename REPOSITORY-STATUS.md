@@ -18,6 +18,8 @@ Short answer: **not entirely yet.**
 Use this artifact as the repo-wide counterpart to `VALIDATION-MATRIX.md`.
 For reviewed duplicate and redundancy decisions, see `DUPLICATES-REVIEW.md`.
 For the practical operator view of "what do I run?", see `WORKFLOWS.md`.
+For the practical machine-retirement gate and preferred iCloud local-home
+workflow, see `MACHINE-DEPRECATION-CHECKLIST.md`.
 For the repo-root helper scripts specifically, see `MANUAL-HELPERS.md`.
 For the documentation-focused coverage read, see `DOCS-COVERAGE-REVIEW.md`.
 For the post-`1.0.0` ingestion operating plan, see `INTAKE-ROADMAP.md`.
@@ -110,14 +112,16 @@ That means the current recommended order is:
 
 1. keep the supported validation spine green and the repo status artifacts
    current,
-2. make `incoming/` review, de-duplication, and categorization the next major
+2. make the iCloud-backed working copy the preferred local day-to-day home and
+   treat the old machine as secondary,
+3. make `incoming/` review, de-duplication, and categorization the next major
    operational lane,
-3. target `1.0.1` for remaining STYLE-WARNING cleanup outside the supported
+4. target `1.0.1` for remaining STYLE-WARNING cleanup outside the supported
    release gate,
-4. treat ADT batch as a snapshot-specific preserved family rather than an
+5. treat ADT batch as a snapshot-specific preserved family rather than an
    active integration obligation,
-5. keep terrain as the major deferred recovery lane, and
-6. treat `Hanoi-4` as a documented `1.x` lane and a `2.0`
+6. keep terrain as the major deferred recovery lane, and
+7. treat `Hanoi-4` as a documented `1.x` lane and a `2.0`
    research/repeatability goal.
 
 The practical operating details for that lane now live in

@@ -135,6 +135,28 @@ Main guides:
 - `NEW-MAC-HANDOFF.md`
 - `RECOVERY-AND-REPRODUCIBILITY.md`
 
+### 5b. Adopt The iCloud-Backed Working Copy
+
+Use this when you want the iCloud-backed clone to become the preferred local
+working home and reduce dependence on the old machine.
+
+```bash
+bash scripts/use-icloud-working-copy.sh
+```
+
+To refresh that clone and immediately rerun the supported startup/validation
+path:
+
+```bash
+bash scripts/use-icloud-working-copy.sh --validate
+```
+
+Main guides:
+
+- `MACHINE-DEPRECATION-CHECKLIST.md`
+- `NEW-MAC-HANDOFF.md`
+- `RECOVERY-AND-REPRODUCIBILITY.md`
+
 ### 6. New Material Intake
 
 Use this when new code, data, papers, or experiment artifacts arrive.

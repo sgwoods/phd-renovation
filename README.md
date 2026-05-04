@@ -75,6 +75,9 @@ The fuller continuity/recovery audit lives in
 `RECOVERY-AND-REPRODUCIBILITY.md`.
 For the shortest different-Mac startup/handoff path, see
 `NEW-MAC-HANDOFF.md` and `scripts/start-codex-new-mac.sh`.
+For the practical "make the iCloud-backed working copy the main local home"
+path, see `MACHINE-DEPRECATION-CHECKLIST.md` and
+`scripts/use-icloud-working-copy.sh`.
 
 ## Project Structure
 
@@ -129,6 +132,9 @@ src/                        Entry point
 - `RECOVERY-AND-REPRODUCIBILITY.md` records the current branch/publication
   reality, what is checked in versus intentionally ignored, and how to resume
   the project on a new machine.
+- `MACHINE-DEPRECATION-CHECKLIST.md` is the practical gate for treating the
+  current MacBook as non-authoritative and moving day-to-day work to the
+  iCloud-backed clone.
 - `PRESERVATION-POLICY.md` defines the preservation-first rule for code, data,
   publications, notes, archive finds, and historically useful duplicates.
 - `RELEASE-1.0-CHECKLIST.md` is the concrete release-hardening punch list for

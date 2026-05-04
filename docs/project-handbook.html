@@ -404,6 +404,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-machine-deprecation-checklist">Machine Deprecation Checklist</a></h2>
+        <p>Practical gate for moving day-to-day work to the iCloud-backed clone and treating the current MacBook as secondary.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-intake-roadmap">Intake Roadmap</a></h2>
         <p>Operational plan for post-1.0 ingestion, de-duplication, categorization, and promotion of newly found material.</p>
       </article>
@@ -534,6 +539,10 @@ h1{
         <li>
           <a href="#section-new-mac-handoff">New Mac Handoff</a>
           <ul class="subtoc"><li><a href="#section-new-mac-handoff-current-portability-goal">Current Portability Goal</a></li><li><a href="#section-new-mac-handoff-current-local-state">Current Local State</a></li><li><a href="#section-new-mac-handoff-required-dependencies">Required Dependencies</a></li><li><a href="#section-new-mac-handoff-start-script">Start Script</a></li><li><a href="#section-new-mac-handoff-what-still-needs-deliberate-care">What Still Needs Deliberate Care</a></li><li><a href="#section-new-mac-handoff-deprecating-the-current-macbook">Deprecating The Current MacBook</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-machine-deprecation-checklist">Machine Deprecation Checklist</a>
+          <ul class="subtoc"><li><a href="#section-machine-deprecation-checklist-goal">Goal</a></li><li><a href="#section-machine-deprecation-checklist-current-read">Current Read</a></li><li><a href="#section-machine-deprecation-checklist-retirement-gate">Retirement Gate</a></li><li><a href="#section-machine-deprecation-checklist-preferred-ongoing-local-home">Preferred Ongoing Local Home</a></li><li><a href="#section-machine-deprecation-checklist-what-the-old-machine-still-matters-for">What The Old Machine Still Matters For</a></li><li><a href="#section-machine-deprecation-checklist-big-picture-rule">Big-Picture Rule</a></li></ul>
         </li>
         <li>
           <a href="#section-intake-roadmap">Intake Roadmap</a>
@@ -721,7 +730,7 @@ h1{
         </li>
         <li>
           <a href="#section-workflows">Workflows</a>
-          <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-release-hardening">5. Release Hardening</a></li><li><a href="#section-workflows-5a-new-mac-startup-retirement-handoff">5a. New Mac Startup / Retirement Handoff</a></li><li><a href="#section-workflows-6-new-material-intake">6. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-workflows-supported-primary-workflows">Supported Primary Workflows</a></li><li><a href="#section-workflows-1-interactive-solver-use">1. Interactive Solver Use</a></li><li><a href="#section-workflows-2-full-validation-spine">2. Full Validation Spine</a></li><li><a href="#section-workflows-3-thesis-experiment-replication">3. Thesis Experiment Replication</a></li><li><a href="#section-workflows-4-status-dashboard-handbook-and-public-page-sync">4. Status, Dashboard, Handbook, And Public Page Sync</a></li><li><a href="#section-workflows-5-release-hardening">5. Release Hardening</a></li><li><a href="#section-workflows-5a-new-mac-startup-retirement-handoff">5a. New Mac Startup / Retirement Handoff</a></li><li><a href="#section-workflows-5b-adopt-the-icloud-backed-working-copy">5b. Adopt The iCloud-Backed Working Copy</a></li><li><a href="#section-workflows-6-new-material-intake">6. New Material Intake</a></li><li><a href="#section-workflows-secondary-manual-workflows">Secondary / Manual Workflows</a></li><li><a href="#section-workflows-manual-ao-harnesses">Manual AO Harnesses</a></li><li><a href="#section-workflows-legacy-loader-renovation-helpers">Legacy Loader / Renovation Helpers</a></li><li><a href="#section-workflows-rule-of-thumb">Rule Of Thumb</a></li></ul>
         </li>
         <li>
           <a href="#section-docs-guide">docs Guide</a>
@@ -790,7 +799,7 @@ h1{
 <ol><li>clone the companion public repo if you need publication sync too, and point</li></ol>
 <p><code>PHD_PUBLIC_SITE_DIR</code> at it.</p>
 <p><code>tests/validate-artifacts.sh</code> now supports a fresh-clone fallback mode when ignored local experiment run trees are absent.</p>
-<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the shortest different-Mac startup/handoff path, see <code>NEW-MAC-HANDOFF.md</code> and <code>scripts/start-codex-new-mac.sh</code>.</p>
+<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the shortest different-Mac startup/handoff path, see <code>NEW-MAC-HANDOFF.md</code> and <code>scripts/start-codex-new-mac.sh</code>. For the practical &quot;make the iCloud-backed working copy the main local home&quot; path, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code> and <code>scripts/use-icloud-working-copy.sh</code>.</p>
 <h3 id="section-project-overview-project-structure">Project Structure</h3>
 <pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
@@ -830,6 +839,8 @@ src/                        Entry point</code></pre>
 <p>indexed, integrated, tested, and publication-validated.</p>
 <ul><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code> records the current branch/publication</li></ul>
 <p>reality, what is checked in versus intentionally ignored, and how to resume the project on a new machine.</p>
+<ul><li><code>MACHINE-DEPRECATION-CHECKLIST.md</code> is the practical gate for treating the</li></ul>
+<p>current MacBook as non-authoritative and moving day-to-day work to the iCloud-backed clone.</p>
 <ul><li><code>PRESERVATION-POLICY.md</code> defines the preservation-first rule for code, data,</li></ul>
 <p>publications, notes, archive finds, and historically useful duplicates.</p>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code> is the concrete release-hardening punch list for</li></ul>
@@ -953,7 +964,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>part of the supported integrated line.</p>
 <ul><li>Some historical systems, datasets, and toolchains are preserved mainly for</li></ul>
 <p>provenance, recovery, or context rather than active validation.</p>
-<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the post-<code>1.0.0</code> ingestion operating plan, see <code>INTAKE-ROADMAP.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the standing retention rule for useful historical material, see <code>PRESERVATION-POLICY.md</code>.</p>
+<p>Use this artifact as the repo-wide counterpart to <code>VALIDATION-MATRIX.md</code>. For reviewed duplicate and redundancy decisions, see <code>DUPLICATES-REVIEW.md</code>. For the practical operator view of &quot;what do I run?&quot;, see <code>WORKFLOWS.md</code>. For the practical machine-retirement gate and preferred iCloud local-home workflow, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code>. For the repo-root helper scripts specifically, see <code>MANUAL-HELPERS.md</code>. For the documentation-focused coverage read, see <code>DOCS-COVERAGE-REVIEW.md</code>. For the post-<code>1.0.0</code> ingestion operating plan, see <code>INTAKE-ROADMAP.md</code>. For the current bounded <code>Hanoi-4</code> position, see <code>HANOI-4-STATUS.md</code>. For the concrete <code>1.0.0</code> release gate, see <code>RELEASE-1.0-CHECKLIST.md</code>. For the recovery/new-machine continuity audit, see <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the standing retention rule for useful historical material, see <code>PRESERVATION-POLICY.md</code>.</p>
 <h3 id="section-repository-status-status-key">Status Key</h3>
 <ul><li><code>Indexed</code>: documented well enough that its role in the repo is understood.</li><li><code>Integrated</code>: part of the supported solver story rather than just preserved.</li><li><code>Automated</code>: covered by CI or a repeatable validation script.</li><li><code>Publication / report validation</code>: tied directly to thesis or historically</li></ul>
 <p>reported results, either executable or integrity-checkable.</p>
@@ -979,6 +990,8 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>That means the current recommended order is:</p>
 <ol><li>keep the supported validation spine green and the repo status artifacts</li></ol>
 <p>current,</p>
+<ol><li>make the iCloud-backed working copy the preferred local day-to-day home and</li></ol>
+<p>treat the old machine as secondary,</p>
 <ol><li>make <code>incoming/</code> review, de-duplication, and categorization the next major</li></ol>
 <p>operational lane,</p>
 <ol><li>target <code>1.0.1</code> for remaining STYLE-WARNING cleanup outside the supported</li></ol>
@@ -1092,7 +1105,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>source,</p>
 <ul><li>and the next major lane is intake review rather than solver rescue.</li></ul>
 <p>Recommended next steps from this point are:</p>
-<ol><li>treat <code>incoming/</code> as the main operational lane for newly found material,</li><li>classify each new find as executable, integrity-checkable,</li></ol>
+<ol><li>make the iCloud-backed working copy the preferred local day-to-day home,</li><li>treat <code>incoming/</code> as the main operational lane for newly found material,</li><li>classify each new find as executable, integrity-checkable,</li></ol>
 <p>provenance-only, or duplicate,</p>
 <ol><li>target <code>1.0.1</code> for remaining STYLE-WARNING cleanup outside the supported</li></ol>
 <p>release gate,</p>
@@ -1158,10 +1171,14 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>rather than treating uncertainty as a reason to discard it, and</p>
 <ol><li>prefer future local working clones inside an iCloud-backed parent folder on</li></ol>
 <p>this machine once the current baseline/branch layout is settled.</p>
+<p>The shortest supported path for that preferred convention is:</p>
+<pre><code class="language-bash">bash scripts/use-icloud-working-copy.sh --validate</code></pre>
 <h3 id="section-recovery-and-reproducibility-local-working-directory-convention">Local Working Directory Convention</h3>
 <p>Going forward, the preferred local convention should be:</p>
 <ol><li>keep the canonical git history in GitHub,</li><li>keep the public-facing Pages artifacts in the companion public repo,</li><li>and keep active local working directories on this machine inside an</li></ol>
 <p>iCloud-backed parent folder.</p>
+<p>The helper for refreshing or creating that preferred iCloud-backed clone is:</p>
+<p><code>scripts/use-icloud-working-copy.sh</code></p>
 <p>The preferred project-specific iCloud path for new local intake work is:</p>
 <p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/</code></p>
 <p>with the raw-drop handoff directory at:</p>
@@ -1209,6 +1226,8 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
 <p>If Quicklisp is not installed yet:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
+<p>If you want to make the iCloud-backed working copy the preferred local home first, use:</p>
+<pre><code class="language-bash">bash scripts/use-icloud-working-copy.sh --validate</code></pre>
 <p>The script:</p>
 <ol><li>checks required commands,</li><li>finds a Python interpreter that actually has <code>matplotlib</code>,</li><li>creates the preferred iCloud intake path,</li><li>optionally installs Quicklisp,</li><li>detects the public Pages checkout if present,</li><li>and runs the full supported validation spine unless <code>--skip-validation</code> is</li></ol>
 <p>passed.</p>
@@ -1221,6 +1240,58 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>Before retiring this MacBook, the safest minimum is:</p>
 <ol><li>push the active branch,</li><li>align and push <code>main</code>,</li><li>verify the startup script and validation spine on the new Mac,</li><li>verify the iCloud-backed intake path exists there,</li><li>and only then treat the old machine as non-authoritative.</li></ol>
 <p>That proof has now been completed once from the iCloud-backed working clone on this machine, which means the remaining retirement task is operational discipline rather than missing setup knowledge.</p>
+<p>The practical machine-retirement gate now lives in <code>MACHINE-DEPRECATION-CHECKLIST.md</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-machine-deprecation-checklist">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Machine Deprecation Checklist</h2>
+            <p class="sectionSummary">Practical gate for moving day-to-day work to the iCloud-backed clone and treating the current MacBook as secondary.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../MACHINE-DEPRECATION-CHECKLIST.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the practical answer to:</p>
+<p><strong>When is the current MacBook no longer the authoritative home of this project?</strong></p>
+<p>Use it when we want to retire a local machine confidently without losing project state, setup knowledge, or historical material.</p>
+<h3 id="section-machine-deprecation-checklist-goal">Goal</h3>
+<p>We want a state where:</p>
+<ol><li>the durable baseline is in git and on the remote,</li><li>the preferred local working copy lives in an iCloud-backed location,</li><li>the supported startup path works from that location,</li><li>intake and preservation workflows are documented there too,</li><li>and the old machine can be treated as secondary without anxiety.</li></ol>
+<h3 id="section-machine-deprecation-checklist-current-read">Current Read</h3>
+<p>At the current checkpoint:</p>
+<ul><li><code>main</code> and <code>codex/fix-artifact-pipeline</code> are aligned to the durable current</li></ul>
+<p>baseline.</p>
+<ul><li>the supported startup script has passed from the iCloud-backed working copy.</li><li>the iCloud-backed intake landing path exists.</li><li>the thesis graph tables and comparison PDFs needed for fresh-clone artifact</li></ul>
+<p>validation are now tracked.</p>
+<p>That means the current MacBook is no longer the only place where the project &quot;really works.&quot;</p>
+<h3 id="section-machine-deprecation-checklist-retirement-gate">Retirement Gate</h3>
+<p>Treat the old machine as non-authoritative only when all of the following are true:</p>
+<ol><li><code>main</code> is pushed and current.</li><li>any newer working-branch changes are also pushed.</li><li>the iCloud-backed working copy has been refreshed to the intended commit.</li><li><code>bash scripts/start-codex-new-mac.sh</code> has passed from the iCloud-backed</li></ol>
+<p>working copy.</p>
+<ol><li>the preferred intake path exists:</li></ol>
+<p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing</code></p>
+<ol><li>public-site publication, if needed, is already pushed from the companion</li></ol>
+<p>public repo.</p>
+<h3 id="section-machine-deprecation-checklist-preferred-ongoing-local-home">Preferred Ongoing Local Home</h3>
+<p>Going forward, the preferred local working location on this machine is:</p>
+<p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/working-copy</code></p>
+<p>The helper script for refreshing or creating that clone is:</p>
+<p><code>scripts/use-icloud-working-copy.sh</code></p>
+<p>Use:</p>
+<pre><code class="language-bash">bash scripts/use-icloud-working-copy.sh</code></pre>
+<p>Or, to refresh the iCloud clone and immediately run the supported startup validation:</p>
+<pre><code class="language-bash">bash scripts/use-icloud-working-copy.sh --validate</code></pre>
+<h3 id="section-machine-deprecation-checklist-what-the-old-machine-still-matters-for">What The Old Machine Still Matters For</h3>
+<p>Once the retirement gate above is satisfied, the old machine should be treated as:</p>
+<ul><li>a temporary convenience copy,</li><li>a place to verify nothing unexpected was left behind,</li><li>but not the source of truth for day-to-day continuation.</li></ul>
+<h3 id="section-machine-deprecation-checklist-big-picture-rule">Big-Picture Rule</h3>
+<p>The project should remain:</p>
+<ul><li>git-backed,</li><li>iCloud-backed locally,</li><li>preservation-first,</li><li>and recoverable from a fresh checkout plus documented dependencies.</li></ul>
+<p>If that remains true, machine retirement is an operational change, not a project risk.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-intake-roadmap">
@@ -3290,6 +3361,13 @@ bash tests/validate-dashboard.sh</code></pre>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
 <p>Main guides:</p>
 <ul><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
+<h4 id="section-workflows-5b-adopt-the-icloud-backed-working-copy">5b. Adopt The iCloud-Backed Working Copy</h4>
+<p>Use this when you want the iCloud-backed clone to become the preferred local working home and reduce dependence on the old machine.</p>
+<pre><code class="language-bash">bash scripts/use-icloud-working-copy.sh</code></pre>
+<p>To refresh that clone and immediately rerun the supported startup/validation path:</p>
+<pre><code class="language-bash">bash scripts/use-icloud-working-copy.sh --validate</code></pre>
+<p>Main guides:</p>
+<ul><li><code>MACHINE-DEPRECATION-CHECKLIST.md</code></li><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
 <h4 id="section-workflows-6-new-material-intake">6. New Material Intake</h4>
 <p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
 <ol><li>Easiest path: drop the material into <code>incoming/_landing/</code>.</li></ol>

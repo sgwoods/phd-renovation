@@ -69,13 +69,14 @@ The project is now in a post-`1.0.0` hardening state:
 
 Recommended next steps from this point are:
 
-1. treat `incoming/` as the main operational lane for newly found material,
-2. classify each new find as executable, integrity-checkable,
+1. make the iCloud-backed working copy the preferred local day-to-day home,
+2. treat `incoming/` as the main operational lane for newly found material,
+3. classify each new find as executable, integrity-checkable,
    provenance-only, or duplicate,
-3. target `1.0.1` for remaining STYLE-WARNING cleanup outside the supported
+4. target `1.0.1` for remaining STYLE-WARNING cleanup outside the supported
    release gate,
-4. keep terrain and `Hanoi-4` explicitly bounded as deferred lanes,
-5. and avoid widening the supported baseline casually.
+5. keep terrain and `Hanoi-4` explicitly bounded as deferred lanes,
+6. and avoid widening the supported baseline casually.
 
 ## What Is Checked In
 
@@ -251,6 +252,12 @@ continuity checklist:
 8. prefer future local working clones inside an iCloud-backed parent folder on
    this machine once the current baseline/branch layout is settled.
 
+The shortest supported path for that preferred convention is:
+
+```bash
+bash scripts/use-icloud-working-copy.sh --validate
+```
+
 ## Local Working Directory Convention
 
 Going forward, the preferred local convention should be:
@@ -259,6 +266,10 @@ Going forward, the preferred local convention should be:
 2. keep the public-facing Pages artifacts in the companion public repo,
 3. and keep active local working directories on this machine inside an
    iCloud-backed parent folder.
+
+The helper for refreshing or creating that preferred iCloud-backed clone is:
+
+`scripts/use-icloud-working-copy.sh`
 
 The preferred project-specific iCloud path for new local intake work is:
 

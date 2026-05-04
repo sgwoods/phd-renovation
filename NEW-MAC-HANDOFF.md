@@ -56,6 +56,13 @@ If Quicklisp is not installed yet:
 bash scripts/start-codex-new-mac.sh --install-quicklisp
 ```
 
+If you want to make the iCloud-backed working copy the preferred local home
+first, use:
+
+```bash
+bash scripts/use-icloud-working-copy.sh --validate
+```
+
 The script:
 
 1. checks required commands,
@@ -93,3 +100,6 @@ Before retiring this MacBook, the safest minimum is:
 That proof has now been completed once from the iCloud-backed working clone on
 this machine, which means the remaining retirement task is operational
 discipline rather than missing setup knowledge.
+
+The practical machine-retirement gate now lives in
+`MACHINE-DEPRECATION-CHECKLIST.md`.

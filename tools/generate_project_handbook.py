@@ -59,6 +59,11 @@ HANDBOOK_SOURCES = [
         "Shortest practical guide for standing the project up on a different Mac and retiring the current machine safely.",
     ),
     HandbookSource(
+        "Machine Deprecation Checklist",
+        "MACHINE-DEPRECATION-CHECKLIST.md",
+        "Practical gate for moving day-to-day work to the iCloud-backed clone and treating the current MacBook as secondary.",
+    ),
+    HandbookSource(
         "Intake Roadmap",
         "INTAKE-ROADMAP.md",
         "Operational plan for post-1.0 ingestion, de-duplication, categorization, and promotion of newly found material.",
