@@ -59,6 +59,11 @@ HANDBOOK_SOURCES = [
         "Reusable migration playbook and Codex prompt template for applying this Git-first, non-iCloud-active-clone handoff strategy to sister projects.",
     ),
     HandbookSource(
+        "Cross-Project Migration Map",
+        "CROSS-PROJECT-MIGRATION-MAP.md",
+        "Higher-level coordination map for classifying named projects as standalone repos, supporting repos, shared-public subprojects, or unknowns before migrating them into Projects-All.",
+    ),
+    HandbookSource(
         "Recovery And Reproducibility",
         "RECOVERY-AND-REPRODUCIBILITY.md",
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",

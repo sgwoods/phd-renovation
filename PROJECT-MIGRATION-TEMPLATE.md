@@ -20,6 +20,9 @@ The migration target is:
   what state a folder is in.
 - We want setup knowledge, validation paths, and machine-handoff rules
   documented in the repo itself.
+- We must classify whether the target is a standalone repo, a companion repo,
+  a shared-public subproject, or a local-only/unknown project before choosing
+  the migration path.
 
 ## Reusable Codex Prompt
 
@@ -61,12 +64,20 @@ Goals:
 7. Make the handoff state explicit so the old machine can be deprecated safely.
 
 Detailed migration strategy:
-1. Audit the current machine.
+1. Classify the project shape first.
+   - Determine whether this is:
+     - a standalone GitHub repo
+     - a companion/supporting repo
+     - a shared-public subproject living inside a broader repo like sgwoods/public
+     - or a local-only/unknown project that needs audit first
+   - Do not assume the folder name implies a standalone repository.
+
+2. Audit the current machine.
    - Verify branch, commit, cleanliness, remotes.
    - Run the project’s real validation/build/test path.
    - Document any missing dependencies or companion repos.
 
-2. Inventory what matters.
+3. Inventory what matters.
    - Produce a tracked-file inventory or equivalent repo audit.
    - Identify external dependencies:
      - system tools
@@ -79,13 +90,13 @@ Detailed migration strategy:
      - generated and intentionally ignored artifacts
      - deprecated/manual helpers
 
-3. Add root clarity.
+4. Add root clarity.
    - Add PROJECT-STATUS.json
    - Add PROJECT-STATUS.md
    - Add scripts/show-project-version.sh
    - Make “what folder is this, what branch is this, what commit is this, is it clean?” answerable instantly.
 
-4. Build the bootstrap path.
+5. Build the bootstrap path.
    - Add scripts/bootstrap-project-macos.sh
    - Add scripts/start-codex-new-mac.sh
    - Make them:
@@ -94,31 +105,31 @@ Detailed migration strategy:
      - preserve the current branch when run from an existing checkout
      - avoid dirtying tracked generated artifacts during normal validation
 
-5. Write the handoff docs.
+6. Write the handoff docs.
    - BOOTSTRAP-CHECKLIST.md
    - NEW-MAC-HANDOFF.md
    - MACHINE-DEPRECATION-CHECKLIST.md
    - RECOVERY-AND-REPRODUCIBILITY.md
 
-6. Prove a fresh non-iCloud clone on the new machine.
+7. Prove a fresh non-iCloud clone on the new machine.
    - Use a normal folder such as ~/Projects-all/<project>-working
    - Do not use an iCloud live Git worktree as the preferred active clone
    - Run the bootstrap/startup scripts there
    - Verify the project can actually build/test/run
 
-7. Fix what the proof exposes.
+8. Fix what the proof exposes.
    - Handle missing dependencies
    - Remove hidden machine assumptions
    - Fix bootstrap branch-reset behavior if present
    - Fix tracked generated artifacts that become dirty during routine validation
 
-8. Promote the proven state.
+9. Promote the proven state.
    - Push the working branch
    - Fast-forward main
    - Push main
    - Reconfirm clean state
 
-9. Document the retirement state.
+10. Document the retirement state.
    - Make it explicit whether the other Mac is now a valid active home
    - Mark any deprecated live worktree experiments or abandoned local paths clearly
    - Keep the ongoing working model simple and explicit
@@ -132,6 +143,8 @@ Use this as the operator-facing version of the same plan.
 
 ### 1. Audit the current machine
 
+- First, classify whether the target is standalone, companion/supporting,
+  shared-public, or unknown/local-only.
 - Verify branch, commit, cleanliness, and remotes.
 - Run the real validation/build/test path for the project.
 - Record machine-specific dependencies or companion repos.

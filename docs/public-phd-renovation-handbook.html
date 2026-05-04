@@ -404,6 +404,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-cross-project-migration-map">Cross-Project Migration Map</a></h2>
+        <p>Higher-level coordination map for classifying named projects as standalone repos, supporting repos, shared-public subprojects, or unknowns before migrating them into Projects-All.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a></h2>
         <p>Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.</p>
       </article>
@@ -564,6 +569,10 @@ h1{
         <li>
           <a href="#section-project-migration-template">Project Migration Template</a>
           <ul class="subtoc"><li><a href="#section-project-migration-template-core-operating-model">Core Operating Model</a></li><li><a href="#section-project-migration-template-reusable-codex-prompt">Reusable Codex Prompt</a></li><li><a href="#section-project-migration-template-migration-strategy-checklist">Migration Strategy Checklist</a></li><li><a href="#section-project-migration-template-1-audit-the-current-machine">1. Audit the current machine</a></li><li><a href="#section-project-migration-template-2-inventory-tracked-versus-external-state">2. Inventory tracked versus external state</a></li><li><a href="#section-project-migration-template-3-add-root-level-status-clarity">3. Add root-level status clarity</a></li><li><a href="#section-project-migration-template-4-build-the-bootstrap-path">4. Build the bootstrap path</a></li><li><a href="#section-project-migration-template-5-write-the-handoff-and-retirement-docs">5. Write the handoff and retirement docs</a></li><li><a href="#section-project-migration-template-6-prove-a-fresh-non-icloud-clone">6. Prove a fresh non-iCloud clone</a></li><li><a href="#section-project-migration-template-7-fix-what-the-proof-exposes">7. Fix what the proof exposes</a></li><li><a href="#section-project-migration-template-8-promote-the-proven-state">8. Promote the proven state</a></li><li><a href="#section-project-migration-template-9-document-the-final-working-model">9. Document the final working model</a></li><li><a href="#section-project-migration-template-definition-of-done">Definition Of Done</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-cross-project-migration-map">Cross-Project Migration Map</a>
+          <ul class="subtoc"><li><a href="#section-cross-project-migration-map-current-migration-state">Current Migration State</a></li><li><a href="#section-cross-project-migration-map-core-rule">Core Rule</a></li><li><a href="#section-cross-project-migration-map-class-1-standalone-github-repos">Class 1: Standalone GitHub Repos</a></li><li><a href="#section-cross-project-migration-map-class-2-companion-supporting-repos">Class 2: Companion / Supporting Repos</a></li><li><a href="#section-cross-project-migration-map-class-3-shared-public-subprojects">Class 3: Shared-Public Subprojects</a></li><li><a href="#section-cross-project-migration-map-current-caution">Current caution</a></li><li><a href="#section-cross-project-migration-map-class-4-unknown-needs-audit-first">Class 4: Unknown / Needs Audit First</a></li><li><a href="#section-cross-project-migration-map-recommended-projects-all-layout">Recommended Projects-All Layout</a></li><li><a href="#section-cross-project-migration-map-migration-method-by-class">Migration Method By Class</a></li><li><a href="#section-cross-project-migration-map-standalone-github-repo">Standalone GitHub repo</a></li><li><a href="#section-cross-project-migration-map-companion-supporting-repo">Companion / supporting repo</a></li><li><a href="#section-cross-project-migration-map-shared-public-subproject">Shared-public subproject</a></li><li><a href="#section-cross-project-migration-map-unknown-local-only-project">Unknown / local-only project</a></li><li><a href="#section-cross-project-migration-map-recommended-next-order">Recommended Next Order</a></li><li><a href="#section-cross-project-migration-map-big-picture-rule">Big-Picture Rule</a></li></ul>
         </li>
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
@@ -836,7 +845,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PROJECT-STATUS.md</code> is the root-level quick status page for the folder itself, and <code>scripts/show-project-version.sh</code> is the live helper for checking the actual branch/commit/cleanliness of the current working copy. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PROJECT-MIGRATION-TEMPLATE.md</code> is the reusable migration playbook and Codex prompt template for applying this same machine-handoff strategy to sister projects such as <code>mmath-renovation</code>. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PROJECT-STATUS.md</code> is the root-level quick status page for the folder itself, and <code>scripts/show-project-version.sh</code> is the live helper for checking the actual branch/commit/cleanliness of the current working copy. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PROJECT-MIGRATION-TEMPLATE.md</code> is the reusable migration playbook and Codex prompt template for applying this same machine-handoff strategy to sister projects such as <code>mmath-renovation</code>. <code>CROSS-PROJECT-MIGRATION-MAP.md</code> is the higher-level coordination map for deciding which named projects are true standalone repos, which are supporting repos, and which are really subprojects inside the shared <code>public</code> repo before migrating them into <code>Projects-All</code>. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-fresh-checkout-recovery-quick-start">Fresh Checkout Recovery Quick Start</h3>
 <p>If you need to resume this project on a new machine without reconstructing any of the renovation work by hand:</p>
 <ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code>,</li><li>start from <code>main</code> as the durable baseline,</li><li>install SBCL, Quicklisp, Python 3, <code>matplotlib</code>, and Ghostscript,</li><li>run the supported validation spine:</li></ol>
@@ -1152,6 +1161,8 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>what state a folder is in.</p>
 <ul><li>We want setup knowledge, validation paths, and machine-handoff rules</li></ul>
 <p>documented in the repo itself.</p>
+<ul><li>We must classify whether the target is a standalone repo, a companion repo,</li></ul>
+<p>a shared-public subproject, or a local-only/unknown project before choosing the migration path.</p>
 <h3 id="section-project-migration-template-reusable-codex-prompt">Reusable Codex Prompt</h3>
 <p>Use this prompt as the default starting point for another project migration. Adjust the project name, any companion repo references, and any known language/runtime differences.</p>
 <pre><code class="language-text">We are migrating this project off an older Mac onto a newer machine and want GitHub to be the definitive stable source of truth going forward.
@@ -1187,12 +1198,20 @@ Goals:
 7. Make the handoff state explicit so the old machine can be deprecated safely.
 
 Detailed migration strategy:
-1. Audit the current machine.
+1. Classify the project shape first.
+   - Determine whether this is:
+     - a standalone GitHub repo
+     - a companion/supporting repo
+     - a shared-public subproject living inside a broader repo like sgwoods/public
+     - or a local-only/unknown project that needs audit first
+   - Do not assume the folder name implies a standalone repository.
+
+2. Audit the current machine.
    - Verify branch, commit, cleanliness, remotes.
    - Run the project’s real validation/build/test path.
    - Document any missing dependencies or companion repos.
 
-2. Inventory what matters.
+3. Inventory what matters.
    - Produce a tracked-file inventory or equivalent repo audit.
    - Identify external dependencies:
      - system tools
@@ -1205,13 +1224,13 @@ Detailed migration strategy:
      - generated and intentionally ignored artifacts
      - deprecated/manual helpers
 
-3. Add root clarity.
+4. Add root clarity.
    - Add PROJECT-STATUS.json
    - Add PROJECT-STATUS.md
    - Add scripts/show-project-version.sh
    - Make “what folder is this, what branch is this, what commit is this, is it clean?” answerable instantly.
 
-4. Build the bootstrap path.
+5. Build the bootstrap path.
    - Add scripts/bootstrap-project-macos.sh
    - Add scripts/start-codex-new-mac.sh
    - Make them:
@@ -1220,31 +1239,31 @@ Detailed migration strategy:
      - preserve the current branch when run from an existing checkout
      - avoid dirtying tracked generated artifacts during normal validation
 
-5. Write the handoff docs.
+6. Write the handoff docs.
    - BOOTSTRAP-CHECKLIST.md
    - NEW-MAC-HANDOFF.md
    - MACHINE-DEPRECATION-CHECKLIST.md
    - RECOVERY-AND-REPRODUCIBILITY.md
 
-6. Prove a fresh non-iCloud clone on the new machine.
+7. Prove a fresh non-iCloud clone on the new machine.
    - Use a normal folder such as ~/Projects-all/&lt;project&gt;-working
    - Do not use an iCloud live Git worktree as the preferred active clone
    - Run the bootstrap/startup scripts there
    - Verify the project can actually build/test/run
 
-7. Fix what the proof exposes.
+8. Fix what the proof exposes.
    - Handle missing dependencies
    - Remove hidden machine assumptions
    - Fix bootstrap branch-reset behavior if present
    - Fix tracked generated artifacts that become dirty during routine validation
 
-8. Promote the proven state.
+9. Promote the proven state.
    - Push the working branch
    - Fast-forward main
    - Push main
    - Reconfirm clean state
 
-9. Document the retirement state.
+10. Document the retirement state.
    - Make it explicit whether the other Mac is now a valid active home
    - Mark any deprecated live worktree experiments or abandoned local paths clearly
    - Keep the ongoing working model simple and explicit
@@ -1253,6 +1272,8 @@ Please proceed step by step, keep the overall plan updated as we go, remind me o
 <h3 id="section-project-migration-template-migration-strategy-checklist">Migration Strategy Checklist</h3>
 <p>Use this as the operator-facing version of the same plan.</p>
 <h4 id="section-project-migration-template-1-audit-the-current-machine">1. Audit the current machine</h4>
+<ul><li>First, classify whether the target is standalone, companion/supporting,</li></ul>
+<p>shared-public, or unknown/local-only.</p>
 <ul><li>Verify branch, commit, cleanliness, and remotes.</li><li>Run the real validation/build/test path for the project.</li><li>Record machine-specific dependencies or companion repos.</li></ul>
 <h4 id="section-project-migration-template-2-inventory-tracked-versus-external-state">2. Inventory tracked versus external state</h4>
 <ul><li>Produce a tracked-file inventory or equivalent audit.</li><li>Identify:</li><li>system tool dependencies</li><li>language/runtime package manager dependencies</li><li>companion publish/public repos</li><li>machine-local paths</li><li>Separate:</li><li>tracked source of truth</li><li>tracked generated artifacts</li><li>ignored generated artifacts</li><li>deprecated/manual helpers</li></ul>
@@ -1282,6 +1303,103 @@ Please proceed step by step, keep the overall plan updated as we go, remind me o
 <h3 id="section-project-migration-template-definition-of-done">Definition Of Done</h3>
 <p>For a project migration to be considered complete, we should be able to say:</p>
 <ol><li>A fresh clone from GitHub works.</li><li><code>main</code> is current and trustworthy.</li><li>The new machine has a clean non-iCloud active clone.</li><li>The bootstrap/startup scripts work there.</li><li>The project can be continued without hidden local knowledge.</li><li>The old machine can be treated as secondary or retired safely.</li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-cross-project-migration-map">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Cross-Project Migration Map</h2>
+            <p class="sectionSummary">Higher-level coordination map for classifying named projects as standalone repos, supporting repos, shared-public subprojects, or unknowns before migrating them into Projects-All.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/CROSS-PROJECT-MIGRATION-MAP.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the cross-project coordination map for moving Steven Woods projects from the current MacBook onto a cleaner <code>Projects-All</code> layout on the other machine while keeping GitHub as the durable source of truth.</p>
+<p>The main lesson from the PhD and MMath migrations is that <strong>not every named &quot;project&quot; is a standalone GitHub repo</strong>. Some are true independent repos, and some are sparse or single-purpose local clones of the shared <code>sgwoods/public</code> repo. We should classify each one before moving it.</p>
+<h3 id="section-cross-project-migration-map-current-migration-state">Current Migration State</h3>
+<p>The current proven state is:</p>
+<ul><li><code>phd-renovation</code> has a clean non-iCloud active clone on the other Mac at:</li></ul>
+<p><code>/Users/steven/Projects-All/phd-renovation-working</code></p>
+<ul><li><code>mmath-renovation</code> has a clean non-iCloud active clone on the other Mac at:</li></ul>
+<p><code>/Users/steven/Projects-All/mmath-renovation-working</code></p>
+<ul><li>the companion <code>public</code> repo already exists on the other Mac under</li></ul>
+<p><code>Projects-All</code></p>
+<ul><li>the companion <code>abtweak-experiments-ui</code> repo already exists on the other Mac</li></ul>
+<p>under <code>Projects-All</code></p>
+<p>That means the new-machine pattern is now proven and should be reused rather than re-invented.</p>
+<h3 id="section-cross-project-migration-map-core-rule">Core Rule</h3>
+<p>Before migrating any additional project, classify it as one of:</p>
+<ol><li><code>Standalone GitHub repo</code></li><li><code>Companion/supporting repo</code></li><li><code>Shared-public subproject inside sgwoods/public</code></li><li><code>Unknown or local-only project that needs audit first</code></li></ol>
+<p>This classification step is mandatory because the migration path is different for each class.</p>
+<h3 id="section-cross-project-migration-map-class-1-standalone-github-repos">Class 1: Standalone GitHub Repos</h3>
+<p>These should each get their own active working clone under <code>Projects-All</code>.</p>
+<p>Current confirmed examples:</p>
+<table><thead><tr><th>Project</th><th>Current local path</th><th>Remote</th><th>Recommended target on other Mac</th></tr></thead><tbody><tr><td><code>phd-renovation</code></td><td><code>/Users/stevenwoods/phd-renovation</code></td><td><code>https://github.com/sgwoods/phd-renovation.git</code></td><td><code>/Users/steven/Projects-All/phd-renovation-working</code></td></tr><tr><td><code>mmath-renovation</code></td><td><code>/Users/stevenwoods/mmath-renovation</code></td><td><code>https://github.com/sgwoods/mmath-renovation.git</code></td><td><code>/Users/steven/Projects-All/mmath-renovation-working</code></td></tr><tr><td><code>sci-fi-ai-dystopian-project</code></td><td><code>/Users/stevenwoods/SciFi AI Dystopian Project</code></td><td><code>https://github.com/sgwoods/sci-fi-ai-dystopian-project.git</code></td><td><code>/Users/steven/Projects-All/sci-fi-ai-dystopian-project-working</code></td></tr></tbody></table>
+<p>For these, the correct path is:</p>
+<ul><li>audit current repo state</li><li>create/update bootstrap and handoff docs if needed</li><li>prove a fresh non-iCloud clone</li><li>promote the proven state to <code>main</code></li></ul>
+<h3 id="section-cross-project-migration-map-class-2-companion-supporting-repos">Class 2: Companion / Supporting Repos</h3>
+<p>These are not just optional archives; they support other active projects.</p>
+<p>Current confirmed examples:</p>
+<table><thead><tr><th>Project</th><th>Purpose</th><th>Remote</th><th>Recommended target on other Mac</th></tr></thead><tbody><tr><td><code>public</code></td><td>shared public Pages/publication repo</td><td><code>https://github.com/sgwoods/public.git</code></td><td><code>/Users/steven/Projects-All/public</code></td></tr><tr><td><code>abtweak-experiments-ui</code></td><td>companion hosted UI for MMath / AbTweak</td><td><code>https://github.com/sgwoods/abtweak-experiments-ui.git</code></td><td><code>/Users/steven/Projects-All/abtweak-experiments-ui</code></td></tr></tbody></table>
+<p>These should usually live once, canonically, in <code>Projects-All</code>, not as multiple ad hoc copies.</p>
+<h3 id="section-cross-project-migration-map-class-3-shared-public-subprojects">Class 3: Shared-Public Subprojects</h3>
+<p>These currently appear locally as separate Git clones, but they all point to the same remote:</p>
+<ul><li><code>https://github.com/sgwoods/public.git</code></li></ul>
+<p>Confirmed current examples:</p>
+<table><thead><tr><th>Local path on this MacBook</th><th>Nature</th></tr></thead><tbody><tr><td><code>/Users/stevenwoods/Documents/GitPages/canberra-research</code></td><td>sparse/single-purpose clone of <code>public</code></td></tr><tr><td><code>/Users/stevenwoods/Documents/GitPages/google-canada-research</code></td><td>sparse/single-purpose clone of <code>public</code></td></tr><tr><td><code>/Users/stevenwoods/Documents/GitPages/inovia-research</code></td><td>sparse/single-purpose clone of <code>public</code></td></tr><tr><td><code>/Users/stevenwoods/Documents/GitPages/sei-pittsburgh-research</code></td><td>sparse/single-purpose clone of <code>public</code></td></tr><tr><td><code>/Users/stevenwoods/Documents/GitPages/steven-woods-research</code></td><td>sparse/single-purpose clone of <code>public</code></td></tr><tr><td><code>/Users/stevenwoods/Documents/GitPages/quack</code></td><td>sparse/single-purpose clone of <code>public</code></td></tr><tr><td><code>/Users/stevenwoods/Documents/GitPages/kinitos-neoedge</code></td><td>sparse/single-purpose clone of <code>public</code></td></tr></tbody></table>
+<p>The important implication is:</p>
+<ul><li>these should <strong>not</strong> be treated automatically as independent top-level repos</li></ul>
+<p>in <code>Projects-All</code></p>
+<ul><li>the preferred long-term model is one canonical <code>public</code> clone in</li></ul>
+<p><code>Projects-All</code>, with these subprojects managed inside that repo</p>
+<ul><li>we should only keep separate local clones for one of these if there is a</li></ul>
+<p>clear operational reason</p>
+<h4 id="section-cross-project-migration-map-current-caution">Current caution</h4>
+<p>Some of these sparse/single-purpose clones already contain local changes on this MacBook. Examples observed during the audit:</p>
+<ul><li><code>google-canada-research</code></li><li>modified: <code>google-canada-research/README.md</code></li><li>untracked: <code>google-canada-research/WORKING_STATE_PLAN.md</code></li><li><code>inovia-research</code></li><li>untracked: <code>inovia-research/PLAN.md</code></li><li><code>steven-woods-research</code></li><li>untracked: <code>WORKING_STATE_RECOVERY_PLAN.md</code></li></ul>
+<p>That means we should review them one by one before deleting or normalizing those local clones.</p>
+<h3 id="section-cross-project-migration-map-class-4-unknown-needs-audit-first">Class 4: Unknown / Needs Audit First</h3>
+<p>These names were mentioned as likely migration candidates but are not yet fully classified from the current filesystem scan:</p>
+<ul><li><code>sgwoods</code></li><li>any remaining &quot;danglers&quot; not yet tied to a clear Git remote</li><li>any local-only project folders, Drive folders, or unpublished archives that</li></ul>
+<p>may still need preservation before migration</p>
+<p>For these, the next step is not cloning. The next step is audit:</p>
+<ul><li>find the local folder</li><li>verify whether it is a Git repo</li><li>identify the remote, if any</li><li>determine whether it is standalone, companion, shared-public, or local-only</li></ul>
+<h3 id="section-cross-project-migration-map-recommended-projects-all-layout">Recommended Projects-All Layout</h3>
+<p>The target shape on the other Mac should be:</p>
+<pre><code class="language-text">~/Projects-All/
+  phd-renovation-working
+  mmath-renovation-working
+  sci-fi-ai-dystopian-project-working
+  abtweak-experiments-ui
+  public</code></pre>
+<p>And then:</p>
+<ul><li>work on <code>canberra-research</code>, <code>google-canada-research</code>, <code>inovia-research</code>,</li></ul>
+<p><code>sei-pittsburgh-research</code>, <code>steven-woods-research</code>, <code>quack</code>, and <code>kinitos-neoedge</code> inside the canonical <code>public</code> repo unless there is a deliberate reason not to</p>
+<ul><li>do not casually create additional top-level clones for those subprojects</li></ul>
+<h3 id="section-cross-project-migration-map-migration-method-by-class">Migration Method By Class</h3>
+<h4 id="section-cross-project-migration-map-standalone-github-repo">Standalone GitHub repo</h4>
+<ol><li>audit current repo state</li><li>document dependencies and bootstrap path</li><li>prove clean non-iCloud clone in <code>Projects-All</code></li><li>promote stable state to <code>main</code></li><li>document handoff and machine-retirement state</li></ol>
+<h4 id="section-cross-project-migration-map-companion-supporting-repo">Companion / supporting repo</h4>
+<ol><li>determine which project(s) depend on it</li><li>ensure one canonical <code>Projects-All</code> clone exists</li><li>document how dependent projects point to it</li><li>avoid duplicate clones unless there is a concrete need</li></ol>
+<h4 id="section-cross-project-migration-map-shared-public-subproject">Shared-public subproject</h4>
+<ol><li>verify the subproject currently lives inside <code>sgwoods/public</code></li><li>review whether the separate local clone contains unique unpushed work</li><li>if not, prefer working inside the canonical <code>Projects-All/public</code> clone</li><li>if yes, reconcile the local differences first, then normalize</li></ol>
+<h4 id="section-cross-project-migration-map-unknown-local-only-project">Unknown / local-only project</h4>
+<ol><li>locate it</li><li>identify whether it is a Git repo</li><li>identify the remote</li><li>classify it into one of the other three classes</li><li>only then choose a migration path</li></ol>
+<h3 id="section-cross-project-migration-map-recommended-next-order">Recommended Next Order</h3>
+<p>The current recommended migration order is:</p>
+<ol><li>stabilize the cross-project map</li><li>keep <code>public</code> and <code>abtweak-experiments-ui</code> as canonical supporting clones</li></ol>
+<p>in <code>Projects-All</code></p>
+<ol><li>migrate <code>SciFi AI Dystopian Project</code> as the next standalone repo</li><li>review the shared-public subprojects one by one, starting with any that</li></ol>
+<p>already have local modifications</p>
+<ol><li>audit the remaining unknown/dangler projects after that</li></ol>
+<h3 id="section-cross-project-migration-map-big-picture-rule">Big-Picture Rule</h3>
+<p>The point of this map is to prevent category mistakes.</p>
+<p>We want:</p>
+<ul><li>GitHub to remain the durable source of truth,</li><li><code>Projects-All</code> to contain a clean set of active working clones,</li><li>iCloud to remain for intake and backup-oriented convenience,</li><li>and local project names to stop implying false independence when they are</li></ul>
+<p>really views into a shared repo.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-recovery-and-reproducibility">
