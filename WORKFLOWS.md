@@ -120,6 +120,14 @@ Main guides:
 Use this when you want to stand the project up on a different Mac and verify
 that the current machine can be retired safely.
 
+Preferred full bootstrap:
+
+```bash
+bash scripts/bootstrap-project-macos.sh
+```
+
+Lower-level startup path:
+
 ```bash
 bash scripts/start-codex-new-mac.sh
 ```

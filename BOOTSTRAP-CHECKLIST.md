@@ -3,6 +3,12 @@
 This file is the shortest explicit checklist for bringing the project up on a
 new machine in the currently recommended way.
 
+For the most complete single-command path now available, use:
+
+```bash
+bash scripts/bootstrap-project-macos.sh
+```
+
 ## Canonical Truth
 
 The durable source of truth for the project is:
@@ -47,6 +53,35 @@ Required commands/tools:
 - Quicklisp
 
 ## Suggested macOS Setup Order
+
+### Preferred one-command path
+
+From an existing checkout of this repo, the preferred complete bootstrap is:
+
+```bash
+bash scripts/bootstrap-project-macos.sh
+```
+
+That script now:
+
+1. verifies or optionally installs Homebrew,
+2. installs the command-line dependencies with Homebrew,
+3. ensures a Python interpreter with `matplotlib`,
+4. creates or refreshes the recommended non-iCloud active clone,
+5. optionally clones the companion public repo,
+6. installs Quicklisp if needed, and
+7. runs the supported startup/validation path.
+
+Useful options:
+
+```bash
+bash scripts/bootstrap-project-macos.sh --clone-public
+bash scripts/bootstrap-project-macos.sh --target-dir "$HOME/Projects/phd-renovation-working"
+bash scripts/bootstrap-project-macos.sh --skip-validation
+bash scripts/bootstrap-project-macos.sh --install-homebrew
+```
+
+### Manual step-by-step path
 
 1. Install or verify Homebrew if needed.
 2. Install the command-line dependencies:
@@ -101,6 +136,13 @@ bash scripts/start-codex-new-mac.sh
 6. prints branch state, and
 7. runs the full supported validation spine unless `--skip-validation` is
    passed.
+
+The more complete outer bootstrap script is:
+
+- `scripts/bootstrap-project-macos.sh`
+
+That script exists to make the from-scratch machine path cleaner and more
+repeatable than relying on a partially prepared machine.
 
 ## Supported Validation Spine
 

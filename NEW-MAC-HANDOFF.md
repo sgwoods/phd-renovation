@@ -51,6 +51,18 @@ If needed, set `PHD_PYTHON` to the interpreter that has `matplotlib`.
 
 ## Start Script
 
+For the cleanest from-scratch machine setup now available, prefer:
+
+```bash
+bash scripts/bootstrap-project-macos.sh
+```
+
+That script can install the machine dependencies, create or refresh the
+recommended non-iCloud active clone, and then hand off to the validated startup
+path below.
+
+The lower-level startup script remains:
+
 Use:
 
 ```bash

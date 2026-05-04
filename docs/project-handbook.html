@@ -414,6 +414,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-scripts">Scripts</a></h2>
+        <p>Human-readable guide to the maintained bootstrap and working-copy helper scripts.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-machine-deprecation-checklist">Machine Deprecation Checklist</a></h2>
         <p>Practical gate for moving day-to-day work to the iCloud-backed clone and treating the current MacBook as secondary.</p>
       </article>
@@ -548,7 +553,7 @@ h1{
         </li>
         <li>
           <a href="#section-bootstrap-checklist">Bootstrap Checklist</a>
-          <ul class="subtoc"><li><a href="#section-bootstrap-checklist-canonical-truth">Canonical Truth</a></li><li><a href="#section-bootstrap-checklist-recommended-local-layout">Recommended Local Layout</a></li><li><a href="#section-bootstrap-checklist-machine-dependencies">Machine Dependencies</a></li><li><a href="#section-bootstrap-checklist-suggested-macos-setup-order">Suggested macOS Setup Order</a></li><li><a href="#section-bootstrap-checklist-what-the-startup-script-covers">What The Startup Script Covers</a></li><li><a href="#section-bootstrap-checklist-supported-validation-spine">Supported Validation Spine</a></li><li><a href="#section-bootstrap-checklist-known-current-caveats">Known Current Caveats</a></li><li><a href="#section-bootstrap-checklist-companion-public-repo">Companion Public Repo</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-bootstrap-checklist-canonical-truth">Canonical Truth</a></li><li><a href="#section-bootstrap-checklist-recommended-local-layout">Recommended Local Layout</a></li><li><a href="#section-bootstrap-checklist-machine-dependencies">Machine Dependencies</a></li><li><a href="#section-bootstrap-checklist-suggested-macos-setup-order">Suggested macOS Setup Order</a></li><li><a href="#section-bootstrap-checklist-preferred-one-command-path">Preferred one-command path</a></li><li><a href="#section-bootstrap-checklist-manual-step-by-step-path">Manual step-by-step path</a></li><li><a href="#section-bootstrap-checklist-what-the-startup-script-covers">What The Startup Script Covers</a></li><li><a href="#section-bootstrap-checklist-supported-validation-spine">Supported Validation Spine</a></li><li><a href="#section-bootstrap-checklist-known-current-caveats">Known Current Caveats</a></li><li><a href="#section-bootstrap-checklist-companion-public-repo">Companion Public Repo</a></li></ul>
         </li>
         <li>
           <a href="#section-repository-inventory-audit">Repository Inventory Audit</a>
@@ -557,6 +562,10 @@ h1{
         <li>
           <a href="#section-new-mac-handoff">New Mac Handoff</a>
           <ul class="subtoc"><li><a href="#section-new-mac-handoff-current-portability-goal">Current Portability Goal</a></li><li><a href="#section-new-mac-handoff-current-local-state">Current Local State</a></li><li><a href="#section-new-mac-handoff-required-dependencies">Required Dependencies</a></li><li><a href="#section-new-mac-handoff-start-script">Start Script</a></li><li><a href="#section-new-mac-handoff-what-still-needs-deliberate-care">What Still Needs Deliberate Care</a></li><li><a href="#section-new-mac-handoff-deprecating-the-current-macbook">Deprecating The Current MacBook</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-scripts">Scripts</a>
+          <ul class="subtoc"><li><a href="#section-scripts-current-scripts">Current Scripts</a></li><li><a href="#section-scripts-bootstrap-project-macos-sh">`bootstrap-project-macos.sh`</a></li><li><a href="#section-scripts-start-codex-new-mac-sh">`start-codex-new-mac.sh`</a></li><li><a href="#section-scripts-use-icloud-working-copy-sh">`use-icloud-working-copy.sh`</a></li></ul>
         </li>
         <li>
           <a href="#section-machine-deprecation-checklist">Machine Deprecation Checklist</a>
@@ -809,7 +818,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-fresh-checkout-recovery-quick-start">Fresh Checkout Recovery Quick Start</h3>
 <p>If you need to resume this project on a new machine without reconstructing any of the renovation work by hand:</p>
 <ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code>,</li><li>start from <code>main</code> as the durable baseline,</li><li>install SBCL, Quicklisp, Python 3, <code>matplotlib</code>, and Ghostscript,</li><li>run the supported validation spine:</li></ol>
@@ -817,7 +826,7 @@ h1{
 <ol><li>clone the companion public repo if you need publication sync too, and point</li></ol>
 <p><code>PHD_PUBLIC_SITE_DIR</code> at it.</p>
 <p><code>tests/validate-artifacts.sh</code> now supports a fresh-clone fallback mode when ignored local experiment run trees are absent.</p>
-<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the shortest setup checklist on a new machine, see <code>BOOTSTRAP-CHECKLIST.md</code>. For the shortest different-Mac startup/handoff path, see <code>NEW-MAC-HANDOFF.md</code> and <code>scripts/start-codex-new-mac.sh</code>. For the current machine-retirement and active-clone guidance, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code>.</p>
+<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the shortest setup checklist on a new machine, see <code>BOOTSTRAP-CHECKLIST.md</code>. For the most complete one-command bootstrap path, see <code>scripts/bootstrap-project-macos.sh</code>. For the shortest different-Mac startup/handoff path, see <code>NEW-MAC-HANDOFF.md</code> and <code>scripts/start-codex-new-mac.sh</code>. For the current machine-retirement and active-clone guidance, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code>.</p>
 <h3 id="section-project-overview-project-structure">Project Structure</h3>
 <pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
@@ -1232,6 +1241,8 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
         </div>
         <div class="docBody">
 <p>This file is the shortest explicit checklist for bringing the project up on a new machine in the currently recommended way.</p>
+<p>For the most complete single-command path now available, use:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
 <h3 id="section-bootstrap-checklist-canonical-truth">Canonical Truth</h3>
 <p>The durable source of truth for the project is:</p>
 <ol><li>the Git history in <code>sgwoods/phd-renovation</code>,</li><li><code>main</code> as the durable baseline branch,</li><li>the active working branch when newer unreleased work is intentionally in</li></ol>
@@ -1248,6 +1259,17 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>Required commands/tools:</p>
 <ul><li><code>git</code></li><li><code>sbcl</code></li><li><code>python3</code></li><li>Python <code>matplotlib</code></li><li><code>gs</code> (Ghostscript)</li><li><code>rg</code> (ripgrep)</li><li><code>curl</code></li><li>Quicklisp</li></ul>
 <h3 id="section-bootstrap-checklist-suggested-macos-setup-order">Suggested macOS Setup Order</h3>
+<h4 id="section-bootstrap-checklist-preferred-one-command-path">Preferred one-command path</h4>
+<p>From an existing checkout of this repo, the preferred complete bootstrap is:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
+<p>That script now:</p>
+<ol><li>verifies or optionally installs Homebrew,</li><li>installs the command-line dependencies with Homebrew,</li><li>ensures a Python interpreter with <code>matplotlib</code>,</li><li>creates or refreshes the recommended non-iCloud active clone,</li><li>optionally clones the companion public repo,</li><li>installs Quicklisp if needed, and</li><li>runs the supported startup/validation path.</li></ol>
+<p>Useful options:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh --clone-public
+bash scripts/bootstrap-project-macos.sh --target-dir &quot;$HOME/Projects/phd-renovation-working&quot;
+bash scripts/bootstrap-project-macos.sh --skip-validation
+bash scripts/bootstrap-project-macos.sh --install-homebrew</code></pre>
+<h4 id="section-bootstrap-checklist-manual-step-by-step-path">Manual step-by-step path</h4>
 <ol><li>Install or verify Homebrew if needed.</li><li>Install the command-line dependencies:</li></ol>
 <pre><code class="language-bash">brew install sbcl ghostscript ripgrep curl</code></pre>
 <ol><li>Ensure Python 3 is available and install <code>matplotlib</code> into the interpreter</li></ol>
@@ -1267,6 +1289,9 @@ cd ~/Projects/phd-renovation-working</code></pre>
 <p><code>scripts/start-codex-new-mac.sh</code> currently:</p>
 <ol><li>checks the required commands,</li><li>finds a Python interpreter that actually has <code>matplotlib</code>,</li><li>ensures the iCloud intake path exists,</li><li>optionally installs Quicklisp,</li><li>detects the companion public-site checkout if present,</li><li>prints branch state, and</li><li>runs the full supported validation spine unless <code>--skip-validation</code> is</li></ol>
 <p>passed.</p>
+<p>The more complete outer bootstrap script is:</p>
+<ul><li><code>scripts/bootstrap-project-macos.sh</code></li></ul>
+<p>That script exists to make the from-scratch machine path cleaner and more repeatable than relying on a partially prepared machine.</p>
 <h3 id="section-bootstrap-checklist-supported-validation-spine">Supported Validation Spine</h3>
 <p>The supported baseline gate is:</p>
 <ul><li><code>sbcl --non-interactive --load tests/run.lisp</code></li><li><code>bash tests/validate-artifacts.sh</code></li><li><code>bash tests/validate-ff-provenance.sh</code></li><li><code>bash tests/validate-adt-batch.sh</code></li><li><code>bash tests/validate-csp-batch.sh</code></li><li><code>bash tests/validate-ao.sh</code></li><li><code>python3 tools/generate-release-dashboard.py</code></li><li><code>bash tests/validate-dashboard.sh</code></li></ul>
@@ -1426,6 +1451,10 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
 <ul><li><code>git</code></li><li><code>sbcl</code></li><li><code>python3</code></li><li>Python <code>matplotlib</code></li><li><code>Ghostscript</code> (<code>gs</code>)</li><li><code>ripgrep</code> (<code>rg</code>)</li><li><code>curl</code></li><li><code>Quicklisp</code></li></ul>
 <p>On macOS, this often means a Homebrew Python rather than only the Apple Command Line Tools <code>python3</code>. If needed, set <code>PHD_PYTHON</code> to the interpreter that has <code>matplotlib</code>.</p>
 <h3 id="section-new-mac-handoff-start-script">Start Script</h3>
+<p>For the cleanest from-scratch machine setup now available, prefer:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
+<p>That script can install the machine dependencies, create or refresh the recommended non-iCloud active clone, and then hand off to the validated startup path below.</p>
+<p>The lower-level startup script remains:</p>
 <p>Use:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
 <p>If Quicklisp is not installed yet:</p>
@@ -1445,6 +1474,44 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
 <ol><li>push the active branch,</li><li>align and push <code>main</code>,</li><li>verify the startup script and validation spine on the new Mac,</li><li>verify the iCloud-backed intake path exists there,</li><li>and only then treat the old machine as non-authoritative.</li></ol>
 <p>That proof has now been completed once from the iCloud-backed working clone on this machine, which means the remaining retirement task is operational discipline rather than missing setup knowledge.</p>
 <p>The practical machine-retirement gate now lives in <code>MACHINE-DEPRECATION-CHECKLIST.md</code>, and the current portability caveats are recorded in <code>REPO-INVENTORY-AUDIT.md</code>.</p>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-scripts">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Scripts</h2>
+            <p class="sectionSummary">Human-readable guide to the maintained bootstrap and working-copy helper scripts.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../scripts/scripts/README.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This directory holds the maintained machine-bootstrap and working-copy helper scripts for the project.</p>
+<h3 id="section-scripts-current-scripts">Current Scripts</h3>
+<h4 id="section-scripts-bootstrap-project-macos-sh"><code>bootstrap-project-macos.sh</code></h4>
+<p>Preferred from-scratch bootstrap path for a new Mac.</p>
+<p>Use this when you want one script to:</p>
+<ol><li>verify or optionally install Homebrew,</li><li>install the command-line dependencies,</li><li>ensure Python has <code>matplotlib</code>,</li><li>create or refresh the recommended non-iCloud active clone,</li><li>optionally clone the companion public repo,</li><li>install Quicklisp if needed, and</li><li>hand off to the validated startup/validation path.</li></ol>
+<p>Typical use:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
+<p>Useful options:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh --clone-public
+bash scripts/bootstrap-project-macos.sh --target-dir &quot;$HOME/Projects/phd-renovation-working&quot;
+bash scripts/bootstrap-project-macos.sh --skip-validation
+bash scripts/bootstrap-project-macos.sh --install-homebrew</code></pre>
+<h4 id="section-scripts-start-codex-new-mac-sh"><code>start-codex-new-mac.sh</code></h4>
+<p>Lower-level startup/validation helper once the repo already exists locally.</p>
+<p>Use this when the machine is mostly prepared and you want to:</p>
+<ol><li>verify the expected commands,</li><li>verify Python + <code>matplotlib</code>,</li><li>ensure the iCloud intake path exists,</li><li>install Quicklisp if requested,</li><li>and run the supported validation spine.</li></ol>
+<p>Typical use:</p>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
+<p>If Quicklisp is missing:</p>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
+<h4 id="section-scripts-use-icloud-working-copy-sh"><code>use-icloud-working-copy.sh</code></h4>
+<p>Reference-clone helper for the iCloud-backed convenience copy.</p>
+<p>Use this only to maintain or refresh the backup/reference clone. It is not the preferred active-clone model for day-to-day Git work.</p>
         </div>
       </section>
       <section class="sectionCard" id="section-machine-deprecation-checklist">
@@ -3562,6 +3629,9 @@ bash tests/validate-dashboard.sh</code></pre>
 <ul><li><code>RELEASE-1.0-CHECKLIST.md</code></li><li><code>RENOVATION.md</code></li></ul>
 <h4 id="section-workflows-5a-new-mac-startup-retirement-handoff">5a. New Mac Startup / Retirement Handoff</h4>
 <p>Use this when you want to stand the project up on a different Mac and verify that the current machine can be retired safely.</p>
+<p>Preferred full bootstrap:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
+<p>Lower-level startup path:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
 <p>If Quicklisp is not installed yet:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>

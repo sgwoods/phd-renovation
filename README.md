@@ -48,6 +48,9 @@ the remaining portability edge cases are.
 states the recommended model clearly: Git is the durable source of truth,
 non-iCloud clones are the active work model, and iCloud is for intake and
 backup-oriented convenience.
+`scripts/bootstrap-project-macos.sh` is the preferred from-scratch bootstrap
+path for a new Mac: it installs dependencies, prepares the recommended
+non-iCloud active clone, and hands off to the validated startup script.
 `PRESERVATION-POLICY.md` is the standing rule that potentially useful
 historical material should be classified and preserved, not discarded just
 because it is not yet integrated.
@@ -82,6 +85,8 @@ The fuller continuity/recovery audit lives in
 `RECOVERY-AND-REPRODUCIBILITY.md`.
 For the shortest setup checklist on a new machine, see
 `BOOTSTRAP-CHECKLIST.md`.
+For the most complete one-command bootstrap path, see
+`scripts/bootstrap-project-macos.sh`.
 For the shortest different-Mac startup/handoff path, see
 `NEW-MAC-HANDOFF.md` and `scripts/start-codex-new-mac.sh`.
 For the current machine-retirement and active-clone guidance, see
