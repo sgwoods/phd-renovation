@@ -3,6 +3,9 @@
 This file is the shortest practical guide for bringing the project up on a
 different Mac and retiring the current machine safely.
 
+The canonical durable state is the Git repo and its pushed branches, not any
+single local machine or iCloud working copy.
+
 ## Current Portability Goal
 
 We want to be able to:
@@ -28,6 +31,8 @@ At the current portability checkpoint:
   `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/`
 
 ## Required Dependencies
+
+For the shortest explicit setup order, see `BOOTSTRAP-CHECKLIST.md`.
 
 The supported startup path expects:
 

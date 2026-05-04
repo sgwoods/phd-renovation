@@ -399,6 +399,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-bootstrap-checklist">Bootstrap Checklist</a></h2>
+        <p>Shortest explicit checklist for bringing the project up on a different machine using the current recommended active-clone model.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-repository-inventory-audit">Repository Inventory Audit</a></h2>
         <p>Current tracked-vs-external inventory plus the deepest current portability assessment.</p>
       </article>
@@ -540,6 +545,10 @@ h1{
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
           <ul class="subtoc"><li><a href="#section-recovery-and-reproducibility-precise-goal">Precise Goal</a></li><li><a href="#section-recovery-and-reproducibility-current-project-state">Current Project State</a></li><li><a href="#section-recovery-and-reproducibility-status-read">Status Read</a></li><li><a href="#section-recovery-and-reproducibility-what-is-checked-in">What Is Checked In</a></li><li><a href="#section-recovery-and-reproducibility-core-source-and-snapshots">Core source and snapshots</a></li><li><a href="#section-recovery-and-reproducibility-validation-and-investigation-harnesses">Validation and investigation harnesses</a></li><li><a href="#section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</a></li><li><a href="#section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</a></li><li><a href="#section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</a></li><li><a href="#section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</a></li><li><a href="#section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</a></li><li><a href="#section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</a></li><li><a href="#section-recovery-and-reproducibility-can-the-work-be-recreated-on-a-new-machine">Can The Work Be Recreated On A New Machine?</a></li><li><a href="#section-recovery-and-reproducibility-for-the-main-repo-work-yes">For the main repo work: yes</a></li><li><a href="#section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</a></li><li><a href="#section-recovery-and-reproducibility-remaining-reproducibility-risks">Remaining Reproducibility Risks</a></li><li><a href="#section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</a></li><li><a href="#section-recovery-and-reproducibility-local-working-directory-convention">Local Working Directory Convention</a></li><li><a href="#section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-bootstrap-checklist">Bootstrap Checklist</a>
+          <ul class="subtoc"><li><a href="#section-bootstrap-checklist-canonical-truth">Canonical Truth</a></li><li><a href="#section-bootstrap-checklist-recommended-local-layout">Recommended Local Layout</a></li><li><a href="#section-bootstrap-checklist-machine-dependencies">Machine Dependencies</a></li><li><a href="#section-bootstrap-checklist-suggested-macos-setup-order">Suggested macOS Setup Order</a></li><li><a href="#section-bootstrap-checklist-what-the-startup-script-covers">What The Startup Script Covers</a></li><li><a href="#section-bootstrap-checklist-supported-validation-spine">Supported Validation Spine</a></li><li><a href="#section-bootstrap-checklist-known-current-caveats">Known Current Caveats</a></li><li><a href="#section-bootstrap-checklist-companion-public-repo">Companion Public Repo</a></li></ul>
         </li>
         <li>
           <a href="#section-repository-inventory-audit">Repository Inventory Audit</a>
@@ -800,7 +809,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="release-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="project-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-fresh-checkout-recovery-quick-start">Fresh Checkout Recovery Quick Start</h3>
 <p>If you need to resume this project on a new machine without reconstructing any of the renovation work by hand:</p>
 <ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code>,</li><li>start from <code>main</code> as the durable baseline,</li><li>install SBCL, Quicklisp, Python 3, <code>matplotlib</code>, and Ghostscript,</li><li>run the supported validation spine:</li></ol>
@@ -808,7 +817,7 @@ h1{
 <ol><li>clone the companion public repo if you need publication sync too, and point</li></ol>
 <p><code>PHD_PUBLIC_SITE_DIR</code> at it.</p>
 <p><code>tests/validate-artifacts.sh</code> now supports a fresh-clone fallback mode when ignored local experiment run trees are absent.</p>
-<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the shortest different-Mac startup/handoff path, see <code>NEW-MAC-HANDOFF.md</code> and <code>scripts/start-codex-new-mac.sh</code>. For the current machine-retirement and active-clone guidance, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code>.</p>
+<p>The fuller continuity/recovery audit lives in <code>RECOVERY-AND-REPRODUCIBILITY.md</code>. For the shortest setup checklist on a new machine, see <code>BOOTSTRAP-CHECKLIST.md</code>. For the shortest different-Mac startup/handoff path, see <code>NEW-MAC-HANDOFF.md</code> and <code>scripts/start-codex-new-mac.sh</code>. For the current machine-retirement and active-clone guidance, see <code>MACHINE-DEPRECATION-CHECKLIST.md</code>.</p>
 <h3 id="section-project-overview-project-structure">Project Structure</h3>
 <pre><code>csp/                        Base CSP solver (backtracking, AC-3, queens, ADT, MPR)
 qcsp3/                      Extended solver (memory-CSP, GSAT, Quilici search)
@@ -1084,6 +1093,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>This file answers a practical continuity question:</p>
 <p><strong>If this local working directory disappeared today, could the project be recreated on a new machine without redoing the work?</strong></p>
 <p>Short answer: <strong>yes, if we keep treating the checked-in repo plus the companion public repo as the durable record and avoid relying on local-only generated state.</strong></p>
+<p>The most important practical rule is that <strong>Git history is the durable source of truth</strong>. Local clones, iCloud paths, and generated caches are operational layers, not the canonical record.</p>
 <p>The guiding retention rule behind that answer is documented separately in <code>PRESERVATION-POLICY.md</code>: potentially useful project information should be classified and preserved, not discarded merely because it is not yet fully integrated.</p>
 <h3 id="section-recovery-and-reproducibility-precise-goal">Precise Goal</h3>
 <p>The project goal at this stage is:</p>
@@ -1157,6 +1167,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <ol><li>install the required runtime tools:</li></ol>
 <ul><li>SBCL</li><li>Quicklisp</li><li>Python 3</li><li><code>matplotlib</code></li><li>Ghostscript (<code>gs</code>) for thesis PostScript export</li></ul>
 <ol><li>run the supported validation spine</li></ol>
+<p>The shortest current dependency/bootstrap checklist is <code>BOOTSTRAP-CHECKLIST.md</code>.</p>
 <p>That is enough to continue the main work without reconstructing the history by hand.</p>
 <p>The artifact validator now supports a fresh-clone fallback mode: if ignored local experiment run trees are absent, it validates the tracked graph tables, tracked overlay/report artifacts, and thesis-comparison outputs instead of pretending it can re-extract from local caches that are not part of git.</p>
 <h4 id="section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</h4>
@@ -1208,6 +1219,71 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p><code>Hanoi-4</code> behavior work.</p>
         </div>
       </section>
+      <section class="sectionCard" id="section-bootstrap-checklist">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Bootstrap Checklist</h2>
+            <p class="sectionSummary">Shortest explicit checklist for bringing the project up on a different machine using the current recommended active-clone model.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="../BOOTSTRAP-CHECKLIST.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the shortest explicit checklist for bringing the project up on a new machine in the currently recommended way.</p>
+<h3 id="section-bootstrap-checklist-canonical-truth">Canonical Truth</h3>
+<p>The durable source of truth for the project is:</p>
+<ol><li>the Git history in <code>sgwoods/phd-renovation</code>,</li><li><code>main</code> as the durable baseline branch,</li><li>the active working branch when newer unreleased work is intentionally in</li></ol>
+<p>progress, and</p>
+<ol><li>the companion public repo <code>sgwoods/public</code> for mirrored public-site outputs.</li></ol>
+<p>The durable truth is <strong>not</strong> any single local machine, local cache, or iCloud working copy.</p>
+<h3 id="section-bootstrap-checklist-recommended-local-layout">Recommended Local Layout</h3>
+<p>Use a normal non-iCloud working clone for day-to-day development:</p>
+<pre><code class="language-text">~/Projects/phd-renovation-working</code></pre>
+<p>Use iCloud for intake and backup-oriented convenience paths:</p>
+<pre><code class="language-text">~/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing</code></pre>
+<p>Do not currently treat an iCloud-backed live Git worktree as the preferred active clone model.</p>
+<h3 id="section-bootstrap-checklist-machine-dependencies">Machine Dependencies</h3>
+<p>Required commands/tools:</p>
+<ul><li><code>git</code></li><li><code>sbcl</code></li><li><code>python3</code></li><li>Python <code>matplotlib</code></li><li><code>gs</code> (Ghostscript)</li><li><code>rg</code> (ripgrep)</li><li><code>curl</code></li><li>Quicklisp</li></ul>
+<h3 id="section-bootstrap-checklist-suggested-macos-setup-order">Suggested macOS Setup Order</h3>
+<ol><li>Install or verify Homebrew if needed.</li><li>Install the command-line dependencies:</li></ol>
+<pre><code class="language-bash">brew install sbcl ghostscript ripgrep curl</code></pre>
+<ol><li>Ensure Python 3 is available and install <code>matplotlib</code> into the interpreter</li></ol>
+<p>you expect the project to use:</p>
+<pre><code class="language-bash">python3 -m pip install matplotlib</code></pre>
+<p>If the machine has multiple Python interpreters, you can point the bootstrap script at the correct one with:</p>
+<pre><code class="language-bash">export PHD_PYTHON=&quot;/path/to/python3&quot;</code></pre>
+<ol><li>Clone the repo outside iCloud:</li></ol>
+<pre><code class="language-bash">mkdir -p ~/Projects
+git clone https://github.com/sgwoods/phd-renovation.git ~/Projects/phd-renovation-working
+cd ~/Projects/phd-renovation-working</code></pre>
+<ol><li>Install Quicklisp through the project bootstrap path if needed:</li></ol>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
+<ol><li>After Quicklisp exists, use the normal startup/validation path:</li></ol>
+<pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
+<h3 id="section-bootstrap-checklist-what-the-startup-script-covers">What The Startup Script Covers</h3>
+<p><code>scripts/start-codex-new-mac.sh</code> currently:</p>
+<ol><li>checks the required commands,</li><li>finds a Python interpreter that actually has <code>matplotlib</code>,</li><li>ensures the iCloud intake path exists,</li><li>optionally installs Quicklisp,</li><li>detects the companion public-site checkout if present,</li><li>prints branch state, and</li><li>runs the full supported validation spine unless <code>--skip-validation</code> is</li></ol>
+<p>passed.</p>
+<h3 id="section-bootstrap-checklist-supported-validation-spine">Supported Validation Spine</h3>
+<p>The supported baseline gate is:</p>
+<ul><li><code>sbcl --non-interactive --load tests/run.lisp</code></li><li><code>bash tests/validate-artifacts.sh</code></li><li><code>bash tests/validate-ff-provenance.sh</code></li><li><code>bash tests/validate-adt-batch.sh</code></li><li><code>bash tests/validate-csp-batch.sh</code></li><li><code>bash tests/validate-ao.sh</code></li><li><code>python3 tools/generate-release-dashboard.py</code></li><li><code>bash tests/validate-dashboard.sh</code></li></ul>
+<h3 id="section-bootstrap-checklist-known-current-caveats">Known Current Caveats</h3>
+<ul><li>An iCloud-backed live Git worktree showed <code>git status</code> hangs on another Mac.</li></ul>
+<p>Use a non-iCloud active clone instead.</p>
+<ul><li>A clone under <code>/tmp</code> exposed an SBCL/ASDF cache-path edge case during full</li></ul>
+<p>validation. A normal home-directory non-iCloud clone passed.</p>
+<ul><li>Quicklisp currently installs in the standard user-level location:</li></ul>
+<p><code>~/quicklisp/</code>.</p>
+<h3 id="section-bootstrap-checklist-companion-public-repo">Companion Public Repo</h3>
+<p>If you need the public publishing workflow too:</p>
+<pre><code class="language-bash">git clone https://github.com/sgwoods/public ~/GitPages/public
+export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
+<p>The project repo still builds and validates without that companion repo; only the mirrored publication step depends on it.</p>
+        </div>
+      </section>
       <section class="sectionCard" id="section-repository-inventory-audit">
         <div class="sectionHeader">
           <div class="sectionTitleWrap">
@@ -1225,7 +1301,9 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>reference that are <em>not</em> in the repo, and why?**</p>
 <p>It also records the current portability assessment from a fresh-clone audit.</p>
 <h3 id="section-repository-inventory-audit-executive-summary">Executive Summary</h3>
-<ul><li>The repo currently has <strong>7,614 tracked files</strong>.</li><li>The working repo on this MacBook is clean and aligned at commit <code>dd6eaa1</code></li></ul>
+<ul><li>The repo currently has <strong>7,635 tracked files</strong> according to <code>git ls-files</code>.</li><li>A generated snapshot of the full tracked file list currently lives at</li></ul>
+<p><code>REPO-FILE-LIST.txt</code>. That file is a local audit artifact, not canonical project source.</p>
+<ul><li>The working repo on this MacBook is aligned at commit <code>dd6eaa1</code></li></ul>
 <p>with both <code>origin/main</code> and <code>origin/codex/fix-artifact-pipeline</code>.</p>
 <ul><li>The full supported validation spine passes from the working repo on this</li></ul>
 <p>machine.</p>
@@ -1240,6 +1318,9 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <pre><code class="language-bash">git ls-files</code></pre>
 <p>or equivalently:</p>
 <pre><code class="language-bash">rg --files</code></pre>
+<p>For this audit pass, I also generated:</p>
+<pre><code class="language-text">REPO-FILE-LIST.txt</code></pre>
+<p>which is a direct <code>git ls-files</code> snapshot from this working tree.</p>
 <h4 id="section-repository-inventory-audit-top-level-tracked-file-counts">Top-level tracked file counts</h4>
 <p>These counts come from <code>git ls-files</code> grouped by top-level path:</p>
 <table><thead><tr><th>Top-level area</th><th>Tracked file count</th><th>Read</th></tr></thead><tbody><tr><td><code>qcsp-may29-1996/</code></td><td>3246</td><td>Historical snapshot plus preserved batch/result subtrees</td></tr><tr><td><code>data/</code></td><td>1971</td><td>Preserved results, archives, thesis, and baseline data</td></tr><tr><td><code>historical finds/</code></td><td>1481</td><td>Recovery/provenance/context material</td></tr><tr><td><code>qcsp-alex-sep16-1997/</code></td><td>703</td><td>Historical snapshot with archive-heavy extras</td></tr><tr><td><code>Q-Batch-SBCL/</code></td><td>97</td><td>Modern experiment workspace plus tracked graph artifacts</td></tr><tr><td><code>qcsp3/</code></td><td>33</td><td>Primary integrated solver line</td></tr><tr><td><code>tests/</code></td><td>31</td><td>Supported validation and investigation harnesses</td></tr><tr><td><code>csp/</code></td><td>18</td><td>Base/reference solver snapshot</td></tr><tr><td><code>docs/</code></td><td>9</td><td>Generated dashboard/handbook/public-facing artifacts</td></tr><tr><td><code>tools/</code></td><td>4</td><td>Maintained build/generation helpers</td></tr><tr><td><code>incoming/</code></td><td>4</td><td>Intake workflow metadata and landing guidance</td></tr><tr><td><code>src/</code></td><td>2</td><td>Main interactive entry-point surface</td></tr></tbody></table>
@@ -1283,9 +1364,10 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>That was an intentional preservation upgrade.</p>
 <h3 id="section-repository-inventory-audit-current-deep-health-assessment">Current Deep Health Assessment</h3>
 <h4 id="section-repository-inventory-audit-1-repo-hygiene">1. Repo hygiene</h4>
-<ul><li>Working repo status: clean</li><li>Branch alignment: <code>HEAD</code>, <code>origin/main</code>, and</li></ul>
+<ul><li>Working repo status at the start of the health audit: clean</li><li>Branch alignment: <code>HEAD</code>, <code>origin/main</code>, and</li></ul>
 <p><code>origin/codex/fix-artifact-pipeline</code> all at <code>dd6eaa1</code></p>
 <ul><li>Untracked files: none (<code>git ls-files -o --exclude-standard</code> returned empty)</li></ul>
+<p>This document itself and other audit artifacts may make the worktree dirty until they are either committed or discarded.</p>
 <h4 id="section-repository-inventory-audit-2-supported-validation-spine-from-the-working-repo">2. Supported validation spine from the working repo</h4>
 <p>Passed on this MacBook:</p>
 <ul><li><code>python3 tools/generate-release-dashboard.py</code></li><li><code>bash tests/validate-dashboard.sh</code></li><li><code>sbcl --non-interactive --load tests/run.lisp</code></li><li><code>bash tests/validate-artifacts.sh</code></li><li><code>bash tests/validate-ff-provenance.sh</code></li><li><code>bash tests/validate-adt-batch.sh</code></li><li><code>bash tests/validate-csp-batch.sh</code></li><li><code>bash tests/validate-ao.sh</code></li></ul>
@@ -1328,6 +1410,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
         </div>
         <div class="docBody">
 <p>This file is the shortest practical guide for bringing the project up on a different Mac and retiring the current machine safely.</p>
+<p>The canonical durable state is the Git repo and its pushed branches, not any single local machine or iCloud working copy.</p>
 <h3 id="section-new-mac-handoff-current-portability-goal">Current Portability Goal</h3>
 <p>We want to be able to:</p>
 <ol><li>clone the repo on a different Mac,</li><li>install or verify the required dependencies,</li><li>run one startup script,</li><li>validate the supported baseline,</li><li>and continue work without reconstructing local context by hand.</li></ol>
@@ -1338,6 +1421,7 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <ul><li>the repo-local raw intake landing path is <code>incoming/_landing/</code></li><li>the preferred iCloud-backed raw intake path is:</li></ul>
 <p><code>/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/</code></p>
 <h3 id="section-new-mac-handoff-required-dependencies">Required Dependencies</h3>
+<p>For the shortest explicit setup order, see <code>BOOTSTRAP-CHECKLIST.md</code>.</p>
 <p>The supported startup path expects:</p>
 <ul><li><code>git</code></li><li><code>sbcl</code></li><li><code>python3</code></li><li>Python <code>matplotlib</code></li><li><code>Ghostscript</code> (<code>gs</code>)</li><li><code>ripgrep</code> (<code>rg</code>)</li><li><code>curl</code></li><li><code>Quicklisp</code></li></ul>
 <p>On macOS, this often means a Homebrew Python rather than only the Apple Command Line Tools <code>python3</code>. If needed, set <code>PHD_PYTHON</code> to the interpreter that has <code>matplotlib</code>.</p>
@@ -3482,12 +3566,12 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>If Quicklisp is not installed yet:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
 <p>Main guides:</p>
-<ul><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
+<ul><li><code>BOOTSTRAP-CHECKLIST.md</code></li><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
 <h4 id="section-workflows-5b-adopt-the-icloud-backed-working-copy">5b. Adopt The iCloud-Backed Working Copy</h4>
 <p>Use this when you want to maintain or refresh the iCloud-backed backup/reference clone.</p>
 <pre><code class="language-bash">bash scripts/use-icloud-working-copy.sh</code></pre>
 <p>Main guides:</p>
-<ul><li><code>MACHINE-DEPRECATION-CHECKLIST.md</code></li><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
+<ul><li><code>BOOTSTRAP-CHECKLIST.md</code></li><li><code>MACHINE-DEPRECATION-CHECKLIST.md</code></li><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
 <h4 id="section-workflows-6-new-material-intake">6. New Material Intake</h4>
 <p>Use this when new code, data, papers, or experiment artifacts arrive.</p>
 <ol><li>Easiest path: drop the material into <code>incoming/_landing/</code>.</li></ol>

@@ -132,6 +132,7 @@ bash scripts/start-codex-new-mac.sh --install-quicklisp
 
 Main guides:
 
+- `BOOTSTRAP-CHECKLIST.md`
 - `NEW-MAC-HANDOFF.md`
 - `RECOVERY-AND-REPRODUCIBILITY.md`
 
@@ -146,6 +147,7 @@ bash scripts/use-icloud-working-copy.sh
 
 Main guides:
 
+- `BOOTSTRAP-CHECKLIST.md`
 - `MACHINE-DEPRECATION-CHECKLIST.md`
 - `NEW-MAC-HANDOFF.md`
 - `RECOVERY-AND-REPRODUCIBILITY.md`

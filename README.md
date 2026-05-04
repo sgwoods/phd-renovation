@@ -44,6 +44,10 @@ directory and recover the work on a new machine without redoing it?"
 `REPO-INVENTORY-AUDIT.md` is the current deep audit of what is tracked in the
 repo, what external files/tools/paths the project still depends on, and where
 the remaining portability edge cases are.
+`BOOTSTRAP-CHECKLIST.md` is the shortest current machine-setup checklist and
+states the recommended model clearly: Git is the durable source of truth,
+non-iCloud clones are the active work model, and iCloud is for intake and
+backup-oriented convenience.
 `PRESERVATION-POLICY.md` is the standing rule that potentially useful
 historical material should be classified and preserved, not discarded just
 because it is not yet integrated.
@@ -76,6 +80,8 @@ ignored local experiment run trees are absent.
 
 The fuller continuity/recovery audit lives in
 `RECOVERY-AND-REPRODUCIBILITY.md`.
+For the shortest setup checklist on a new machine, see
+`BOOTSTRAP-CHECKLIST.md`.
 For the shortest different-Mac startup/handoff path, see
 `NEW-MAC-HANDOFF.md` and `scripts/start-codex-new-mac.sh`.
 For the current machine-retirement and active-clone guidance, see

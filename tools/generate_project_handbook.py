@@ -54,6 +54,11 @@ HANDBOOK_SOURCES = [
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",
     ),
     HandbookSource(
+        "Bootstrap Checklist",
+        "BOOTSTRAP-CHECKLIST.md",
+        "Shortest explicit checklist for bringing the project up on a different machine using the current recommended active-clone model.",
+    ),
+    HandbookSource(
         "Repository Inventory Audit",
         "REPO-INVENTORY-AUDIT.md",
         "Current tracked-vs-external inventory plus the deepest current portability assessment.",

@@ -9,6 +9,10 @@ Short answer: **yes, if we keep treating the checked-in repo plus the companion
 public repo as the durable record and avoid relying on local-only generated
 state.**
 
+The most important practical rule is that **Git history is the durable source
+of truth**. Local clones, iCloud paths, and generated caches are operational
+layers, not the canonical record.
+
 The guiding retention rule behind that answer is documented separately in
 `PRESERVATION-POLICY.md`: potentially useful project information should be
 classified and preserved, not discarded merely because it is not yet fully
@@ -189,6 +193,9 @@ following:
    - `matplotlib`
    - Ghostscript (`gs`) for thesis PostScript export
 4. run the supported validation spine
+
+The shortest current dependency/bootstrap checklist is
+`BOOTSTRAP-CHECKLIST.md`.
 
 That is enough to continue the main work without reconstructing the history by
 hand.
