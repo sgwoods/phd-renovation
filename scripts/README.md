@@ -5,6 +5,24 @@ scripts for the project.
 
 ## Current Scripts
 
+### `show-project-version.sh`
+
+Fastest live “what state is this folder in?” helper.
+
+Use this when you want to see:
+
+1. the published release line,
+2. current track and focus,
+3. canonical and active branch expectations,
+4. the actual current branch and commit, and
+5. whether the worktree is clean or dirty.
+
+Typical use:
+
+```bash
+bash scripts/show-project-version.sh
+```
+
 ### `bootstrap-project-macos.sh`
 
 Preferred from-scratch bootstrap path for a new Mac.

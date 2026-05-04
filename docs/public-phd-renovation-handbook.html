@@ -372,8 +372,8 @@ h1{
         </div>
         <div class="metaCard">
           <span class="metaLabel">Updated</span>
-          <span class="metaValue">May 3, 2026</span>
-          <div class="metaNote">Dashboard now generated as part of the regular validation flow.</div>
+          <span class="metaValue">May 4, 2026</span>
+          <div class="metaNote">Status source, dashboard, handbook, and public page are intended to stay synchronized.</div>
         </div>
       </div>
       <div class="quickGrid">
@@ -391,6 +391,11 @@ h1{
         <span class="eyebrow">Included guide</span>
         <h2><a href="#section-work-area-status">Work Area Status</a></h2>
         <p>Quick map of what is current, reference, archive-only, or deprecated for day-to-day mainline use.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-project-status">Project Status</a></h2>
+        <p>Quick root-level status summary: release line, focus, branch expectations, and canonical working model.</p>
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
@@ -548,6 +553,10 @@ h1{
           <ul class="subtoc"><li><a href="#section-work-area-status-status-key">Status Key</a></li><li><a href="#section-work-area-status-current-read">Current Read</a></li><li><a href="#section-work-area-status-practical-rule">Practical Rule</a></li><li><a href="#section-work-area-status-important-distinction">Important Distinction</a></li><li><a href="#section-work-area-status-recommended-next-step">Recommended Next Step</a></li></ul>
         </li>
         <li>
+          <a href="#section-project-status">Project Status</a>
+          <ul class="subtoc"><li><a href="#section-project-status-source-of-truth">Source Of Truth</a></li><li><a href="#section-project-status-recommended-working-model">Recommended Working Model</a></li><li><a href="#section-project-status-quick-commands">Quick Commands</a></li></ul>
+        </li>
+        <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
           <ul class="subtoc"><li><a href="#section-recovery-and-reproducibility-precise-goal">Precise Goal</a></li><li><a href="#section-recovery-and-reproducibility-current-project-state">Current Project State</a></li><li><a href="#section-recovery-and-reproducibility-status-read">Status Read</a></li><li><a href="#section-recovery-and-reproducibility-what-is-checked-in">What Is Checked In</a></li><li><a href="#section-recovery-and-reproducibility-core-source-and-snapshots">Core source and snapshots</a></li><li><a href="#section-recovery-and-reproducibility-validation-and-investigation-harnesses">Validation and investigation harnesses</a></li><li><a href="#section-recovery-and-reproducibility-preserved-data-and-publication-anchors">Preserved data and publication anchors</a></li><li><a href="#section-recovery-and-reproducibility-tracked-generated-public-facing-artifacts">Tracked generated/public-facing artifacts</a></li><li><a href="#section-recovery-and-reproducibility-tracked-project-state-documentation">Tracked project-state documentation</a></li><li><a href="#section-recovery-and-reproducibility-what-is-intentionally-not-checked-in">What Is Intentionally Not Checked In</a></li><li><a href="#section-recovery-and-reproducibility-ignored-generated-workspaces">Ignored generated workspaces</a></li><li><a href="#section-recovery-and-reproducibility-local-only-environment-noise">Local-only environment noise</a></li><li><a href="#section-recovery-and-reproducibility-can-the-work-be-recreated-on-a-new-machine">Can The Work Be Recreated On A New Machine?</a></li><li><a href="#section-recovery-and-reproducibility-for-the-main-repo-work-yes">For the main repo work: yes</a></li><li><a href="#section-recovery-and-reproducibility-for-the-public-site-publication-path-yes-but-it-is-a-companion-repo">For the public site publication path: yes, but it is a companion repo</a></li><li><a href="#section-recovery-and-reproducibility-remaining-reproducibility-risks">Remaining Reproducibility Risks</a></li><li><a href="#section-recovery-and-reproducibility-what-to-do-to-be-confident">What To Do To Be Confident</a></li><li><a href="#section-recovery-and-reproducibility-local-working-directory-convention">Local Working Directory Convention</a></li><li><a href="#section-recovery-and-reproducibility-recommended-next-steps">Recommended Next Steps</a></li></ul>
         </li>
@@ -565,7 +574,7 @@ h1{
         </li>
         <li>
           <a href="#section-scripts">Scripts</a>
-          <ul class="subtoc"><li><a href="#section-scripts-current-scripts">Current Scripts</a></li><li><a href="#section-scripts-bootstrap-project-macos-sh">`bootstrap-project-macos.sh`</a></li><li><a href="#section-scripts-start-codex-new-mac-sh">`start-codex-new-mac.sh`</a></li><li><a href="#section-scripts-use-icloud-working-copy-sh">`use-icloud-working-copy.sh`</a></li></ul>
+          <ul class="subtoc"><li><a href="#section-scripts-current-scripts">Current Scripts</a></li><li><a href="#section-scripts-show-project-version-sh">`show-project-version.sh`</a></li><li><a href="#section-scripts-bootstrap-project-macos-sh">`bootstrap-project-macos.sh`</a></li><li><a href="#section-scripts-start-codex-new-mac-sh">`start-codex-new-mac.sh`</a></li><li><a href="#section-scripts-use-icloud-working-copy-sh">`use-icloud-working-copy.sh`</a></li></ul>
         </li>
         <li>
           <a href="#section-machine-deprecation-checklist">Machine Deprecation Checklist</a>
@@ -818,7 +827,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PROJECT-STATUS.md</code> is the root-level quick status page for the folder itself, and <code>scripts/show-project-version.sh</code> is the live helper for checking the actual branch/commit/cleanliness of the current working copy. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-fresh-checkout-recovery-quick-start">Fresh Checkout Recovery Quick Start</h3>
 <p>If you need to resume this project on a new machine without reconstructing any of the renovation work by hand:</p>
 <ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code>,</li><li>start from <code>main</code> as the durable baseline,</li><li>install SBCL, Quicklisp, Python 3, <code>matplotlib</code>, and Ghostscript,</li><li>run the supported validation spine:</li></ol>
@@ -1085,6 +1094,31 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <h3 id="section-work-area-status-recommended-next-step">Recommended Next Step</h3>
 <p>Keep this file current whenever a work area changes role, especially if:</p>
 <ol><li>an intake area becomes a promoted permanent home,</li><li>a snapshot-specific family becomes part of the supported baseline,</li><li>a manual helper becomes truly obsolete,</li><li>or a new archive/research lane becomes important enough to name explicitly.</li></ol>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-project-status">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Project Status</h2>
+            <p class="sectionSummary">Quick root-level status summary: release line, focus, branch expectations, and canonical working model.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/PROJECT-STATUS.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the quick root-level answer to “what state is this folder supposed to represent?”</p>
+<ul><li>Project: <code>PhD Renovation</code></li><li>Published release: <code>v1.0.0</code></li><li>Current track: <code>1.x</code></li><li>Current focus: <code>Intake triage</code></li><li>Build line: <code>1.0.0</code></li><li>Canonical branch: <code>main</code></li><li>Active working branch: <code>codex/fix-artifact-pipeline</code></li><li>Updated: <code>May 4, 2026</code></li></ul>
+<h3 id="section-project-status-source-of-truth">Source Of Truth</h3>
+<p>Git history in sgwoods/phd-renovation, with sgwoods/public as the companion public-output repo.</p>
+<h3 id="section-project-status-recommended-working-model">Recommended Working Model</h3>
+<p>Use a normal non-iCloud active clone for day-to-day work. Use iCloud for intake and backup-oriented convenience paths.</p>
+<h3 id="section-project-status-quick-commands">Quick Commands</h3>
+<p>See the live folder state:</p>
+<pre><code class="language-bash">bash scripts/show-project-version.sh</code></pre>
+<p>See the explicit bootstrap path for a new machine:</p>
+<pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
         </div>
       </section>
       <section class="sectionCard" id="section-recovery-and-reproducibility">
@@ -1490,6 +1524,12 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
         <div class="docBody">
 <p>This directory holds the maintained machine-bootstrap and working-copy helper scripts for the project.</p>
 <h3 id="section-scripts-current-scripts">Current Scripts</h3>
+<h4 id="section-scripts-show-project-version-sh"><code>show-project-version.sh</code></h4>
+<p>Fastest live “what state is this folder in?” helper.</p>
+<p>Use this when you want to see:</p>
+<ol><li>the published release line,</li><li>current track and focus,</li><li>canonical and active branch expectations,</li><li>the actual current branch and commit, and</li><li>whether the worktree is clean or dirty.</li></ol>
+<p>Typical use:</p>
+<pre><code class="language-bash">bash scripts/show-project-version.sh</code></pre>
 <h4 id="section-scripts-bootstrap-project-macos-sh"><code>bootstrap-project-macos.sh</code></h4>
 <p>Preferred from-scratch bootstrap path for a new Mac.</p>
 <p>Use this when you want one script to:</p>

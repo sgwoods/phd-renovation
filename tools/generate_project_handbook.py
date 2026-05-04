@@ -49,6 +49,11 @@ HANDBOOK_SOURCES = [
         "Quick map of what is current, reference, archive-only, or deprecated for day-to-day mainline use.",
     ),
     HandbookSource(
+        "Project Status",
+        "PROJECT-STATUS.md",
+        "Quick root-level status summary: release line, focus, branch expectations, and canonical working model.",
+    ),
+    HandbookSource(
         "Recovery And Reproducibility",
         "RECOVERY-AND-REPRODUCIBILITY.md",
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",

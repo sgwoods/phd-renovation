@@ -17,6 +17,8 @@ from generate_project_handbook import generate_handbook_outputs
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "docs" / "release-dashboard-data.json"
+STATUS_SOURCE_PATH = ROOT / "PROJECT-STATUS.json"
+STATUS_SUMMARY_PATH = ROOT / "PROJECT-STATUS.md"
 DASHBOARD_OUTPUT_PATH = ROOT / "docs" / "release-dashboard.html"
 PUBLIC_PAGE_OUTPUT_PATH = ROOT / "docs" / "public-phd-renovation.html"
 PUBLIC_STATUS_OUTPUT_PATH = ROOT / "docs" / "public-status-phd-renovation.json"
@@ -842,8 +844,60 @@ def sync_thesis_assets(status_generated_at: str) -> None:
             pass
 
 
+def apply_status_source(data: dict[str, object], status_source: dict[str, object]) -> None:
+    metrics = status_source["metrics"]
+    data["metrics"] = [
+        metrics["current_track"],
+        metrics["current_focus"],
+        metrics["build_line"],
+        metrics["updated"],
+    ]
+
+
+def build_status_summary(status_source: dict[str, object]) -> str:
+    metrics = status_source["metrics"]
+    return f"""# Project Status
+
+This file is the quick root-level answer to “what state is this folder
+supposed to represent?”
+
+- Project: `{status_source["project"]}`
+- Published release: `{status_source["published_release"]}`
+- Current track: `{metrics["current_track"]["value"]}`
+- Current focus: `{metrics["current_focus"]["value"]}`
+- Build line: `{metrics["build_line"]["value"]}`
+- Canonical branch: `{status_source["canonical_branch"]}`
+- Active working branch: `{status_source["active_working_branch"]}`
+- Updated: `{metrics["updated"]["value"]}`
+
+## Source Of Truth
+
+{status_source["source_of_truth"]}
+
+## Recommended Working Model
+
+{status_source["working_clone_model"]}
+
+## Quick Commands
+
+See the live folder state:
+
+```bash
+bash scripts/show-project-version.sh
+```
+
+See the explicit bootstrap path for a new machine:
+
+```bash
+bash scripts/bootstrap-project-macos.sh
+```
+"""
+
+
 def main() -> None:
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+    status_source = json.loads(STATUS_SOURCE_PATH.read_text(encoding="utf-8"))
+    apply_status_source(data, status_source)
     sync_thesis_assets(data["public_status"]["status_generated_at"])
     dashboard_html = build_page(
         data,
@@ -857,6 +911,8 @@ def main() -> None:
         parent_href="phd-renovation.html",
         parent_label="PhD Renovation",
     )
+    status_summary = build_status_summary(status_source)
+    STATUS_SUMMARY_PATH.write_text(status_summary, encoding="utf-8")
     public_page_html = build_public_page(data)
     public_status_manifest = build_public_status_manifest(data)
     generate_handbook_outputs(data)

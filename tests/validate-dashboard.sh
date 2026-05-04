@@ -7,9 +7,11 @@ cd "$ROOT_DIR"
 echo "== Release dashboard validation =="
 
 required_inputs=(
+  "PROJECT-STATUS.json"
   "docs/release-dashboard-data.json"
   "tools/generate-release-dashboard.py"
   "tools/generate_project_handbook.py"
+  "scripts/show-project-version.sh"
   "docs/release-dashboard.html"
   "docs/project-handbook.html"
   "docs/public-phd-renovation.html"
@@ -30,6 +32,7 @@ trap 'rm -rf "$tmp_dir"' EXIT
 
 generated_outputs=(
   "docs/release-dashboard.html"
+  "PROJECT-STATUS.md"
   "docs/project-handbook.html"
   "docs/public-phd-renovation.html"
   "docs/public-phd-renovation-handbook.html"
@@ -54,6 +57,7 @@ if [[ "$stale_outputs" -ne 0 ]]; then
   echo "Dashboard-generated HTML is out of date with its source data." >&2
   echo "Regenerate it with: python3 tools/generate-release-dashboard.py" >&2
   diff -u "$tmp_dir/release-dashboard.html" docs/release-dashboard.html >&2 || true
+  diff -u "$tmp_dir/PROJECT-STATUS.md" PROJECT-STATUS.md >&2 || true
   diff -u "$tmp_dir/public-phd-renovation.html" docs/public-phd-renovation.html >&2 || true
   diff -u "$tmp_dir/public-status-phd-renovation.json" docs/public-status-phd-renovation.json >&2 || true
   exit 1
@@ -82,8 +86,8 @@ fi
 expected_build_line="$(python3 - <<'PY'
 import json
 from pathlib import Path
-data = json.loads(Path("docs/release-dashboard-data.json").read_text())
-print(data["metrics"][2]["value"])
+data = json.loads(Path("PROJECT-STATUS.json").read_text())
+print(data["metrics"]["build_line"]["value"])
 PY
 )"
 
@@ -118,6 +122,16 @@ fi
 
 if ! rg -q "Table of contents" docs/project-handbook.html; then
   echo "Project handbook output is missing the table of contents." >&2
+  exit 1
+fi
+
+if ! rg -q "Current focus" PROJECT-STATUS.md; then
+  echo "Root project status summary is missing expected status content." >&2
+  exit 1
+fi
+
+if ! bash -n scripts/show-project-version.sh; then
+  echo "show-project-version helper has invalid shell syntax." >&2
   exit 1
 fi
 

@@ -48,6 +48,9 @@ the remaining portability edge cases are.
 states the recommended model clearly: Git is the durable source of truth,
 non-iCloud clones are the active work model, and iCloud is for intake and
 backup-oriented convenience.
+`PROJECT-STATUS.md` is the root-level quick status page for the folder itself,
+and `scripts/show-project-version.sh` is the live helper for checking the
+actual branch/commit/cleanliness of the current working copy.
 `scripts/bootstrap-project-macos.sh` is the preferred from-scratch bootstrap
 path for a new Mac: it installs dependencies, prepares the recommended
 non-iCloud active clone, and hands off to the validated startup script.
