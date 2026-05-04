@@ -797,6 +797,9 @@ def generate_postscript_from_pdf(pdf_path: Path, ps_path: Path) -> None:
     except FileNotFoundError as exc:
         tmp_path.unlink(missing_ok=True)
         raise RuntimeError("Ghostscript (gs) is required to generate the thesis PostScript.") from exc
+    except Exception:
+        tmp_path.unlink(missing_ok=True)
+        raise
 
     if ps_path.exists() and tmp_path.read_bytes() == ps_path.read_bytes():
         tmp_path.unlink()
@@ -832,8 +835,10 @@ def sync_thesis_assets(status_generated_at: str) -> None:
         )
 
     sync_binary_file(THESIS_SOURCE_PDF_PATH, THESIS_OUTPUT_PDF_PATH)
-    generate_postscript_from_pdf(THESIS_SOURCE_PDF_PATH, THESIS_OUTPUT_PS_PATH)
-    normalize_postscript_creation_date(THESIS_OUTPUT_PS_PATH, status_generated_at)
+    regenerate_ps = os.environ.get("PHD_REGENERATE_THESIS_PS", "0") == "1"
+    if regenerate_ps or not THESIS_OUTPUT_PS_PATH.exists():
+        generate_postscript_from_pdf(THESIS_SOURCE_PDF_PATH, THESIS_OUTPUT_PS_PATH)
+        normalize_postscript_creation_date(THESIS_OUTPUT_PS_PATH, status_generated_at)
 
     if PUBLIC_SITE_DIR.exists():
         try:

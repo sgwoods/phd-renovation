@@ -1297,12 +1297,15 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <p>From an existing checkout of this repo, the preferred complete bootstrap is:</p>
 <pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
 <p>That script now:</p>
-<ol><li>verifies or optionally installs Homebrew,</li><li>installs the command-line dependencies with Homebrew,</li><li>ensures a Python interpreter with <code>matplotlib</code>,</li><li>creates or refreshes the recommended non-iCloud active clone,</li><li>optionally clones the companion public repo,</li><li>installs Quicklisp if needed, and</li><li>runs the supported startup/validation path.</li></ol>
+<ol><li>verifies or optionally installs Homebrew,</li><li>installs the command-line dependencies with Homebrew,</li><li>ensures a Python interpreter with <code>matplotlib</code>,</li><li>creates or refreshes the recommended non-iCloud active clone,</li><li>preserves the current branch if run from an existing repo checkout unless</li></ol>
+<p><code>--branch</code> is given,</p>
+<ol><li>optionally clones the companion public repo,</li><li>installs Quicklisp if needed, and</li><li>runs the supported startup/validation path.</li></ol>
 <p>Useful options:</p>
 <pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh --clone-public
 bash scripts/bootstrap-project-macos.sh --target-dir &quot;$HOME/Projects/phd-renovation-working&quot;
 bash scripts/bootstrap-project-macos.sh --skip-validation
-bash scripts/bootstrap-project-macos.sh --install-homebrew</code></pre>
+bash scripts/bootstrap-project-macos.sh --install-homebrew
+bash scripts/bootstrap-project-macos.sh --branch main</code></pre>
 <h4 id="section-bootstrap-checklist-manual-step-by-step-path">Manual step-by-step path</h4>
 <ol><li>Install or verify Homebrew if needed.</li><li>Install the command-line dependencies:</li></ol>
 <pre><code class="language-bash">brew install sbcl ghostscript ripgrep curl</code></pre>
@@ -1336,6 +1339,8 @@ cd ~/Projects/phd-renovation-working</code></pre>
 <p>validation. A normal home-directory non-iCloud clone passed.</p>
 <ul><li>Quicklisp currently installs in the standard user-level location:</li></ul>
 <p><code>~/quicklisp/</code>.</p>
+<ul><li>Routine startup/validation now reuses the checked-in thesis PostScript file.</li></ul>
+<p>If you explicitly need to regenerate it, run the dashboard build with <code>PHD_REGENERATE_THESIS_PS=1</code>.</p>
 <h3 id="section-bootstrap-checklist-companion-public-repo">Companion Public Repo</h3>
 <p>If you need the public publishing workflow too:</p>
 <pre><code class="language-bash">git clone https://github.com/sgwoods/public ~/GitPages/public
@@ -1487,7 +1492,7 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
 <h3 id="section-new-mac-handoff-start-script">Start Script</h3>
 <p>For the cleanest from-scratch machine setup now available, prefer:</p>
 <pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
-<p>That script can install the machine dependencies, create or refresh the recommended non-iCloud active clone, and then hand off to the validated startup path below.</p>
+<p>That script can install the machine dependencies, create or refresh the recommended non-iCloud active clone, and then hand off to the validated startup path below. If you run it from an existing project checkout, it now preserves that checkout&#x27;s current branch unless you explicitly override it with <code>--branch</code>.</p>
 <p>The lower-level startup script remains:</p>
 <p>Use:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
@@ -1500,6 +1505,7 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
 <p>passed.</p>
 <p>The artifact-validation part of that spine now has two honest modes:</p>
 <ul><li>full regeneration mode when preserved local experiment run trees are present</li><li>fresh-clone portability mode when those ignored run-tree caches are absent</li></ul>
+<p>Routine startup/validation now reuses the checked-in thesis PostScript file so healthy clones stay clean. Regenerate that <code>.ps</code> asset only deliberately.</p>
 <h3 id="section-new-mac-handoff-what-still-needs-deliberate-care">What Still Needs Deliberate Care</h3>
 <ol><li>Keep the active working branch pushed.</li><li>Keep <code>main</code> aligned with the durable current state.</li><li>Keep the companion public repo pushed when public-facing outputs change.</li><li>Put all new finds through <code>incoming/</code> or the iCloud landing path.</li><li>Do not rely on ignored random/situation workspaces as if they were the only</li></ol>
 <p>surviving copy of anything important.</p>
@@ -1533,18 +1539,20 @@ export PHD_PUBLIC_SITE_DIR=&quot;$HOME/GitPages/public&quot;</code></pre>
 <h4 id="section-scripts-bootstrap-project-macos-sh"><code>bootstrap-project-macos.sh</code></h4>
 <p>Preferred from-scratch bootstrap path for a new Mac.</p>
 <p>Use this when you want one script to:</p>
-<ol><li>verify or optionally install Homebrew,</li><li>install the command-line dependencies,</li><li>ensure Python has <code>matplotlib</code>,</li><li>create or refresh the recommended non-iCloud active clone,</li><li>optionally clone the companion public repo,</li><li>install Quicklisp if needed, and</li><li>hand off to the validated startup/validation path.</li></ol>
+<ol><li>verify or optionally install Homebrew,</li><li>install the command-line dependencies,</li><li>ensure Python has <code>matplotlib</code>,</li><li>create or refresh the recommended non-iCloud active clone,</li><li>preserve the caller&#x27;s current branch unless <code>--branch</code> is explicitly given,</li><li>optionally clone the companion public repo,</li><li>install Quicklisp if needed, and</li><li>hand off to the validated startup/validation path.</li></ol>
 <p>Typical use:</p>
 <pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
 <p>Useful options:</p>
 <pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh --clone-public
 bash scripts/bootstrap-project-macos.sh --target-dir &quot;$HOME/Projects/phd-renovation-working&quot;
 bash scripts/bootstrap-project-macos.sh --skip-validation
-bash scripts/bootstrap-project-macos.sh --install-homebrew</code></pre>
+bash scripts/bootstrap-project-macos.sh --install-homebrew
+bash scripts/bootstrap-project-macos.sh --branch main</code></pre>
 <h4 id="section-scripts-start-codex-new-mac-sh"><code>start-codex-new-mac.sh</code></h4>
 <p>Lower-level startup/validation helper once the repo already exists locally.</p>
 <p>Use this when the machine is mostly prepared and you want to:</p>
 <ol><li>verify the expected commands,</li><li>verify Python + <code>matplotlib</code>,</li><li>ensure the iCloud intake path exists,</li><li>install Quicklisp if requested,</li><li>and run the supported validation spine.</li></ol>
+<p>Routine validation now reuses the checked-in thesis PostScript output so a healthy clone stays clean. If you explicitly need to regenerate the <code>.ps</code> artifact, run the dashboard build with <code>PHD_REGENERATE_THESIS_PS=1</code>.</p>
 <p>Typical use:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
 <p>If Quicklisp is missing:</p>

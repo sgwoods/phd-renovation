@@ -66,6 +66,10 @@ Use this when the machine is mostly prepared and you want to:
 4. install Quicklisp if requested,
 5. and run the supported validation spine.
 
+Routine validation now reuses the checked-in thesis PostScript output so a
+healthy clone stays clean. If you explicitly need to regenerate the `.ps`
+artifact, run the dashboard build with `PHD_REGENERATE_THESIS_PS=1`.
+
 Typical use:
 
 ```bash

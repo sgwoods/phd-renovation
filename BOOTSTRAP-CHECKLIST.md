@@ -168,6 +168,9 @@ The supported baseline gate is:
   validation. A normal home-directory non-iCloud clone passed.
 - Quicklisp currently installs in the standard user-level location:
   `~/quicklisp/`.
+- Routine startup/validation now reuses the checked-in thesis PostScript file.
+  If you explicitly need to regenerate it, run the dashboard build with
+  `PHD_REGENERATE_THESIS_PS=1`.
 
 ## Companion Public Repo
 
