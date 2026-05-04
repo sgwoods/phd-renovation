@@ -40,9 +40,10 @@ As of this recovery audit checkpoint:
   expected to land on the right baseline directly.
 - The startup/handoff path for a different Mac is now documented in
   `NEW-MAC-HANDOFF.md` and implemented in `scripts/start-codex-new-mac.sh`.
-- A fresh-clone bootstrap proof has now passed from the iCloud-backed working
-  clone on this machine, using `main` plus the supported startup script and
-  full validation spine.
+- A fresh-clone bootstrap proof has passed in non-iCloud form, while the
+  iCloud-backed working-clone experiment exposed Git worktree friction on a
+  different Mac and should not currently be treated as the preferred active
+  clone model.
 - The repo working tree should be kept clean at handoff checkpoints.
 - The public companion site is a separate repo:
   `https://github.com/sgwoods/public`
@@ -69,14 +70,17 @@ The project is now in a post-`1.0.0` hardening state:
 
 Recommended next steps from this point are:
 
-1. make the iCloud-backed working copy the preferred local day-to-day home,
+1. keep this MacBook repo as the known-good active baseline until the next
+   machine has a clean non-iCloud working clone,
 2. treat `incoming/` as the main operational lane for newly found material,
 3. classify each new find as executable, integrity-checkable,
    provenance-only, or duplicate,
 4. target `1.0.1` for remaining STYLE-WARNING cleanup outside the supported
    release gate,
 5. keep terrain and `Hanoi-4` explicitly bounded as deferred lanes,
-6. and avoid widening the supported baseline casually.
+6. harden the fresh-clone/full-validation path around the current SBCL/ASDF
+   cache-path issue, and
+7. avoid widening the supported baseline casually.
 
 ## What Is Checked In
 
@@ -252,22 +256,18 @@ continuity checklist:
 8. prefer future local working clones inside an iCloud-backed parent folder on
    this machine once the current baseline/branch layout is settled.
 
-The shortest supported path for that preferred convention is:
-
-```bash
-bash scripts/use-icloud-working-copy.sh --validate
-```
-
 ## Local Working Directory Convention
 
 Going forward, the preferred local convention should be:
 
 1. keep the canonical git history in GitHub,
 2. keep the public-facing Pages artifacts in the companion public repo,
-3. and keep active local working directories on this machine inside an
-   iCloud-backed parent folder.
+3. keep raw intake and backup-oriented material in iCloud-backed locations,
+   but use a non-iCloud active Git working clone on new machines unless and
+   until iCloud worktree behavior is proven reliable there.
 
-The helper for refreshing or creating that preferred iCloud-backed clone is:
+The existing iCloud helper remains useful for backup/reference clone
+management:
 
 `scripts/use-icloud-working-copy.sh`
 

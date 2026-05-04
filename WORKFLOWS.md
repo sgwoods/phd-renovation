@@ -137,18 +137,11 @@ Main guides:
 
 ### 5b. Adopt The iCloud-Backed Working Copy
 
-Use this when you want the iCloud-backed clone to become the preferred local
-working home and reduce dependence on the old machine.
+Use this when you want to maintain or refresh the iCloud-backed
+backup/reference clone.
 
 ```bash
 bash scripts/use-icloud-working-copy.sh
-```
-
-To refresh that clone and immediately rerun the supported startup/validation
-path:
-
-```bash
-bash scripts/use-icloud-working-copy.sh --validate
 ```
 
 Main guides:

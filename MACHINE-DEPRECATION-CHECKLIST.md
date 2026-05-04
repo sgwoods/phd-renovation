@@ -13,7 +13,7 @@ project state, setup knowledge, or historical material.
 We want a state where:
 
 1. the durable baseline is in git and on the remote,
-2. the preferred local working copy lives in an iCloud-backed location,
+2. the preferred local intake and backup paths are in iCloud-backed locations,
 3. the supported startup path works from that location,
 4. intake and preservation workflows are documented there too,
 5. and the old machine can be treated as secondary without anxiety.
@@ -24,7 +24,8 @@ At the current checkpoint:
 
 - `main` and `codex/fix-artifact-pipeline` are aligned to the durable current
   baseline.
-- the supported startup script has passed from the iCloud-backed working copy.
+- the supported startup script has passed from the known-good working repo on
+  this MacBook and from a local fresh clone.
 - the iCloud-backed intake landing path exists.
 - the thesis graph tables and comparison PDFs needed for fresh-clone artifact
   validation are now tracked.
@@ -39,9 +40,10 @@ true:
 
 1. `main` is pushed and current.
 2. any newer working-branch changes are also pushed.
-3. the iCloud-backed working copy has been refreshed to the intended commit.
-4. `bash scripts/start-codex-new-mac.sh` has passed from the iCloud-backed
-   working copy.
+3. the next machine has a clean non-iCloud active working clone at the
+   intended commit.
+4. `bash scripts/start-codex-new-mac.sh` has passed from that non-iCloud
+   active clone.
 5. the preferred intake path exists:
    `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing`
 6. public-site publication, if needed, is already pushed from the companion
@@ -49,11 +51,12 @@ true:
 
 ## Preferred Ongoing Local Home
 
-Going forward, the preferred local working location on this machine is:
+Going forward, the preferred local working model is:
 
-`/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/working-copy`
+- active Git clone outside iCloud
+- intake and backup-oriented paths inside iCloud
 
-The helper script for refreshing or creating that clone is:
+The iCloud helper remains useful for maintaining a backup/reference clone:
 
 `scripts/use-icloud-working-copy.sh`
 
@@ -61,13 +64,6 @@ Use:
 
 ```bash
 bash scripts/use-icloud-working-copy.sh
-```
-
-Or, to refresh the iCloud clone and immediately run the supported startup
-validation:
-
-```bash
-bash scripts/use-icloud-working-copy.sh --validate
 ```
 
 ## What The Old Machine Still Matters For

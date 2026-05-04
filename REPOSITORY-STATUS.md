@@ -46,7 +46,7 @@ For the standing retention rule for useful historical material, see
 | Is the whole repo integrated? | No. `qcsp3/` plus the supported validation spine are integrated; most historical/result archives remain reference or integrity-check layers. |
 | Is the whole repo tested? | No. The supported solver line and bounded AO baseline are tested and currently clean in fresh validation runs; many historical batches are integrity-checked instead of rerun. |
 | Is the whole repo publication-validated? | Partially. The main thesis `ij2`/`ij3`/`ij4` story is executable and validated; several older result families are tied to publications/reports as preserved artifacts, but not all are modern reruns. |
-| Can a fresh clone resume the supported baseline? | Yes. `main` now includes the startup/handoff path, the fresh-clone-safe artifact validation flow, and the tracked graph artifact set needed to pass the supported new-Mac bootstrap on an iCloud-backed working copy. |
+| Can a fresh clone resume the supported baseline? | Mostly yes. `main` includes the startup/handoff path, the fresh-clone-safe artifact validation flow, and the tracked graph artifact set, but the current deep audit still found one SBCL/ASDF cache-path issue in a full fresh-clone validation run. |
 
 ## Repository-Wide Coverage Table
 
@@ -112,16 +112,17 @@ That means the current recommended order is:
 
 1. keep the supported validation spine green and the repo status artifacts
    current,
-2. make the iCloud-backed working copy the preferred local day-to-day home and
-   treat the old machine as secondary,
+2. keep this MacBook repo as the known-good active baseline until the next
+   machine has a clean non-iCloud active clone,
 3. make `incoming/` review, de-duplication, and categorization the next major
    operational lane,
 4. target `1.0.1` for remaining STYLE-WARNING cleanup outside the supported
    release gate,
 5. treat ADT batch as a snapshot-specific preserved family rather than an
    active integration obligation,
-6. keep terrain as the major deferred recovery lane, and
-7. treat `Hanoi-4` as a documented `1.x` lane and a `2.0`
+6. harden the fresh-clone/full-validation SBCL cache-path issue,
+7. keep terrain as the major deferred recovery lane, and
+8. treat `Hanoi-4` as a documented `1.x` lane and a `2.0`
    research/repeatability goal.
 
 The practical operating details for that lane now live in

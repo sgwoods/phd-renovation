@@ -19,8 +19,10 @@ At the current portability checkpoint:
 
 - the active working branch is `codex/fix-artifact-pipeline`
 - that branch and `main` are both aligned to the durable baseline
-- the full startup script has now been proven successfully from the
-  iCloud-backed working clone on this machine
+- the full startup script has been proven successfully from a fresh local
+  clone on this machine, but an iCloud-backed live worktree showed Git status
+  hangs on another Mac and should not currently be treated as the preferred
+  active-clone model
 - the repo-local raw intake landing path is `incoming/_landing/`
 - the preferred iCloud-backed raw intake path is:
   `/Users/stevenwoods/Library/Mobile Documents/com~apple~CloudDocs/Projects/phd-renovation/incoming-landing/`
@@ -56,11 +58,10 @@ If Quicklisp is not installed yet:
 bash scripts/start-codex-new-mac.sh --install-quicklisp
 ```
 
-If you want to make the iCloud-backed working copy the preferred local home
-first, use:
+If you want to manage the iCloud-backed reference clone, use:
 
 ```bash
-bash scripts/use-icloud-working-copy.sh --validate
+bash scripts/use-icloud-working-copy.sh
 ```
 
 The script:
@@ -102,4 +103,5 @@ this machine, which means the remaining retirement task is operational
 discipline rather than missing setup knowledge.
 
 The practical machine-retirement gate now lives in
-`MACHINE-DEPRECATION-CHECKLIST.md`.
+`MACHINE-DEPRECATION-CHECKLIST.md`, and the current portability caveats are
+recorded in `REPO-INVENTORY-AUDIT.md`.

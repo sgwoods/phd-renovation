@@ -54,6 +54,11 @@ HANDBOOK_SOURCES = [
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",
     ),
     HandbookSource(
+        "Repository Inventory Audit",
+        "REPO-INVENTORY-AUDIT.md",
+        "Current tracked-vs-external inventory plus the deepest current portability assessment.",
+    ),
+    HandbookSource(
         "New Mac Handoff",
         "NEW-MAC-HANDOFF.md",
         "Shortest practical guide for standing the project up on a different Mac and retiring the current machine safely.",
