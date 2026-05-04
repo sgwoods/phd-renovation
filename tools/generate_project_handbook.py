@@ -54,6 +54,11 @@ HANDBOOK_SOURCES = [
         "Quick root-level status summary: release line, focus, branch expectations, and canonical working model.",
     ),
     HandbookSource(
+        "Project Migration Template",
+        "PROJECT-MIGRATION-TEMPLATE.md",
+        "Reusable migration playbook and Codex prompt template for applying this Git-first, non-iCloud-active-clone handoff strategy to sister projects.",
+    ),
+    HandbookSource(
         "Recovery And Reproducibility",
         "RECOVERY-AND-REPRODUCIBILITY.md",
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",

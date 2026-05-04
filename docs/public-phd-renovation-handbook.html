@@ -399,6 +399,11 @@ h1{
       </article>
       <article class="miniCard">
         <span class="eyebrow">Included guide</span>
+        <h2><a href="#section-project-migration-template">Project Migration Template</a></h2>
+        <p>Reusable migration playbook and Codex prompt template for applying this Git-first, non-iCloud-active-clone handoff strategy to sister projects.</p>
+      </article>
+      <article class="miniCard">
+        <span class="eyebrow">Included guide</span>
         <h2><a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a></h2>
         <p>Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.</p>
       </article>
@@ -555,6 +560,10 @@ h1{
         <li>
           <a href="#section-project-status">Project Status</a>
           <ul class="subtoc"><li><a href="#section-project-status-source-of-truth">Source Of Truth</a></li><li><a href="#section-project-status-recommended-working-model">Recommended Working Model</a></li><li><a href="#section-project-status-quick-commands">Quick Commands</a></li></ul>
+        </li>
+        <li>
+          <a href="#section-project-migration-template">Project Migration Template</a>
+          <ul class="subtoc"><li><a href="#section-project-migration-template-core-operating-model">Core Operating Model</a></li><li><a href="#section-project-migration-template-reusable-codex-prompt">Reusable Codex Prompt</a></li><li><a href="#section-project-migration-template-migration-strategy-checklist">Migration Strategy Checklist</a></li><li><a href="#section-project-migration-template-1-audit-the-current-machine">1. Audit the current machine</a></li><li><a href="#section-project-migration-template-2-inventory-tracked-versus-external-state">2. Inventory tracked versus external state</a></li><li><a href="#section-project-migration-template-3-add-root-level-status-clarity">3. Add root-level status clarity</a></li><li><a href="#section-project-migration-template-4-build-the-bootstrap-path">4. Build the bootstrap path</a></li><li><a href="#section-project-migration-template-5-write-the-handoff-and-retirement-docs">5. Write the handoff and retirement docs</a></li><li><a href="#section-project-migration-template-6-prove-a-fresh-non-icloud-clone">6. Prove a fresh non-iCloud clone</a></li><li><a href="#section-project-migration-template-7-fix-what-the-proof-exposes">7. Fix what the proof exposes</a></li><li><a href="#section-project-migration-template-8-promote-the-proven-state">8. Promote the proven state</a></li><li><a href="#section-project-migration-template-9-document-the-final-working-model">9. Document the final working model</a></li><li><a href="#section-project-migration-template-definition-of-done">Definition Of Done</a></li></ul>
         </li>
         <li>
           <a href="#section-recovery-and-reproducibility">Recovery And Reproducibility</a>
@@ -827,7 +836,7 @@ h1{
 <p>in the repo and archive intake, and</p>
 <ol><li>converges toward one gold-standard code line that can stand in for the</li></ol>
 <p>historical solver lineage with any remaining deltas explained.</p>
-<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PROJECT-STATUS.md</code> is the root-level quick status page for the folder itself, and <code>scripts/show-project-version.sh</code> is the live helper for checking the actual branch/commit/cleanliness of the current working copy. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
+<p>Current focus after <code>1.0.0</code>: keep the supported PhD-result validation path green, use the integrated baseline as the stable reference point, and make the next major effort the ingestion, de-duplication, and categorization of newly found relevant material. See <code>RENOVATION.md</code> for the active roadmap, <code>VALIDATION-MATRIX.md</code> for the current domain/result coverage map, <code>REPOSITORY-STATUS.md</code> for the repo-wide integration/testing/publication status table, <code>REPOSITORY-STRUCTURE-REVIEW.md</code> for the filesystem clarity review, and <a href="phd-renovation-dashboard.html"><code>docs/release-dashboard.html</code></a> for the visual release dashboard. A full generated handbook now lives at <a href="phd-renovation-handbook.html"><code>docs/project-handbook.html</code></a>, with the public readable copy at &lt;https://sgwoods.github.io/public/phd-renovation-handbook.html&gt;. The same source data and doc-refresh build now drive the handbook, dashboard, and public-facing PhD project page so those views stay in sync. <code>RECOVERY-AND-REPRODUCIBILITY.md</code> is the explicit answer to &quot;can we lose this directory and recover the work on a new machine without redoing it?&quot; <code>REPO-INVENTORY-AUDIT.md</code> is the current deep audit of what is tracked in the repo, what external files/tools/paths the project still depends on, and where the remaining portability edge cases are. <code>BOOTSTRAP-CHECKLIST.md</code> is the shortest current machine-setup checklist and states the recommended model clearly: Git is the durable source of truth, non-iCloud clones are the active work model, and iCloud is for intake and backup-oriented convenience. <code>PROJECT-STATUS.md</code> is the root-level quick status page for the folder itself, and <code>scripts/show-project-version.sh</code> is the live helper for checking the actual branch/commit/cleanliness of the current working copy. <code>scripts/bootstrap-project-macos.sh</code> is the preferred from-scratch bootstrap path for a new Mac: it installs dependencies, prepares the recommended non-iCloud active clone, and hands off to the validated startup script. <code>PROJECT-MIGRATION-TEMPLATE.md</code> is the reusable migration playbook and Codex prompt template for applying this same machine-handoff strategy to sister projects such as <code>mmath-renovation</code>. <code>PRESERVATION-POLICY.md</code> is the standing rule that potentially useful historical material should be classified and preserved, not discarded just because it is not yet integrated. The thesis itself is available from the project home surfaces in both <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.pdf"><code>docs/phd-renovation-thesis.pdf</code></a> and <a href="https://github.com/sgwoods/phd-renovation/blob/main/docs/phd-renovation-thesis.ps"><code>docs/phd-renovation-thesis.ps</code></a> form, with the canonical source PDF preserved under <code>data/thesis/</code>.</p>
 <h3 id="section-project-overview-fresh-checkout-recovery-quick-start">Fresh Checkout Recovery Quick Start</h3>
 <p>If you need to resume this project on a new machine without reconstructing any of the renovation work by hand:</p>
 <ol><li>clone <code>https://github.com/sgwoods/phd-renovation.git</code>,</li><li>start from <code>main</code> as the durable baseline,</li><li>install SBCL, Quicklisp, Python 3, <code>matplotlib</code>, and Ghostscript,</li><li>run the supported validation spine:</li></ol>
@@ -1119,6 +1128,160 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <pre><code class="language-bash">bash scripts/show-project-version.sh</code></pre>
 <p>See the explicit bootstrap path for a new machine:</p>
 <pre><code class="language-bash">bash scripts/bootstrap-project-macos.sh</code></pre>
+        </div>
+      </section>
+      <section class="sectionCard" id="section-project-migration-template">
+        <div class="sectionHeader">
+          <div class="sectionTitleWrap">
+            <span class="eyebrow">Source document</span>
+            <h2>Project Migration Template</h2>
+            <p class="sectionSummary">Reusable migration playbook and Codex prompt template for applying this Git-first, non-iCloud-active-clone handoff strategy to sister projects.</p>
+          </div>
+          <div class="sectionMeta">
+            <a class="pill" href="https://github.com/sgwoods/phd-renovation/blob/main/PROJECT-MIGRATION-TEMPLATE.md">Open source</a>
+          </div>
+        </div>
+        <div class="docBody">
+<p>This file is the reusable migration playbook for moving one of our projects from an older machine to a newer one while keeping GitHub as the durable source of truth.</p>
+<p>Use it when we want to migrate a sister project such as <code>mmath-renovation</code> without re-learning the same lessons from scratch.</p>
+<h3 id="section-project-migration-template-core-operating-model">Core Operating Model</h3>
+<p>The migration target is:</p>
+<ul><li>GitHub repo is the durable source of truth.</li><li><code>main</code> should land on the correct stable baseline.</li><li>The active working clone should live in a normal non-iCloud folder.</li><li>iCloud should be used for intake, backup-oriented material, and convenience</li></ul>
+<p>paths, not the preferred live Git worktree.</p>
+<ul><li>We want clear root-level status/version markers so we can tell at a glance</li></ul>
+<p>what state a folder is in.</p>
+<ul><li>We want setup knowledge, validation paths, and machine-handoff rules</li></ul>
+<p>documented in the repo itself.</p>
+<h3 id="section-project-migration-template-reusable-codex-prompt">Reusable Codex Prompt</h3>
+<p>Use this prompt as the default starting point for another project migration. Adjust the project name, any companion repo references, and any known language/runtime differences.</p>
+<pre><code class="language-text">We are migrating this project off an older Mac onto a newer machine and want GitHub to be the definitive stable source of truth going forward.
+
+Please use the same migration strategy we developed for the PhD renovation project, adapted to this repo. The goal is not just to make this repo work today, but to make it portable, explicit, low-confusion, and safe to continue from a different machine without hidden local knowledge.
+
+Use the checked-in migration playbook at PROJECT-MIGRATION-TEMPLATE.md as the reference model for both the process and the expected end state.
+
+Core operating model:
+- GitHub repo is the durable source of truth.
+- main should land on the correct stable baseline.
+- Active working clone should live in a normal non-iCloud folder.
+- iCloud should be used for intake, backup-oriented material, and convenience paths, not the preferred live Git worktree.
+- We want clear project-status/version markers so we can tell at a glance what state a folder is in.
+- We want all important setup knowledge, validation paths, and handoff steps documented in the repo.
+
+Goals:
+1. Confirm the current repo on this machine is healthy, clean, and fully understood.
+2. Identify what is tracked, what is untracked by design, and what external dependencies or companion repos are required.
+3. Make the project portable to a fresh non-iCloud clone on another Mac.
+4. Ensure GitHub main lands on the correct stable baseline.
+5. Create or update the following project artifacts as appropriate:
+   - BOOTSTRAP-CHECKLIST.md
+   - NEW-MAC-HANDOFF.md
+   - MACHINE-DEPRECATION-CHECKLIST.md
+   - RECOVERY-AND-REPRODUCIBILITY.md
+   - PROJECT-STATUS.json
+   - PROJECT-STATUS.md
+   - scripts/show-project-version.sh
+   - scripts/start-codex-new-mac.sh
+   - scripts/bootstrap-project-macos.sh
+6. Validate that a fresh non-iCloud clone on the other machine can run the project successfully.
+7. Make the handoff state explicit so the old machine can be deprecated safely.
+
+Detailed migration strategy:
+1. Audit the current machine.
+   - Verify branch, commit, cleanliness, remotes.
+   - Run the project’s real validation/build/test path.
+   - Document any missing dependencies or companion repos.
+
+2. Inventory what matters.
+   - Produce a tracked-file inventory or equivalent repo audit.
+   - Identify external dependencies:
+     - system tools
+     - language/runtime package managers
+     - companion public/publish repos
+     - machine-local paths
+   - Separate:
+     - tracked source of truth
+     - generated but tracked artifacts
+     - generated and intentionally ignored artifacts
+     - deprecated/manual helpers
+
+3. Add root clarity.
+   - Add PROJECT-STATUS.json
+   - Add PROJECT-STATUS.md
+   - Add scripts/show-project-version.sh
+   - Make “what folder is this, what branch is this, what commit is this, is it clean?” answerable instantly.
+
+4. Build the bootstrap path.
+   - Add scripts/bootstrap-project-macos.sh
+   - Add scripts/start-codex-new-mac.sh
+   - Make them:
+     - install/verify dependencies
+     - find the right runtime/interpreter
+     - preserve the current branch when run from an existing checkout
+     - avoid dirtying tracked generated artifacts during normal validation
+
+5. Write the handoff docs.
+   - BOOTSTRAP-CHECKLIST.md
+   - NEW-MAC-HANDOFF.md
+   - MACHINE-DEPRECATION-CHECKLIST.md
+   - RECOVERY-AND-REPRODUCIBILITY.md
+
+6. Prove a fresh non-iCloud clone on the new machine.
+   - Use a normal folder such as ~/Projects-all/&lt;project&gt;-working
+   - Do not use an iCloud live Git worktree as the preferred active clone
+   - Run the bootstrap/startup scripts there
+   - Verify the project can actually build/test/run
+
+7. Fix what the proof exposes.
+   - Handle missing dependencies
+   - Remove hidden machine assumptions
+   - Fix bootstrap branch-reset behavior if present
+   - Fix tracked generated artifacts that become dirty during routine validation
+
+8. Promote the proven state.
+   - Push the working branch
+   - Fast-forward main
+   - Push main
+   - Reconfirm clean state
+
+9. Document the retirement state.
+   - Make it explicit whether the other Mac is now a valid active home
+   - Mark any deprecated live worktree experiments or abandoned local paths clearly
+   - Keep the ongoing working model simple and explicit
+
+Please proceed step by step, keep the overall plan updated as we go, remind me of the big picture as we progress, and recommend the next few steps after each checkpoint.</code></pre>
+<h3 id="section-project-migration-template-migration-strategy-checklist">Migration Strategy Checklist</h3>
+<p>Use this as the operator-facing version of the same plan.</p>
+<h4 id="section-project-migration-template-1-audit-the-current-machine">1. Audit the current machine</h4>
+<ul><li>Verify branch, commit, cleanliness, and remotes.</li><li>Run the real validation/build/test path for the project.</li><li>Record machine-specific dependencies or companion repos.</li></ul>
+<h4 id="section-project-migration-template-2-inventory-tracked-versus-external-state">2. Inventory tracked versus external state</h4>
+<ul><li>Produce a tracked-file inventory or equivalent audit.</li><li>Identify:</li><li>system tool dependencies</li><li>language/runtime package manager dependencies</li><li>companion publish/public repos</li><li>machine-local paths</li><li>Separate:</li><li>tracked source of truth</li><li>tracked generated artifacts</li><li>ignored generated artifacts</li><li>deprecated/manual helpers</li></ul>
+<h4 id="section-project-migration-template-3-add-root-level-status-clarity">3. Add root-level status clarity</h4>
+<ul><li>Add <code>PROJECT-STATUS.json</code></li><li>Add <code>PROJECT-STATUS.md</code></li><li>Add <code>scripts/show-project-version.sh</code></li></ul>
+<p>The goal is to make the folder answer these questions instantly:</p>
+<ul><li>What project is this?</li><li>What branch is this?</li><li>What commit is this?</li><li>Is the working tree clean?</li><li>What is the stable baseline?</li><li>What is the current focus?</li></ul>
+<h4 id="section-project-migration-template-4-build-the-bootstrap-path">4. Build the bootstrap path</h4>
+<ul><li>Add <code>scripts/bootstrap-project-macos.sh</code></li><li>Add <code>scripts/start-codex-new-mac.sh</code></li></ul>
+<p>They should:</p>
+<ul><li>install or verify dependencies</li><li>find the correct runtime/interpreter</li><li>preserve the current branch when run from an existing checkout</li><li>avoid dirtying tracked generated artifacts during routine validation</li></ul>
+<h4 id="section-project-migration-template-5-write-the-handoff-and-retirement-docs">5. Write the handoff and retirement docs</h4>
+<ul><li><code>BOOTSTRAP-CHECKLIST.md</code></li><li><code>NEW-MAC-HANDOFF.md</code></li><li><code>MACHINE-DEPRECATION-CHECKLIST.md</code></li><li><code>RECOVERY-AND-REPRODUCIBILITY.md</code></li></ul>
+<h4 id="section-project-migration-template-6-prove-a-fresh-non-icloud-clone">6. Prove a fresh non-iCloud clone</h4>
+<p>Recommended pattern:</p>
+<ul><li>active working clone in something like:</li></ul>
+<p><code>~/Projects-all/&lt;project&gt;-working</code></p>
+<ul><li>do not use an iCloud live worktree as the preferred active clone</li><li>use iCloud for intake and backup-oriented convenience only</li></ul>
+<h4 id="section-project-migration-template-7-fix-what-the-proof-exposes">7. Fix what the proof exposes</h4>
+<p>Common failures to correct:</p>
+<ul><li>missing Homebrew packages</li><li>runtime package manager assumptions</li><li>bootstrap script resetting to the wrong branch</li><li>tracked generated files becoming dirty after normal validation</li><li>hidden companion-repo assumptions</li></ul>
+<h4 id="section-project-migration-template-8-promote-the-proven-state">8. Promote the proven state</h4>
+<ul><li>push the working branch</li><li>fast-forward <code>main</code></li><li>push <code>main</code></li><li>reconfirm the project is clean</li></ul>
+<h4 id="section-project-migration-template-9-document-the-final-working-model">9. Document the final working model</h4>
+<p>The desired end state is:</p>
+<ul><li>GitHub is the durable source of truth</li><li><code>main</code> lands on the correct stable baseline</li><li>a fresh non-iCloud clone is a valid active home</li><li>iCloud is used for intake/backups, not the preferred live worktree</li><li>the old machine is no longer the only place the project “really works”</li></ul>
+<h3 id="section-project-migration-template-definition-of-done">Definition Of Done</h3>
+<p>For a project migration to be considered complete, we should be able to say:</p>
+<ol><li>A fresh clone from GitHub works.</li><li><code>main</code> is current and trustworthy.</li><li>The new machine has a clean non-iCloud active clone.</li><li>The bootstrap/startup scripts work there.</li><li>The project can be continued without hidden local knowledge.</li><li>The old machine can be treated as secondary or retired safely.</li></ol>
         </div>
       </section>
       <section class="sectionCard" id="section-recovery-and-reproducibility">
