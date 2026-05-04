@@ -1198,13 +1198,14 @@ bash Q-Batch-SBCL/run-may29-all.sh     # may29 (May 1996)</code></pre>
 <h3 id="section-new-mac-handoff-required-dependencies">Required Dependencies</h3>
 <p>The supported startup path expects:</p>
 <ul><li><code>git</code></li><li><code>sbcl</code></li><li><code>python3</code></li><li>Python <code>matplotlib</code></li><li><code>Ghostscript</code> (<code>gs</code>)</li><li><code>ripgrep</code> (<code>rg</code>)</li><li><code>curl</code></li><li><code>Quicklisp</code></li></ul>
+<p>On macOS, this often means a Homebrew Python rather than only the Apple Command Line Tools <code>python3</code>. If needed, set <code>PHD_PYTHON</code> to the interpreter that has <code>matplotlib</code>.</p>
 <h3 id="section-new-mac-handoff-start-script">Start Script</h3>
 <p>Use:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh</code></pre>
 <p>If Quicklisp is not installed yet:</p>
 <pre><code class="language-bash">bash scripts/start-codex-new-mac.sh --install-quicklisp</code></pre>
 <p>The script:</p>
-<ol><li>checks required commands,</li><li>checks Python <code>matplotlib</code>,</li><li>creates the preferred iCloud intake path,</li><li>optionally installs Quicklisp,</li><li>detects the public Pages checkout if present,</li><li>and runs the full supported validation spine unless <code>--skip-validation</code> is</li></ol>
+<ol><li>checks required commands,</li><li>finds a Python interpreter that actually has <code>matplotlib</code>,</li><li>creates the preferred iCloud intake path,</li><li>optionally installs Quicklisp,</li><li>detects the public Pages checkout if present,</li><li>and runs the full supported validation spine unless <code>--skip-validation</code> is</li></ol>
 <p>passed.</p>
 <h3 id="section-new-mac-handoff-what-still-needs-deliberate-care">What Still Needs Deliberate Care</h3>
 <ol><li>Keep the active working branch pushed.</li><li>Keep <code>main</code> aligned with the durable current state.</li><li>Keep the companion public repo pushed when public-facing outputs change.</li><li>Put all new finds through <code>incoming/</code> or the iCloud landing path.</li><li>Do not rely on ignored random/situation workspaces as if they were the only</li></ol>
@@ -1668,6 +1669,7 @@ bash tests/validate-dashboard.sh</code></pre>
 <p>Different-Mac startup now also has one dedicated entry path:</p>
 <ul><li><code>scripts/start-codex-new-mac.sh</code>: dependency check, iCloud intake-path</li></ul>
 <p>creation, optional Quicklisp install, and full validation-spine run</p>
+<p>If multiple Python interpreters exist on macOS, set <code>PHD_PYTHON</code> if the default <code>python3</code> does not provide <code>matplotlib</code>.</p>
 <h3 id="section-development-guide-architecture">Architecture</h3>
 <h4 id="section-development-guide-four-asdf-systems">Four ASDF Systems</h4>
 <p>The project contains four independent ASDF systems that share the same architecture but represent different development stages:</p>

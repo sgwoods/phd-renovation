@@ -38,6 +38,10 @@ The supported startup path expects:
 - `curl`
 - `Quicklisp`
 
+On macOS, this often means a Homebrew Python rather than only the Apple
+Command Line Tools `python3`.
+If needed, set `PHD_PYTHON` to the interpreter that has `matplotlib`.
+
 ## Start Script
 
 Use:
@@ -55,7 +59,7 @@ bash scripts/start-codex-new-mac.sh --install-quicklisp
 The script:
 
 1. checks required commands,
-2. checks Python `matplotlib`,
+2. finds a Python interpreter that actually has `matplotlib`,
 3. creates the preferred iCloud intake path,
 4. optionally installs Quicklisp,
 5. detects the public Pages checkout if present,

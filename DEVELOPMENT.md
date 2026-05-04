@@ -38,6 +38,9 @@ Different-Mac startup now also has one dedicated entry path:
 - `scripts/start-codex-new-mac.sh`: dependency check, iCloud intake-path
   creation, optional Quicklisp install, and full validation-spine run
 
+If multiple Python interpreters exist on macOS, set `PHD_PYTHON` if the
+default `python3` does not provide `matplotlib`.
+
 ## Architecture
 
 ### Four ASDF Systems

@@ -8,6 +8,7 @@ PUBLIC_FALLBACK="${HOME}/GitPages/public"
 
 INSTALL_QUICKLISP=0
 SKIP_VALIDATION=0
+PYTHON_CMD=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -35,6 +36,36 @@ require_cmd() {
   fi
 }
 
+pick_python_with_matplotlib() {
+  local candidates=()
+
+  if [[ -n "${PHD_PYTHON:-}" ]]; then
+    candidates+=("$PHD_PYTHON")
+  fi
+
+  if command -v python3 >/dev/null 2>&1; then
+    candidates+=("$(command -v python3)")
+  fi
+
+  if [[ -x /opt/homebrew/bin/python3 ]]; then
+    candidates+=("/opt/homebrew/bin/python3")
+  fi
+
+  if [[ -x /opt/homebrew/opt/python@3.14/bin/python3.14 ]]; then
+    candidates+=("/opt/homebrew/opt/python@3.14/bin/python3.14")
+  fi
+
+  local candidate
+  for candidate in "${candidates[@]}"; do
+    if [[ -x "$candidate" ]] && "$candidate" -c 'import importlib.util, sys; sys.exit(0 if importlib.util.find_spec("matplotlib") else 1)' >/dev/null 2>&1; then
+      PYTHON_CMD="$candidate"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
 echo "== PhD Renovation new-Mac startup =="
 echo "Repo root: $ROOT_DIR"
 
@@ -45,12 +76,13 @@ require_cmd rg
 require_cmd gs
 require_cmd curl
 
-python3 - <<'PY'
-import importlib.util
-import sys
-if importlib.util.find_spec("matplotlib") is None:
-    sys.exit("Missing required Python package: matplotlib")
-PY
+if ! pick_python_with_matplotlib; then
+  echo "No usable Python with matplotlib was found." >&2
+  echo "Install matplotlib for a Python 3 interpreter, or set PHD_PYTHON to a suitable interpreter." >&2
+  exit 1
+fi
+
+echo "Using Python: $PYTHON_CMD"
 
 mkdir -p "$ICLOUD_INCOMING"
 echo "Ensured iCloud intake path: $ICLOUD_INCOMING"
@@ -93,7 +125,7 @@ if [[ "$SKIP_VALIDATION" -eq 0 ]]; then
   bash "$ROOT_DIR/tests/validate-adt-batch.sh"
   bash "$ROOT_DIR/tests/validate-csp-batch.sh"
   bash "$ROOT_DIR/tests/validate-ao.sh"
-  python3 "$ROOT_DIR/tools/generate-release-dashboard.py"
+  "$PYTHON_CMD" "$ROOT_DIR/tools/generate-release-dashboard.py"
   bash "$ROOT_DIR/tests/validate-dashboard.sh"
 fi
 
