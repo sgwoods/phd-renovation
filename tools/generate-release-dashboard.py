@@ -4,11 +4,13 @@
 from __future__ import annotations
 
 import json
+import argparse
 import os
 import re
 import shutil
 import subprocess
 import tempfile
+from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
 
@@ -408,6 +410,9 @@ def render_public_links(items: list[dict[str, str]]) -> str:
 def build_public_status_manifest(data: dict[str, object]) -> str:
     public_status = data["public_status"]
     metrics = data["metrics"]
+    def git(*args):
+        return subprocess.check_output(["git", "-C", str(ROOT), *args], text=True).strip()
+    source_commit_at = git("show", "-s", "--format=%cI", "HEAD")
     manifest = {
         "schema_version": public_status["schema_version"],
         "project_id": public_status["project_id"],
@@ -417,8 +422,12 @@ def build_public_status_manifest(data: dict[str, object]) -> str:
         "repo_url": public_status["repo_url"],
         "dashboard_url": public_status["dashboard_url"],
         "experience_url": public_status["experience_url"],
-        "repo_pushed_at": public_status["repo_pushed_at"],
-        "status_generated_at": public_status["status_generated_at"],
+        "repo_pushed_at": source_commit_at,
+        "source_commit": git("rev-parse", "HEAD"),
+        "source_commit_at": source_commit_at,
+        "source_ref": git("rev-parse", "--abbrev-ref", "HEAD"),
+        "source_dirty": bool(git("status", "--porcelain")),
+        "status_generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "status_label": public_status["status_label"],
         "status_value": metrics[2]["value"],
         "focus_label": public_status["focus_label"],
@@ -900,9 +909,19 @@ bash scripts/bootstrap-project-macos.sh
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--status-only", action="store_true", help="Export source metadata without rebuilding thesis or dashboard artifacts")
+    args = parser.parse_args()
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     status_source = json.loads(STATUS_SOURCE_PATH.read_text(encoding="utf-8"))
     apply_status_source(data, status_source)
+    public_status_manifest = build_public_status_manifest(data)
+    if args.status_only:
+        PUBLIC_STATUS_OUTPUT_PATH.write_text(public_status_manifest, encoding="utf-8")
+        if PUBLIC_SITE_DIR.exists():
+            PUBLIC_SITE_STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
+            PUBLIC_SITE_STATUS_PATH.write_text(public_status_manifest, encoding="utf-8")
+        return
     sync_thesis_assets(data["public_status"]["status_generated_at"])
     dashboard_html = build_page(
         data,
@@ -919,7 +938,6 @@ def main() -> None:
     status_summary = build_status_summary(status_source)
     STATUS_SUMMARY_PATH.write_text(status_summary, encoding="utf-8")
     public_page_html = build_public_page(data)
-    public_status_manifest = build_public_status_manifest(data)
     generate_handbook_outputs(data)
     DASHBOARD_OUTPUT_PATH.write_text(dashboard_html, encoding="utf-8")
     PUBLIC_PAGE_OUTPUT_PATH.write_text(public_page_html, encoding="utf-8")
