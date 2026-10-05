@@ -62,6 +62,12 @@ The thesis itself is available from the project home surfaces in both
 [`docs/phd-renovation-thesis.ps`](docs/phd-renovation-thesis.ps) form, with
 the canonical source PDF preserved under `data/thesis/`.
 
+For the research extension beyond the historical baseline, see
+[`RESEARCH-ROADMAP.md`](RESEARCH-ROADMAP.md): a cited literature review, prioritized
+algorithm alternatives, testable work packages, and a reusable constraint-search
+research skill. Proposed methods and demonstrations are kept separate from the
+validated historical capabilities.
+
 ## Fresh Checkout Recovery Quick Start
 
 If you need to resume this project on a new machine without reconstructing any
