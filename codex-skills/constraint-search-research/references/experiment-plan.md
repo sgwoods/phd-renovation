@@ -1,9 +1,11 @@
 # A practical research and demonstration plan
 
-Status: **W0/W1 selected historical slice and initial W2/W3 implemented**, 2026-10-04.
+Status: **W0/W1 selected historical slice, initial W2/W3 and bounded E3/E5 implemented**, 2026-10-05.
 The [benchmark contract](../../../experiments/constraint-search/README.md) documents
 the checker, oracle, QCSP3 adapter, experimental weighted table-FC and CP-SAT lanes.
-This is not full historical-domain parity or a performance leaderboard.
+This is not full historical-domain parity or a performance leaderboard. The
+[current execution record](../../../experiments/constraint-search/EXECUTION-2026-10-05.md)
+tracks the approved five-step sequence and remaining gates.
 Source IDs refer to [the publication ledger](publications.md).
 
 The [expanded report](../../../experiments/constraint-search/results/2026-10-04-expanded-summary.md)
@@ -22,10 +24,12 @@ random generator or as independent program-family samples. Campaign evidence is
 recorded separately from the earlier 63-run checkpoint.
 The [noise checkpoint report](../../../experiments/constraint-search/results/2026-10-04-noise-report.md)
 records 2,264 passing checks, 280 single-pass correctness runs and MRV/weighted
-traces. The five-repeat timing
-campaign is still pending: severe host load exceeded even the tiny CP-SAT startup
-budget. Run it on a quieter host before making latency claims; do not mark this
-measurement gate complete on the strength of correctness checks alone.
+traces. The later [five-repeat ablation](../../../experiments/constraint-search/results/2026-10-05-ablation-report.md)
+completes 1,600 runs across eight policies with no errors/timeouts. Frozen/adaptive
+degree tie on nodes/checks on every case in both modes. Timings remain observations
+under contention; quiet-host latency validation is still open. The
+[extension report](../../../experiments/constraint-search/results/2026-10-05-extension-report.md)
+records 22 index/full audits and eight restricted semantic/translation examples.
 
 1. Materialize five fixed seeds at three small noise levels for the reviewed ADT
    template. Retain original/generated situations, generator version and hashes;
@@ -33,7 +37,7 @@ measurement gate complete on the strength of correctness checks alone.
 2. Add verified match-preserving decoys and renamings, and match-destroying relation
    mutations. Explicitly pin SAT, UNSAT and ambiguous cases; reject mutations that
    change unintended semantics. Do not call ordinary random noise a hard negative.
-3. Run all seven configurations on identical exports, five repetitions per fixture
+3. Run all eight configurations on identical exports, five repetitions per fixture
    in an otherwise idle environment. Separate first witness from enumeration and
    export/encoding from solving; report failures and paired costs, not just wins.
 4. Add a small assignment/domain/weight trace for one failure-heavy instance. This
@@ -43,11 +47,12 @@ measurement gate complete on the strength of correctness checks alone.
    runtime. Then export Memory-CSP index/full stages and test candidate recall before
    adding learned retrieval or ranking. Do not change deployment defaults.
 
-**Next causal ablation:** add frozen `dom/degree` to the same table-FC engine, with
-weights fixed at one and all other choices identical. Compare MRV, frozen degree
-and adaptive weighting on the saved cases. Require exact parity and unchanged
-counter semantics; distinguish fewer nodes, fewer checks and elapsed time. Then
-extend Memory-CSP candidate recall/index-full equivalence before learned retrieval.
+**Next causal experiment:** the frozen `dom/degree` control is implemented and shows
+that this family does not exercise a search-count benefit from weight updates.
+Author distinct, multi-branch feedback-sensitive program families; freeze their
+distribution before comparing all policies, including losses and ties. The bounded
+Memory-CSP gate is now passed, but it covers only one index/full template pair.
+Do not use the related noise seeds as held-out program families for learned ranking.
 
 ## Work packages and completion gates
 
@@ -190,6 +195,11 @@ not a fabricated timing advantage. Credit Regin 1994 [S06] as predating the thes
 
 ### E3 Leap-year recognition from Y2K to verified AI
 
+**Implemented slice:** [eight DSL programs and an offline demonstration](../../../experiments/constraint-search/demos/README.md)
+separate structural recognition, Gregorian semantics and proposal/source equivalence.
+No arbitrary C parsing, SMT backend or actual model evaluation is implemented;
+visual browser QA remains blocked by the local-file URL policy.
+
 **Question:** Can a system distinguish a familiar-looking program from a correct one?
 Create fresh, tiny C-like predicates for the Gregorian rule, the wrong "divisible
 by four" rule, and reordered/renamed versions, linked historically to S05 rather
@@ -220,6 +230,11 @@ claim the bounded current AO tests already implement this new program corpus.
 This extends the thesis's global story; S12 supplies a separate decomposition lens.
 
 ### E5 A confident suggestion meets an exact checker
+
+**Implemented slice:** the E3 checker rejects a scripted correct-rule proposal when
+it is an incorrect translation of buggy source. These are interface/adversarial
+tests, not neural measurements. A trained ranker requires a diverse frozen corpus;
+external model calls require a named provider/model, exact sendable inputs and budget.
 
 **Question:** When does learned guidance help, and where are its guarantees?
 Train a simple ranker from solver traces before considering a GNN. Separately test

@@ -21,15 +21,24 @@ project-specific claims.
 - For the implemented W0/W1 foundation, read
   [the benchmark contract](../../experiments/constraint-search/README.md).
   Use its independent checker and isolated runner before adding a backend. Current
-  lanes include QCSP3, matched MRV/weighted table-FC and optional CP-SAT; only QCSP3
+  lanes include QCSP3, matched MRV/frozen-degree/weighted table-FC and optional CP-SAT; only QCSP3
   rejects higher-arity tables. Historical export supports four reviewed zero-noise
   ADT/MPR cases plus a controlled ADT near-plan family, not arbitrary callbacks.
   Read [the noise protocol](../../experiments/constraint-search/NOISE-EXPERIMENT.md)
   for generation, paired repetitions and traces. Seeds vary block placement and
   namespaces, not independent program families; do not inflate sample size with
-  repetitions. Isolate frozen degree from failure updates before attributing gains
-  specifically to feedback. Cross-check original top-level setup as
+  repetitions. Use `table-degree` to isolate frozen degree from failure updates
+  before attributing gains specifically to feedback. Cross-check original top-level setup as
   well as callback search: ADT name matching depends on the initialized type catalog.
+- For two-stage validation, read [the Memory-CSP audit](../../experiments/constraint-search/memory/README.md).
+  Native historical anchors and controlled-input ADT composition are different
+  execution paths: the latter must not claim native `memory-search` parity.
+  Verify candidate recall and every candidate's completions, not just one witness.
+- For E3/E5 demonstrations, read [the offline semantic/proposal contract](../../experiments/constraint-search/demos/README.md).
+  Its 400-residue argument only covers the enforced divisibility DSL. Scripted
+  proposals are not model measurements; keep recognition, semantic correctness
+  and translation equivalence separate. Author distinct families before training
+  a ranker; near-plan seeds are not a valid cross-family train/test split.
 - Refresh current project status from `VALIDATION-MATRIX.md`, the working tree,
   and the tests actually run. Research prose is not a live status feed.
 

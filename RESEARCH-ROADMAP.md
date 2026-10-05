@@ -1,36 +1,38 @@
 # Constraint search research and experiment roadmap
 
-Research snapshot: **2026-10-03**. This is a new research lane alongside historical
+Research snapshot: **2026-10-03**; execution checkpoint: **2026-10-05**. This is a research lane alongside historical
 recovery, not a replacement for the M1 preservation and reproduction gates.
 
 The shared benchmark now includes selected historical exports, experimental
-failure-weighted ordering, CP-SAT and controlled near-plan noise/negative cases
-(2026-10-04). Next, finish repeated timing on a quieter host and isolate failure
-feedback from initial degree. Learned guidance should follow
-only after the interface can distinguish a correct answer from a plausible one.
+failure-weighted ordering, a frozen-degree control, CP-SAT and controlled near-plan
+cases. The repeated campaign and bounded Memory-CSP audits are complete. The
+ablation finds no additional search-count benefit from failure updates on this
+family. Next, author distinct feedback-sensitive families before training a local
+ranker; quiet-host timing and external-model approval remain separate gates.
 
 ## Implemented foundation
 
 [The runnable benchmark](experiments/constraint-search/README.md) now supplies a
 versioned finite-model format, an independent checker and exhaustive oracle, an
 adapter around unmodified QCSP3, and a bounded subprocess runner with JSONL results
-and source/input hashes. It compares four existing strategies, two matched
-experimental table-FC policies (MRV and failure-weighted), and optional CP-SAT.
+and source/input hashes. It compares four existing strategies, three matched
+experimental table-FC policies (MRV, frozen degree and failure-weighted), and CP-SAT.
 
-The [controlled-noise report](experiments/constraint-search/results/2026-10-04-noise-report.md)
-adds 20 cases with pinned outcomes and exhaustive original-predicate export audits,
-plus inspectable MRV/weighted traces. A 280-run single-pass matrix passed across
-seven configurations and both enumeration modes. The extended suite passed 2,264 checks with
-CP-SAT enabled; the five-repeat timing campaign remains deferred because of host
-load. The [earlier expanded report](experiments/constraint-search/results/2026-10-04-expanded-summary.md)
-records exact parity for all 63 runs: nine fixtures under seven configurations.
-Four exports are historical-derived, checked against original ADT/MPR entry points;
-five fixtures remain explicitly synthetic. The new FiveAM suite passed 1,972 checks
-with CP-SAT enabled, including 100 generated Lisp models and another 100 ternary
-CP-SAT models. All 150 existing core/AO assertions also passed. W0/W1 remain partial
-across the whole thesis: the legacy random-noise distribution and Memory-CSP
-index/full equivalence are still unexported. The earlier [20-run report](experiments/constraint-search/results/2026-10-04-summary.md)
-is retained as a separate source-hashed checkpoint.
+The [five-repeat ablation report](experiments/constraint-search/results/2026-10-05-ablation-report.md)
+retains all 1,600 runs: 800 exact enumeration results and 800 first-witness or
+exhaustive-UNSAT results, with no errors/timeouts. Frozen and adaptive degree tie
+on nodes and checks in both modes. Host load was variable, so no clean latency
+speedup is claimed. All earlier reports remain dated evidence, not current status.
+
+The [extension report](experiments/constraint-search/results/2026-10-05-extension-report.md)
+adds 22 index/full audits, including two native Memory-CSP anchors, and eight
+restricted leap-year programs with semantic and translation checks. The offline
+demo uses explicitly scripted proposals, not a neural model. Browser visual QA
+remains open because local-file navigation was blocked. The expanded suite passes
+2,621 checks with CP-SAT enabled, alongside all 150 original core/AO assertions.
+W0/W1 remain partial across the thesis: arbitrary index/full template pairs,
+the legacy random-noise distribution and other domains still need independent gates.
+See the [approved sequence and next package](experiments/constraint-search/EXECUTION-2026-10-05.md).
 
 ## Research package
 
@@ -70,9 +72,11 @@ therefore compare improvements against these, not against naive backtracking alo
    leap-year recognition, global explanations, adversarial AI suggestions, and
    separately labeled synthetic planning.
 
-Initial A1/A4 implementations are now experimental, not promoted defaults. On the
-two-match ADT case, weighting reduces checks but increases nodes; no universal
-speedup is established. Full demonstrations and learned guidance remain **planned**.
+Initial A1/A4 implementations remain experimental, not promoted defaults.
+Degree ordering reduces enumeration checks on all 20 controlled cases but raises
+first-witness checks on six. No universal speedup or failure-learning benefit is
+established. E3/E5 now have a bounded offline slice; learned guidance and actual
+neural evaluation remain **planned**.
 OR-Tools 9.15.6755 and pinned dependencies are isolated in an ignored project-local
 environment; CI is configured to install that backend. No paid model runs or model
 training occurred. The next bounded work package is in the experiment plan.

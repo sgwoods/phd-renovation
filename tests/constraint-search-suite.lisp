@@ -281,5 +281,11 @@
                                                :output :string :error-output *error-output*)))
         (5am:skip "Set PHD_BENCH_CP_PYTHON to run the optional installed CP-SAT backend."))))
 
+(5am:test research-extension-contract
+  (5am:is-true (search "Research extension contract passed"
+                      (uiop:run-program
+                       (list "python3" (namestring (merge-pathnames "tests/research-extension-check.py" cl-user::*project-root*)))
+                       :output :string :error-output *error-output*))))
+
 (format t "~&;; Constraint search benchmark suite~%")
 (uiop:quit (if (5am:run! 'constraint-search-tests) 0 1))

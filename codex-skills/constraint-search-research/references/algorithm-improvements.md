@@ -1,7 +1,7 @@
 # Candidate algorithm improvements
 
 These are **proposals** except for the initial A0/A1/A4 experimental slices
-(2026-10-04): reviewed exports, matched MRV/weighted table-FC and CP-SAT. No
+(2026-10-05): reviewed exports, matched MRV/frozen-degree/weighted table-FC and CP-SAT. No
 competitive performance win is established. See the benchmark report. Priorities
 reflect expected information value and implementation risk, not guaranteed speed.
 Source IDs resolve in [the publication ledger](publications.md); work packages and
@@ -25,8 +25,8 @@ across all four copies.
 
 | Priority / ID | Change and research basis | Expected benefit and first test | Cost, risk and rejection criterion |
 |---|---|---|---|
-| P0 A0 | Shared declarative instance model and independent oracle; W0-W1, initial slice implemented | Five synthetic, four reviewed zero-noise ADT/MPR and 20 controlled near-plan cases now have checked exports/mappings; legacy random-noise and Memory-CSP exports remain | Reject unsupported predicates instead of approximating them. Any parity mismatch blocks timing claims. |
-| P1 A1 | Failure-weighted variable selection, initially dom/wdeg; S07 | Separate `table-wdeg` FC engine, matched `table-mrv` comparator and bounded traces implemented; integration near historical DR remains a later decision | Controlled enumeration uses fewer checks but sometimes more nodes. Next isolate frozen degree from weight updates and finish repeated timing on a quieter host; do not promote from counters alone. |
+| P0 A0 | Shared declarative instance model and independent oracle; W0-W1, initial slice implemented | Five synthetic, four reviewed zero-noise ADT/MPR, 20 controlled near-plan cases and bounded index/full audits now have independent gates; arbitrary templates and legacy random-noise remain | Reject unsupported predicates instead of approximating them. Any parity mismatch blocks timing claims. |
+| P1 A1 | Failure-weighted variable selection, initially dom/wdeg; S07 | Three matched policies and traces implemented; 1,600-run repeated campaign completed. Integration near historical DR remains a later decision | Frozen degree and adaptive weighting tie on nodes/checks on all 20 cases in both modes. Existing gains are attributable to degree, not feedback. Add independently designed feedback-sensitive families before claiming learning benefits; quiet-host latency validation remains open. |
 | P1 A2 | Characterized MAC plus support residues, adjacency queues and bitsets; S11 | Reduce repeated calls in `forward-checking`/`revise`; noise ladder and sparse-versus-dense relation fixtures | Precomputing all compatibility tables can dominate time/memory. Cache keys must include relevant context or caching is unsound. |
 | P1 A3 | Global `allDifferent` filtering; S06 | Injectivity Hall-set example E2, then ambiguous high-overlap ADT domains | More work per node may lose on loose instances. Preserve injective mappings exactly; this method existed in 1994. |
 | P1 A4 | CP-SAT adapter with integer object IDs, allowed relations, global distinctness; S09, S16, S18 | Initial exact finite-table adapter implemented and oracle-checked, including ternary tables; Memory-CSP index/full comparisons remain | Encoding blowup and unexported context-dependent semantics remain risks. Count compilation and checking; do not claim every CP-SAT gain is from learning. |
@@ -44,6 +44,13 @@ P0/P1 is the recommended first tranche. P2 expands the scientific story after
 parity. P3 explores AI rather than presuming it will beat specialized exact solvers.
 Huge neural pretraining, unrestricted source-code semantic equivalence, and a new
 production LCG engine are not prerequisites for useful results here.
+
+The [2026-10-05 ablation](../../../experiments/constraint-search/results/2026-10-05-ablation-report.md)
+changes the next measurement priority: find multi-branch cases where earlier
+failures can affect later choices. Freeze that new distribution before comparing
+policies, and report all cases, not just the seeds where weighting wins. On the
+current family, degree reduces enumeration checks in 20/20 cases but increases
+first-witness checks in 6/20. Do not infer a universal improvement from enumeration.
 
 ## Ablation rules
 

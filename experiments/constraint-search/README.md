@@ -1,15 +1,19 @@
 # Constraint search benchmark
 
 An executable slice of W0/W1 with initial W2/W3 comparisons. It includes the
-**unmodified QCSP3 search engine**, matched experimental MRV/failure-weighted
+**unmodified QCSP3 search engine**, matched experimental MRV/frozen-degree/failure-weighted
 forward checking, and optional CP-SAT, checked against an exhaustive oracle.
 Five synthetic fixtures and four reviewed zero-noise ADT/MPR exports are covered.
 The [controlled near-plan family](NOISE-EXPERIMENT.md) adds 20 materialized ADT
 noise/negative/ambiguous/renamed cases and optional bounded search traces.
-Memory-CSP, hierarchical AO, legacy random-noise batches and learned models are not covered.
+The [two-stage audit](memory/README.md) covers two native Memory-CSP anchors plus
+20 controlled ADT compositions. Hierarchical AO, legacy random-noise batches and
+learned models are not covered by this benchmark.
 See the [expanded result report](results/2026-10-04-expanded-summary.md).
-The later [noise checkpoint](results/2026-10-04-noise-report.md) records 280
-single-pass correctness runs; repeated timing is deferred because of host load.
+The [five-repeat checkpoint](results/2026-10-05-ablation-report.md) records 1,600
+valid runs. Timing observations are retained but host contention prevents a clean
+latency claim. The [extension report](results/2026-10-05-extension-report.md)
+adds the index/full audit and offline semantic/proposal demonstration.
 
 ## Run
 
@@ -204,9 +208,11 @@ budget boundaries and process errors are also tested. FiveAM is a separate CI st
 the original four suites and all historical goldens are untouched.
 
 Controlled near-plan fixtures now pin match-preserving and match-destroying
-transformations; see the experiment's separate campaign protocol. Next isolate
-failure feedback from initial degree with a frozen-weight ablation, then extend
-Memory-CSP index/full equivalence. These bounded cases are not a leaderboard. W0/W1
-remain partial across the whole thesis until Memory-CSP index/full equivalence and
-other historical input semantics are exported and independently checked. Do not
+transformations; see the experiment's separate campaign protocol. The implemented
+frozen-weight control isolates failure feedback from initial degree.
+It ties adaptive weighting on nodes/checks throughout the current family; use
+diverse feedback-sensitive families next. Bounded index/full equivalence now
+passes, but arbitrary templates remain unsupported. These cases are not a leaderboard.
+W0/W1 remain partial across the whole thesis until other historical input semantics
+are exported and independently checked. Do not
 change goldens or suppress unsupported constraints to make a backend pass.

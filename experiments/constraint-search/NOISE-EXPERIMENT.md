@@ -44,7 +44,9 @@ python3 experiments/constraint-search/generate-noise.py
 PHD_BENCH_CP_PYTHON="$PWD/experiments/constraint-search/.venv/bin/python" sbcl --non-interactive --load tests/constraint-search-suite.lisp
 ```
 
-Default generation checks stored model/sidecar bytes without replacing them.
+Default generation checks stored model bytes and semantic sidecar fields without
+replacing them. Original generation source hashes remain historical provenance;
+replay does not demand that unrelated execution harness hashes stay frozen.
 Use `--write` only after inspecting an intentional generator change. As with the
 historical export gate, original entry points create normal ignored random-state
 caches. Sidecars retain original/generated/prepared situations, template, domains,
@@ -57,13 +59,14 @@ Use the optional CP-SAT environment documented in [README](README.md). Stop othe
 project tests before measuring. These commands run sequentially, not concurrently:
 
 ```sh
-python3 experiments/constraint-search/run.py --strategy comparison --repetitions 5 --mode all --cp-python experiments/constraint-search/.venv/bin/python experiments/constraint-search/fixtures/noise/*.sexp > experiments/constraint-search/results/noise-all.jsonl
-python3 experiments/constraint-search/run.py --strategy comparison --repetitions 5 --mode first --cp-python experiments/constraint-search/.venv/bin/python experiments/constraint-search/fixtures/noise/*.sexp > experiments/constraint-search/results/noise-first.jsonl
-python3 experiments/constraint-search/summarize-noise.py experiments/constraint-search/results/noise-all.jsonl experiments/constraint-search/results/noise-first.jsonl > experiments/constraint-search/results/noise-summary.json
+python3 experiments/constraint-search/run.py --strategy expanded --repetitions 5 --mode all --cp-python experiments/constraint-search/.venv/bin/python experiments/constraint-search/fixtures/noise/*.sexp > experiments/constraint-search/results/noise-all.jsonl
+python3 experiments/constraint-search/run.py --strategy expanded --repetitions 5 --mode first --cp-python experiments/constraint-search/.venv/bin/python experiments/constraint-search/fixtures/noise/*.sexp > experiments/constraint-search/results/noise-first.jsonl
+python3 experiments/constraint-search/summarize-noise.py --matrix expanded experiments/constraint-search/results/noise-all.jsonl experiments/constraint-search/results/noise-first.jsonl > experiments/constraint-search/results/noise-summary.json
 ```
 
-There are 1,400 runs: 20 fixtures x seven configurations x five repetitions x two
-modes. Strategy order rotates by repetition. Every run gets a fresh process,
+The expanded campaign has 1,600 runs: 20 fixtures x eight configurations x five
+repetitions x two modes. The old `comparison`/summary default retains the archived
+seven-policy protocol. Strategy order rotates by repetition. Every run gets a fresh process,
 10-second end-to-end wall limit and 5-second Lisp CPU / CP solver wall limit.
 The collector retains errors/timeouts rather than selecting successful runs.
 Summary generation rejects missing/duplicate repetitions, changed fixtures or
@@ -100,5 +103,6 @@ truncates the recording, not search. Neither trace is a CP-SAT internal trace.
 For the two-decoy negative, the weighted trace records three failures on
 `19-SAME-NAME-P`, which links the `Zero` and `Increment` indices. Its weight rises
 from 1 to 4. This is online symbolic feedback, not neural training; a comparison
-with MRV mixes initial weighted degree and subsequent weight updates. A frozen
-degree ablation is needed to isolate the value of failure feedback alone.
+with MRV mixes initial weighted degree and subsequent weight updates. The new
+`table-degree` control freezes weights at one to isolate feedback from degree.
+Use `degree` as the trace-worker policy to inspect that control.

@@ -1,0 +1,10 @@
+[
+  {"id":"gregorian", "family":"gregorian", "plan":"gregorian-plan", "expression":["or",["div",400],["and",["div",4],["not",["div",100]]]], "expected_correct":true},
+  {"id":"renamed_reordered", "family":"gregorian", "variable":"candidate", "expression":["or",["and",["not",["div",100]],["div",4]],["div",400]], "expected_correct":true},
+  {"id":"factored_equivalent", "family":"gregorian", "expression":["and",["div",4],["or",["not",["div",100]],["div",400]]], "expected_correct":true},
+  {"id":"leap_year_trust_me", "family":"divisible-four", "plan":"divisible-four-plan", "expression":["div",4], "expected_correct":false},
+  {"id":"century_exception_only", "family":"missing-400", "expression":["and",["div",4],["not",["div",100]]], "expected_correct":false},
+  {"id":"swapped_dependency", "family":"wrong-negation", "expression":["or",["div",400],["and",["div",4],["div",100]]], "expected_correct":false},
+  {"id":"unknown_plan", "family":"century-only", "expression":["div",100], "expected_correct":false},
+  {"id":"tautological_dead_clause", "family":"gregorian", "expression":["and",["or",["div",400],["and",["div",4],["not",["div",100]]]],["or",["div",4],["not",["div",4]]]], "expected_correct":true}
+]
