@@ -46,8 +46,8 @@ def bounded_run(command, seconds):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("fixtures", nargs="*", type=Path)
-    parser.add_argument("--strategy", choices=["bt", "fc", "fcdr", "fcdr-as", "table-mrv", "table-wdeg", "cp-sat", "all", "comparison"], default="all",
-                        help="all = four legacy strategies; comparison = all seven, requiring CP-SAT")
+    parser.add_argument("--strategy", choices=["bt", "fc", "fcdr", "fcdr-as", "table-mrv", "table-degree", "table-wdeg", "cp-sat", "all", "comparison", "expanded", "ablation"], default="all",
+                        help="all = four legacy; comparison = original seven; expanded = eight; ablation = three table-FC policies")
     parser.add_argument("--cp-python", default=sys.executable, help="Python containing optional OR-Tools")
     parser.add_argument("--mode", choices=["all", "first"], default="all")
     parser.add_argument("--wall-seconds", type=float, default=10)
@@ -62,6 +62,10 @@ def main():
     strategies = ["bt", "fc", "fcdr", "fcdr-as"] if args.strategy == "all" else [args.strategy]
     if args.strategy == "comparison":
         strategies = ["bt", "fc", "fcdr", "fcdr-as", "table-mrv", "table-wdeg", "cp-sat"]
+    elif args.strategy == "expanded":
+        strategies = ["bt", "fc", "fcdr", "fcdr-as", "table-mrv", "table-degree", "table-wdeg", "cp-sat"]
+    elif args.strategy == "ablation":
+        strategies = ["table-mrv", "table-degree", "table-wdeg"]
     sources = [*sorted(HERE.glob("*.lisp")), *sorted(HERE.glob("*.py")), *sorted(HERE.glob("requirements*.txt")), ROOT / "qcsp3.asd",
                *sorted((ROOT / "qcsp3").glob("*.lisp"))]
     provenance = {
@@ -93,6 +97,7 @@ def main():
                       "engine": "qcsp3" if legacy else "cp-sat" if strategy == "cp-sat" else "table-fc",
                       "oracle_assignment_budget": 100000, "repetition": repetition,
                       "strategy_order_index": order.index(strategy)}
+            record["host_load_average_start"] = os.getloadavg()
             record["solver_time_budget_seconds" if strategy == "cp-sat" else "cpu_budget_seconds"] = args.cpu_seconds
             try:
                 record["fixture_sha256"] = digest(fixture)
@@ -129,6 +134,7 @@ def main():
                 failed = True
                 record.update(status="ERROR", reason=str(error), complete=False, parity=None)
             record["wall_seconds"] = time.monotonic() - started
+            record["host_load_average_end"] = os.getloadavg()
             print(json.dumps(record, sort_keys=True), flush=True)
     return int(failed)
 

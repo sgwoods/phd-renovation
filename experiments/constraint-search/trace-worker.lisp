@@ -6,6 +6,7 @@
 (destructuring-bind (path policy-text) (uiop:command-line-arguments)
   (let* ((instance (read-instance path))
          (policy (cond ((equal policy-text "mrv") :mrv) ((equal policy-text "wdeg") :wdeg)
+                       ((equal policy-text "degree") :degree)
                        (t (error "Unknown trace policy"))))
          (result (solve-table-search instance :policy policy :trace-limit 1000))
          (plain (solve-table-search instance :policy policy))

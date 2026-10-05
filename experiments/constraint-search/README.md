@@ -35,8 +35,9 @@ python3 experiments/constraint-search/run.py --strategy comparison --cp-python e
 ```
 
 `all` retains its original meaning: four legacy configurations. `comparison`
-selects all seven configurations and requires CP-SAT. `table-mrv`, `table-wdeg`
-and `cp-sat` can also be selected individually. CI installs the pinned backend;
+retains the original seven configurations and requires CP-SAT. `expanded` adds
+`table-degree` for eight policies; `ablation` selects just the three table-FC
+policies. All policies can also be selected individually. CI installs the pinned backend;
 without `PHD_BENCH_CP_PYTHON`, local FiveAM runs explicitly skip its contract test.
 
 Run from the repository root. The default runner executes five materialized
@@ -172,6 +173,19 @@ distinctness checks assigned values. This is a **dom/wdeg-style FC experiment**,
 not MAC, a paper replication, or a change to QCSP3's historical DR implementation.
 The source inspiration is [Boussemart et al., ECAI 2004](https://www.cril.univ-artois.fr/~boussemart/home/publis.html).
 
+`table-degree` is the matched control: constraint weights remain one, including
+after failures. Active degree still changes as variables are assigned. Compare it
+with MRV to isolate degree ordering, and with weighted degree to isolate feedback.
+`failure_events` counts failures separately from `weight_updates`; MRV retains
+the previous ignored-weight telemetry, but never uses weights to choose variables.
+The three policies share filtering, ties, value order and restoration.
+
+Controlled-noise replay compares materialized input bytes and all semantic
+sidecar fields. It deliberately preserves the original generation source hashes
+instead of rewriting provenance whenever an unrelated runner changes. New run
+records capture current execution source hashes independently. `--write` remains
+an explicit regeneration operation; archived fixture/sidecar hashes are immutable.
+
 CP-SAT uses globally shared integer object IDs, exact domains, allowed tables and
 global distinctness. It runs one worker, seed zero, with all-solution enumeration
 when requested. Witness checking uses original model data, independently of the
@@ -183,7 +197,7 @@ Backend branch/conflict counts are not interchangeable with QCSP3 node/TCC count
 
 ## Next gate
 
-The tests enforce full-set equality on 100 generated models across six Lisp
+The tests enforce full-set equality on 100 generated models across seven Lisp
 configurations; the optional CP-SAT contract adds 100 ternary generated models and
 all 29 materialized fixtures. Shape/translation mutations, unsupported exports, mapping pins,
 budget boundaries and process errors are also tested. FiveAM is a separate CI step;

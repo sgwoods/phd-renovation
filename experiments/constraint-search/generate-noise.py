@@ -11,6 +11,13 @@ CASES += [(0, level, "negative") for level in range(3)]
 CASES += [(0, 2, "ambiguous"), (0, 2, "renamed")]
 
 
+def replay_metadata_matches(stored, current):
+    # These hashes describe the original generation, not today's replay. Keep the
+    # archived sidecars unchanged; compare every semantic/provenance field otherwise.
+    return ({k: v for k, v in stored.items() if k != "source_sha256"} ==
+            {k: v for k, v in current.items() if k != "source_sha256"})
+
+
 def generate(cases=CASES):
     sources = [HERE / name for name in ("generate-noise.py", "noise-worker.lisp", "historical-export.lisp",
                                         "model.lisp", "qcsp3-adapter.lisp", "run.py")]
@@ -42,8 +49,13 @@ def main():
             if args.write:
                 directory.mkdir(parents=True, exist_ok=True)
                 path.write_text(content)
-            elif not path.exists() or path.read_text() != content:
-                raise SystemExit(f"Noise fixture drift: {path}; inspect before --write")
+            elif not path.exists():
+                raise SystemExit(f"Missing noise fixture: {path}")
+            elif suffix == ".json":
+                if not replay_metadata_matches(json.loads(path.read_text()), record):
+                    raise SystemExit(f"Noise metadata drift: {path}; inspect before --write")
+            elif path.read_text() != content:
+                raise SystemExit(f"Noise model drift: {path}; inspect before --write")
         print(json.dumps({"id": record["id"], "expected": record["expected_solution_count"],
                           "assignments_audited": record["assignments_audited"], **timings}), flush=True)
 

@@ -7,9 +7,13 @@ import statistics
 from run import digest, HERE
 
 STRATEGIES = ("bt", "fc", "fcdr", "fcdr-as", "table-mrv", "table-wdeg", "cp-sat")
+MATRICES = {"comparison": STRATEGIES,
+            "expanded": (*STRATEGIES[:-2], "table-degree", *STRATEGIES[-2:]),
+            "ablation": ("table-mrv", "table-degree", "table-wdeg")}
 
 
-def summarize(paths, repetitions=5):
+def summarize(paths, repetitions=5, matrix="comparison"):
+    strategies = MATRICES[matrix]
     if not 1 <= repetitions <= 100:
         raise ValueError("Repetitions must be between 1 and 100")
     records = [json.loads(line) for path in paths for line in path.read_text().splitlines()]
@@ -32,7 +36,7 @@ def summarize(paths, repetitions=5):
             if row["status"] == "SAT" and (not row["solutions"] or not row["witnesses_valid"]
                                             or any(s not in target for s in row["solutions"])):
                 raise ValueError(f"Invalid witness: {key}")
-            if row["status"] == "UNSAT" and (target or not row["complete"]):
+            if row["status"] == "UNSAT" and (target or row["solutions"] or not row["complete"]):
                 raise ValueError(f"Invalid UNSAT claim: {key}")
             if row["mode"] == "all":
                 canonical = lambda xs: sorted(tuple(sorted(x.items())) for x in xs)
@@ -49,7 +53,7 @@ def summarize(paths, repetitions=5):
     cells = []
     for key in fixtures:
         for mode in ("all", "first"):
-            for strategy in STRATEGIES:
+            for strategy in strategies:
                 rows = groups[key, mode, strategy]
                 if sorted(row["repetition"] for row in rows) != list(range(repetitions)):
                     raise ValueError(f"Missing or duplicate repetitions: {(key, mode, strategy)}")
@@ -67,9 +71,9 @@ def summarize(paths, repetitions=5):
                 for counter in ("nodes_visited", "table_constraint_tests", "weight_updates", "backend_branches"):
                     if solved and len({row.get(counter) for row in rows}) != 1:
                         raise ValueError(f"Nondeterministic counter {key} {strategy} {counter}")
-    if len(records) != len(fixtures) * 2 * len(STRATEGIES) * repetitions:
+    if len(records) != len(fixtures) * 2 * len(strategies) * repetitions:
         raise ValueError("Unexpected campaign rows")
-    return {"records": len(records), "fixtures": len(fixtures), "repetitions": repetitions,
+    return {"records": len(records), "fixtures": len(fixtures), "repetitions": repetitions, "matrix": matrix,
             "statuses": dict(Counter(row["status"] for row in records)),
             "all_mode_exact_parity": sum(row["mode"] == "all" and row.get("parity") is True for row in records),
             "raw_sha256": {path.name: digest(path) for path in paths}, "cells": cells}
@@ -79,5 +83,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("paths", nargs="+", type=Path)
     parser.add_argument("--repetitions", type=int, default=5)
+    parser.add_argument("--matrix", choices=MATRICES, default="comparison")
     args = parser.parse_args()
-    print(json.dumps(summarize(args.paths, args.repetitions), sort_keys=True, indent=2))
+    print(json.dumps(summarize(args.paths, args.repetitions, args.matrix), sort_keys=True, indent=2))

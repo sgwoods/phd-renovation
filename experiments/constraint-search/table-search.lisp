@@ -14,8 +14,8 @@
                (loop for constraint in constraints for weight across weights
                      when (and (member (first variable) (getf constraint :scope) :test #'equal)
                                (>= (count-if (lambda (id) (assoc id domains :test #'equal))
-                                             (getf constraint :scope)) 2)) sum weight))
-             (score (/ (length (second variable)) (if (eq policy :wdeg) (max 1 degree) 1))))
+                                             (getf constraint :scope)) 2)) sum (if (eq policy :degree) 1 weight)))
+             (score (/ (length (second variable)) (if (member policy '(:degree :wdeg)) (max 1 degree) 1))))
         (when (or (null best-score) (< score best-score))
           (setf best variable best-score score))))))
 
@@ -24,14 +24,14 @@
 Weights start at one per solve; the last deleting constraint gets wipeout credit.
 This experimental engine is not a modification of QCSP3 or a MAC implementation."
   (validate-instance instance)
-  (require-model (member policy '(:mrv :wdeg)) "Unknown table-search policy.")
+  (require-model (member policy '(:mrv :degree :wdeg)) "Unknown table-search policy.")
   (require-model (member mode '(:all :first)) "Unknown table-search mode.")
   (require-model (and (integerp cpu-seconds) (>= cpu-seconds 0)) "Invalid CPU budget.")
   (require-model (and (integerp trace-limit) (<= 0 trace-limit 10000)) "Invalid trace limit.")
   (let* ((constraints (getf instance :constraints))
          (weights (make-array (length constraints) :initial-element 1))
          (solutions nil) (nodes 0) (checks 0) (updates 0) (complete t) (reason :exhausted)
-         (events nil) (event-count 0) (trace-truncated nil)
+         (events nil) (event-count 0) (trace-truncated nil) (failures 0)
          (deadline (+ (get-internal-run-time) (* cpu-seconds internal-time-units-per-second))))
     (labels ((record-event (kind &rest fields)
                (when (plusp trace-limit)
@@ -55,7 +55,9 @@ This experimental engine is not a modification of QCSP3 or a MAC implementation.
              (accepts (c bindings)
                (budget) (incf checks) (table-accepts-partial-p c bindings))
              (blame (index)
-               (incf (aref weights index)) (incf updates)
+               (incf failures)
+               ;; Preserve existing MRV telemetry; the new control never updates weights.
+               (unless (eq policy :degree) (incf (aref weights index)) (incf updates))
                (when (plusp trace-limit)
                  (record-event "failure" "constraint" (getf (nth index constraints) :id)
                                "new_weight" (aref weights index))))
@@ -103,6 +105,7 @@ This experimental engine is not a modification of QCSP3 or a MAC implementation.
     (list :status (cond (solutions :sat) (complete :unsat) (t :unknown))
           :complete complete :termination reason :solutions (nreverse solutions)
           :nodes nodes :pair-checks nil :constraint-tests checks :weight-updates updates
+          :failure-events failures
           :weights (loop for c in constraints for w across weights collect (list (getf c :id) w))
           :trace (nreverse events) :trace-truncated trace-truncated
           :raw-status nil)))

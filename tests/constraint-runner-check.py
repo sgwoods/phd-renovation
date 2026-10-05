@@ -63,6 +63,15 @@ with tempfile.TemporaryDirectory() as directory:
 # results. Fixture paths in old records are labels; validation uses repo fixtures.
 HERE = ROOT / "experiments/constraint-search"
 sys.path.insert(0, str(HERE))
+noise_spec = importlib.util.spec_from_file_location("noise_generator", HERE / "generate-noise.py")
+noise_module = importlib.util.module_from_spec(noise_spec)
+noise_spec.loader.exec_module(noise_module)
+assert noise_module.replay_metadata_matches({"id": "same", "source_sha256": {"a": "old"}},
+                                          {"id": "same", "source_sha256": {"a": "new"}})
+assert not noise_module.replay_metadata_matches({"id": "old"}, {"id": "changed"})
+code, rows = run("--strategy", "ablation", FIXTURE)
+assert code == 0 and [row["strategy"] for row in rows] == ["table-mrv", "table-degree", "table-wdeg"]
+assert all(row["parity"] for row in rows) and rows[1]["weight_updates"] == 0
 spec = importlib.util.spec_from_file_location("noise_summary", HERE / "summarize-noise.py")
 summary_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(summary_module)
