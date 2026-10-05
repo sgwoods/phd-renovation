@@ -54,6 +54,21 @@ HANDBOOK_SOURCES = [
         "Quick root-level status summary: release line, focus, branch expectations, and canonical working model.",
     ),
     HandbookSource(
+        "Project Migration Template",
+        "PROJECT-MIGRATION-TEMPLATE.md",
+        "Reusable migration playbook and Codex prompt template for applying this Git-first, non-iCloud-active-clone handoff strategy to sister projects.",
+    ),
+    HandbookSource(
+        "Cross-Project Migration Map",
+        "CROSS-PROJECT-MIGRATION-MAP.md",
+        "Higher-level coordination map for classifying named projects as standalone repos, supporting repos, shared-public subprojects, or unknowns before migrating them into Projects-All.",
+    ),
+    HandbookSource(
+        "Cross-Project Reporting Coordination",
+        "CROSS-PROJECT-REPORTING-COORDINATION.md",
+        "Rulebook for preserving the shared Woods project-summary/reporting layer so standalone repos and shared-public subprojects still roll up into one common surface.",
+    ),
+    HandbookSource(
         "Recovery And Reproducibility",
         "RECOVERY-AND-REPRODUCIBILITY.md",
         "Explicit audit of branch reality, checked-in versus ignored artifacts, and new-machine recovery confidence.",

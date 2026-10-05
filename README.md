@@ -54,6 +54,16 @@ actual branch/commit/cleanliness of the current working copy.
 `scripts/bootstrap-project-macos.sh` is the preferred from-scratch bootstrap
 path for a new Mac: it installs dependencies, prepares the recommended
 non-iCloud active clone, and hands off to the validated startup script.
+`PROJECT-MIGRATION-TEMPLATE.md` is the reusable migration playbook and Codex
+prompt template for applying this same machine-handoff strategy to sister
+projects such as `mmath-renovation`.
+`CROSS-PROJECT-MIGRATION-MAP.md` is the higher-level coordination map for
+deciding which named projects are true standalone repos, which are supporting
+repos, and which are really subprojects inside the shared `public` repo before
+migrating them into `Projects-All`.
+`CROSS-PROJECT-REPORTING-COORDINATION.md` is the cross-project rulebook for
+keeping the shared Woods project-summary and reporting surface intact as those
+projects migrate and rejoin the common public layer.
 `PRESERVATION-POLICY.md` is the standing rule that potentially useful
 historical material should be classified and preserved, not discarded just
 because it is not yet integrated.
